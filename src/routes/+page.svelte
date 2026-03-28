@@ -2,6 +2,10 @@
 	import { projects } from '$lib/data/projects';
 	import '$lib/styles/home.css';
 
+	import HeroProject from '$lib/components/HeroProject.svelte';
+	import FullProjectsSection from '$lib/components/FullProjectsSection.svelte';
+	import InvertProjectSection from '$lib/components/InvertProjectSection.svelte';
+
 	const heroMain = projects.find((p) => p.section === 'hero-main');
 	const heroSide = projects.filter((p) => p.section === 'hero-side');
 	const heroBottom = projects.filter((p) => p.section === 'hero-bottom');
@@ -14,55 +18,21 @@
 </script>
 
 <div class="page">
-  <header class="topbar">
-    <h1>Mi Portfolio</h1>
-  </header>
+	<header class="topbar">
+		<h1>Mi Portfolio</h1>
+	</header>
 
-  <!-- HERO -->
-  <section class="hero-grid">
-    <div class="hero-main">
-      {heroMain?.title.es}
-    </div>
+	<HeroProject
+		main={heroMain}
+		side={heroSide}
+		bottom={heroBottom}
+	/>
 
-    <div class="hero-side">
-      {#each heroSide as mini}
-        <div class="mini">{mini.title.es}</div>
-      {/each}
-    </div>
-  </section>
+	<FullProjectsSection projects={full} />
 
-  <!-- minis debajo del hero -->
-  <section class="hero-bottom">
-    {#each heroBottom as mini}
-      <div class="mini">{mini.title.es}</div>
-    {/each}
-  </section>
-
-  <!-- full projects -->
-  <section class="full">
-    {#each full as project}
-      <div class="full-project">
-        {project.title.es}
-      </div>
-    {/each}
-  </section>
-
-  <!-- invertido -->
-  <section class="invert-grid">
-    <div class="invert-side">
-      {#each invertSide as mini}
-        <div class="mini">{mini.title.es}</div>
-      {/each}
-    </div>
-
-    <div class="invert-main">
-      {invertMain?.title.es}
-    </div>
-  </section>
-
-  <section class="invert-bottom">
-    {#each invertBottom as mini}
-      <div class="mini">{mini.title.es}</div>
-    {/each}
-  </section>
+	<InvertProjectSection
+		side={invertSide}
+		main={invertMain}
+		bottom={invertBottom}
+	/>
 </div>
