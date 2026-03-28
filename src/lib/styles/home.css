@@ -3,10 +3,10 @@
 ========================= */
 
 .page {
-	display: flex;
-	flex-direction: column;
-	gap: 2rem;
-	padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
 }
 
 /* =========================
@@ -14,80 +14,73 @@
 ========================= */
 
 .topbar {
-	font-size: 2rem;
-	font-weight: 700;
+  font-size: 2rem;
+  font-weight: 700;
 }
 
 /* =========================
-   HERO GRID
+   GRIDS BASE
 ========================= */
+
+.hero-grid,
+.invert-grid {
+  display: grid;
+  gap: 1rem;
+}
 
 .hero-grid {
-	display: grid;
-	grid-template-columns: 2fr 1fr;
-	gap: 1rem;
+  grid-template-columns: 2fr 1fr;
 }
 
-.hero-main {
-	background: #111;
-	color: white;
-	height: 400px;
+.invert-grid {
+  grid-template-columns: 1fr 2fr;
 }
 
-.hero-side {
-	display: flex;
-	flex-direction: column;
-	gap: 1rem;
+.hero-bottom,
+.invert-bottom {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
 }
 
 /* =========================
-   MINI GRID
+   STACKS (column layouts)
 ========================= */
 
-.hero-bottom {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 1rem;
+.hero-side,
+.full,
+.invert-side {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.mini {
-	background: #ddd;
-	height: 100px;
+/* =========================
+   HERO + INVERT MAIN BLOCKS
+========================= */
+
+.hero-main,
+.invert-main {
+  background: #111;
+  color: white;
+  height: 400px;
 }
 
 /* =========================
    FULL PROJECTS
 ========================= */
 
-.full {
-	display: flex;
-	flex-direction: column;
-}
-
 .full-project {
-	background: #222;
-	color: white;
-	height: 300px;
+  background: #222;
+  color: white;
+  height: 300px;
 }
 
 /* =========================
-   INVERTED GRID
+   MINI CARDS
 ========================= */
 
-.invert-grid {
-	display: grid;
-	grid-template-columns: 1fr 2fr;
-	gap: 1rem;
-}
-
-.invert-side {
-	display: flex;
-	flex-direction: column;
-	gap: 1rem;
-}
-
-.invert-main {
-	background: #111;
-	color: white;
-	height: 400px;
+.mini {
+  background: #ddd;
+  height: 100px;
 }
