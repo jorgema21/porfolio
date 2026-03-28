@@ -1,0 +1,47 @@
+/* =========================
+   GRID BASE
+========================= */
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.grid-hero {
+  grid-template-columns: 2fr 1fr;
+}
+
+.grid-invert {
+  grid-template-columns: 1fr 2fr;
+}
+
+/* =========================
+   STACK (column)
+========================= */
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* =========================
+   BOTTOM GRID
+========================= */
+
+.grid-bottom {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+/* =========================
+   MAIN BLOCK
+========================= */
+
+.block-main {
+  background: #111;
+  color: white;
+  height: 400px;
+}
