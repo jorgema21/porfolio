@@ -1,15 +1,19 @@
 <script lang="ts">
-  import '$lib/styles/layout.css';
+  import "$lib/styles/global.css";
 
   const { children } = $props();
 </script>
 
 <svelte:head>
+  <!-- Preconnect performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
-
   <link
-    href="https://fonts.googleapis.com/css2?family=Epunda+Slab:wght@300..900&family=Nunito+Sans:ital,wght@0,200..1000;1,200..1000&display=swap"
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin="anonymous"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Epunda+Slab:wght@300..900&family=Nunito+Sans:wght@200..1000&display=swap"
     rel="stylesheet"
   />
 </svelte:head>
@@ -29,3 +33,7 @@
 <main>
   {@render children()}
 </main>
+
+<footer class="site-footer">
+  <p>Portfolio © {new Date().getFullYear()}</p>
+</footer>

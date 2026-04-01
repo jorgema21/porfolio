@@ -1,27 +1,31 @@
 <script lang="ts">
-  import { projects } from '$lib/data/projects';
-  import ProjectCard from '$lib/components/ProjectCard.svelte';
+  import projects from "$lib/data/projects";
+  import ProjectCard from "$lib/components/ProjectCard.svelte";
 
-  // ZONAS (según tu diseño)
-  const heroMain = projects[0];
-  const heroSide = projects.slice(1, 4);
+  function zone(name: string) {
+  return projects
+    .filter((p) => p.homeZone === name && (p.homeVisible ?? true))
+    .sort((a, b) => (a.homeOrder ?? 999) - (b.homeOrder ?? 999));
+}
 
-  const gridTop = projects.slice(4, 7);
+  const heroMain = zone("heroMain")[0];
+  const heroSide = zone("heroSide");
 
-  const features = projects.slice(7, 9);
+  const gridTop = zone("gridTop");
+  const features = zone("features");
+  const listBlock = zone("listBlock");
 
-  const listBlock = projects.slice(9, 12);
-
-  const heroBottom = projects[12]; // el "proyecto 10 visual"
-
-  const finalGrid = projects.slice(13, 16);
+  const heroBottom = zone("heroBottom")[0];
+  const finalGrid = zone("finalGrid");
 </script>
 
 <main class="layout">
   <!-- HERO -->
   <section class="hero">
     <div class="hero-main">
-      <ProjectCard project={heroMain} variant="hero" />
+      {#if heroMain}
+        <ProjectCard project={heroMain} variant="hero" />
+      {/if}
     </div>
 
     <div class="hero-side">
@@ -54,7 +58,9 @@
     </div>
 
     <div class="hero-right">
-      <ProjectCard project={heroBottom} variant="hero" />
+      {#if heroBottom}
+        <ProjectCard project={heroBottom} variant="hero" />
+      {/if}
     </div>
   </section>
 
