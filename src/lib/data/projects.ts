@@ -1,179 +1,194 @@
-export type ProjectType = 'hero' | 'mini' | 'full';
+// =========================
+// TYPES (CLEAN & CONTENT-ONLY)
+// =========================
 
-export type ProjectSection =
-	| 'hero-main'
-	| 'hero-side'
-	| 'hero-bottom'
-	| 'full'
-	| 'invert-side'
-	| 'invert-main'
-  | 'invert-bottom';
+export type Category = "infografia" | "estilo";
 
 export interface ProjectTitle {
-	es: string;
-	en: string;
+  es: string;
+  en: string;
 }
 
 export interface Project {
-	id: string;
-	title: ProjectTitle;
-	description?: ProjectTitle;
-	image?: string;
-	link?: string;
-	type: ProjectType;
-	section: ProjectSection;
-	priority: number;
-	tags?: string[];
-	date?: string;
+  id: string;
+  slug: string;
+
+  title: ProjectTitle;
+  description?: ProjectTitle;
+
+  category?: Category;
+  image?: string;
+
+  tags?: string[];
+  date?: string;
 }
+
+// =========================
+// DATA (FIXED STRUCTURE SOURCE)
+// =========================
 
 export const projects: Project[] = [
-	// =========================
-	// HERO PRINCIPAL
-	// =========================
-	{
-		id: 'hero-1',
-		title: {
-			es: 'Proyecto destacado',
-			en: 'Featured project'
-		},
-		description: {
-			es: 'Proyecto principal de portada',
-			en: 'Main featured project'
-		},
-		type: 'hero',
-		section: 'hero-main',
-		priority: 1,
-		tags: ['editorial', 'd3']
-	},
-
-	// =========================
-	// HERO SIDE (3 minis)
-	// =========================
-	{
-		id: 'mini-1',
-		title: { es: 'Mini proyecto 1', en: 'Mini project 1' },
-		type: 'mini',
-		section: 'hero-side',
-		priority: 2
-	},
-	{
-		id: 'mini-2',
-		title: { es: 'Mini proyecto 2', en: 'Mini project 2' },
-		type: 'mini',
-		section: 'hero-side',
-		priority: 3
-	},
-	{
-		id: 'mini-3',
-		title: { es: 'Mini proyecto 3', en: 'Mini project 3' },
-		type: 'mini',
-		section: 'hero-side',
-		priority: 4
-	},
-
-	// =========================
-	// HERO BOTTOM (3 minis)
-	// =========================
-	{
-		id: 'mini-4',
-		title: { es: 'Mini inferior 1', en: 'Bottom mini 1' },
-		type: 'mini',
-		section: 'hero-bottom',
-		priority: 5
-	},
-	{
-		id: 'mini-5',
-		title: { es: 'Mini inferior 2', en: 'Bottom mini 2' },
-		type: 'mini',
-		section: 'hero-bottom',
-		priority: 6
-	},
-	{
-		id: 'mini-6',
-		title: { es: 'Mini inferior 3', en: 'Bottom mini 3' },
-		type: 'mini',
-		section: 'hero-bottom',
-		priority: 7
-	},
-
-	// =========================
-	// FULL WIDTH PROJECTS
-	// =========================
-	{
-		id: 'full-1',
-		title: {
-			es: 'Proyecto grande 1',
-			en: 'Big project 1'
-		},
-		type: 'full',
-		section: 'full',
-		priority: 8
-	},
-	{
-		id: 'full-2',
-		title: {
-			es: 'Proyecto grande 2',
-			en: 'Big project 2'
-		},
-		type: 'full',
-		section: 'full',
-		priority: 9
-	},
-
-	// =========================
-	// INVERTIDO (BOTTOM)
-	// =========================
-	{
-		id: 'inv-1',
-		title: { es: 'Mini invertido 1', en: 'Inverse mini 1' },
-		type: 'mini',
-		section: 'invert-side',
-		priority: 10
-	},
-	{
-		id: 'inv-2',
-		title: { es: 'Mini invertido 2', en: 'Inverse mini 2' },
-		type: 'mini',
-		section: 'invert-side',
-		priority: 11
-	},
-	{
-		id: 'inv-3',
-		title: { es: 'Mini invertido 3', en: 'Inverse mini 3' },
-		type: 'mini',
-		section: 'invert-side',
-		priority: 12
-	},
-	{
-		id: 'hero-2',
-		title: {
-			es: 'Proyecto final destacado',
-			en: 'Final featured project'
-		},
-		type: 'hero',
-		section: 'invert-main',
-		priority: 13
-	},
+  // =========================
+  // HERO MAIN (1)
+  // =========================
   {
-	id: 'inv-b1',
-	title: { es: 'Invert bottom 1', en: 'Invert bottom 1' },
-	type: 'mini',
-	section: 'invert-bottom',
-	priority: 14
-},
-{
-	id: 'inv-b2',
-	title: { es: 'Invert bottom 2', en: 'Invert bottom 2' },
-	type: 'mini',
-	section: 'invert-bottom',
-	priority: 15
-},
-{
-	id: 'inv-b3',
-	title: { es: 'Invert bottom 3', en: 'Invert bottom 3' },
-	type: 'mini',
-	section: 'invert-bottom',
-	priority: 16
-}
+    id: "p1",
+    slug: "proyecto-1",
+    title: {
+      es: "Proyecto 1",
+      en: "Project 1",
+    },
+    description: {
+      es: "Descripción del proyecto 1",
+      en: "Project 1 description",
+    },
+    image: "/images/projects/roland-garros-sin-nadal-ip.jpg",
+    category: "infografia",
+  },
+
+  // =========================
+  // HERO SIDE (3)
+  // =========================
+  {
+    id: "p2",
+    slug: "proyecto-2",
+    title: { es: "Proyecto 2", en: "Project 2" },
+    description: { es: "Descripción corta", en: "Short description" },
+    category: "estilo",
+  },
+
+  {
+    id: "p3",
+    slug: "proyecto-3",
+    title: { es: "Proyecto 3", en: "Project 3" },
+    description: { es: "Descripción corta", en: "Short description" },
+    category: "estilo",
+  },
+
+  {
+    id: "p4",
+    slug: "proyecto-4",
+    title: { es: "Proyecto 4", en: "Project 4" },
+    description: { es: "Descripción corta", en: "Short description" },
+    category: "infografia",
+  },
+
+  // =========================
+  // GRID ROW (3)
+  // =========================
+  {
+    id: "p5",
+    slug: "proyecto-5",
+    title: { es: "Proyecto 5", en: "Project 5" },
+    description: { es: "Descripción breve", en: "Short description" },
+    image: "/images/projects/roland-garros-sin-nadal-ip.jpg",
+    category: "infografia",
+  },
+
+  {
+    id: "p6",
+    slug: "proyecto-6",
+    title: { es: "Proyecto 6", en: "Project 6" },
+    description: { es: "Descripción breve", en: "Short description" },
+    image: "/images/projects/roland-garros-sin-nadal-ip.jpg",
+    category: "estilo",
+  },
+
+  {
+    id: "p7",
+    slug: "proyecto-7",
+    title: { es: "Proyecto 7", en: "Project 7" },
+    description: { es: "Descripción breve", en: "Short description" },
+    image: "/images/projects/roland-garros-sin-nadal-ip.jpg",
+    category: "infografia",
+  },
+
+  // =========================
+  // FEATURE BLOCKS (2)
+  // =========================
+  {
+    id: "p8",
+    slug: "proyecto-8",
+    title: { es: "Proyecto 8", en: "Project 8" },
+    description: { es: "Proyecto destacado", en: "Featured project" },
+    image: "/images/projects/roland-garros-sin-nadal-ip.jpg",
+    category: "infografia",
+  },
+
+  {
+    id: "p9",
+    slug: "proyecto-9",
+    title: { es: "Proyecto 9", en: "Project 9" },
+    description: { es: "Proyecto destacado", en: "Featured project" },
+    image: "/images/projects/roland-garros-sin-nadal-ip.jpg",
+    category: "estilo",
+  },
+
+  // =========================
+  // LIST BLOCK (3 sin imagen)
+  // =========================
+
+  {
+    id: "p10",
+    slug: "proyecto-10",
+    title: { es: "Proyecto 10", en: "Project 10" },
+    description: { es: "Texto corto", en: "Short text" },
+    category: "estilo",
+  },
+
+  {
+    id: "p11",
+    slug: "proyecto-11",
+    title: { es: "Proyecto 11", en: "Project 11" },
+    description: { es: "Texto corto", en: "Short text" },
+    category: "infografia",
+  },
+
+  {
+    id: "p12",
+    slug: "proyecto-12",
+    title: { es: "Proyecto 12", en: "Project 12" },
+    description: { es: "Texto corto", en: "Short text" },
+    category: "estilo",
+  },
+
+  // =========================
+  // FINAL GRID (4 con imagen) ← actualizado
+  // =========================
+
+  {
+    id: "p13",
+    slug: "proyecto-13",
+    title: { es: "Proyecto 13", en: "Project 13" },
+    description: { es: "Proyecto final", en: "Final project" },
+    image: "/images/projects/roland-garros-sin-nadal-ip.jpg",
+    category: "infografia",
+  },
+
+  {
+    id: "p14",
+    slug: "proyecto-14",
+    title: { es: "Proyecto 14", en: "Project 14" },
+    description: { es: "Proyecto final", en: "Final project" },
+    image: "/images/projects/roland-garros-sin-nadal-ip.jpg",
+    category: "estilo",
+  },
+
+  {
+    id: "p15",
+    slug: "proyecto-15",
+    title: { es: "Proyecto 15", en: "Project 15" },
+    description: { es: "Proyecto final", en: "Final project" },
+    image: "/images/projects/roland-garros-sin-nadal-ip.jpg",
+    category: "infografia",
+  },
+
+  {
+    id: "p16",
+    slug: "proyecto-16",
+    title: { es: "Proyecto 16", en: "Project 16" },
+    description: { es: "Proyecto final", en: "Final project" },
+    image: "/images/projects/roland-garros-sin-nadal-ip.jpg",
+    category: "estilo",
+  },
 ];

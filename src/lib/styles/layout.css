@@ -1,47 +1,143 @@
 /* =========================
-   GRID BASE
+   VARIABLES (DESIGN SYSTEM)
 ========================= */
 
-.grid {
-  display: grid;
-  gap: 1rem;
-}
+:root {
+  /* Typography */
+  --font-serif: "Epunda Slab", serif;
+  --font-sans: "Nunito Sans", sans-serif;
 
-.grid-hero {
-  grid-template-columns: 2fr 1fr;
-}
+  /* Colors - Blue scale */
+  --blue-100: #e6f0ff;
+  --blue-300: #7aa7ff;
+  --blue-500: #2563eb;
+  --blue-700: #1e3a8a;
 
-.grid-invert {
-  grid-template-columns: 1fr 2fr;
+  --red-500: #ef4444;
+
+  /* Neutrals */
+  --color-text: #111;
+  --color-muted: #444;
+  --color-border: #e5e7eb;
 }
 
 /* =========================
-   STACK (column)
+   BASE
 ========================= */
 
-.stack {
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-text);
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+/* =========================
+   PAGE LAYOUT
+========================= */
+
+.layout {
+  display: grid;
+  gap: 3rem;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 1.5rem;
+}
+
+.hero-side {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
 /* =========================
-   BOTTOM GRID
+   GRID ROW
 ========================= */
 
-.grid-bottom {
-  grid-column: 1 / -1;
+.grid-3 {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
+  gap: 1.5rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: 1rem;
 }
 
 /* =========================
-   MAIN BLOCK
+   FEATURES
 ========================= */
 
-.block-main {
-  background: #111;
-  color: white;
-  height: 400px;
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: 2rem;
+}
+
+/* =========================
+   BOTTOM BLOCK
+========================= */
+
+.bottom-block {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 2rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: 2rem;
+}
+
+/* =========================
+   FINAL GRID
+========================= */
+
+.grid-final {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: 2rem;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 2rem 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 1rem;
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: 0.9rem;
 }
