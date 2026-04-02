@@ -14,21 +14,26 @@ export interface ProjectTitle {
 
 export interface Project {
   id: string;
-  slug: string;
+
   title: ProjectTitle;
 
-  description: {
+  description?: {
     es: string;
     en: string;
   };
 
   image?: string;
-  category: string;
 
-  // 🔥 SISTEMA ÚNICO
+  category: "infografia" | "estilo";
+
+  // 🟡 HOME SYSTEM
   homeZone?: HomeZone;
   homeOrder?: number;
   homeVisible?: boolean;
+
+  slug?: string;
+
+  externalUrl?: string;
 }
 
 const projects: Project[] = [
@@ -51,7 +56,7 @@ const projects: Project[] = [
   // HERO SIDE
   {
     id: "p2",
-    slug: "proyecto-2",
+    externalUrl: "proyecto-2",
     title: { es: "Proyecto 2", en: "Project 2" },
     description: { es: "Descripción corta", en: "Short description" },
     category: "estilo",
@@ -61,7 +66,7 @@ const projects: Project[] = [
   },
   {
     id: "p3",
-    slug: "proyecto-3",
+    externalUrl: "proyecto-3",
     title: { es: "Proyecto 3", en: "Project 3" },
     description: { es: "Descripción corta", en: "Short description" },
     category: "estilo",
@@ -71,7 +76,7 @@ const projects: Project[] = [
   },
   {
     id: "p4",
-    slug: "proyecto-4",
+    externalUrl: "proyecto-4",
     title: { es: "Proyecto 4", en: "Project 4" },
     description: { es: "Descripción corta", en: "Short description" },
     category: "estilo",
@@ -142,7 +147,7 @@ const projects: Project[] = [
   // LIST BLOCK
   {
     id: "p10",
-    slug: "proyecto-10",
+    externalUrl: "proyecto-10",
     title: { es: "Proyecto 10", en: "Project 10" },
     description: { es: "Texto corto", en: "Short text" },
     category: "estilo",
@@ -152,7 +157,7 @@ const projects: Project[] = [
   },
   {
     id: "p11",
-    slug: "proyecto-11",
+    externalUrl: "proyecto-11",
     title: { es: "Proyecto 11", en: "Project 11" },
     description: { es: "Texto corto", en: "Short text" },
     category: "estilo",
@@ -162,7 +167,7 @@ const projects: Project[] = [
   },
   {
     id: "p12",
-    slug: "proyecto-12",
+    externalUrl: "proyecto-12",
     title: { es: "Proyecto 12", en: "Project 12" },
     description: { es: "Texto corto", en: "Short text" },
     category: "estilo",
@@ -499,7 +504,7 @@ const projects: Project[] = [
   //estilo
   {
     id: "p40",
-    slug: "proyecto-40",
+    externalUrl: "proyecto-40",
     title: { es: "Proyecto 40", en: "Project 40" },
     description: { es: "Texto corto", en: "Short text" },
     category: "estilo",
@@ -507,7 +512,7 @@ const projects: Project[] = [
   },
   {
     id: "p41",
-    slug: "proyecto-41",
+    externalUrl: "proyecto-41",
     title: { es: "Proyecto 41", en: "Project 41" },
     description: { es: "Texto corto", en: "Short text" },
     category: "estilo",
@@ -515,7 +520,7 @@ const projects: Project[] = [
   },
   {
     id: "p42",
-    slug: "proyecto-42",
+    externalUrl: "proyecto-42",
     title: { es: "Proyecto 42", en: "Project 42" },
     description: { es: "Texto corto", en: "Short text" },
     category: "estilo",
@@ -523,7 +528,7 @@ const projects: Project[] = [
   },
   {
     id: "p43",
-    slug: "proyecto-43",
+    externalUrl: "proyecto-43",
     title: { es: "Proyecto 43", en: "Project 43" },
     description: { es: "Texto corto", en: "Short text" },
     category: "estilo",
@@ -531,7 +536,7 @@ const projects: Project[] = [
   },
   {
     id: "p44",
-    slug: "proyecto-44",
+    externalUrl: "proyecto-44",
     title: { es: "Proyecto 44", en: "Project 44" },
     description: { es: "Texto corto", en: "Short text" },
     category: "estilo",
@@ -539,7 +544,7 @@ const projects: Project[] = [
   },
   {
     id: "p45",
-    slug: "proyecto-45",
+    externalUrl: "proyecto-45",
     title: { es: "Proyecto 45", en: "Project 45" },
     description: { es: "Texto corto", en: "Short text" },
     category: "estilo",
@@ -547,7 +552,7 @@ const projects: Project[] = [
   },
   {
     id: "p46",
-    slug: "proyecto-46",
+    externalUrl: "proyecto-46",
     title: { es: "Proyecto 46", en: "Project 46" },
     description: { es: "Texto corto", en: "Short text" },
     category: "estilo",
@@ -555,7 +560,7 @@ const projects: Project[] = [
   },
   {
     id: "p47",
-    slug: "proyecto-47",
+    externalUrl: "proyecto-47",
     title: { es: "Proyecto 47", en: "Project 47" },
     description: { es: "Texto corto", en: "Short text" },
     category: "estilo",
@@ -563,7 +568,7 @@ const projects: Project[] = [
   },
   {
     id: "p48",
-    slug: "proyecto-48",
+    externalUrl: "proyecto-48",
     title: { es: "Proyecto 48", en: "Project 48" },
     description: { es: "Texto corto", en: "Short text" },
     category: "estilo",
@@ -571,7 +576,7 @@ const projects: Project[] = [
   },
   {
     id: "p49",
-    slug: "proyecto-49",
+    externalUrl: "proyecto-49",
     title: { es: "Proyecto 49", en: "Project 49" },
     description: { es: "Texto corto", en: "Short text" },
     category: "estilo",
@@ -579,7 +584,7 @@ const projects: Project[] = [
   },
   {
     id: "p50",
-    slug: "proyecto-50",
+    externalUrl: "proyecto-50",
     title: { es: "Proyecto 50", en: "Project 50" },
     description: { es: "Texto corto", en: "Short text" },
     category: "estilo",
