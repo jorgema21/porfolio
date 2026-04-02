@@ -26,7 +26,7 @@ export interface Project {
   category: string;
 
   // 🔥 SISTEMA ÚNICO
-  homeZone: HomeZone;
+  homeZone?: HomeZone;
   homeOrder?: number;
   homeVisible?: boolean;
 }
@@ -45,7 +45,7 @@ const projects: Project[] = [
     category: "infografia",
     homeZone: "heroMain",
     homeOrder: 1,
-    homeVisible: true
+    homeVisible: true,
   },
 
   // HERO SIDE
@@ -57,7 +57,7 @@ const projects: Project[] = [
     category: "estilo",
     homeZone: "heroSide",
     homeOrder: 1,
-    homeVisible: true
+    homeVisible: true,
   },
   {
     id: "p3",
@@ -67,7 +67,7 @@ const projects: Project[] = [
     category: "estilo",
     homeZone: "heroSide",
     homeOrder: 2,
-    homeVisible: true
+    homeVisible: true,
   },
   {
     id: "p4",
@@ -77,7 +77,7 @@ const projects: Project[] = [
     category: "estilo",
     homeZone: "heroSide",
     homeOrder: 3,
-    homeVisible: true
+    homeVisible: true,
   },
 
   // GRID TOP
@@ -90,7 +90,7 @@ const projects: Project[] = [
     category: "infografia",
     homeZone: "gridTop",
     homeOrder: 1,
-    homeVisible: true
+    homeVisible: true,
   },
   {
     id: "p6",
@@ -101,7 +101,7 @@ const projects: Project[] = [
     category: "infografia",
     homeZone: "gridTop",
     homeOrder: 2,
-    homeVisible: true
+    homeVisible: true,
   },
   {
     id: "p7",
@@ -112,7 +112,7 @@ const projects: Project[] = [
     category: "infografia",
     homeZone: "gridTop",
     homeOrder: 3,
-    homeVisible: true
+    homeVisible: true,
   },
 
   // FEATURES
@@ -125,7 +125,7 @@ const projects: Project[] = [
     category: "infografia",
     homeZone: "features",
     homeOrder: 1,
-    homeVisible: true
+    homeVisible: true,
   },
   {
     id: "p9",
@@ -136,7 +136,7 @@ const projects: Project[] = [
     category: "infografia",
     homeZone: "features",
     homeOrder: 2,
-    homeVisible: true
+    homeVisible: true,
   },
 
   // LIST BLOCK
@@ -148,7 +148,7 @@ const projects: Project[] = [
     category: "estilo",
     homeZone: "listBlock",
     homeOrder: 1,
-    homeVisible: true
+    homeVisible: true,
   },
   {
     id: "p11",
@@ -158,7 +158,7 @@ const projects: Project[] = [
     category: "estilo",
     homeZone: "listBlock",
     homeOrder: 2,
-    homeVisible: true
+    homeVisible: true,
   },
   {
     id: "p12",
@@ -168,7 +168,7 @@ const projects: Project[] = [
     category: "estilo",
     homeZone: "listBlock",
     homeOrder: 3,
-    homeVisible: true
+    homeVisible: true,
   },
 
   // BOTTOM / FINAL
@@ -181,7 +181,7 @@ const projects: Project[] = [
     category: "infografia",
     homeZone: "heroBottom",
     homeOrder: 1,
-    homeVisible: true
+    homeVisible: true,
   },
   {
     id: "p14",
@@ -192,7 +192,7 @@ const projects: Project[] = [
     category: "infografia",
     homeZone: "finalGrid",
     homeOrder: 1,
-    homeVisible: true
+    homeVisible: true,
   },
   {
     id: "p15",
@@ -203,7 +203,7 @@ const projects: Project[] = [
     category: "infografia",
     homeZone: "finalGrid",
     homeOrder: 2,
-    homeVisible: true
+    homeVisible: true,
   },
   {
     id: "p16",
@@ -214,7 +214,376 @@ const projects: Project[] = [
     category: "infografia",
     homeZone: "finalGrid",
     homeOrder: 3,
-    homeVisible: true
+    homeVisible: true,
+  },
+
+  // no HOME
+  // infografia
+  {
+    id: "p17",
+    slug: "proyecto-17",
+    title: { es: "Proyecto 17", en: "Project 17" },
+    description: {
+      es: "Proyecto de infografía fuera de home",
+      en: "Infographic project not in home",
+    },
+    image: "/images/projects/roland-garros-sin-nadal-ip.jpg",
+    category: "infografia",
+    homeVisible: false,
+  },
+  {
+    id: "p18",
+    slug: "proyecto-18",
+    title: { es: "Proyecto 18", en: "Project 18" },
+    description: {
+      es: "Proyecto de infografía fuera de home",
+      en: "Infographic project not in home",
+    },
+    image: "/images/projects/roland-garros-sin-nadal-ip.jpg",
+    category: "infografia",
+    homeVisible: false,
+  },
+  {
+    id: "p19",
+    slug: "proyecto-19",
+    title: { es: "Proyecto 19", en: "Project 19" },
+    description: {
+      es: "Proyecto de infografía fuera de home",
+      en: "Infographic project not in home",
+    },
+    image: "/images/projects/roland-garros-sin-nadal-ip.jpg",
+    category: "infografia",
+    homeVisible: false,
+  },
+  {
+    id: "p20",
+    slug: "proyecto-20",
+    title: { es: "Proyecto 20", en: "Project 20" },
+    description: {
+      es: "Proyecto de infografía fuera de home",
+      en: "Infographic project not in home",
+    },
+    image: "/images/projects/roland-garros-sin-nadal-ip.jpg",
+    category: "infografia",
+    homeVisible: false,
+  },
+  {
+    id: "p21",
+    slug: "proyecto-21",
+    title: { es: "Proyecto 21", en: "Project 21" },
+    description: {
+      es: "Proyecto de infografía fuera de home",
+      en: "Infographic project not in home",
+    },
+    image: "/images/projects/roland-garros-sin-nadal-ip.jpg",
+    category: "infografia",
+    homeVisible: false,
+  },
+  {
+    id: "p22",
+    slug: "proyecto-22",
+    title: { es: "Proyecto 22", en: "Project 22" },
+    description: {
+      es: "Proyecto de infografía fuera de home",
+      en: "Infographic project not in home",
+    },
+    image: "/images/projects/roland-garros-sin-nadal-ip.jpg",
+    category: "infografia",
+    homeVisible: false,
+  },
+  {
+    id: "p23",
+    slug: "proyecto-23",
+    title: { es: "Proyecto 23", en: "Project 23" },
+    description: {
+      es: "Proyecto de infografía fuera de home",
+      en: "Infographic project not in home",
+    },
+    image: "/images/projects/roland-garros-sin-nadal-ip.jpg",
+    category: "infografia",
+    homeVisible: false,
+  },
+  {
+    id: "p24",
+    slug: "proyecto-24",
+    title: { es: "Proyecto 24", en: "Project 24" },
+    description: {
+      es: "Proyecto de infografía fuera de home",
+      en: "Infographic project not in home",
+    },
+    image: "/images/projects/roland-garros-sin-nadal-ip.jpg",
+    category: "infografia",
+    homeVisible: false,
+  },
+  {
+    id: "p25",
+    slug: "proyecto-25",
+    title: { es: "Proyecto 25", en: "Project 25" },
+    description: {
+      es: "Proyecto de infografía fuera de home",
+      en: "Infographic project not in home",
+    },
+    image: "/images/projects/roland-garros-sin-nadal-ip.jpg",
+    category: "infografia",
+    homeVisible: false,
+  },
+  {
+    id: "p26",
+    slug: "proyecto-26",
+    title: { es: "Proyecto 26", en: "Project 26" },
+    description: {
+      es: "Proyecto de infografía fuera de home",
+      en: "Infographic project not in home",
+    },
+    image: "/images/projects/roland-garros-sin-nadal-ip.jpg",
+    category: "infografia",
+    homeVisible: false,
+  },
+  {
+    id: "p27",
+    slug: "proyecto-27",
+    title: { es: "Proyecto 27", en: "Project 27" },
+    description: {
+      es: "Proyecto de infografía fuera de home",
+      en: "Infographic project not in home",
+    },
+    image: "/images/projects/roland-garros-sin-nadal-ip.jpg",
+    category: "infografia",
+    homeVisible: false,
+  },
+  {
+    id: "p28",
+    slug: "proyecto-28",
+    title: { es: "Proyecto 28", en: "Project 28" },
+    description: {
+      es: "Proyecto de infografía fuera de home",
+      en: "Infographic project not in home",
+    },
+    image: "/images/projects/roland-garros-sin-nadal-ip.jpg",
+    category: "infografia",
+    homeVisible: false,
+  },
+  {
+    id: "p29",
+    slug: "proyecto-29",
+    title: { es: "Proyecto 29", en: "Project 29" },
+    description: {
+      es: "Proyecto de infografía fuera de home",
+      en: "Infographic project not in home",
+    },
+    image: "/images/projects/roland-garros-sin-nadal-ip.jpg",
+    category: "infografia",
+    homeVisible: false,
+  },
+  {
+    id: "p30",
+    slug: "proyecto-30",
+    title: { es: "Proyecto 30", en: "Project 30" },
+    description: {
+      es: "Proyecto de infografía fuera de home",
+      en: "Infographic project not in home",
+    },
+    image: "/images/projects/roland-garros-sin-nadal-ip.jpg",
+    category: "infografia",
+    homeVisible: false,
+  },
+  {
+    id: "p31",
+    slug: "proyecto-31",
+    title: { es: "Proyecto 31", en: "Project 31" },
+    description: {
+      es: "Proyecto de infografía fuera de home",
+      en: "Infographic project not in home",
+    },
+    image: "/images/projects/roland-garros-sin-nadal-ip.jpg",
+    category: "infografia",
+    homeVisible: false,
+  },
+  {
+    id: "p32",
+    slug: "proyecto-32",
+    title: { es: "Proyecto 32", en: "Project 32" },
+    description: {
+      es: "Proyecto de infografía fuera de home",
+      en: "Infographic project not in home",
+    },
+    image: "/images/projects/roland-garros-sin-nadal-ip.jpg",
+    category: "infografia",
+    homeVisible: false,
+  },
+  {
+    id: "p33",
+    slug: "proyecto-33",
+    title: { es: "Proyecto 33", en: "Project 33" },
+    description: {
+      es: "Proyecto de infografía fuera de home",
+      en: "Infographic project not in home",
+    },
+    image: "/images/projects/roland-garros-sin-nadal-ip.jpg",
+    category: "infografia",
+    homeVisible: false,
+  },
+  {
+    id: "p34",
+    slug: "proyecto-34",
+    title: { es: "Proyecto 34", en: "Project 34" },
+    description: {
+      es: "Proyecto de infografía fuera de home",
+      en: "Infographic project not in home",
+    },
+    image: "/images/projects/roland-garros-sin-nadal-ip.jpg",
+    category: "infografia",
+    homeVisible: false,
+  },
+  {
+    id: "p35",
+    slug: "proyecto-35",
+    title: { es: "Proyecto 35", en: "Project 35" },
+    description: {
+      es: "Proyecto de infografía fuera de home",
+      en: "Infographic project not in home",
+    },
+    image: "/images/projects/roland-garros-sin-nadal-ip.jpg",
+    category: "infografia",
+    homeVisible: false,
+  },
+  {
+    id: "p36",
+    slug: "proyecto-36",
+    title: { es: "Proyecto 36", en: "Project 36" },
+    description: {
+      es: "Proyecto de infografía fuera de home",
+      en: "Infographic project not in home",
+    },
+    image: "/images/projects/roland-garros-sin-nadal-ip.jpg",
+    category: "infografia",
+    homeVisible: false,
+  },
+  {
+    id: "p37",
+    slug: "proyecto-37",
+    title: { es: "Proyecto 37", en: "Project 37" },
+    description: {
+      es: "Proyecto de infografía fuera de home",
+      en: "Infographic project not in home",
+    },
+    image: "/images/projects/roland-garros-sin-nadal-ip.jpg",
+    category: "infografia",
+    homeVisible: false,
+  },
+  {
+    id: "p38",
+    slug: "proyecto-38",
+    title: { es: "Proyecto 38", en: "Project 38" },
+    description: {
+      es: "Proyecto de infografía fuera de home",
+      en: "Infographic project not in home",
+    },
+    image: "/images/projects/roland-garros-sin-nadal-ip.jpg",
+    category: "infografia",
+    homeVisible: false,
+  },
+  {
+    id: "p39",
+    slug: "proyecto-39",
+    title: { es: "Proyecto 39", en: "Project 39" },
+    description: {
+      es: "Proyecto de infografía fuera de home",
+      en: "Infographic project not in home",
+    },
+    image: "/images/projects/roland-garros-sin-nadal-ip.jpg",
+    category: "infografia",
+    homeVisible: false,
+  },
+
+  //estilo
+  {
+    id: "p40",
+    slug: "proyecto-40",
+    title: { es: "Proyecto 40", en: "Project 40" },
+    description: { es: "Texto corto", en: "Short text" },
+    category: "estilo",
+    homeVisible: false,
+  },
+  {
+    id: "p41",
+    slug: "proyecto-41",
+    title: { es: "Proyecto 41", en: "Project 41" },
+    description: { es: "Texto corto", en: "Short text" },
+    category: "estilo",
+    homeVisible: false,
+  },
+  {
+    id: "p42",
+    slug: "proyecto-42",
+    title: { es: "Proyecto 42", en: "Project 42" },
+    description: { es: "Texto corto", en: "Short text" },
+    category: "estilo",
+    homeVisible: false,
+  },
+  {
+    id: "p43",
+    slug: "proyecto-43",
+    title: { es: "Proyecto 43", en: "Project 43" },
+    description: { es: "Texto corto", en: "Short text" },
+    category: "estilo",
+    homeVisible: false,
+  },
+  {
+    id: "p44",
+    slug: "proyecto-44",
+    title: { es: "Proyecto 44", en: "Project 44" },
+    description: { es: "Texto corto", en: "Short text" },
+    category: "estilo",
+    homeVisible: false,
+  },
+  {
+    id: "p45",
+    slug: "proyecto-45",
+    title: { es: "Proyecto 45", en: "Project 45" },
+    description: { es: "Texto corto", en: "Short text" },
+    category: "estilo",
+    homeVisible: false,
+  },
+  {
+    id: "p46",
+    slug: "proyecto-46",
+    title: { es: "Proyecto 46", en: "Project 46" },
+    description: { es: "Texto corto", en: "Short text" },
+    category: "estilo",
+    homeVisible: false,
+  },
+  {
+    id: "p47",
+    slug: "proyecto-47",
+    title: { es: "Proyecto 47", en: "Project 47" },
+    description: { es: "Texto corto", en: "Short text" },
+    category: "estilo",
+    homeVisible: false,
+  },
+  {
+    id: "p48",
+    slug: "proyecto-48",
+    title: { es: "Proyecto 48", en: "Project 48" },
+    description: { es: "Texto corto", en: "Short text" },
+    category: "estilo",
+    homeVisible: false,
+  },
+  {
+    id: "p49",
+    slug: "proyecto-49",
+    title: { es: "Proyecto 49", en: "Project 49" },
+    description: { es: "Texto corto", en: "Short text" },
+    category: "estilo",
+    homeVisible: false,
+  },
+  {
+    id: "p50",
+    slug: "proyecto-50",
+    title: { es: "Proyecto 50", en: "Project 50" },
+    description: { es: "Texto corto", en: "Short text" },
+    category: "estilo",
+    homeVisible: false,
   },
 ];
 
