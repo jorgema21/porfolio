@@ -8,47 +8,25 @@
 </script>
 
 <article class={`card ${variant}`}>
-  {#if variant === "feature"}
-    <div class="content">
-      {#if project.category}
-        <span class={`category ${project.category}`}>
-          {project.category}
-        </span>
-      {/if}
-
-      <h2 class="title">{project.title.es}</h2>
-
-      {#if project.description}
-        <p class="description">{project.description.es}</p>
-      {/if}
-    </div>
-
-    {#if project.image}
-      <div class="image">
-        <img src={project.image} alt={project.title.es} />
-      </div>
-    {/if}
-  {:else}
-    {#if project.image && variant !== "list"}
-      <div class="image">
-        <img src={project.image} alt={project.title.es} />
-      </div>
-    {/if}
-
-    <div class="content">
-      {#if project.category}
-        <span class={`category ${project.category}`}>
-          {project.category}
-        </span>
-      {/if}
-
-      <h2 class="title">{project.title.es}</h2>
-
-      {#if project.description}
-        <p class="description">{project.description.es}</p>
-      {/if}
+  {#if project.image && variant !== "list"}
+    <div class="image">
+      <img src={project.image} alt={project.title.es} />
     </div>
   {/if}
+
+  <div class="content">
+    {#if project.category}
+      <span class={`category ${project.category}`}>
+        {project.category}
+      </span>
+    {/if}
+
+    <h2 class="title">{project.title.es}</h2>
+
+    {#if project.description}
+      <p class="description">{project.description.es}</p>
+    {/if}
+  </div>
 </article>
 
 <style>
@@ -59,16 +37,9 @@
     text-align: left;
   }
 
-  /* BASE */
   .image {
     width: 100%;
     overflow: hidden;
-  }
-
-  /* HERO / FEATURE / BOTTOM = mismo peso visual */
-  .hero .image,
-  .feature .image,
-  .bottom .image {
     aspect-ratio: 16/9;
   }
 
@@ -106,14 +77,16 @@
     letter-spacing: 0.08em;
     font-weight: 600;
   }
+
   .category.infografia {
     color: var(--blue-500);
   }
+
   .category.estilo {
     color: var(--red-500);
   }
 
-  /* VARIANTS */
+  /* VARIANTS (solo tipografía, no layout global) */
 
   .hero .title {
     font-size: 2rem;
@@ -127,9 +100,18 @@
     font-size: 1rem;
   }
 
-  .feature {
+  .card.feature {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 2rem;
+  }
+
+  /* CLAVE: forzar orden visual correcto */
+  .card.feature .content {
+    order: 1;
+  }
+
+  .card.feature .image {
+    order: 2;
   }
 </style>
