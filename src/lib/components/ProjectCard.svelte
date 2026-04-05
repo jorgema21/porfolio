@@ -1,16 +1,52 @@
 <script lang="ts">
+  import { goto } from "$app/navigation";
   import type { Project } from "$lib/data/projects";
 
   const { project, variant } = $props<{
     project: Project;
     variant: "hero" | "grid" | "list" | "feature";
   }>();
+
+  const clickable = $derived(
+    project.category === "infografia" || !!project.externalUrl,
+  );
+
+  const href = $derived(
+    project.category === "infografia"
+      ? `/infografias/${project.slug}`
+      : project.externalUrl,
+  );
+
+  const isExternal = $derived(
+    project.category === "estilo" && !!project.externalUrl,
+  );
+
+  const handleClick = (e: MouseEvent) => {
+    if (!clickable) {
+      e.preventDefault();
+      return;
+    }
+
+    // navegación interna con SvelteKit
+    if (!isExternal) {
+      e.preventDefault();
+      goto(href);
+    }
+  };
 </script>
 
-<article class={`card ${variant}`}>
+<a
+  class={`card ${variant}`}
+  href={clickable ? href : undefined}
+  aria-disabled={!clickable}
+  tabindex={clickable ? 0 : -1}
+  onclick={handleClick}
+  target={isExternal ? "_blank" : undefined}
+  rel={isExternal ? "noopener noreferrer" : undefined}
+>
   {#if project.image && variant !== "list"}
-    <div class="image">
-      <img src={project.image} alt={project.title.es} />
+    <div class="thumb">
+      <img src={project.image} alt={project.title.es} loading="lazy" />
     </div>
   {/if}
 
@@ -27,78 +63,93 @@
       <p class="description">{project.description.es}</p>
     {/if}
   </div>
-</article>
+</a>
 
 <style>
+  /* reset */
+  a {
+    color: var(--font-sans);
+    text-decoration: none;
+  }
   .card {
+    background: var(--color-white);
+    border: none;
+
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     text-align: left;
+
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
   }
 
-  .image {
+  .card:hover {
+    transform: translateY(-2px);
+  }
+
+  .card[aria-disabled="true"] {
+    cursor: default;
+    opacity: 0.6;
+  }
+
+  .card:focus-visible {
+    outline: 2px solid var(--blue-500);
+    outline-offset: 3px;
+  }
+
+  /* media */
+  .thumb {
     width: 100%;
-    overflow: hidden;
     aspect-ratio: 16/9;
+    overflow: hidden;
+    border-radius: 2px;
   }
 
-  .image img {
+  .thumb img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+
+    transition: transform 0.4s ease;
+    will-change: transform;
   }
 
+  .card:hover .thumb img {
+    transform: scale(1.03);
+  }
+
+  /* content */
   .content {
     display: flex;
     flex-direction: column;
   }
 
   .title {
-    font-family: var(--font-serif);
-    font-weight: 500;
-    line-height: 1.1;
+    font: 500 1rem/1.2 var(--font-serif);
     letter-spacing: -0.01em;
     max-width: 22ch;
   }
 
   .description {
-    font-family: var(--font-sans);
-    font-size: 0.95rem;
-    font-weight: 350;
-    color: var(--color-muted);
+    font: 350 0.95rem var(--font-sans);
     max-width: 50ch;
   }
 
   .category {
-    font-family: var(--font-sans);
-    font-size: 0.7rem;
+    font: 600 0.7rem var(--font-sans);
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    font-weight: 600;
+    letter-spacing: 0.1em;
+    opacity: 0.8;
   }
 
-  .category.infografia {
-    color: var(--blue-500);
-  }
+  .category.infografia { color: var(--blue-500); }
+  .category.estilo { color: var(--red-500); }
 
-  .category.estilo {
-    color: var(--red-500);
-  }
-
-  /* VARIANTS (solo tipografía, no layout global) */
-
-  .hero .title {
-    font-size: 2rem;
-  }
-
-  .grid .title {
-    font-size: 1.2rem;
-  }
-
-  .list .title {
-    font-size: 1rem;
-  }
+  /* variants */
+  .hero .title { font-size: 2rem; line-height: 1.15; }
+  .grid .title { font-size: 1.2rem; line-height: 1.25; }
+  .list .title { font-size: 1rem; line-height: 1.3; }
 
   .card.feature {
     display: grid;
@@ -106,12 +157,6 @@
     gap: 2rem;
   }
 
-  /* CLAVE: forzar orden visual correcto */
-  .card.feature .content {
-    order: 1;
-  }
-
-  .card.feature .image {
-    order: 2;
-  }
+  .card.feature .content { order: 1; }
+  .card.feature .thumb { order: 2; }
 </style>

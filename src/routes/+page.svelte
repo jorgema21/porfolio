@@ -1,7 +1,6 @@
 <script lang="ts">
   import projects from "$lib/data/projects";
   import ProjectCard from "$lib/components/ProjectCard.svelte";
-
   import type { HomeZone } from "$lib/data/projects";
 
   const zones: HomeZone[] = [
@@ -14,11 +13,10 @@
     "finalGrid"
   ];
 
-  function getZone(name: HomeZone) {
-    return projects
+  const getZone = (name: HomeZone) =>
+    projects
       .filter((p) => p.homeZone === name && p.homeVisible !== false)
       .sort((a, b) => (a.homeOrder ?? 999) - (b.homeOrder ?? 999));
-  }
 
   const zonesData = Object.fromEntries(
     zones.map((z) => [z, getZone(z)])
@@ -26,7 +24,6 @@
 </script>
 
 <main class="layout">
-
   <section class="hero">
     <div class="hero-main">
       {#if zonesData.heroMain?.[0]}
@@ -72,5 +69,4 @@
       <ProjectCard project={p} variant="grid" />
     {/each}
   </section>
-
 </main>

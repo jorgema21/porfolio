@@ -1,17 +1,14 @@
 <script lang="ts">
   import "$lib/styles/global.css";
+  import ImageLightbox from "$lib/components/ImageLightbox.svelte";
 
   const { children } = $props();
+  const year = new Date().getFullYear();
 </script>
 
 <svelte:head>
-  <!-- Preconnect performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin="anonymous"
-  />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
   <link
     href="https://fonts.googleapis.com/css2?family=Epunda+Slab:wght@300..900&family=Nunito+Sans:wght@200..1000&display=swap"
     rel="stylesheet"
@@ -34,6 +31,8 @@
   {@render children()}
 </main>
 
+<ImageLightbox />
+
 <footer class="site-footer">
-  <p>Portfolio © {new Date().getFullYear()}</p>
+  <p>Portfolio © {year}</p>
 </footer>

@@ -40,11 +40,11 @@ const projects: Project[] = [
   // HERO MAIN
   {
     id: "p1",
-    slug: "proyecto-1",
-    title: { es: "Proyecto 1", en: "Project 1" },
+    slug: "roland-garros-sin-nadal",
+    title: { es: "Roland Garros sin Nadal", en: "Roland Garros without Nadal" },
     description: {
-      es: "Descripción del proyecto 1",
-      en: "Project 1 description",
+      es: "Primer campeonato sin el español",
+      en: "First tournament without the",
     },
     image: "/images/projects/roland-garros-sin-nadal-ip.jpg",
     category: "infografia",
