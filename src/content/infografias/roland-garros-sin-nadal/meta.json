@@ -1,6 +1,12 @@
 {
-  "tags": ["tenis", "datos", "internacional"],
+  "apartado": "deportes",
+  "usos": ["infografia", "datos", "visualización"],
+  "colaboracion": {
+    "tipo": "solo",
+    "rol": ["graficos", "texto"]
+  },
   "tools": ["Figma", "Excel"],
   "date": "2024-06-01",
-  "medium": "El País"
+  "medium": "El País",
+  "url": "https://elpais.com"
 }

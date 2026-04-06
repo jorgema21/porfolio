@@ -9,6 +9,8 @@ export type HomeZone =
   | "heroBottom"
   | "finalGrid";
 
+export type RoleType = "graficos" | "texto" | "desarrollo" | "datos";
+
 export interface ProjectTitle {
   es: string;
   en: string;
@@ -38,16 +40,20 @@ export interface BaseProject {
 }
 
 // 📄 MD FIELDS
-// 📄 MD FIELDS
 export type ProjectContentFields = {
   medium?: string;
   date?: string;
-  tags?: string[];
-  tools?: string[];
 
-  // 👇 AÑADE ESTO
-  focus?: string;
-  type?: string;
+  apartado?: string;
+  usos?: string[];
+
+  colaboracion?: {
+    tipo: "solo" | "equipo";
+    rol: RoleType[];
+  };
+
+  tools?: string[];
+  url?: string;
 };
 
 // 🚀 FINAL PROJECT

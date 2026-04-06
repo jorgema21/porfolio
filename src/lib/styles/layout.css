@@ -1,4 +1,5 @@
 .layout {
   display: grid;
   gap: 3rem;
+  max-width: 720px;
 }

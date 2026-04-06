@@ -1,0 +1,98 @@
+/* =========================
+   CONTENT BLOCKS
+========================= */
+
+.article .blocks {
+  margin-top: 2rem;
+}
+
+.article .text {
+  font-size: var(--text-base);
+  line-height: 1.85;
+  margin: 1.6rem 0;
+}
+
+/* IMÁGENES */
+
+.article .content-image {
+  width: 100%;
+  margin: 2.2rem 0;
+  border-radius: 12px;
+  cursor: zoom-in;
+  transition: transform 0.3s ease;
+}
+
+button {
+    background: var(--color-white);
+    border: none;
+}
+
+.article .content-image:hover {
+  transform: scale(1.01);
+}
+
+/* HERO */
+
+.article .hero {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin: 2rem 0;
+}
+
+/* DIVIDER */
+
+.article .divider {
+  width: 100%;
+  height: 1px;
+  background: var(--color-border);
+  margin: 2.5rem 0;
+  position: relative;
+}
+
+.article .divider::after {
+  content: "✳";
+  position: absolute;
+  left: 50%;
+  top: -10px;
+  transform: translateX(-50%);
+  background: var(--color-white);
+  padding: 0 10px;
+  font-size: 10px;
+  color: var(--color-muted);
+}
+
+/* =========================
+   FOOTER (TOOLS)
+========================= */
+
+.article .tools {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.article .tools h3 {
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.6rem;
+  color: var(--color-muted);
+}
+
+.article .tools ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0;
+  list-style: none;
+}
+
+.article .tools li {
+  font-size: var(--text-xs);
+  background: var(--blue-100);
+  color: var(--blue-700);
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+}
