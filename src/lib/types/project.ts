@@ -9,6 +9,15 @@ export type HomeZone =
   | "heroBottom"
   | "finalGrid";
 
+export type ApartadoKey =
+  | "deportes"
+  | "nacional"
+  | "internacional"
+  | "cultura"
+  | "genero"
+  | "medio ambiente"
+  | "economia";
+
 export type Lang = "es" | "en";
 
 export type TranslatedText = {
@@ -40,6 +49,7 @@ export type ProjectContentFields = {
   medium?: TranslatedText;
   date?: string;
   apartado?: TranslatedText;
+  apartadoKey?: ApartadoKey;
   usos?: TranslatedText[];
 
   colaboracion?: {

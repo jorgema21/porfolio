@@ -12,8 +12,8 @@
   </h1>
 
   {#if project.image}
-    <button onclick={() => openLightbox(project.image)}>
-      <img src={project.image} alt="" />
+    <button class="cover-wrapper" onclick={() => openLightbox(project.image)}>
+      <img class="cover" src={project.image} alt="" />
     </button>
   {/if}
 </header>

@@ -6,7 +6,7 @@
 </script>
 
 {#if project.tools?.length}
-  <footer>
+  <footer class="tools">
     <h3>
       {$lang === "es" ? "Herramientas" : "Tools"}
     </h3>

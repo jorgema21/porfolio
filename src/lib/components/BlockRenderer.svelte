@@ -14,16 +14,14 @@
     <img
       src={getSrc(block.src)}
       alt={block.alt?.[$currentLang] ?? ""}
-      class={block.type === "hero" ? "hero" : "content-image"}
+      class={block.type === "hero" ? "cover" : "content-image"}
       loading="lazy"
     />
   </button>
-
 {:else if block.type === "text"}
-  <p>
+  <p class="text">
     {block.value?.[$currentLang] ?? block.value?.es}
   </p>
-
 {:else if block.type === "divider"}
   <div class="divider"></div>
 {/if}

@@ -12,7 +12,7 @@
   <div class="meta">
     {#if project.medium}
       {#if project.url}
-        <a href={project.url}>
+        <a class="medium-link" href={project.url}>
           {project.medium[$lang]} ↗
         </a>
       {:else}
@@ -31,13 +31,17 @@
 
   <div class="meta-blocks">
     {#if project.apartado}
-      <span>{project.apartado[$lang]}</span>
+      <span class="apartado">
+        {project.apartado[$lang]}
+      </span>
     {/if}
 
     {#if project.usos?.length}
-      <div>
+      <div class="meta-list">
         {#each project.usos as uso}
-          <span>{uso[$lang]}</span>
+          <span class="tag">
+            {uso[$lang]}
+          </span>
         {/each}
       </div>
     {/if}

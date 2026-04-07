@@ -15,7 +15,7 @@
   const project = $derived(data.project as Project);
 </script>
 
-<article class="article">
+<article class="article" data-apartado={project.apartadoKey}>
   <ProjectHeader {project} />
   <ProjectMeta {project} />
 
