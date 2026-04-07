@@ -1,4 +1,4 @@
-import type { Block } from "$lib/content/parseProjectContent";
+import type { Block } from "$lib/types/block";
 
 export type HomeZone =
   | "heroMain"
@@ -9,24 +9,21 @@ export type HomeZone =
   | "heroBottom"
   | "finalGrid";
 
-export type RoleType = "graficos" | "texto" | "desarrollo" | "datos";
+export type Lang = "es" | "en";
 
-export interface ProjectTitle {
+export type TranslatedText = {
   es: string;
   en: string;
-}
+};
 
-// 🧱 BASE PROJECT (HOME)
+export type ColaboracionTipo = "solo" | "equipo";
+
+export type RoleType = "graficos" | "texto" | "desarrollo" | "datos";
+
 export interface BaseProject {
   id: string;
-
-  title: ProjectTitle;
-
-  description?: {
-    es: string;
-    en: string;
-  };
-
+  title: TranslatedText;
+  description?: TranslatedText;
   image?: string;
 
   category: "infografia" | "estilo";
@@ -39,16 +36,14 @@ export interface BaseProject {
   externalUrl?: string;
 }
 
-// 📄 MD FIELDS
 export type ProjectContentFields = {
-  medium?: string;
+  medium?: TranslatedText;
   date?: string;
-
-  apartado?: string;
-  usos?: string[];
+  apartado?: TranslatedText;
+  usos?: TranslatedText[];
 
   colaboracion?: {
-    tipo: "solo" | "equipo";
+    tipo: ColaboracionTipo;
     rol: RoleType[];
   };
 
@@ -56,7 +51,6 @@ export type ProjectContentFields = {
   url?: string;
 };
 
-// 🚀 FINAL PROJECT
 export type Project = BaseProject &
   ProjectContentFields & {
     blocks: Block[];

@@ -1,12 +1,37 @@
 {
-  "apartado": "deportes",
-  "usos": ["infografia", "datos", "visualización"],
+  "apartado": {
+    "es": "Deportes",
+    "en": "Sports"
+  },
+  "usos": [
+    {
+      "es": "Infografía",
+      "en": "Infographic"
+    },
+    {
+      "es": "Datos",
+      "en": "Data"
+    },
+    {
+      "es": "Visualización",
+      "en": "Visualization"
+    }
+  ],
   "colaboracion": {
     "tipo": "solo",
-    "rol": ["graficos", "texto"]
+    "rol": [
+      "graficos",
+      "texto"
+    ]
   },
-  "tools": ["Figma", "Excel"],
+  "tools": [
+    "Figma",
+    "Excel"
+  ],
   "date": "2024-06-01",
-  "medium": "El País",
+  "medium": {
+    "es": "El País",
+    "en": "El País"
+  },
   "url": "https://elpais.com"
 }

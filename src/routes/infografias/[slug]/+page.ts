@@ -1,19 +1,17 @@
 import projects from "$lib/data/projects";
 import { error } from "@sveltejs/kit";
-import { parseProjectContent } from "$lib/content/parseProjectContent";
 import type { Project, ProjectContentFields } from "$lib/types/project";
 
-// 📄 MD
-const mdModules = import.meta.glob(
-  "/src/content/infografias/**/content.md",
-  { query: "?raw", import: "default" }
+// 📦 CONTENT (JSON)
+const contentModules = import.meta.glob(
+  "/src/content/infografias/**/content.json",
+  { import: "default" },
 );
 
 // 🧾 META
-const metaModules = import.meta.glob(
-  "/src/content/infografias/**/meta.json",
-  { import: "default" }
-);
+const metaModules = import.meta.glob("/src/content/infografias/**/meta.json", {
+  import: "default",
+});
 
 export async function load({ params }) {
   const slug = params.slug;
@@ -21,24 +19,26 @@ export async function load({ params }) {
   const base = projects.find((p) => p.slug === slug);
   if (!base) throw error(404);
 
-  const mdLoader =
-    mdModules[`/src/content/infografias/${slug}/content.md`];
-  if (!mdLoader) throw error(404);
+  // 📦 cargar content.json
+  const contentLoader =
+    contentModules[`/src/content/infografias/${slug}/content.json`];
 
-  const metaLoader =
-    metaModules[`/src/content/infografias/${slug}/meta.json`];
+  if (!contentLoader) throw error(404);
 
-  const raw = (await mdLoader()) as string;
+  const content = (await contentLoader()) as {
+    blocks: Project["blocks"];
+  };
 
-  const meta = metaLoader
-    ? ((await metaLoader()) as ProjectContentFields)
-    : {};
+  // 🧾 cargar meta
+  const metaLoader = metaModules[`/src/content/infografias/${slug}/meta.json`];
+
+  const meta = metaLoader ? ((await metaLoader()) as ProjectContentFields) : {};
 
   return {
     project: {
       ...base,
       ...meta,
-      blocks: parseProjectContent(raw),
+      blocks: content.blocks, // ✅ DIRECTO, sin parser
     } satisfies Project,
   };
 }

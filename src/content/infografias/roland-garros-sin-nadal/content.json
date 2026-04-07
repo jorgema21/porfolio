@@ -1,0 +1,37 @@
+{
+  "blocks": [
+    {
+      "type": "text",
+      "value": {
+        "es": "Este proyecto analiza el impacto de la ausencia de un jugador clave en Roland Garros.",
+        "en": "This project analyzes the impact of a key player's absence at Roland Garros."
+      }
+    },
+    {
+      "type": "image",
+      "src": "roland-garros-sin-nadal-1.jpg",
+      "alt": {
+        "es": "Visualización del torneo sin jugador clave",
+        "en": "Tournament visualization without key player"
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": "El análisis se centra en cómo cambia el rendimiento del torneo sin su presencia.",
+        "en": "The analysis focuses on how tournament performance changes without his presence."
+      }
+    },
+    {
+      "type": "divider"
+    },
+    {
+      "type": "image",
+      "src": "roland-garros-sin-nadal-1.jpg",
+      "alt": {
+        "es": "Gráficos de rendimiento del torneo",
+        "en": "Tournament performance charts"
+      }
+    }
+  ]
+}

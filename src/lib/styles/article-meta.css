@@ -63,6 +63,9 @@
   margin-top: 0.8rem;
 }
 
+.article .meta {
+  font-variant-numeric: tabular-nums;
+}
 /* apartado */
 
 .article .apartado {
