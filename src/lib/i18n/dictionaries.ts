@@ -1,14 +1,14 @@
 import { derived } from "svelte/store";
-import { lang } from "$lib/i18n/lang";
+import { lang } from "./lang";
 
 import { layout } from "./dictionaries/layout";
-import { metaarticle } from "./dictionaries/meta-article";
 import { about } from "./dictionaries/about";
 import { contact } from "./dictionaries/contact";
+import { metaarticle } from "./dictionaries/meta-article";
 
-export const t = derived(lang, ($lang) => ({
+export const dictionaries = derived(lang, ($lang) => ({
   layout: layout[$lang],
-  metaarticle: metaarticle[$lang],
   about: about[$lang],
   contact: contact[$lang],
+  metaarticle: metaarticle[$lang],
 }));

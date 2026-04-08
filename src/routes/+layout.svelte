@@ -2,9 +2,8 @@
   import "$lib/styles/global.css";
   import ImageLightbox from "$lib/components/ImageLightbox.svelte";
 
-  import { lang, toggleLang } from "$lib/i18n/lang";
   import { initLang } from "$lib/i18n/initLang";
-  import { t } from "$lib/i18n/t";
+  import { t, lang, toggleLang } from "$lib/i18n";
 
   import { onMount } from "svelte";
 
@@ -26,14 +25,14 @@
   />
 </svelte:head>
 <header class="site-header">
-  <h1 class="logo">{$t.mi_porfolio.porfolio}</h1>
+  <h1 class="logo">{$t.layout.nav.mi_porfolio}</h1>
 
   <nav class="nav">
-    <a href="/">{$t.nav.home}</a>
-    <a href="/infografias">{$t.nav.infografias}</a>
-    <a href="/estilo">{$t.nav.estilo}</a>
-    <a href="/sobre-mi">{$t.nav.about}</a>
-    <a href="/contacto">{$t.nav.contacto}</a>
+    <a href="/">{$t.layout.nav.home}</a>
+    <a href="/infografias">{$t.layout.nav.infografias}</a>
+    <a href="/estilo">{$t.layout.nav.estilo}</a>
+    <a href="/sobre-mi">{$t.layout.nav.about}</a>
+    <a href="/contacto">{$t.layout.nav.contacto}</a>
   </nav>
 
   <button
@@ -61,6 +60,6 @@
 
 <footer class="page-footer">
   <p>Portfolio © {year}</p>
-  <p>{$t.footer.part1}</p>
-  <p>{$t.footer.part2}</p>
+  <p>{$t.layout.footer.part1}</p>
+  <p>{$t.layout.footer.part2}</p>
 </footer>
