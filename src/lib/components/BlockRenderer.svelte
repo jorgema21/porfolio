@@ -11,7 +11,6 @@
 
 {#if block.type === "hero" || block.type === "image"}
   <div class="image-wrapper">
-    
     {#if block.caption}
       <span class="image-title">
         {block.caption[$currentLang]}
@@ -26,14 +25,13 @@
         loading="lazy"
       />
     </button>
-
   </div>
-
 {:else if block.type === "text"}
-  <p class="text">
-    {block.value?.[$currentLang] ?? block.value?.es}
-  </p>
+  {@const value = block.value?.[$currentLang] ?? block.value?.es}
 
+  <p class="text">
+    {Array.isArray(value) ? value.join(" ") : value}
+  </p>
 {:else if block.type === "divider"}
   <div class="divider"></div>
 {/if}

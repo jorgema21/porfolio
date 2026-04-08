@@ -6,8 +6,27 @@
     {
       "type": "text",
       "value": {
-        "es": "Este proyecto analiza el impacto de la ausencia de un jugador clave en Roland Garros.",
-        "en": "This project analyzes the impact of a key player's absence at Roland Garros."
+        "es": [
+          "Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.",
+          "Rafa Nadal es el mejor tenista de la historia"
+        ],
+        "en": [
+          "This project analyzes the impact of a key player's absence at Roland Garros.",
+          "It explores how the competition evolves without its dominant figure."
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          "Segundo párrafo de este artículo.",
+          "Rafa Nadal es el jugador sobre tierra de la historia."
+        ],
+        "en": [
+          "This project analyzes the impact of a key player's absence at Roland Garros.",
+          "It explores how the competition evolves without its dominant figure."
+        ]
       }
     },
     {
@@ -25,8 +44,14 @@
     {
       "type": "text",
       "value": {
-        "es": "El análisis se centra en cómo cambia el rendimiento del torneo sin su presencia.",
-        "en": "The analysis focuses on how tournament performance changes without his presence."
+        "es": [
+          "El análisis se centra en cómo cambia el rendimiento del torneo sin su presencia.",
+          "Se observan variaciones en el nivel competitivo y en los resultados finales."
+        ],
+        "en": [
+          "The analysis focuses on how tournament performance changes without his presence.",
+          "It highlights shifts in competitiveness and final outcomes."
+        ]
       }
     },
     {

@@ -2,7 +2,12 @@ import type { TranslatedText } from "./project";
 
 export type TextBlock = {
   type: "text";
-  value: TranslatedText;
+  value: TranslatedText | { es: string[]; en: string[] };
+};
+
+export type TranslatedRichText = {
+  es: string | string[];
+  en: string | string[];
 };
 
 export type ImageBlock = {

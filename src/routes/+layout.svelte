@@ -59,6 +59,8 @@
 
 <ImageLightbox />
 
-<footer>
+<footer class="page-footer">
   <p>Portfolio © {year}</p>
+  <p>{$t.footer.part1}</p>
+  <p>{$t.footer.part2}</p>
 </footer>
