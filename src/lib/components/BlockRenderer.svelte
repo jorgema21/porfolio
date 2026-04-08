@@ -10,18 +10,30 @@
 </script>
 
 {#if block.type === "hero" || block.type === "image"}
-  <button onclick={() => openLightbox(getSrc(block.src))}>
-    <img
-      src={getSrc(block.src)}
-      alt={block.alt?.[$currentLang] ?? ""}
-      class={block.type === "hero" ? "cover" : "content-image"}
-      loading="lazy"
-    />
-  </button>
+  <div class="image-wrapper">
+    
+    {#if block.caption}
+      <span class="image-title">
+        {block.caption[$currentLang]}
+      </span>
+    {/if}
+
+    <button onclick={() => openLightbox(getSrc(block.src))}>
+      <img
+        src={getSrc(block.src)}
+        alt={block.alt?.[$currentLang] ?? ""}
+        class={block.type === "hero" ? "cover" : "content-image"}
+        loading="lazy"
+      />
+    </button>
+
+  </div>
+
 {:else if block.type === "text"}
   <p class="text">
     {block.value?.[$currentLang] ?? block.value?.es}
   </p>
+
 {:else if block.type === "divider"}
   <div class="divider"></div>
 {/if}

@@ -12,42 +12,66 @@
   margin: 1.6rem 0;
 }
 
+.article h1 {
+  margin: 0;
+}
+
 /* IMÁGENES */
 
-.article .content-image {
+.article .content-image,
+.article .hero {
   width: 100%;
-  margin: 2.2rem 0;
+  object-fit: cover;
   border-radius: 12px;
   cursor: zoom-in;
   transition: transform 0.3s ease;
 }
 
-button {
-    background: var(--color-white);
-    border: none;
+.article .content-image {
+  width: 90%;
+  margin: 2.2rem 0;
+}
+
+.article .hero {
+  height: 460px;
+  border-radius: 16px;
+  margin: 2rem 0;
 }
 
 .article .content-image:hover {
   transform: scale(1.01);
 }
 
-/* HERO */
-
-.article .hero {
-  width: 100%;
-  height: 460px;
-  object-fit: cover;
-  border-radius: 16px;
-  margin: 2rem 0;
+button {
+  background: var(--color-white);
+  border: none;
 }
 
-/* DIVIDER */
+/* =========================
+   IMAGE TITLE OVERLAY
+========================= */
+
+.article .image-wrapper {
+  position: relative;
+}
+
+.article .image-title {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font: var(--text-sm) var(--font-sans);
+  text-decoration: underline;
+}
+
+/* =========================
+   DIVIDER
+========================= */
 
 .article .divider {
   width: 100%;
   height: 1px;
-  background: var(--color-border);
   margin: 2.5rem 0;
+  background: var(--color-border);
   position: relative;
 }
 
@@ -57,21 +81,15 @@ button {
   left: 50%;
   top: -10px;
   transform: translateX(-50%);
-  background: var(--color-white);
   padding: 0 10px;
   font-size: 10px;
   color: var(--color-muted);
+  background: var(--color-white);
 }
 
 /* =========================
    FOOTER (TOOLS)
 ========================= */
-
-.article .tools {
-  margin-top: 3rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--color-border);
-}
 
 .article .tools h3 {
   font-size: var(--text-xs);
@@ -91,8 +109,8 @@ button {
 
 .article .tools li {
   font-size: var(--text-xs);
-  background: var(--blue-100);
-  color: var(--blue-700);
   padding: 0.3rem 0.6rem;
   border-radius: 6px;
+  background: var(--blue-100);
+  color: var(--blue-700);
 }

@@ -9,6 +9,7 @@ export type ImageBlock = {
   type: "image" | "hero";
   src: string;
   alt?: TranslatedText;
+  caption?: TranslatedText;
 };
 
 export type DividerBlock = {

@@ -26,7 +26,7 @@
   />
 </svelte:head>
 <header class="site-header">
-  <h1 class="logo">Mi Portfolio</h1>
+  <h1 class="logo">{$t.mi_porfolio.porfolio}</h1>
 
   <nav class="nav">
     <a href="/">{$t.nav.home}</a>

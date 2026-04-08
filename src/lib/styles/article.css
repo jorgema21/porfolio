@@ -5,7 +5,7 @@
 .article {
   max-width: var(--content-width);
   margin: 0 auto;
-  padding: 3rem 1.5rem 4rem;
+  padding: 0 1.5rem 4rem;
   font-family: var(--font-serif);
   line-height: 1.75;
   color: var(--color-text);
@@ -14,54 +14,15 @@
 }
 
 /* =========================
-   APARTADO COLORS
-========================= */
-
-.article[data-apartado="deportes"] {
-  --accent: var(--blue-500);
-}
-
-.article[data-apartado="nacional"] {
-  --accent: var(--red-500);
-}
-
-.article[data-apartado="internacional"] {
-  --accent: #10b981;
-}
-
-/* =========================
-   HEADER
-========================= */
-
-.article .project-header {
-  margin-bottom: 2.5rem;
-}
-
-.article .category {
-  text-transform: uppercase;
-  font-size: var(--text-xs);
-  letter-spacing: 0.15em;
-  color: var(--color-muted);
-}
-
-.article .title {
-  font-size: var(--text-2xl);
-  line-height: 1.15;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  margin: 0.4rem 0 1rem;
-}
-
-/* =========================
    COVER
 ========================= */
 
 .article .cover-wrapper {
   display: block;
+  width: 100%;
   border: none;
   padding: 0;
   background: none;
-  width: 100%;
 }
 
 .article .cover {

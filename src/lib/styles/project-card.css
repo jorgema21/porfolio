@@ -1,0 +1,116 @@
+/* reset */
+a {
+  color: var(--font-sans);
+  text-decoration: none;
+}
+.card {
+  background: var(--color-white);
+  border: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: left;
+
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.card[aria-disabled="true"] {
+  cursor: default;
+  opacity: 0.6;
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--blue-500);
+  outline-offset: 3px;
+}
+
+/* media */
+.thumb {
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition: transform 0.4s ease;
+  will-change: transform;
+}
+
+.card:hover .thumb img {
+  transform: scale(1.03);
+}
+
+/* content */
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font: 500 1rem/1.2 var(--font-serif);
+  letter-spacing: -0.01em;
+  max-width: 22ch;
+  margin: 0;
+  margin-top: 10px;
+}
+
+.description {
+  font: 350 0.95rem var(--font-sans);
+  max-width: 50ch;
+  margin: 0;
+  margin-top: 10px;
+}
+
+.category {
+  font: 600 0.7rem var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.8;
+}
+
+.category.infografia {
+  color: var(--blue-500);
+}
+.category.estilo {
+  color: var(--red-500);
+}
+
+/* variants */
+.hero .title {
+  font-size: 2rem;
+}
+.grid .title {
+  font-size: 1.1rem;
+}
+.list .title {
+  font-size: 1.1rem;
+}
+.feature .title {
+  font-size: 1.1rem;
+}
+
+.card.feature {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+
+.card.feature .content {
+  order: 1;
+}
+.card.feature .thumb {
+  order: 2;
+}
