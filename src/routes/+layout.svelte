@@ -45,7 +45,7 @@
     aria-pressed={$lang === "en"}
   >
     <img
-      src={$lang === "es" ? "/flags/gb.svg" : "/flags/es.svg"}
+      src={$lang === "es" ? "./images/flags/gb.svg" : "./images/flags/es.svg"}
       alt=""
       aria-hidden="true"
     />

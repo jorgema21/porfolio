@@ -3,7 +3,7 @@
   import { ROLE_MAP } from "$lib/config/roles";
   import { formatDate } from "$lib/utils/formatDate";
   import { lang } from "$lib/i18n/lang";
-  import { t } from "$lib/i18n/t";
+  import { t } from "$lib/i18n";
 
   const { project } = $props<{ project: Project }>();
 </script>
@@ -52,7 +52,7 @@
       <div>
         <!-- FIX PRINCIPAL -->
         <span>
-          {$t.colaboracion[tipo]}
+          {$t.metaarticle.colaboracion[tipo]}
         </span>
 
         {#if project.colaboracion.rol?.length}
