@@ -1,0 +1,126 @@
+/* =========================
+   GRID
+========================= */
+
+.infographics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 900px) {
+  .infographics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .infographics {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   CARD
+========================= */
+
+.infographics-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* IMAGE WRAPPER */
+
+.infographics-card .thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+/* IMAGE */
+
+.infographics-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.infographics-card:hover img {
+  transform: scale(1.05);
+}
+
+/* OVERLAY */
+
+.infographics-card .overlay {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 0.8rem;
+  width: 100%;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.infographics-card .overlay h3 {
+  margin: 0;
+  font-size: 0.95rem;
+  color: white;
+  font-family: var(--font-serif);
+}
+
+/* 🔥 TOOLBAR */
+.toolbar {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.toolbar input {
+  flex: 1;
+  padding: 0.6rem;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+}
+
+.toolbar select {
+  padding: 0.6rem;
+  border-radius: 6px;
+}
+
+/* 🔥 FILTERS */
+.filters {
+  margin-bottom: 1rem;
+}
+
+.filter-group {
+  margin-bottom: 0.6rem;
+}
+
+.filter-group span {
+  margin-right: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+.filter-group button {
+  margin: 0.2rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+  background: transparent;
+  cursor: pointer;
+}
+
+.filter-group button.active {
+  background: var(--blue-100);
+  color: var(--blue-700);
+  border-color: var(--blue-300);
+}

@@ -1,0 +1,38 @@
+{
+  "apartadoKey": "deportes",
+  "apartado": {
+    "es": "Deportes",
+    "en": "Sports"
+  },
+  "usos": [
+    {
+      "es": "Mapas",
+      "en": "Maps"
+    },
+    {
+      "es": "Datos",
+      "en": "Data"
+    },
+    {
+      "es": "Visualización",
+      "en": "Visualization"
+    }
+  ],
+  "colaboracion": {
+    "tipo": "solo",
+    "rol": [
+      "graficos",
+      "texto"
+    ]
+  },
+  "tools": [
+    "Figma",
+    "Excel"
+  ],
+  "date": "2024-06-01",
+  "medium": {
+    "es": "El Mundo",
+    "en": "El Mundo"
+  },
+  "url": "https://elmundo.com"
+}

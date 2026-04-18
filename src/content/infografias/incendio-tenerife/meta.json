@@ -1,0 +1,39 @@
+{
+  "apartadoKey": "medio ambiente",
+  "apartado": {
+    "es": "Medio Ambiente",
+    "en": "Climate"
+  },
+  "usos": [
+    {
+      "es": "Mapas",
+      "en": "Maps"
+    },
+    {
+      "es": "Datos",
+      "en": "Data"
+    },
+    {
+      "es": "Infografía",
+      "en": "Infographics"
+    }
+  ],
+  "colaboracion": {
+    "tipo": "en equipo",
+    "rol": [
+      "graficos",
+      "texto"
+    ]
+  },
+  "tools": [
+    "Figma",
+    "Excel",
+    "QGIS"
+  ],
+  "date": "2024-08-01",
+  "medium": {
+    "es": "El País",
+    "en": "El País"
+  },
+  "url": "https://elpais.com"
+}
