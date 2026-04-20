@@ -1,7 +1,7 @@
 <script lang="ts">
   import { goto } from "$app/navigation";
-  import type { Project } from "$lib/data/projects";
-  import { lang } from "$lib/i18n/lang";
+  import type { Project } from "$lib/types/project";
+  import { lang, t } from "$lib/i18n";
   import "$lib/styles/project-card.css";
 
   const { project, variant } = $props<{
@@ -9,31 +9,21 @@
     variant: "hero" | "grid" | "list" | "feature";
   }>();
 
-  const categoryLabel = $derived(
-    $lang === "es"
-      ? project.category === "infografia"
-        ? "Infografía"
-        : "Estilo"
-      : project.category === "infografia"
-        ? "Infographics"
-        : "Style",
-  );
-
   const clickable = $derived(
-    project.category === "infografia" || !!project.externalUrl,
+    project.category === "infografia" || !!project.externalUrl
   );
 
   const href = $derived(
     project.category === "infografia"
       ? `/infografias/${project.slug}`
-      : project.externalUrl,
+      : project.externalUrl
   );
 
   const isExternal = $derived(
-    project.category === "estilo" && !!project.externalUrl,
+    project.category === "estilo" && !!project.externalUrl
   );
 
-  const handleClick = (e: MouseEvent) => {
+  function handleClick(e: MouseEvent) {
     if (!clickable) {
       e.preventDefault();
       return;
@@ -41,9 +31,9 @@
 
     if (!isExternal) {
       e.preventDefault();
-      goto(href);
+      goto(href!);
     }
-  };
+  }
 </script>
 
 <a
@@ -57,25 +47,20 @@
 >
   {#if project.image && variant !== "list"}
     <div class="thumb">
-      <!-- 🔥 ALT dinámico -->
       <img src={project.image} alt={project.title[$lang]} loading="lazy" />
     </div>
   {/if}
 
   <div class="content">
-    {#if project.category}
-      <span class={`category ${project.category}`}>
-        {categoryLabel}
-      </span>
-    {/if}
+    <span class={`category ${project.category}`}>
+      {$t.project.category[project.category as "infografia" | "estilo"]}
+    </span>
 
-    <!-- 🔥 TITLE dinámico -->
     <h2 class="title">
       {project.title[$lang]}
     </h2>
 
     {#if project.description}
-      <!-- 🔥 DESCRIPTION dinámica -->
       <p class="description">
         {project.description[$lang]}
       </p>

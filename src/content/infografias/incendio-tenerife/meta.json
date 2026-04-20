@@ -1,39 +1,27 @@
 {
-  "apartadoKey": "medio ambiente",
+  "apartadoKey": "environment",
+
   "apartado": {
     "es": "Medio Ambiente",
     "en": "Climate"
   },
+
   "usos": [
-    {
-      "es": "Mapas",
-      "en": "Maps"
-    },
-    {
-      "es": "Datos",
-      "en": "Data"
-    },
-    {
-      "es": "Infografía",
-      "en": "Infographics"
-    }
+    { "es": "Mapas", "en": "Maps" },
+    { "es": "Datos", "en": "Data" },
+    { "es": "Infografía", "en": "Infographics" }
   ],
+
   "colaboracion": {
     "tipo": "en equipo",
-    "rol": [
-      "graficos",
-      "texto"
-    ]
+    "rol": ["graficos", "texto"]
   },
-  "tools": [
-    "Figma",
-    "Excel",
-    "QGIS"
-  ],
+
+  "tools": ["Figma", "Excel", "QGIS"],
+
   "date": "2024-08-01",
-  "medium": {
-    "es": "El País",
-    "en": "El País"
-  },
+
+  "mediumKey": "elpais",
+
   "url": "https://elpais.com"
 }

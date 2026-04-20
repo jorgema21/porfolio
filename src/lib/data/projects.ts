@@ -12,6 +12,8 @@ export interface ProjectTitle {
   en: string;
 }
 
+export type ProjectCategory = "infografia" | "estilo";
+
 export interface Project {
   id: string;
 
@@ -24,7 +26,7 @@ export interface Project {
 
   image?: string;
 
-  category: "infografia" | "estilo";
+  category: ProjectCategory;
 
   // 🟡 HOME SYSTEM
   homeZone?: HomeZone;
@@ -36,7 +38,7 @@ export interface Project {
   externalUrl?: string;
 }
 
-const projects: Project[] = [
+const projects = [
   // HERO MAIN
   {
     id: "p1",
@@ -590,6 +592,6 @@ const projects: Project[] = [
     category: "estilo",
     homeVisible: false,
   },
-];
+] satisfies Project[];
 
 export default projects;

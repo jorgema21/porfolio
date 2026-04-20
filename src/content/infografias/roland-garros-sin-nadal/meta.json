@@ -1,38 +1,27 @@
 {
-  "apartadoKey": "deportes",
+  "apartadoKey": "sports",
+
   "apartado": {
     "es": "Deportes",
     "en": "Sports"
   },
+
   "usos": [
-    {
-      "es": "Infografía",
-      "en": "Infographic"
-    },
-    {
-      "es": "Datos",
-      "en": "Data"
-    },
-    {
-      "es": "Visualización",
-      "en": "Visualization"
-    }
+    { "es": "Infografía", "en": "Infographic" },
+    { "es": "Datos", "en": "Data" },
+    { "es": "Visualización", "en": "Visualization" }
   ],
+
   "colaboracion": {
     "tipo": "solo",
-    "rol": [
-      "graficos",
-      "texto"
-    ]
+    "rol": ["graficos", "texto"]
   },
-  "tools": [
-    "Figma",
-    "Excel"
-  ],
+
+  "tools": ["Figma", "Excel"],
+
   "date": "2024-06-01",
-  "medium": {
-    "es": "El País",
-    "en": "El País"
-  },
+
+  "mediumKey": "elpais",
+
   "url": "https://elpais.com"
 }

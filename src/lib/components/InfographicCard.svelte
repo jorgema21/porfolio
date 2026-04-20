@@ -1,25 +1,15 @@
 <script lang="ts">
-  import type { Project } from "$lib/data/projects";
+  import type { Infographic } from "$lib/data/infographics.data";
   import { lang } from "$lib/i18n/lang";
-  import { goto } from "$app/navigation";
 
-  const { project } = $props<{ project: Project }>();
+  const { project } = $props<{ project: Infographic }>();
 
   const href = $derived(`/infografias/${project.slug}`);
-
-  const handleClick = (e: MouseEvent) => {
-    e.preventDefault();
-    goto(href);
-  };
 </script>
 
-<a class="infographics-card" href={href} onclick={handleClick}>
+<a class="infographics-card" href={href}>
   <div class="thumb">
-    <img
-      src={project.image}
-      alt={project.title[$lang]}
-      loading="lazy"
-    />
+    <img src={project.image} alt={project.title[$lang]} loading="lazy" />
 
     <div class="overlay">
       <h3>{project.title[$lang]}</h3>

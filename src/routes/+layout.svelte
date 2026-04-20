@@ -2,17 +2,10 @@
   import "$lib/styles/global.css";
   import ImageLightbox from "$lib/components/ImageLightbox.svelte";
 
-  import { initLang } from "$lib/i18n/initLang";
   import { t, lang, toggleLang } from "$lib/i18n";
-
-  import { onMount } from "svelte";
 
   const { children } = $props();
   const year = new Date().getFullYear();
-
-  onMount(() => {
-    initLang();
-  });
 </script>
 
 <svelte:head>
@@ -24,6 +17,7 @@
     rel="stylesheet"
   />
 </svelte:head>
+
 <header class="site-header">
   <h1 class="logo">{$t.layout.nav.mi_porfolio}</h1>
 
@@ -45,7 +39,7 @@
     aria-pressed={$lang === "en"}
   >
     <img
-      src={$lang === "es" ? "./images/flags/gb.svg" : "./images/flags/es.svg"}
+      src={$lang === "es" ? "/images/flags/gb.svg" : "/images/flags/es.svg"}
       alt=""
       aria-hidden="true"
     />

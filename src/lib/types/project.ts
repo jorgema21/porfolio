@@ -15,7 +15,7 @@ export type ApartadoKey =
   | "internacional"
   | "cultura"
   | "genero"
-  | "medio ambiente"
+  | "medioambiente"
   | "economia";
 
 export type Lang = "es" | "en";

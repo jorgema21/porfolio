@@ -1,38 +1,27 @@
 {
-  "apartadoKey": "deportes",
+  "apartadoKey": "sports",
+
   "apartado": {
     "es": "Deportes",
     "en": "Sports"
   },
+
   "usos": [
-    {
-      "es": "Mapas",
-      "en": "Maps"
-    },
-    {
-      "es": "Datos",
-      "en": "Data"
-    },
-    {
-      "es": "Visualización",
-      "en": "Visualization"
-    }
+    { "es": "Mapas", "en": "Maps" },
+    { "es": "Datos", "en": "Data" },
+    { "es": "Visualización", "en": "Visualization" }
   ],
+
   "colaboracion": {
     "tipo": "solo",
-    "rol": [
-      "graficos",
-      "texto"
-    ]
+    "rol": ["graficos", "texto"]
   },
-  "tools": [
-    "Figma",
-    "Excel"
-  ],
+
+  "tools": ["Figma", "Excel"],
+
   "date": "2024-06-01",
-  "medium": {
-    "es": "El Mundo",
-    "en": "El Mundo"
-  },
+
+  "mediumKey": "elmundo",
+
   "url": "https://elmundo.com"
 }

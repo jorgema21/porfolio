@@ -18,7 +18,9 @@
   transition: color 0.2s ease, opacity 0.2s ease;
 }
 
-.article .medium-link:hover { color: var(--accent); }
+.article .medium-link:hover {
+  color: var(--accent);
+}
 
 .article .medium-link::after {
   content: "";
@@ -31,7 +33,9 @@
   transition: width 0.25s ease;
 }
 
-.article .medium-link:hover::after { width: 100%; }
+.article .medium-link:hover::after {
+  width: 100%;
+}
 
 .article .external-link {
   display: inline-block;
@@ -41,7 +45,9 @@
   text-decoration: none;
 }
 
-.article .external-link:hover { text-decoration: underline; }
+.article .external-link:hover {
+  text-decoration: underline;
+}
 
 /* =========================
    META BLOQUES
@@ -54,37 +60,68 @@
   margin-top: 0.8rem;
 }
 
-/* APARTADO */
+/* =========================
+   APARTADO COLORS (SOURCE OF TRUTH = apartadoKey)
+========================= */
 
 .article {
+  --apartado-sports: oklch(55% 0.22 25);
+  --apartado-culture: oklch(60% 0.18 310);
+  --apartado-genero: oklch(65% 0.18 340);
+  --apartado-environment: oklch(55% 0.18 145);
+  --apartado-economia: oklch(60% 0.15 85);
   --apartado-nacional: oklch(55% 0.18 250);
   --apartado-internacional: oklch(55% 0.08 180);
-  --apartado-deportes: oklch(55% 0.22 25);
-  --apartado-cultura: oklch(60% 0.18 310);
-  --apartado-genero: oklch(65% 0.18 340);
-  --apartado-medioambiente: oklch(55% 0.18 145);
-  --apartado-economia: oklch(60% 0.15 85);
 }
 
 @media (prefers-color-scheme: dark) {
   .article {
+    --apartado-sports: oklch(70% 0.2 25);
+    --apartado-culture: oklch(75% 0.16 310);
+    --apartado-genero: oklch(78% 0.16 340);
+    --apartado-environment: oklch(70% 0.16 145);
+    --apartado-economia: oklch(75% 0.14 85);
     --apartado-nacional: oklch(70% 0.16 250);
     --apartado-internacional: oklch(70% 0.1 180);
-    --apartado-deportes: oklch(70% 0.2 25);
-    --apartado-cultura: oklch(75% 0.16 310);
-    --apartado-genero: oklch(78% 0.16 340);
-    --apartado-medioambiente: oklch(70% 0.16 145);
-    --apartado-economia: oklch(75% 0.14 85);
   }
 }
 
-.article[data-apartado="nacional"] { --apartado-color: var(--apartado-nacional); }
-.article[data-apartado="internacional"] { --apartado-color: var(--apartado-internacional); }
-.article[data-apartado="deportes"] { --apartado-color: var(--apartado-deportes); }
-.article[data-apartado="cultura"] { --apartado-color: var(--apartado-cultura); }
-.article[data-apartado="genero"] { --apartado-color: var(--apartado-genero); }
-.article[data-apartado="medio ambiente"] { --apartado-color: var(--apartado-medioambiente); }
-.article[data-apartado="economia"] { --apartado-color: var(--apartado-economia); }
+/* =========================
+   MAPPING DIRECTO (CLAVE DEL FIX)
+   👉 usa EXACTAMENTE apartadoKey del meta.json
+========================= */
+
+.article[data-apartado="sports"] {
+  --apartado-color: var(--apartado-sports);
+}
+
+.article[data-apartado="culture"] {
+  --apartado-color: var(--apartado-culture);
+}
+
+.article[data-apartado="genero"] {
+  --apartado-color: var(--apartado-genero);
+}
+
+.article[data-apartado="environment"] {
+  --apartado-color: var(--apartado-environment);
+}
+
+.article[data-apartado="economia"] {
+  --apartado-color: var(--apartado-economia);
+}
+
+.article[data-apartado="nacional"] {
+  --apartado-color: var(--apartado-nacional);
+}
+
+.article[data-apartado="internacional"] {
+  --apartado-color: var(--apartado-internacional);
+}
+
+/* =========================
+   BADGE
+========================= */
 
 .article .apartado {
   display: inline-flex;
@@ -101,7 +138,9 @@
   backdrop-filter: blur(6px);
 }
 
-/* USOS */
+/* =========================
+   USOS
+========================= */
 
 .article .meta-list {
   display: flex;
@@ -117,11 +156,15 @@
   color: var(--blue-700);
 }
 
-/* COLABORACIÓN */
+/* =========================
+   COLABORACIÓN
+========================= */
 
 .article .meta-colab {
   font-size: var(--text-sm);
   color: var(--color-muted);
 }
 
-.article .role { margin-right: 0.4rem; }
+.article .role {
+  margin-right: 0.4rem;
+}

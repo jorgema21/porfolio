@@ -1,16 +1,12 @@
 import projects from "$lib/data/projects";
 
 /* =========================
-   META
+   META TYPE (SOLO KEYS)
 ========================= */
 
 export interface InfographicMeta {
   apartadoKey?: string;
-
-  apartado?: {
-    es: string;
-    en: string;
-  };
+  mediumKey?: string;
 
   usos?: {
     es: string;
@@ -23,47 +19,30 @@ export interface InfographicMeta {
   };
 
   tools?: string[];
-
   date?: string;
 
-  medium?: {
-    es: string;
-    en: string;
-  };
-
   url?: string;
-
   featured?: boolean;
 }
 
 /* =========================
-   TIPO FINAL
+   FINAL TYPE
 ========================= */
 
-export type Infographic = {
-  id: string;
-  slug?: string;
-  title: { es: string; en: string };
-  description?: { es: string; en: string };
-  image?: string;
-  category: "infografia" | "estilo";
-} & InfographicMeta;
+export type Infographic = (typeof projects)[number] &
+  InfographicMeta;
 
 /* =========================
-   META IMPORT
+   META IMPORTS
 ========================= */
 
-const metaModules = import.meta.glob(
+const metaModules = import.meta.glob<Record<string, InfographicMeta>>(
   "/src/content/infografias/**/meta.json",
   {
     eager: true,
     import: "default",
-  }
-) as Record<string, InfographicMeta>;
-
-/* =========================
-   HELPERS
-========================= */
+  },
+);
 
 const getMetaPath = (slug: string) =>
   `/src/content/infografias/${slug}/meta.json`;
@@ -73,9 +52,12 @@ const getMetaPath = (slug: string) =>
 ========================= */
 
 export const infographics: Infographic[] = projects
-  .filter((p) => p.category === "infografia")
+  .filter(
+    (p): p is typeof p & { slug: string } =>
+      p.category === "infografia" && typeof p.slug === "string",
+  )
   .map((project) => {
-    const meta = metaModules[getMetaPath(project.slug ?? "")] ?? {};
+    const meta = metaModules[getMetaPath(project.slug)] ?? {};
 
     return {
       ...project,

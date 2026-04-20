@@ -8,6 +8,14 @@ export const layout = {
       about: "Sobre mí",
       contacto: "Contacto",
     },
+
+    langSwitch: {
+      labelToEn: "Cambiar idioma a inglés",
+      labelToEs: "Cambiar idioma a español",
+      flagEs: "/images/flags/es.svg",
+      flagEn: "/images/flags/gb.svg",
+    },
+
     footer: {
       part1: "Todos los derechos reservados",
       part2: "Imágenes Creative Commons",
@@ -23,6 +31,14 @@ export const layout = {
       about: "About me",
       contacto: "Contact",
     },
+
+    langSwitch: {
+      labelToEn: "Switch language to English",
+      labelToEs: "Switch language to Spanish",
+      flagEs: "/images/flags/es.svg",
+      flagEn: "/images/flags/gb.svg",
+    },
+
     footer: {
       part1: "All rights reserved",
       part2: "Creative Commons Images",

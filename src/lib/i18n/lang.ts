@@ -1,9 +1,9 @@
 import { writable } from "svelte/store";
+import { browser } from "$app/environment";
 
 export type Lang = "es" | "en";
 
-export const lang = writable<Lang>("es");
+const initial: Lang =
+  browser && localStorage.getItem("lang") === "en" ? "en" : "es";
 
-export const toggleLang = () => {
-  lang.update((l) => (l === "es" ? "en" : "es"));
-};
+export const lang = writable<Lang>(initial);

@@ -1,6 +1,11 @@
+import { derived } from "svelte/store";
+import { lang } from "./lang";
 import { dictionaries } from "./dictionaries";
-import { lang, toggleLang } from "./lang";
 
-export const t = dictionaries;
+export const t = derived(lang, ($lang) => dictionaries[$lang]);
 
-export { lang, toggleLang };
+export { lang };
+
+export function toggleLang() {
+  lang.update((l) => (l === "es" ? "en" : "es"));
+}
