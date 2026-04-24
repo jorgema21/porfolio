@@ -1,43 +1,44 @@
 <script lang="ts">
-  import type { Project, RoleType } from "$lib/types/project";
+  import type { Project } from "$lib/types/project";
+  import { APARTADOS } from "$lib/config/apartados.config";
   import { ROLE_MAP } from "$lib/config/roles";
   import { formatDate } from "$lib/utils/formatDate";
   import { lang } from "$lib/i18n/lang";
   import { t } from "$lib/i18n";
+  import type { ApartadoKey } from "$lib/config/apartados.config";
 
   const { project } = $props<{ project: Project }>();
 </script>
 
-{#if project.medium || project.date || project.apartado || project.usos?.length || project.colaboracion}
-  <div class="meta">
-    {#if project.medium}
-      {#if project.url}
-        <a class="medium-link" href={project.url}>
-          {project.medium[$lang]} ↗
-        </a>
-      {:else}
-        <span>{project.medium[$lang]}</span>
+{#if project.mediumKey || project.date || project.apartado || project.usos?.length}
+  <div class="meta-top">
+    <!-- LEFT -->
+    <div class="meta-left">
+      {#if project.mediumKey}
+        {@const mediumDict = $t.infographics.mediums as Record<string, string>}
+        {@const label = mediumDict[project.mediumKey] ?? project.mediumKey}
+
+        {#if project.url}
+          <a class="medium-link" href={project.url}>
+            {label} ↗
+          </a>
+        {:else}
+          <span>{label}</span>
+        {/if}
       {/if}
-    {/if}
 
-    {#if project.medium && project.date}
-      <span>·</span>
-    {/if}
+      {#if project.mediumKey && project.date}
+        <span>·</span>
+      {/if}
 
-    {#if project.date}
-      <span>{formatDate(project.date, $lang)}</span>
-    {/if}
-  </div>
+      {#if project.date}
+        <span>{formatDate(project.date, $lang)}</span>
+      {/if}
+    </div>
 
-  <div class="meta-blocks">
-    {#if project.apartado}
-      <span class="apartado">
-        {project.apartado[$lang]}
-      </span>
-    {/if}
-
+    <!-- CENTER -->
     {#if project.usos?.length}
-      <div class="meta-list">
+      <div class="meta-center">
         {#each project.usos as uso}
           <span class="tag">
             {uso[$lang]}
@@ -46,27 +47,14 @@
       </div>
     {/if}
 
-    {#if project.colaboracion}
-      {@const tipo = project.colaboracion.tipo as "solo" | "equipo"}
+    <!-- RIGHT -->
+    {#if project.apartado}
+      {@const apartado = project.apartado as ApartadoKey}
 
-      <div>
-        <!-- FIX PRINCIPAL -->
-        <span>
-          {$t.metaarticle.colaboracion[tipo]}
+      <div class="meta-right">
+        <span class="apartado">
+          {APARTADOS[apartado].label[$lang]}
         </span>
-
-        {#if project.colaboracion.rol?.length}
-          <div>
-            {#each project.colaboracion.rol as r}
-              {@const role = ROLE_MAP[r as RoleType]}
-
-              <span>
-                {role.icon}
-                {$lang === "es" ? role.es : role.en}
-              </span>
-            {/each}
-          </div>
-        {/if}
       </div>
     {/if}
   </div>

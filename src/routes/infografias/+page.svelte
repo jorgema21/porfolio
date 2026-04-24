@@ -4,11 +4,17 @@
   import { lang, t } from "$lib/i18n";
   import "$lib/styles/infographics.css";
 
+  import type { ApartadoKey } from "$lib/config/apartados.config";
+  import { APARTADOS } from "$lib/config/apartados.config";
+
+  type MediumKey = keyof typeof $t.infographics.mediums;
+
   type Filters = {
     search: string;
-    apartados: string[];
+    apartados: ApartadoKey[];
     mediums: string[];
-    sort: "date" | "title" | "apartado" | "medium";
+    sortBy: "date" | "title" | "apartado" | "medium";
+    sortDir: "asc" | "desc";
   };
 
   const allInfografias = $derived.by(() => infographics);
@@ -17,7 +23,8 @@
     search: "",
     apartados: [],
     mediums: [],
-    sort: "date",
+    sortBy: "date",
+    sortDir: "desc",
   });
 
   /* =========================
@@ -28,8 +35,8 @@
     Array.from(
       new Set(
         allInfografias
-          .map((p) => p.apartadoKey)
-          .filter((v): v is string => typeof v === "string"),
+          .map((p) => p.apartado)
+          .filter((v): v is ApartadoKey => v !== undefined),
       ),
     ),
   );
@@ -39,7 +46,7 @@
       new Set(
         allInfografias
           .map((p) => p.mediumKey)
-          .filter((v): v is string => typeof v === "string"),
+          .filter((v): v is string => v !== undefined),
       ),
     ),
   );
@@ -51,31 +58,36 @@
   const filteredProjects = $derived.by(() => {
     const q = filters.search.trim().toLowerCase();
 
+    const dir = filters.sortDir === "asc" ? 1 : -1;
+
     return allInfografias
       .filter((p) => !q || p.title[$lang].toLowerCase().includes(q))
       .filter(
         (p) =>
           !filters.apartados.length ||
-          (p.apartadoKey && filters.apartados.includes(p.apartadoKey)),
+          (p.apartado !== undefined && filters.apartados.includes(p.apartado)),
       )
       .filter(
         (p) =>
           !filters.mediums.length ||
-          (p.mediumKey && filters.mediums.includes(p.mediumKey)),
+          (p.mediumKey !== undefined && filters.mediums.includes(p.mediumKey)),
       )
       .sort((a, b) => {
-        switch (filters.sort) {
+        const dateA = a.date ? new Date(a.date).getTime() : 0;
+        const dateB = b.date ? new Date(b.date).getTime() : 0;
+
+        switch (filters.sortBy) {
           case "date":
-            return (b.date ?? "").localeCompare(a.date ?? "");
+            return (dateB - dateA) * dir;
 
           case "title":
-            return a.title[$lang].localeCompare(b.title[$lang]);
+            return a.title[$lang].localeCompare(b.title[$lang]) * dir;
 
           case "apartado":
-            return (a.apartadoKey ?? "").localeCompare(b.apartadoKey ?? "");
+            return (a.apartado ?? "").localeCompare(b.apartado ?? "") * dir;
 
           case "medium":
-            return (a.mediumKey ?? "").localeCompare(b.mediumKey ?? "");
+            return (a.mediumKey ?? "").localeCompare(b.mediumKey ?? "") * dir;
 
           default:
             return 0;
@@ -87,10 +99,10 @@
      TOGGLES
   ========================= */
 
-  const toggle = (arr: string[], key: string) =>
+  const toggle = <T,>(arr: T[], key: T): T[] =>
     arr.includes(key) ? arr.filter((x) => x !== key) : [...arr, key];
 
-  const toggleApartado = (key: string) => {
+  const toggleApartado = (key: ApartadoKey) => {
     filters.apartados = toggle(filters.apartados, key);
   };
 
@@ -98,20 +110,26 @@
     filters.mediums = toggle(filters.mediums, key);
   };
 
+  const toggleSortDir = () => {
+    filters.sortDir = filters.sortDir === "asc" ? "desc" : "asc";
+  };
+
   /* =========================
-     LABELS (CORRECTO)
+     LABELS (FINAL CLEAN)
   ========================= */
 
-  type InfographicsDict = typeof $t.infographics;
-
-  const getApartadoLabel = (key: string) => {
-    const dict = $t.infographics.apartados as InfographicsDict["apartados"];
-    return dict?.[key as keyof typeof dict] ?? key;
+  const getApartadoLabel = (key: ApartadoKey) => {
+    return APARTADOS[key].label[$lang];
   };
 
   const getMediumLabel = (key: string) => {
-    const dict = $t.infographics.mediums as InfographicsDict["mediums"];
-    return dict?.[key as keyof typeof dict] ?? key;
+    const mediums = $t.infographics.mediums;
+
+    if (key in mediums) {
+      return mediums[key as keyof typeof mediums];
+    }
+
+    return key;
   };
 </script>
 
@@ -125,12 +143,20 @@
       bind:value={filters.search}
     />
 
-    <select bind:value={filters.sort}>
-      <option value="date">{$t.infographics.sort.newest}</option>
-      <option value="title">{$t.infographics.sort.title}</option>
-      <option value="apartado">{$t.infographics.sort.section}</option>
-      <option value="medium">{$t.infographics.sort.medium}</option>
+    <select bind:value={filters.sortBy}>
+      <option value="date">Fecha</option>
+      <option value="title">Título</option>
+      <option value="apartado">Sección</option>
+      <option value="medium">Medio</option>
     </select>
+
+    <button
+      class="sort-dir"
+      onclick={toggleSortDir}
+      aria-label="Cambiar dirección de orden"
+    >
+      {filters.sortDir === "asc" ? "↓" : "↑"}
+    </button>
   </div>
 
   <div class="filters">

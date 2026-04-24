@@ -1,11 +1,9 @@
 import projects from "$lib/data/projects";
-
-/* =========================
-   META TYPE (SOLO KEYS)
-========================= */
+import { APARTADOS, type ApartadoKey } from "$lib/config/apartados.config";
 
 export interface InfographicMeta {
-  apartadoKey?: string;
+  apartado?: ApartadoKey;
+
   mediumKey?: string;
 
   usos?: {
@@ -14,8 +12,8 @@ export interface InfographicMeta {
   }[];
 
   colaboracion?: {
-    tipo: "solo" | "equipo" | string;
-    rol: string[];
+    tipo: "solo" | "equipo";
+    rol: string[]; // 👈 INPUT libre desde JSON
   };
 
   tools?: string[];
@@ -25,42 +23,45 @@ export interface InfographicMeta {
   featured?: boolean;
 }
 
-/* =========================
-   FINAL TYPE
-========================= */
-
-export type Infographic = (typeof projects)[number] &
+export type Infographic = Omit<
+  (typeof projects)[number],
+  keyof InfographicMeta
+> &
   InfographicMeta;
 
 /* =========================
-   META IMPORTS
+   META LOADERS
 ========================= */
 
-const metaModules = import.meta.glob<Record<string, InfographicMeta>>(
+const metaModules = import.meta.glob<InfographicMeta>(
   "/src/content/infografias/**/meta.json",
   {
     eager: true,
-    import: "default",
-  },
+    import: "default"
+  }
 );
 
 const getMetaPath = (slug: string) =>
   `/src/content/infografias/${slug}/meta.json`;
 
 /* =========================
-   BUILD DATASET
+   DATASET FINAL
 ========================= */
 
 export const infographics: Infographic[] = projects
   .filter(
     (p): p is typeof p & { slug: string } =>
-      p.category === "infografia" && typeof p.slug === "string",
+      p.category === "infografia" && typeof p.slug === "string"
   )
-  .map((project) => {
+  .map((project): Infographic => {
     const meta = metaModules[getMetaPath(project.slug)] ?? {};
+
+    if (meta.apartado && !(meta.apartado in APARTADOS)) {
+      throw new Error(`Apartado inválido: ${meta.apartado}`);
+    }
 
     return {
       ...project,
-      ...meta,
+      ...meta
     };
   });

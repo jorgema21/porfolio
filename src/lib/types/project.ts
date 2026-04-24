@@ -1,4 +1,5 @@
 import type { Block } from "$lib/types/block";
+import type { ApartadoKey } from "$lib/config/apartados.config";
 
 export type HomeZone =
   | "heroMain"
@@ -8,15 +9,6 @@ export type HomeZone =
   | "listBlock"
   | "heroBottom"
   | "finalGrid";
-
-export type ApartadoKey =
-  | "deportes"
-  | "nacional"
-  | "internacional"
-  | "cultura"
-  | "genero"
-  | "medioambiente"
-  | "economia";
 
 export type Lang = "es" | "en";
 
@@ -48,13 +40,15 @@ export interface BaseProject {
 export type ProjectContentFields = {
   medium?: TranslatedText;
   date?: string;
-  apartado?: TranslatedText;
-  apartadoKey?: ApartadoKey;
+
+  // ÚNICA FUENTE
+  apartado?: ApartadoKey;
+
   usos?: TranslatedText[];
 
   colaboracion?: {
     tipo: ColaboracionTipo;
-    rol: RoleType[];
+    rol: string[];
   };
 
   tools?: string[];

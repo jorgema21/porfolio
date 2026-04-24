@@ -1,10 +1,5 @@
 {
-  "apartadoKey": "sports",
-
-  "apartado": {
-    "es": "Deportes",
-    "en": "Sports"
-  },
+  "apartado": "sports",
 
   "usos": [
     { "es": "Infografía", "en": "Infographic" },
@@ -18,10 +13,7 @@
   },
 
   "tools": ["Figma", "Excel"],
-
   "date": "2024-06-01",
-
   "mediumKey": "elpais",
-
   "url": "https://elpais.com"
 }
