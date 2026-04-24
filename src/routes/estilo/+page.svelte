@@ -1,10 +1,9 @@
 <script lang="ts">
   import projects from "$lib/data/projects";
-  import type { Project } from "$lib/data/projects";
   import { lang } from "$lib/i18n/lang";
 
   const estilo = $derived(
-    projects.filter((p: Project) => p.category === "estilo")
+    projects.filter((p) => p.category === "estilo")
   );
 </script>
 

@@ -5,12 +5,12 @@ import type { InfographicMeta } from "$lib/data/infographics.data";
 
 const contentModules = import.meta.glob(
   "/src/content/infografias/**/content.json",
-  { import: "default" }
+  { import: "default" },
 );
 
 const metaModules = import.meta.glob<InfographicMeta>(
   "/src/content/infografias/**/meta.json",
-  { import: "default" }
+  { import: "default" },
 );
 
 export async function load({ params }) {
@@ -26,11 +26,21 @@ export async function load({ params }) {
   const content = (await contentLoader()) as Pick<ProjectContent, "blocks">;
   const meta = metaModules[metaPath] ? await metaModules[metaPath]() : {};
 
+  const normalizedMeta = {
+    ...meta,
+    medium: meta.mediumKey
+      ? {
+          es: meta.mediumKey,
+          en: meta.mediumKey,
+        }
+      : undefined,
+  };
+
   return {
     project: {
       ...base,
-      ...meta,
-      blocks: content.blocks
-    } satisfies ProjectContent
+      ...normalizedMeta,
+      blocks: content.blocks,
+    } satisfies ProjectContent,
   };
 }

@@ -3,33 +3,40 @@
   import { APARTADOS, type ApartadoKey } from "$lib/config/apartados.config";
   import { formatDate } from "$lib/utils/formatDate";
   import { lang } from "$lib/i18n/lang";
+  import { infographics as infographicsI18n } from "$lib/i18n/dictionaries/infographics.i18n";
 
   const { project } = $props<{ project: ProjectContent }>();
 
   const hasMeta = $derived(
     () =>
-      !!project.medium ||
+      !!project.mediumKey ||
       !!project.date ||
       !!project.apartado ||
       !!project.usos?.length
   );
+
+  // 🔥 clave tipada correctamente (evita el error de index signature)
+  type MediumKey = keyof typeof infographicsI18n.es.mediums;
+
+  const getMediumLabel = (key: MediumKey) =>
+    infographicsI18n[$lang].mediums[key] ?? key;
 </script>
 
 {#if hasMeta()}
   <div class="meta-top">
     <!-- LEFT -->
     <div class="meta-left">
-      {#if project.medium}
+      {#if project.mediumKey}
         {#if project.url}
           <a class="medium-link" href={project.url}>
-            {project.medium[$lang]} ↗
+            {getMediumLabel(project.mediumKey as MediumKey)} ↗
           </a>
         {:else}
-          <span>{project.medium[$lang]}</span>
+          <span>{getMediumLabel(project.mediumKey as MediumKey)}</span>
         {/if}
       {/if}
 
-      {#if project.medium && project.date}
+      {#if project.mediumKey && project.date}
         <span>·</span>
       {/if}
 
