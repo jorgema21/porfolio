@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Project } from "$lib/types/project";
+  import type { ProjectContent } from "$lib/types/project.types";
   import { APARTADOS, type ApartadoKey } from "$lib/config/apartados.config";
 
   import ProjectHeader from "$lib/components/ProjectHeader.svelte";
@@ -11,7 +11,7 @@
   import "$lib/styles/article-meta.css";
   import "$lib/styles/article-blocks.css";
 
-  const { data } = $props<{ data: { project: Project } }>();
+  const { data } = $props<{ data: { project: ProjectContent } }>();
 
   // ✅ REACTIVIDAD CORRECTA (evita warning de Svelte)
   const project = $derived(() => data.project);
@@ -24,7 +24,6 @@
     apartado() ? APARTADOS[apartado()!].color.light : "transparent",
   );
 </script>
-
 
 <article
   class="article"

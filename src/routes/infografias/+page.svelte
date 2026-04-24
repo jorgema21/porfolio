@@ -4,10 +4,7 @@
   import { lang, t } from "$lib/i18n";
   import "$lib/styles/infographics.css";
 
-  import type { ApartadoKey } from "$lib/config/apartados.config";
-  import { APARTADOS } from "$lib/config/apartados.config";
-
-  type MediumKey = keyof typeof $t.infographics.mediums;
+  import { APARTADOS, type ApartadoKey } from "$lib/config/apartados.config";
 
   type Filters = {
     search: string;
@@ -17,7 +14,7 @@
     sortDir: "asc" | "desc";
   };
 
-  const allInfografias = $derived.by(() => infographics);
+  const all = infographics;
 
   const filters = $state<Filters>({
     search: "",
@@ -28,109 +25,75 @@
   });
 
   /* =========================
-     KEYS (SAFE)
+     HELPERS
   ========================= */
 
-  const uniqueApartados = $derived.by(() =>
-    Array.from(
-      new Set(
-        allInfografias
-          .map((p) => p.apartado)
-          .filter((v): v is ApartadoKey => v !== undefined),
-      ),
-    ),
-  );
+  const toggle = <T,>(arr: T[], key: T): T[] =>
+    arr.includes(key) ? arr.filter((x: T) => x !== key) : [...arr, key];
 
-  const uniqueMediums = $derived.by(() =>
-    Array.from(
-      new Set(
-        allInfografias
-          .map((p) => p.mediumKey)
-          .filter((v): v is string => v !== undefined),
-      ),
-    ),
-  );
+  const dirFactor = () => (filters.sortDir === "asc" ? 1 : -1);
 
   /* =========================
-     FILTER
+     UNIQUE VALUES
   ========================= */
 
-  const filteredProjects = $derived.by(() => {
+  const apartados = Array.from(
+    new Set(all.map((p) => p.apartado).filter(Boolean)),
+  ) as ApartadoKey[];
+
+  const mediums = Array.from(
+    new Set(all.map((p) => p.mediumKey).filter(Boolean)),
+  ) as string[];
+
+  /* =========================
+     FILTER + SORT
+  ========================= */
+
+  const filtered = $derived.by(() => {
     const q = filters.search.trim().toLowerCase();
+    const dir = dirFactor();
 
-    const dir = filters.sortDir === "asc" ? 1 : -1;
-
-    return allInfografias
+    return all
       .filter((p) => !q || p.title[$lang].toLowerCase().includes(q))
       .filter(
         (p) =>
           !filters.apartados.length ||
-          (p.apartado !== undefined && filters.apartados.includes(p.apartado)),
+          (p.apartado && filters.apartados.includes(p.apartado)),
       )
       .filter(
         (p) =>
           !filters.mediums.length ||
-          (p.mediumKey !== undefined && filters.mediums.includes(p.mediumKey)),
+          (p.mediumKey && filters.mediums.includes(p.mediumKey)),
       )
       .sort((a, b) => {
-        const dateA = a.date ? new Date(a.date).getTime() : 0;
-        const dateB = b.date ? new Date(b.date).getTime() : 0;
+        const getDate = (x: typeof a) =>
+          x.date ? new Date(x.date).getTime() : 0;
 
-        switch (filters.sortBy) {
-          case "date":
-            return (dateB - dateA) * dir;
+        const compare = {
+          date: () => getDate(b) - getDate(a),
+          title: () => a.title[$lang].localeCompare(b.title[$lang]),
+          apartado: () => (a.apartado ?? "").localeCompare(b.apartado ?? ""),
+          medium: () => (a.mediumKey ?? "").localeCompare(b.mediumKey ?? ""),
+        }[filters.sortBy];
 
-          case "title":
-            return a.title[$lang].localeCompare(b.title[$lang]) * dir;
-
-          case "apartado":
-            return (a.apartado ?? "").localeCompare(b.apartado ?? "") * dir;
-
-          case "medium":
-            return (a.mediumKey ?? "").localeCompare(b.mediumKey ?? "") * dir;
-
-          default:
-            return 0;
-        }
+        return compare() * dir;
       });
   });
 
   /* =========================
-     TOGGLES
+     LABELS
   ========================= */
 
-  const toggle = <T,>(arr: T[], key: T): T[] =>
-    arr.includes(key) ? arr.filter((x) => x !== key) : [...arr, key];
+  const getApartadoLabel = (key: ApartadoKey) => APARTADOS[key].label[$lang];
 
-  const toggleApartado = (key: ApartadoKey) => {
-    filters.apartados = toggle(filters.apartados, key);
-  };
+  const getMediumLabel = (key: string) => key;
 
-  const toggleMedium = (key: string) => {
-    filters.mediums = toggle(filters.mediums, key);
-  };
-
-  const toggleSortDir = () => {
-    filters.sortDir = filters.sortDir === "asc" ? "desc" : "asc";
-  };
-
-  /* =========================
-     LABELS (FINAL CLEAN)
-  ========================= */
-
-  const getApartadoLabel = (key: ApartadoKey) => {
-    return APARTADOS[key].label[$lang];
-  };
-
-  const getMediumLabel = (key: string) => {
-    const mediums = $t.infographics.mediums;
-
-    if (key in mediums) {
-      return mediums[key as keyof typeof mediums];
-    }
-
-    return key;
-  };
+  const sortOptions = [
+    { value: "date", label: () => $t.infographics.sort.newest },
+    { value: "title", label: () => $t.infographics.sort.title },
+    { value: "apartado", label: () => $t.infographics.sort.section },
+    { value: "medium", label: () => $t.infographics.sort.medium },
+  ] as const;
 </script>
 
 <div class="layout">
@@ -144,16 +107,15 @@
     />
 
     <select bind:value={filters.sortBy}>
-      <option value="date">Fecha</option>
-      <option value="title">Título</option>
-      <option value="apartado">Sección</option>
-      <option value="medium">Medio</option>
+      {#each sortOptions as opt}
+        <option value={opt.value}>{opt.label()}</option>
+      {/each}
     </select>
 
     <button
       class="sort-dir"
-      onclick={toggleSortDir}
-      aria-label="Cambiar dirección de orden"
+      onclick={() =>
+        (filters.sortDir = filters.sortDir === "asc" ? "desc" : "asc")}
     >
       {filters.sortDir === "asc" ? "↓" : "↑"}
     </button>
@@ -163,10 +125,10 @@
     <div class="filter-group">
       <span>{$t.infographics.filters.apartados}</span>
 
-      {#each uniqueApartados as ap (ap)}
+      {#each apartados as ap}
         <button
           class:active={filters.apartados.includes(ap)}
-          onclick={() => toggleApartado(ap)}
+          onclick={() => (filters.apartados = toggle(filters.apartados, ap))}
         >
           {getApartadoLabel(ap)}
         </button>
@@ -176,10 +138,10 @@
     <div class="filter-group">
       <span>{$t.infographics.filters.mediums}</span>
 
-      {#each uniqueMediums as m (m)}
+      {#each mediums as m}
         <button
           class:active={filters.mediums.includes(m)}
-          onclick={() => toggleMedium(m)}
+          onclick={() => (filters.mediums = toggle(filters.mediums, m))}
         >
           {getMediumLabel(m)}
         </button>
@@ -188,7 +150,7 @@
   </div>
 
   <section class="infographics-grid">
-    {#each filteredProjects as project (project.id)}
+    {#each filtered as project (project.id)}
       <InfographicCard {project} />
     {/each}
   </section>

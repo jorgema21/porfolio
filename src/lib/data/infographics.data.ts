@@ -1,6 +1,10 @@
 import projects from "$lib/data/projects";
 import { APARTADOS, type ApartadoKey } from "$lib/config/apartados.config";
 
+/* =========================
+   TYPES
+========================= */
+
 export interface InfographicMeta {
   apartado?: ApartadoKey;
 
@@ -13,7 +17,7 @@ export interface InfographicMeta {
 
   colaboracion?: {
     tipo: "solo" | "equipo";
-    rol: string[]; // 👈 INPUT libre desde JSON
+    rol: string[];
   };
 
   tools?: string[];
@@ -41,8 +45,16 @@ const metaModules = import.meta.glob<InfographicMeta>(
   }
 );
 
-const getMetaPath = (slug: string) =>
-  `/src/content/infografias/${slug}/meta.json`;
+/* =========================
+   NORMALIZE META BY SLUG
+========================= */
+
+const metaBySlug: Record<string, InfographicMeta> = {};
+
+for (const path in metaModules) {
+  const slug = path.split("/").slice(-2, -1)[0];
+  metaBySlug[slug] = metaModules[path];
+}
 
 /* =========================
    DATASET FINAL
@@ -54,7 +66,7 @@ export const infographics: Infographic[] = projects
       p.category === "infografia" && typeof p.slug === "string"
   )
   .map((project): Infographic => {
-    const meta = metaModules[getMetaPath(project.slug)] ?? {};
+    const meta = metaBySlug[project.slug] ?? {};
 
     if (meta.apartado && !(meta.apartado in APARTADOS)) {
       throw new Error(`Apartado inválido: ${meta.apartado}`);

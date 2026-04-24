@@ -9,15 +9,14 @@
 }
 
 .page h1 {
-  font-size: var(--text-2xl);
-  font-family: var(--font-serif);
+  font: var(--text-2xl) var(--font-serif);
   line-height: 1.2;
 }
 
 .page p {
   font-size: var(--text-base);
-  color: var(--color-text);
   max-width: 60ch;
+  color: var(--color-text);
 }
 
 .page a {

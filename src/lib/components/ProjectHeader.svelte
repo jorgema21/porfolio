@@ -1,9 +1,9 @@
 <script lang="ts">
-  import type { Project } from "$lib/types/project";
+  import type { ProjectContent } from "$lib/types/project.types";
   import { lang } from "$lib/i18n/lang";
   import { openLightbox } from "$lib/stores/lightbox.svelte";
 
-  const { project } = $props<{ project: Project }>();
+  const { project } = $props<{ project: ProjectContent }>();
 </script>
 
 <header class="project-header">

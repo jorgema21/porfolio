@@ -1,8 +1,8 @@
 <script lang="ts">
-  import type { Project } from "$lib/types/project";
+  import type { ProjectContent } from "$lib/types/project.types";
   import { lang } from "$lib/i18n/lang";
 
-  const { project } = $props<{ project: Project }>();
+  const { project } = $props<{ project: ProjectContent }>();
 </script>
 
 {#if project.tools?.length}

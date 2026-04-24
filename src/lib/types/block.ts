@@ -1,4 +1,4 @@
-import type { TranslatedText } from "./project";
+import type { TranslatedText } from "./project.types";
 
 export type TextBlock = {
   type: "text";

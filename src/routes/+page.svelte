@@ -1,7 +1,7 @@
 <script lang="ts">
   import projects from "$lib/data/projects";
   import ProjectCard from "$lib/components/ProjectCard.svelte";
-  import type { HomeZone } from "$lib/data/projects";
+  import type { HomeZone, HomeProject } from "$lib/data/projects";
 
   const zones: HomeZone[] = [
     "heroMain",
@@ -10,17 +10,17 @@
     "features",
     "listBlock",
     "heroBottom",
-    "finalGrid"
+    "finalGrid",
   ];
 
-  const getZone = (name: HomeZone) =>
+  const getZone = (name: HomeZone): HomeProject[] =>
     projects
-      .filter((p) => p.homeZone === name && p.homeVisible !== false)
+      .filter((p) => p.homeZone === name && (p.homeVisible ?? true))
       .sort((a, b) => (a.homeOrder ?? 999) - (b.homeOrder ?? 999));
 
   const zonesData = Object.fromEntries(
     zones.map((z) => [z, getZone(z)])
-  ) as Record<HomeZone, ReturnType<typeof getZone>>;
+  ) as Record<HomeZone, HomeProject[]>;
 </script>
 
 <main class="layout">
@@ -32,27 +32,27 @@
     </div>
 
     <div class="hero-side">
-      {#each zonesData.heroSide as p}
+      {#each zonesData.heroSide as p (p.id)}
         <ProjectCard project={p} variant="list" />
       {/each}
     </div>
   </section>
 
   <section class="grid-3">
-    {#each zonesData.gridTop as p}
+    {#each zonesData.gridTop as p (p.id)}
       <ProjectCard project={p} variant="grid" />
     {/each}
   </section>
 
   <section class="features">
-    {#each zonesData.features as p}
+    {#each zonesData.features as p (p.id)}
       <ProjectCard project={p} variant="feature" />
     {/each}
   </section>
 
   <section class="bottom-block">
     <div class="list">
-      {#each zonesData.listBlock as p}
+      {#each zonesData.listBlock as p (p.id)}
         <ProjectCard project={p} variant="list" />
       {/each}
     </div>
@@ -65,7 +65,7 @@
   </section>
 
   <section class="grid-final">
-    {#each zonesData.finalGrid as p}
+    {#each zonesData.finalGrid as p (p.id)}
       <ProjectCard project={p} variant="grid" />
     {/each}
   </section>

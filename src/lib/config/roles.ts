@@ -1,4 +1,4 @@
-import type { RoleType } from "$lib/types/project";
+import type { RoleType } from "$lib/types/project.types";
 
 export const ROLE_MAP: Record<
   RoleType,

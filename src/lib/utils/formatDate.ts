@@ -1,4 +1,4 @@
-import type { Lang } from "$lib/types/project";
+import type { Lang } from "$lib/types/project.types";
 
 export function formatDate(date: string, lang: Lang): string {
   const d = new Date(date);

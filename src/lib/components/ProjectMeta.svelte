@@ -1,33 +1,35 @@
 <script lang="ts">
-  import type { Project } from "$lib/types/project";
-  import { APARTADOS } from "$lib/config/apartados.config";
-  import { ROLE_MAP } from "$lib/config/roles";
+  import type { ProjectContent } from "$lib/types/project.types";
+  import { APARTADOS, type ApartadoKey } from "$lib/config/apartados.config";
   import { formatDate } from "$lib/utils/formatDate";
   import { lang } from "$lib/i18n/lang";
-  import { t } from "$lib/i18n";
-  import type { ApartadoKey } from "$lib/config/apartados.config";
 
-  const { project } = $props<{ project: Project }>();
+  const { project } = $props<{ project: ProjectContent }>();
+
+  const hasMeta = $derived(
+    () =>
+      !!project.medium ||
+      !!project.date ||
+      !!project.apartado ||
+      !!project.usos?.length
+  );
 </script>
 
-{#if project.mediumKey || project.date || project.apartado || project.usos?.length}
+{#if hasMeta()}
   <div class="meta-top">
     <!-- LEFT -->
     <div class="meta-left">
-      {#if project.mediumKey}
-        {@const mediumDict = $t.infographics.mediums as Record<string, string>}
-        {@const label = mediumDict[project.mediumKey] ?? project.mediumKey}
-
+      {#if project.medium}
         {#if project.url}
           <a class="medium-link" href={project.url}>
-            {label} ↗
+            {project.medium[$lang]} ↗
           </a>
         {:else}
-          <span>{label}</span>
+          <span>{project.medium[$lang]}</span>
         {/if}
       {/if}
 
-      {#if project.mediumKey && project.date}
+      {#if project.medium && project.date}
         <span>·</span>
       {/if}
 
@@ -40,20 +42,16 @@
     {#if project.usos?.length}
       <div class="meta-center">
         {#each project.usos as uso}
-          <span class="tag">
-            {uso[$lang]}
-          </span>
+          <span class="tag">{uso[$lang]}</span>
         {/each}
       </div>
     {/if}
 
     <!-- RIGHT -->
     {#if project.apartado}
-      {@const apartado = project.apartado as ApartadoKey}
-
       <div class="meta-right">
         <span class="apartado">
-          {APARTADOS[apartado].label[$lang]}
+          {APARTADOS[project.apartado as ApartadoKey].label[$lang]}
         </span>
       </div>
     {/if}

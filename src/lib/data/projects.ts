@@ -14,27 +14,21 @@ export interface ProjectTitle {
 
 export type ProjectCategory = "infografia" | "estilo";
 
-export interface Project {
+export interface HomeProject {
   id: string;
 
   title: ProjectTitle;
-
-  description?: {
-    es: string;
-    en: string;
-  };
+  description?: ProjectTitle;
 
   image?: string;
 
   category: ProjectCategory;
 
-  // 🟡 HOME SYSTEM
   homeZone?: HomeZone;
   homeOrder?: number;
   homeVisible?: boolean;
 
   slug?: string;
-
   externalUrl?: string;
 }
 
@@ -92,7 +86,10 @@ const projects = [
     id: "p5",
     slug: "adios-xavi",
     title: { es: "El adiós de Xavi", en: "The Goodbye of Xavi" },
-    description: { es: "Xavi anuncia que se va", en: "Xavi announces that he goes" },
+    description: {
+      es: "Xavi anuncia que se va",
+      en: "Xavi announces that he goes",
+    },
     image: "/images/projects/adios-xavi-ip.jpg",
     category: "infografia",
     homeZone: "gridTop",
@@ -103,7 +100,10 @@ const projects = [
     id: "p6",
     slug: "incendio-tenerife",
     title: { es: "El incendio de Tenerife", en: "The fire in Tenerife" },
-    description: { es: "La isla de Tenerife está en peligro", en: "Tenerife island is in danger" },
+    description: {
+      es: "La isla de Tenerife está en peligro",
+      en: "Tenerife island is in danger",
+    },
     image: "/images/projects/incendio-tenerife-ip.jpg",
     category: "infografia",
     homeZone: "gridTop",
@@ -592,6 +592,6 @@ const projects = [
     category: "estilo",
     homeVisible: false,
   },
-] satisfies Project[];
+] satisfies HomeProject[];
 
 export default projects;
