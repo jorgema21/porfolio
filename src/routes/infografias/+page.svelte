@@ -2,19 +2,24 @@
   import { infographics } from "$lib/data/infographics.data";
   import InfographicCard from "$lib/components/InfographicCard.svelte";
   import { lang, t } from "$lib/i18n";
+  import { infographics as infographicsI18n } from "$lib/i18n/dictionaries/infographics.i18n";
   import "$lib/styles/infographics.css";
 
   import { APARTADOS, type ApartadoKey } from "$lib/config/apartados.config";
 
+  type Infographic = (typeof infographics)[number];
+
+  type MediumKey = keyof typeof infographicsI18n.es.mediums;
+
   type Filters = {
     search: string;
     apartados: ApartadoKey[];
-    mediums: string[];
+    mediums: MediumKey[];
     sortBy: "date" | "title" | "apartado" | "medium";
     sortDir: "asc" | "desc";
   };
 
-  const all = infographics;
+  const all: Infographic[] = infographics;
 
   const filters = $state<Filters>({
     search: "",
@@ -29,7 +34,7 @@
   ========================= */
 
   const toggle = <T,>(arr: T[], key: T): T[] =>
-    arr.includes(key) ? arr.filter((x: T) => x !== key) : [...arr, key];
+    arr.includes(key) ? arr.filter((x) => x !== key) : [...arr, key];
 
   const dirFactor = () => (filters.sortDir === "asc" ? 1 : -1);
 
@@ -43,7 +48,7 @@
 
   const mediums = Array.from(
     new Set(all.map((p) => p.mediumKey).filter(Boolean)),
-  ) as string[];
+  ) as MediumKey[];
 
   /* =========================
      FILTER + SORT
@@ -63,20 +68,22 @@
       .filter(
         (p) =>
           !filters.mediums.length ||
-          (p.mediumKey && filters.mediums.includes(p.mediumKey)),
+          (p.mediumKey && filters.mediums.includes(p.mediumKey as MediumKey)),
       )
       .sort((a, b) => {
-        const getDate = (x: typeof a) =>
+        const getDate = (x: Infographic) =>
           x.date ? new Date(x.date).getTime() : 0;
 
-        const compare = {
+        const comparators = {
           date: () => getDate(b) - getDate(a),
           title: () => a.title[$lang].localeCompare(b.title[$lang]),
-          apartado: () => (a.apartado ?? "").localeCompare(b.apartado ?? ""),
-          medium: () => (a.mediumKey ?? "").localeCompare(b.mediumKey ?? ""),
-        }[filters.sortBy];
+          apartado: () =>
+            (a.apartado ?? "").localeCompare(b.apartado ?? ""),
+          medium: () =>
+            (a.mediumKey ?? "").localeCompare(b.mediumKey ?? ""),
+        };
 
-        return compare() * dir;
+        return comparators[filters.sortBy]() * dir;
       });
   });
 
@@ -84,9 +91,11 @@
      LABELS
   ========================= */
 
-  const getApartadoLabel = (key: ApartadoKey) => APARTADOS[key].label[$lang];
+  const getApartadoLabel = (key: ApartadoKey) =>
+    APARTADOS[key].label[$lang];
 
-  const getMediumLabel = (key: string) => key;
+  const getMediumLabel = (key: MediumKey) =>
+    infographicsI18n[$lang].mediums[key] ?? key;
 
   const sortOptions = [
     { value: "date", label: () => $t.infographics.sort.newest },
