@@ -5,11 +5,9 @@
   import { infographics as infographicsI18n } from "$lib/i18n/dictionaries/infographics.i18n";
   import "$lib/styles/infographics.css";
   import Treemap from "$lib/components/visualizations/Treemap.svelte";
-
   import { APARTADOS, type ApartadoKey } from "$lib/config/apartados.config";
 
   type Infographic = (typeof infographics)[number];
-
   type MediumKey = keyof typeof infographicsI18n.es.mediums;
 
   type Filters = {
@@ -22,26 +20,57 @@
 
   const all: Infographic[] = infographics;
 
-  const countBy = <K extends string>(
-    items: Infographic[],
-    getKey: (item: Infographic) => K | null | undefined,
+  /* =========================
+     TYPE GUARDS
+  ========================= */
+
+  const isDefined = <T>(v: T | undefined | null): v is T =>
+    v !== undefined && v !== null;
+
+  /* =========================
+     UTILS
+  ========================= */
+
+  const countBy = <T, K extends string>(
+    items: T[],
+    getKey: (item: T) => K | null | undefined
   ) => {
     const map = new Map<K, number>();
 
     for (const item of items) {
       const key = getKey(item);
       if (!key) continue;
-
       map.set(key, (map.get(key) ?? 0) + 1);
     }
 
-    return Array.from(map, ([key, value]) => ({ key, value })).sort(
-      (a, b) => b.value - a.value,
-    );
+    return [...map.entries()]
+      .map(([key, value]) => ({ key, value }))
+      .sort((a, b) => b.value - a.value);
   };
 
-  const apartadosData = countBy(all, (p) => p.apartado);
-  const mediumsData = countBy(all, (p) => p.mediumKey);
+  const toggle = <T,>(arr: T[], key: T) =>
+    arr.includes(key) ? arr.filter((x) => x !== key) : [...arr, key];
+
+  const label = {
+    apartado: (k: ApartadoKey) => APARTADOS[k].label[$lang],
+    medium: (k: MediumKey) =>
+      infographicsI18n[$lang].mediums[k] ?? k,
+  };
+
+  const sorters = {
+    date: (a: Infographic, b: Infographic) =>
+      (b.date ? +new Date(b.date) : 0) -
+      (a.date ? +new Date(a.date) : 0),
+
+    title: (a: Infographic, b: Infographic) =>
+      a.title[$lang].localeCompare(b.title[$lang]),
+
+    apartado: (a: Infographic, b: Infographic) =>
+      (a.apartado ?? "").localeCompare(b.apartado ?? ""),
+
+    medium: (a: Infographic, b: Infographic) =>
+      (a.mediumKey ?? "").localeCompare(b.mediumKey ?? ""),
+  };
 
   const filters = $state<Filters>({
     search: "",
@@ -51,70 +80,52 @@
     sortDir: "desc",
   });
 
+  const dir = () => (filters.sortDir === "asc" ? 1 : -1);
+
   /* =========================
-     HELPERS
+     TREEMAP DATA
   ========================= */
 
-  const toggle = <T,>(arr: T[], key: T): T[] =>
-    arr.includes(key) ? arr.filter((x) => x !== key) : [...arr, key];
-
-  const dirFactor = () => (filters.sortDir === "asc" ? 1 : -1);
+  const apartadosData = countBy(all, (p) => p.apartado);
+  const mediumsData = countBy(all, (p) => p.mediumKey);
 
   /* =========================
-     UNIQUE VALUES
+     UNIQUE VALUES (FIXED TS STRICT MODE)
   ========================= */
 
-  const apartados = Array.from(
-    new Set(all.map((p) => p.apartado).filter(Boolean)),
-  ) as ApartadoKey[];
+  const apartados = [
+    ...new Set(all.map((p) => p.apartado).filter(isDefined)),
+  ] as ApartadoKey[];
 
-  const mediums = Array.from(
-    new Set(all.map((p) => p.mediumKey).filter(Boolean)),
-  ) as MediumKey[];
+  const mediums = [
+    ...new Set(all.map((p) => p.mediumKey).filter(isDefined)),
+  ] as MediumKey[];
 
   /* =========================
-     FILTER + SORT
+     FILTERED DATA
   ========================= */
 
   const filtered = $derived.by(() => {
     const q = filters.search.trim().toLowerCase();
-    const dir = dirFactor();
 
     return all
-      .filter((p) => !q || p.title[$lang].toLowerCase().includes(q))
-      .filter(
-        (p) =>
+      .filter((p) => {
+        const matchSearch =
+          !q || p.title[$lang].toLowerCase().includes(q);
+
+        const matchApartado =
           !filters.apartados.length ||
-          (p.apartado && filters.apartados.includes(p.apartado)),
-      )
-      .filter(
-        (p) =>
+          (p.apartado && filters.apartados.includes(p.apartado));
+
+        const matchMedium =
           !filters.mediums.length ||
-          (p.mediumKey && filters.mediums.includes(p.mediumKey as MediumKey)),
-      )
-      .sort((a, b) => {
-        const getDate = (x: Infographic) =>
-          x.date ? new Date(x.date).getTime() : 0;
+          (p.mediumKey &&
+            filters.mediums.includes(p.mediumKey as MediumKey));
 
-        const comparators = {
-          date: () => getDate(b) - getDate(a),
-          title: () => a.title[$lang].localeCompare(b.title[$lang]),
-          apartado: () => (a.apartado ?? "").localeCompare(b.apartado ?? ""),
-          medium: () => (a.mediumKey ?? "").localeCompare(b.mediumKey ?? ""),
-        };
-
-        return comparators[filters.sortBy]() * dir;
-      });
+        return matchSearch && matchApartado && matchMedium;
+      })
+      .sort((a, b) => sorters[filters.sortBy](a, b) * dir());
   });
-
-  /* =========================
-     LABELS
-  ========================= */
-
-  const getApartadoLabel = (key: ApartadoKey) => APARTADOS[key].label[$lang];
-
-  const getMediumLabel = (key: MediumKey) =>
-    infographicsI18n[$lang].mediums[key] ?? key;
 
   const sortOptions = [
     { value: "date", label: () => $t.infographics.sort.newest },
@@ -143,22 +154,25 @@
     <button
       class="sort-dir"
       onclick={() =>
-        (filters.sortDir = filters.sortDir === "asc" ? "desc" : "asc")}
+        (filters.sortDir =
+          filters.sortDir === "asc" ? "desc" : "asc")}
     >
       {filters.sortDir === "asc" ? "↓" : "↑"}
     </button>
   </div>
+
   <section class="insights">
     <Treemap
       data={apartadosData}
-      getLabel={(key) => getApartadoLabel(key as ApartadoKey)}
+      getLabel={(k) => label.apartado(k as ApartadoKey)}
     />
 
     <Treemap
       data={mediumsData}
-      getLabel={(key) => getMediumLabel(key as MediumKey)}
+      getLabel={(k) => label.medium(k as MediumKey)}
     />
   </section>
+
   <div class="filters">
     <div class="filter-group">
       <span>{$t.infographics.filters.apartados}</span>
@@ -166,9 +180,10 @@
       {#each apartados as ap}
         <button
           class:active={filters.apartados.includes(ap)}
-          onclick={() => (filters.apartados = toggle(filters.apartados, ap))}
+          onclick={() =>
+            (filters.apartados = toggle(filters.apartados, ap))}
         >
-          {getApartadoLabel(ap)}
+          {label.apartado(ap)}
         </button>
       {/each}
     </div>
@@ -179,9 +194,10 @@
       {#each mediums as m}
         <button
           class:active={filters.mediums.includes(m)}
-          onclick={() => (filters.mediums = toggle(filters.mediums, m))}
+          onclick={() =>
+            (filters.mediums = toggle(filters.mediums, m))}
         >
-          {getMediumLabel(m)}
+          {label.medium(m)}
         </button>
       {/each}
     </div>

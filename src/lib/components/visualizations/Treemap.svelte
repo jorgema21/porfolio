@@ -65,7 +65,7 @@
         width={leaf.x1 - leaf.x0}
         height={leaf.y1 - leaf.y0}
         rx="6"
-        fill="hsl(220, 20%, 30%)"
+        fill="var(--blue-300)"
         role="img"
         aria-label={getLabel(leaf.data.key)}
         onmouseenter={(e) => {
