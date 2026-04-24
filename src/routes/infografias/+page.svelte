@@ -4,6 +4,7 @@
   import { lang, t } from "$lib/i18n";
   import { infographics as infographicsI18n } from "$lib/i18n/dictionaries/infographics.i18n";
   import "$lib/styles/infographics.css";
+  import Treemap from "$lib/components/visualizations/Treemap.svelte";
 
   import { APARTADOS, type ApartadoKey } from "$lib/config/apartados.config";
 
@@ -20,6 +21,27 @@
   };
 
   const all: Infographic[] = infographics;
+
+  const countBy = <K extends string>(
+    items: Infographic[],
+    getKey: (item: Infographic) => K | null | undefined,
+  ) => {
+    const map = new Map<K, number>();
+
+    for (const item of items) {
+      const key = getKey(item);
+      if (!key) continue;
+
+      map.set(key, (map.get(key) ?? 0) + 1);
+    }
+
+    return Array.from(map, ([key, value]) => ({ key, value })).sort(
+      (a, b) => b.value - a.value,
+    );
+  };
+
+  const apartadosData = countBy(all, (p) => p.apartado);
+  const mediumsData = countBy(all, (p) => p.mediumKey);
 
   const filters = $state<Filters>({
     search: "",
@@ -77,10 +99,8 @@
         const comparators = {
           date: () => getDate(b) - getDate(a),
           title: () => a.title[$lang].localeCompare(b.title[$lang]),
-          apartado: () =>
-            (a.apartado ?? "").localeCompare(b.apartado ?? ""),
-          medium: () =>
-            (a.mediumKey ?? "").localeCompare(b.mediumKey ?? ""),
+          apartado: () => (a.apartado ?? "").localeCompare(b.apartado ?? ""),
+          medium: () => (a.mediumKey ?? "").localeCompare(b.mediumKey ?? ""),
         };
 
         return comparators[filters.sortBy]() * dir;
@@ -91,8 +111,7 @@
      LABELS
   ========================= */
 
-  const getApartadoLabel = (key: ApartadoKey) =>
-    APARTADOS[key].label[$lang];
+  const getApartadoLabel = (key: ApartadoKey) => APARTADOS[key].label[$lang];
 
   const getMediumLabel = (key: MediumKey) =>
     infographicsI18n[$lang].mediums[key] ?? key;
@@ -129,7 +148,17 @@
       {filters.sortDir === "asc" ? "↓" : "↑"}
     </button>
   </div>
+  <section class="insights">
+    <Treemap
+      data={apartadosData}
+      getLabel={(key) => getApartadoLabel(key as ApartadoKey)}
+    />
 
+    <Treemap
+      data={mediumsData}
+      getLabel={(key) => getMediumLabel(key as MediumKey)}
+    />
+  </section>
   <div class="filters">
     <div class="filter-group">
       <span>{$t.infographics.filters.apartados}</span>

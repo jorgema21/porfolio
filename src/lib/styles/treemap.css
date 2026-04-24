@@ -1,0 +1,30 @@
+.insights {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: start;
+}
+
+.insights > * {
+  min-width: 0;
+}
+
+svg {
+  max-width: 100%;
+  overflow: hidden;
+  display: block;
+}
+
+rect:hover {
+  opacity: 0.9;
+}
+
+.tooltip {
+  position: fixed;
+  background: #111;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  pointer-events: none;
+}
