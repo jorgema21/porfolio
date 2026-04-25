@@ -33,31 +33,5 @@
 {/if}
 
 <style>
-  .overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.9);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-    cursor: zoom-out;
-  }
-
-  .image {
-    max-width: 90vw;
-    max-height: 90vh;
-    object-fit: contain;
-  }
-
-  /* reset botón */
-  .image-button {
-    all: unset;
-    cursor: default;
-  }
-
-  .image-button:focus-visible {
-    outline: 2px solid white;
-    outline-offset: 4px;
-  }
+ 
 </style>

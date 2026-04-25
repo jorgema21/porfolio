@@ -45,7 +45,6 @@
   align-items: center;
 }
 
-/* IMAGE TITLE */
 .article .image-title {
   position: absolute;
   left: 50%;
@@ -54,7 +53,7 @@
   text-decoration: underline;
 }
 
-/* TOOLS */
+/* TOOLS (mantiene específico aquí, no global) */
 .article .tools h3 {
   font-size: var(--text-xs);
   text-transform: uppercase;

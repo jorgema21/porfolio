@@ -27,7 +27,7 @@
 <main class="layout">
 
   <!-- HERO -->
-  <section class="hero">
+  <section class="grid-hero">
     <div>
       {#if zonesData.heroMain?.[0]}
         <ProjectCard project={zonesData.heroMain[0]} variant="hero" />
@@ -40,17 +40,17 @@
   </section>
 
   <!-- GRID TOP -->
-  <section class="grid grid-3-cols section">
+  <section class="grid grid-3 section">
     <ZoneRenderer items={zonesData.gridTop} variant="grid" />
   </section>
 
   <!-- FEATURES -->
-  <section class="stack section" style="gap: var(--space-12);">
+  <section class="stack section">
     <ZoneRenderer items={zonesData.features} variant="feature" />
   </section>
 
   <!-- BOTTOM -->
-  <section class="grid section" style="grid-template-columns: 1fr 3fr;">
+  <section class="grid grid-sidebar section">
     <div class="stack">
       <ZoneRenderer items={zonesData.listBlock} variant="list" />
     </div>
@@ -63,7 +63,7 @@
   </section>
 
   <!-- FINAL GRID -->
-  <section class="grid grid-3-cols section">
+  <section class="grid grid-3 section">
     <ZoneRenderer items={zonesData.finalGrid} variant="grid" />
   </section>
 

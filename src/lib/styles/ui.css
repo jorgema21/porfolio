@@ -1,44 +1,69 @@
-/* STACK */
+/* =========================
+   STACK (VERTICAL)
+========================= */
+
 .stack {
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
 }
 
-.stack-sm { gap: var(--space-2); }
-.stack-lg { gap: var(--space-8); }
+.stack-sm {
+  gap: var(--space-2);
+}
+.stack-lg {
+  gap: var(--space-8);
+}
 
-/* CLUSTER */
+/* =========================
+   CLUSTER (HORIZONTAL)
+========================= */
+
 .cluster {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-2);
   align-items: center;
+  gap: var(--space-2);
+  font-variant-numeric: tabular-nums;
 }
 
-/* BADGE */
-.badge {
+/* =========================
+   BADGE SYSTEM
+========================= */
+
+.badge,
+.tag {
   display: inline-flex;
   align-items: center;
-  padding: var(--space-1) var(--space-3);
-  border-radius: var(--radius-full);
+
   font-size: var(--text-xs);
   letter-spacing: 0.1em;
-  text-transform: uppercase;
 }
 
-.badge-muted {
+/* simple tag */
+.tag {
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
   background: var(--color-border);
-  color: var(--color-text);
 }
 
+/* apartado / badge destacado */
+.badge {
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+}
+
+/* outlined variant */
 .badge-outline {
   border: 1px solid var(--badge-color, var(--color-text));
   color: var(--badge-color, var(--color-text));
   background: var(--bg-soft);
 }
 
-/* LINK */
+/* =========================
+   LINKS REUSABLE
+========================= */
+
 .link-underline {
   position: relative;
   text-decoration: none;
@@ -60,7 +85,10 @@
   width: 100%;
 }
 
-/* DIVIDER */
+/* =========================
+   DIVIDER
+========================= */
+
 .divider {
   position: relative;
   width: 100%;
@@ -79,26 +107,4 @@
   font-size: 10px;
   color: var(--color-muted);
   background: var(--color-white);
-}
-
-/* ===== FLEX HELPERS (SAFE ADDITION) ===== */
-
-.u-flex {
-  display: flex;
-}
-
-.u-center {
-  align-items: center;
-}
-
-.u-gap-sm {
-  gap: var(--space-2);
-}
-
-/* horizontal layouts típicos meta */
-.u-meta-row {
-  display: flex;
-  align-items: center;
-  gap: var(--space-2);
-  font-variant-numeric: tabular-nums;
 }
