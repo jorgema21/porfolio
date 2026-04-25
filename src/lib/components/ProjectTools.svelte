@@ -11,9 +11,9 @@
       {$lang === "es" ? "Herramientas" : "Tools"}
     </h3>
 
-    <ul>
+    <ul class="u-meta-row" style="flex-wrap: wrap;">
       {#each project.tools as tool}
-        <li>{tool}</li>
+        <li class="tag">{tool}</li>
       {/each}
     </ul>
   </footer>

@@ -24,8 +24,9 @@
 
 {#if hasMeta()}
   <div class="meta-top">
+
     <!-- LEFT -->
-    <div class="meta-left">
+    <div class="meta-left u-meta-row">
       {#if project.mediumKey}
         {#if project.url}
           <a class="medium-link" href={project.url}>
@@ -47,7 +48,7 @@
 
     <!-- CENTER -->
     {#if project.usos?.length}
-      <div class="meta-center">
+      <div class="meta-center u-meta-row">
         {#each project.usos as uso}
           <span class="tag">{uso[$lang]}</span>
         {/each}
@@ -62,5 +63,6 @@
         </span>
       </div>
     {/if}
+
   </div>
 {/if}

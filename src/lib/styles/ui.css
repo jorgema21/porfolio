@@ -1,0 +1,104 @@
+/* STACK */
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.stack-sm { gap: var(--space-2); }
+.stack-lg { gap: var(--space-8); }
+
+/* CLUSTER */
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+/* BADGE */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.badge-muted {
+  background: var(--color-border);
+  color: var(--color-text);
+}
+
+.badge-outline {
+  border: 1px solid var(--badge-color, var(--color-text));
+  color: var(--badge-color, var(--color-text));
+  background: var(--bg-soft);
+}
+
+/* LINK */
+.link-underline {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 1px;
+  background: currentColor;
+  transition: width var(--transition);
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}
+
+/* DIVIDER */
+.divider {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  background: var(--color-border);
+  margin: var(--space-10) 0;
+}
+
+.divider::after {
+  content: "✳";
+  position: absolute;
+  left: 50%;
+  top: -10px;
+  transform: translateX(-50%);
+  padding: 0 var(--space-3);
+  font-size: 10px;
+  color: var(--color-muted);
+  background: var(--color-white);
+}
+
+/* ===== FLEX HELPERS (SAFE ADDITION) ===== */
+
+.u-flex {
+  display: flex;
+}
+
+.u-center {
+  align-items: center;
+}
+
+.u-gap-sm {
+  gap: var(--space-2);
+}
+
+/* horizontal layouts típicos meta */
+.u-meta-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-variant-numeric: tabular-nums;
+}

@@ -19,7 +19,7 @@
 </svelte:head>
 
 <header class="site-header">
-  <h1 class="logo">{$t.layout.nav.mi_porfolio}</h1>
+  <h1 class="logo"><a href="/">{$t.layout.nav.mi_porfolio}</a></h1>
 
   <nav class="nav">
     <a href="/">{$t.layout.nav.home}</a>

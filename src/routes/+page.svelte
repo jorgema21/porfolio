@@ -1,6 +1,7 @@
 <script lang="ts">
   import projects from "$lib/data/projects";
   import ProjectCard from "$lib/components/ProjectCard.svelte";
+  import ZoneRenderer from "$lib/components/ZoneRenderer.svelte";
   import type { HomeZone, HomeProject } from "$lib/data/projects";
 
   const zones: HomeZone[] = [
@@ -24,49 +25,46 @@
 </script>
 
 <main class="layout">
+
+  <!-- HERO -->
   <section class="hero">
-    <div class="hero-main">
+    <div>
       {#if zonesData.heroMain?.[0]}
         <ProjectCard project={zonesData.heroMain[0]} variant="hero" />
       {/if}
     </div>
 
-    <div class="hero-side">
-      {#each zonesData.heroSide as p (p.id)}
-        <ProjectCard project={p} variant="list" />
-      {/each}
+    <div class="stack">
+      <ZoneRenderer items={zonesData.heroSide} variant="list" />
     </div>
   </section>
 
-  <section class="grid-3">
-    {#each zonesData.gridTop as p (p.id)}
-      <ProjectCard project={p} variant="grid" />
-    {/each}
+  <!-- GRID TOP -->
+  <section class="grid grid-3-cols section">
+    <ZoneRenderer items={zonesData.gridTop} variant="grid" />
   </section>
 
-  <section class="features">
-    {#each zonesData.features as p (p.id)}
-      <ProjectCard project={p} variant="feature" />
-    {/each}
+  <!-- FEATURES -->
+  <section class="stack section" style="gap: var(--space-12);">
+    <ZoneRenderer items={zonesData.features} variant="feature" />
   </section>
 
-  <section class="bottom-block">
-    <div class="list">
-      {#each zonesData.listBlock as p (p.id)}
-        <ProjectCard project={p} variant="list" />
-      {/each}
+  <!-- BOTTOM -->
+  <section class="grid section" style="grid-template-columns: 1fr 3fr;">
+    <div class="stack">
+      <ZoneRenderer items={zonesData.listBlock} variant="list" />
     </div>
 
-    <div class="hero-right">
+    <div>
       {#if zonesData.heroBottom?.[0]}
         <ProjectCard project={zonesData.heroBottom[0]} variant="hero" />
       {/if}
     </div>
   </section>
 
-  <section class="grid-final">
-    {#each zonesData.finalGrid as p (p.id)}
-      <ProjectCard project={p} variant="grid" />
-    {/each}
+  <!-- FINAL GRID -->
+  <section class="grid grid-3-cols section">
+    <ZoneRenderer items={zonesData.finalGrid} variant="grid" />
   </section>
+
 </main>

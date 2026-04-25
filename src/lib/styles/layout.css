@@ -4,3 +4,27 @@
   max-width: var(--content-width);
   margin: 0 auto;
 }
+
+/* =========================
+   LAYOUT PRIMITIVES
+========================= */
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.grid-3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.section {
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-8);
+}
