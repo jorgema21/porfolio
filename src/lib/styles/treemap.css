@@ -9,13 +9,13 @@
   min-width: 0;
 }
 
-svg {
+.insights svg {
   max-width: 100%;
   overflow: hidden;
   display: block;
 }
 
-rect:hover {
+.insights rect:hover {
   opacity: 0.9;
 }
 

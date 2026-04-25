@@ -42,7 +42,7 @@
 }
 
 /* BUTTON RESET (solo aquí, correcto) */
-.article button {
+.article .image-wrapper button {
   background: var(--color-white);
   border: none;
 }
