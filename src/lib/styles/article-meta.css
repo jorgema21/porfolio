@@ -34,7 +34,6 @@
   gap: var(--space-2);
 }
 
-/* center + right overrides */
 .article .meta-center {
   justify-content: center;
   flex-wrap: wrap;
@@ -45,53 +44,22 @@
 }
 
 /* =========================
-   MEDIUM LINK
+   MEDIUM LINK (usa system global)
 ========================= */
 
 .article .medium-link {
-  position: relative;
   color: inherit;
-  text-decoration: none;
-  transition:
-    color var(--transition-fast),
-    opacity var(--transition-fast);
 }
 
 .article .medium-link:hover {
-  color: var(--accent);
-}
-
-.article .medium-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -2px;
-  width: 0%;
-  height: 1px;
-  background: var(--accent);
-  transition: width var(--transition);
-}
-
-.article .medium-link:hover::after {
-  width: 100%;
+  color: var(--blue-300);
+  transition: var(--transition);
 }
 
 /* =========================
-   APARTADO BADGE (override visual only)
+   APARTADO BADGE (solo token)
 ========================= */
 
 .article .apartado {
-  display: inline-flex;
-  align-items: center;
-
-  padding: var(--space-1) var(--space-3);
-  border-radius: var(--radius-full);
-
-  font-size: var(--text-xs);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-
-  color: var(--apartado-color);
-  border: 1px solid var(--apartado-color);
-  background: var(--bg-soft);
+  --badge-color: var(--apartado-color);
 }

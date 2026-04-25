@@ -29,11 +29,11 @@
     <div class="meta-left u-meta-row">
       {#if project.mediumKey}
         {#if project.url}
-          <a class="medium-link" href={project.url}>
+          <a class="link-underline medium-link" href={project.url}>
             {getMediumLabel(project.mediumKey as MediumKey)} ↗
           </a>
         {:else}
-          <span>{getMediumLabel(project.mediumKey as MediumKey)}</span>
+          <span class="link-underline">{getMediumLabel(project.mediumKey as MediumKey)}</span>
         {/if}
       {/if}
 
@@ -58,7 +58,7 @@
     <!-- RIGHT -->
     {#if project.apartado}
       <div class="meta-right">
-        <span class="apartado">
+        <span class="badge apartado">
           {APARTADOS[project.apartado as ApartadoKey].label[$lang]}
         </span>
       </div>
