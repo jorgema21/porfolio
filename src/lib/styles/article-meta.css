@@ -18,7 +18,7 @@
   opacity: 0.6;
 }
 
-/* LEFT / CENTER / RIGHT */
+/* META ROWS (unificado) */
 .article .meta-left,
 .article .meta-center,
 .article .meta-right {
@@ -36,8 +36,7 @@
   justify-content: flex-end;
 }
 
-/* LINKS (solo medium aquí, external se mueve a article-blocks si quieres) */
-
+/* LINKS (solo medium aquí) */
 .article .medium-link {
   position: relative;
   color: inherit;
@@ -64,7 +63,7 @@
   width: 100%;
 }
 
-/* BADGE (ahora usa sistema global visualmente igual) */
+/* BADGE (sin duplicar sistema UI, solo override visual) */
 .article .apartado {
   display: inline-flex;
   align-items: center;

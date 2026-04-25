@@ -8,9 +8,10 @@
   margin: var(--space-6) 0;
 }
 
-/* IMAGES */
+/* IMAGES (UNIFICADO) */
 .article .content-image,
-.article .hero {
+.article .hero,
+.article .cover {
   width: 100%;
   object-fit: cover;
   border-radius: var(--radius-lg);
@@ -28,11 +29,19 @@
   margin: var(--space-8) auto;
 }
 
-.article .content-image:hover {
+.article .cover {
+  height: 420px;
+  margin: var(--space-6) 0 var(--space-4);
+  border-radius: var(--radius-xl);
+}
+
+.article .content-image:hover,
+.article .hero:hover,
+.article .cover:hover {
   transform: scale(1.01);
 }
 
-/* BUTTON RESET */
+/* BUTTON RESET (solo aquí, correcto) */
 .article button {
   background: var(--color-white);
   border: none;
@@ -45,6 +54,7 @@
   align-items: center;
 }
 
+/* TITLE */
 .article .image-title {
   position: absolute;
   left: 50%;
@@ -53,7 +63,7 @@
   text-decoration: underline;
 }
 
-/* TOOLS (mantiene específico aquí, no global) */
+/* TOOLS */
 .article .tools h3 {
   font-size: var(--text-xs);
   text-transform: uppercase;
