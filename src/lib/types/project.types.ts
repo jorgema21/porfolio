@@ -24,9 +24,10 @@ export type RoleType =
   | "desarrollo"
   | "datos";
 
-/**
- * 🔥 ESTE ES EL PROJECT REAL (contenido completo)
- */
+/* =========================
+   BASE PROJECT (CORE MODEL)
+========================= */
+
 export interface ProjectContent {
   id: string;
 
@@ -60,3 +61,14 @@ export interface ProjectContent {
   blocks: Block[];
 }
 
+/* =========================
+   DERIVED TYPES (IMPORTANT)
+========================= */
+
+/**
+ * Tipo específico para infografías
+ * (derivado del modelo base)
+ */
+export type Infographic = ProjectContent & {
+  category: "infografia";
+};
