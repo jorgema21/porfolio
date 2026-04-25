@@ -1,22 +1,18 @@
 .article {
   max-width: var(--content-width);
   margin: 0 auto;
-  padding: 0 1.5rem 4rem;
+  padding: 0 var(--space-6) var(--space-12);
 
   font-family: var(--font-serif);
   line-height: 1.75;
-  color: var(--color-text);
 
   --accent: var(--blue-500);
 }
-
-/* COVER */
 
 .article .cover-wrapper {
   display: block;
   width: 100%;
   border: none;
-  padding: 0;
   background: none;
 }
 
@@ -25,11 +21,11 @@
   height: 420px;
   object-fit: cover;
 
-  margin: 1.5rem 0 1rem;
-  border-radius: 16px;
+  margin: var(--space-6) 0 var(--space-4);
+  border-radius: var(--radius-xl);
 
   cursor: zoom-in;
-  transition: transform 0.3s ease;
+  transition: transform var(--transition);
 }
 
 .article .cover:hover {

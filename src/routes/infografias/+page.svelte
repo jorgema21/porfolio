@@ -12,15 +12,12 @@
 
   type ApartadoKey = keyof typeof APARTADOS;
 
-  const { filters, filtered } = createInfographicsState(
-    () => $lang
-  );
+  const { filters, filtered } = createInfographicsState(() => $lang);
 
   const treemap = getTreemapData();
 
   const label = {
-    apartado: (k: ApartadoKey) =>
-      APARTADOS[k].label[$lang],
+    apartado: (k: ApartadoKey) => APARTADOS[k].label[$lang],
 
     medium: (k: string) =>
       (infographicsI18n[$lang].mediums as Record<string, string>)[k] ?? k,
@@ -34,8 +31,17 @@
   ] as const;
 </script>
 
-<div class="layout">
+<div class="page">
   <h1>{$t.infographics.title}</h1>
+
+  <section class="insights">
+    <Treemap
+      data={treemap.apartados}
+      getLabel={(k) => label.apartado(k as ApartadoKey)}
+    />
+
+    <Treemap data={treemap.mediums} getLabel={(k) => label.medium(k)} />
+  </section>
 
   <div class="toolbar">
     <input
@@ -51,24 +57,11 @@
 
     <button
       onclick={() =>
-        (filters.sortDir =
-          filters.sortDir === "asc" ? "desc" : "asc")}
+        (filters.sortDir = filters.sortDir === "asc" ? "desc" : "asc")}
     >
       {filters.sortDir === "asc" ? "↓" : "↑"}
     </button>
   </div>
-
-  <section class="insights">
-    <Treemap
-      data={treemap.apartados}
-      getLabel={(k) => label.apartado(k as ApartadoKey)}
-    />
-
-    <Treemap
-      data={treemap.mediums}
-      getLabel={(k) => label.medium(k)}
-    />
-  </section>
 
   <section class="infographics-grid">
     {#each filtered() as project (project.id)}

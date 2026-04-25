@@ -1,6 +1,6 @@
 export const infographics = {
   es: {
-    title: "Infografías",
+    title: "Infografía, análisis y visualización de datos",
     searchPlaceholder: "Buscar...",
 
     sort: {
@@ -28,7 +28,7 @@ export const infographics = {
   },
 
   en: {
-    title: "Infographics",
+    title: "Infographics, data analysis and dataviz",
     searchPlaceholder: "Search...",
 
     sort: {
