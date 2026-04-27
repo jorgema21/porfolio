@@ -3,6 +3,7 @@
   import { lang } from "$lib/i18n/lang";
   import { formatDate } from "$lib/utils/formatDate";
   import { infographics as infographicsI18n } from "$lib/i18n/dictionaries/infographics.i18n";
+  import { fade, scale } from "svelte/transition";
 
   function handleKey(e: KeyboardEvent) {
     if (e.key === "Escape") closePreview();
@@ -21,6 +22,7 @@
     autofocus
     onkeydown={handleKey}
     aria-label="Preview del proyecto"
+    transition:fade={{ duration: 150 }}
   >
     <!-- BACKDROP -->
     <button
@@ -31,7 +33,10 @@
     ></button>
 
     <!-- CARD -->
-    <div class="preview-card">
+    <div
+      class="preview-card"
+      transition:scale={{ duration: 220, start: 0.94 }}
+    >
       <!-- CLOSE -->
       <button
         class="preview-close"
