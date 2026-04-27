@@ -15,12 +15,10 @@
   type ApartadoKey = keyof typeof APARTADOS;
 
   const { filters, filtered } = createInfographicsState(() => $lang);
-
   const treemap = getTreemapData();
 
   const label = {
     apartado: (k: ApartadoKey) => APARTADOS[k].label[$lang],
-
     medium: (k: string) =>
       (infographicsI18n[$lang].mediums as Record<string, string>)[k] ?? k,
   };
@@ -35,6 +33,16 @@
 
 <div class="page">
   <h1>{$t.infographics.title}</h1>
+
+  <!-- INTRO MULTILÍNEA (SIN HTML) -->
+  <p class="page-intro">
+    {#each $t.infographics.intro as line, i}
+      {line}
+      {#if i !== $t.infographics.intro.length - 1}
+        <br />
+      {/if}
+    {/each}
+  </p>
 
   <section class="insights">
     <Treemap
@@ -74,4 +82,5 @@
     {/each}
   </section>
 </div>
+
 <InfographicPreview />

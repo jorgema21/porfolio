@@ -16,7 +16,6 @@
 
 .page p {
   font-size: var(--text-base);
-  max-width: 60ch;
   color: var(--color-text);
 }
 
@@ -27,4 +26,9 @@
 
 .page a:hover {
   text-decoration: underline;
+}
+
+.page .page-intro {
+  max-width: 75ch;
+  font-size: var(--text-base);
 }

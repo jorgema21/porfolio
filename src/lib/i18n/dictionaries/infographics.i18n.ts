@@ -26,7 +26,10 @@ export const infographics = {
       elmundo: "El Mundo",
     },
 
-    seeProject: "Ver proyecto →",
+    intro: [
+      "Bienvenido/a a la sección de infografía y visualización de datos.",
+      "Aquí puedes ver de manera más detenida mis principales trabajos."
+    ],
   },
 
   en: {
@@ -56,6 +59,9 @@ export const infographics = {
       elmundo: "El Mundo",
     },
 
-    seeProject: "See project →",
+    intro: [
+      "Welcome to the infographics and data visualization section.",
+      "Here you can take a closer look at my main works."
+    ],
   },
 } as const;
