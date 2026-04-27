@@ -22,9 +22,7 @@
       visibleCount = i + 1;
       i++;
 
-      if (i >= items.length) {
-        clearInterval(interval);
-      }
+      if (i >= items.length) clearInterval(interval);
     }, baseDelay);
 
     return () => clearInterval(interval);
@@ -35,8 +33,7 @@
   <div
     transition:fly={{
       y: 34,
-      duration: 9000,
-      delay: 0,
+      duration: 3000,
       easing: cubicOut
     }}
   >

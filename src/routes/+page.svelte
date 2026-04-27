@@ -1,9 +1,8 @@
 <script lang="ts">
   import projects from "$lib/data/projects";
-  import ProjectCard from "$lib/components/ProjectCard.svelte";
-  import ZoneRenderer from "$lib/components/ZoneRenderer.svelte";
   import type { HomeZone, HomeProject } from "$lib/data/projects";
 
+  import AnimatedZone from "$lib/components/AnimatedZone.svelte";
   import { t, lang } from "$lib/i18n";
 
   const zones: HomeZone[] = [
@@ -27,7 +26,7 @@
 </script>
 
 <main class="layout">
-  <!-- INTRO HOME (NUEVO) -->
+  <!-- INTRO HOME -->
   <section class="home-intro">
     <p>
       {#each $t.home.intro as line, i}
@@ -39,41 +38,62 @@
   <!-- HERO -->
   <section class="grid-hero">
     <div>
-      {#if zonesData.heroMain?.[0]}
-        <ProjectCard project={zonesData.heroMain[0]} variant="hero" />
+      {#if zonesData.heroMain?.length}
+        <AnimatedZone
+          items={zonesData.heroMain}
+          variant="hero"
+        />
       {/if}
     </div>
 
     <div class="stack">
-      <ZoneRenderer items={zonesData.heroSide} variant="list" />
+      <AnimatedZone
+        items={zonesData.heroSide}
+        variant="list"
+      />
     </div>
   </section>
 
   <!-- GRID TOP -->
   <section class="grid grid-3 section">
-    <ZoneRenderer items={zonesData.gridTop} variant="grid" />
+    <AnimatedZone
+      items={zonesData.gridTop}
+      variant="grid"
+    />
   </section>
 
   <!-- FEATURES -->
   <section class="stack section">
-    <ZoneRenderer items={zonesData.features} variant="feature" />
+    <AnimatedZone
+      items={zonesData.features}
+      variant="feature"
+    />
   </section>
 
   <!-- BOTTOM -->
   <section class="grid grid-sidebar section">
     <div class="stack">
-      <ZoneRenderer items={zonesData.listBlock} variant="list" />
+      <AnimatedZone
+        items={zonesData.listBlock}
+        variant="list"
+      />
     </div>
 
     <div>
-      {#if zonesData.heroBottom?.[0]}
-        <ProjectCard project={zonesData.heroBottom[0]} variant="hero" />
+      {#if zonesData.heroBottom?.length}
+        <AnimatedZone
+          items={zonesData.heroBottom}
+          variant="hero"
+        />
       {/if}
     </div>
   </section>
 
   <!-- FINAL GRID -->
   <section class="grid grid-3 section">
-    <ZoneRenderer items={zonesData.finalGrid} variant="grid" />
+    <AnimatedZone
+      items={zonesData.finalGrid}
+      variant="grid"
+    />
   </section>
 </main>
