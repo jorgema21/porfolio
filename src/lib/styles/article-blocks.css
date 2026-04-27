@@ -2,6 +2,12 @@
   margin-top: var(--space-8);
 }
 
+.article .project-header h1 {
+  font: var(--text-2xl) var(--font-serif);
+  padding: 0;
+  margin: auto 0;
+}
+
 .article .text {
   font-size: var(--text-base);
   line-height: 1.85;
