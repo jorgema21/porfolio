@@ -22,7 +22,6 @@
   <h1 class="logo"><a href="/">{$t.layout.nav.mi_porfolio}</a></h1>
 
   <nav class="nav">
-    <a href="/">{$t.layout.nav.home}</a>
     <a href="/infografias">{$t.layout.nav.infografias}</a>
     <a href="/estilo">{$t.layout.nav.estilo}</a>
     <a href="/sobre-mi">{$t.layout.nav.about}</a>

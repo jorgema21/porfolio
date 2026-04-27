@@ -4,6 +4,8 @@
   import ZoneRenderer from "$lib/components/ZoneRenderer.svelte";
   import type { HomeZone, HomeProject } from "$lib/data/projects";
 
+  import { t, lang } from "$lib/i18n";
+
   const zones: HomeZone[] = [
     "heroMain",
     "heroSide",
@@ -20,11 +22,19 @@
       .sort((a, b) => (a.homeOrder ?? 999) - (b.homeOrder ?? 999));
 
   const zonesData = Object.fromEntries(
-    zones.map((z) => [z, getZone(z)])
+    zones.map((z) => [z, getZone(z)]),
   ) as Record<HomeZone, HomeProject[]>;
 </script>
 
 <main class="layout">
+  <!-- INTRO HOME (NUEVO) -->
+  <section class="home-intro">
+    <p>
+      {#each $t.home.intro as line, i}
+        {line}{#if i < $t.home.intro.length - 1}<br />{/if}
+      {/each}
+    </p>
+  </section>
 
   <!-- HERO -->
   <section class="grid-hero">
@@ -66,5 +76,4 @@
   <section class="grid grid-3 section">
     <ZoneRenderer items={zonesData.finalGrid} variant="grid" />
   </section>
-
 </main>

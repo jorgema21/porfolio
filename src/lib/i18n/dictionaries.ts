@@ -4,6 +4,7 @@ import { contact } from "./dictionaries/contact";
 import { metaarticle } from "./dictionaries/meta-article";
 import { infographics } from "./dictionaries/infographics.i18n";
 import { project } from "./dictionaries/project";
+import { home } from "./dictionaries/home";
 
 import { apartados } from "./dictionaries/apartados";
 
@@ -16,6 +17,7 @@ export const dictionaries = {
     infographics: infographics.es,
     project: project.es,
     apartados: apartados.es, // 👈
+    home: home.es, // 👈
   },
   en: {
     layout: layout.en,
@@ -25,5 +27,6 @@ export const dictionaries = {
     infographics: infographics.en,
     project: project.en,
     apartados: apartados.en, // 👈
+    home: home.en,
   },
 } as const;
