@@ -9,11 +9,13 @@
 
   type MediumKey = keyof typeof infographicsI18n.es.mediums;
 
-  const medium = $derived(() =>
+  // 🔥 sin $derived (más ligero)
+  const getMedium = () =>
     project.mediumKey
       ? infographicsI18n[$lang].mediums[project.mediumKey as MediumKey]
-      : null
-  );
+      : null;
+
+  const hasMeta = () => !!(getMedium() || project.date);
 </script>
 
 <button
@@ -21,18 +23,22 @@
   onclick={() => openPreview(project)}
 >
   <div class="thumb">
-    <img src={project.image} alt={project.title[$lang]} loading="lazy" />
+    <img
+      src={project.image}
+      alt={project.title[$lang]}
+      loading="lazy"
+    />
 
     <div class="overlay">
       <h3>{project.title[$lang]}</h3>
 
-      {#if medium() || project.date}
+      {#if hasMeta()}
         <div class="meta cluster">
-          {#if medium()}
-            <span>{medium()}</span>
+          {#if getMedium()}
+            <span>{getMedium()}</span>
           {/if}
 
-          {#if medium() && project.date}
+          {#if getMedium() && project.date}
             <span>·</span>
           {/if}
 

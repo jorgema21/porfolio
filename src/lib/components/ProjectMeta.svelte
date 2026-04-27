@@ -7,33 +7,39 @@
 
   const { project } = $props<{ project: ProjectContent }>();
 
-  const hasMeta = $derived(
-    () =>
-      !!project.mediumKey ||
-      !!project.date ||
-      !!project.apartado ||
-      !!project.usos?.length
+  const hasMeta = $derived(() =>
+    !!project.mediumKey ||
+    !!project.date ||
+    !!project.apartado ||
+    !!project.usos?.length
   );
 
-  // 🔥 clave tipada correctamente (evita el error de index signature)
   type MediumKey = keyof typeof infographicsI18n.es.mediums;
 
-  const getMediumLabel = (key: MediumKey) =>
-    infographicsI18n[$lang].mediums[key] ?? key;
+  const mediumLabel = $derived(() =>
+    project.mediumKey
+      ? infographicsI18n[$lang].mediums[project.mediumKey as MediumKey]
+      : null
+  );
+
+  const apartadoLabel = $derived(() =>
+    project.apartado
+      ? APARTADOS[project.apartado as ApartadoKey].label[$lang]
+      : null
+  );
 </script>
 
 {#if hasMeta()}
   <div class="meta-top">
 
-    <!-- LEFT -->
     <div class="meta-left u-meta-row">
-      {#if project.mediumKey}
+      {#if mediumLabel()}
         {#if project.url}
           <a class="link-underline medium-link" href={project.url}>
-            {getMediumLabel(project.mediumKey as MediumKey)} ↗
+            {mediumLabel()} ↗
           </a>
         {:else}
-          <span class="link-underline">{getMediumLabel(project.mediumKey as MediumKey)}</span>
+          <span class="link-underline">{mediumLabel()}</span>
         {/if}
       {/if}
 
@@ -46,7 +52,6 @@
       {/if}
     </div>
 
-    <!-- CENTER -->
     {#if project.usos?.length}
       <div class="meta-center u-meta-row">
         {#each project.usos as uso}
@@ -55,11 +60,10 @@
       </div>
     {/if}
 
-    <!-- RIGHT -->
-    {#if project.apartado}
+    {#if apartadoLabel()}
       <div class="meta-right">
         <span class="badge apartado">
-          {APARTADOS[project.apartado as ApartadoKey].label[$lang]}
+          {apartadoLabel()}
         </span>
       </div>
     {/if}

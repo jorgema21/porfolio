@@ -14,26 +14,27 @@
   const baseDelay = 120;
 
   $effect(() => {
+    if (!items?.length) return;
+
     visibleCount = 0;
 
-    let i = 0;
+    const timer = setInterval(() => {
+      visibleCount += 1;
 
-    const interval = setInterval(() => {
-      visibleCount = i + 1;
-      i++;
-
-      if (i >= items.length) clearInterval(interval);
+      if (visibleCount >= items.length) {
+        clearInterval(timer);
+      }
     }, baseDelay);
 
-    return () => clearInterval(interval);
+    return () => clearInterval(timer);
   });
 </script>
 
-{#each items.slice(0, visibleCount) as p, i (p.id)}
+{#each items.slice(0, visibleCount) as p (p.id)}
   <div
     transition:fly={{
       y: 34,
-      duration: 3000,
+      duration: 2900,
       easing: cubicOut
     }}
   >

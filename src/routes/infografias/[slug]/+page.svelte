@@ -9,16 +9,18 @@
 
   const { data } = $props<{ data: { project: ProjectContent } }>();
 
-  // ✅ REACTIVIDAD CORRECTA (evita warning de Svelte)
+  // 🔥 reactivo correcto
   const project = $derived(() => data.project);
 
   const apartado = $derived(
-    () => project().apartado as ApartadoKey | undefined,
+    () => project().apartado as ApartadoKey | undefined
   );
 
   const color = $derived(() =>
-    apartado() ? APARTADOS[apartado()!].color.light : "transparent",
+    apartado() ? APARTADOS[apartado()!].color.light : "transparent"
   );
+
+  const blocks = $derived(() => project().blocks);
 </script>
 
 <article
@@ -26,12 +28,16 @@
   data-apartado={apartado()}
   style="--apartado-color: {color()};"
 >
+  <!-- ❗ llamar funciones -->
   <ProjectHeader project={project()} />
   <ProjectMeta project={project()} />
 
   <section class="blocks">
-    {#each project().blocks as block}
-      <BlockRenderer {block} slug={project().slug} />
+    {#each blocks() as block}
+      <BlockRenderer
+        block={block}
+        slug={project().slug}
+      />
     {/each}
   </section>
 

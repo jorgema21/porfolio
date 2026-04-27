@@ -1,6 +1,7 @@
 <script lang="ts">
   import InfographicCard from "$lib/components/InfographicCard.svelte";
   import Treemap from "$lib/components/visualizations/Treemap.svelte";
+  import InfographicPreview from "$lib/components/InfographicPreview.svelte";
 
   import { t, lang } from "$lib/i18n";
   import { APARTADOS } from "$lib/config/apartados.config";
@@ -9,8 +10,6 @@
   import { getTreemapData } from "$lib/infographics/infographics.metrics";
   import { createInfographicsState } from "$lib/infographics/infographics.state.svelte";
 
-  import InfographicPreview from "$lib/components/InfographicPreview.svelte";
-
   import { flip } from "svelte/animate";
   import { fly } from "svelte/transition";
   import { cubicOut } from "svelte/easing";
@@ -18,23 +17,24 @@
   type ApartadoKey = keyof typeof APARTADOS;
 
   const { filters, filtered, grouped } = createInfographicsState(() => $lang);
+
+  // 🔥 memo estable (no recrear objeto complejo en cada render)
   const treemap = getTreemapData();
+
+  // 🔥 cache de idiomas
+  const mediumDict = $derived(
+    () => infographicsI18n[$lang].mediums as Record<string, string>,
+  );
 
   const label = {
     apartado: (k: ApartadoKey) => APARTADOS[k].label[$lang],
-    medium: (k: string) =>
-      (infographicsI18n[$lang].mediums as Record<string, string>)[k] ?? k,
+    medium: (k: string) => mediumDict()[k] ?? k,
   };
 
-  const groupLabel = (key: string, type: "medium" | "apartado") => {
-    if (type === "medium") {
-      return (
-        (infographicsI18n[$lang].mediums as Record<string, string>)[key] ?? key
-      );
-    }
-
-    return APARTADOS[key as ApartadoKey]?.label[$lang] ?? key;
-  };
+  const groupLabel = (key: string, type: "medium" | "apartado") =>
+    type === "medium"
+      ? (mediumDict()[key] ?? key)
+      : (APARTADOS[key as ApartadoKey]?.label[$lang] ?? key);
 
   const sortOptions = [
     { value: "date", label: () => $t.infographics.sort.newest },
