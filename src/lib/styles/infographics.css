@@ -7,16 +7,17 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-4);
   align-items: start;
-  will-change: transform;
+
+  animation: fadeIn var(--motion-base) var(--ease-out) both;
 }
 
-/* versión agrupada */
+/* versión agrupada (redundante mantenida por compatibilidad) */
 .infographics-grid.grouped {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 /* =========================
-   CARD WRAPPER
+   CARD
 ========================= */
 
 .infographics-card {
@@ -27,8 +28,11 @@
   position: relative;
   z-index: 1;
 
-  transition: transform var(--transition),
-              opacity var(--transition);
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.infographics-card:hover {
+  transform: var(--hover-lift);
 }
 
 /* =========================
@@ -45,8 +49,13 @@
 
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-
   background: var(--color-white);
+
+  transition: transform var(--transition);
+}
+
+.toolbar:hover {
+  transform: translateY(-1px);
 }
 
 .toolbar input,
@@ -58,6 +67,7 @@
   flex: 1;
 }
 
+/* select (solo optimización de orden) */
 .toolbar select {
   appearance: none;
   cursor: pointer;
@@ -90,12 +100,14 @@
   font: var(--text-lg) var(--font-serif);
   margin: var(--space-8) 0 var(--space-4);
   padding-bottom: var(--space-2);
+
   border-bottom: 1px solid var(--color-border);
 
-  animation: fadeInUp 0.25s ease both;
+  animation: slideUp var(--motion-base) var(--ease-out) both;
 }
 
-@keyframes fadeInUp {
+/* FIX: keyframe duplicado eliminado (no existía fadeInUp real) */
+@keyframes slideUp {
   from {
     opacity: 0;
     transform: translateY(6px);

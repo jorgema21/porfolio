@@ -1,0 +1,66 @@
+/* =========================
+   MOTION UTILITIES
+========================= */
+
+.fade-in {
+  animation: fadeIn var(--motion-base) var(--ease-out) both;
+}
+
+.slide-up {
+  animation: slideUp var(--motion-base) var(--ease-out) both;
+}
+
+.scale-in {
+  animation: scaleIn var(--motion-base) var(--ease-out) both;
+}
+
+/* =========================
+   KEYFRAMES
+========================= */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* =========================
+   HOVER SYSTEM UNIFICADO
+========================= */
+
+.hover-lift {
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+.hover-lift:hover {
+  transform: var(--hover-lift);
+}
+
+.hover-scale {
+  transition: transform var(--transition);
+}
+
+.hover-scale:hover {
+  transform: var(--hover-scale);
+}

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { t, lang, toggleLang } from "$lib/i18n";
-  import "$lib/styles/page.css";
+  
 </script>
 
 <main class="page">

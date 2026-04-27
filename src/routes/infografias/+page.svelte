@@ -1,7 +1,6 @@
 <script lang="ts">
   import InfographicCard from "$lib/components/InfographicCard.svelte";
   import Treemap from "$lib/components/visualizations/Treemap.svelte";
-  import "$lib/styles/infographics.css";
 
   import { t, lang } from "$lib/i18n";
   import { APARTADOS } from "$lib/config/apartados.config";

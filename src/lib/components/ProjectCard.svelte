@@ -1,7 +1,6 @@
 <script lang="ts">
   import type { HomeProject } from "$lib/data/projects";
   import { lang, t } from "$lib/i18n";
-  import "$lib/styles/project-card.css";
 
   const { project, variant } = $props<{
     project: HomeProject;

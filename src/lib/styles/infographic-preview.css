@@ -16,10 +16,7 @@
   border: 0;
 }
 
-/* =========================
-   BACKDROP
-========================= */
-
+/* BACKDROP */
 .preview-backdrop {
   position: fixed;
   inset: 0;
@@ -50,7 +47,7 @@
 }
 
 /* =========================
-   CLOSE
+   CLOSE BUTTON
 ========================= */
 
 .preview-close {
@@ -110,14 +107,14 @@
   margin: 0;
   padding: 0;
   font: var(--text-lg) var(--font-serif);
-
-  width: fit-content; /* 🔥 clave */
+  width: fit-content;
 }
 
 .preview-content p {
   color: var(--color-muted);
 }
 
+/* LINK */
 .preview-link {
   margin-top: var(--space-2);
 
@@ -131,5 +128,4 @@
 
 .preview-link:hover {
   color: var(--blue-300);
-  transition: color var(--transition);
 }

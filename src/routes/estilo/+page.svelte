@@ -1,7 +1,6 @@
 <script lang="ts">
   import projects from "$lib/data/projects";
   import { t, lang, toggleLang } from "$lib/i18n";
-  import "$lib/styles/page.css";
 
   const estilo = $derived(
     projects.filter((p) => p.category === "estilo")

@@ -7,10 +7,6 @@
   import ProjectTools from "$lib/components/ProjectTools.svelte";
   import BlockRenderer from "$lib/components/BlockRenderer.svelte";
 
-  import "$lib/styles/article.css";
-  import "$lib/styles/article-meta.css";
-  import "$lib/styles/article-blocks.css";
-
   const { data } = $props<{ data: { project: ProjectContent } }>();
 
   // ✅ REACTIVIDAD CORRECTA (evita warning de Svelte)

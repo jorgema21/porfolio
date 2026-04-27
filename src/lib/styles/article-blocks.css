@@ -2,19 +2,24 @@
   margin-top: var(--space-8);
 }
 
+/* HEADER */
 .article .project-header h1 {
   font: var(--text-2xl) var(--font-serif);
+  margin: 0;
   padding: 0;
-  margin: auto 0;
 }
 
+/* TEXT */
 .article .text {
   font-size: var(--text-base);
   line-height: 1.85;
   margin: var(--space-6) 0;
 }
 
-/* IMAGES (UNIFICADO) */
+/* =========================
+   IMAGES (BASE COMPARTIDA)
+========================= */
+
 .article .content-image,
 .article .hero,
 .article .cover {
@@ -25,6 +30,7 @@
   transition: transform var(--transition);
 }
 
+/* VARIANTS */
 .article .content-image {
   width: 90%;
   margin: var(--space-8) 0;
@@ -41,23 +47,27 @@
   border-radius: var(--radius-xl);
 }
 
+/* HOVER UNIFICADO */
 .article .content-image:hover,
 .article .hero:hover,
 .article .cover:hover {
   transform: scale(1.01);
 }
 
-/* BUTTON RESET (solo aquí, correcto) */
-.article .image-wrapper button {
-  background: var(--color-white);
-  border: none;
-}
+/* =========================
+   IMAGE WRAPPER
+========================= */
 
-/* IMAGE WRAPPER */
 .article .image-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+/* BUTTON RESET */
+.article .image-wrapper button {
+  background: var(--color-white);
+  border: none;
 }
 
 /* TITLE */
@@ -69,7 +79,10 @@
   text-decoration: underline;
 }
 
-/* TOOLS */
+/* =========================
+   TOOLS
+========================= */
+
 .article .tools h3 {
   font-size: var(--text-xs);
   text-transform: uppercase;

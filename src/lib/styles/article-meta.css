@@ -13,6 +13,7 @@
   position: relative;
 }
 
+/* divider */
 .article .meta-top::before {
   content: "";
   position: absolute;
@@ -23,7 +24,7 @@
 }
 
 /* =========================
-   META ROW SYSTEM
+   META ROWS (REUTILIZADO)
 ========================= */
 
 .article .meta-left,
@@ -44,20 +45,20 @@
 }
 
 /* =========================
-   MEDIUM LINK (usa system global)
+   LINKS
 ========================= */
 
 .article .medium-link {
   color: inherit;
+  transition: color var(--transition);
 }
 
 .article .medium-link:hover {
   color: var(--blue-300);
-  transition: var(--transition);
 }
 
 /* =========================
-   APARTADO BADGE (solo token)
+   APARTADO TOKEN
 ========================= */
 
 .article .apartado {
