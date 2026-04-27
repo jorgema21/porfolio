@@ -66,10 +66,39 @@ export const createInfographicsState = (lang: () => "es" | "en") => {
         return matchSearch && matchApartado && matchMedium;
       })
       .sort((a, b) =>
-        sorters(l)[filters.sortBy](a, b) *
-        dir(filters)
+        sorters(l)[filters.sortBy](a, b) * dir(filters)
       );
   });
 
-  return { filters, filtered };
+  /* =========================
+     GROUPED VIEW
+  ========================= */
+
+  const grouped = $derived(() => {
+    const list = filtered();
+    const sort = filters.sortBy;
+
+    if (sort !== "medium" && sort !== "apartado") {
+      return null;
+    }
+
+    const groups = new Map<string, Infographic[]>();
+
+    for (const item of list) {
+      const key =
+        sort === "medium"
+          ? item.mediumKey ?? "unknown"
+          : item.apartado ?? "unknown";
+
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key)!.push(item);
+    }
+
+    return Array.from(groups.entries()).map(([key, items]) => ({
+      key,
+      items,
+    }));
+  });
+
+  return { filters, filtered, grouped };
 };

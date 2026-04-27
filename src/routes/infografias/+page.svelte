@@ -12,15 +12,29 @@
 
   import InfographicPreview from "$lib/components/InfographicPreview.svelte";
 
+  import { flip } from "svelte/animate";
+  import { fly } from "svelte/transition";
+  import { cubicOut } from "svelte/easing";
+
   type ApartadoKey = keyof typeof APARTADOS;
 
-  const { filters, filtered } = createInfographicsState(() => $lang);
+  const { filters, filtered, grouped } = createInfographicsState(() => $lang);
   const treemap = getTreemapData();
 
   const label = {
     apartado: (k: ApartadoKey) => APARTADOS[k].label[$lang],
     medium: (k: string) =>
       (infographicsI18n[$lang].mediums as Record<string, string>)[k] ?? k,
+  };
+
+  const groupLabel = (key: string, type: "medium" | "apartado") => {
+    if (type === "medium") {
+      return (
+        (infographicsI18n[$lang].mediums as Record<string, string>)[key] ?? key
+      );
+    }
+
+    return APARTADOS[key as ApartadoKey]?.label[$lang] ?? key;
   };
 
   const sortOptions = [
@@ -34,7 +48,6 @@
 <div class="page">
   <h1>{$t.infographics.title}</h1>
 
-  <!-- INTRO MULTILÍNEA (SIN HTML) -->
   <p class="page-intro">
     {#each $t.infographics.intro as line, i}
       {line}
@@ -67,7 +80,6 @@
 
     <button
       class="control sort-dir"
-      data-dir={filters.sortDir}
       aria-label="Cambiar orden"
       onclick={() =>
         (filters.sortDir = filters.sortDir === "asc" ? "desc" : "asc")}
@@ -76,11 +88,38 @@
     </button>
   </div>
 
-  <section class="infographics-grid">
-    {#each filtered() as project (project.id)}
-      <InfographicCard {project} />
+  {#if filters.sortBy === "medium" || filters.sortBy === "apartado"}
+    {#each grouped() as group (group.key)}
+      <h2 class="group-title">
+        {groupLabel(
+          group.key,
+          filters.sortBy === "medium" ? "medium" : "apartado",
+        )}
+      </h2>
+
+      <section class="infographics-grid grouped">
+        {#each group.items as project (project.id)}
+          <div
+            animate:flip={{ duration: 400, easing: cubicOut }}
+            transition:fly={{ y: 10, duration: 200, easing: cubicOut }}
+          >
+            <InfographicCard {project} />
+          </div>
+        {/each}
+      </section>
     {/each}
-  </section>
+  {:else}
+    <section class="infographics-grid">
+      {#each filtered() as project (project.id)}
+        <div
+          animate:flip={{ duration: 350, easing: cubicOut }}
+          transition:fly={{ y: 8, duration: 200, easing: cubicOut }}
+        >
+          <InfographicCard {project} />
+        </div>
+      {/each}
+    </section>
+  {/if}
 </div>
 
 <InfographicPreview />
