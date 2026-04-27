@@ -10,6 +10,8 @@
   import { getTreemapData } from "$lib/infographics/infographics.metrics";
   import { createInfographicsState } from "$lib/infographics/infographics.state.svelte";
 
+  import InfographicPreview from "$lib/components/InfographicPreview.svelte";
+
   type ApartadoKey = keyof typeof APARTADOS;
 
   const { filters, filtered } = createInfographicsState(() => $lang);
@@ -56,10 +58,13 @@
     </select>
 
     <button
+      class="control sort-dir"
+      data-dir={filters.sortDir}
+      aria-label="Cambiar orden"
       onclick={() =>
         (filters.sortDir = filters.sortDir === "asc" ? "desc" : "asc")}
     >
-      {filters.sortDir === "asc" ? "↓" : "↑"}
+      {filters.sortDir === "asc" ? "↑" : "↑"}
     </button>
   </div>
 
@@ -69,3 +74,4 @@
     {/each}
   </section>
 </div>
+<InfographicPreview />

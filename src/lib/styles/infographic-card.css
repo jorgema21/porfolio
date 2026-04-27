@@ -1,0 +1,55 @@
+.infographics-card {
+  padding: 0;
+  border: 0;
+}
+
+.infographics-card .thumb {
+  position: relative;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+}
+
+.infographics-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+  cursor: pointer;
+}
+
+.infographics-card:hover img {
+  transform: scale(1.04);
+}
+
+/* OVERLAY editorial */
+
+.infographics-card .overlay {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  padding: var(--space-4);
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85),
+    transparent 60%
+  );
+  cursor: pointer;
+}
+
+.infographics-card .overlay h3 {
+  margin: 0;
+  font: var(--text-base) var(--font-serif);
+  color: white;
+}
+
+.infographics-card .meta {
+  font: var(--text-xs) var(--font-serif);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.75);
+}

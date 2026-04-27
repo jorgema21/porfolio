@@ -5,6 +5,8 @@
 @import "./header.css";
 @import "./image-lightbox.css";
 @import "./infographics.css";
+@import "./infographic-card.css";
+@import "./infographic-preview.css";
 @import "./layout.css";
 @import "./project-card.css";
 @import "./treemap.css";

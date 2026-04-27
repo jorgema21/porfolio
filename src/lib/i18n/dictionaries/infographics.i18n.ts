@@ -25,6 +25,8 @@ export const infographics = {
       elpais: "El País",
       elmundo: "El Mundo",
     },
+
+    seeProject: "Ver proyecto →",
   },
 
   en: {
@@ -53,5 +55,7 @@ export const infographics = {
       elpais: "El País",
       elmundo: "El Mundo",
     },
+
+    seeProject: "See project →",
   },
 } as const;

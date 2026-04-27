@@ -142,3 +142,37 @@
   border-color: var(--blue-300);
   transform: translateY(-1px);
 }
+
+/* =========================
+   SORT BUTTON
+========================= */
+
+.sort-dir {
+  width: 38px;
+  height: 38px;
+
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+
+  transition: transform var(--transition-fast);
+}
+
+/* estado asc (invertido visualmente) */
+.sort-dir[data-dir="asc"] {
+  transform: rotate(180deg);
+}
+
+/* hover ya hereda de .control, pero afinamos */
+.sort-dir:hover {
+  transform: translateY(-2px);
+}
+
+/* combinación hover + estado */
+.sort-dir[data-dir="asc"]:hover {
+  transform: rotate(180deg) translateY(-2px);
+}
+
+/* active (feedback táctil) */
+.sort-dir:active {
+  transform: scale(0.95);
+}
