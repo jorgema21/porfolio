@@ -2,13 +2,13 @@ export const project = {
   es: {
     category: {
       infografia: "Infografía",
-      estilo: "Estilo",
+      estilo: "Estilo de vida",
     },
   },
   en: {
     category: {
       infografia: "Infographics",
-      estilo: "Style",
+      estilo: "Lifestyle",
     },
   },
 } as const;

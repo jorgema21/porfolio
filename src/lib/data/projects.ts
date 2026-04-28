@@ -12,7 +12,7 @@ export interface ProjectTitle {
   en: string;
 }
 
-export type ProjectCategory = "infografia" | "estilo";
+export type ProjectCategory = "infografia" | "estilo_de_vida";
 
 export interface HomeProject {
   id: string;
@@ -21,6 +21,8 @@ export interface HomeProject {
   description?: ProjectTitle;
 
   image?: string;
+
+  mediumStyle?: string;
 
   category: ProjectCategory;
 
@@ -53,9 +55,10 @@ const projects = [
   {
     id: "p2",
     externalUrl: "proyecto-2",
+    mediumStyle: "El País",
     title: { es: "Proyecto 2", en: "Project 2" },
     description: { es: "Descripción corta", en: "Short description" },
-    category: "estilo",
+    category: "estilo_de_vida",
     homeZone: "heroSide",
     homeOrder: 1,
     homeVisible: true,
@@ -65,7 +68,7 @@ const projects = [
     externalUrl: "proyecto-3",
     title: { es: "Proyecto 3", en: "Project 3" },
     description: { es: "Descripción corta", en: "Short description" },
-    category: "estilo",
+    category: "estilo_de_vida",
     homeZone: "heroSide",
     homeOrder: 2,
     homeVisible: true,
@@ -75,7 +78,7 @@ const projects = [
     externalUrl: "proyecto-4",
     title: { es: "Proyecto 4", en: "Project 4" },
     description: { es: "Descripción corta", en: "Short description" },
-    category: "estilo",
+    category: "estilo_de_vida",
     homeZone: "heroSide",
     homeOrder: 3,
     homeVisible: true,
@@ -152,7 +155,7 @@ const projects = [
     externalUrl: "proyecto-10",
     title: { es: "Proyecto 10", en: "Project 10" },
     description: { es: "Texto corto", en: "Short text" },
-    category: "estilo",
+    category: "estilo_de_vida",
     homeZone: "listBlock",
     homeOrder: 1,
     homeVisible: true,
@@ -162,7 +165,7 @@ const projects = [
     externalUrl: "proyecto-11",
     title: { es: "Proyecto 11", en: "Project 11" },
     description: { es: "Texto corto", en: "Short text" },
-    category: "estilo",
+    category: "estilo_de_vida",
     homeZone: "listBlock",
     homeOrder: 2,
     homeVisible: true,
@@ -172,7 +175,7 @@ const projects = [
     externalUrl: "proyecto-12",
     title: { es: "Proyecto 12", en: "Project 12" },
     description: { es: "Texto corto", en: "Short text" },
-    category: "estilo",
+    category: "estilo_de_vida",
     homeZone: "listBlock",
     homeOrder: 3,
     homeVisible: true,
@@ -509,7 +512,7 @@ const projects = [
     externalUrl: "proyecto-40",
     title: { es: "Proyecto 40", en: "Project 40" },
     description: { es: "Texto corto", en: "Short text" },
-    category: "estilo",
+    category: "estilo_de_vida",
     homeVisible: false,
   },
   {
@@ -517,7 +520,7 @@ const projects = [
     externalUrl: "proyecto-41",
     title: { es: "Proyecto 41", en: "Project 41" },
     description: { es: "Texto corto", en: "Short text" },
-    category: "estilo",
+    category: "estilo_de_vida",
     homeVisible: false,
   },
   {
@@ -525,7 +528,7 @@ const projects = [
     externalUrl: "proyecto-42",
     title: { es: "Proyecto 42", en: "Project 42" },
     description: { es: "Texto corto", en: "Short text" },
-    category: "estilo",
+    category: "estilo_de_vida",
     homeVisible: false,
   },
   {
@@ -533,7 +536,7 @@ const projects = [
     externalUrl: "proyecto-43",
     title: { es: "Proyecto 43", en: "Project 43" },
     description: { es: "Texto corto", en: "Short text" },
-    category: "estilo",
+    category: "estilo_de_vida",
     homeVisible: false,
   },
   {
@@ -541,7 +544,7 @@ const projects = [
     externalUrl: "proyecto-44",
     title: { es: "Proyecto 44", en: "Project 44" },
     description: { es: "Texto corto", en: "Short text" },
-    category: "estilo",
+    category: "estilo_de_vida",
     homeVisible: false,
   },
   {
@@ -549,7 +552,7 @@ const projects = [
     externalUrl: "proyecto-45",
     title: { es: "Proyecto 45", en: "Project 45" },
     description: { es: "Texto corto", en: "Short text" },
-    category: "estilo",
+    category: "estilo_de_vida",
     homeVisible: false,
   },
   {
@@ -557,7 +560,7 @@ const projects = [
     externalUrl: "proyecto-46",
     title: { es: "Proyecto 46", en: "Project 46" },
     description: { es: "Texto corto", en: "Short text" },
-    category: "estilo",
+    category: "estilo_de_vida",
     homeVisible: false,
   },
   {
@@ -565,7 +568,7 @@ const projects = [
     externalUrl: "proyecto-47",
     title: { es: "Proyecto 47", en: "Project 47" },
     description: { es: "Texto corto", en: "Short text" },
-    category: "estilo",
+    category: "estilo_de_vida",
     homeVisible: false,
   },
   {
@@ -573,7 +576,7 @@ const projects = [
     externalUrl: "proyecto-48",
     title: { es: "Proyecto 48", en: "Project 48" },
     description: { es: "Texto corto", en: "Short text" },
-    category: "estilo",
+    category: "estilo_de_vida",
     homeVisible: false,
   },
   {
@@ -581,7 +584,7 @@ const projects = [
     externalUrl: "proyecto-49",
     title: { es: "Proyecto 49", en: "Project 49" },
     description: { es: "Texto corto", en: "Short text" },
-    category: "estilo",
+    category: "estilo_de_vida",
     homeVisible: false,
   },
   {
@@ -589,7 +592,7 @@ const projects = [
     externalUrl: "proyecto-50",
     title: { es: "Proyecto 50", en: "Project 50" },
     description: { es: "Texto corto", en: "Short text" },
-    category: "estilo",
+    category: "estilo_de_vida",
     homeVisible: false,
   },
 ] satisfies HomeProject[];

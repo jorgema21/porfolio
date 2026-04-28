@@ -70,10 +70,15 @@
    LINKS
 ========================= */
 
+.link {
+  color: var(--blue-500);
+}
+
 .link-underline {
   position: relative;
   text-decoration: none;
   color: inherit;
+  transition: color var(--transition);
 }
 
 .link-underline::after {
@@ -81,12 +86,14 @@
   position: absolute;
   left: 0;
   bottom: -2px;
-
   width: 0%;
   height: 1px;
-
   background: currentColor;
   transition: width var(--transition);
+}
+
+.link-underline:hover {
+  color: var(--blue-300);
 }
 
 .link-underline:hover::after {

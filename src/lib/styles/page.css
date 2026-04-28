@@ -20,15 +20,41 @@
 }
 
 .page a {
-  color: var(--blue-500);
+  color: inherit; /* <- importante */
   text-decoration: none;
 }
 
 .page a:hover {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .page .page-intro {
   max-width: 75ch;
   font-size: var(--text-base);
+}
+
+.group {
+  padding: var(--space-6) 0;
+}
+
+.group:last-child {
+  border-bottom: none;
+}
+
+.group-title {
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-3);
+  color: var(--color-text);
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-left: var(--space-6);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
 }
