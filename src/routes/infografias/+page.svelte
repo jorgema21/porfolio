@@ -22,9 +22,7 @@
   const treemap = getTreemapData();
 
   // 🔥 cache de idiomas
-  const mediumDict = $derived(
-    () => infographicsI18n[$lang].mediums as Record<string, string>,
-  );
+  const mediumDict = () => infographicsI18n[$lang].mediums;
 
   const label = {
     apartado: (k: ApartadoKey) => APARTADOS[k].label[$lang],
@@ -48,10 +46,28 @@
   <h1>{$t.infographics.title}</h1>
 
   <p class="page-intro">
-    {#each $t.infographics.intro as line, i}
-      {line}
-      {#if i !== $t.infographics.intro.length - 1}
-        <br />
+    {#each $t.infographics.intro as node}
+      {#if typeof node === "string"}
+        {node}
+      {:else if node.bold}
+        <strong>{node.text}</strong>
+      {:else if node.italic}
+        <em>{node.text}</em>
+      {:else}
+        {node.text}
+      {/if}
+    {/each}
+  </p>
+  <p class="page-intro">
+    {#each $t.infographics.description as node}
+      {#if typeof node === "string"}
+        {node}
+      {:else if node.bold}
+        <strong>{node.text}</strong>
+      {:else if node.italic}
+        <em>{node.text}</em>
+      {:else}
+        {node.text}
       {/if}
     {/each}
   </p>

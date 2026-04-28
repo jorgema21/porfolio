@@ -1,7 +1,7 @@
 <script lang="ts">
   import projects from "$lib/data/projects";
-  import { lang } from "$lib/i18n";
   import { style } from "$lib/i18n/dictionaries/style.i18n";
+  import { t, lang } from "$lib/i18n";
 
   type Project = (typeof projects)[number];
 
@@ -35,13 +35,31 @@
 </script>
 
 <main class="page">
-  <h1>{style[$lang].title}</h1>
+  <h1>{$t.style.title}</h1>
 
   <p class="page-intro">
-    {#each style[$lang].intro as line, i}
-      {line}
-      {#if i !== style[$lang].intro.length - 1}
-        <br />
+    {#each $t.style.intro as node}
+      {#if typeof node === "string"}
+        {node}
+      {:else if node.bold}
+        <strong>{node.text}</strong>
+      {:else if node.italic}
+        <em>{node.text}</em>
+      {:else}
+        {node.text}
+      {/if}
+    {/each}
+  </p>
+  <p class="page-intro">
+    {#each $t.style.description as node}
+      {#if typeof node === "string"}
+        {node}
+      {:else if node.bold}
+        <strong>{node.text}</strong>
+      {:else if node.italic}
+        <em>{node.text}</em>
+      {:else}
+        {node.text}
       {/if}
     {/each}
   </p>

@@ -17,6 +17,7 @@
 .page p {
   font-size: var(--text-base);
   color: var(--color-text);
+  margin: 0;
 }
 
 .page a {
@@ -31,10 +32,6 @@
 .page .page-intro {
   max-width: 75ch;
   font-size: var(--text-base);
-}
-
-.group {
-  padding: var(--space-6) 0;
 }
 
 .group:last-child {

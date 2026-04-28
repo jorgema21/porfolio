@@ -1,17 +1,61 @@
-export const style = {
+import type { RichText } from "$lib/i18n/rich-text.types";
+
+type InfographicsDict = {
+  title: string;
+
+  intro: RichText;
+  description: RichText;
+};
+
+export const style: Record<"es" | "en", InfographicsDict> = {
   es: {
     title: "Estilo de vida",
+
+
     intro: [
-      "Bienvenido/a a la sección de estilo.",
-      "Aquí puedes acceder directamente a todos los trabajos que se han publicado."
+      {
+        text: "Bienvenido/a a la sección de ",
+      },
+      {
+        text: "estilo de vida. ",
+        bold: true,
+      },
     ],
+    description: [
+      {
+        text: "Aquí puedes acceder directamente a ",
+      },
+      {
+        text: "todos los trabajos que se han publicado.",
+        bold: true,
+      },
+    ] satisfies RichText,
   },
 
   en: {
-    title: "Lifestyle",
+    title: "Infografía, análisis y visualización de datos",
+
+
     intro: [
-      "Welcome to the lifestyle section.",
-      "Here you can access directly to all the works that have been published."
+      {
+        text: "Welcome to the ",
+      },
+      {
+        text: "lifestyle ",
+        bold: true,
+      },
+      {
+        text: "section.",
+      },
     ],
+    description: [
+      {
+        text: "Here you can access directly to ",
+      },
+      {
+        text: "all the works that have been published.",
+        bold: true,
+      },
+    ] satisfies RichText,
   },
-} as const;
+};
