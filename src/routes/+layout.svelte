@@ -30,12 +30,18 @@
   });
 </script>
 
+<svelte:head>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Epunda+Slab:wght@300..900&family=Nunito+Sans:wght@200..1000&display=swap"
+    rel="stylesheet"
+  />
+</svelte:head>
+
 <header class="site-header">
   {#if visible >= 1}
-    <h1
-      class="logo"
-      in:fly={{ y: -30, duration: 1000, easing: cubicOut }}
-    >
+    <h1 class="logo" in:fly={{ y: -30, duration: 1000, easing: cubicOut }}>
       <a href="/">{$t.layout.nav.mi_porfolio}</a>
     </h1>
   {/if}
@@ -43,7 +49,7 @@
   {#if visible >= 2}
     <nav
       class="nav"
-      in:fly={{ y: -30, duration: 1000, delay:100, easing: cubicOut }}
+      in:fly={{ y: -30, duration: 1000, delay: 100, easing: cubicOut }}
     >
       <a href="/infografias">{$t.layout.nav.infografias}</a>
       <a href="/estilo">{$t.layout.nav.estilo}</a>
@@ -61,7 +67,7 @@
         ? "Cambiar idioma a inglés"
         : "Switch language to Spanish"}
       aria-pressed={$lang === "en"}
-      in:fly={{ y: -30, duration: 1000, delay:150, easing: cubicOut }}
+      in:fly={{ y: -30, duration: 1000, delay: 150, easing: cubicOut }}
     >
       <img
         src={$lang === "es" ? "/images/flags/gb.svg" : "/images/flags/es.svg"}
