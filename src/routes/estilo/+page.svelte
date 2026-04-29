@@ -15,9 +15,7 @@
 
   // 📦 filtrar + ordenar
   const estilo = $derived(() =>
-    projects
-      .filter((p) => p.category === "estilo_de_vida")
-      .sort(sortById)
+    projects.filter((p) => p.category === "estilo_de_vida").sort(sortById),
   );
 
   // 📊 agrupar por medio
@@ -25,7 +23,7 @@
     const map = new Map<string, Project[]>();
 
     for (const p of estilo()) {
-      const key = p.mediumStyle ?? "Otros";
+      const key = p.mediumStyle ?? $t.style.others;
 
       if (!map.has(key)) map.set(key, []);
       map.get(key)!.push(p);
@@ -78,6 +76,21 @@
     {/each}
   </p>
 
+  <!-- aim -->
+  <p class="page-intro">
+    {#each $t.style.aim as node}
+      {#if typeof node === "string"}
+        {node}
+      {:else if node.bold}
+        <strong>{node.text}</strong>
+      {:else if node.italic}
+        <em>{node.text}</em>
+      {:else}
+        {node.text}
+      {/if}
+    {/each}
+  </p>
+
   <!-- acordeón -->
   {#each grouped() as group (group.key)}
     <section class="group">
@@ -93,10 +106,7 @@
       </button>
 
       {#if openGroup === group.key}
-        <ul
-          class="list"
-          transition:slide={{ duration: 250, easing: cubicOut }}
-        >
+        <ul class="list" transition:slide={{ duration: 250, easing: cubicOut }}>
           {#each group.items as project (project.id)}
             <li>
               <a

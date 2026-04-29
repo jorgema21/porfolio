@@ -72,7 +72,7 @@ export const infographics: Record<"es" | "en", InfographicsDict> = {
         bold: true,
       },
       {
-        text: "Durante los primeros meses aprendí a través de otros, pero desde entonces he aprendido prácticamente autodidacta",
+        text: "Durante los primeros meses aprendí a través de otros, pero desde entonces he aprendido prácticamente autodidacta.",
       },
     ] satisfies RichText,
   },
@@ -125,7 +125,7 @@ export const infographics: Record<"es" | "en", InfographicsDict> = {
         bold: true,
       },
       {
-        text: ". For the first month I learned by others, but from then I have learn mainly by myself",
+        text: ". For the first month I learned by others, but from then I have learn mainly by myself.",
       },
     ] satisfies RichText,
   },
