@@ -1,73 +1,21 @@
-/* =========================
-   CARD BASE
-========================= */
-
-.card {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-2);
-
-  background: var(--color-white);
-  text-align: left;
-
-  cursor: pointer;
-
-  transition:
-    transform var(--transition-fast),
-    opacity var(--transition-fast);
+.card.feature {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: var(--space-8);
 }
 
-.card:hover {
-  transform: var(--hover-lift);
+.card.feature .content {
+  order: 1;
 }
 
-.card[aria-disabled="true"] {
-  cursor: default;
-  opacity: 0.6;
+.card.feature .thumb {
+  order: 2;
 }
 
-.card:focus-visible {
-  outline: 2px solid var(--blue-500);
-  outline-offset: 3px;
-}
-
-/* =========================
-   MEDIA (UNIFICADO CON INFOGRAPHICS)
-========================= */
-
-.thumb {
-  position: relative;
-  aspect-ratio: 16/9;
-  overflow: hidden;
-  border-radius: var(--radius-sm);
-}
-
-.thumb img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-
-  transition: transform 0.4s ease;
-  will-change: transform;
-}
-
-.card:hover .thumb img {
-  transform: scale(1.03);
-}
-
-/* =========================
-   CONTENT
-========================= */
-
-.content {
-  display: flex;
-  flex-direction: column;
-}
-
+/* TIPOGRAFÍA */
 .title {
   font: 500 1rem/1.2 var(--font-serif);
   letter-spacing: -0.01em;
-
   max-width: 22ch;
   margin: var(--space-2) 0 0;
 }
@@ -78,10 +26,7 @@
   margin: var(--space-2) 0 0;
 }
 
-/* =========================
-   CATEGORY
-========================= */
-
+/* CATEGORY */
 .category {
   font: 600 0.7rem var(--font-sans);
   text-transform: uppercase;
@@ -97,10 +42,7 @@
   color: var(--red-500);
 }
 
-/* =========================
-   VARIANTS
-========================= */
-
+/* VARIANTS */
 .card.hero .title {
   font-size: 2rem;
 }
@@ -109,19 +51,4 @@
 .card.list .title,
 .card.feature .title {
   font-size: 1.1rem;
-}
-
-/* FEATURE */
-.card.feature {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: var(--space-8);
-}
-
-.card.feature .content {
-  order: 1;
-}
-
-.card.feature .thumb {
-  order: 2;
 }

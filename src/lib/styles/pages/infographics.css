@@ -11,13 +11,8 @@
   animation: fadeIn var(--motion-base) var(--ease-out) both;
 }
 
-/* alias redundante eliminado conceptualmente */
-.infographics-grid.grouped {
-  grid-template-columns: inherit;
-}
-
 /* =========================
-   CARD
+   CARD WRAPPER
 ========================= */
 
 .infographics-card {
@@ -57,10 +52,10 @@
 }
 
 .toolbar:hover {
-  transform: translateY(-1px);
+  transform: var(--hover-lift);
 }
 
-/* inputs base */
+/* inputs */
 .toolbar input,
 .toolbar select {
   flex: 1;
@@ -72,7 +67,7 @@
   padding: var(--space-2);
 }
 
-/* select refinado */
+/* select */
 .toolbar select {
   appearance: none;
   cursor: pointer;
@@ -81,7 +76,6 @@
 
   border-left: 1px solid var(--color-border);
   background: var(--bg-soft);
-
   border-radius: var(--radius-md);
 
   background-image:
@@ -92,8 +86,4 @@
     calc(100% - 8px) center;
   background-size: 6px 6px;
   background-repeat: no-repeat;
-}
-
-.toolbar select:hover {
-  border-color: var(--blue-300);
 }
