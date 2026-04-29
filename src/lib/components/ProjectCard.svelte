@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { HomeProject } from "$lib/data/projects";
+  import type { HomeProject, ProjectCategory } from "$lib/data/projects";
   import { lang, t } from "$lib/i18n";
 
   const { project, variant } = $props<{
@@ -7,37 +7,44 @@
     variant: "hero" | "grid" | "list" | "feature";
   }>();
 
-  const href = $derived(() => {
-    if (project.category === "infografia") {
-      return `/infografias/${project.slug}`;
-    }
-    return project.externalUrl ?? null;
-  });
-
-  const isExternal = $derived(
-    () => project.category === "estilo_de_vida" && !!project.externalUrl
+  const href = $derived(
+    project.category === "infografia"
+      ? `/infografias/${project.slug}`
+      : project.externalUrl
   );
 
-  const canNavigate = $derived(() => !!href());
+  const isExternal = $derived(
+    project.category === "estilo_de_vida" && !!project.externalUrl
+  );
+
+  const canNavigate = $derived(!!href);
 </script>
 
 <a
-  class={`card ${variant}`}
-  href={href() ?? undefined}
-  target={isExternal() ? "_blank" : undefined}
-  rel={isExternal() ? "noopener noreferrer" : undefined}
-  aria-disabled={!canNavigate()}
-  tabindex={canNavigate() ? 0 : -1}
+  class="card"
+  class:hero={variant === "hero"}
+  class:grid={variant === "grid"}
+  class:list={variant === "list"}
+  class:feature={variant === "feature"}
+  href={href ?? undefined}
+  target={isExternal ? "_blank" : undefined}
+  rel={isExternal ? "noopener noreferrer" : undefined}
+  aria-disabled={!canNavigate}
+  tabindex={canNavigate ? 0 : -1}
 >
   {#if project.image && variant !== "list"}
     <div class="thumb">
-      <img src={project.image} alt={project.title[$lang]} loading="lazy" />
+      <img
+        src={project.image}
+        alt={project.title[$lang]}
+        loading="lazy"
+      />
     </div>
   {/if}
 
   <div class="content">
     <span class={`category ${project.category}`}>
-      {$t.project.category[project.category as keyof typeof $t.project.category]}
+      {$t.project.category[project.category as ProjectCategory]}
     </span>
 
     <h2 class="title">

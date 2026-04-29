@@ -8,10 +8,10 @@ export const preview = $state<PreviewState>({
   project: null
 });
 
-export function openPreview(project: Infographic) {
+export const openPreview = (project: Infographic) => {
   preview.project = project;
-}
+};
 
-export function closePreview() {
+export const closePreview = () => {
   preview.project = null;
-}
+};

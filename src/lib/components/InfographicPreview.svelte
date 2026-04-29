@@ -33,10 +33,7 @@
     ></button>
 
     <!-- CARD -->
-    <div
-      class="preview-card"
-      transition:scale={{ duration: 220, start: 0.94 }}
-    >
+    <div class="preview-card" transition:scale={{ duration: 220, start: 0.94 }}>
       <!-- CLOSE -->
       <button
         class="preview-close"

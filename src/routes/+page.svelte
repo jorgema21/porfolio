@@ -3,7 +3,7 @@
   import type { HomeZone, HomeProject } from "$lib/data/projects";
 
   import AnimatedZone from "$lib/components/AnimatedZone.svelte";
-  import { t, lang } from "$lib/i18n";
+  import { t } from "$lib/i18n";
 
   const zones: HomeZone[] = [
     "heroMain",
@@ -39,61 +39,40 @@
   <section class="grid-hero">
     <div>
       {#if zonesData.heroMain?.length}
-        <AnimatedZone
-          items={zonesData.heroMain}
-          variant="hero"
-        />
+        <AnimatedZone items={zonesData.heroMain} variant="hero" />
       {/if}
     </div>
 
     <div class="stack">
-      <AnimatedZone
-        items={zonesData.heroSide}
-        variant="list"
-      />
+      <AnimatedZone items={zonesData.heroSide} variant="list" />
     </div>
   </section>
 
   <!-- GRID TOP -->
   <section class="grid grid-3 section">
-    <AnimatedZone
-      items={zonesData.gridTop}
-      variant="grid"
-    />
+    <AnimatedZone items={zonesData.gridTop} variant="grid" />
   </section>
 
   <!-- FEATURES -->
   <section class="stack section">
-    <AnimatedZone
-      items={zonesData.features}
-      variant="feature"
-    />
+    <AnimatedZone items={zonesData.features} variant="feature" />
   </section>
 
   <!-- BOTTOM -->
   <section class="grid grid-sidebar section">
     <div class="stack">
-      <AnimatedZone
-        items={zonesData.listBlock}
-        variant="list"
-      />
+      <AnimatedZone items={zonesData.listBlock} variant="list" />
     </div>
 
     <div>
       {#if zonesData.heroBottom?.length}
-        <AnimatedZone
-          items={zonesData.heroBottom}
-          variant="hero"
-        />
+        <AnimatedZone items={zonesData.heroBottom} variant="hero" />
       {/if}
     </div>
   </section>
 
   <!-- FINAL GRID -->
   <section class="grid grid-3 section">
-    <AnimatedZone
-      items={zonesData.finalGrid}
-      variant="grid"
-    />
+    <AnimatedZone items={zonesData.finalGrid} variant="grid" />
   </section>
 </main>

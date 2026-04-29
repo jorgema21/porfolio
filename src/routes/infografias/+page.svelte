@@ -3,48 +3,33 @@
   import Treemap from "$lib/components/visualizations/Treemap.svelte";
   import InfographicPreview from "$lib/components/InfographicPreview.svelte";
 
-  import { t, lang } from "$lib/i18n";
-  import { APARTADOS } from "$lib/config/apartados.config";
-  import { infographics as infographicsI18n } from "$lib/i18n/dictionaries/infographics.i18n";
-
-  import { getTreemapData } from "$lib/infographics/infographics.metrics";
-  import { createInfographicsState } from "$lib/infographics/infographics.state.svelte";
-
   import { flip } from "svelte/animate";
   import { fly } from "svelte/transition";
   import { cubicOut } from "svelte/easing";
 
+  import { t, lang } from "$lib/i18n";
+  import { APARTADOS } from "$lib/config/apartados.config";
+
+  import { useInfographicsPage } from "$lib/infographics/useInfographicsPage";
+
   type ApartadoKey = keyof typeof APARTADOS;
 
-  const { filters, filtered, grouped } = createInfographicsState(() => $lang);
-
-  // 🔥 memo estable (no recrear objeto complejo en cada render)
-  const treemap = getTreemapData();
-
-  // 🔥 cache de idiomas
-  const mediumDict = () => infographicsI18n[$lang].mediums;
-
-  const label = {
-    apartado: (k: ApartadoKey) => APARTADOS[k].label[$lang],
-    medium: (k: string) => mediumDict()[k] ?? k,
-  };
-
-  const groupLabel = (key: string, type: "medium" | "apartado") =>
-    type === "medium"
-      ? (mediumDict()[key] ?? key)
-      : (APARTADOS[key as ApartadoKey]?.label[$lang] ?? key);
-
-  const sortOptions = [
-    { value: "date", label: () => $t.infographics.sort.newest },
-    { value: "title", label: () => $t.infographics.sort.title },
-    { value: "apartado", label: () => $t.infographics.sort.section },
-    { value: "medium", label: () => $t.infographics.sort.medium },
-  ] as const;
+  const {
+    filters,
+    filtered,
+    grouped,
+    treemap,
+    sortOptions,
+    labelApartado,
+    labelMedium,
+    groupLabel
+  } = useInfographicsPage(() => $lang, $t);
 </script>
 
 <div class="page">
   <h1>{$t.infographics.title}</h1>
 
+  <!-- INTRO -->
   <p class="page-intro">
     {#each $t.infographics.intro as node}
       {#if typeof node === "string"}
@@ -58,6 +43,7 @@
       {/if}
     {/each}
   </p>
+
   <p class="page-intro">
     {#each $t.infographics.description as node}
       {#if typeof node === "string"}
@@ -72,15 +58,20 @@
     {/each}
   </p>
 
+  <!-- INSIGHTS -->
   <section class="insights">
     <Treemap
       data={treemap.apartados}
-      getLabel={(k) => label.apartado(k as ApartadoKey)}
+      getLabel={(k) => labelApartado(k as ApartadoKey)}
     />
 
-    <Treemap data={treemap.mediums} getLabel={(k) => label.medium(k)} />
+    <Treemap
+      data={treemap.mediums}
+      getLabel={labelMedium}
+    />
   </section>
 
+  <!-- TOOLBAR -->
   <div class="toolbar">
     <input
       placeholder={$t.infographics.searchPlaceholder}
@@ -89,7 +80,9 @@
 
     <select bind:value={filters.sortBy}>
       {#each sortOptions as opt}
-        <option value={opt.value}>{opt.label()}</option>
+        <option value={opt.value}>
+          {opt.label}
+        </option>
       {/each}
     </select>
 
@@ -99,16 +92,17 @@
       onclick={() =>
         (filters.sortDir = filters.sortDir === "asc" ? "desc" : "asc")}
     >
-      {filters.sortDir === "asc" ? "↑" : "↑"}
+      {filters.sortDir === "asc" ? "↑" : "↓"}
     </button>
   </div>
 
+  <!-- GROUPED VIEW -->
   {#if filters.sortBy === "medium" || filters.sortBy === "apartado"}
     {#each grouped() as group (group.key)}
       <h2 class="group-title">
         {groupLabel(
           group.key,
-          filters.sortBy === "medium" ? "medium" : "apartado",
+          filters.sortBy === "medium" ? "medium" : "apartado"
         )}
       </h2>
 
@@ -123,7 +117,9 @@
         {/each}
       </section>
     {/each}
+
   {:else}
+    <!-- FLAT VIEW -->
     <section class="infographics-grid">
       {#each filtered() as project (project.id)}
         <div

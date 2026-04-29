@@ -10,7 +10,6 @@
   }>();
 
   let visibleCount = $state(0);
-
   const baseDelay = 120;
 
   $effect(() => {
@@ -18,23 +17,31 @@
 
     visibleCount = 0;
 
-    const timer = setInterval(() => {
-      visibleCount += 1;
+    let cancelled = false;
 
-      if (visibleCount >= items.length) {
-        clearInterval(timer);
+    const run = async () => {
+      for (let i = 0; i < items.length; i++) {
+        if (cancelled) return;
+
+        visibleCount = i + 1;
+
+        await new Promise((r) => setTimeout(r, baseDelay));
       }
-    }, baseDelay);
+    };
 
-    return () => clearInterval(timer);
+    run();
+
+    return () => {
+      cancelled = true;
+    };
   });
 </script>
 
 {#each items.slice(0, visibleCount) as p (p.id)}
   <div
-    transition:fly={{
+    in:fly={{
       y: 34,
-      duration: 2900,
+      duration: 2000,
       easing: cubicOut
     }}
   >
