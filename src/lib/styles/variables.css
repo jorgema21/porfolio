@@ -46,11 +46,6 @@
   --radius-xl: 16px;
   --radius-full: 999px;
 
-  /* Transitions */
-  --transition-fast: 0.2s ease;
-  --transition: 0.3s ease;
-  --transition-slow: 0.4s ease;
-
   /* Shadows / focus */
   --focus-ring: 0 0 0 3px color-mix(in oklch, var(--blue-300) 25%, transparent);
 

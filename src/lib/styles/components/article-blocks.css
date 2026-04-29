@@ -17,12 +17,10 @@
 }
 
 /* =========================
-   IMAGES (BASE COMPARTIDA)
+   IMAGES (BASE)
 ========================= */
 
-.article .content-image,
-.article .hero,
-.article .cover {
+.article .image {
   width: 100%;
   object-fit: cover;
   border-radius: var(--radius-lg);
@@ -30,28 +28,28 @@
   transition: transform var(--transition);
 }
 
-/* VARIANTS */
-.article .content-image {
+.article .image:hover {
+  transform: scale(1.01);
+}
+
+/* =========================
+   IMAGE VARIANTS
+========================= */
+
+.article .image--content {
   width: 90%;
   margin: var(--space-8) 0;
 }
 
-.article .hero {
+.article .image--hero {
   max-width: 1100px;
   margin: var(--space-8) auto;
 }
 
-.article .cover {
+.article .image--cover {
   height: 420px;
   margin: var(--space-6) 0 var(--space-4);
   border-radius: var(--radius-xl);
-}
-
-/* HOVER UNIFICADO */
-.article .content-image:hover,
-.article .hero:hover,
-.article .cover:hover {
-  transform: scale(1.01);
 }
 
 /* =========================

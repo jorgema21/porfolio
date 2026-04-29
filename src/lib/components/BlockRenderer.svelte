@@ -32,7 +32,7 @@
       <img
         src={src()}
         alt={block.alt?.[$lang] ?? ""}
-        class={block.type === "hero" ? "cover" : "content-image"}
+        class={block.type === "image image--hero" ? "image image--cover" : "image image--content"}
         loading="lazy"
       />
     </button>

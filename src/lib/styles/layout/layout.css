@@ -24,12 +24,6 @@
    LAYOUT PRIMITIVES
 ========================= */
 
-.stack {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
-}
-
 .grid {
   display: grid;
   gap: var(--space-6);

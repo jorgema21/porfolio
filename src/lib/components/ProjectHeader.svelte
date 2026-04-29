@@ -16,7 +16,7 @@
       class="cover-wrapper"
       onclick={() => openLightbox(project.image)}
     >
-      <img class="cover" src={project.image} alt="" />
+      <img class="image image--cover" src={project.image} alt="" />
     </button>
   {/if}
 </header>

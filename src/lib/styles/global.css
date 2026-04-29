@@ -1,16 +1,25 @@
-@import "./article.css";
-@import "./article-meta.css";
-@import "./article-blocks.css";
 @import "./base.css";
-@import "./header.css";
-@import "./image-lightbox.css";
-@import "./infographics.css";
-@import "./infographic-card.css";
-@import "./infographic-preview.css";
-@import "./layout.css";
-@import "./motion.css";
-@import "./page.css";
-@import "./project-card.css";
-@import "./treemap.css";
-@import "./ui.css";
+
 @import "./variables.css";
+
+/* UI */
+@import "./ui/ui.css";
+@import "./ui/motion.css";
+
+/* LAYOUT */
+@import "./layout/header.css";
+@import "./layout/layout.css";
+
+/* PAGES */
+@import "./pages/page.css";
+@import "./pages/infographics.css";
+
+/* COMPONENTS */
+@import "./components/article.css";
+@import "./components/article-meta.css";
+@import "./components/article-blocks.css";
+@import "./components/project-card.css";
+@import "./components/image-lightbox.css";
+@import "./components/infographic-card.css";
+@import "./components/infographic-preview.css";
+@import "./components/treemap.css";

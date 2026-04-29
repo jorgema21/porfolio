@@ -1,11 +1,5 @@
-/* RESET GLOBAL (mejor moverlo a base.css idealmente) */
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
 /* =========================
-   CARD
+   CARD BASE
 ========================= */
 
 .card {
@@ -38,10 +32,11 @@ a {
 }
 
 /* =========================
-   MEDIA
+   MEDIA (UNIFICADO CON INFOGRAPHICS)
 ========================= */
 
 .thumb {
+  position: relative;
   aspect-ratio: 16/9;
   overflow: hidden;
   border-radius: var(--radius-sm);
@@ -79,12 +74,14 @@ a {
 
 .description {
   font: 350 0.95rem var(--font-sans);
-
   max-width: 50ch;
   margin: var(--space-2) 0 0;
 }
 
-/* CATEGORY */
+/* =========================
+   CATEGORY
+========================= */
+
 .category {
   font: 600 0.7rem var(--font-sans);
   text-transform: uppercase;
