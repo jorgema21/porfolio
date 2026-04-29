@@ -9,7 +9,6 @@
 
   const { data } = $props<{ data: { project: ProjectContent } }>();
 
-  // 🔥 reactivo correcto
   const project = $derived(() => data.project);
 
   const apartado = $derived(
@@ -17,7 +16,9 @@
   );
 
   const color = $derived(() =>
-    apartado() ? APARTADOS[apartado()!].color.light : "transparent"
+    apartado()
+      ? APARTADOS[apartado()!].color.light
+      : "transparent"
   );
 
   const blocks = $derived(() => project().blocks);
@@ -28,16 +29,12 @@
   data-apartado={apartado()}
   style="--apartado-color: {color()};"
 >
-  <!-- ❗ llamar funciones -->
   <ProjectHeader project={project()} />
   <ProjectMeta project={project()} />
 
   <section class="blocks">
-    {#each blocks() as block}
-      <BlockRenderer
-        block={block}
-        slug={project().slug}
-      />
+    {#each blocks() as block (block)}
+      <BlockRenderer {block} slug={project().slug} />
     {/each}
   </section>
 

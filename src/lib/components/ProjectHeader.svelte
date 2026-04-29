@@ -12,10 +12,7 @@
   <h1>{title()}</h1>
 
   {#if project.image}
-    <button
-      class="cover-wrapper"
-      onclick={() => openLightbox(project.image)}
-    >
+    <button class="cover-wrapper" onclick={() => openLightbox(project.image)}>
       <img class="image image--cover" src={project.image} alt="" />
     </button>
   {/if}

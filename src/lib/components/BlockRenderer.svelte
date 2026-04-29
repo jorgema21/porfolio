@@ -3,19 +3,17 @@
   import { lang } from "$lib/i18n/lang";
   import type { Block } from "$lib/types/block";
 
-  const { block, slug } = $props<{
-    block: Block;
-    slug: string;
-  }>();
+  const { block, slug } = $props<{ block: Block; slug: string }>();
 
   const src = $derived(() =>
-    "src" in block ? `/images/infografias/${slug}/${block.src}` : ""
+    "src" in block ? `/images/infografias/${slug}/${block.src}` : "",
   );
 
   const textValue = $derived(() => {
     if (block.type !== "text") return "";
 
     const value = block.value?.[$lang] ?? block.value?.es;
+
     return Array.isArray(value) ? value.join(" ") : value;
   });
 </script>
@@ -32,15 +30,15 @@
       <img
         src={src()}
         alt={block.alt?.[$lang] ?? ""}
-        class={block.type === "image image--hero" ? "image image--cover" : "image image--content"}
+        class={block.type === "hero"
+          ? "image image--cover"
+          : "image image--content"}
         loading="lazy"
       />
     </button>
   </div>
-
 {:else if block.type === "text"}
   <p class="text">{textValue()}</p>
-
 {:else if block.type === "divider"}
   <div class="divider"></div>
 {/if}
