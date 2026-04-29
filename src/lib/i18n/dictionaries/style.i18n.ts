@@ -33,7 +33,7 @@ export const style: Record<"es" | "en", InfographicsDict> = {
   },
 
   en: {
-    title: "Infografía, análisis y visualización de datos",
+    title: "Lifestyle",
 
 
     intro: [
