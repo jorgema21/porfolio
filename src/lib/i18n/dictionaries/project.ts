@@ -2,13 +2,13 @@ export const project = {
   es: {
     category: {
       infografia: "Infografía",
-      estilo: "Estilo de vida",
+      estilo_de_vida: "Estilo de vida",
     },
   },
   en: {
     category: {
       infografia: "Infographics",
-      estilo: "Lifestyle",
+      estilo_de_vida: "Lifestyle",
     },
   },
 } as const;

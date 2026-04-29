@@ -15,7 +15,7 @@
   });
 
   const isExternal = $derived(
-    () => project.category === "estilo" && !!project.externalUrl
+    () => project.category === "estilo_de_vida" && !!project.externalUrl
   );
 
   const canNavigate = $derived(() => !!href());

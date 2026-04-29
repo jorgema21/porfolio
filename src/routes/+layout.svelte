@@ -52,7 +52,7 @@
       in:fly={{ y: -30, duration: 1000, delay: 100, easing: cubicOut }}
     >
       <a href="/infografias">{$t.layout.nav.infografias}</a>
-      <a href="/estilo">{$t.layout.nav.estilo}</a>
+      <a href="/estilo-de-vida">{$t.layout.nav.estilo}</a>
       <a href="/sobre-mi">{$t.layout.nav.about}</a>
       <a href="/contacto">{$t.layout.nav.contacto}</a>
     </nav>
