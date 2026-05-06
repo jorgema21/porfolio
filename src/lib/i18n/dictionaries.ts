@@ -9,6 +9,9 @@ import { home } from "./dictionaries/home";
 
 import { apartados } from "./dictionaries/apartados";
 
+import { timeline } from "./dictionaries/about/timeline";
+import { skills } from "./dictionaries/about/skills";
+
 export const dictionaries = {
   es: {
     layout: layout.es,
@@ -20,6 +23,8 @@ export const dictionaries = {
     project: project.es,
     apartados: apartados.es, // 👈
     home: home.es, // 👈
+    timeline: timeline.es, // 👈
+    skills: skills.es, // 👈
   },
   en: {
     layout: layout.en,
@@ -31,5 +36,7 @@ export const dictionaries = {
     project: project.en,
     apartados: apartados.en, // 👈
     home: home.en,
+    timeline: timeline.en, // 👈
+    skills: skills.en, // 👈
   },
 } as const;

@@ -93,4 +93,9 @@
 
   /* preview */
   --preview-shadow: 0 40px 100px rgba(0, 0, 0, 0.35);
+
+  /* timeline */
+  --timeline-study: #8e44ad;
+  --timeline-infography: #2980b9;
+  --timeline-style: #e74c3c;
 }

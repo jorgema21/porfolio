@@ -1,10 +1,61 @@
 <script lang="ts">
-  import { t, lang, toggleLang } from "$lib/i18n";
+  import { t } from "$lib/i18n";
+
+  import { skills } from "$lib/data/skills.data";
+
+  import AboutTimeline from "$lib/components/about/AboutTimeline.svelte";
+  import SkillBar from "$lib/components/about/SkillBar.svelte";
 </script>
 
-<main class="page">
+<main class="page about">
+  <!-- INTRO -->
   <h1>{$t.about.title}</h1>
 
-  <p>{$t.about.intro}</p>
-  <p>{$t.about.focus}</p>
+  <section class="about-intro">
+    <div class="about-intro__content">
+      <p>{$t.about.intro}</p>
+      <p>{$t.about.focus}</p>
+    </div>
+
+    <div class="about-intro__media">
+      <div class="placeholder"></div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="about-section">
+    <h2>{$t.about.timelineTitle}</h2>
+
+    <div class="timeline-legend cluster">
+      <span class="legend-item study">Estudio</span>
+      <span class="legend-item infography">Infografía</span>
+      <span class="legend-item style">Estilo</span>
+    </div>
+
+    <AboutTimeline />
+  </section>
+
+  <!-- SKILLS -->
+  <section class="about-section">
+    <h2>{$t.about.skillsTitle}</h2>
+
+    {#each skills as skill (skill.id)}
+      <SkillBar {skill} />
+    {/each}
+  </section>
+
+  <!-- LANGUAGES -->
+  <section class="about-section">
+    <h2>{$t.about.languagesTitle}</h2>
+    <div class="placeholder">Idiomas aquí</div>
+  </section>
+
+  <!-- CTA -->
+  <section class="about-section about-cta">
+    <p>{$t.about.cta}</p>
+
+    <button>
+      {$t.about.downloadCV}
+    </button>
+  </section>
 </main>

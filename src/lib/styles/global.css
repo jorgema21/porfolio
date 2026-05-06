@@ -11,6 +11,7 @@
 @import "./layout/layout.css";
 
 /* PAGES */
+@import "./pages/about.css";
 @import "./pages/page.css";
 @import "./pages/infographics.css";
 
@@ -23,3 +24,6 @@
 @import "./components/infographic-card.css";
 @import "./components/infographic-preview.css";
 @import "./components/treemap.css";
+/* COMPONENTS ABOUT */
+@import "./components//about/skill-bar.css";
+@import "./components//about/timeline.css";
