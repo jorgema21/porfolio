@@ -1,12 +1,12 @@
 <script lang="ts">
   import { slide } from "svelte/transition";
   import { t } from "$lib/i18n";
-  import type { Skill, SkillId } from "$lib/data/skills.data";
+  import type { Skill } from "$lib/data/skills.data";
+  import type { SkillId } from "$lib/data/skills.data";
 
   const { skill } = $props<{ skill: Skill }>();
 
   let open = $state(false);
-
   const segments = 10;
 
   const toggle = () => {
@@ -14,23 +14,18 @@
   };
 
   const filledSegments = $derived(
-    Array.from({ length: segments }, (_, i) => i < skill.level),
+    Array.from({ length: segments }, (_, i) => i < skill.level)
   );
 
   const content = $derived(() => {
     const dict = $t.skills;
+
     return dict[skill.id as SkillId];
   });
 </script>
 
 <div class="skill">
-  <button
-    type="button"
-    class="skill-header ui-accordion-header"
-    aria-expanded={open}
-    aria-controls={"skill-" + skill.id}
-    onclick={toggle}
-  >
+  <button class="skill-header ui-accordion-header" onclick={toggle}>
     <!-- LEFT -->
     <div class="skill-main">
       {#if skill.logo}
@@ -66,16 +61,11 @@
     </span>
 
     <!-- ICON -->
-    <span class:open class="chevron" aria-hidden="true">+</span>
+    <span class:open class="chevron" aria-hidden="true"> + </span>
   </button>
 
   {#if open}
-    <div
-      id={"skill-" + skill.id}
-      class="skill-details"
-      transition:slide
-      role="region"
-    >
+    <div class="skill-details" transition:slide>
       <p class="skill-description">
         {content().description}
       </p>
