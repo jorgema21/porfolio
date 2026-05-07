@@ -5,6 +5,8 @@
 
   import { languages, type LanguageId } from "$lib/data/languages.data";
 
+  import { onMount } from "svelte";
+
   const MAX_LEVEL = 10;
 
   let selected = $state<LanguageId[]>(
@@ -46,17 +48,45 @@
   );
 
   const dict = $derived($t.languages);
+
+  let languagesSection: HTMLElement;
+
+  let visible = $state(false);
+
+  onMount(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        visible = entry.isIntersecting;
+      },
+      {
+        threshold: 0.35,
+        rootMargin: "0px 0px -10% 0px",
+      },
+    );
+
+    if (languagesSection) {
+      observer.observe(languagesSection);
+    }
+
+    return () => observer.disconnect();
+  });
 </script>
 
-<section class="languages" aria-labelledby="languages-title">
+<section
+  class="languages"
+  aria-labelledby="languages-title"
+  bind:this={languagesSection}
+>
   <!-- SELECTORS -->
 
   <div class="languages-selector" role="group" aria-label="Language selectors">
-    {#each languages as language (language.id)}
+    {#each languages as language, i (language.id)}
       <button
         type="button"
         class="language-toggle"
         class:selected={selected.includes(language.id)}
+        class:visible={visible}
+        style={`--i:${i}`}
         aria-pressed={selected.includes(language.id)}
         onclick={() => toggleLanguage(language.id)}
       >
@@ -76,13 +106,18 @@
       </span>
 
       <div class="languages-circles" aria-hidden="true">
-        {#each circles as circle (circle.level)}
-          <span class="language-circle" style={`background:${circle.color}`}>
+        {#each circles as circle, i (circle.level)}
+          <span
+            class="language-circle"
+            class:visible={visible}
+            style={`background:${circle.color}; --i:${i + 5}`}
+          >
             {#each activeLanguages as language (language.id)}
               {#if language.level === circle.level}
                 <span
                   class="language-label"
-                  style={`--language-color:${language.color}`}
+                  class:visible={visible}
+                  style={`--language-color:${language.color}; --i:${circle.level + 10}`}
                 >
                   <strong>
                     {dict[language.id].name}

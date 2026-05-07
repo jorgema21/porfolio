@@ -65,7 +65,7 @@
       {
         threshold: 0.6,
         rootMargin: "0px 0px -10% 0px",
-      }
+      },
     );
 
     if (skillsSection) observer.observe(skillsSection);
@@ -128,9 +128,15 @@
 
   <!-- CTA -->
   <section class="about-section about-cta">
-    <p>{$t.about.cta}</p>
+    <div class="about-cta__content">
+      <span class="about-cta__eyebrow"> Open to work </span>
 
-    <button>
+      <p class="about-cta__text">
+        {$t.about.cta}
+      </p>
+    </div>
+
+    <button class="about-cta__button">
       {$t.about.downloadCV}
     </button>
   </section>

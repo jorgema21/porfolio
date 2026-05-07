@@ -161,3 +161,51 @@
 .language-circle:hover {
   transform: scale(1.08);
 }
+
+/* =========================
+   VIEWPORT ANIMATIONS
+========================= */
+
+.language-toggle,
+.language-circle,
+.language-label {
+  opacity: 0;
+  transform: translateY(12px);
+
+  transition:
+    opacity 900ms var(--ease-out),
+    transform 900ms var(--ease-out);
+
+  transition-delay: calc(var(--i) * 70ms);
+
+  will-change: opacity, transform;
+}
+
+.language-circle {
+  transform: translateY(12px) scale(0.92);
+}
+
+.language-label {
+  transform:
+    translateY(12px)
+    translateX(-10%)
+    rotate(-45deg);
+}
+
+.language-toggle.visible,
+.language-circle.visible,
+.language-label.visible {
+  opacity: 1;
+  transform:
+    translateY(0)
+    translateX(-10%)
+    rotate(-45deg);
+}
+
+.language-toggle.visible {
+  transform: translateY(0);
+}
+
+.language-circle.visible {
+  transform: translateY(0) scale(1);
+}
