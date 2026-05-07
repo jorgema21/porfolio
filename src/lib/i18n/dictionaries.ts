@@ -11,6 +11,7 @@ import { apartados } from "./dictionaries/apartados";
 
 import { timeline } from "./dictionaries/about/timeline";
 import { skills } from "./dictionaries/about/skills";
+import { languages } from "./dictionaries/about/languages";
 
 export const dictionaries = {
   es: {
@@ -25,6 +26,7 @@ export const dictionaries = {
     home: home.es, // 👈
     timeline: timeline.es, // 👈
     skills: skills.es, // 👈
+    languages: languages.es, // 👈
   },
   en: {
     layout: layout.en,
@@ -38,5 +40,6 @@ export const dictionaries = {
     home: home.en,
     timeline: timeline.en, // 👈
     skills: skills.en, // 👈
+    languages: languages.en, // 👈
   },
 } as const;

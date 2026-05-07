@@ -5,6 +5,7 @@
 
   import AboutTimeline from "$lib/components/about/AboutTimeline.svelte";
   import SkillBar from "$lib/components/about/SkillBar.svelte";
+  import AboutLanguages from "$lib/components/about/AboutLanguages.svelte";
 </script>
 
 <main class="page about">
@@ -47,7 +48,8 @@
   <!-- LANGUAGES -->
   <section class="about-section">
     <h2>{$t.about.languagesTitle}</h2>
-    <div class="placeholder">Idiomas aquí</div>
+
+    <AboutLanguages />
   </section>
 
   <!-- CTA -->
