@@ -28,9 +28,9 @@
     <h2>{$t.about.timelineTitle}</h2>
 
     <div class="timeline-legend cluster">
-      <span class="legend-item study">Estudio</span>
-      <span class="legend-item infography">Infografía</span>
-      <span class="legend-item style">Estilo</span>
+      <span class="legend-item study">{$t.about.study}</span>
+      <span class="legend-item infography">{$t.about.infographics}</span>
+      <span class="legend-item style">{$t.about.lifestyle}</span>
     </div>
 
     <AboutTimeline />

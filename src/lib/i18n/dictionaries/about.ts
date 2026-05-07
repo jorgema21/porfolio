@@ -7,6 +7,10 @@ export const about = {
       "Me gusta transformar información compleja en historias claras, visuales y fáciles de entender, con un enfoque creativo y cercano.",
 
     timelineTitle: "Cómo he llegado hasta aquí",
+
+    study: "Estudio",
+    infographics: "Infografía",
+    lifestyle: "Estilo de vida",
     skillsTitle: "Lo que me gusta hacer",
     languagesTitle: "Idiomas que utilizo",
 
@@ -22,6 +26,9 @@ export const about = {
       "I enjoy turning complex information into clear, visual and easy-to-understand stories, with a creative and approachable touch.",
 
     timelineTitle: "How I got here",
+    study: "Study",
+    infographics: "Infographics",
+    lifestyle: "Lifestyle",
     skillsTitle: "What I enjoy doing",
     languagesTitle: "Languages I use",
 

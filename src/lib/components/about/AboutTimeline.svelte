@@ -9,97 +9,54 @@
 
   let progress = $state(0);
 
-  let visibleItems = $state<boolean[]>(
-    timeline.map(() => false),
-  );
+  let visibleItems = $state<boolean[]>(timeline.map(() => false));
 
   const updateTimeline = () => {
     if (!container) return;
 
     requestAnimationFrame(() => {
-      const rect =
-        container.getBoundingClientRect();
+      const rect = container.getBoundingClientRect();
 
-      const containerTop =
-        rect.top + window.scrollY;
+      const containerTop = rect.top + window.scrollY;
 
-      const middle =
-        window.scrollY +
-        window.innerHeight / 2;
+      const middle = window.scrollY + window.innerHeight / 2;
 
-      progress = Math.max(
-        0,
-        Math.min(
-          middle - containerTop,
-          rect.height,
-        ),
-      );
+      progress = Math.max(0, Math.min(middle - containerTop, rect.height));
 
-      const items =
-        container.querySelectorAll<HTMLElement>(
-          ".timeline-item",
-        );
+      const items = container.querySelectorAll<HTMLElement>(".timeline-item");
 
-      visibleItems = Array.from(
-        items,
-        (el) => {
-          const top =
-            el.getBoundingClientRect().top +
-            window.scrollY;
+      visibleItems = Array.from(items, (el) => {
+        const top = el.getBoundingClientRect().top + window.scrollY;
 
-          return middle >= top + 40;
-        },
-      );
+        return middle >= top + 40;
+      });
     });
   };
 
   onMount(() => {
     updateTimeline();
 
-    window.addEventListener(
-      "scroll",
-      updateTimeline,
-      { passive: true },
-    );
+    window.addEventListener("scroll", updateTimeline, { passive: true });
 
-    window.addEventListener(
-      "resize",
-      updateTimeline,
-    );
+    window.addEventListener("resize", updateTimeline);
 
     return () => {
-      window.removeEventListener(
-        "scroll",
-        updateTimeline,
-      );
+      window.removeEventListener("scroll", updateTimeline);
 
-      window.removeEventListener(
-        "resize",
-        updateTimeline,
-      );
+      window.removeEventListener("resize", updateTimeline);
     };
   });
 </script>
 
-<section
-  class="timeline"
-  bind:this={container}
->
+<section class="timeline" bind:this={container}>
   <div class="timeline-line"></div>
 
-  <div
-    class="timeline-progress"
-    style={`height: ${progress}px`}
-  ></div>
+  <div class="timeline-progress" style={`height: ${progress}px`}></div>
 
   {#each timeline as item, index (item.id)}
     <TimelineItem
-      item={item}
-      side={
-        index % 2 === 0
-          ? "left"
-          : "right"
-      }
+      {item}
+      side={index % 2 === 0 ? "left" : "right"}
       active={visibleItems[index]}
     />
   {/each}
