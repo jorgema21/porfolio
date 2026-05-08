@@ -26,7 +26,7 @@
   } = useInfographicsPage(() => $lang, $t);
 </script>
 
-<div class="page">
+<main class="page">
   <h1>{$t.infographics.title}</h1>
 
   <!-- INTRO -->
@@ -71,18 +71,17 @@
     />
   </section>
 
-  <!-- TOOLBAR -->
+  <!-- TOOLBAR (ya optimizada vía ui.css) -->
   <div class="toolbar">
     <input
+      class="input"
       placeholder={$t.infographics.searchPlaceholder}
       bind:value={filters.search}
     />
 
-    <select bind:value={filters.sortBy}>
+    <select class="select" bind:value={filters.sortBy}>
       {#each sortOptions as opt}
-        <option value={opt.value}>
-          {opt.label}
-        </option>
+        <option value={opt.value}>{opt.label}</option>
       {/each}
     </select>
 
@@ -96,7 +95,7 @@
     </button>
   </div>
 
-  <!-- GROUPED VIEW -->
+  <!-- GROUPED -->
   {#if filters.sortBy === "medium" || filters.sortBy === "apartado"}
     {#each grouped() as group (group.key)}
       <h2 class="group-title">
@@ -119,7 +118,6 @@
     {/each}
 
   {:else}
-    <!-- FLAT VIEW -->
     <section class="infographics-grid">
       {#each filtered() as project (project.id)}
         <div
@@ -131,6 +129,6 @@
       {/each}
     </section>
   {/if}
-</div>
+</main>
 
 <InfographicPreview />

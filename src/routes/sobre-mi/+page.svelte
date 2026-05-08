@@ -76,14 +76,14 @@
   });
 </script>
 
-<main class="page about">
+<main class="page">
   <!-- INTRO -->
   <h1>{$t.about.title}</h1>
 
   <section class="about-intro">
     <div class="about-intro__content">
-      <p>{$t.about.intro}</p>
-      <p>{$t.about.focus}</p>
+      <p class="page-intro">{$t.about.intro}</p>
+      <p class="page-intro">{$t.about.focus}</p>
     </div>
 
     <div class="about-intro__media">
@@ -129,14 +129,14 @@
   <!-- CTA -->
   <section class="about-section about-cta">
     <div class="about-cta__content">
-      <span class="about-cta__eyebrow"> Open to work </span>
+      <span class="about-cta__eyebrow">Open to work</span>
 
       <p class="about-cta__text">
         {$t.about.cta}
       </p>
     </div>
 
-    <button class="about-cta__button">
+    <button class="button">
       {$t.about.downloadCV}
     </button>
   </section>
