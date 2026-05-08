@@ -1,31 +1,19 @@
-/* =========================
-   GRID
-========================= */
-
 .infographics-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: var(--space-4);
+
   align-items: start;
 
   animation: fadeIn var(--motion-base) var(--ease-out) both;
 }
 
-/* =========================
-   CARD WRAPPER
-========================= */
-
 .infographics-card {
-  position: relative;
-  z-index: 1;
-
   display: block;
   text-decoration: none;
   color: inherit;
 
-  transition:
-    transform var(--transition),
-    opacity var(--transition);
+  transition: transform var(--transition);
 }
 
 .infographics-card:hover {
@@ -45,7 +33,7 @@
   padding: var(--space-3);
 
   background: var(--color-white);
-  border: 1px solid var(--color-border);
+  border: var(--card-border);
   border-radius: var(--radius-md);
 
   transition: transform var(--transition);
@@ -55,19 +43,15 @@
   transform: var(--hover-lift);
 }
 
-/* inputs */
 .toolbar input,
 .toolbar select {
   flex: 1;
-
   border: none;
   outline: none;
   background: transparent;
-
   padding: var(--space-2);
 }
 
-/* select */
 .toolbar select {
   appearance: none;
   cursor: pointer;

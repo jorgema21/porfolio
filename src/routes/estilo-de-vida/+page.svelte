@@ -46,7 +46,6 @@
 <main class="page">
   <h1>{$t.style.title}</h1>
 
-  <!-- intro -->
   <p class="page-intro">
     {#each $t.style.intro as node}
       {#if typeof node === "string"}
@@ -61,7 +60,6 @@
     {/each}
   </p>
 
-  <!-- description -->
   <p class="page-intro">
     {#each $t.style.description as node}
       {#if typeof node === "string"}
@@ -76,7 +74,6 @@
     {/each}
   </p>
 
-  <!-- aim -->
   <p class="page-intro">
     {#each $t.style.aim as node}
       {#if typeof node === "string"}
@@ -91,30 +88,22 @@
     {/each}
   </p>
 
-  <!-- acordeón -->
   {#each grouped() as group (group.key)}
-    <section class="group">
-      <button
-        class="group-toggle"
+    <section>
+      <button class="group-toggle" aria-expanded={openGroup === group.key}
         onclick={() => toggleGroup(group.key)}
-        aria-expanded={openGroup === group.key}
       >
         <span>{group.key}</span>
-        <span class="chevron">
-          {openGroup === group.key ? "−" : "+"}
-        </span>
+        <span class="chevron">{openGroup === group.key ? "−" : "+"}</span>
       </button>
 
       {#if openGroup === group.key}
-        <ul class="list" transition:slide={{ duration: 250, easing: cubicOut }}>
+        <ul class="list">
           {#each group.items as project (project.id)}
             <li>
-              <a
-                class="link-underline"
-                href={project.externalUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a class="link-underline"
+                 href={project.externalUrl}
+                 target="_blank">
                 {project.title[$lang]} ↗
               </a>
             </li>
