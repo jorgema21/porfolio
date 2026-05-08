@@ -14,6 +14,7 @@
 @import "./pages/about.css";
 @import "./pages/page.css";
 @import "./pages/infographics.css";
+@import "./pages/contact.css";
 
 /* COMPONENTS */
 @import "./components/article.css";
@@ -28,3 +29,4 @@
 @import "./components//about/skill-bar.css";
 @import "./components//about/timeline.css";
 @import "./components//about/languages.css";
+@import "./components//about/about-utils.css";

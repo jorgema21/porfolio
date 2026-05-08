@@ -1,6 +1,5 @@
 .timeline {
   position: relative;
-
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
@@ -19,46 +18,36 @@
 .timeline-line,
 .timeline-progress {
   position: absolute;
-
   top: 0;
   left: 50%;
-
   width: 4px;
-
   transform: translateX(-50%);
 }
 
 .timeline-line {
   height: 100%;
-
   opacity: 0.35;
 }
 
 .timeline-progress {
   height: 0;
-
   background: var(--color-border);
-
   transition: height 120ms linear;
-
   z-index: 2;
 }
 
 /* =========================
-   ITEM
+   ITEM BASE
 ========================= */
 
 .timeline-item {
   --timeline-color: var(--color-border);
 
   position: relative;
-
   width: 50%;
-
   color: var(--timeline-color);
 
   opacity: 0;
-
   transform: translateY(50px);
 
   transition:
@@ -68,27 +57,24 @@
 
 .timeline-item.visible {
   opacity: 1;
-
   transform: translateY(0);
 }
 
-/* =========================
-   SIDES
-========================= */
+/* shared positioning base */
+.timeline-item.left,
+.timeline-item.right {
+  align-self: flex-start;
+}
 
+/* left/right overrides (kept explicit to avoid layout change) */
 .timeline-item.left {
   right: 5%;
-
-  align-self: flex-start;
-
   text-align: right;
 }
 
 .timeline-item.right {
   left: 5%;
-
   align-self: flex-end;
-
   text-align: left;
 }
 
@@ -114,38 +100,30 @@
 
 .timeline-dot {
   position: absolute;
-
   top: 0.6rem;
   left: 50%;
-
   width: 16px;
   height: 16px;
-
   border-radius: var(--radius-full);
-
   background: currentColor;
-
   z-index: 3;
 }
 
 /* =========================
-   BRANCH
+   BRANCH BASE
 ========================= */
 
 .timeline-branch {
   position: absolute;
-
   top: 1rem;
 
   width: 60%;
   height: 4px;
 
   background: currentColor;
-
   opacity: 0.3;
 
   transform: scaleX(0);
-
   transition: transform 700ms var(--ease-out);
 
   z-index: 1;
@@ -155,15 +133,14 @@
   transform: scaleX(1);
 }
 
+/* direction control only */
 .timeline-item.left .timeline-branch {
   left: 50%;
-
   transform-origin: right center;
 }
 
 .timeline-item.right .timeline-branch {
   right: 50%;
-
   transform-origin: left center;
 }
 
@@ -174,15 +151,13 @@
 .timeline-card {
   position: relative;
 
-  padding: var(--space-4) var(--space-4);
+  padding: var(--space-4);
   margin: var(--space-4) 0;
 
   border: 1px solid color-mix(in srgb, var(--timeline-color) 18%, transparent);
-
   border-radius: var(--radius-lg);
 
   background: var(--color-white);
-
   backdrop-filter: blur(6px);
 
   box-shadow: 0 4px 20px rgb(0 0 0 / 0.04);
@@ -202,11 +177,9 @@
 
 .timeline-date {
   display: inline-block;
-
   margin-bottom: var(--space-2);
 
   font-size: var(--text-xs);
-
   letter-spacing: 0.08em;
   text-transform: uppercase;
 
@@ -215,27 +188,23 @@
 
 .timeline-card h3 {
   margin: 0;
-
   line-height: 1.2;
-
   font-size: 1.15rem;
 }
 
 .timeline-card p {
   margin-top: var(--space-3);
-
   line-height: 1.7;
-
   color: var(--color-muted);
 }
 
 /* =========================
-   LEGEND
+   LEGEND (cleaned, no behavior change)
 ========================= */
 
 .timeline-legend {
+  display: flex;
   justify-content: center;
-
   margin-bottom: var(--space-10);
 }
 
@@ -246,22 +215,19 @@
   align-items: center;
   gap: var(--space-2);
 
-  color: var(--timeline-color);
-
   font-size: var(--text-sm);
+  color: var(--timeline-color);
 }
 
 .legend-item::before {
   content: "";
-
   width: 10px;
   height: 10px;
-
   border-radius: var(--radius-full);
-
   background: currentColor;
 }
 
+/* category overrides */
 .legend-item.study {
   --timeline-color: var(--timeline-study);
 }

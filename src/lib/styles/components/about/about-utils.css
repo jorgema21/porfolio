@@ -1,0 +1,32 @@
+/* =========================
+   ABOUT UTILITIES (NO PREPROCESSOR)
+========================= */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(14px);
+
+  transition:
+    opacity 700ms var(--ease-out),
+    transform 700ms var(--ease-out);
+
+  will-change: opacity, transform;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.lift-hover {
+  transition: transform var(--transition-fast);
+}
+
+.lift-hover:hover {
+  transform: var(--hover-lift);
+}
+
+.focus-ring:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
