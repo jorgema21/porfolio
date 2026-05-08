@@ -1,78 +1,95 @@
-.article .blocks {
+.blocks {
   margin-top: var(--space-8);
 }
 
-/* HEADER */
-.article .project-header h1 {
-  font: var(--text-2xl) var(--font-serif);
+/* =========================
+   HEADER
+========================= */
+
+.project-header h1 {
   margin: 0;
   padding: 0;
-}
 
-/* TEXT */
-.article .text {
-  font-size: var(--text-base);
-  line-height: 1.85;
-  margin: var(--space-6) 0;
+  font: var(--text-2xl) var(--font-serif);
 }
 
 /* =========================
-   IMAGES (BASE)
+   TEXT
 ========================= */
 
-.article .image {
+.text {
+  margin: var(--space-6) 0;
+
+  font-size: var(--text-base);
+  line-height: 1.85;
+}
+
+/* =========================
+   IMAGES
+========================= */
+
+.image {
   width: 100%;
-  object-fit: cover;
+
   border-radius: var(--radius-lg);
+
+  object-fit: cover;
+
   cursor: zoom-in;
+
   transition: transform var(--transition);
 }
 
-.article .image:hover {
+.image:hover {
   transform: scale(1.01);
 }
 
-/* =========================
-   IMAGE VARIANTS
-========================= */
+/* variants */
 
-.article .image--content {
+.image--content {
   width: 90%;
   margin: var(--space-8) 0;
 }
 
-.article .image--hero {
+.image--hero {
   max-width: 1100px;
   margin: var(--space-8) auto;
 }
 
-.article .image--cover {
+.image--cover {
   height: 420px;
   margin: var(--space-6) 0 var(--space-4);
+
   border-radius: var(--radius-xl);
 }
 
 /* =========================
-   IMAGE WRAPPER
+   WRAPPER
 ========================= */
 
-.article .image-wrapper {
+.image-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  position: relative;
 }
 
-/* BUTTON RESET */
-.article .image-wrapper button {
-  background: var(--color-white);
+.image-wrapper button {
   border: none;
+  background: transparent;
 }
 
-/* TITLE */
-.article .image-title {
+/* =========================
+   CAPTION
+========================= */
+
+.image-title {
   position: absolute;
   left: 50%;
+
   transform: translateX(-50%);
+
   font: var(--text-sm) var(--font-sans);
   text-decoration: underline;
 }
@@ -81,18 +98,22 @@
    TOOLS
 ========================= */
 
-.article .tools h3 {
-  font-size: var(--text-xs);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+.tools h3 {
   margin-bottom: var(--space-2);
+
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
   color: var(--color-muted);
 }
 
-.article .tools ul {
+.tools ul {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2);
+
   padding: 0;
+
   list-style: none;
 }

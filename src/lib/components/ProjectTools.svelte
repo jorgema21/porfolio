@@ -7,9 +7,11 @@
 
 {#if project.tools?.length}
   <footer class="tools">
-    <h3>{$lang === "es" ? "Herramientas" : "Tools"}</h3>
+    <h3>
+      {$lang === "es" ? "Herramientas" : "Tools"}
+    </h3>
 
-    <ul class="u-meta-row" style="flex-wrap: wrap;">
+    <ul>
       {#each project.tools as tool}
         <li class="tag">{tool}</li>
       {/each}
