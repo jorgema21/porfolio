@@ -14,16 +14,13 @@
 
   type ApartadoKey = keyof typeof APARTADOS;
 
-  const {
-    filters,
-    filtered,
-    grouped,
-    treemap,
-    sortOptions,
-    labelApartado,
-    labelMedium,
-    groupLabel
-  } = useInfographicsPage(() => $lang, $t);
+  // IMPORTANTE: No desestructuramos 'filtered' ni 'grouped' aquí
+  // porque son getters. Si los desestructuramos, capturamos su valor inicial.
+  const info = useInfographicsPage(() => $lang, $t);
+  
+  // Las constantes estáticas o funciones sí podemos desestructurarlas si prefieres
+  const { sortOptions, labelApartado, labelMedium, groupLabel, treemap } = info;
+  const { filters } = info; 
 </script>
 
 <main class="page">
@@ -71,7 +68,7 @@
     />
   </section>
 
-  <!-- TOOLBAR (ya optimizada vía ui.css) -->
+  <!-- TOOLBAR -->
   <div class="toolbar">
     <input
       class="input"
@@ -95,9 +92,9 @@
     </button>
   </div>
 
-  <!-- GROUPED -->
+  <!-- GROUPED (Accedemos vía info.grouped) -->
   {#if filters.sortBy === "medium" || filters.sortBy === "apartado"}
-    {#each grouped() as group (group.key)}
+    {#each info.grouped as group (group.key)}
       <h2 class="group-title">
         {groupLabel(
           group.key,
@@ -118,8 +115,9 @@
     {/each}
 
   {:else}
+    <!-- LISTA SIMPLE (Accedemos vía info.filtered) -->
     <section class="infographics-grid">
-      {#each filtered() as project (project.id)}
+      {#each info.filtered as project (project.id)}
         <div
           animate:flip={{ duration: 350, easing: cubicOut }}
           transition:fly={{ y: 8, duration: 200, easing: cubicOut }}

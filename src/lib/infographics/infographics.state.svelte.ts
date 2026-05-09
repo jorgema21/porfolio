@@ -10,12 +10,8 @@ type Filters = {
   apartados: ApartadoKey[];
   mediums: MediumKey[];
   sortBy: "date" | "title" | "apartado" | "medium";
-  sortDir: "asc" | "desc";
+  sortDir: "desc" | "asc";
 };
-
-/* =========================
-   SORTERS
-========================= */
 
 const sorters = (lang: "es" | "en") => ({
   date: (a: Infographic, b: Infographic) =>
@@ -32,13 +28,54 @@ const sorters = (lang: "es" | "en") => ({
     (a.mediumKey ?? "").localeCompare(b.mediumKey ?? ""),
 });
 
-const dir = (f: Filters) => (f.sortDir === "asc" ? 1 : -1);
+const dir = (f: Filters) => (f.sortDir === "desc" ? 1 : -1);
+
+/* =========================
+   PURE FUNCTION (CLAVE FIX)
+========================= */
+
+function getFilteredList(
+  filters: Filters,
+  lang: "es" | "en"
+): Infographic[] {
+  const q = filters.search.trim().toLowerCase();
+
+  const list = infographics.filter((p) => {
+    const matchSearch =
+      !q || p.title[lang].toLowerCase().includes(q);
+
+    const matchApartado =
+      !filters.apartados.length ||
+      (p.apartado &&
+        filters.apartados.includes(p.apartado as ApartadoKey));
+
+    const matchMedium =
+      !filters.mediums.length ||
+      (p.mediumKey && filters.mediums.includes(p.mediumKey));
+
+    return matchSearch && matchApartado && matchMedium;
+  });
+
+  if (
+    filters.sortBy !== "medium" &&
+    filters.sortBy !== "apartado"
+  ) {
+    return list.sort(
+      (a, b) =>
+        sorters(lang)[filters.sortBy](a, b) * dir(filters)
+    );
+  }
+
+  return list;
+}
 
 /* =========================
    STATE
 ========================= */
 
-export const createInfographicsState = (lang: () => "es" | "en") => {
+export function createInfographicsState(
+  lang: () => "es" | "en"
+) {
   const filters = $state<Filters>({
     search: "",
     apartados: [],
@@ -48,61 +85,34 @@ export const createInfographicsState = (lang: () => "es" | "en") => {
   });
 
   /* =========================
-     FILTERED (SOLO LISTA BASE)
+     FILTERED
   ========================= */
 
-  const filtered = $derived(() => {
-    const l = lang();
-    const q = filters.search.trim().toLowerCase();
-
-    let result = infographics.filter((p) => {
-      const matchSearch =
-        !q || p.title[l].toLowerCase().includes(q);
-
-      const matchApartado =
-        !filters.apartados.length ||
-        (p.apartado &&
-          filters.apartados.includes(p.apartado as ApartadoKey));
-
-      const matchMedium =
-        !filters.mediums.length ||
-        (p.mediumKey && filters.mediums.includes(p.mediumKey));
-
-      return matchSearch && matchApartado && matchMedium;
-    });
-
-    // 👇 SOLO se ordena cuando NO hay agrupación
-    if (filters.sortBy !== "medium" && filters.sortBy !== "apartado") {
-      return result.sort(
-        (a, b) =>
-          sorters(l)[filters.sortBy](a, b) * dir(filters)
-      );
-    }
-
-    return result;
-  });
+  const filtered = $derived.by(() =>
+    getFilteredList(filters, lang())
+  );
 
   /* =========================
-     GROUPED (ORDEN SOLO DE GRUPOS)
+     GROUPED (SIN DEPENDENCIA DIRECTA)
   ========================= */
 
-  const grouped = $derived(() => {
+  const grouped = $derived.by(() => {
     const sort = filters.sortBy;
     const direction = filters.sortDir === "asc" ? 1 : -1;
 
     if (sort !== "medium" && sort !== "apartado") {
-      return null;
+      return [];
     }
+
+    const list = getFilteredList(filters, lang());
 
     const groups = new Map<string, Infographic[]>();
 
-    for (const item of filtered()) {
+    for (const item of list) {
       const key =
         sort === "medium"
           ? item.mediumKey ?? "__unknown__"
-          : item.apartado && item.apartado in APARTADOS
-            ? item.apartado
-            : "__unknown__";
+          : (item.apartado as ApartadoKey) ?? "__unknown__";
 
       if (!groups.has(key)) {
         groups.set(key, []);
@@ -114,35 +124,30 @@ export const createInfographicsState = (lang: () => "es" | "en") => {
     const result = Array.from(groups.entries()).map(
       ([key, items]) => ({
         key,
-        items, // 👈 SIN ordenar dentro del grupo
+        items,
       })
     );
-
-    /* =========================
-       ORDEN SOLO DE GRUPOS
-    ========================= */
 
     if (sort === "apartado") {
       return result.sort((a, b) => {
         const aOrder =
-          APARTADOS[a.key as keyof typeof APARTADOS]?.order ?? 999;
+          APARTADOS[a.key as ApartadoKey]?.order ?? 999;
 
         const bOrder =
-          APARTADOS[b.key as keyof typeof APARTADOS]?.order ?? 999;
+          APARTADOS[b.key as ApartadoKey]?.order ?? 999;
 
         return (aOrder - bOrder) * direction;
       });
     }
 
-    // medium
     return result.sort(
       (a, b) => a.key.localeCompare(b.key) * direction
     );
   });
 
   return {
-    filters,
-    filtered,
-    grouped,
+    filters, // El objeto state es reactivo por sí mismo, no hay problema aquí
+    get filtered() { return filtered }, // Usamos un getter para mantener la reactividad
+    get grouped() { return grouped }    // Usamos un getter para mantener la reactividad
   };
-};
+}

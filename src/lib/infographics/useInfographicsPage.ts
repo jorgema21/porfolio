@@ -9,11 +9,11 @@ export const useInfographicsPage = (
   lang: () => "es" | "en",
   t: any
 ) => {
-  const { filters, filtered, grouped } =
-    createInfographicsState(lang);
+  // 1. NO desestructuramos filtered ni grouped aquí, 
+  // ya que son getters y se quedarían "congelados".
+  const state = createInfographicsState(lang);
 
   const treemap = getTreemapData();
-
   const mediumDict = () => infographicsI18n[lang()].mediums;
 
   /* =========================
@@ -50,9 +50,13 @@ export const useInfographicsPage = (
   };
 
   return {
-    filters,
-    filtered,
-    grouped,
+    // 2. Devolvemos filters directamente (es un objeto reactivo)
+    filters: state.filters,
+    
+    // 3. Devolvemos getters para filtered y grouped para mantener el puente reactivo
+    get filtered() { return state.filtered; },
+    get grouped() { return state.grouped; },
+    
     treemap,
     mediumDict,
     labelApartado,
