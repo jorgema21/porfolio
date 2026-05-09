@@ -1,8 +1,9 @@
 import { infographics } from "$lib/data/infographics.data";
 import type { Infographic } from "./infographics.metrics";
+import { APARTADOS } from "$lib/config/apartados.config";
 
 export type MediumKey = string;
-export type ApartadoKey = string;
+export type ApartadoKey = keyof typeof APARTADOS;
 
 type Filters = {
   search: string;
@@ -46,37 +47,48 @@ export const createInfographicsState = (lang: () => "es" | "en") => {
     sortDir: "desc",
   });
 
+  /* =========================
+     FILTERED (SOLO LISTA BASE)
+  ========================= */
+
   const filtered = $derived(() => {
     const l = lang();
     const q = filters.search.trim().toLowerCase();
 
-    return infographics
-      .filter((p) => {
-        const matchSearch =
-          !q || p.title[l].toLowerCase().includes(q);
+    let result = infographics.filter((p) => {
+      const matchSearch =
+        !q || p.title[l].toLowerCase().includes(q);
 
-        const matchApartado =
-          !filters.apartados.length ||
-          (p.apartado && filters.apartados.includes(p.apartado));
+      const matchApartado =
+        !filters.apartados.length ||
+        (p.apartado &&
+          filters.apartados.includes(p.apartado as ApartadoKey));
 
-        const matchMedium =
-          !filters.mediums.length ||
-          (p.mediumKey && filters.mediums.includes(p.mediumKey));
+      const matchMedium =
+        !filters.mediums.length ||
+        (p.mediumKey && filters.mediums.includes(p.mediumKey));
 
-        return matchSearch && matchApartado && matchMedium;
-      })
-      .sort((a, b) =>
-        sorters(l)[filters.sortBy](a, b) * dir(filters)
+      return matchSearch && matchApartado && matchMedium;
+    });
+
+    // 👇 SOLO se ordena cuando NO hay agrupación
+    if (filters.sortBy !== "medium" && filters.sortBy !== "apartado") {
+      return result.sort(
+        (a, b) =>
+          sorters(l)[filters.sortBy](a, b) * dir(filters)
       );
+    }
+
+    return result;
   });
 
   /* =========================
-     GROUPED VIEW
+     GROUPED (ORDEN SOLO DE GRUPOS)
   ========================= */
 
   const grouped = $derived(() => {
-    const list = filtered();
     const sort = filters.sortBy;
+    const direction = filters.sortDir === "asc" ? 1 : -1;
 
     if (sort !== "medium" && sort !== "apartado") {
       return null;
@@ -84,21 +96,53 @@ export const createInfographicsState = (lang: () => "es" | "en") => {
 
     const groups = new Map<string, Infographic[]>();
 
-    for (const item of list) {
+    for (const item of filtered()) {
       const key =
         sort === "medium"
-          ? item.mediumKey ?? "unknown"
-          : item.apartado ?? "unknown";
+          ? item.mediumKey ?? "__unknown__"
+          : item.apartado && item.apartado in APARTADOS
+            ? item.apartado
+            : "__unknown__";
 
-      if (!groups.has(key)) groups.set(key, []);
+      if (!groups.has(key)) {
+        groups.set(key, []);
+      }
+
       groups.get(key)!.push(item);
     }
 
-    return Array.from(groups.entries()).map(([key, items]) => ({
-      key,
-      items,
-    }));
+    const result = Array.from(groups.entries()).map(
+      ([key, items]) => ({
+        key,
+        items, // 👈 SIN ordenar dentro del grupo
+      })
+    );
+
+    /* =========================
+       ORDEN SOLO DE GRUPOS
+    ========================= */
+
+    if (sort === "apartado") {
+      return result.sort((a, b) => {
+        const aOrder =
+          APARTADOS[a.key as keyof typeof APARTADOS]?.order ?? 999;
+
+        const bOrder =
+          APARTADOS[b.key as keyof typeof APARTADOS]?.order ?? 999;
+
+        return (aOrder - bOrder) * direction;
+      });
+    }
+
+    // medium
+    return result.sort(
+      (a, b) => a.key.localeCompare(b.key) * direction
+    );
   });
 
-  return { filters, filtered, grouped };
+  return {
+    filters,
+    filtered,
+    grouped,
+  };
 };

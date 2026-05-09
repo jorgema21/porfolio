@@ -16,8 +16,16 @@ export const useInfographicsPage = (
 
   const mediumDict = () => infographicsI18n[lang()].mediums;
 
-  const labelApartado = (k: ApartadoKey) =>
-    APARTADOS[k].label[lang()];
+  /* =========================
+     SAFE LABEL APARTADO
+  ========================= */
+
+  const labelApartado = (k: string) => {
+    if (k in APARTADOS) {
+      return APARTADOS[k as ApartadoKey].label[lang()];
+    }
+    return k; // fallback seguro
+  };
 
   const labelMedium = (k: string) =>
     mediumDict()[k] ?? k;
@@ -25,7 +33,7 @@ export const useInfographicsPage = (
   const groupLabel = (key: string, type: "medium" | "apartado") =>
     type === "medium"
       ? labelMedium(key)
-      : labelApartado(key as ApartadoKey);
+      : labelApartado(key);
 
   const sortOptions = [
     { value: "date", label: t.infographics.sort.newest },

@@ -2,24 +2,25 @@
    OVERLAY
 ========================= */
 
-.preview-overlay {
+.preview-overlay,
+.preview-backdrop {
   position: fixed;
   inset: 0;
+}
+
+.preview-overlay {
   z-index: 9999;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  background: transparent;
   padding: 0;
   border: 0;
+  background: transparent;
 }
 
-/* BACKDROP */
 .preview-backdrop {
-  position: fixed;
-  inset: 0;
   border: none;
   background: transparent;
 }
@@ -38,11 +39,11 @@
   display: flex;
   flex-direction: column;
 
-  background: var(--color-white);
-  border-radius: var(--radius-lg);
   overflow: hidden;
 
-  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.35);
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--preview-shadow);
 }
 
 /* =========================
@@ -54,24 +55,23 @@
   top: var(--space-3);
   right: var(--space-3);
 
+  display: grid;
+  place-items: center;
+
   width: 28px;
   height: 28px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+
+  background: var(--color-white);
+  color: var(--color-black);
 
   font-size: 1rem;
   line-height: 1;
 
   cursor: pointer;
-
-  color: var(--color-black);
   opacity: 0.8;
-
-  background: var(--color-white);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-border);
 
   transition:
     opacity var(--transition-fast),
@@ -96,27 +96,30 @@
 }
 
 .preview-content h2 {
-  margin: 0;
-  font: var(--text-lg) var(--font-serif);
   width: fit-content;
+  margin: 0;
+
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
 }
 
-.preview-meta {
-  font-size: var(--text-xs);
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--color-muted);
-}
-
+.preview-meta,
 .preview-content p {
   color: var(--color-muted);
 }
 
-/* LINK */
-.preview-link {
-  margin-top: var(--space-2);
+.preview-meta {
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
 
+/* LINK */
+
+.preview-link {
   display: inline-block;
+
+  margin-top: var(--space-2);
 
   color: inherit;
   text-decoration: none;
