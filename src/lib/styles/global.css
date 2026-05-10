@@ -3,8 +3,8 @@
 @import "./variables.css";
 
 /* UI */
-@import "./ui/ui.css";
-@import "./ui/motion.css";
+@import "./ui/index.css";
+@import "./motion/index.css";
 
 /* LAYOUT */
 @import "./layout/header.css";

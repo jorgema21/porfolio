@@ -1,0 +1,69 @@
+/* =========================
+   ANIMATIONS
+========================= */
+
+.fade-in {
+  animation:
+    fadeIn
+    var(--motion-base)
+    var(--ease-out)
+    both;
+}
+
+.slide-up {
+  animation:
+    slideUp
+    var(--motion-base)
+    var(--ease-out)
+    both;
+}
+
+.scale-in {
+  animation:
+    scaleIn
+    var(--motion-base)
+    var(--ease-out)
+    both;
+}
+
+/* =========================
+   KEYFRAMES
+========================= */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+
+    transform: scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: scale(1);
+  }
+}
