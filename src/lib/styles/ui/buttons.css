@@ -108,3 +108,9 @@
 .button-outline:hover {
   border-color: var(--blue-300);
 }
+
+/* FOCUS-RING */
+.focus-ring:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}

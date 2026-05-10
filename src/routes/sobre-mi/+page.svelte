@@ -7,7 +7,7 @@
 
   import { onMount } from "svelte";
 
-  let skillsSection: HTMLElement;
+  let skillsSection: HTMLElement | null = null;
 
   let visible = $state(false);
   let activeIndex = $state(-1);
@@ -15,31 +15,44 @@
   let lastScrollY = 0;
   let direction: "down" | "up" = "down";
 
+  let timeouts: ReturnType<typeof setTimeout>[] = [];
+
+  function clearStagger() {
+    timeouts.forEach(clearTimeout);
+    timeouts = [];
+  }
+
   function startStaggerWave() {
+    clearStagger();
+
     const baseDelay = 90;
 
     skills.forEach((_, i) => {
-      const waveFactor = Math.pow(i, 1.25);
-      const delay = waveFactor * baseDelay;
+      const delay = Math.pow(i, 1.25) * baseDelay;
 
-      setTimeout(() => {
+      const id = setTimeout(() => {
         activeIndex = i;
       }, delay);
+
+      timeouts.push(id);
     });
   }
 
   function reverseStaggerWave() {
+    clearStagger();
+
     const baseDelay = 70;
 
-    [...skills].reverse().forEach((_, index) => {
+    [...skills].forEach((_, index) => {
       const i = skills.length - 1 - index;
 
-      const waveFactor = Math.pow(index, 1.2);
-      const delay = waveFactor * baseDelay;
+      const delay = Math.pow(index, 1.2) * baseDelay;
 
-      setTimeout(() => {
+      const id = setTimeout(() => {
         activeIndex = i - 1;
       }, delay);
+
+      timeouts.push(id);
     });
   }
 
@@ -65,13 +78,15 @@
       {
         threshold: 0.6,
         rootMargin: "0px 0px -10% 0px",
-      },
+      }
     );
 
     if (skillsSection) observer.observe(skillsSection);
 
     return () => {
       window.removeEventListener("scroll", onScroll);
+      clearStagger();
+      observer.disconnect();
     };
   });
 </script>
