@@ -43,4 +43,17 @@ export async function load({ params }) {
       blocks: content.blocks,
     } satisfies ProjectContent,
   };
+  
 }
+
+// Esta función le dice a SvelteKit: "Solo fabrica estas 3 páginas"
+export const entries = () => {
+  return [
+    { slug: 'roland-garros-sin-nadal' },
+    { slug: 'adios-xavi' },
+    { slug: 'incendio-tenerife' } 
+    // Añade aquí los slugs exactos que sí tengan carpeta en /src/content/infografias/
+  ];
+};
+
+export const prerender = true; // Asegúrate de que esto esté
