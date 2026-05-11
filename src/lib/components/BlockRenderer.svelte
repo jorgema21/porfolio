@@ -1,7 +1,7 @@
 <script lang="ts">
+  import { base } from '$app/paths'; // <--- Añadimos el import del base path
   import { openLightbox } from "$lib/stores/lightbox.svelte";
   import { lang } from "$lib/i18n/lang";
-
   import type { Block } from "$lib/types/block";
 
   const { block, slug } = $props<{
@@ -9,9 +9,10 @@
     slug: string;
   }>();
 
+  // Modificamos el src para que incluya {base}
   const src = $derived.by(() =>
     "src" in block
-      ? `/images/infografias/${slug}/${block.src}`
+      ? `${base}/images/infografias/${slug}/${block.src}` // <--- Añadimos {base} aquí
       : ""
   );
 
@@ -43,7 +44,7 @@
             ? "image--cover"
             : "image--content"
         }`}
-        src={src}
+        {src}
         alt={block.alt?.[$lang] ?? ""}
         loading="lazy"
       />
