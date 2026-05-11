@@ -1,13 +1,15 @@
 <script lang="ts">
+  import { base } from '$app/paths'; // 1. Importamos el base path
   import { t, lang, toggleLang } from "$lib/i18n";
   import { fly } from "svelte/transition";
   import { cubicOut } from "svelte/easing";
 
+  // 2. Añadimos ${base} a todas las rutas de navegación
   const navItems = [
-    { href: "/infografias", key: "infografias" },
-    { href: "/estilo-de-vida", key: "estilo" },
-    { href: "/sobre-mi", key: "about" },
-    { href: "/contacto", key: "contacto" },
+    { href: `${base}/infografias`, key: "infografias" },
+    { href: `${base}/estilo-de-vida`, key: "estilo" },
+    { href: `${base}/sobre-mi`, key: "about" },
+    { href: `${base}/contacto`, key: "contacto" },
   ] as const;
 
   let visible = $state(0);
@@ -16,20 +18,15 @@
 
   $effect(() => {
     visible = 0;
-
     let cancelled = false;
-
     const run = async () => {
       for (let i = 1; i <= total; i++) {
         if (cancelled) return;
-
         visible = i;
         await new Promise((r) => setTimeout(r, delay));
       }
     };
-
     run();
-
     return () => {
       cancelled = true;
     };
@@ -50,10 +47,12 @@
     rel="stylesheet"
   />
 </svelte:head>
+
 <header class="site-header">
   {#if visible >= 1}
     <h1 class="logo" in:fly={flyIn}>
-      <a href="/">{$t.layout.nav.mi_porfolio}</a>
+      <!-- 3. Añadimos {base} al enlace del logo -->
+      <a href="{base}/">{$t.layout.nav.mi_porfolio}</a>
     </h1>
   {/if}
 
@@ -78,8 +77,9 @@
       aria-pressed={$lang === "en"}
       in:fly={{ ...flyIn, delay: 150 }}
     >
+      <!-- 4. Añadimos {base} a las rutas de las banderas -->
       <img
-        src={$lang === "es" ? "/images/flags/gb.svg" : "/images/flags/es.svg"}
+        src="{base}{$lang === 'es' ? '/images/flags/gb.svg' : '/images/flags/es.svg'}"
         alt=""
         aria-hidden="true"
       />

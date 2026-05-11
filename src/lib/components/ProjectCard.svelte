@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { base } from '$app/paths'; // <--- 1. IMPORTA EL BASE PATH
   import type {
     HomeProject,
     ProjectCategory,
@@ -10,10 +11,18 @@
     project: HomeProject;
   }>();
 
+  // 2. AÑADE {base} A LOS ENLACES INTERNOS
   const href = $derived(
     project.category === "infografia"
-      ? `/infografias/${project.slug}`
+      ? `${base}/infografias/${project.slug}` // <--- Aquí
       : project.externalUrl,
+  );
+
+  // 3. AÑADE {base} A LAS IMÁGENES (si no son URLs externas)
+  const imageSrc = $derived(
+    project.image?.startsWith('http') 
+      ? project.image 
+      : `${base}${project.image}`
   );
 
   const isExternal = $derived(
@@ -38,11 +47,11 @@
   aria-disabled={!canNavigate}
   tabindex={canNavigate ? 0 : -1}
 >
-  {#if project.image &&
-  project.variant !== "list"}
+  {#if project.image && project.variant !== "list"}
     <div class="thumb">
+      <!-- 4. USA LA NUEVA VARIABLE imageSrc -->
       <img
-        src={project.image}
+        src={imageSrc} 
         alt={project.title[$lang]}
         loading="lazy"
       />
