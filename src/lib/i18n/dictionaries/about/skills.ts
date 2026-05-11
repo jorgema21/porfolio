@@ -37,14 +37,14 @@ export const skills = {
         "Construcción de interfaces reactivas y componentes de visualización.",
       details: ["Componentes reutilizables", "UI reactiva", "Scrollytelling"],
     },
-    "html-css": {
-      name: "HTML / CSS",
+    code: {
+      name: "Código",
       description: "Base sólida para diseño editorial en web.",
       details: ["Layouts responsivos", "Design systems", "Animaciones CSS"],
     },
-    javascript: {
-      name: "JavaScript",
-      description: "Interactividad y lógica para visualización de datos.",
+    flourish: {
+      name: "Flourish",
+      description: "Gráficos avanzados no-code",
       details: ["Manipulación de datos", "Interacción UI", "APIs"],
     },
   },
@@ -70,14 +70,14 @@ export const skills = {
       description: "Building reactive interfaces and visualization components.",
       details: ["Reusable components", "Reactive UI", "Scrollytelling"],
     },
-    "html-css": {
-      name: "HTML / CSS",
+    code: {
+      name: "Code",
       description: "Strong foundation for editorial web design.",
       details: ["Responsive layouts", "Design systems", "CSS animations"],
     },
-    javascript: {
-      name: "JavaScript",
-      description: "Interactivity and logic for data visualization.",
+    flourish: {
+      name: "Flourish",
+      description: "Advanced plots no-code",
       details: ["Data manipulation", "UI interaction", "APIs"],
     },
   },

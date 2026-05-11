@@ -22,18 +22,13 @@
 
   <section class="cluster">
     <a class="social-link" href="https://linkedin.com" target="_blank">
-      <img src="/images/icons/linkedin.png" alt="LinkedIn" />
+      <img src="/images/logos/LinkedIn_Logo.png" alt="LinkedIn" />
       LinkedIn
     </a>
 
     <a class="social-link" href="https://github.com" target="_blank">
-      <img src="/images/icons/github.png" alt="GitHub" />
+      <img src="/images/logos/GitHub_logo.png" alt="GitHub" />
       GitHub
-    </a>
-
-    <a class="social-link" href="https://instagram.com" target="_blank">
-      <img src="/images/icons/instagram.png" alt="Instagram" />
-      Instagram
     </a>
   </section>
 </main>

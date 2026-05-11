@@ -1,6 +1,6 @@
 import { browser } from "$app/environment";
 import { lang } from "$lib/i18n/lang";
-import type { Lang } from "$lib/i18n/types";
+import type { Lang } from "$lib/i18n/lang";
 
 export function initLang() {
   if (!browser) return;

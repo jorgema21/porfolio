@@ -2,8 +2,8 @@ export type SkillId =
   | "datawrapper"
   | "qgis"
   | "svelte"
-  | "html-css"
-  | "javascript";
+  | "code"
+  | "flourish";
 
 export type Skill = {
   id: SkillId;
@@ -14,27 +14,27 @@ export type Skill = {
 export const skills: Skill[] = [
   {
     id: "datawrapper",
-    logo: "/images/logos/datawrapper.svg",
+    logo: "/images/logos/DataWrapper-logo.png",
     level: 9,
   },
   {
     id: "qgis",
-    logo: "/images/logos/qgis.svg",
+    logo: "/images/logos/QGIS-logo.png",
     level: 6,
   },
   {
     id: "svelte",
-    logo: "/images/logos/svelte.svg",
+    logo: "/images/logos/Svelte-logo.png",
     level: 7,
   },
   {
-    id: "html-css",
-    logo: "/images/logos/html-css.svg",
+    id: "code",
+    logo: "/images/logos/code-logo.png",
     level: 8,
   },
   {
-    id: "javascript",
-    logo: "/images/logos/javascript.svg",
+    id: "flourish",
+    logo: "/images/logos/Flourish-logo.png",
     level: 7,
   },
 ];
