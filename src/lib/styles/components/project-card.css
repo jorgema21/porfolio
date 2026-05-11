@@ -1,7 +1,23 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+
+  height: 100%;
+}
+
+/* =========================
+   FEATURE
+========================= */
+
 .card.feature {
   display: grid;
+
   grid-template-columns: 1fr 2fr;
+
   gap: var(--space-8);
+
+  align-items: start;
 }
 
 .card.feature .content {
@@ -12,25 +28,72 @@
   order: 2;
 }
 
-/* TIPOGRAFÍA */
+/* =========================
+   LIST
+========================= */
+
+.card.list {
+  min-height: 100%;
+}
+
+/* =========================
+   THUMB
+========================= */
+
+.thumb {
+  overflow: hidden;
+
+  border-radius: var(--radius-lg);
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
 .title {
-  font: 500 1rem/1.2 var(--font-serif);
-  letter-spacing: -0.01em;
+  margin-top: var(--space-2);
+
   max-width: 22ch;
-  margin: var(--space-2) 0 0;
+
+  font:
+    500 1rem/1.2
+    var(--font-serif);
+
+  letter-spacing: -0.01em;
 }
 
 .description {
-  font: 350 0.95rem var(--font-sans);
+  margin-top: var(--space-2);
+
   max-width: 50ch;
-  margin: var(--space-2) 0 0;
+
+  font:
+    350 0.95rem
+    var(--font-sans);
 }
 
-/* CATEGORY */
+/* =========================
+   CATEGORY
+========================= */
+
 .category {
-  font: 600 0.7rem var(--font-sans);
+  font:
+    600 0.7rem
+    var(--font-sans);
+
   text-transform: uppercase;
+
   letter-spacing: 0.1em;
+
   opacity: 0.8;
 }
 
@@ -42,7 +105,10 @@
   color: var(--red-500);
 }
 
-/* VARIANTS */
+/* =========================
+   VARIANTS
+========================= */
+
 .card.hero .title {
   font-size: 2rem;
 }

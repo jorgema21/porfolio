@@ -1,15 +1,18 @@
 <script lang="ts">
   import ProjectCard from "$lib/components/ProjectCard.svelte";
+
   import type { HomeProject } from "$lib/data/projects";
+
   import { fly } from "svelte/transition";
+
   import { cubicOut } from "svelte/easing";
 
-  const { items, variant } = $props<{
+  const { items } = $props<{
     items: HomeProject[];
-    variant: "hero" | "grid" | "list" | "feature";
   }>();
 
   let visibleCount = $state(0);
+
   const baseDelay = 120;
 
   $effect(() => {
@@ -25,7 +28,9 @@
 
         visibleCount = i + 1;
 
-        await new Promise((r) => setTimeout(r, baseDelay));
+        await new Promise((r) =>
+          setTimeout(r, baseDelay),
+        );
       }
     };
 
@@ -37,14 +42,22 @@
   });
 </script>
 
-{#each items.slice(0, visibleCount) as p (p.id)}
+{#each items.slice(0, visibleCount) as project (project.id)}
   <div
+    class="project-slot"
+    style={`
+      --col-start:${project.colStart};
+      --col-span:${project.colSpan};
+
+      --row-start:${project.rowStart};
+      --row-span:${project.rowSpan ?? 1};
+    `}
     in:fly={{
       y: 34,
       duration: 2000,
-      easing: cubicOut
+      easing: cubicOut,
     }}
   >
-    <ProjectCard project={p} {variant} />
+    <ProjectCard {project} />
   </div>
 {/each}

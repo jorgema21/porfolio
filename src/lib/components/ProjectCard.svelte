@@ -1,20 +1,24 @@
 <script lang="ts">
-  import type { HomeProject, ProjectCategory } from "$lib/data/projects";
+  import type {
+    HomeProject,
+    ProjectCategory,
+  } from "$lib/data/projects";
+
   import { lang, t } from "$lib/i18n";
 
-  const { project, variant } = $props<{
+  const { project } = $props<{
     project: HomeProject;
-    variant: "hero" | "grid" | "list" | "feature";
   }>();
 
   const href = $derived(
     project.category === "infografia"
       ? `/infografias/${project.slug}`
-      : project.externalUrl
+      : project.externalUrl,
   );
 
   const isExternal = $derived(
-    project.category === "estilo_de_vida" && !!project.externalUrl
+    project.category === "estilo_de_vida" &&
+      !!project.externalUrl,
   );
 
   const canNavigate = $derived(!!href);
@@ -22,17 +26,20 @@
 
 <a
   class="card"
-  class:hero={variant === "hero"}
-  class:grid={variant === "grid"}
-  class:list={variant === "list"}
-  class:feature={variant === "feature"}
+  class:hero={project.variant === "hero"}
+  class:grid={project.variant === "grid"}
+  class:list={project.variant === "list"}
+  class:feature={project.variant === "feature"}
   href={href ?? undefined}
   target={isExternal ? "_blank" : undefined}
-  rel={isExternal ? "noopener noreferrer" : undefined}
+  rel={isExternal
+    ? "noopener noreferrer"
+    : undefined}
   aria-disabled={!canNavigate}
   tabindex={canNavigate ? 0 : -1}
 >
-  {#if project.image && variant !== "list"}
+  {#if project.image &&
+  project.variant !== "list"}
     <div class="thumb">
       <img
         src={project.image}
@@ -44,7 +51,9 @@
 
   <div class="content">
     <span class={`category ${project.category}`}>
-      {$t.project.category[project.category as ProjectCategory]}
+      {$t.project.category[
+        project.category as ProjectCategory
+      ]}
     </span>
 
     <h2 class="title">
