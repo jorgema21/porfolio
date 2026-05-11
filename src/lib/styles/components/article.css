@@ -1,0 +1,18 @@
+.article {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 var(--space-6) var(--space-12);
+
+  font-family: var(--font-serif);
+  line-height: 1.75;
+}
+
+/* COVER */
+
+.cover-wrapper {
+  display: block;
+  width: 100%;
+
+  border: none;
+  background: none;
+}

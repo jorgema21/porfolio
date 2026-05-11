@@ -1,0 +1,30 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgb(0 0 0 / 90%);
+  cursor: zoom-out;
+}
+
+.image {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+/* RESET */
+
+.image-button {
+  all: unset;
+  cursor: default;
+}
+
+.image-button:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 4px;
+}

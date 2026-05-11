@@ -1,11 +1,17 @@
 <script lang="ts">
-	import favicon from '$lib/assets/favicon.svg';
+  import "$lib/styles/global.css";
+  import ImageLightbox from "$lib/components/ImageLightbox.svelte";
 
-	let { children } = $props();
+  import Header from "$lib/components/Header.svelte";
+  import Footer from "$lib/components/Footer.svelte";
+
+  const { children } = $props();
 </script>
 
-<svelte:head>
-	<link rel="icon" href={favicon} />
-</svelte:head>
+<Header />
+<main>
+  {@render children()}
 
-{@render children()}
+  <ImageLightbox />
+</main>
+<Footer />

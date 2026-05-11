@@ -1,0 +1,31 @@
+@import "./base.css";
+@import "./card-base.css";
+@import "./variables.css";
+
+/* UI */
+@import "./ui/index.css";
+@import "./motion/index.css";
+
+/* LAYOUT */
+@import "./layout/header.css";
+@import "./layout/layout.css";
+
+/* PAGES */
+@import "./pages/about.css";
+@import "./pages/page.css";
+@import "./pages/infographics.css";
+@import "./pages/contact.css";
+
+/* COMPONENTS */
+@import "./components/article.css";
+@import "./components/article-meta.css";
+@import "./components/article-blocks.css";
+@import "./components/project-card.css";
+@import "./components/image-lightbox.css";
+@import "./components/infographic-card.css";
+@import "./components/infographic-preview.css";
+@import "./components/treemap.css";
+/* COMPONENTS ABOUT */
+@import "./components//about/skill-bar.css";
+@import "./components//about/timeline.css";
+@import "./components//about/languages.css";

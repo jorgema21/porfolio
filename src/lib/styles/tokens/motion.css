@@ -1,0 +1,21 @@
+:root {
+  /* Durations */
+  --motion-fast: 150ms;
+  --motion-base: 250ms;
+  --motion-slow: 400ms;
+
+  /* Easings */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* Presets */
+  --transition-fast: var(--motion-fast) var(--ease-out);
+  --transition: var(--motion-base) var(--ease-out);
+  --transition-slow: var(--motion-slow) var(--ease-out);
+
+  /* Micro interactions */
+  --hover-lift: translateY(-2px);
+  --hover-scale: scale(1.03);
+  --active-scale: scale(0.97);
+}

@@ -1,0 +1,13 @@
+.card {
+  border-radius: var(--card-radius);
+
+  background: var(--color-white);
+
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+.card-hover:hover {
+  transform: var(--hover-lift);
+}

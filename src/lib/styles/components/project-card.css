@@ -1,0 +1,120 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+
+  height: 100%;
+}
+
+/* =========================
+   FEATURE
+========================= */
+
+.card.feature {
+  display: grid;
+
+  grid-template-columns: 1fr 2fr;
+
+  gap: var(--space-8);
+
+  align-items: start;
+}
+
+.card.feature .content {
+  order: 1;
+}
+
+.card.feature .thumb {
+  order: 2;
+}
+
+/* =========================
+   LIST
+========================= */
+
+.card.list {
+  min-height: 100%;
+}
+
+/* =========================
+   THUMB
+========================= */
+
+.thumb {
+  overflow: hidden;
+
+  border-radius: var(--radius-lg);
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+}
+
+/* =========================
+   TYPOGRAPHY
+========================= */
+
+.title {
+  margin-top: var(--space-2);
+
+  max-width: 22ch;
+
+  font:
+    500 1rem/1.2
+    var(--font-serif);
+
+  letter-spacing: -0.01em;
+}
+
+.description {
+  margin-top: var(--space-2);
+
+  max-width: 50ch;
+
+  font:
+    350 0.95rem
+    var(--font-sans);
+}
+
+/* =========================
+   CATEGORY
+========================= */
+
+.category {
+  font:
+    600 0.7rem
+    var(--font-sans);
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.1em;
+
+  opacity: 0.8;
+}
+
+.category.infografia {
+  color: var(--blue-500);
+}
+
+.category.estilo_de_vida {
+  color: var(--red-500);
+}
+
+/* =========================
+   VARIANTS
+========================= */
+
+.card.hero .title {
+  font-size: 2rem;
+}
+
+.card.grid .title,
+.card.list .title,
+.card.feature .title {
+  font-size: 1.1rem;
+}

@@ -1,0 +1,158 @@
+<script lang="ts">
+  import { t } from "$lib/i18n";
+  import { skills } from "$lib/data/skills.data";
+  import SkillBar from "$lib/components/about/SkillBar.svelte";
+  import AboutTimeline from "$lib/components/about/AboutTimeline.svelte";
+  import AboutLanguages from "$lib/components/about/AboutLanguages.svelte";
+
+  import { onMount } from "svelte";
+
+  let skillsSection: HTMLElement | null = null;
+
+  let visible = $state(false);
+  let activeIndex = $state(-1);
+
+  let lastScrollY = 0;
+  let direction: "down" | "up" = "down";
+
+  let timeouts: ReturnType<typeof setTimeout>[] = [];
+
+  function clearStagger() {
+    timeouts.forEach(clearTimeout);
+    timeouts = [];
+  }
+
+  function startStaggerWave() {
+    clearStagger();
+
+    const baseDelay = 90;
+
+    skills.forEach((_, i) => {
+      const delay = Math.pow(i, 1.25) * baseDelay;
+
+      const id = setTimeout(() => {
+        activeIndex = i;
+      }, delay);
+
+      timeouts.push(id);
+    });
+  }
+
+  function reverseStaggerWave() {
+    clearStagger();
+
+    const baseDelay = 70;
+
+    [...skills].forEach((_, index) => {
+      const i = skills.length - 1 - index;
+
+      const delay = Math.pow(index, 1.2) * baseDelay;
+
+      const id = setTimeout(() => {
+        activeIndex = i - 1;
+      }, delay);
+
+      timeouts.push(id);
+    });
+  }
+
+  onMount(() => {
+    const onScroll = () => {
+      const currentY = window.scrollY;
+
+      direction = currentY > lastScrollY ? "down" : "up";
+      lastScrollY = currentY;
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          visible = true;
+          startStaggerWave();
+        } else {
+          reverseStaggerWave();
+        }
+      },
+      {
+        threshold: 0.6,
+        rootMargin: "0px 0px -10% 0px",
+      }
+    );
+
+    if (skillsSection) observer.observe(skillsSection);
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      clearStagger();
+      observer.disconnect();
+    };
+  });
+</script>
+
+<main class="page">
+  <!-- INTRO -->
+  <h1>{$t.about.title}</h1>
+
+  <section class="about-intro">
+    <div class="about-intro__content">
+      <p class="page-intro">{$t.about.intro}</p>
+      <p class="page-intro">{$t.about.focus}</p>
+    </div>
+
+    <div class="about-intro__media">
+      <div class="placeholder"></div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="about-section">
+    <h2>{$t.about.timelineTitle}</h2>
+
+    <div class="timeline-legend cluster">
+      <span class="legend-item study">{$t.about.study}</span>
+      <span class="legend-item infography">{$t.about.infographics}</span>
+      <span class="legend-item style">{$t.about.lifestyle}</span>
+    </div>
+
+    <AboutTimeline />
+  </section>
+
+  <!-- SKILLS -->
+  <section class="about-section" bind:this={skillsSection}>
+    <h2>{$t.about.skillsTitle}</h2>
+
+    {#each skills as skill, i (skill.id)}
+      <div
+        class="skill-wrapper"
+        class:visible={i <= activeIndex}
+        style={`--i:${i}`}
+      >
+        <SkillBar {skill} />
+      </div>
+    {/each}
+  </section>
+
+  <!-- LANGUAGES -->
+  <section class="about-section">
+    <h2>{$t.about.languagesTitle}</h2>
+
+    <AboutLanguages />
+  </section>
+
+  <!-- CTA -->
+  <section class="about-section about-cta">
+    <div class="about-cta__content">
+      <span class="about-cta__eyebrow">Open to work</span>
+
+      <p class="about-cta__text">
+        {$t.about.cta}
+      </p>
+    </div>
+
+    <button class="button">
+      {$t.about.downloadCV}
+    </button>
+  </section>
+</main>

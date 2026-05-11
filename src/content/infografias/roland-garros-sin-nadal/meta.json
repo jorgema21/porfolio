@@ -1,0 +1,19 @@
+{
+  "apartado": "sports",
+
+  "usos": [
+    { "es": "Infografía", "en": "Infographic" },
+    { "es": "Datos", "en": "Data" },
+    { "es": "Visualización", "en": "Visualization" }
+  ],
+
+  "colaboracion": {
+    "tipo": "solo",
+    "rol": ["graficos", "texto"]
+  },
+
+  "tools": ["Figma", "Excel"],
+  "date": "2026-06-01",
+  "mediumKey": "elpais",
+  "url": "https://elpais.com"
+}
