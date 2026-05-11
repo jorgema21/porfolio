@@ -1,5 +1,6 @@
 <script lang="ts">
   import { t } from "$lib/i18n";
+  import { base } from "$app/paths";
 </script>
 
 <main class="page">
@@ -22,12 +23,18 @@
 
   <section class="cluster">
     <a class="social-link" href="https://linkedin.com" target="_blank">
-      <img src="/images/logos/LinkedIn_Logo.png" alt="LinkedIn" />
+      <img
+        src={`${base}/images/logos/LinkedIn_Logo.png`}
+        alt="LinkedIn"
+      />
       LinkedIn
     </a>
 
     <a class="social-link" href="https://github.com" target="_blank">
-      <img src="/images/logos/GitHub_logo.png" alt="GitHub" />
+      <img
+        src={`${base}/images/logos/GitHub_logo.png`}
+        alt="GitHub"
+      />
       GitHub
     </a>
   </section>

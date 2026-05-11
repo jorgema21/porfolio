@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { base } from '$app/paths';
+
   import { preview, closePreview } from "$lib/stores/infographicPreview.svelte";
   import { lang } from "$lib/i18n/lang";
   import { formatDate } from "$lib/utils/formatDate";
@@ -46,7 +48,7 @@
 
       <!-- IMAGE -->
       <img
-        src={preview.project.image}
+        src={`${base}${preview.project.image}`}
         alt={preview.project.title[$lang]}
         class="preview-image"
       />
@@ -82,7 +84,7 @@
         <h2>
           <a
             class="preview-link link-underline"
-            href={`/infografias/${preview.project.slug}`}
+            href={`${base}/infografias/${preview.project.slug}`}
           >
             {preview.project.title[$lang]} ↗
           </a>

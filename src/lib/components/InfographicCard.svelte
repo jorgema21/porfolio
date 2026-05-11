@@ -4,6 +4,7 @@
   import { formatDate } from "$lib/utils/formatDate";
   import { infographics as infographicsI18n } from "$lib/i18n/dictionaries/infographics.i18n";
   import { openPreview } from "$lib/stores/infographicPreview.svelte";
+  import { base } from '$app/paths';
 
   const { project } = $props<{ project: Infographic }>();
 
@@ -24,7 +25,7 @@
 
 <button class="infographics-card" onclick={() => openPreview(project)}>
   <div class="thumb">
-    <img src={project.image} alt={project.title[$lang]} loading="lazy" />
+    <img src={`${base}${project.image}`} alt={project.title[$lang]} loading="lazy" />
 
     <div class="overlay">
       <h3>{project.title[$lang]}</h3>

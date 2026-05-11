@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { base } from "$app/paths";
   import { slide } from "svelte/transition";
   import { t } from "$lib/i18n";
   import type { Skill } from "$lib/data/skills.data";
@@ -14,7 +15,7 @@
   };
 
   const filledSegments = $derived(
-    Array.from({ length: segments }, (_, i) => i < skill.level)
+    Array.from({ length: segments }, (_, i) => i < skill.level),
   );
 
   const content = $derived(() => {
@@ -31,7 +32,7 @@
       {#if skill.logo}
         <img
           class="skill-logo"
-          src={skill.logo}
+          src={`${base}${skill.logo}`}
           alt={`${content().name} logo`}
           loading="lazy"
         />
