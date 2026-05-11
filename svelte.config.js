@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-static';
 import { mdsvex } from 'mdsvex';
 import { relative, sep } from 'node:path';
 
@@ -27,4 +27,10 @@ const config = {
 	}
 };
 
-export default config;
+export default {
+  kit: {
+    adapter: adapter({
+      fallback: '404.html'
+    })
+  }
+};
