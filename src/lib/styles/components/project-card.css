@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
-
   height: 100%;
 }
 
@@ -12,11 +11,8 @@
 
 .card.feature {
   display: grid;
-
   grid-template-columns: 1fr 2fr;
-
   gap: var(--space-8);
-
   align-items: start;
 }
 
@@ -42,43 +38,33 @@
 
 .thumb {
   overflow: hidden;
-
   border-radius: var(--radius-lg);
 }
 
 .thumb img {
   width: 100%;
   height: 100%;
-
   object-fit: cover;
-
   display: block;
 }
 
 /* =========================
-   TYPOGRAPHY
+   TYPOGRAPHY (BASE DESKTOP SYSTEM)
 ========================= */
 
 .title {
   margin-top: var(--space-2);
-
   max-width: 22ch;
 
-  font:
-    500 1rem/1.2
-    var(--font-serif);
-
+  font: 500 var(--text-base) / 1.2 var(--font-serif);
   letter-spacing: -0.01em;
 }
 
 .description {
   margin-top: var(--space-2);
-
   max-width: 50ch;
 
-  font:
-    350 0.95rem
-    var(--font-sans);
+  font: 350 var(--text-sm) var(--font-sans);
 }
 
 /* =========================
@@ -86,14 +72,9 @@
 ========================= */
 
 .category {
-  font:
-    600 0.7rem
-    var(--font-sans);
-
+  font: 600 var(--text-xs) var(--font-sans);
   text-transform: uppercase;
-
   letter-spacing: 0.1em;
-
   opacity: 0.8;
 }
 
@@ -106,15 +87,55 @@
 }
 
 /* =========================
-   VARIANTS
+   VARIANTS (DESKTOP ONLY)
 ========================= */
 
 .card.hero .title {
-  font-size: 2rem;
+  font-size: var(--text-2xl);
+}
+
+.card.feature .title {
+  font-size: var(--text-xl);
 }
 
 .card.grid .title,
-.card.list .title,
-.card.feature .title {
-  font-size: 1.1rem;
+.card.list .title {
+  font-size: var(--text-lg);
+}
+
+/* =========================
+   RESPONSIVE SYSTEM (MOBILE FIRST RESET)
+========================= */
+
+@media (max-width: 768px) {
+
+  /* layout fix */
+  .card.feature {
+    grid-template-columns: 1fr;
+  }
+
+  .card.feature .content,
+  .card.feature .thumb {
+    order: initial;
+  }
+
+  /* 🔥 UNIFICACIÓN REAL DE TIPOGRAFÍA */
+  .card .title {
+    font-size: var(--text-lg) !important;
+    max-width: 100%;
+  }
+
+  .card .description {
+    font-size: var(--text-sm);
+    max-width: 100%;
+  }
+
+  .card .category {
+    font-size: var(--text-xs);
+  }
+
+  /* spacing compact */
+  .card {
+    gap: var(--space-3);
+  }
 }

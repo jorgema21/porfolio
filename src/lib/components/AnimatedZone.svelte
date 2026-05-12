@@ -58,6 +58,7 @@
       easing: cubicOut,
     }}
   >
+  
     <ProjectCard {project} />
   </div>
 {/each}

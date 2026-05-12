@@ -5,6 +5,8 @@
   max-width: var(--content-width);
 
   margin-inline: auto;
+
+  padding-inline: var(--space-4);
 }
 
 .home-intro {
@@ -51,4 +53,23 @@
   grid-row:
     var(--row-start)
     / span var(--row-span, 1);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .home-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-slot {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+
+  .home-intro {
+    font-size: var(--text-xs);
+  }
 }
