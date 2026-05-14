@@ -1,6 +1,6 @@
 .article {
   max-width: var(--content-width);
-  margin: 0 auto;
+  margin-inline: auto;
   padding: 0 var(--space-6) var(--space-12);
 
   font-family: var(--font-serif);
