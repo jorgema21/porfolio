@@ -95,16 +95,33 @@
   <!-- INTRO -->
   <h1>{$t.about.title}</h1>
 
-  <section class="about-intro">
-    <div class="about-intro__content">
-      <p class="page-intro">{$t.about.intro}</p>
-      <p class="page-intro">{$t.about.focus}</p>
-    </div>
+  <p class="page-intro">
+    {#each $t.about.intro as node}
+      {#if typeof node === "string"}
+        {node}
+      {:else if node.bold}
+        <strong>{node.text}</strong>
+      {:else if node.italic}
+        <em>{node.text}</em>
+      {:else}
+        {node.text}
+      {/if}
+    {/each}
+  </p>
 
-    <div class="about-intro__media">
-      <div class="placeholder"></div>
-    </div>
-  </section>
+  <p class="page-intro">
+    {#each $t.about.focus as node}
+      {#if typeof node === "string"}
+        {node}
+      {:else if node.bold}
+        <strong>{node.text}</strong>
+      {:else if node.italic}
+        <em>{node.text}</em>
+      {:else}
+        {node.text}
+      {/if}
+    {/each}
+  </p>
 
   <!-- TIMELINE -->
   <section class="about-section">
