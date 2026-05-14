@@ -7,16 +7,15 @@
     border-color var(--transition);
 }
 
+/* línea lateral hover */
 .skill::before {
   content: "";
-
   position: absolute;
   inset: 0 auto 0 0;
 
   width: 1px;
 
   opacity: 0;
-
   transform: scaleY(0.4);
 
   transition:

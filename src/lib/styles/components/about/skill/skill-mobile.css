@@ -23,17 +23,15 @@
     grid-area: bar;
 
     display: flex;
-
     width: 100%;
     min-width: 0;
 
-    gap: 0.2rem;
+    gap: var(--space-2);
     margin-top: var(--space-2);
   }
 
   .skill-level {
     grid-area: level;
-
     justify-self: end;
 
     min-width: 2.5rem;
