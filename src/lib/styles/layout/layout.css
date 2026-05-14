@@ -46,13 +46,9 @@
 .project-slot {
   min-width: 0;
 
-  grid-column:
-    var(--col-start)
-    / span var(--col-span);
+  grid-column: var(--col-start) / span var(--col-span);
 
-  grid-row:
-    var(--row-start)
-    / span var(--row-span, 1);
+  grid-row: var(--row-start) / span var(--row-span, 1);
 }
 
 /* =========================

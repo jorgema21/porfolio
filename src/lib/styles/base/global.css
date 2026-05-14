@@ -35,7 +35,8 @@
    LAYOUT
 ========================= */
 
-@import "../layout/header.css";
+@import "../layout/header/header-base.css";
+@import "../layout/footer.css";
 @import "../layout/layout.css";
 
 /* =========================
@@ -59,7 +60,7 @@
 ========================= */
 
 @import "../components/infographics/infographic-card.css";
-@import "../components/infographics/infographic-preview.css";
+@import "../components/infographics/infographic-preview/preview-base.css";
 
 /* =========================
    COMPONENTS · SLUG

@@ -1,0 +1,35 @@
+.lang-switch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: var(--space-2);
+  margin-left: var(--space-4);
+
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+
+  background: none;
+  cursor: pointer;
+
+  transition:
+    border-color var(--transition-fast),
+    background var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.lang-switch:hover {
+  border-color: var(--color-border);
+  background: var(--bg-soft);
+  transform: var(--hover-lift);
+}
+
+.lang-switch img {
+  width: 20px;
+  border-radius: var(--radius-full);
+  transition: transform var(--transition-fast);
+}
+
+.lang-switch:hover img {
+  transform: scale(1.15);
+}
