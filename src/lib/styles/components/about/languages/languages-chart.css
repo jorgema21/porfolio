@@ -1,0 +1,15 @@
+.languages-chart {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+
+  padding-top: 5rem;
+}
+
+.languages-scale {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+
+  gap: var(--space-4);
+}

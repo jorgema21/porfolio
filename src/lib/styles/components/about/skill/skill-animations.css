@@ -1,0 +1,13 @@
+.skill-wrapper {
+  opacity: 0;
+  transform: translateY(18px);
+
+  transition:
+    opacity 800ms var(--ease-out),
+    transform 800ms var(--ease-out);
+}
+
+.skill-wrapper.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

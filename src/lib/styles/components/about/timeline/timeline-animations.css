@@ -1,0 +1,18 @@
+.timeline-item {
+  opacity: 0;
+  transform: translateY(50px);
+
+  transition:
+    opacity 700ms var(--ease-out),
+    transform 700ms var(--ease-out);
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* branch animation */
+.timeline-item.visible .timeline-branch {
+  transform: scaleX(1);
+}

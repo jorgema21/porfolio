@@ -1,0 +1,12 @@
+@import "./languages-chart.css";
+@import "./languages-circles.css";
+@import "./languages-label.css";
+@import "./languages-mobile.css";
+@import "./languages-selector.css";
+@import "./languages-animations.css";
+
+.languages {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}

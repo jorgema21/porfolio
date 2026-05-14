@@ -1,0 +1,58 @@
+.skill-bar {
+  display: flex;
+  align-items: center;
+
+  gap: 0.28rem;
+}
+
+.segment {
+  position: relative;
+
+  flex: 1;
+  height: 0.42rem;
+
+  overflow: hidden;
+
+  border-radius: var(--radius-full);
+
+  background: var(--color-border);
+
+  transition:
+    transform var(--transition),
+    background var(--transition);
+}
+
+.segment::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  opacity: 0;
+
+  transition: opacity var(--transition);
+}
+
+.segment.filled {
+  background: var(--blue-500);
+}
+
+.skill:hover .segment {
+  transform: scaleY(1.4);
+}
+
+.skill:hover .segment::after {
+  opacity: 1;
+}
+
+.skill-level {
+  min-width: 3.2rem;
+
+  font-size: var(--text-sm);
+  font-variant-numeric: tabular-nums;
+
+  letter-spacing: -0.03em;
+
+  color: var(--color-muted);
+
+  text-align: right;
+}

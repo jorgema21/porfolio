@@ -1,0 +1,102 @@
+@media (max-width: 768px) {
+
+  /* =========================
+     LAYOUT
+  ========================= */
+
+  .languages {
+    gap: var(--space-6);
+  }
+
+  /* =========================
+     SELECTORS (scroll chips)
+  ========================= */
+
+  .languages-selector {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+
+    padding-bottom: var(--space-2);
+
+    scrollbar-width: none;
+  }
+
+  .languages-selector::-webkit-scrollbar {
+    display: none;
+  }
+
+  .language-toggle {
+    flex: 0 0 auto;
+
+    padding: 0.55rem 0.9rem;
+    font-size: var(--text-xs);
+  }
+
+  /* =========================
+     CHART
+  ========================= */
+
+  .languages-chart {
+    padding-top: 2rem;
+    gap: var(--space-4);
+  }
+
+  .languages-scale {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  /* =========================
+     CIRCLES (reduce density only)
+  ========================= */
+
+  .languages-circles {
+    max-width: 320px;
+    gap: 0.25rem;
+  }
+
+  .language-circle {
+    max-width: 16px;
+  }
+
+  /* ❗ mantenemos animación base, solo quitamos hover */
+  .language-circle:hover {
+    transform: none;
+  }
+
+  /* =========================
+     LABELS (fix readability ONLY)
+  ========================= */
+
+  .language-label {
+    left: 50%;
+    bottom: calc(100% + 0.4rem);
+
+    transform: translateX(-50%) rotate(0deg);
+
+    text-align: center;
+  }
+
+  .language-label strong {
+    font-size: var(--text-xs);
+  }
+
+  .language-label small {
+    font-size: 0.65rem;
+  }
+
+  /* =========================
+     ANIMATIONS (KEEP SYSTEM, only soften)
+  ========================= */
+
+  .language-toggle,
+  .language-circle,
+  .language-label {
+    transition-duration: 600ms;
+  }
+
+  .language-circle:hover {
+    transform: none;
+  }
+}

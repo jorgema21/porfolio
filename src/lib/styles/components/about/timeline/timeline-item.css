@@ -1,0 +1,31 @@
+.timeline-item {
+  position: relative;
+
+  width: 50%;
+
+  --timeline-color: var(--color-border);
+  color: var(--timeline-color);
+}
+
+.timeline-item[data-category="study"] {
+  --timeline-color: var(--timeline-study);
+}
+
+.timeline-item[data-category="infography"] {
+  --timeline-color: var(--timeline-infography);
+}
+
+.timeline-item[data-category="style"] {
+  --timeline-color: var(--timeline-style);
+}
+
+.timeline-dot {
+  position: absolute;
+  top: 0.6rem;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-full);
+  background: currentColor;
+  z-index: 3;
+}

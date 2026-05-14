@@ -1,0 +1,23 @@
+.timeline-branch {
+  position: absolute;
+  top: 1rem;
+
+  width: 60%;
+  height: 4px;
+
+  background: currentColor;
+  opacity: 0.3;
+
+  transform: scaleX(0);
+  z-index: 1;
+}
+
+.timeline-item.left .timeline-branch {
+  left: 50%;
+  transform-origin: right center;
+}
+
+.timeline-item.right .timeline-branch {
+  right: 50%;
+  transform-origin: left center;
+}

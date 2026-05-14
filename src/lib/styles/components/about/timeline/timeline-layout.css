@@ -1,0 +1,16 @@
+/* ITEM POSITIONING BASE */
+.timeline-item.left,
+.timeline-item.right {
+  align-self: flex-start;
+}
+
+.timeline-item.left {
+  right: 5%;
+  text-align: right;
+}
+
+.timeline-item.right {
+  left: 5%;
+  align-self: flex-end;
+  text-align: left;
+}

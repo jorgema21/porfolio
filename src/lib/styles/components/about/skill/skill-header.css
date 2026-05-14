@@ -1,0 +1,113 @@
+.skill-header {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(160px, 28vw)
+    auto
+    auto;
+
+  align-items: center;
+
+  gap: var(--space-6);
+
+  width: 100%;
+
+  padding: var(--space-6) 0;
+
+  border: 0;
+  background: transparent;
+
+  cursor: pointer;
+  text-align: left;
+}
+
+.skill-main {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+
+  min-width: 0;
+}
+
+.skill-logo {
+  width: 2.9rem;
+  height: 2.9rem;
+
+  object-fit: contain;
+
+  flex-shrink: 0;
+
+  filter: saturate(0.92);
+
+  transition:
+    transform var(--transition-slow),
+    filter var(--transition),
+    opacity var(--transition);
+}
+
+.skill:hover .skill-logo {
+  transform: translateY(-1px) scale(1.035);
+  filter: saturate(1);
+}
+
+.skill-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.18rem;
+
+  min-width: 0;
+}
+
+.skill-name {
+  font-family: var(--font-sans);
+
+  font-size: var(--text-base);
+  font-weight: 700;
+
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+
+  color: var(--color-text);
+}
+
+.skill-description-mobile {
+  display: none;
+
+  font-size: var(--text-sm);
+  line-height: 1.5;
+
+  color: var(--color-muted);
+}
+
+.chevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 2rem;
+  height: 2rem;
+
+  margin-left: calc(var(--space-2) * -1);
+
+  border-radius: var(--radius-full);
+
+  font-size: 1rem;
+  font-weight: 300;
+
+  color: var(--color-muted);
+
+  transition:
+    transform var(--transition-slow),
+    background var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.skill:hover .chevron {
+  background: rgb(0 0 0 / 4%);
+  color: var(--color-text);
+}
+
+.chevron.open {
+  transform: rotate(45deg);
+}

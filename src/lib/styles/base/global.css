@@ -73,9 +73,9 @@
    COMPONENTS · ABOUT
 ========================= */
 
-@import "../components/about/skill-bar.css";
-@import "../components/about/timeline.css";
-@import "../components/about/languages.css";
+@import "../components/about/skill/skill-bar-base.css";
+@import "../components/about/timeline/timeline-base.css";
+@import "../components/about/languages/languages-base.css";
 
 /* =========================
    COMPONENTS · VISUALIZATIONS

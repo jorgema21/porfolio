@@ -1,0 +1,27 @@
+.language-label {
+  position: absolute;
+
+  bottom: calc(100% - 0.3rem);
+  left: 170%;
+
+  transform: translateX(-10%) rotate(-45deg);
+  transform-origin: bottom left;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+
+  color: var(--language-color);
+
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.language-label strong {
+  font-size: var(--text-sm);
+}
+
+.language-label small {
+  font-size: 0.7rem;
+  color: var(--color-muted);
+}
