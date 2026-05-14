@@ -1,15 +1,14 @@
 .language-label {
   position: absolute;
-
   bottom: calc(100% - 0.3rem);
-  left: 170%;
+  left: 175%;
 
   transform: translateX(-10%) rotate(-45deg);
   transform-origin: bottom left;
 
   display: flex;
   flex-direction: column;
-  gap: 0.1rem;
+  gap: 0;
 
   color: var(--language-color);
 
@@ -19,9 +18,11 @@
 
 .language-label strong {
   font-size: var(--text-sm);
+
+  gap: 0;
 }
 
 .language-label small {
-  font-size: 0.7rem;
+  font-size: var(--text-xs);
   color: var(--color-muted);
 }

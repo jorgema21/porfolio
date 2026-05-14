@@ -1,23 +1,12 @@
 @media (max-width: 768px) {
-
-  /* =========================
-     LAYOUT
-  ========================= */
-
   .languages {
     gap: var(--space-6);
   }
 
-  /* =========================
-     SELECTORS (scroll chips)
-  ========================= */
-
   .languages-selector {
     flex-wrap: nowrap;
     overflow-x: auto;
-
     padding-bottom: var(--space-2);
-
     scrollbar-width: none;
   }
 
@@ -27,14 +16,9 @@
 
   .language-toggle {
     flex: 0 0 auto;
-
     padding: 0.55rem 0.9rem;
     font-size: var(--text-xs);
   }
-
-  /* =========================
-     CHART
-  ========================= */
 
   .languages-chart {
     padding-top: 2rem;
@@ -48,55 +32,67 @@
   }
 
   /* =========================
-     CIRCLES (reduce density only)
+     CIRCLES VERTICAL (igual que ya tienes)
   ========================= */
 
   .languages-circles {
-    max-width: 320px;
-    gap: 0.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+
+    width: 100%;
+    margin: 0 auto;
   }
 
   .language-circle {
+    width: 100%;
     max-width: 16px;
-  }
+    height: 16px;
 
-  /* ❗ mantenemos animación base, solo quitamos hover */
-  .language-circle:hover {
-    transform: none;
+    margin-inline: 0;
+
+    border-radius: 50%;
+
+    position: relative;
   }
 
   /* =========================
-     LABELS (fix readability ONLY)
+     🔥 LABELS NUEVO FORMATO
   ========================= */
 
   .language-label {
-    left: 50%;
-    bottom: calc(100% + 0.4rem);
+    position: absolute;
+    left: calc(100% + var(--space-3));
+    top: 50%;
 
-    transform: translateX(-50%) rotate(0deg);
+    transform: translateY(-50%) rotate(0deg) !important;
 
-    text-align: center;
+    --label-rotate: 0deg;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-2);
+
+    white-space: nowrap;
+    pointer-events: none;
+
+    color: var(--language-color);
   }
+
+  .language-label.visible {
+    transform: translateY(-50%) rotate(0deg);
+  }
+
 
   .language-label strong {
     font-size: var(--text-xs);
+    font-weight: 600;
   }
 
   .language-label small {
-    font-size: 0.65rem;
-  }
-
-  /* =========================
-     ANIMATIONS (KEEP SYSTEM, only soften)
-  ========================= */
-
-  .language-toggle,
-  .language-circle,
-  .language-label {
-    transition-duration: 600ms;
-  }
-
-  .language-circle:hover {
-    transform: none;
+    font-size: var(--text-xs);
+    color: var(--color-muted);
   }
 }

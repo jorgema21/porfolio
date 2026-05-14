@@ -18,4 +18,8 @@
   --hover-lift: translateY(-2px);
   --hover-scale: scale(1.03);
   --active-scale: scale(0.97);
+
+  --lang-stagger: 70ms;
+  --lang-duration: 900ms;
+  --lang-duration-mobile: 600ms;
 }
