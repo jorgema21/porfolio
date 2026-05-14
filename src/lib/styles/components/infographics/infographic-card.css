@@ -8,7 +8,9 @@
   background: transparent;
 }
 
-/* OVERLAY */
+/* =========================
+   OVERLAY
+========================= */
 
 .infographics-card .overlay {
   position: absolute;
@@ -29,13 +31,20 @@
   font-family: var(--font-serif);
 }
 
+/* =========================
+   TITLE
+========================= */
+
 .infographics-card .overlay h3 {
   margin: 0;
+
   font-size: var(--text-base);
   color: var(--color-white);
 }
 
-/* META */
+/* =========================
+   META
+========================= */
 
 .infographics-card .meta {
   font-size: var(--text-xs);
