@@ -1,12 +1,3 @@
-@import "./timeline-layout.css";
-@import "./timeline-line.css";
-@import "./timeline-item.css";
-@import "./timeline-card.css";
-@import "./timeline-branch.css";
-@import "./timeline-legend.css";
-
-@import "./timeline-animations.css";
-
 .timeline {
   position: relative;
 

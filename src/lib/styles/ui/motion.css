@@ -1,0 +1,23 @@
+.motion-lift {
+  transition: transform var(--transition);
+}
+
+.motion-lift:hover {
+  transform: translateY(-2px);
+}
+
+.motion-scale:hover {
+  transform: scale(1.03);
+}
+
+.motion-active:active {
+  transform: scale(0.97);
+}
+
+.motion-fade {
+  transition: opacity var(--transition-fast);
+}
+
+.motion-fade:hover {
+  opacity: 0.7;
+}

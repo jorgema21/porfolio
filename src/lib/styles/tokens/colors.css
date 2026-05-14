@@ -1,5 +1,4 @@
 :root {
-  /* Brand */
   --blue-100: #e6f0ff;
   --blue-300: #7aa7ff;
   --blue-500: #2563eb;
@@ -7,7 +6,6 @@
 
   --red-500: #ef4444;
 
-  /* Neutral */
   --color-text: #1a1a1a;
   --color-muted: #666;
   --color-border: #e5e7eb;
@@ -15,19 +13,15 @@
   --color-white: #fff;
   --color-black: #000;
 
-  /* Backgrounds */
   --bg-soft: rgb(0 0 0 / 3%);
 
-  /* Overlays */
   --overlay-gradient: linear-gradient(
     to top,
     rgb(0 0 0 / 85%),
     transparent 60%
   );
-
   --overlay-text-color: rgb(255 255 255 / 75%);
 
-  /* Timeline */
   --timeline-study: #8e44ad;
   --timeline-infography: #2980b9;
   --timeline-style: #e74c3c;

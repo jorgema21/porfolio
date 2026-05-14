@@ -1,5 +1,5 @@
 <script lang="ts">
-  import "$lib/styles/base/global.css";
+  import "$lib/styles/global.css";
   import ImageLightbox from "$lib/components/ImageLightbox.svelte";
 
   import Header from "$lib/components/Header.svelte";

@@ -1,13 +1,99 @@
+/* =========================
+   CARD BASE
+========================= */
+
 .card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+
   border-radius: var(--card-radius);
 
   background: var(--color-white);
 
+  text-align: left;
+  cursor: pointer;
+
   transition:
     transform var(--transition),
-    box-shadow var(--transition);
+    box-shadow var(--transition),
+    opacity var(--transition);
 }
 
-.card-hover:hover {
-  transform: var(--hover-lift);
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.card:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.card[aria-disabled="true"] {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* =========================
+   CARD MEDIA
+========================= */
+
+.thumb {
+  position: relative;
+
+  overflow: hidden;
+
+  aspect-ratio: 16/9;
+
+  border-radius: var(--radius-sm);
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform var(--transition);
+}
+
+.card:hover .thumb img {
+  transform: scale(1.03);
+}
+
+/* =========================
+   CARD CONTENT
+========================= */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+/* =========================
+   CARD VARIANTS
+========================= */
+
+.card-hero {
+  min-height: 540px;
+}
+
+.card-grid {
+  min-height: 320px;
+}
+
+.card-feature {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+}
+
+.card-list {
+  flex-direction: row;
+  align-items: center;
+}
+
+.card-list .thumb {
+  width: 180px;
+  flex-shrink: 0;
 }

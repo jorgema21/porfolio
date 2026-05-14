@@ -21,7 +21,7 @@
 
 .image-button {
   all: unset;
-  cursor: default;
+  cursor: pointer;
 }
 
 .image-button:focus-visible {

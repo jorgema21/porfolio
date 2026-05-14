@@ -1,27 +1,17 @@
 :root {
-  /* CTA */
   --cta-border: 1px solid var(--color-border);
   --cta-gap: var(--space-6);
   --cta-padding: var(--space-8);
 
-  /* Buttons */
   --button-radius: var(--radius-full);
-
-  --button-padding-sm: 0.9rem 1.4rem;
   --button-padding: 0.9rem 1.4rem;
-
   --button-border: 1px solid var(--color-text);
 
-  /* Cards */
   --card-padding-lg: var(--space-8);
   --card-padding-md: var(--space-6);
 
   --card-border: 1px solid var(--color-border);
-
   --card-radius: var(--radius-lg);
-
-  --card-hover-scale: 1.04;
-  --card-transition: 0.6s ease;
 
   --card-gradient-soft: linear-gradient(
     to bottom right,

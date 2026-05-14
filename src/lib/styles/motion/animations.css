@@ -3,27 +3,15 @@
 ========================= */
 
 .fade-in {
-  animation:
-    fadeIn
-    var(--motion-base)
-    var(--ease-out)
-    both;
+  animation: fadeIn var(--motion-base) var(--ease-out) both;
 }
 
 .slide-up {
-  animation:
-    slideUp
-    var(--motion-base)
-    var(--ease-out)
-    both;
+  animation: slideUp var(--motion-base) var(--ease-out) both;
 }
 
 .scale-in {
-  animation:
-    scaleIn
-    var(--motion-base)
-    var(--ease-out)
-    both;
+  animation: scaleIn var(--motion-base) var(--ease-out) both;
 }
 
 /* =========================

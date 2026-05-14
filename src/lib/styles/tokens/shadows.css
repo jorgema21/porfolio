@@ -1,6 +1,4 @@
 :root {
-  --focus-ring: 0 0 0 3px
-    color-mix(in oklch, var(--blue-300) 25%, transparent);
-
+  --focus-ring: 0 0 0 3px color-mix(in oklch, var(--blue-300) 25%, transparent);
   --preview-shadow: 0 40px 100px rgb(0 0 0 / 35%);
 }
