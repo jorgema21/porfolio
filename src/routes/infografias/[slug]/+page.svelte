@@ -2,10 +2,10 @@
   import type { ProjectContent } from "$lib/types/project.types";
   import { APARTADOS, type ApartadoKey } from "$lib/config/apartados.config";
 
-  import ProjectHeader from "$lib/components/ProjectHeader.svelte";
-  import ProjectMeta from "$lib/components/ProjectMeta.svelte";
-  import ProjectTools from "$lib/components/ProjectTools.svelte";
-  import BlockRenderer from "$lib/components/BlockRenderer.svelte";
+  import ProjectHeader from "$lib/components/slug/ProjectHeader.svelte";
+  import ProjectMeta from "$lib/components/slug/ProjectMeta.svelte";
+  import ProjectTools from "$lib/components/slug/ProjectTools.svelte";
+  import BlockRenderer from "$lib/components/slug/BlockRenderer.svelte";
 
   const { data } = $props<{ data: { project: ProjectContent } }>();
 

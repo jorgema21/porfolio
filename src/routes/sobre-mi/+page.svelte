@@ -1,6 +1,6 @@
 <script lang="ts">
   import { t } from "$lib/i18n";
-  import { skills } from "$lib/data/skills.data";
+  import { skills } from "$lib/data/about/skills.data";
   import SkillBar from "$lib/components/about/SkillBar.svelte";
   import AboutTimeline from "$lib/components/about/AboutTimeline.svelte";
   import AboutLanguages from "$lib/components/about/AboutLanguages.svelte";

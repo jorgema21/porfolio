@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ProjectCard from "$lib/components/ProjectCard.svelte";
+  import ProjectCard from "$lib/components/home/ProjectCard.svelte";
 
   import type { HomeProject } from "$lib/data/projects";
 

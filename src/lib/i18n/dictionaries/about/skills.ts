@@ -1,4 +1,4 @@
-import type { SkillId } from "$lib/data/skills.data";
+import type { SkillId } from "$lib/data/about/skills.data";
 
 export type SkillLocale = Record<
   SkillId,

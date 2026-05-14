@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
 
-  import { timeline } from "$lib/data/timeline.data";
+  import { timeline } from "$lib/data/about/timeline.data";
 
   import TimelineItem from "./TimelineItem.svelte";
 

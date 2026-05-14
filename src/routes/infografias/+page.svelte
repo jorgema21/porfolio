@@ -1,7 +1,7 @@
 <script lang="ts">
-  import InfographicCard from "$lib/components/InfographicCard.svelte";
+  import InfographicCard from "$lib/components/infographics/InfographicCard.svelte";
   import Treemap from "$lib/components/visualizations/Treemap.svelte";
-  import InfographicPreview from "$lib/components/InfographicPreview.svelte";
+  import InfographicPreview from "$lib/components/infographics/InfographicPreview.svelte";
 
   import { flip } from "svelte/animate";
   import { fly } from "svelte/transition";

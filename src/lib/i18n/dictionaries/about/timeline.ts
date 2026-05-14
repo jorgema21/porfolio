@@ -1,4 +1,4 @@
-import type { TimelineId } from "$lib/data/timeline.data";
+import type { TimelineId } from "$lib/data/about/timeline.data";
 
 /**
  * Contenido traducido de un idioma

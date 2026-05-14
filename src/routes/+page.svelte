@@ -1,7 +1,7 @@
 <script lang="ts">
   import projects from "$lib/data/projects";
 
-  import AnimatedZone from "$lib/components/AnimatedZone.svelte";
+  import AnimatedZone from "$lib/components/home/AnimatedZone.svelte";
 
   import { t } from "$lib/i18n";
 

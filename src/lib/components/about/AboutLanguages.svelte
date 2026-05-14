@@ -3,7 +3,7 @@
 <script lang="ts">
   import { t } from "$lib/i18n";
 
-  import { languages, type LanguageId } from "$lib/data/languages.data";
+  import { languages, type LanguageId } from "$lib/data/about/languages.data";
 
   import { onMount } from "svelte";
 

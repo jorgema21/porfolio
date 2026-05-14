@@ -2,8 +2,8 @@
   import { base } from "$app/paths";
   import { slide } from "svelte/transition";
   import { t } from "$lib/i18n";
-  import type { Skill } from "$lib/data/skills.data";
-  import type { SkillId } from "$lib/data/skills.data";
+  import type { Skill } from "$lib/data/about/skills.data";
+  import type { SkillId } from "$lib/data/about/skills.data";
 
   const { skill } = $props<{ skill: Skill }>();
 

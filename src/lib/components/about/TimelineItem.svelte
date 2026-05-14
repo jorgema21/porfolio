@@ -1,7 +1,7 @@
 <script lang="ts">
   import type {
     TimelineItem as TimelineItemType,
-  } from "$lib/data/timeline.data";
+  } from "$lib/data/about/timeline.data";
 
   import { t } from "$lib/i18n";
 

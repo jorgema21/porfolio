@@ -1,6 +1,6 @@
 // src/lib/i18n/dictionaries/about/languages.ts
 
-import type { LanguageId } from "$lib/data/languages.data";
+import type { LanguageId } from "$lib/data/about/languages.data";
 
 type LanguageContent = {
   name: string;
