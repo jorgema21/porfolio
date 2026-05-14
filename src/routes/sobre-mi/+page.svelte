@@ -78,7 +78,7 @@
       {
         threshold: 0.6,
         rootMargin: "0px 0px -10% 0px",
-      }
+      },
     );
 
     if (skillsSection) observer.observe(skillsSection);

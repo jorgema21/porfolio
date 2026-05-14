@@ -17,11 +17,12 @@
 }
 
 .contact-intro {
+  max-width: var(--page-intro-lg);
   margin: 0;
-  font-size: clamp(1.1rem, 2vw, 1.5rem);
+
+  font-size: var(--text-lg);
   line-height: 1.6;
   color: var(--color-muted);
-  max-width: var(--page-intro-lg);
 }
 
 /* =========================
@@ -38,7 +39,6 @@
 
   border: var(--card-border);
   border-radius: var(--card-radius);
-
   background: var(--card-gradient-soft);
 }
 
@@ -46,23 +46,26 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
+
   max-width: 52ch;
 }
 
 .contact-card__content h2 {
   margin: 0;
+
   font-size: var(--text-xl);
   line-height: 1.2;
 }
 
 .contact-card__content p {
   margin: 0;
+
   line-height: 1.7;
   color: var(--color-muted);
 }
 
 /* =========================
-   BUTTON (REUTILIZA ui.css)
+   BUTTON
 ========================= */
 
 .contact-button {
@@ -70,7 +73,7 @@
 }
 
 /* =========================
-   LINKS (SIMPLIFICADO)
+   LINKS
 ========================= */
 
 .contact-links {
@@ -79,15 +82,14 @@
   gap: var(--space-5);
 }
 
-/* ahora usa sistema global social-link */
+/* mantiene base visual pero simplifica */
 .contact-links a {
-  all: unset;
   display: inline-flex;
 }
 
 .contact-links a img {
   width: 18px;
   height: 18px;
-  object-fit: contain;
   opacity: 0.8;
+  object-fit: contain;
 }

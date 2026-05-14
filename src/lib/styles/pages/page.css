@@ -8,25 +8,24 @@
 }
 
 /* =========================
-   TYPOGRAPHY (REUTILIZA SISTEMA)
+   TYPOGRAPHY
 ========================= */
 
 .page h1 {
   font: var(--text-2xl) var(--font-serif);
   line-height: 1.2;
 
-  border-bottom: 1px solid var(--color-border);
-  padding-bottom: 2px;
   margin-bottom: var(--space-4);
+  padding-bottom: 2px;
+
+  border-bottom: 1px solid var(--color-border);
 }
 
-/* mejor separación de responsabilidades */
 .page p {
   margin: 0;
   font-size: var(--text-base);
 }
 
-/* intro reutilizable */
 .page .page-intro {
   max-width: var(--page-intro-max);
   line-height: 1.6;
@@ -47,29 +46,31 @@
 }
 
 .list {
-  list-style: none;
-
-  padding: 0;
-
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
+
+  padding: 0;
+  list-style: none;
 }
 
-/* reutiliza control pattern */
+/* =========================
+   GROUP TOGGLE
+========================= */
+
 .group-toggle {
   width: 100%;
 
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 
   padding: var(--space-3) 0;
   margin-bottom: var(--space-3);
 
-  background: none;
   border: none;
   border-bottom: 1px solid var(--color-border);
+  background: none;
 
   cursor: pointer;
   font: inherit;

@@ -17,10 +17,10 @@
   // IMPORTANTE: No desestructuramos 'filtered' ni 'grouped' aquí
   // porque son getters. Si los desestructuramos, capturamos su valor inicial.
   const info = useInfographicsPage(() => $lang, $t);
-  
+
   // Las constantes estáticas o funciones sí podemos desestructurarlas si prefieres
   const { sortOptions, labelApartado, labelMedium, groupLabel, treemap } = info;
-  const { filters } = info; 
+  const { filters } = info;
 </script>
 
 <main class="page">
@@ -62,10 +62,7 @@
       getLabel={(k) => labelApartado(k as ApartadoKey)}
     />
 
-    <Treemap
-      data={treemap.mediums}
-      getLabel={labelMedium}
-    />
+    <Treemap data={treemap.mediums} getLabel={labelMedium} />
   </section>
 
   <!-- TOOLBAR -->
@@ -98,7 +95,7 @@
       <h2 class="group-title">
         {groupLabel(
           group.key,
-          filters.sortBy === "medium" ? "medium" : "apartado"
+          filters.sortBy === "medium" ? "medium" : "apartado",
         )}
       </h2>
 
@@ -113,7 +110,6 @@
         {/each}
       </section>
     {/each}
-
   {:else}
     <!-- LISTA SIMPLE (Accedemos vía info.filtered) -->
     <section class="infographics-grid">
