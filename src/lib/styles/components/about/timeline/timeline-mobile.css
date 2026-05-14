@@ -1,0 +1,88 @@
+@media (max-width: 768px) {
+  /* =========================
+     CONTAINER GENERAL
+  ========================= */
+
+  .timeline {
+    width: 100%;
+    padding-inline: var(--space-4);
+    gap: var(--space-6);
+  }
+
+  /* =========================
+     ITEM FULL WIDTH CENTERED
+  ========================= */
+
+  .timeline-item {
+    width: 100%;
+    align-self: center;
+    text-align: center;
+  }
+
+  .timeline-item.left,
+  .timeline-item.right {
+    left: auto;
+    right: auto;
+  }
+
+  /* =========================
+     OCULTAR BRANCHES (IMPORTANTE)
+  ========================= */
+
+  .timeline-branch {
+    display: none;
+  }
+
+  /* =========================
+     DOT CENTRADO
+  ========================= */
+
+  .timeline-dot {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* =========================
+     CARD CENTRADA
+  ========================= */
+
+  .timeline-card {
+    margin-inline: auto;
+    max-width: 100%;
+    text-align: left; /* contenido sigue legible */
+  }
+
+  /* =========================
+     LÍNEA CENTRAL (OPCIONAL PERO RECOMENDADO)
+     mantiene estructura visual vertical
+  ========================= */
+
+  .timeline-line,
+  .timeline-progress {
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+  }
+
+  /* =========================
+     LEGEND (más compacto en móvil)
+  ========================= */
+
+  .timeline-legend {
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    padding-inline: var(--space-4);
+  }
+
+  /* =========================
+     ANIMACIÓN (opcional suavizado móvil)
+  ========================= */
+
+  .timeline-item {
+    transform: translateY(24px);
+  }
+
+  .timeline-item.visible {
+    transform: translateY(0);
+  }
+}

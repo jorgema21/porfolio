@@ -21,12 +21,6 @@
   box-shadow: 0 12px 40px rgb(0 0 0 / 0.08);
 }
 
-.timeline-card p {
-  margin-top: var(--space-3);
-  line-height: 1.7;
-  color: var(--color-muted);
-}
-
 .timeline-date {
   display: inline-block;
   margin-bottom: var(--space-2);
@@ -40,8 +34,8 @@
 
 .timeline-card h3 {
   margin: 0;
-  line-height: 1.2;
   font-size: 1.15rem;
+  line-height: 1.2;
 }
 
 .timeline-card p {

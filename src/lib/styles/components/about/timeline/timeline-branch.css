@@ -1,6 +1,6 @@
 .timeline-branch {
   position: absolute;
-  top: 1rem;
+  top: var(--space-4);
 
   width: 60%;
   height: 4px;

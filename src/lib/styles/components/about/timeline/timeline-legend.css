@@ -23,6 +23,14 @@
   background: currentColor;
 }
 
-.legend-item.study { --timeline-color: var(--timeline-study); }
-.legend-item.infography { --timeline-color: var(--timeline-infography); }
-.legend-item.style { --timeline-color: var(--timeline-style); }
+.legend-item.study {
+  --timeline-color: var(--timeline-study);
+}
+
+.legend-item.infography {
+  --timeline-color: var(--timeline-infography);
+}
+
+.legend-item.style {
+  --timeline-color: var(--timeline-style);
+}

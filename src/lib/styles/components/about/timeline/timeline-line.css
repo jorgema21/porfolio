@@ -3,6 +3,7 @@
   position: absolute;
   top: 0;
   left: 50%;
+
   width: 4px;
   transform: translateX(-50%);
 }
@@ -16,5 +17,6 @@
   height: 0;
   background: var(--color-border);
   z-index: 2;
+
   transition: height 120ms linear;
 }
