@@ -5,19 +5,13 @@
   import type { Skill } from "$lib/data/about/skills.data";
   import type { SkillId } from "$lib/data/about/skills.data";
 
+  // Desestructuración nativa de las Runas de Svelte 5
   const { skill } = $props<{ skill: Skill }>();
 
   let open = $state(false);
-  const segments = 10;
-
   const toggle = () => (open = !open);
 
-  // 📊 barra precomputada (no cambia nunca salvo skill.level)
-  const filledSegments = $derived(
-    Array.from({ length: segments }, (_, i) => i < skill.level),
-  );
-
-  // 📦 cache de traducción (evita content() repetido en template)
+  // 📦 Caché de traducción reactiva
   const content = $derived($t.skills[skill.id as SkillId]);
 </script>
 
@@ -45,10 +39,10 @@
       </div>
     </div>
 
-    <!-- BAR -->
+    <!-- BAR: Dibujamos directamente los 10 segmentos usando el índice del rango loops de Svelte 5 -->
     <div class="skill-bar" aria-hidden="true">
-      {#each filledSegments as isFilled}
-        <span class="segment" class:filled={isFilled}></span>
+      {#each { length: 10 } as _, i}
+        <span class="segment" class:filled={i < skill.level}></span>
       {/each}
     </div>
 

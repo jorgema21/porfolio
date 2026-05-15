@@ -1,5 +1,4 @@
 import { infographics } from "$lib/data/infographics.data";
-import { APARTADOS } from "$lib/config/apartados.config";
 import type { Infographic } from "./infographics.metrics";
 
 export type Lang = "es" | "en";

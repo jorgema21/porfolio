@@ -1,8 +1,6 @@
 <script lang="ts">
   import projects from "$lib/data/projects";
   import { t, lang } from "$lib/i18n";
-  import { slide } from "svelte/transition";
-  import { cubicOut } from "svelte/easing";
 
   type Project = (typeof projects)[number];
 
@@ -90,7 +88,9 @@
 
   {#each grouped() as group (group.key)}
     <section>
-      <button class="group-toggle" aria-expanded={openGroup === group.key}
+      <button
+        class="group-toggle"
+        aria-expanded={openGroup === group.key}
         onclick={() => toggleGroup(group.key)}
       >
         <span>{group.key}</span>
@@ -101,9 +101,11 @@
         <ul class="list">
           {#each group.items as project (project.id)}
             <li>
-              <a class="link-underline"
-                 href={project.externalUrl}
-                 target="_blank">
+              <a
+                class="link-underline"
+                href={project.externalUrl}
+                target="_blank"
+              >
                 {project.title[$lang]} ↗
               </a>
             </li>

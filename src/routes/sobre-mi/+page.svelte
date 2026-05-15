@@ -9,74 +9,18 @@
 
   let skillsSection: HTMLElement | null = null;
 
-  let visible = $state(false);
-  let activeIndex = $state(-1);
-
-  let lastScrollY = 0;
-  let direction: "down" | "up" = "down";
-
-  let timeouts: ReturnType<typeof setTimeout>[] = [];
-
-  function clearStagger() {
-    timeouts.forEach(clearTimeout);
-    timeouts = [];
-  }
-
-  function startStaggerWave() {
-    clearStagger();
-
-    const baseDelay = 90;
-
-    skills.forEach((_, i) => {
-      const delay = Math.pow(i, 1.25) * baseDelay;
-
-      const id = setTimeout(() => {
-        activeIndex = i;
-      }, delay);
-
-      timeouts.push(id);
-    });
-  }
-
-  function reverseStaggerWave() {
-    clearStagger();
-
-    const baseDelay = 70;
-
-    [...skills].forEach((_, index) => {
-      const i = skills.length - 1 - index;
-
-      const delay = Math.pow(index, 1.2) * baseDelay;
-
-      const id = setTimeout(() => {
-        activeIndex = i - 1;
-      }, delay);
-
-      timeouts.push(id);
-    });
-  }
+  // 1. Estado reactivo simplificado: controla si la sección entera entró en pantalla
+  let isSectionVisible = $state(false);
 
   onMount(() => {
-    const onScroll = () => {
-      const currentY = window.scrollY;
-
-      direction = currentY > lastScrollY ? "down" : "up";
-      lastScrollY = currentY;
-    };
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-
+    // 2. Eliminamos todo el evento scroll manual y la variable 'direction' ya que no se usaban.
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          visible = true;
-          startStaggerWave();
-        } else {
-          reverseStaggerWave();
-        }
+        // Controla de golpe si la sección es visible o no
+        isSectionVisible = entry.isIntersecting;
       },
       {
-        threshold: 0.6,
+        threshold: 0.2, // Umbral más bajo para que la animación empiece de forma fluida
         rootMargin: "0px 0px -10% 0px",
       },
     );
@@ -84,8 +28,6 @@
     if (skillsSection) observer.observe(skillsSection);
 
     return () => {
-      window.removeEventListener("scroll", onScroll);
-      clearStagger();
       observer.disconnect();
     };
   });
@@ -141,10 +83,11 @@
     <h2>{$t.about.skillsTitle}</h2>
 
     {#each skills as skill, i (skill.id)}
+      <!-- 3. CSS se encarga del Stagger (escalonado) de forma limpia usando la variable --i -->
       <div
         class="skill-wrapper"
-        class:visible={i <= activeIndex}
-        style={`--i:${i}`}
+        class:visible={isSectionVisible}
+        style={`--i: ${i}`}
       >
         <SkillBar {skill} />
       </div>
