@@ -1,14 +1,24 @@
 import type { Block } from "$lib/types/block";
+import type { Lang } from "$lib/i18n/lang";
 
-export const getImageSrc = (block: Block, slug: string) =>
-  block.type === "image" || block.type === "hero"
-    ? `/images/infografias/${slug}/${block.src}`
-    : "";
+export const getImageSrc = (block: Block, slug: string) => {
+  if (block.type !== "image" && block.type !== "hero") {
+    return "";
+  }
 
-export const getText = (block: Block, lang: "es" | "en") => {
-  if (block.type !== "text") return "";
+  return `/images/infografias/${slug}/${block.src}`;
+};
+
+export const getText = (block: Block, lang: Lang) => {
+  if (block.type !== "text") {
+    return "";
+  }
 
   const value = block.value?.[lang] ?? block.value?.es;
 
-  return Array.isArray(value) ? value.join(" ") : value;
+  if (Array.isArray(value)) {
+    return value.join(" ");
+  }
+
+  return value ?? "";
 };

@@ -1,87 +1,121 @@
+type LocaleLabel = {
+  es: string;
+  en: string;
+};
+
+type ApartadoConfig = {
+  label: LocaleLabel;
+
+  color: {
+    light: string;
+    dark: string;
+  };
+
+  order: number;
+};
+
+const createApartado = (
+  label: LocaleLabel,
+  hue: number,
+  chroma: number,
+  lightness = 55,
+  darkLightness = 70,
+  order = 0,
+): ApartadoConfig => ({
+  label,
+
+  color: {
+    light: `oklch(${lightness}% ${chroma} ${hue})`,
+    dark: `oklch(${darkLightness}% ${chroma * 0.9} ${hue})`,
+  },
+
+  order,
+});
+
 export const APARTADOS = {
-  sports: {
-    label: {
+  sports: createApartado(
+    {
       es: "Deportes",
-      en: "Sports"
+      en: "Sports",
     },
-    color: {
-      light: "oklch(55% 0.22 25)",
-      dark: "oklch(70% 0.2 25)"
-    },
-    order: 1
-  },
+    25,
+    0.22,
+    55,
+    70,
+    1,
+  ),
 
-  culture: {
-    label: {
+  culture: createApartado(
+    {
       es: "Cultura",
-      en: "Culture"
+      en: "Culture",
     },
-    color: {
-      light: "oklch(60% 0.18 310)",
-      dark: "oklch(75% 0.16 310)"
-    },
-    order: 2
-  },
+    310,
+    0.18,
+    60,
+    75,
+    2,
+  ),
 
-  genero: {
-    label: {
+  genero: createApartado(
+    {
       es: "Género",
-      en: "Gender"
+      en: "Gender",
     },
-    color: {
-      light: "oklch(65% 0.18 340)",
-      dark: "oklch(78% 0.16 340)"
-    },
-    order: 3
-  },
+    340,
+    0.18,
+    65,
+    78,
+    3,
+  ),
 
-  environment: {
-    label: {
+  environment: createApartado(
+    {
       es: "Medio Ambiente",
-      en: "Environment"
+      en: "Environment",
     },
-    color: {
-      light: "oklch(55% 0.18 145)",
-      dark: "oklch(70% 0.16 145)"
-    },
-    order: 4
-  },
+    145,
+    0.18,
+    55,
+    70,
+    4,
+  ),
 
-  economia: {
-    label: {
+  economia: createApartado(
+    {
       es: "Economía",
-      en: "Economy"
+      en: "Economy",
     },
-    color: {
-      light: "oklch(60% 0.15 85)",
-      dark: "oklch(75% 0.14 85)"
-    },
-    order: 5
-  },
+    85,
+    0.15,
+    60,
+    75,
+    5,
+  ),
 
-  nacional: {
-    label: {
+  nacional: createApartado(
+    {
       es: "Nacional",
-      en: "National"
+      en: "National",
     },
-    color: {
-      light: "oklch(55% 0.18 250)",
-      dark: "oklch(70% 0.16 250)"
-    },
-    order: 6
-  },
+    250,
+    0.18,
+    55,
+    70,
+    6,
+  ),
 
-  internacional: {
-    label: {
+  internacional: createApartado(
+    {
       es: "Internacional",
-      en: "International"
+      en: "International",
     },
-    color: {
-      light: "oklch(55% 0.08 180)",
-      dark: "oklch(70% 0.1 180)"
-    },
-    order: 7
-  }
-} as const;
+    180,
+    0.08,
+    55,
+    70,
+    7,
+  ),
+} satisfies Record<string, ApartadoConfig>;
 
 export type ApartadoKey = keyof typeof APARTADOS;

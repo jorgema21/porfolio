@@ -18,11 +18,7 @@ export type ProjectCategory = "infografia" | "estilo_de_vida";
 
 export type ColaboracionTipo = "solo" | "equipo";
 
-export type RoleType =
-  | "graficos"
-  | "texto"
-  | "desarrollo"
-  | "datos";
+export type RoleType = "graficos" | "texto" | "desarrollo" | "datos";
 
 /* =========================
    BASE PROJECT (CORE MODEL)

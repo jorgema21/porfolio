@@ -5,11 +5,8 @@ import { createInfographicsState } from "$lib/infographics/infographics.state.sv
 
 type ApartadoKey = keyof typeof APARTADOS;
 
-export const useInfographicsPage = (
-  lang: () => "es" | "en",
-  t: any
-) => {
-  // 1. NO desestructuramos filtered ni grouped aquí, 
+export const useInfographicsPage = (lang: () => "es" | "en", t: any) => {
+  // 1. NO desestructuramos filtered ni grouped aquí,
   // ya que son getters y se quedarían "congelados".
   const state = createInfographicsState(lang);
 
@@ -27,13 +24,10 @@ export const useInfographicsPage = (
     return k; // fallback seguro
   };
 
-  const labelMedium = (k: string) =>
-    mediumDict()[k] ?? k;
+  const labelMedium = (k: string) => mediumDict()[k] ?? k;
 
   const groupLabel = (key: string, type: "medium" | "apartado") =>
-    type === "medium"
-      ? labelMedium(key)
-      : labelApartado(key);
+    type === "medium" ? labelMedium(key) : labelApartado(key);
 
   const sortOptions = [
     { value: "date", label: t.infographics.sort.newest },
@@ -52,11 +46,15 @@ export const useInfographicsPage = (
   return {
     // 2. Devolvemos filters directamente (es un objeto reactivo)
     filters: state.filters,
-    
+
     // 3. Devolvemos getters para filtered y grouped para mantener el puente reactivo
-    get filtered() { return state.filtered; },
-    get grouped() { return state.grouped; },
-    
+    get filtered() {
+      return state.filtered;
+    },
+    get grouped() {
+      return state.grouped;
+    },
+
     treemap,
     mediumDict,
     labelApartado,

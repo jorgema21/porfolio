@@ -14,13 +14,19 @@
 
   type ApartadoKey = keyof typeof APARTADOS;
 
-  // IMPORTANTE: No desestructuramos 'filtered' ni 'grouped' aquí
-  // porque son getters. Si los desestructuramos, capturamos su valor inicial.
+  // Inicialización del estado reactivo de la página
   const info = useInfographicsPage(() => $lang, $t);
 
-  // Las constantes estáticas o funciones sí podemos desestructurarlas si prefieres
-  const { sortOptions, labelApartado, labelMedium, groupLabel, treemap } = info;
-  const { filters } = info;
+  // Desestructuramos SOLO los métodos estáticos, objetos mutables y configuraciones.
+  // Dejamos fuera 'filtered' y 'grouped' para no romper sus getters reactivos.
+  const {
+    filters,
+    sortOptions,
+    labelApartado,
+    labelMedium,
+    groupLabel,
+    treemap,
+  } = info;
 </script>
 
 <main class="page">
@@ -75,7 +81,9 @@
 
     <select class="select" bind:value={filters.sortBy}>
       {#each sortOptions as opt}
-        <option value={opt.value}>{opt.label}</option>
+        <option value={opt.value}>
+          {opt.label}
+        </option>
       {/each}
     </select>
 
@@ -89,7 +97,7 @@
     </button>
   </div>
 
-  <!-- GROUPED (Accedemos vía info.grouped) -->
+  <!-- GROUPED -->
   {#if filters.sortBy === "medium" || filters.sortBy === "apartado"}
     {#each info.grouped as group (group.key)}
       <h2 class="group-title">
@@ -111,7 +119,7 @@
       </section>
     {/each}
   {:else}
-    <!-- LISTA SIMPLE (Accedemos vía info.filtered) -->
+    <!-- LISTA SIMPLE -->
     <section class="infographics-grid">
       {#each info.filtered as project (project.id)}
         <div

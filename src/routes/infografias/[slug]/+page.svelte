@@ -12,13 +12,11 @@
   const project = $derived(() => data.project);
 
   const apartado = $derived(
-    () => project().apartado as ApartadoKey | undefined
+    () => project().apartado as ApartadoKey | undefined,
   );
 
   const color = $derived(() =>
-    apartado()
-      ? APARTADOS[apartado()!].color.light
-      : "transparent"
+    apartado() ? APARTADOS[apartado()!].color.light : "transparent",
   );
 
   const blocks = $derived(() => project().blocks);
