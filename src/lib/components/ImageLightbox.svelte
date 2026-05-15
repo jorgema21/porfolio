@@ -1,8 +1,5 @@
 <script lang="ts">
-  import {
-    lightbox,
-    closeLightbox,
-  } from "$lib/stores/lightbox.svelte";
+  import { lightbox, closeLightbox } from "$lib/stores/lightbox.svelte";
 
   function handleKeydown(e: KeyboardEvent) {
     if (e.key === "Escape") {
@@ -25,11 +22,7 @@
       onclick={(e) => e.stopPropagation()}
       aria-label="Cerrar imagen ampliada"
     >
-      <img
-        src={lightbox.image}
-        alt=""
-        class="image"
-      />
+      <img src={lightbox.image} alt="" class="image" />
     </button>
   </div>
 {/if}

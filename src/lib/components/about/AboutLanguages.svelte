@@ -1,56 +1,46 @@
-<!-- src/lib/components/about/AboutLanguages.svelte -->
-
 <script lang="ts">
   import { t } from "$lib/i18n";
-
   import { languages, type LanguageId } from "$lib/data/about/languages.data";
-
   import { onMount } from "svelte";
 
   const MAX_LEVEL = 10;
 
   let selected = $state<LanguageId[]>(
-    languages
-      .filter((language) => language.defaultSelected)
-      .map((language) => language.id),
+    languages.filter((l) => l.defaultSelected).map((l) => l.id),
   );
 
   const toggleLanguage = (id: LanguageId) => {
-    if (selected.includes(id)) {
-      selected = selected.filter((languageId) => languageId !== id);
-
-      return;
-    }
-
-    selected = [...selected, id];
+    selected = selected.includes(id)
+      ? selected.filter((x) => x !== id)
+      : [...selected, id];
   };
 
+  // ⚡ lookup optimizado
+  const selectedSet = $derived(new Set(selected));
+
+  // 📦 idiomas activos
   const activeLanguages = $derived(
-    languages.filter((language) => selected.includes(language.id)),
+    languages.filter((l) => selectedSet.has(l.id)),
   );
 
+  // 🌍 traducciones (sin wrapper extra)
+  const dict = $t.languages;
+
+  // 📊 círculos completamente declarativos
   const circles = $derived(
-    Array.from({ length: MAX_LEVEL }, (_, index) => {
-      const level = index + 1;
+    Array.from({ length: MAX_LEVEL }, (_, i) => {
+      const level = i + 1;
 
-      const activeAtLevel = activeLanguages.filter(
-        (language) => language.level >= level,
-      );
-
-      const topLanguage = activeAtLevel.at(-1);
+      const topLanguage = activeLanguages.findLast((l) => l.level >= level);
 
       return {
         level,
-
         color: topLanguage?.color ?? "var(--color-border)",
       };
     }),
   );
 
-  const dict = $derived($t.languages);
-
   let languagesSection: HTMLElement;
-
   let visible = $state(false);
 
   onMount(() => {
@@ -64,9 +54,7 @@
       },
     );
 
-    if (languagesSection) {
-      observer.observe(languagesSection);
-    }
+    if (languagesSection) observer.observe(languagesSection);
 
     return () => observer.disconnect();
   });
@@ -77,17 +65,18 @@
   aria-labelledby="languages-title"
   bind:this={languagesSection}
 >
-  <!-- SELECTORS -->
-
-  <div class="languages-selector" role="group" aria-label="Language selectors">
+  <!-- =========================
+       SELECTORS
+  ========================== -->
+  <div class="languages-selector" role="group">
     {#each languages as language, i (language.id)}
       <button
         type="button"
         class="language-toggle"
-        class:selected={selected.includes(language.id)}
-        class:visible={visible}
+        class:selected={selectedSet.has(language.id)}
+        class:visible
         style={`--i:${i}`}
-        aria-pressed={selected.includes(language.id)}
+        aria-pressed={selectedSet.has(language.id)}
         onclick={() => toggleLanguage(language.id)}
       >
         {dict[language.id].name}
@@ -95,12 +84,11 @@
     {/each}
   </div>
 
-  <!-- CHART -->
-
+  <!-- =========================
+       CHART
+  ========================== -->
   <div class="languages-chart">
-    <!-- SCALE -->
-
-    <div class="languages-scale" aria-label="Language proficiency scale">
+    <div class="languages-scale">
       <span class="scale-label">
         {dict.scale.beginner}
       </span>
@@ -109,14 +97,14 @@
         {#each circles as circle, i (circle.level)}
           <span
             class="language-circle"
-            class:visible={visible}
+            class:visible
             style={`background:${circle.color}; --i:${i + 5}`}
           >
             {#each activeLanguages as language (language.id)}
               {#if language.level === circle.level}
                 <span
                   class="language-label"
-                  class:visible={visible}
+                  class:visible
                   style={`--language-color:${language.color}; --i:${circle.level + 10}`}
                 >
                   <strong>

@@ -10,19 +10,15 @@
   let open = $state(false);
   const segments = 10;
 
-  const toggle = () => {
-    open = !open;
-  };
+  const toggle = () => (open = !open);
 
+  // 📊 barra precomputada (no cambia nunca salvo skill.level)
   const filledSegments = $derived(
     Array.from({ length: segments }, (_, i) => i < skill.level),
   );
 
-  const content = $derived(() => {
-    const dict = $t.skills;
-
-    return dict[skill.id as SkillId];
-  });
+  // 📦 cache de traducción (evita content() repetido en template)
+  const content = $derived($t.skills[skill.id as SkillId]);
 </script>
 
 <div class="skill">
@@ -33,18 +29,18 @@
         <img
           class="skill-logo"
           src={`${base}${skill.logo}`}
-          alt={`${content().name} logo`}
+          alt={`${content.name} logo`}
           loading="lazy"
         />
       {/if}
 
       <div class="skill-info">
         <span class="skill-name">
-          {content().name}
+          {content.name}
         </span>
 
         <span class="skill-description-mobile">
-          {content().description}
+          {content.description}
         </span>
       </div>
     </div>
@@ -68,12 +64,12 @@
   {#if open}
     <div class="skill-details" transition:slide>
       <p class="skill-description">
-        {content().description}
+        {content.description}
       </p>
 
-      {#if content().details?.length}
+      {#if content.details?.length}
         <ul class="skill-list">
-          {#each content().details as item}
+          {#each content.details as item}
             <li>{item}</li>
           {/each}
         </ul>

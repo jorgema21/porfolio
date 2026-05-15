@@ -1,49 +1,72 @@
 <script lang="ts">
   import { onMount } from "svelte";
-
   import { timeline } from "$lib/data/about/timeline.data";
-
   import TimelineItem from "./TimelineItem.svelte";
 
   let container: HTMLElement;
 
   let progress = $state(0);
-
   let visibleItems = $state<boolean[]>(timeline.map(() => false));
 
-  const updateTimeline = () => {
+  // 📌 cache de posiciones absolutas (solo recalculadas en resize)
+  let itemTops: number[] = [];
+
+  let containerTop = 0;
+  let containerHeight = 0;
+
+  const measure = () => {
     if (!container) return;
 
-    requestAnimationFrame(() => {
-      const rect = container.getBoundingClientRect();
+    const rect = container.getBoundingClientRect();
+    containerTop = rect.top + window.scrollY;
+    containerHeight = rect.height;
 
-      const containerTop = rect.top + window.scrollY;
+    const items = container.querySelectorAll<HTMLElement>(".timeline-item");
 
-      const middle = window.scrollY + window.innerHeight / 2;
-
-      progress = Math.max(0, Math.min(middle - containerTop, rect.height));
-
-      const items = container.querySelectorAll<HTMLElement>(".timeline-item");
-
-      visibleItems = Array.from(items, (el) => {
-        const top = el.getBoundingClientRect().top + window.scrollY;
-
-        return middle >= top + 40;
-      });
+    itemTops = Array.from(items, (el) => {
+      return el.getBoundingClientRect().top + window.scrollY;
     });
   };
 
+  const update = () => {
+    const middle = window.scrollY + window.innerHeight / 2;
+
+    // 📊 progress (idéntico a tu lógica original)
+    const raw = middle - containerTop;
+    progress = Math.max(0, Math.min(raw, containerHeight));
+
+    // 👁 visibilidad exacta como antes
+    visibleItems = itemTops.map((top) => middle >= top + 40);
+  };
+
+  let ticking = false;
+
+  const onScroll = () => {
+    if (ticking) return;
+
+    ticking = true;
+
+    requestAnimationFrame(() => {
+      update();
+      ticking = false;
+    });
+  };
+
+  const onResize = () => {
+    measure();
+    update();
+  };
+
   onMount(() => {
-    updateTimeline();
+    measure();
+    update();
 
-    window.addEventListener("scroll", updateTimeline, { passive: true });
-
-    window.addEventListener("resize", updateTimeline);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onResize);
 
     return () => {
-      window.removeEventListener("scroll", updateTimeline);
-
-      window.removeEventListener("resize", updateTimeline);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onResize);
     };
   });
 </script>

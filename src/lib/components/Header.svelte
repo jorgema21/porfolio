@@ -1,6 +1,5 @@
 <script lang="ts">
   import { base } from "$app/paths";
-
   import { t, lang, toggleLang } from "$lib/i18n";
 
   import { fly } from "svelte/transition";
@@ -13,28 +12,25 @@
     { href: `${base}/contacto`, key: "contacto" },
   ] as const;
 
-  let visible = $state(0);
-  let mobileOpen = $state(false);
-
   const delay = 120;
   const total = 3;
+
+  let visible = $state(0);
+  let mobileOpen = $state(false);
 
   $effect(() => {
     visible = 0;
 
     let cancelled = false;
 
-    const run = async () => {
+    (async () => {
       for (let i = 1; i <= total; i++) {
         if (cancelled) return;
 
         visible = i;
-
         await new Promise((r) => setTimeout(r, delay));
       }
-    };
-
-    run();
+    })();
 
     return () => {
       cancelled = true;
@@ -47,13 +43,13 @@
     easing: cubicOut,
   };
 
-  function toggleMenu() {
-    mobileOpen = !mobileOpen;
-  }
+  const toggleMenu = () => (mobileOpen = !mobileOpen);
+  const closeMenu = () => (mobileOpen = false);
 
-  function closeMenu() {
-    mobileOpen = false;
-  }
+  // ✨ microoptimización i18n
+  const navLabel = (key: keyof typeof $t.layout.nav) => {
+    return $t.layout.nav[key];
+  };
 </script>
 
 <svelte:head>
@@ -93,13 +89,10 @@
 
   <!-- DESKTOP NAV -->
   {#if visible >= 2}
-    <nav
-      class="nav desktop-nav"
-      in:fly={{ ...flyIn, delay: 100 }}
-    >
+    <nav class="nav desktop-nav" in:fly={{ ...flyIn, delay: 100 }}>
       {#each navItems as item}
         <a href={item.href}>
-          {$t.layout.nav[item.key]}
+          {navLabel(item.key)}
         </a>
       {/each}
     </nav>
@@ -127,7 +120,7 @@
     </button>
   {/if}
 
-  <!-- MOBILE NAV (DENTRO DEL HEADER => sticky correcto) -->
+  <!-- MOBILE NAV -->
   {#if mobileOpen}
     <nav
       class="mobile-nav"
@@ -139,7 +132,7 @@
     >
       {#each navItems as item}
         <a href={item.href} onclick={closeMenu}>
-          {$t.layout.nav[item.key]}
+          {navLabel(item.key)}
         </a>
       {/each}
     </nav>
