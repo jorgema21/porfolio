@@ -26,7 +26,7 @@
     labelMedium,
     groupLabel,
     treemap,
-  } = info;
+  } = $state(info);
 </script>
 
 <main class="page">
