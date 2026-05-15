@@ -1,11 +1,10 @@
 <script lang="ts">
+  import { fly } from "svelte/transition";
+  import { cubicOut } from "svelte/easing";
+
   import ProjectCard from "$lib/components/home/ProjectCard.svelte";
 
   import type { HomeProject } from "$lib/data/projects";
-
-  import { fly } from "svelte/transition";
-
-  import { cubicOut } from "svelte/easing";
 
   const { items } = $props<{
     items: HomeProject[];
@@ -16,29 +15,19 @@
   const baseDelay = 120;
 
   $effect(() => {
-    if (!items?.length) return;
+    if (!items.length) return;
 
     visibleCount = 0;
 
-    let cancelled = false;
+    const interval = setInterval(() => {
+      visibleCount += 1;
 
-    const run = async () => {
-      for (let i = 0; i < items.length; i++) {
-        if (cancelled) return;
-
-        visibleCount = i + 1;
-
-        await new Promise((r) =>
-          setTimeout(r, baseDelay),
-        );
+      if (visibleCount >= items.length) {
+        clearInterval(interval);
       }
-    };
+    }, baseDelay);
 
-    run();
-
-    return () => {
-      cancelled = true;
-    };
+    return () => clearInterval(interval);
   });
 </script>
 
@@ -48,7 +37,6 @@
     style={`
       --col-start:${project.colStart};
       --col-span:${project.colSpan};
-
       --row-start:${project.rowStart};
       --row-span:${project.rowSpan ?? 1};
     `}
@@ -58,7 +46,6 @@
       easing: cubicOut,
     }}
   >
-  
     <ProjectCard {project} />
   </div>
 {/each}
