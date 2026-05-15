@@ -82,3 +82,31 @@
     opacity: 0.85;
   }
 }
+
+/* =========================
+   ANIMACIONES NATIVAS
+========================= */
+
+/* Transición por GPU cuando cambian las dimensiones físicas de las barras */
+.insights rect.treemap-rect {
+  transition:
+    width 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    height 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    fill 0.3s ease;
+  cursor: pointer;
+}
+
+/* Estilo visual de accesibilidad para la navegación con el tabulador */
+.insights rect.treemap-rect:focus-visible {
+  outline: 2px solid var(--color-primary, #2563eb);
+  outline-offset: -2px;
+}
+
+/* Evita fallas en la selección de texto sobre las barras */
+.treemap-text {
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+  user-select: none;
+}

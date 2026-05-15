@@ -4,17 +4,10 @@
   import { openLightbox } from "$lib/stores/lightbox.svelte";
   import { base } from "$app/paths";
 
-  const { project } = $props<{
-    project: ProjectContent;
-  }>();
+  const { project } = $props<{ project: ProjectContent }>();
 
-  const title = $derived(project.title[$lang]);
-
-  const imageSrc = $derived(
-    project.image
-      ? `${base}${project.image}`
-      : null
-  );
+  const title = $derived(project.title[$lang] ?? "");
+  const imageSrc = $derived(project.image ? `${base}${project.image}` : null);
 </script>
 
 <header class="project-header">
@@ -24,12 +17,9 @@
     <button
       class="cover-wrapper"
       onclick={() => openLightbox(imageSrc)}
+      aria-label="Ampliar imagen de portada"
     >
-      <img
-        class="image image--cover"
-        src={imageSrc}
-        alt=""
-      />
+      <img class="image image--cover" src={imageSrc} alt="" />
     </button>
   {/if}
 </header>

@@ -2,35 +2,38 @@
   import type { ProjectContent } from "$lib/types/project.types";
   import { APARTADOS, type ApartadoKey } from "$lib/config/apartados.config";
   import { formatDate } from "$lib/utils/formatDate";
-
   import { lang } from "$lib/i18n/lang";
   import { infographics as infographicsI18n } from "$lib/i18n/dictionaries/infographics.i18n";
 
   const { project } = $props<{ project: ProjectContent }>();
 
-  type MediumKey = keyof typeof infographicsI18n.es.mediums;
+  // 1. Guardia de tipo estricto: asegura a TS que el string es una clave real de APARTADOS
+  function isApartadoKey(key: string | undefined): key is ApartadoKey {
+    return key !== undefined && key in APARTADOS;
+  }
+
+  // 2. La runa ahora infiere el tipo perfectamente sin errores de indexación
+  const apartadoLabel = $derived.by(() => {
+    const key = project.apartado;
+    if (isApartadoKey(key)) {
+      return APARTADOS[key].label[$lang]; // <- Aquí 'key' ya es estrictamente 'ApartadoKey'
+    }
+    return null;
+  });
 
   const mediumLabel = $derived.by(() => {
     if (!project.mediumKey) return null;
-
-    return infographicsI18n[$lang].mediums[
-      project.mediumKey as MediumKey
-    ];
-  });
-
-  const apartadoLabel = $derived.by(() => {
-    if (!project.apartado) return null;
-
-    return APARTADOS[
-      project.apartado as ApartadoKey
-    ].label[$lang];
+    const dictionary = infographicsI18n[$lang].mediums;
+    return project.mediumKey in dictionary
+      ? dictionary[project.mediumKey as keyof typeof dictionary]
+      : null;
   });
 
   const hasMeta = $derived(
     !!mediumLabel ||
-    !!project.date ||
-    !!apartadoLabel ||
-    !!project.usos?.length
+      !!project.date ||
+      !!apartadoLabel ||
+      !!project.usos?.length,
   );
 </script>
 
@@ -39,10 +42,7 @@
     <div class="meta-left">
       {#if mediumLabel}
         {#if project.url}
-          <a
-            class="link-underline medium-link"
-            href={project.url}
-          >
+          <a class="link-underline medium-link" href={project.url}>
             {mediumLabel} ↗
           </a>
         {:else}
