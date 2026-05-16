@@ -2,6 +2,7 @@
   import InfographicCard from "$lib/components/infographics/InfographicCard.svelte";
   import Treemap from "$lib/components/visualizations/Treemap.svelte";
   import InfographicPreview from "$lib/components/infographics/InfographicPreview.svelte";
+  import RichText from "$lib/components/writing/RichText.svelte";
 
   import { flip } from "svelte/animate";
   import { fly } from "svelte/transition";
@@ -34,31 +35,11 @@
 
   <!-- INTRO -->
   <p class="page-intro">
-    {#each $t.infographics.intro as node}
-      {#if typeof node === "string"}
-        {node}
-      {:else if node.bold}
-        <strong>{node.text}</strong>
-      {:else if node.italic}
-        <em>{node.text}</em>
-      {:else}
-        {node.text}
-      {/if}
-    {/each}
+    <RichText value={$t.infographics.intro} />
   </p>
 
   <p class="page-intro">
-    {#each $t.infographics.description as node}
-      {#if typeof node === "string"}
-        {node}
-      {:else if node.bold}
-        <strong>{node.text}</strong>
-      {:else if node.italic}
-        <em>{node.text}</em>
-      {:else}
-        {node.text}
-      {/if}
-    {/each}
+    <RichText value={$t.infographics.description} />
   </p>
 
   <!-- INSIGHTS -->

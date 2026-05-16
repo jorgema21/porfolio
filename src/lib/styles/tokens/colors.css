@@ -6,6 +6,8 @@
 
   --red-500: #ef4444;
 
+  --pink-500: #d977a8;
+
   --color-text: #1a1a1a;
   --color-muted: #666;
   --color-border: #e5e7eb;
@@ -20,6 +22,7 @@
     rgb(0 0 0 / 85%),
     transparent 60%
   );
+
   --overlay-text-color: rgb(255 255 255 / 75%);
 
   --timeline-study: #8e44ad;

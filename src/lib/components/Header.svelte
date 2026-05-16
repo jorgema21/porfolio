@@ -7,8 +7,13 @@
 
   const navItems = [
     { href: `${base}/infografias`, key: "infografias" },
+
     { href: `${base}/estilo-de-vida`, key: "estilo" },
+
+    { href: `${base}/maternidad`, key: "maternidad" },
+
     { href: `${base}/sobre-mi`, key: "about" },
+
     { href: `${base}/contacto`, key: "contacto" },
   ] as const;
 

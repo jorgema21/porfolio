@@ -12,7 +12,7 @@
   const isInfographic = $derived(project.category === "infografia");
 
   const isExternal = $derived(
-    project.category === "estilo_de_vida" && !!project.externalUrl,
+    project.category !== "infografia" && !!project.externalUrl,
   );
 
   const href = $derived(

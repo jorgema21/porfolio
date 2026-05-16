@@ -3,7 +3,7 @@ export interface ProjectTitle {
   en: string;
 }
 
-export type ProjectCategory = "infografia" | "estilo_de_vida";
+export type ProjectCategory = "infografia" | "estilo_de_vida" | "maternidad";
 
 export type ProjectVariant = "hero" | "grid" | "list" | "feature";
 
@@ -137,7 +137,7 @@ const projects = [
       en: "Short description",
     },
 
-    category: "estilo_de_vida",
+    category: "maternidad",
 
     variant: "list",
 
@@ -302,6 +302,8 @@ const projects = [
 
     externalUrl: "proyecto-10",
 
+    mediumStyle: "El País",
+
     title: {
       es: "Proyecto 10",
       en: "Project 10",
@@ -312,7 +314,7 @@ const projects = [
       en: "Short text",
     },
 
-    category: "estilo_de_vida",
+    category: "maternidad",
 
     variant: "list",
 

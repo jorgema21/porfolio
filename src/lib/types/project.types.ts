@@ -14,7 +14,7 @@ export type HomeZone =
   | "heroBottom"
   | "finalGrid";
 
-export type ProjectCategory = "infografia" | "estilo_de_vida";
+export type ProjectCategory = "infografia" | "estilo_de_vida" | "maternidad";
 
 export type ColaboracionTipo = "solo" | "equipo";
 

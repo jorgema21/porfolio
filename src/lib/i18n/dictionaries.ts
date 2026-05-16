@@ -4,6 +4,7 @@ import { contact } from "./dictionaries/contact";
 import { metaarticle } from "./dictionaries/meta-article";
 import { infographics } from "./dictionaries/infographics.i18n";
 import { style } from "./dictionaries/style.i18n";
+import { motherhood } from "./dictionaries/motherhood";
 import { project } from "./dictionaries/project";
 import { home } from "./dictionaries/home";
 
@@ -20,6 +21,7 @@ export const dictionaries = {
     contact: contact.es,
     metaarticle: metaarticle.es,
     infographics: infographics.es,
+    motherhood: motherhood.es,
     style: style.es,
     project: project.es,
     apartados: apartados.es, // 👈
@@ -34,6 +36,7 @@ export const dictionaries = {
     contact: contact.en,
     metaarticle: metaarticle.en,
     infographics: infographics.en,
+    motherhood: motherhood.en,
     style: style.en,
     project: project.en,
     apartados: apartados.en, // 👈

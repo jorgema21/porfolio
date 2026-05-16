@@ -73,8 +73,11 @@
 
 .category {
   font: 600 var(--text-xs) var(--font-sans);
+
   text-transform: uppercase;
+
   letter-spacing: 0.1em;
+
   opacity: 0.8;
 }
 
@@ -84,6 +87,10 @@
 
 .category.estilo_de_vida {
   color: var(--red-500);
+}
+
+.category.maternidad {
+  color: var(--pink-500);
 }
 
 /* =========================
@@ -108,7 +115,6 @@
 ========================= */
 
 @media (max-width: 768px) {
-
   /* layout fix */
   .card.feature {
     grid-template-columns: 1fr;

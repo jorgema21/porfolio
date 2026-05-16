@@ -4,15 +4,15 @@
   import GroupAccordion from "$lib/components/writing/GroupAccordion.svelte";
   import { createGroupedProjects } from "$lib/utils/createGroupedProjects.svelte";
 
-  const { grouped } = createGroupedProjects("estilo_de_vida", $t.style.others);
+  const { grouped } = createGroupedProjects("maternidad", $t.motherhood.others);
 </script>
 
 <main class="page">
-  <h1>{$t.style.title}</h1>
+  <h1>{$t.motherhood.title}</h1>
 
-  <RichText value={$t.style.intro} />
-  <RichText value={$t.style.description} />
-  <RichText value={$t.style.aim} />
+  <RichText value={$t.motherhood.intro} />
+  <RichText value={$t.motherhood.description} />
+  <RichText value={$t.motherhood.aim} />
 
   <GroupAccordion groups={grouped()} />
 </main>
