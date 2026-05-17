@@ -7,7 +7,7 @@
 </script>
 
 <span>
-  {#each value as node}
+  {#each value as node, i (i)}
     {#if typeof node === "string"}
       {node}
     {:else if node.bold}

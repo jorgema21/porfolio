@@ -39,11 +39,26 @@ export const useInfographicsPage = (lang: () => "es" | "en") => {
     key: keyof typeof infographicsI18n.es.sort;
   }[];
 
-  const renderNode = (node: any) => {
+  // Tipo estricto para evitar el uso de 'any'
+  type RichTextNode =
+    | string
+    | { text: string; bold?: boolean; italic?: boolean };
+
+  const renderNode = (node: RichTextNode) => {
+    // 1. Si es un string, es el camino correcto más común
     if (typeof node === "string") return node;
-    if (node.bold) return node.text;
-    if (node.italic) return node.text;
-    return node.text;
+
+    // 2. Si es el objeto esperado, procesamos sus formatos
+    if (node && typeof node === "object" && "text" in node) {
+      if (node.bold) return node.text;
+      if (node.italic) return node.text;
+      return node.text;
+    }
+
+    // 3. CAMINO DE ERROR: Los datos están corruptos.
+    // La web no se rompe (devuelve vacío), pero te avisa en la consola del desarrollador.
+    console.error("⚠️ Estructura de nodo RichText inválida:", node);
+    return "";
   };
 
   return {

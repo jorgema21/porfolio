@@ -1,7 +1,16 @@
 <script lang="ts">
   import { lang } from "$lib/i18n";
+  import type { TranslatedText } from "$lib/types/project.types";
+
+  // CORRECCIÓN: 'id' es obligatorio y 'externalUrl' ahora es opcional (?)
+  interface AccordionItem {
+    id: string;
+    title: TranslatedText;
+    externalUrl?: string;
+  }
+
   const { groups } = $props<{
-    groups: { key: string; items: any[] }[];
+    groups: { key: string; items: AccordionItem[] }[];
   }>();
 
   let open = $state<string | null>(null);
@@ -11,7 +20,7 @@
   };
 </script>
 
-{#each groups as group}
+{#each groups as group (group.key)}
   <section>
     <button
       class="group-toggle"
@@ -24,11 +33,21 @@
 
     {#if open === group.key}
       <ul class="list">
-        {#each group.items as item}
+        <!-- CORRECCIÓN: Usamos 'item.id' como clave del bucle, garantizado que existe -->
+        {#each group.items as item (item.id)}
           <li>
-            <a class="link-underline" href={item.externalUrl} target="_blank">
-              {item.title[$lang]} ↗
-            </a>
+            {#if item.externalUrl}
+              <a
+                class="link-underline"
+                href={item.externalUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {item.title[$lang]} ↗
+              </a>
+            {:else}
+              <span>{item.title[$lang]}</span>
+            {/if}
           </li>
         {/each}
       </ul>

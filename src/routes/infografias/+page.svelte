@@ -61,7 +61,7 @@
     />
 
     <select class="select" bind:value={filters.sortBy}>
-      {#each sortOptions as opt}
+      {#each sortOptions as opt (opt.value)}
         <option value={opt.value}>
           {$t.infographics.sort[opt.key]}
         </option>

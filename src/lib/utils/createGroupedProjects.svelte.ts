@@ -1,4 +1,5 @@
 import projects from "$lib/data/projects";
+import { SvelteMap } from "svelte/reactivity";
 
 type Project = (typeof projects)[number];
 
@@ -13,7 +14,8 @@ export function createGroupedProjects(
     projects.filter((p) => p.category === category).sort(sortById);
 
   const grouped = () => {
-    const map = new Map<string, Project[]>();
+
+    const map = new SvelteMap<string, Project[]>();
 
     for (const project of filtered()) {
       const key = project.mediumStyle ?? fallbackLabel;

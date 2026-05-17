@@ -4,6 +4,7 @@
   import SkillBar from "$lib/components/about/SkillBar.svelte";
   import AboutTimeline from "$lib/components/about/AboutTimeline.svelte";
   import AboutLanguages from "$lib/components/about/AboutLanguages.svelte";
+  import RichText from "$lib/components/writing/RichText.svelte";
 
   import { onMount } from "svelte";
 
@@ -35,34 +36,15 @@
 
 <main class="page">
   <!-- INTRO -->
+  <!-- INTRO -->
   <h1>{$t.about.title}</h1>
 
   <p class="page-intro">
-    {#each $t.about.intro as node}
-      {#if typeof node === "string"}
-        {node}
-      {:else if node.bold}
-        <strong>{node.text}</strong>
-      {:else if node.italic}
-        <em>{node.text}</em>
-      {:else}
-        {node.text}
-      {/if}
-    {/each}
+    <RichText value={$t.about.intro} />
   </p>
 
   <p class="page-intro">
-    {#each $t.about.focus as node}
-      {#if typeof node === "string"}
-        {node}
-      {:else if node.bold}
-        <strong>{node.text}</strong>
-      {:else if node.italic}
-        <em>{node.text}</em>
-      {:else}
-        {node.text}
-      {/if}
-    {/each}
+    <RichText value={$t.about.focus} />
   </p>
 
   <!-- TIMELINE -->

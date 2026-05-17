@@ -63,7 +63,7 @@
 
     {#if project.usos?.length}
       <div class="meta-center">
-        {#each project.usos as uso}
+        {#each project.usos as uso, i (i)}
           <span class="tag">{uso[$lang]}</span>
         {/each}
       </div>

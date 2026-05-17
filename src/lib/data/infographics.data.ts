@@ -41,8 +41,8 @@ const metaModules = import.meta.glob<InfographicMeta>(
   "/src/content/infografias/**/meta.json",
   {
     eager: true,
-    import: "default"
-  }
+    import: "default",
+  },
 );
 
 /* =========================
@@ -63,7 +63,7 @@ for (const path in metaModules) {
 export const infographics: Infographic[] = projects
   .filter(
     (p): p is typeof p & { slug: string } =>
-      p.category === "infografia" && typeof p.slug === "string"
+      p.category === "infografia" && typeof p.slug === "string",
   )
   .map((project): Infographic => {
     const meta = metaBySlug[project.slug] ?? {};
@@ -74,6 +74,6 @@ export const infographics: Infographic[] = projects
 
     return {
       ...project,
-      ...meta
+      ...meta,
     };
   });

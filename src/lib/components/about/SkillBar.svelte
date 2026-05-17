@@ -41,7 +41,7 @@
 
     <!-- BAR: Dibujamos directamente los 10 segmentos usando el índice del rango loops de Svelte 5 -->
     <div class="skill-bar" aria-hidden="true">
-      {#each { length: 10 } as _, i}
+      {#each { length: 10 } as _, i (i)}
         <span class="segment" class:filled={i < skill.level}></span>
       {/each}
     </div>
@@ -63,7 +63,7 @@
 
       {#if content.details?.length}
         <ul class="skill-list">
-          {#each content.details as item}
+          {#each content.details as item (item)}
             <li>{item}</li>
           {/each}
         </ul>

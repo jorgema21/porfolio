@@ -7,13 +7,9 @@
 
   const navItems = [
     { href: `${base}/infografias`, key: "infografias" },
-
     { href: `${base}/estilo-de-vida`, key: "estilo" },
-
     { href: `${base}/maternidad`, key: "maternidad" },
-
     { href: `${base}/sobre-mi`, key: "about" },
-
     { href: `${base}/contacto`, key: "contacto" },
   ] as const;
 
@@ -25,13 +21,11 @@
 
   $effect(() => {
     visible = 0;
-
     let cancelled = false;
 
     (async () => {
       for (let i = 1; i <= total; i++) {
         if (cancelled) return;
-
         visible = i;
         await new Promise((r) => setTimeout(r, delay));
       }
@@ -66,6 +60,7 @@
   />
 </svelte:head>
 
+<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
 <header class="site-header">
   <!-- HAMBURGER -->
   {#if visible >= 1}
@@ -95,7 +90,7 @@
   <!-- DESKTOP NAV -->
   {#if visible >= 2}
     <nav class="nav desktop-nav" in:fly={{ ...flyIn, delay: 100 }}>
-      {#each navItems as item}
+      {#each navItems as item (item.key)}
         <a href={item.href}>
           {navLabel(item.key)}
         </a>
@@ -135,7 +130,7 @@
         easing: cubicOut,
       }}
     >
-      {#each navItems as item}
+      {#each navItems as item (item.key)}
         <a href={item.href} onclick={closeMenu}>
           {navLabel(item.key)}
         </a>

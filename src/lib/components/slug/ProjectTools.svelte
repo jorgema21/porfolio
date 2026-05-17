@@ -12,7 +12,7 @@
     </h3>
 
     <ul>
-      {#each project.tools as tool}
+      {#each project.tools as tool (tool)}
         <li class="tag">{tool}</li>
       {/each}
     </ul>
