@@ -4,7 +4,6 @@
   ========================= */
 
   .timeline {
-    width: 100%;
     padding-inline: var(--space-4);
     gap: var(--space-6);
   }

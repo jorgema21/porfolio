@@ -109,7 +109,7 @@ export const infographics: Record<"es" | "en", InfographicsDict> = {
         text: "Welcome to the ",
       },
       {
-        text: "infographics and data visualization section",
+        text: "infographics and data visualization section. ",
         bold: true,
       },
       {
