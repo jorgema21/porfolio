@@ -16,7 +16,7 @@
   type ApartadoKey = keyof typeof APARTADOS;
 
   // Inicialización del estado reactivo de la página
-  const info = useInfographicsPage(() => $lang, $t);
+  const info = useInfographicsPage(() => $lang);
 
   // Desestructuramos SOLO los métodos estáticos, objetos mutables y configuraciones.
   // Dejamos fuera 'filtered' y 'grouped' para no romper sus getters reactivos.
@@ -63,7 +63,7 @@
     <select class="select" bind:value={filters.sortBy}>
       {#each sortOptions as opt}
         <option value={opt.value}>
-          {opt.label}
+          {$t.infographics.sort[opt.key]}
         </option>
       {/each}
     </select>

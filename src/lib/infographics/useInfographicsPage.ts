@@ -5,7 +5,7 @@ import { createInfographicsState } from "$lib/infographics/infographics.state.sv
 
 type ApartadoKey = keyof typeof APARTADOS;
 
-export const useInfographicsPage = (lang: () => "es" | "en", t: any) => {
+export const useInfographicsPage = (lang: () => "es" | "en") => {
   // 1. NO desestructuramos filtered ni grouped aquí,
   // ya que son getters y se quedarían "congelados".
   const state = createInfographicsState(lang);
@@ -30,11 +30,14 @@ export const useInfographicsPage = (lang: () => "es" | "en", t: any) => {
     type === "medium" ? labelMedium(key) : labelApartado(key);
 
   const sortOptions = [
-    { value: "date", label: t.infographics.sort.newest },
-    { value: "title", label: t.infographics.sort.title },
-    { value: "apartado", label: t.infographics.sort.section },
-    { value: "medium", label: t.infographics.sort.medium },
-  ] as const;
+    { value: "date", key: "newest" },
+    { value: "title", key: "title" },
+    { value: "apartado", key: "section" },
+    { value: "medium", key: "medium" },
+  ] as const satisfies readonly {
+    value: string;
+    key: keyof typeof infographicsI18n.es.sort;
+  }[];
 
   const renderNode = (node: any) => {
     if (typeof node === "string") return node;
