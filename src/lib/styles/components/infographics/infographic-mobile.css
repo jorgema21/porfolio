@@ -8,11 +8,6 @@
     gap: var(--space-3);
   }
 
-  /* Cards más aireadas para tap */
-  .infographics-card {
-    border-radius: var(--radius-md);
-  }
-
   /* Toolbar pasa a columna */
   .toolbar {
     flex-direction: column;
@@ -30,11 +25,5 @@
   /* Select más cómodo en mobile */
   .toolbar select {
     padding-right: var(--space-4);
-  }
-
-  /* Hover effects menos agresivos en touch */
-  .infographics-card:hover,
-  .toolbar:hover {
-    transform: none;
   }
 }

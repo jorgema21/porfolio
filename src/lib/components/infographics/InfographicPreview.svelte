@@ -208,7 +208,7 @@
      ========================================================================== */
   @media (max-width: 768px) {
     .preview-card {
-      max-width: 300px;
+      max-width: 60%;
       max-height: 75vh;
       margin-inline: var(--space-4);
     }
