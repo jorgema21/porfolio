@@ -61,6 +61,10 @@
     display: block;
   }
 
+  .infographics-card:hover {
+    transform: var(--hover-lift);
+  }
+
   .thumb {
     position: relative;
     width: 100%;

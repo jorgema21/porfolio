@@ -2,7 +2,6 @@
   import InfographicCard from "$lib/components/infographics/InfographicCard.svelte";
   import Treemap from "$lib/components/visualizations/Treemap.svelte";
   import InfographicPreview from "$lib/components/infographics/InfographicPreview.svelte";
-
   import RichText from "$lib/components/writing/RichText.svelte";
 
   import { flip } from "svelte/animate";
@@ -11,27 +10,17 @@
 
   import { t, lang } from "$lib/i18n";
   import { APARTADOS } from "$lib/config/apartados.config";
-
   import { closePreview } from "$lib/stores/infographicPreview.svelte";
   import { onDestroy } from "svelte";
-
   import { useInfographicsPage } from "$lib/infographics/useInfographicsPage";
 
   type ApartadoKey = keyof typeof APARTADOS;
 
   const info = useInfographicsPage(() => $lang);
 
-  const {
-    filters,
-    sortOptions,
-    labelApartado,
-    labelMedium,
-    groupLabel,
-    treemap,
-  } = $state(info);
-
-  const totalWorks = $derived.by(() =>
-    treemap.apartados.reduce((acc, item) => acc + item.value, 0),
+  // Runa directa sobre el Treemap
+  const totalWorks = $derived(
+    info.treemap.apartados.reduce((acc, item) => acc + item.value, 0),
   );
 
   onDestroy(() => {
@@ -51,7 +40,6 @@
     <RichText value={$t.infographics.description} />
   </p>
 
-  <!-- INSIGHTS -->
   <section class="insights-header">
     <h2>
       {$t.infographics.insights.totalWorks} | {totalWorks}
@@ -61,27 +49,26 @@
   <section class="insights">
     <Treemap
       title={$t.infographics.filters.apartados}
-      data={treemap.apartados}
-      getLabel={(k) => labelApartado(k as ApartadoKey)}
+      data={info.treemap.apartados}
+      getLabel={(k) => info.labelApartado(k as ApartadoKey)}
     />
 
     <Treemap
       title={$t.infographics.filters.mediums}
-      data={treemap.mediums}
-      getLabel={labelMedium}
+      data={info.treemap.mediums}
+      getLabel={info.labelMedium}
     />
   </section>
 
-  <!-- TOOLBAR -->
   <div class="toolbar">
     <input
       class="input"
       placeholder={$t.infographics.searchPlaceholder}
-      bind:value={filters.search}
+      bind:value={info.filters.search}
     />
 
-    <select class="select" bind:value={filters.sortBy}>
-      {#each sortOptions as opt (opt.value)}
+    <select class="select" bind:value={info.filters.sortBy}>
+      {#each info.sortOptions as opt (opt.value)}
         <option value={opt.value}>
           {$t.infographics.sort[opt.key]}
         </option>
@@ -92,25 +79,26 @@
       class="control sort-dir"
       aria-label="Cambiar orden"
       onclick={() =>
-        (filters.sortDir = filters.sortDir === "asc" ? "desc" : "asc")}
+        (info.filters.sortDir =
+          info.filters.sortDir === "asc" ? "desc" : "asc")}
     >
-      {filters.sortDir === "asc" ? "↑" : "↓"}
+      {info.filters.sortDir === "asc" ? "↑" : "↓"}
     </button>
   </div>
 
-  <!-- GROUPED -->
-  {#if filters.sortBy === "medium" || filters.sortBy === "apartado"}
+  {#if info.filters.sortBy === "medium" || info.filters.sortBy === "apartado"}
     {#each info.grouped as group (group.key)}
-      <h2 class="group-title">
-        {groupLabel(
-          group.key,
-          filters.sortBy === "medium" ? "medium" : "apartado",
-        )}
-      </h2>
+      <!-- Guardar en caché reactiva el título del grupo con @const -->
+      {@const currentType =
+        info.filters.sortBy === "medium" ? "medium" : "apartado"}
+      {@const currentTitle = info.groupLabel(group.key, currentType)}
+
+      <h2 class="group-title">{currentTitle}</h2>
 
       <section class="infographics-grid grouped">
         {#each group.items as project (project.id)}
           <div
+            class="animated-card"
             animate:flip={{ duration: 400, easing: cubicOut }}
             transition:fly={{ y: 10, duration: 200, easing: cubicOut }}
           >
@@ -120,10 +108,10 @@
       </section>
     {/each}
   {:else}
-    <!-- LISTA SIMPLE -->
     <section class="infographics-grid">
       {#each info.filtered as project (project.id)}
         <div
+          class="animated-card"
           animate:flip={{ duration: 350, easing: cubicOut }}
           transition:fly={{ y: 8, duration: 200, easing: cubicOut }}
         >
@@ -135,3 +123,117 @@
 </main>
 
 <InfographicPreview />
+
+<style>
+  .infographics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: var(--space-4);
+
+    animation: fadeIn var(--motion-base) var(--ease-out) both;
+  }
+
+  .insights {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-4);
+  }
+
+  .insights-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: var(--space-6);
+    margin-bottom: var(--space-3);
+  }
+
+  .insights-header h2 {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-2);
+    margin: 0;
+    font: var(--text-lg) var(--font-serif);
+  }
+
+  .toolbar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin-block: var(--space-6);
+    padding: var(--space-3);
+    background: var(--color-white);
+    border: var(--card-border);
+    border-radius: var(--radius-md);
+    transition: transform var(--transition);
+  }
+
+  .toolbar:hover {
+    transform: var(--hover-lift);
+  }
+
+  .toolbar input,
+  .toolbar select {
+    flex: 1;
+    padding: var(--space-2);
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+
+  .toolbar select {
+    appearance: none;
+    cursor: pointer;
+    padding-right: 2rem;
+    border-left: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background-color: var(--bg-soft);
+    background-image: linear-gradient(
+        45deg,
+        transparent 50%,
+        var(--color-muted) 50%
+      ),
+      linear-gradient(135deg, var(--color-muted) 50%, transparent 50%);
+    background-position:
+      calc(100% - 14px) center,
+      calc(100% - 8px) center;
+    background-repeat: no-repeat;
+    background-size: 6px 6px;
+  }
+
+  .toolbar button {
+    border-radius: var(--radius-sm);
+    margin: 0;
+    padding: 5px var(--space-2);
+    border: 1px solid var(--color-border);
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    .insights {
+      grid-template-columns: 1fr;
+      gap: var(--space-3);
+    }
+    .infographics-grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-3);
+    }
+
+    .toolbar {
+      flex-direction: column;
+      align-items: stretch;
+      gap: var(--space-2);
+      padding: var(--space-3);
+    }
+
+    .toolbar input,
+    .toolbar select {
+      width: 100%;
+      font-size: var(--text-sm);
+    }
+
+    .toolbar select {
+      padding-right: var(--space-4);
+    }
+  }
+</style>
