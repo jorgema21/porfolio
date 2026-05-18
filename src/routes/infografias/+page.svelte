@@ -15,11 +15,8 @@
 
   type ApartadoKey = keyof typeof APARTADOS;
 
-  // Inicialización del estado reactivo de la página
   const info = useInfographicsPage(() => $lang);
 
-  // Desestructuramos SOLO los métodos estáticos, objetos mutables y configuraciones.
-  // Dejamos fuera 'filtered' y 'grouped' para no romper sus getters reactivos.
   const {
     filters,
     sortOptions,
@@ -28,6 +25,10 @@
     groupLabel,
     treemap,
   } = $state(info);
+
+  const totalWorks = $derived.by(() =>
+    treemap.apartados.reduce((acc, item) => acc + item.value, 0),
+  );
 </script>
 
 <main class="page">
@@ -43,13 +44,24 @@
   </p>
 
   <!-- INSIGHTS -->
+  <section class="insights-header">
+    <h2>
+      {$t.infographics.insights.totalWorks} | {totalWorks}
+    </h2>
+  </section>
+
   <section class="insights">
     <Treemap
+      title={$t.infographics.filters.apartados}
       data={treemap.apartados}
       getLabel={(k) => labelApartado(k as ApartadoKey)}
     />
 
-    <Treemap data={treemap.mediums} getLabel={labelMedium} />
+    <Treemap
+      title={$t.infographics.filters.mediums}
+      data={treemap.mediums}
+      getLabel={labelMedium}
+    />
   </section>
 
   <!-- TOOLBAR -->

@@ -12,6 +12,29 @@
 }
 
 /* =========================
+   INSIGHTS HEADER
+========================= */
+
+.insights-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-3);
+}
+
+.insights-header h2 {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+
+  margin: 0;
+
+  font: var(--text-lg) var(--font-serif);
+}
+
+/* =========================
    CARD
 ========================= */
 

@@ -16,6 +16,11 @@ type InfographicsDict = {
     mediums: string;
   };
 
+  insights: {
+    totalWorks: string;
+    works: string;
+  };
+
   apartados: Record<string, string>;
   mediums: Record<string, string>;
 
@@ -38,6 +43,11 @@ export const infographics: Record<"es" | "en", InfographicsDict> = {
     filters: {
       apartados: "Apartados",
       mediums: "Medios",
+    },
+
+    insights: {
+      totalWorks: "Trabajos en el portfolio",
+      works: "trabajos",
     },
 
     apartados: {
@@ -63,6 +73,7 @@ export const infographics: Record<"es" | "en", InfographicsDict> = {
         text: "Aquí puedes ver de manera más detenida mis principales trabajos.",
       },
     ],
+
     description: [
       {
         text: "Comencé a interesarme por el mundo de la infografía y el periodismo de datos en ",
@@ -93,6 +104,11 @@ export const infographics: Record<"es" | "en", InfographicsDict> = {
       mediums: "Media",
     },
 
+    insights: {
+      totalWorks: "Portfolio works",
+      works: "works",
+    },
+
     apartados: {
       sports: "Sports",
       environment: "Climate",
@@ -116,6 +132,7 @@ export const infographics: Record<"es" | "en", InfographicsDict> = {
         text: "Here you can take a closer look at my main works.",
       },
     ],
+
     description: [
       {
         text: "I first became interested in infographics and data journalism in ",

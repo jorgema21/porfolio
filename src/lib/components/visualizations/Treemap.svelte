@@ -2,7 +2,6 @@
   import { hierarchy, treemap, treemapSquarify } from "d3-hierarchy";
   import { scaleLinear } from "d3-scale";
 
-  // Usamos el interpolador eficiente para animar las dimensiones en SVG
   import { tweened } from "svelte/motion";
   import { cubicOut } from "svelte/easing";
 
@@ -24,11 +23,13 @@
     data = [],
     width = 400,
     height = 250,
+    title = "",
     getLabel = (d: string) => d,
   } = $props<{
     data: TreemapItem[];
     width?: number;
     height?: number;
+    title?: string;
     getLabel?: (key: string) => string;
   }>();
 
@@ -39,13 +40,11 @@
   let mouseX = $state(0);
   let mouseY = $state(0);
 
-  // Instanciamos el multiplicador de animación controlado por JS de forma segura
   const progress = tweened(0, {
     duration: 650,
     easing: cubicOut,
   });
 
-  // El efecto de Svelte 5 se dispara en el cliente tras el montaje, iniciando la transición
   $effect(() => {
     progress.set(1);
   });
@@ -83,8 +82,8 @@
   const colorMeta = $derived.by(() => {
     if (data.length === 0) return { scale: () => "#e6f0ff", max: 1 };
 
-    // Tipamos estrictamente el argumento (d: TreemapItem) para erradicar el error de 'any' implícito
     const max = Math.max(...data.map((d: TreemapItem) => d.value), 1);
+
     const scale = scaleLinear<string>()
       .domain([0, max])
       .range(["#e6f0ff", "#1e3a8a"])
@@ -116,49 +115,51 @@
   };
 </script>
 
-<!-- =========================
-     SVG LAYOUT
-========================= -->
-<svg viewBox="0 0 {width} {height}" preserveAspectRatio="xMidYMid meet">
-  {#each leaves as leaf (leaf.key)}
-    <g transform="translate({leaf.x}, {leaf.y})">
-      <!-- 
-        Multiplicamos el ancho, alto y opacidad por el almacén reactivo `$progress`.
-        Esto fuerza el renderizado progresivo desde el píxel cero con total compatibilidad en SVGs.
-      -->
-      <rect
-        width={leaf.w * $progress}
-        height={leaf.h * $progress}
-        rx="6"
-        fill={colorMeta.scale(leaf.value)}
-        opacity={$progress}
-        role="button"
-        tabindex="0"
-        aria-label="{getLabel(leaf.key)}: {leaf.value}"
-        class="treemap-rect"
-        onmouseenter={(e) => handleEnter(leaf, e)}
-        onmousemove={updateMouse}
-        onmouseleave={() => (hovered = null)}
-        onfocus={() => handleFocus(leaf)}
-        onblur={() => (hovered = null)}
-      />
+<div class="treemap-wrapper">
+  {#if title}
+    <h3 class="treemap-title">{title}</h3>
+  {/if}
 
-      {#if leaf.w * $progress > 60 && leaf.h * $progress > 30}
-        <text
-          x="8"
-          y="18"
-          font-size="12"
-          fill={getTextColor(leaf.value)}
+  <!-- =========================
+       SVG LAYOUT
+  ========================= -->
+  <svg viewBox="0 0 {width} {height}" preserveAspectRatio="xMidYMid meet">
+    {#each leaves as leaf (leaf.key)}
+      <g transform="translate({leaf.x}, {leaf.y})">
+        <rect
+          width={leaf.w * $progress}
+          height={leaf.h * $progress}
+          rx="6"
+          fill={colorMeta.scale(leaf.value)}
           opacity={$progress}
-          pointer-events="none"
-          class="treemap-text"
-        >
-          {getLabel(leaf.key)}
-        </text>
-      {/if}
-    </g>
-  {/each}
-</svg>
+          role="button"
+          tabindex="0"
+          aria-label="{getLabel(leaf.key)}: {leaf.value}"
+          class="treemap-rect"
+          onmouseenter={(e) => handleEnter(leaf, e)}
+          onmousemove={updateMouse}
+          onmouseleave={() => (hovered = null)}
+          onfocus={() => handleFocus(leaf)}
+          onblur={() => (hovered = null)}
+        />
+
+        {#if leaf.w * $progress > 60 && leaf.h * $progress > 30}
+          <text
+            x="8"
+            y="18"
+            font-size="12"
+            fill={getTextColor(leaf.value)}
+            opacity={$progress}
+            pointer-events="none"
+            class="treemap-text"
+          >
+            {getLabel(leaf.key)}
+          </text>
+        {/if}
+      </g>
+    {/each}
+  </svg>
+</div>
 
 <!-- =========================
      TOOLTIP FLOATING

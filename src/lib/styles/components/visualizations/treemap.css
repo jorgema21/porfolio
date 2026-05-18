@@ -102,6 +102,26 @@
   outline-offset: -2px;
 }
 
+/* =========================
+   TREEMAP HEADER
+========================= */
+
+.treemap-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.treemap-title {
+  margin: 0;
+
+  font: var(--text-sm) var(--font-sans);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+
+  color: var(--color-text);
+}
+
 /* Evita fallas en la selección de texto sobre las barras */
 .treemap-text {
   font-family:
