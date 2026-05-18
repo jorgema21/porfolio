@@ -1,13 +1,9 @@
 <script lang="ts">
   import { hierarchy, treemap, treemapSquarify } from "d3-hierarchy";
   import { scaleLinear } from "d3-scale";
-
   import { tweened } from "svelte/motion";
   import { cubicOut } from "svelte/easing";
 
-  /* =========================
-     TYPES
-  ========================= */
   export type TreemapItem<K extends string = string> = {
     key: K;
     value: number;
@@ -33,9 +29,7 @@
     getLabel?: (key: string) => string;
   }>();
 
-  /* =========================
-     STATE & ANIMATION
-  ========================= */
+  /* STATE & ANIMATION */
   let hovered = $state<TreemapItem | null>(null);
   let mouseX = $state(0);
   let mouseY = $state(0);
@@ -49,9 +43,7 @@
     progress.set(1);
   });
 
-  /* =========================
-     LAYOUT
-  ========================= */
+  /* LAYOUT */
   const root = $derived.by(() => {
     const baseHierarchy = hierarchy<TreemapNode>({ children: data });
     return baseHierarchy.sum((d: TreemapNode) => d.value ?? 0);
@@ -76,9 +68,7 @@
     })),
   );
 
-  /* =========================
-     COLOR SCALE
-  ========================= */
+  /* COLOR SCALE */
   const colorMeta = $derived.by(() => {
     if (data.length === 0) return { scale: () => "#e6f0ff", max: 1 };
 
@@ -95,9 +85,7 @@
   const getTextColor = (value: number) =>
     value > colorMeta.max * 0.4 ? "white" : "var(--color-text)";
 
-  /* =========================
-     TOOLTIP HANDLERS
-  ========================= */
+  /* TOOLTIP HANDLERS */
   const updateMouse = (e: MouseEvent) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
@@ -120,9 +108,7 @@
     <h3 class="treemap-title">{title}</h3>
   {/if}
 
-  <!-- =========================
-       SVG LAYOUT
-  ========================= -->
+  <!-- SVG LAYOUT -->
   <svg viewBox="0 0 {width} {height}" preserveAspectRatio="xMidYMid meet">
     {#each leaves as leaf (leaf.key)}
       <g transform="translate({leaf.x}, {leaf.y})">
@@ -161,12 +147,94 @@
   </svg>
 </div>
 
-<!-- =========================
-     TOOLTIP FLOATING
-========================= -->
+<!-- TOOLTIP FLOATING -->
 {#if hovered}
   <div class="tooltip" style:top="{mouseY + 10}px" style:left="{mouseX + 10}px">
     <strong>{getLabel(hovered.key)}</strong><br />
     {hovered.value}
   </div>
 {/if}
+
+<style>
+  .treemap-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    min-width: 0;
+  }
+
+  .treemap-title {
+    margin: 0;
+    font: var(--text-sm) var(--font-sans);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--color-text);
+  }
+
+  svg {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .treemap-rect {
+    cursor: pointer;
+    will-change: width, height, opacity;
+    transition:
+      width 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+      height 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+      fill 0.3s ease,
+      opacity var(--transition-fast);
+  }
+
+  .treemap-rect:hover {
+    opacity: 0.9;
+  }
+
+  .treemap-rect:active {
+    opacity: 0.85;
+  }
+
+  .treemap-rect:focus-visible {
+    outline: 2px solid var(--blue-700);
+    outline-offset: -2px;
+  }
+
+  .treemap-text {
+    font-family:
+      system-ui,
+      -apple-system,
+      sans-serif;
+    user-select: none;
+  }
+
+  .tooltip {
+    position: fixed;
+    z-index: 1000;
+    pointer-events: none;
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-sm);
+    background: var(--color-muted);
+    color: var(--color-white);
+    font-size: var(--text-xs);
+    box-shadow: 0 8px 20px rgb(0 0 0 / 20%);
+    will-change: top, left;
+    transition:
+      opacity var(--transition-fast),
+      transform var(--transition-fast);
+  }
+
+  @media (max-width: 768px) {
+    svg {
+      width: 100%;
+      height: auto;
+    }
+
+    .tooltip {
+      font-size: var(--text-sm);
+      padding: var(--space-2) var(--space-3);
+      max-width: 80vw;
+      white-space: normal;
+    }
+  }
+</style>
