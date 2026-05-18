@@ -2,7 +2,6 @@
   import { lang } from "$lib/i18n";
   import type { TranslatedText } from "$lib/types/project.types";
 
-  // CORRECCIÓN: 'id' es obligatorio y 'externalUrl' ahora es opcional (?)
   interface AccordionItem {
     id: string;
     title: TranslatedText;
@@ -33,7 +32,6 @@
 
     {#if open === group.key}
       <ul class="list">
-        <!-- CORRECCIÓN: Usamos 'item.id' como clave del bucle, garantizado que existe -->
         {#each group.items as item (item.id)}
           <li>
             {#if item.externalUrl}
@@ -54,3 +52,36 @@
     {/if}
   </section>
 {/each}
+
+<style>
+  .group-toggle {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: var(--space-3) 0;
+    margin-bottom: var(--space-3);
+
+    border: none;
+    border-bottom: 1px solid var(--color-border);
+    background: none;
+
+    cursor: pointer;
+    font: inherit;
+  }
+
+  .group-toggle:hover {
+    font-weight: 600;
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+
+    padding: 0;
+    list-style: none;
+  }
+</style>

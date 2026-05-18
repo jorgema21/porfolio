@@ -9,3 +9,22 @@
   <p>{$t.layout.footer.part1}</p>
   <p>{$t.layout.footer.part2}</p>
 </footer>
+
+<style>
+  .page-footer {
+    padding: var(--space-4);
+
+    text-align: right;
+
+    font: var(--text-xs) var(--font-sans);
+
+    color: var(--color-text);
+    background-color: var(--color-border);
+  }
+
+  @media (max-width: 768px) {
+    .page-footer {
+      text-align: left;
+    }
+  }
+</style>

@@ -1,7 +1,6 @@
 <script lang="ts">
   import { base } from "$app/paths";
   import { t, lang, toggleLang } from "$lib/i18n";
-
   import { fly } from "svelte/transition";
   import { cubicOut } from "svelte/easing";
 
@@ -46,9 +45,7 @@
   const closeMenu = () => (mobileOpen = false);
 
   // ✨ microoptimización i18n
-  const navLabel = (key: keyof typeof $t.layout.nav) => {
-    return $t.layout.nav[key];
-  };
+  const navLabel = (key: keyof typeof $t.layout.nav) => $t.layout.nav[key];
 </script>
 
 <svelte:head>
@@ -60,12 +57,12 @@
   />
 </svelte:head>
 
-<!-- eslint-disable-next-line svelte/no-navigation-without-resolve -->
 <header class="site-header">
   <!-- HAMBURGER -->
   {#if visible >= 1}
     <button
-      class={`hamburger ${mobileOpen ? "is-open" : ""}`}
+      class="hamburger"
+      class:is-open={mobileOpen}
       type="button"
       aria-label="Abrir navegación"
       aria-expanded={mobileOpen}
@@ -81,9 +78,7 @@
   <!-- LOGO -->
   {#if visible >= 1}
     <h1 class="logo" in:fly={flyIn}>
-      <a href="{base}/">
-        {$t.layout.nav.mi_porfolio}
-      </a>
+      <a href="{base}/">{$t.layout.nav.mi_porfolio}</a>
     </h1>
   {/if}
 
@@ -91,9 +86,7 @@
   {#if visible >= 2}
     <nav class="nav desktop-nav" in:fly={{ ...flyIn, delay: 100 }}>
       {#each navItems as item (item.key)}
-        <a href={item.href}>
-          {navLabel(item.key)}
-        </a>
+        <a href={item.href}>{navLabel(item.key)}</a>
       {/each}
     </nav>
   {/if}
@@ -111,9 +104,7 @@
       in:fly={{ ...flyIn, delay: 150 }}
     >
       <img
-        src="{base}{$lang === 'es'
-          ? '/images/flags/gb.svg'
-          : '/images/flags/es.svg'}"
+        src={`${base}${$lang === "es" ? "/images/flags/gb.svg" : "/images/flags/es.svg"}`}
         alt=""
         aria-hidden="true"
       />
@@ -124,17 +115,202 @@
   {#if mobileOpen}
     <nav
       class="mobile-nav"
-      transition:fly={{
-        y: -12,
-        duration: 250,
-        easing: cubicOut,
-      }}
+      transition:fly={{ y: -12, duration: 250, easing: cubicOut }}
     >
       {#each navItems as item (item.key)}
-        <a href={item.href} onclick={closeMenu}>
-          {navLabel(item.key)}
-        </a>
+        <a href={item.href} onclick={closeMenu}>{navLabel(item.key)}</a>
       {/each}
     </nav>
   {/if}
 </header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-6) var(--space-8);
+    margin-bottom: var(--space-8);
+    background: var(--color-white);
+    border-bottom: 1px solid var(--color-border);
+    overflow: visible;
+  }
+
+  .logo {
+    margin: 0;
+    font-family: var(--font-serif);
+    font-size: var(--text-xl);
+    letter-spacing: 0.5px;
+    cursor: default;
+    transition: opacity var(--transition-fast);
+  }
+
+  .logo a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .logo:hover {
+    opacity: 0.7;
+  }
+
+  .nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+
+    gap: clamp(var(--space-2), 1.5vw, var(--space-8));
+    white-space: nowrap;
+  }
+
+  .nav a,
+  .mobile-nav a {
+    position: relative;
+    width: fit-content;
+    padding: var(--space-1) 0;
+    font-size: var(--text-sm);
+    color: var(--color-text);
+    text-decoration: none;
+    transition: opacity var(--transition-fast);
+  }
+
+  .nav a::after,
+  .mobile-nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 1px;
+    background: currentColor;
+    transition: width var(--transition);
+  }
+
+  .nav a:hover::after,
+  .mobile-nav a:hover::after {
+    width: 100%;
+  }
+
+  .lang-switch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-2);
+    margin-left: var(--space-4);
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    background: none;
+    cursor: pointer;
+    transition:
+      border-color var(--transition-fast),
+      background var(--transition-fast),
+      transform var(--transition-fast);
+  }
+
+  .lang-switch:hover {
+    border-color: var(--color-border);
+    background: var(--bg-soft);
+    transform: var(--hover-lift);
+  }
+
+  .lang-switch img {
+    width: 20px;
+    border-radius: var(--radius-full);
+    transition: transform var(--transition-fast);
+  }
+
+  .lang-switch:hover img {
+    transform: scale(1.15);
+  }
+
+  .hamburger {
+    display: none;
+    position: relative;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    position: absolute;
+    left: 4px;
+    width: 24px;
+    height: 1.5px;
+    background: var(--color-text);
+    transition:
+      top var(--transition),
+      transform var(--transition),
+      opacity var(--transition-fast);
+  }
+
+  .hamburger span:nth-child(1) {
+    top: 10px;
+  }
+  .hamburger span:nth-child(2) {
+    top: 16px;
+  }
+  .hamburger span:nth-child(3) {
+    top: 22px;
+  }
+
+  .hamburger.is-open span:nth-child(1) {
+    top: 16px;
+    transform: rotate(45deg);
+  }
+
+  .hamburger.is-open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.is-open span:nth-child(3) {
+    top: 16px;
+    transform: rotate(-45deg);
+  }
+
+  .mobile-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 var(--space-4) var(--space-6);
+    background: var(--color-white);
+    border-bottom: 1px solid var(--color-border);
+  }
+  @media (max-width: 860px) {
+    .site-header {
+      display: grid;
+      grid-template-columns: 40px 1fr 40px;
+      padding: var(--space-4);
+      margin-bottom: var(--space-6);
+    }
+    .logo {
+      justify-self: center;
+      font-size: var(--text-lg);
+    }
+    .desktop-nav {
+      display: none;
+    }
+    .lang-switch {
+      justify-self: end;
+      margin-left: 0;
+      padding: var(--space-1);
+    }
+    .hamburger {
+      display: block;
+    }
+  }
+</style>

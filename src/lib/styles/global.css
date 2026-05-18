@@ -28,8 +28,7 @@
 /* =========================
    LAYOUT
 ========================= */
-@import "./layout/header/index.css";
-@import "./layout/footer.css";
+
 @import "./layout/layout.css";
 
 /* =========================

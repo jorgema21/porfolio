@@ -15,7 +15,7 @@
 </script>
 
 <div class="skill">
-  <button class="skill-header ui-accordion-header" onclick={toggle}>
+  <button class="skill-header" onclick={toggle}>
     <!-- LEFT -->
     <div class="skill-main">
       {#if skill.logo}
