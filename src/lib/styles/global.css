@@ -57,6 +57,5 @@
 
 @import "./components/about/skill/index.css";
 @import "./components/about/timeline/index.css";
-@import "./components/about/languages/index.css";
 
 @import "./components/visualizations/treemap.css";

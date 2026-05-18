@@ -15,27 +15,30 @@
       : [...selected, id];
   };
 
-  // ⚡ lookup optimizado
+  // ⚡ Lookup optimizado
   const selectedSet = $derived(new Set(selected));
 
-  // 📦 idiomas activos
+  // 📦 Idiomas activos
   const activeLanguages = $derived(
     languages.filter((l) => selectedSet.has(l.id)),
   );
 
-  // 🌍 traducciones (sin wrapper extra)
+  // 🌍 Traducciones
   const dict = $t.languages;
 
-  // 📊 círculos completamente declarativos
+  // 📊 Círculos declarativos + OPTIMIZACIÓN: Inyectamos los datos del idioma aquí directamente
   const circles = $derived(
     Array.from({ length: MAX_LEVEL }, (_, i) => {
       const level = i + 1;
-
       const topLanguage = activeLanguages.findLast((l) => l.level >= level);
+      const isExactMatch = activeLanguages.some((l) => l.level === level);
 
       return {
         level,
         color: topLanguage?.color ?? "var(--color-border)",
+        // Solo mostramos la etiqueta si el idioma coincide exactamente con este nivel de la escala
+        showLabel: isExactMatch && topLanguage,
+        langId: topLanguage?.id,
       };
     }),
   );
@@ -48,14 +51,10 @@
       ([entry]) => {
         visible = entry.isIntersecting;
       },
-      {
-        threshold: 0.35,
-        rootMargin: "0px 0px -10% 0px",
-      },
+      { threshold: 0.35, rootMargin: "0px 0px -10% 0px" },
     );
 
     if (languagesSection) observer.observe(languagesSection);
-
     return () => observer.disconnect();
   });
 </script>
@@ -65,9 +64,7 @@
   aria-labelledby="languages-title"
   bind:this={languagesSection}
 >
-  <!-- =========================
-       SELECTORS
-  ========================== -->
+  <!-- SELECTORS -->
   <div class="languages-selector" role="group">
     {#each languages as language, i (language.id)}
       <button
@@ -84,14 +81,10 @@
     {/each}
   </div>
 
-  <!-- =========================
-       CHART
-  ========================== -->
+  <!-- CHART -->
   <div class="languages-chart">
     <div class="languages-scale">
-      <span class="scale-label">
-        {dict.scale.beginner}
-      </span>
+      <span class="scale-label">{dict.scale.beginner}</span>
 
       <div class="languages-circles" aria-hidden="true">
         {#each circles as circle, i (circle.level)}
@@ -100,30 +93,193 @@
             class:visible
             style={`background:${circle.color}; --i:${i + 5}`}
           >
-            {#each activeLanguages as language (language.id)}
-              {#if language.level === circle.level}
-                <span
-                  class="language-label"
-                  class:visible
-                  style={`--language-color:${language.color}; --i:${circle.level + 10}`}
-                >
-                  <strong>
-                    {dict[language.id].name}
-                  </strong>
-
-                  <small>
-                    {dict[language.id].levelLabel}
-                  </small>
-                </span>
-              {/if}
-            {/each}
+            <!-- OPTIMIZACIÓN: Eliminamos el bucle interno usando la condición directa -->
+            {#if circle.showLabel && circle.langId}
+              <span
+                class="language-label"
+                class:visible
+                style={`--language-color:${circle.color}; --i:${circle.level + 10}`}
+              >
+                <strong>{dict[circle.langId].name}</strong>
+                <small>{dict[circle.langId].levelLabel}</small>
+              </span>
+            {/if}
           </span>
         {/each}
       </div>
 
-      <span class="scale-label">
-        {dict.scale.professional}
-      </span>
+      <span class="scale-label">{dict.scale.professional}</span>
     </div>
   </div>
 </section>
+
+<style>
+  .languages {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+  .languages-chart {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+    padding-top: var(--space-12);
+  }
+  .languages-scale {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: var(--space-4);
+  }
+  .languages-circles {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 0.2rem;
+  }
+  .language-circle {
+    position: relative;
+    width: 100%;
+    max-width: 20px;
+    margin-inline: auto;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--color-border);
+    transition:
+      background var(--transition),
+      transform var(--transition-fast);
+  }
+  .language-label {
+    position: absolute;
+    bottom: calc(100% - 0.3rem);
+    left: 175%;
+    transform: translateX(-10%) rotate(-45deg);
+    transform-origin: bottom left;
+    display: flex;
+    flex-direction: column;
+    color: var(--language-color);
+    pointer-events: none;
+    white-space: nowrap;
+  }
+  .language-label strong {
+    font-size: var(--text-sm);
+  }
+  .language-label small {
+    font-size: var(--text-xs);
+    color: var(--color-muted);
+  }
+  .languages-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+  .language-toggle {
+    padding: 0.65rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-full);
+    background: var(--color-white);
+    color: var(--color-text);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+      border-color var(--transition),
+      transform var(--transition-fast);
+  }
+  .language-toggle:hover {
+    border-color: var(--blue-300);
+  }
+  .language-toggle.selected {
+    border-color: var(--blue-500);
+    box-shadow: inset 0 0 0 1px
+      color-mix(in srgb, var(--color-white) 20%, transparent);
+  }
+  .language-toggle,
+  .language-circle,
+  .language-label {
+    opacity: 0;
+    transform: translateY(12px);
+    transition:
+      opacity var(--lang-duration) var(--ease-out),
+      transform var(--lang-duration) var(--ease-out);
+    transition-delay: calc(var(--i) * var(--lang-stagger));
+  }
+  .language-toggle.visible,
+  .language-circle.visible,
+  .language-label.visible {
+    opacity: 1;
+  }
+  .language-toggle.visible {
+    transform: translateY(0);
+  }
+  .language-circle {
+    transform: translateY(12px) scale(0.92);
+  }
+  .language-circle.visible {
+    transform: translateY(0) scale(1);
+  }
+  .language-label {
+    transform: translateY(12px) translateX(-10%)
+      rotate(var(--label-rotate, -45deg));
+  }
+  .language-label.visible {
+    transform: translateY(0) translateX(-10%)
+      rotate(var(--label-rotate, -45deg));
+  }
+
+  @media (max-width: 768px) {
+    .languages {
+      gap: var(--space-6);
+    }
+    .languages-selector {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      padding-bottom: var(--space-2);
+      scrollbar-width: none;
+    }
+    .languages-selector::-webkit-scrollbar {
+      display: none;
+    }
+    .language-toggle {
+      flex: 0 0 auto;
+      padding: 0.55rem 0.9rem;
+      font-size: var(--text-xs);
+    }
+    .languages-chart {
+      padding-top: 2rem;
+      gap: var(--space-4);
+    }
+    .languages-scale {
+      grid-template-columns: 1fr;
+      justify-items: center;
+      text-align: center;
+    }
+    .languages-circles {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-2);
+    }
+    .language-circle {
+      max-width: 16px;
+      height: 16px;
+      margin-inline: 0;
+    }
+    /* OPTIMIZACIÓN: Eliminamos propiedades duplicadas innecesarias en el móvil */
+    .language-label {
+      bottom: auto;
+      left: calc(100% + var(--space-3));
+      top: 50%;
+      transform: translateY(-50%) rotate(0deg) !important;
+      --label-rotate: 0deg;
+      flex-direction: row;
+      align-items: center;
+      gap: var(--space-2);
+    }
+    .language-label.visible {
+      transform: translateY(-50%) rotate(0deg);
+    }
+    .language-label strong {
+      font-size: var(--text-xs);
+    }
+  }
+</style>

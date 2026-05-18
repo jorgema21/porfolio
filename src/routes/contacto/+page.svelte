@@ -24,7 +24,7 @@
   <section class="cluster">
     <a class="social-link" href="https://linkedin.com" target="_blank">
       <img
-        src={`${base}/images/logos/LinkedIn_Logo.png`}
+        src={`${base}/images/logos/LinkedIn_Logo.svg`}
         alt="LinkedIn"
       />
       LinkedIn
@@ -32,7 +32,7 @@
 
     <a class="social-link" href="https://github.com" target="_blank">
       <img
-        src={`${base}/images/logos/GitHub_logo.png`}
+        src={`${base}/images/logos/GitHub_logo.svg`}
         alt="GitHub"
       />
       GitHub
