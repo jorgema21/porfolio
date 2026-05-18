@@ -86,6 +86,19 @@
     cursor: pointer;
   }
 
+  .overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgb(0, 0, 0, 0.9);
+    cursor: zoom-out;
+  }
+
   .infographics-card .overlay h3,
   .infographics-card .meta {
     font-family: var(--font-serif);

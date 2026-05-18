@@ -2,6 +2,7 @@
   import InfographicCard from "$lib/components/infographics/InfographicCard.svelte";
   import Treemap from "$lib/components/visualizations/Treemap.svelte";
   import InfographicPreview from "$lib/components/infographics/InfographicPreview.svelte";
+
   import RichText from "$lib/components/writing/RichText.svelte";
 
   import { flip } from "svelte/animate";
@@ -10,6 +11,9 @@
 
   import { t, lang } from "$lib/i18n";
   import { APARTADOS } from "$lib/config/apartados.config";
+
+  import { closePreview } from "$lib/stores/infographicPreview.svelte";
+  import { onDestroy } from "svelte";
 
   import { useInfographicsPage } from "$lib/infographics/useInfographicsPage";
 
@@ -29,6 +33,10 @@
   const totalWorks = $derived.by(() =>
     treemap.apartados.reduce((acc, item) => acc + item.value, 0),
   );
+
+  onDestroy(() => {
+    closePreview();
+  });
 </script>
 
 <main class="page">
