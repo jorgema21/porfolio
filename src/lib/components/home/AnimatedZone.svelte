@@ -24,7 +24,7 @@
     return () => clearInterval(interval);
   });
 
-  // Lógica de computación de propiedades (Antes en ProjectCard)
+  // Lógica de computación de propiedades
   const getProjectMeta = (project: HomeProject) => {
     const isInfographic = project.category === "infografia";
     const isExternal =
@@ -93,18 +93,14 @@
     gap: var(--space-4);
     height: 100%;
 
-    /* Variables de rejilla inyectadas directamente */
     grid-column-start: var(--col-start);
     grid-column-end: span var(--col-span);
     grid-row-start: var(--row-start);
     grid-row-end: span var(--row-span);
 
-    will-change: transform, opacity; /* Optimización de hardware */
+    will-change: transform, opacity;
   }
 
-  /* =========================
-     FEATURE
-     ========================= */
   .card.feature {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -118,16 +114,9 @@
     order: 2;
   }
 
-  /* =========================
-     LIST
-     ========================= */
   .card.list {
     min-height: 100%;
   }
-
-  /* =========================
-     THUMB
-     ========================= */
   .thumb {
     overflow: hidden;
     border-radius: var(--radius-lg);
@@ -138,10 +127,6 @@
     object-fit: cover;
     display: block;
   }
-
-  /* =========================
-     TYPOGRAPHY (BASE DESKTOP)
-     ========================= */
   .title {
     margin-top: var(--space-2);
     margin-bottom: var(--space-2);
@@ -154,10 +139,6 @@
     max-width: 50ch;
     font: 350 var(--text-sm) var(--font-sans);
   }
-
-  /* =========================
-     CATEGORY
-     ========================= */
   .category {
     font: 600 var(--text-xs) var(--font-sans);
     text-transform: uppercase;
@@ -173,10 +154,6 @@
   .category.maternidad {
     color: var(--pink-500);
   }
-
-  /* =========================
-     VARIANTS (DESKTOP ONLY)
-     ========================= */
   .card.hero .title {
     font-size: var(--text-2xl);
   }
@@ -187,17 +164,9 @@
   .card.list .title {
     font-size: var(--text-lg);
   }
-
-  /* ==========================================================================
-     RESPONSIVE SYSTEM (MOBILE FIRST RESET)
-     ========================================================================== */
-  /* ==========================================================================
-     RESPONSIVE SYSTEM (MOBILE FIRST RESET)
-     ========================================================================== */
   @media (max-width: 768px) {
     .card {
       gap: var(--space-3);
-
 
       grid-column-start: auto;
       grid-column-end: span 12;

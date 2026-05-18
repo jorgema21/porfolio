@@ -10,7 +10,6 @@
 
   type MediumKey = keyof typeof infographicsI18n.es.mediums;
 
-  // 📦 OPTIMIZACIÓN: Reactividad directa de Svelte 5 (sin cierres de función)
   const medium = $derived(
     project.mediumKey
       ? infographicsI18n[$lang].mediums[project.mediumKey as MediumKey]

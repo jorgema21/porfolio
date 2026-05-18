@@ -5,13 +5,12 @@
   import type { Skill } from "$lib/data/about/skills.data";
   import type { SkillId } from "$lib/data/about/skills.data";
 
-  // Desestructuración nativa de las Runas de Svelte 5
   const { skill } = $props<{ skill: Skill }>();
 
   let open = $state(false);
   const toggle = () => (open = !open);
 
-  // 📦 Caché de traducción reactiva
+  // Caché de traducción reactiva
   const content = $derived($t.skills[skill.id as SkillId]);
 </script>
 
@@ -72,7 +71,6 @@
       border-color var(--transition);
   }
 
-  /* OPTIMIZACIÓN: Añadido color y grosor para que la línea lateral funcione */
   .skill::before {
     content: "";
     position: absolute;

@@ -48,9 +48,4 @@
 
 @import "./components/infographics/infographic-mobile.css";
 
-@import "./components/slug/article.css";
-@import "./components/slug/article-meta.css";
-@import "./components/slug/article-blocks.css";
-@import "./components/slug/article-mobile.css";
-
 @import "./components/visualizations/treemap.css";

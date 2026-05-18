@@ -264,7 +264,6 @@
       height: 16px;
       margin-inline: 0;
     }
-    /* OPTIMIZACIÓN: Eliminamos propiedades duplicadas innecesarias en el móvil */
     .language-label {
       bottom: auto;
       left: calc(100% + var(--space-3));

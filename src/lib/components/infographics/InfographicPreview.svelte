@@ -25,7 +25,6 @@
     aria-label="Preview del proyecto"
     transition:fade={{ duration: 150 }}
   >
-    <!-- BACKDROP ORIGINAL: Con tu blur y cierre exactos -->
     <button
       class="preview-backdrop"
       type="button"
@@ -33,9 +32,7 @@
       onclick={closePreview}
     ></button>
 
-    <!-- CARD -->
     <div class="preview-card" transition:scale={{ duration: 220, start: 0.94 }}>
-      <!-- CLOSE -->
       <button
         class="preview-close"
         type="button"
@@ -45,14 +42,12 @@
         ✕
       </button>
 
-      <!-- IMAGE: Con su clase para que no se desborde -->
       <img
         src={`${base}${preview.project.image}`}
         alt={preview.project.title[$lang]}
         class="preview-image"
       />
 
-      <!-- CONTENT -->
       <div class="preview-content">
         <div class="preview-meta cluster">
           {#if preview.project.mediumKey}
@@ -95,9 +90,6 @@
 {/if}
 
 <style>
-  /* ==========================================================================
-     TU DISEÑO VISUAL ORIGINAL (100% INTACTO Y AJUSTADO)
-     ========================================================================== */
   .preview-overlay,
   .preview-backdrop {
     position: fixed;
@@ -203,9 +195,7 @@
   .preview-link:hover {
     color: var(--blue-300);
   }
-  /* ==========================================================================
-     SISTEMA RESPONSIVO (ADAPTACIÓN DE TAMAÑO PARA MÓVIL)
-     ========================================================================== */
+
   @media (max-width: 768px) {
     .preview-card {
       max-width: 60%;

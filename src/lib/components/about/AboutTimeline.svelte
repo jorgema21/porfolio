@@ -7,7 +7,7 @@
   let progress = $state(0);
   let visibleItems = $state<boolean[]>(timeline.map(() => false));
 
-  // 📌 Caché de posiciones absolutas (recalculadas en resize)
+  // Caché de posiciones absolutas (recalculadas en resize)
   let itemTops: number[] = [];
   let containerTop = 0;
   let containerHeight = 0;
@@ -29,11 +29,11 @@
   const update = () => {
     const middle = window.scrollY + window.innerHeight / 2;
 
-    // 📊 Progreso de la línea
+    // Progreso de la línea
     const raw = middle - containerTop;
     progress = Math.max(0, Math.min(raw, containerHeight));
 
-    // 👁️ Visibilidad exacta por elemento
+    // Visibilidad exacta por elemento
     visibleItems = itemTops.map((top) => middle >= top + 40);
   };
 
@@ -93,9 +93,6 @@
 </section>
 
 <style>
-  /* ==========================================================================
-     TU DISEÑO DE ESCRITORIO ORIGINAL (100% INTACTO)
-     ========================================================================== */
   .timeline {
     position: relative;
     display: flex;
@@ -147,8 +144,6 @@
     opacity: 1;
     transform: translateY(0);
   }
-
-  /* Categorías de color */
   .timeline-item[data-category="study"] {
     --timeline-color: var(--timeline-study);
   }
@@ -161,8 +156,6 @@
   .timeline-item[data-category="motherhood"] {
     --timeline-color: var(--timeline-motherhood);
   }
-
-  /* Lados y márgenes */
   .timeline-item.left {
     right: 5%;
     text-align: right;
@@ -174,8 +167,6 @@
     text-align: left;
     align-self: flex-end;
   }
-
-  /* Ramificaciones y Puntos */
   .timeline-branch {
     position: absolute;
     top: var(--space-4);
@@ -201,7 +192,6 @@
   .timeline-item.visible .timeline-branch {
     transform: scaleX(1);
   }
-
   .timeline-dot {
     position: absolute;
     top: var(--space-3);
@@ -212,8 +202,6 @@
     background: currentColor;
     z-index: 3;
   }
-
-  /* Tarjeta contenedora visual */
   .timeline-card {
     position: relative;
     padding: var(--space-4);
@@ -251,9 +239,6 @@
     font-size: var(--text-sm);
   }
 
-  /* ==========================================================================
-     TU DISEÑO DE MÓVIL ORIGINAL (100% INTACTO)
-     ========================================================================== */
   @media (max-width: 768px) {
     .timeline {
       padding-inline: var(--space-4);
