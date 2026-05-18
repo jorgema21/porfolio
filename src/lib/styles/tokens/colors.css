@@ -26,7 +26,7 @@
   --overlay-text-color: rgb(255 255 255 / 75%);
 
   --timeline-study: #8e44ad;
-  --timeline-infography: var(--blue-500);
+  --timeline-infography: var(--blue-300);
   --timeline-style: var(--red-500);
   --timeline-motherhood: var(--pink-500);
 }

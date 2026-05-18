@@ -55,7 +55,4 @@
 @import "./components/slug/article-blocks.css";
 @import "./components/slug/article-mobile.css";
 
-@import "./components/about/skill/index.css";
-@import "./components/about/timeline/index.css";
-
 @import "./components/visualizations/treemap.css";
