@@ -12,16 +12,7 @@
 
   let { item, side, active }: Props = $props();
 
-  const content = $derived(() => {
-    const dict = $t.timeline;
-
-    return (
-      dict[item.id as keyof typeof dict] ?? {
-        title: item.title,
-        description: item.description,
-      }
-    );
-  });
+  const content = $derived(() => $t.timeline[item.id]);
 </script>
 
 <article

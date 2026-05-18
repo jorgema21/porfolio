@@ -75,16 +75,16 @@ export const timeline = {
         "Componentes interactivos y reutilizables para visualización.",
     },
 
-    "portfolio-redesign": {
-      title: "Rediseño del portfolio",
+    "start-lifestyle": {
+      title: "Inicio estilo de vida",
       description:
-        "Nueva arquitectura visual centrada en narrativa.",
+        "Inicio escribir estilo de vida",
     },
 
-    "lifestyle-writing": {
-      title: "Contenido lifestyle",
+    "start-motherhood": {
+      title: "Inicio maternidad",
       description:
-        "Proyectos de maternidad y estilo de vida.",
+        "Inicio escribir maternidad",
     },
 
     "data-visual-specialization": {
@@ -149,16 +149,16 @@ export const timeline = {
         "Reusable interactive components for data visualization.",
     },
 
-    "portfolio-redesign": {
-      title: "Portfolio redesign",
+    "start-lifestyle": {
+      title: "Start lifestyle",
       description:
-        "New narrative-driven visual architecture.",
+        "Start writing lifestyle",
     },
 
-    "lifestyle-writing": {
-      title: "Lifestyle content",
+    "start-motherhood": {
+      title: "Start motherhood",
       description:
-        "Motherhood and lifestyle-related projects.",
+        "Start writing motherhood",
     },
 
     "data-visual-specialization": {
