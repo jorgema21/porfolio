@@ -55,6 +55,7 @@
       <span class="legend-item study">{$t.about.study}</span>
       <span class="legend-item infography">{$t.about.infographics}</span>
       <span class="legend-item style">{$t.about.lifestyle}</span>
+      <span class="legend-item motherhood">{$t.about.motherhood}</span>
     </div>
 
     <AboutTimeline />

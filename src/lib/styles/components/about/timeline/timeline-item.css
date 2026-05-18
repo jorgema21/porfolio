@@ -18,6 +18,10 @@
   --timeline-color: var(--timeline-style);
 }
 
+.timeline-item[data-category="motherhood"] {
+  --timeline-color: var(--timeline-motherhood);
+}
+
 .timeline-dot {
   position: absolute;
   top: var(--space-3);

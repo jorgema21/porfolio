@@ -34,3 +34,7 @@
 .legend-item.style {
   --timeline-color: var(--timeline-style);
 }
+
+.legend-item.motherhood {
+  --timeline-color: var(--timeline-motherhood);
+}

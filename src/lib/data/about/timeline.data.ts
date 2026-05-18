@@ -1,7 +1,4 @@
-export type TimelineCategory =
-  | "study"
-  | "infography"
-  | "style";
+export type TimelineCategory = "study" | "infography" | "style" | "motherhood";
 
 export type TimelineId =
   | "journalism-degree"
@@ -13,8 +10,8 @@ export type TimelineId =
   | "interactive-graphics"
   | "frontend-learning"
   | "svelte-start"
-  | "portfolio-redesign"
-  | "lifestyle-writing"
+  | "start-lifestyle"
+  | "start-motherhood"
   | "data-visual-specialization";
 
 export type TimelineItem = {
@@ -30,8 +27,7 @@ export const timeline: TimelineItem[] = [
     id: "journalism-degree",
     date: "2017",
     title: "Grado en Periodismo",
-    description:
-      "Inicio de la carrera y primeros proyectos narrativos.",
+    description: "Inicio de la carrera y primeros proyectos narrativos.",
     category: "study",
   },
 
@@ -75,8 +71,7 @@ export const timeline: TimelineItem[] = [
     id: "visual-narratives",
     date: "2022",
     title: "Narrativas Visuales",
-    description:
-      "Especialización intensiva en infografía y datos.",
+    description: "Especialización intensiva en infografía y datos.",
     category: "infography",
   },
 
@@ -84,8 +79,7 @@ export const timeline: TimelineItem[] = [
     id: "interactive-graphics",
     date: "2023",
     title: "Visualizaciones interactivas",
-    description:
-      "Creación de proyectos digitales con enfoque scrollytelling.",
+    description: "Creación de proyectos digitales con enfoque scrollytelling.",
     category: "infography",
   },
 
@@ -93,8 +87,7 @@ export const timeline: TimelineItem[] = [
     id: "frontend-learning",
     date: "2023",
     title: "Aprendizaje frontend",
-    description:
-      "HTML, CSS y JavaScript orientado a visualización.",
+    description: "HTML, CSS y JavaScript orientado a visualización.",
     category: "study",
   },
 
@@ -102,35 +95,31 @@ export const timeline: TimelineItem[] = [
     id: "svelte-start",
     date: "2024",
     title: "Primeros proyectos con Svelte",
-    description:
-      "Componentes interactivos y sistemas reutilizables.",
+    description: "Componentes interactivos y sistemas reutilizables.",
     category: "infography",
   },
 
   {
-    id: "portfolio-redesign",
+    id: "start-lifestyle",
     date: "2024",
-    title: "Rediseño del portfolio",
-    description:
-      "Nueva arquitectura visual centrada en narrativa.",
+    title: "Inicio estilo de vida",
+    description: "Nueva arquitectura visual centrada en narrativa.",
     category: "style",
   },
 
   {
-    id: "lifestyle-writing",
+    id: "start-motherhood",
     date: "2025",
-    title: "Contenido lifestyle",
-    description:
-      "Proyectos de maternidad y estilo de vida.",
-    category: "style",
+    title: "Inicio maternidad",
+    description: "Proyectos de maternidad y estilo de vida.",
+    category: "motherhood",
   },
 
   {
     id: "data-visual-specialization",
     date: "2025",
     title: "Especialización en visualización",
-    description:
-      "Profundización en gráficos interactivos y scrollytelling.",
+    description: "Profundización en gráficos interactivos y scrollytelling.",
     category: "infography",
   },
 ];
