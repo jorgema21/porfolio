@@ -8,7 +8,6 @@ import { motherhood } from "./dictionaries/motherhood";
 import { project } from "./dictionaries/project";
 import { home } from "./dictionaries/home";
 
-import { apartados } from "./dictionaries/apartados";
 
 import { timeline } from "./dictionaries/about/timeline";
 import { skills } from "./dictionaries/about/skills";
@@ -24,11 +23,10 @@ export const dictionaries = {
     motherhood: motherhood.es,
     style: style.es,
     project: project.es,
-    apartados: apartados.es, // 👈
-    home: home.es, // 👈
-    timeline: timeline.es, // 👈
-    skills: skills.es, // 👈
-    languages: languages.es, // 👈
+    home: home.es,
+    timeline: timeline.es,
+    skills: skills.es, 
+    languages: languages.es,
   },
   en: {
     layout: layout.en,
@@ -39,10 +37,9 @@ export const dictionaries = {
     motherhood: motherhood.en,
     style: style.en,
     project: project.en,
-    apartados: apartados.en, // 👈
     home: home.en,
-    timeline: timeline.en, // 👈
-    skills: skills.en, // 👈
-    languages: languages.en, // 👈
+    timeline: timeline.en,
+    skills: skills.en,
+    languages: languages.en,
   },
 } as const;

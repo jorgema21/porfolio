@@ -1,24 +1,26 @@
 <script lang="ts">
   import { base } from "$app/paths";
   import { openLightbox } from "$lib/stores/lightbox.svelte";
-  import { lang } from "$lib/i18n";
-  import { APARTADOS, type ApartadoKey } from "$lib/config/apartados.config";
+  import { lang, t } from "$lib/i18n";
+  import { APARTADOS } from "$lib/config/apartados.config";
+  import { ROLE_MAP } from "$lib/config/roles";
   import { formatDate } from "$lib/utils/formatDate";
-  import { infographics as infographicsI18n } from "$lib/i18n/dictionaries/infographics.i18n";
+  import { createProjectView } from "$lib/infographics/project.view";
+  import { infographics as infographicsI18n } from "$lib/i18n/dictionaries/infographics.i18n"; // 🚀 Recuperamos el diccionario de medios
   import type { ProjectContent } from "$lib/types/project.types";
 
   const { data } = $props<{ data: { project: ProjectContent } }>();
 
+  const view = $derived(createProjectView($lang));
   const project = $derived(data?.project);
-  const apartado = $derived(project?.apartado as ApartadoKey | undefined);
-  const color = $derived(
-    apartado ? APARTADOS[apartado]?.color?.light : "transparent",
-  );
-  const blocks = $derived(project?.blocks ?? []);
+  const colab = $derived(project?.colaboracion);
 
-  const apartadoLabel = $derived(
-    apartado && apartado in APARTADOS ? APARTADOS[apartado].label[$lang] : null,
+  const color = $derived(
+    project?.apartado
+      ? APARTADOS[project.apartado as keyof typeof APARTADOS]?.color?.light
+      : "transparent",
   );
+  const apartadoLabel = $derived(view.apartadoLabel(project));
 
   const mediumLabel = $derived.by(() => {
     if (!project?.mediumKey) return null;
@@ -32,17 +34,19 @@
     !!mediumLabel ||
       !!project?.date ||
       !!apartadoLabel ||
-      !!project?.usos?.length,
+      !!project?.usos?.length ||
+      !!colab?.tipo ||
+      !!colab?.rol?.length,
   );
 </script>
 
 <article
   class="article"
-  data-apartado={apartado}
+  data-apartado={project?.apartado}
   style="--apartado-color: {color};"
 >
   <header class="project-header">
-    <h1>{project?.title?.[$lang] ?? ""}</h1>
+    <h1>{view.title(project) ?? ""}</h1>
     {#if project?.image}
       {@const src = `${base}${project.image}`}
       <button
@@ -57,28 +61,46 @@
 
   {#if hasMeta}
     <div class="meta-top">
-      <div class="meta-left">
+      <div class="meta-row meta-left">
         {#if mediumLabel}
-          {#if project?.url}<a
-              class="link-underline medium-link"
-              href={project.url}>{mediumLabel} ↗</a
-            >
-          {:else}<span class="link-underline">{mediumLabel}</span>{/if}
+          <a class="link-underline medium-link" href={project?.url ?? "#"}
+            >{mediumLabel} {project?.url ? "↗" : ""}</a
+          >
         {/if}
         {#if project?.mediumKey && project?.date}<span>·</span>{/if}
         {#if project?.date}<span>{formatDate(project.date, $lang)}</span>{/if}
       </div>
-
-      {#if project?.usos?.length}
-        <div class="meta-center">
-          {#each project.usos as uso, i (i)}
-            <span class="tag">{uso[$lang]}</span>
+      <div class="meta-row meta-center">
+        <div class="meta-colabs">
+          {#if colab?.tipo}
+            <span class="tag"
+              >{$t.metaarticle.colaboracion[colab.tipo as "solo" | "equipo"] ??
+                colab.tipo}</span
+            >
+          {/if}
+          {#each colab?.rol ?? [] as roleKey (roleKey)}
+            {@const role = ROLE_MAP[roleKey as keyof typeof ROLE_MAP]}
+            {#if role}<span class="tag" title={role.label[$lang]}
+                ><span>{role.icon}</span><span>{role.label[$lang]}</span></span
+              >{/if}
           {/each}
         </div>
-      {/if}
+
+        {#if project?.usos?.length && (colab?.tipo || colab?.rol?.length)}
+          <span class="meta-divider">|</span>
+        {/if}
+
+        {#if project?.usos?.length}
+          <div class="meta-usos">
+            {#each project.usos as uso (uso.es)}<span class="tag"
+                >{uso[$lang]}</span
+              >{/each}
+          </div>
+        {/if}
+      </div>
 
       {#if apartadoLabel}
-        <div class="meta-right">
+        <div class="meta-row meta-right">
           <span class="badge apartado">{apartadoLabel}</span>
         </div>
       {/if}
@@ -86,7 +108,7 @@
   {/if}
 
   <section class="blocks">
-    {#each blocks as block, i (i)}
+    {#each project?.blocks ?? [] as block, i (i)}
       {@const src =
         "src" in block
           ? `${base}/images/infografias/${project?.slug}/${block.src}`
@@ -108,8 +130,7 @@
         </div>
       {:else if block.type === "text"}
         {@const val = block.value?.[$lang] ?? block.value?.es}
-        {@const textString = Array.isArray(val) ? val.join(" ") : (val ?? "")}
-        <p class="text">{textString}</p>
+        <p class="text">{Array.isArray(val) ? val.join(" ") : (val ?? "")}</p>
       {:else if block.type === "divider"}
         <div class="divider"></div>
       {/if}
@@ -118,11 +139,9 @@
 
   {#if project?.tools?.length}
     <footer class="tools">
-      <h3>{$lang === "es" ? "Herramientas" : "Tools"}</h3>
+      <h3>{$t.metaarticle.tools}</h3>
       <ul>
-        {#each project.tools as tool (tool)}
-          <li class="tag">{tool}</li>
-        {/each}
+        {#each project.tools as tool (tool)}<li class="tag">{tool}</li>{/each}
       </ul>
     </footer>
   {/if}
@@ -147,34 +166,69 @@
   }
   .meta-top {
     position: relative;
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    gap: var(--space-2);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
     margin-top: var(--space-2);
-    padding-top: var(--space-2);
+    padding-top: var(--space-4);
+    width: 100%;
   }
   .meta-top::before {
     content: "";
     position: absolute;
     inset: 0 0 auto;
-    height: 2px;
+    height: 1px;
     background: var(--apartado-color);
-    opacity: 0.6;
+    opacity: 0.4;
   }
-  .meta-left,
-  .meta-center,
-  .meta-right {
+  .meta-row {
+    width: 100%;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
     gap: var(--space-2);
   }
+
+  .meta-left {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+  }
   .meta-center {
-    justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--space-2);
     flex-wrap: wrap;
   }
-  .meta-right {
-    justify-content: flex-end;
+
+  .meta-colabs,
+  .meta-usos {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    flex-wrap: wrap;
   }
+
+  .meta-divider {
+    color: var(--color-border);
+    margin-inline: var(--space-1);
+    font-weight: 300;
+  }
+
+  .tag {
+    background-color: var(--bg-soft);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: var(--space-1) var(--space-2);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-size: var(--text-xs);
+    color: var(--color-text-base);
+  }
+
   .medium-link {
     color: inherit;
     transition: color var(--transition);
@@ -185,6 +239,7 @@
   .apartado {
     --badge-color: var(--apartado-color);
   }
+
   .blocks {
     margin-top: var(--space-8);
   }
@@ -229,8 +284,14 @@
     font: var(--text-sm) var(--font-sans);
     text-decoration: underline;
   }
+
+  .tools {
+    margin-top: var(--space-10);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--color-border);
+  }
   .tools h3 {
-    margin-bottom: var(--space-2);
+    margin-bottom: var(--space-3);
     font-size: var(--text-xs);
     letter-spacing: 0.1em;
     text-transform: uppercase;
@@ -259,15 +320,19 @@
       transform: none;
       text-align: center;
     }
-    .meta-top {
-      grid-template-columns: 1fr;
-      gap: var(--space-3);
+    .meta-center {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-2);
     }
-    .meta-left,
-    .meta-center,
-    .meta-right {
-      justify-content: flex-start;
-      flex-wrap: wrap;
+
+    .meta-colabs,
+    .meta-usos {
+      width: 100%;
+    }
+
+    .meta-divider {
+      display: none;
     }
   }
 </style>
