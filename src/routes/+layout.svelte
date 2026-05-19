@@ -16,7 +16,6 @@
 <ImageLightbox />
 
 <style>
-  /* 🚀 Solución: La directiva @media va fuera, y aplicamos el :global(*) a las tripas de los selectores */
   @media (prefers-reduced-motion: reduce) {
     :global(*),
     :global(*::before),

@@ -1,9 +1,7 @@
 :root {
-  /* Fonts */
   --font-serif: "Epunda Slab", serif;
   --font-sans: "Nunito Sans", sans-serif;
 
-  /* Fluid type scale (mobile → desktop) */
   --text-xs: clamp(0.72rem, 0.68rem + 0.2vw, 0.75rem);
   --text-sm: clamp(0.85rem, 0.82rem + 0.2vw, 0.95rem);
   --text-base: clamp(0.95rem, 0.9rem + 0.3vw, 1.05rem);

@@ -40,6 +40,10 @@
   );
 </script>
 
+<svelte:head>
+  <meta name="robots" content="noindex, nofollow" />
+</svelte:head>
+
 <article
   class="article"
   data-apartado={project?.apartado}
@@ -70,6 +74,7 @@
         {#if project?.mediumKey && project?.date}<span>·</span>{/if}
         {#if project?.date}<span>{formatDate(project.date, $lang)}</span>{/if}
       </div>
+
       <div class="meta-row meta-center">
         <div class="meta-colabs">
           {#if colab?.tipo}
@@ -78,11 +83,15 @@
                 colab.tipo}</span
             >
           {/if}
+
           {#each colab?.rol ?? [] as roleKey (roleKey)}
             {@const role = ROLE_MAP[roleKey as keyof typeof ROLE_MAP]}
-            {#if role}<span class="tag" title={role.label[$lang]}
-                ><span>{role.icon}</span><span>{role.label[$lang]}</span></span
-              >{/if}
+            {#if role}
+              <span class="tag" title={role.label[$lang]}>
+                <span>{role.icon}</span>
+                <span>{role.label[$lang]}</span>
+              </span>
+            {/if}
           {/each}
         </div>
 
@@ -92,9 +101,9 @@
 
         {#if project?.usos?.length}
           <div class="meta-usos">
-            {#each project.usos as uso (uso.es)}<span class="tag"
-                >{uso[$lang]}</span
-              >{/each}
+            {#each project.usos as uso (uso.es)}
+              <span class="tag">{uso[$lang]}</span>
+            {/each}
           </div>
         {/if}
       </div>
@@ -141,7 +150,9 @@
     <footer class="tools">
       <h3>{$t.metaarticle.tools}</h3>
       <ul>
-        {#each project.tools as tool (tool)}<li class="tag">{tool}</li>{/each}
+        {#each project.tools as tool (tool)}
+          <li class="tag">{tool}</li>
+        {/each}
       </ul>
     </footer>
   {/if}

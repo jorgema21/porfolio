@@ -241,10 +241,6 @@ const projects = [
     colSpan: 4,
     rowStart: 10,
   },
-
-  /* =========================================================================
-     ⚙️ BLOQUE PROYECTOS FUERA DE HOME COMPACTADOS (p17 al p24 en 1 sola línea)
-     ========================================================================= */
   {
     id: "p17",
     slug: "proyecto-17",

@@ -29,7 +29,6 @@
     getLabel?: (key: string) => string;
   }>();
 
-  /* STATE & ANIMATION */
   let hovered = $state<TreemapItem | null>(null);
   let mouseX = $state(0);
   let mouseY = $state(0);
@@ -43,7 +42,6 @@
     progress.set(1);
   });
 
-  /* LAYOUT */
   const root = $derived.by(() => {
     const baseHierarchy = hierarchy<TreemapNode>({ children: data });
     return baseHierarchy.sum((d: TreemapNode) => d.value ?? 0);
@@ -68,7 +66,6 @@
     })),
   );
 
-  /* COLOR SCALE */
   const colorMeta = $derived.by(() => {
     if (data.length === 0) return { scale: () => "#e6f0ff", max: 1 };
 
@@ -85,7 +82,6 @@
   const getTextColor = (value: number) =>
     value > colorMeta.max * 0.4 ? "white" : "var(--color-text)";
 
-  /* TOOLTIP HANDLERS */
   const updateMouse = (e: MouseEvent) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
@@ -108,7 +104,6 @@
     <h3 class="treemap-title">{title}</h3>
   {/if}
 
-  <!-- SVG LAYOUT -->
   <svg viewBox="0 0 {width} {height}" preserveAspectRatio="xMidYMid meet">
     {#each leaves as leaf (leaf.key)}
       <g transform="translate({leaf.x}, {leaf.y})">
@@ -147,7 +142,6 @@
   </svg>
 </div>
 
-<!-- TOOLTIP FLOATING -->
 {#if hovered}
   <div class="tooltip" style:top="{mouseY + 10}px" style:left="{mouseX + 10}px">
     <strong>{getLabel(hovered.key)}</strong><br />
