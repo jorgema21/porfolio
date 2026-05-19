@@ -1,21 +1,12 @@
-/* TOKENS */
 @import "./tokens/colors.css";
-@import "./tokens/spacing.css";
 @import "./tokens/typography.css";
-@import "./tokens/radius.css";
-@import "./tokens/shadows.css";
-@import "./tokens/motion.css";
-@import "./tokens/layout.css";
-@import "./tokens/components.css";
+@import "./tokens/geometry.css";
 
-/* BASE */
 @import "./base/base.css";
+@import "./base/animations.css";
 
-/* UI SYSTEM (CLEAN LAYER) */
 @import "./ui/index.css";
 
-/* MOTION */
-@import "./motion/index.css";
 
 
 
