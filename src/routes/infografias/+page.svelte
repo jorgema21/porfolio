@@ -11,27 +11,26 @@
   import { t, lang } from "$lib/i18n";
   import { APARTADOS } from "$lib/config/apartados.config";
   import { closePreview } from "$lib/stores/infographicPreview.svelte";
-  import { onDestroy } from "svelte";
-  import { useInfographicsPage } from "$lib/infographics/useInfographicsPage";
+  import { useInfographicsPage } from "./useInfographicsPage";
 
   type ApartadoKey = keyof typeof APARTADOS;
 
   const info = useInfographicsPage(() => $lang);
 
-  // Runa directa sobre el Treemap
   const totalWorks = $derived(
-    info.treemap.apartados.reduce((acc, item) => acc + item.value, 0),
+    (info.treemap?.apartados ?? []).reduce((acc, item) => acc + item.value, 0),
   );
 
-  onDestroy(() => {
-    closePreview();
+  $effect(() => {
+    return () => {
+      closePreview();
+    };
   });
 </script>
 
 <main class="page">
   <h1>{$t.infographics.title}</h1>
 
-  <!-- INTRO -->
   <p class="page-intro">
     <RichText value={$t.infographics.intro} />
   </p>
@@ -77,7 +76,9 @@
 
     <button
       class="control sort-dir"
-      aria-label="Cambiar orden"
+      aria-label={info.filters.sortDir === "asc"
+        ? "Orden ascendente"
+        : "Orden descendente"}
       onclick={() =>
         (info.filters.sortDir =
           info.filters.sortDir === "asc" ? "desc" : "asc")}
@@ -88,7 +89,6 @@
 
   {#if info.filters.sortBy === "medium" || info.filters.sortBy === "apartado"}
     {#each info.grouped as group (group.key)}
-      <!-- Guardar en caché reactiva el título del grupo con @const -->
       {@const currentType =
         info.filters.sortBy === "medium" ? "medium" : "apartado"}
       {@const currentTitle = info.groupLabel(group.key, currentType)}
@@ -130,16 +130,12 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
     align-items: start;
     gap: var(--space-4);
-
-    animation: fadeIn var(--motion-base) var(--ease-out) both;
   }
-
   .insights {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--space-4);
   }
-
   .insights-header {
     display: flex;
     align-items: center;
@@ -147,7 +143,6 @@
     margin-top: var(--space-6);
     margin-bottom: var(--space-3);
   }
-
   .insights-header h2 {
     display: flex;
     align-items: baseline;
@@ -155,7 +150,6 @@
     margin: 0;
     font: var(--text-lg) var(--font-serif);
   }
-
   .toolbar {
     display: flex;
     align-items: center;
@@ -167,11 +161,9 @@
     border-radius: var(--radius-md);
     transition: transform var(--transition);
   }
-
   .toolbar:hover {
     transform: var(--hover-lift);
   }
-
   .toolbar input,
   .toolbar select {
     flex: 1;
@@ -180,7 +172,6 @@
     outline: none;
     background: transparent;
   }
-
   .toolbar select {
     appearance: none;
     cursor: pointer;
@@ -200,7 +191,6 @@
     background-repeat: no-repeat;
     background-size: 6px 6px;
   }
-
   .toolbar button {
     border-radius: var(--radius-sm);
     margin: 0;
@@ -208,7 +198,6 @@
     border: 1px solid var(--color-border);
     cursor: pointer;
   }
-
   @media (max-width: 768px) {
     .insights {
       grid-template-columns: 1fr;
@@ -218,20 +207,17 @@
       grid-template-columns: 1fr;
       gap: var(--space-3);
     }
-
     .toolbar {
       flex-direction: column;
       align-items: stretch;
       gap: var(--space-2);
       padding: var(--space-3);
     }
-
     .toolbar input,
     .toolbar select {
       width: 100%;
       font-size: var(--text-sm);
     }
-
     .toolbar select {
       padding-right: var(--space-4);
     }

@@ -18,9 +18,16 @@ export function getGroupedList(
 
   const list = getFilteredList(filters, lang);
   const dir = getDirection(filters.sortDir);
+
+  const preSortedList = [...list].sort((a, b) => {
+    const tA = a.date ? Date.parse(a.date) : 0;
+    const tB = b.date ? Date.parse(b.date) : 0;
+    return tB - tA;
+  });
+
   const map = new Map<string, Infographic[]>();
 
-  for (const item of list) {
+  for (const item of preSortedList) {
     const key =
       filters.sortBy === "medium"
         ? (item.mediumKey ?? "__unknown__")
@@ -34,15 +41,12 @@ export function getGroupedList(
     group.push(item);
   }
 
-  const grouped: GroupedInfographics[] = Array.from(map, ([key, items]) => {
-    // Ordenar alfabéticamente los proyectos dentro de su propio grupo
-    const sortedItems = [...items].sort(
-      (a, b) => a.title[lang].localeCompare(b.title[lang]) * dir,
-    );
-    return { key, items: sortedItems };
-  });
 
-  // Ordenar los contenedores (Grupos globales)
+  const grouped: GroupedInfographics[] = Array.from(map, ([key, items]) => ({
+    key,
+    items,
+  }));
+
   if (filters.sortBy === "apartado") {
     return grouped.sort((a, b) => {
       const aOrder = APARTADOS[a.key as keyof typeof APARTADOS]?.order ?? 999;
@@ -51,5 +55,10 @@ export function getGroupedList(
     });
   }
 
-  return grouped.sort((a, b) => a.key.localeCompare(b.key) * dir);
+  return grouped.sort((a, b) => {
+    if (a.key === "__unknown__") return 1;
+    if (b.key === "__unknown__") return -1;
+
+    return a.key.localeCompare(b.key) * dir;
+  });
 }

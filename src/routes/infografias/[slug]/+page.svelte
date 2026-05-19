@@ -9,29 +9,30 @@
 
   const { data } = $props<{ data: { project: ProjectContent } }>();
 
-  // Desestructuración directa de estados derivados
-  const project = $derived(data.project);
-  const { title, image, slug, usos, tools, date, mediumKey } =
-    $derived(project);
-  const apartado = $derived(project.apartado as ApartadoKey | undefined);
+  const project = $derived(data?.project);
+  const apartado = $derived(project?.apartado as ApartadoKey | undefined);
   const color = $derived(
-    apartado ? APARTADOS[apartado].color.light : "transparent",
+    apartado ? APARTADOS[apartado]?.color?.light : "transparent",
   );
-  const blocks = $derived(project.blocks ?? []);
+  const blocks = $derived(project?.blocks ?? []);
 
-  /* LÓGICA METADATOS */
   const apartadoLabel = $derived(
     apartado && apartado in APARTADOS ? APARTADOS[apartado].label[$lang] : null,
   );
 
   const mediumLabel = $derived.by(() => {
-    if (!mediumKey) return null;
+    if (!project?.mediumKey) return null;
     const dict = infographicsI18n[$lang].mediums;
-    return mediumKey in dict ? dict[mediumKey as keyof typeof dict] : null;
+    return project.mediumKey in dict
+      ? dict[project.mediumKey as keyof typeof dict]
+      : null;
   });
 
   const hasMeta = $derived(
-    !!mediumLabel || !!date || !!apartadoLabel || !!usos?.length,
+    !!mediumLabel ||
+      !!project?.date ||
+      !!apartadoLabel ||
+      !!project?.usos?.length,
   );
 </script>
 
@@ -40,11 +41,10 @@
   data-apartado={apartado}
   style="--apartado-color: {color};"
 >
-  <!-- 1. HEADER -->
   <header class="project-header">
-    <h1>{title[$lang] ?? ""}</h1>
-    {#if image}
-      {@const src = `${base}${image}`}
+    <h1>{project?.title?.[$lang] ?? ""}</h1>
+    {#if project?.image}
+      {@const src = `${base}${project.image}`}
       <button
         class="cover-wrapper"
         onclick={() => openLightbox(src)}
@@ -55,38 +55,42 @@
     {/if}
   </header>
 
-  <!-- 2. METADATOS -->
   {#if hasMeta}
     <div class="meta-top">
       <div class="meta-left">
         {#if mediumLabel}
-          {#if project.url}<a
+          {#if project?.url}<a
               class="link-underline medium-link"
               href={project.url}>{mediumLabel} ↗</a
             >
           {:else}<span class="link-underline">{mediumLabel}</span>{/if}
         {/if}
-        {#if mediumKey && date}<span>·</span>{/if}
-        {#if date}<span>{formatDate(date, $lang)}</span>{/if}
+        {#if project?.mediumKey && project?.date}<span>·</span>{/if}
+        {#if project?.date}<span>{formatDate(project.date, $lang)}</span>{/if}
       </div>
 
-      {#if usos?.length}
+      {#if project?.usos?.length}
         <div class="meta-center">
-          {#each usos as uso, i (i)}<span class="tag">{uso[$lang]}</span>{/each}
+          {#each project.usos as uso, i (i)}
+            <span class="tag">{uso[$lang]}</span>
+          {/each}
         </div>
       {/if}
 
-      {#if apartadoLabel}<div class="meta-right">
+      {#if apartadoLabel}
+        <div class="meta-right">
           <span class="badge apartado">{apartadoLabel}</span>
-        </div>{/if}
+        </div>
+      {/if}
     </div>
   {/if}
 
-  <!-- 3. BLOQUES DE CONTENIDO -->
   <section class="blocks">
     {#each blocks as block, i (i)}
       {@const src =
-        "src" in block ? `${base}/images/infografias/${slug}/${block.src}` : ""}
+        "src" in block
+          ? `${base}/images/infografias/${project?.slug}/${block.src}`
+          : ""}
 
       {#if block.type === "hero" || block.type === "image"}
         <div class="image-wrapper">
@@ -104,19 +108,21 @@
         </div>
       {:else if block.type === "text"}
         {@const val = block.value?.[$lang] ?? block.value?.es}
-        <p class="text">{Array.isArray(val) ? val.join(" ") : (val ?? "")}</p>
+        {@const textString = Array.isArray(val) ? val.join(" ") : (val ?? "")}
+        <p class="text">{textString}</p>
       {:else if block.type === "divider"}
         <div class="divider"></div>
       {/if}
     {/each}
   </section>
 
-  <!-- 4. PIE DE HERRAMIENTAS -->
-  {#if tools?.length}
+  {#if project?.tools?.length}
     <footer class="tools">
       <h3>{$lang === "es" ? "Herramientas" : "Tools"}</h3>
       <ul>
-        {#each tools as tool (tool)}<li class="tag">{tool}</li>{/each}
+        {#each project.tools as tool (tool)}
+          <li class="tag">{tool}</li>
+        {/each}
       </ul>
     </footer>
   {/if}

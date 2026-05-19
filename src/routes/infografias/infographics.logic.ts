@@ -15,23 +15,22 @@ export type Filters = {
 
 export const getDirection = (dir: SortDir): number => (dir === "asc" ? 1 : -1);
 
-const createSorters = (lang: Lang) => ({
+const sorters = {
   date: (a: Infographic, b: Infographic) => {
     const tA = a.date ? Date.parse(a.date) : 0;
     const tB = b.date ? Date.parse(b.date) : 0;
-    return tB - tA;
+    return tB - tA; // Más reciente primero por defecto
   },
-  title: (a: Infographic, b: Infographic) =>
-    a.title[lang].localeCompare(b.title[lang]),
   apartado: (a: Infographic, b: Infographic) =>
     (a.apartado ?? "").localeCompare(b.apartado ?? ""),
   medium: (a: Infographic, b: Infographic) =>
     (a.mediumKey ?? "").localeCompare(b.mediumKey ?? ""),
-});
+};
 
 export function getFilteredList(filters: Filters, lang: Lang): Infographic[] {
   const q = filters.search.trim().toLowerCase();
 
+  // 1. Filtrado en una sola pasada de CPU
   const list = infographics.filter((p) => {
     const matchSearch = !q || p.title[lang].toLowerCase().includes(q);
 
@@ -46,14 +45,22 @@ export function getFilteredList(filters: Filters, lang: Lang): Infographic[] {
     return matchSearch && matchApartado && matchMedium;
   });
 
-  // Si se agrupa, delegamos el ordenamiento completo a los selectores
   if (filters.sortBy === "apartado" || filters.sortBy === "medium") {
     return list;
   }
 
-  const sorters = createSorters(lang);
+  const direction = getDirection(filters.sortDir);
 
-  return [...list].sort(
-    (a, b) => sorters[filters.sortBy](a, b) * getDirection(filters.sortDir),
-  );
+  if (filters.sortBy === "title") {
+    return [...list].sort(
+      (a, b) => a.title[lang].localeCompare(b.title[lang]) * direction,
+    );
+  }
+
+  const currentSortKey = filters.sortBy as Exclude<
+    SortBy,
+    "title" | "apartado" | "medium"
+  >;
+
+  return [...list].sort((a, b) => sorters[currentSortKey](a, b) * direction);
 }
