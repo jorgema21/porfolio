@@ -17,10 +17,5 @@
 /* MOTION */
 @import "./motion/index.css";
 
-/* PAGES */
-
-@import "./pages/page.css";
-@import "./pages/about.css";
-@import "./pages/contact.css";
 
 

@@ -198,6 +198,14 @@
     border: 1px solid var(--color-border);
     cursor: pointer;
   }
+  .group-title {
+    font: var(--text-lg) var(--font-serif);
+
+    margin: var(--space-8) 0 var(--space-4);
+    padding-bottom: var(--space-2);
+
+    border-bottom: 1px solid var(--color-border);
+  }
   @media (max-width: 768px) {
     .insights {
       grid-template-columns: 1fr;
