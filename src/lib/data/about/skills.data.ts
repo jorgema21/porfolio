@@ -1,9 +1,4 @@
-export type SkillId =
-  | "datawrapper"
-  | "qgis"
-  | "svelte"
-  | "code"
-  | "flourish";
+export type SkillId = "datawrapper" | "qgis" | "svelte" | "code" | "flourish";
 
 export type Skill = {
   id: SkillId;
@@ -11,7 +6,7 @@ export type Skill = {
   level: number;
 };
 
-export const skills: Skill[] = [
+const rawSkills: Skill[] = [
   {
     id: "datawrapper",
     logo: "/images/logos/DataWrapper-logo.png",
@@ -38,3 +33,5 @@ export const skills: Skill[] = [
     level: 7,
   },
 ];
+
+export const skills: Skill[] = [...rawSkills].sort((a, b) => b.level - a.level);

@@ -47,7 +47,7 @@ export const languages: Language[] = [
     id: "catalan",
     level: 2,
     color:
-      "color-mix(in srgb, var(--red-500) 65%, var(--blue-500))",
+      "var(--timeline-study)",
     defaultSelected: false,
   },
 ];

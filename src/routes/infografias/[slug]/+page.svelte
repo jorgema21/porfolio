@@ -285,11 +285,6 @@
     text-decoration: underline;
   }
 
-  .tools {
-    margin-top: var(--space-10);
-    padding-top: var(--space-6);
-    border-top: 1px solid var(--color-border);
-  }
   .tools h3 {
     margin-bottom: var(--space-3);
     font-size: var(--text-xs);
