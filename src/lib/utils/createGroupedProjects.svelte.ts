@@ -1,34 +1,38 @@
 import projects from "$lib/data/projects";
-import { SvelteMap } from "svelte/reactivity";
-
-type Project = (typeof projects)[number];
+import type { ProjectCategory, ProjectContent } from "$lib/types/project.types";
 
 export function createGroupedProjects(
-  category: Project["category"],
+  category: ProjectCategory,
   fallbackLabel: string,
 ) {
-  const sortById = (a: Project, b: Project) =>
+
+  const sortById = (a: ProjectContent, b: ProjectContent) =>
     Number(a.id.slice(1)) - Number(b.id.slice(1));
 
-  const filtered = () =>
-    projects.filter((p) => p.category === category).sort(sortById);
+  const groupedResult = $derived.by(() => {
+    const filtered = projects
+      .filter((p) => p.category === category)
+      .sort(sortById);
 
-  const grouped = () => {
+    const map = new Map<string, ProjectContent[]>();
 
-    const map = new SvelteMap<string, Project[]>();
-
-    for (const project of filtered()) {
+    for (const project of filtered) {
       const key = project.mediumStyle ?? fallbackLabel;
-
-      if (!map.has(key)) map.set(key, []);
-      map.get(key)!.push(project);
+      
+      let group = map.get(key);
+      if (!group) {
+        group = [];
+        map.set(key, group);
+      }
+      group.push(project);
     }
 
-    return Array.from(map, ([key, items]) => ({
-      key,
-      items,
-    }));
-  };
+    return Array.from(map, ([key, items]) => ({ key, items }));
+  });
 
-  return { grouped };
+  return {
+    get grouped() {
+      return groupedResult;
+    }
+  };
 }
