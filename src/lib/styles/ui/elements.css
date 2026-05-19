@@ -1,0 +1,76 @@
+.badge,
+.tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+}
+
+.tag {
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  background: var(--color-border);
+}
+
+.badge {
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  color: var(--badge-color, var(--color-text));
+  border: 1px solid var(--badge-color, var(--color-border));
+  background: var(--bg-soft);
+}
+
+.badge-outline {
+  color: var(--badge-color, var(--color-text));
+  border: 1px solid var(--badge-color, var(--color-text));
+  background: var(--bg-soft);
+}
+
+.divider {
+  position: relative;
+  width: 100%;
+  height: 1px;
+  margin: var(--space-10) 0;
+  background: var(--color-border);
+
+  &::after {
+    content: "✳";
+    position: absolute;
+    left: 50%;
+    top: -10px;
+    transform: translateX(-50%);
+    padding: 0 var(--space-3);
+    font-size: 10px;
+    color: var(--color-muted);
+    background: var(--color-white);
+  }
+}
+
+.link {
+  color: var(--blue-500);
+}
+
+.link-underline {
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 1px;
+    background: currentColor;
+    transition: width var(--transition);
+  }
+
+  &:hover {
+    color: var(--blue-300);
+
+    &::after {
+      width: 100%;
+    }
+  }
+}

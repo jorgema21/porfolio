@@ -24,7 +24,6 @@
     return () => clearInterval(interval);
   });
 
-  // Lógica de computación de propiedades
   const getProjectMeta = (project: HomeProject) => {
     const isInfographic = project.category === "infografia";
     const isExternal =
@@ -44,23 +43,17 @@
   {@const meta = getProjectMeta(project)}
 
   <a
-    class={`card ${project.variant}`}
+    class="card {project.variant}"
     href={meta.href ?? undefined}
     target={meta.isExternal ? "_blank" : undefined}
     rel={meta.isExternal ? "noopener noreferrer" : undefined}
     aria-disabled={!meta.canNavigate}
     tabindex={meta.canNavigate ? 0 : -1}
-    style={`
-      --col-start: ${project.colStart};
-      --col-span: ${project.colSpan};
-      --row-start: ${project.rowStart};
-      --row-span: ${project.rowSpan ?? 1};
-    `}
-    in:fly={{
-      y: 34,
-      duration: 2000,
-      easing: cubicOut,
-    }}
+    style:--col-start={project.colStart}
+    style:--col-span={project.colSpan}
+    style:--row-start={project.rowStart}
+    style:--row-span={project.rowSpan ?? 1}
+    in:fly={{ y: 34, duration: 2000, easing: cubicOut }}
   >
     {#if project.image && project.variant !== "list"}
       <div class="thumb">
@@ -69,7 +62,7 @@
     {/if}
 
     <div class="content">
-      <span class={`category ${project.category}`}>
+      <span class="category {project.category}">
         {$t.project.category[project.category as ProjectCategory]}
       </span>
 
@@ -92,6 +85,12 @@
     flex-direction: column;
     gap: var(--space-4);
     height: 100%;
+    background: var(--color-white);
+    border-radius: var(--card-radius);
+    text-align: left;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 
     grid-column-start: var(--col-start);
     grid-column-end: span var(--col-span);
@@ -99,34 +98,79 @@
     grid-row-end: span var(--row-span);
 
     will-change: transform, opacity;
+    transition:
+      transform var(--transition),
+      box-shadow var(--transition),
+      opacity var(--transition);
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+
+    &:focus-visible {
+      outline: none;
+      box-shadow: var(--focus-ring);
+    }
+
+    &[aria-disabled="true"] {
+      opacity: 0.6;
+      cursor: default;
+    }
+  }
+
+  .thumb {
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    aspect-ratio: 16/9;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform var(--transition);
+    }
+  }
+
+  .card:hover .thumb img {
+    transform: scale(1.03);
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .card.hero {
+    justify-content: flex-end;
   }
 
   .card.feature {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1.2fr 1fr;
     gap: var(--space-8);
     align-items: start;
-  }
-  .card.feature .content {
-    order: 1;
-  }
-  .card.feature .thumb {
-    order: 2;
+
+    .content {
+      order: 1;
+    }
+    .thumb {
+      order: 2;
+    }
   }
 
   .card.list {
     min-height: 100%;
+    flex-direction: row;
+    align-items: center;
+
+    .thumb {
+      width: 180px;
+      flex-shrink: 0;
+    }
   }
-  .thumb {
-    overflow: hidden;
-    border-radius: var(--radius-lg);
-  }
-  .thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
+
   .title {
     margin-top: var(--space-2);
     margin-bottom: var(--space-2);
@@ -134,26 +178,7 @@
     font: 500 var(--text-base) / 1.2 var(--font-serif);
     letter-spacing: -0.01em;
   }
-  .description {
-    margin-top: var(--space-2);
-    max-width: 50ch;
-    font: 350 var(--text-sm) var(--font-sans);
-  }
-  .category {
-    font: 600 var(--text-xs) var(--font-sans);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    opacity: 0.8;
-  }
-  .category.infografia {
-    color: var(--blue-500);
-  }
-  .category.estilo_de_vida {
-    color: var(--red-500);
-  }
-  .category.maternidad {
-    color: var(--pink-500);
-  }
+
   .card.hero .title {
     font-size: var(--text-2xl);
   }
@@ -164,10 +189,34 @@
   .card.list .title {
     font-size: var(--text-lg);
   }
+
+  .description {
+    margin-top: var(--space-2);
+    max-width: 50ch;
+    font: 350 var(--text-sm) var(--font-sans);
+    color: var(--color-text-muted, inherit);
+  }
+
+  .category {
+    font: 600 var(--text-xs) var(--font-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.8;
+
+    &.infografia {
+      color: var(--blue-500);
+    }
+    &.estilo_de_vida {
+      color: var(--red-500);
+    }
+    &.maternidad {
+      color: var(--pink-500);
+    }
+  }
+
   @media (max-width: 768px) {
     .card {
       gap: var(--space-3);
-
       grid-column-start: auto;
       grid-column-end: span 12;
       grid-row-start: auto;
@@ -176,21 +225,30 @@
 
     .card.feature {
       grid-template-columns: 1fr;
+
+      .content,
+      .thumb {
+        order: initial;
+      }
     }
-    .card.feature .content,
-    .card.feature .thumb {
-      order: initial;
+
+    .card.list {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .thumb {
+        width: 100%;
+      }
     }
+
     .card .title {
       font-size: var(--text-lg) !important;
       max-width: 100%;
     }
+
     .card .description {
       font-size: var(--text-sm);
       max-width: 100%;
-    }
-    .card .category {
-      font-size: var(--text-xs);
     }
   }
 </style>

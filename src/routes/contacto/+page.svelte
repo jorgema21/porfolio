@@ -69,4 +69,31 @@
     line-height: 1.7;
     color: var(--color-muted);
   }
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+
+    color: var(--color-muted);
+    font-size: var(--text-sm);
+    font-weight: 600;
+  }
+
+  .social-link img {
+    width: 18px;
+    height: 18px;
+    opacity: 0.8;
+    transition:
+      transform var(--transition),
+      opacity var(--transition);
+  }
+
+  .social-link:hover {
+    color: var(--color-text);
+  }
+
+  .social-link:hover img {
+    opacity: 1;
+    transform: translateY(-1px);
+  }
 </style>

@@ -206,6 +206,14 @@
 
     border-bottom: 1px solid var(--color-border);
   }
+  .input,
+  .select {
+    padding: 0.65rem 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-white);
+  }
+
   @media (max-width: 768px) {
     .insights {
       grid-template-columns: 1fr;
