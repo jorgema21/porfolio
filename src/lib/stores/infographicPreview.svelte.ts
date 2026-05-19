@@ -1,17 +1,17 @@
 import type { Infographic } from "$lib/data/infographics.data";
 
-type PreviewState = {
-  project: Infographic | null;
-};
-
-export const preview = $state<PreviewState>({
-  project: null
-});
+let currentProject = $state<Infographic | null>(null);
 
 export const openPreview = (project: Infographic) => {
-  preview.project = project;
+  currentProject = project;
 };
 
 export const closePreview = () => {
-  preview.project = null;
+  currentProject = null;
+};
+
+export const preview = {
+  get project() {
+    return currentProject;
+  },
 };

@@ -1,15 +1,15 @@
-let image = $state<string | null>(null);
+let currentImage = $state<string | null>(null);
 
-export function openLightbox(src: string) {
-  image = src;
-}
+export const openLightbox = (src: string) => {
+  currentImage = src;
+};
 
-export function closeLightbox() {
-  image = null;
-}
+export const closeLightbox = () => {
+  currentImage = null;
+};
 
 export const lightbox = {
   get image() {
-    return image;
-  }
+    return currentImage;
+  },
 };
