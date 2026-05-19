@@ -6,7 +6,7 @@
   import { ROLE_MAP } from "$lib/config/roles";
   import { formatDate } from "$lib/utils/formatDate";
   import { createProjectView } from "$lib/infographics/project.view";
-  import { infographics as infographicsI18n } from "$lib/i18n/dictionaries/infographics.i18n"; // 🚀 Recuperamos el diccionario de medios
+  import { infographics as infographicsI18n } from "$lib/i18n/dictionaries/infographics.i18n";
   import type { ProjectContent } from "$lib/types/project.types";
 
   const { data } = $props<{ data: { project: ProjectContent } }>();

@@ -1,5 +1,3 @@
-// src/lib/data/languages.data.ts
-
 export type LanguageId =
   | "spanish"
   | "english"
@@ -46,8 +44,7 @@ export const languages: Language[] = [
   {
     id: "catalan",
     level: 2,
-    color:
-      "var(--timeline-study)",
+    color: "var(--timeline-study)",
     defaultSelected: false,
   },
 ];

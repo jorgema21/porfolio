@@ -23,7 +23,6 @@ export interface HomeProject {
 }
 
 const projects = [
-  // 🏆 SECCIÓN REJILLA HOME (Mantiene posiciones Grid explícitas)
   {
     id: "p1",
     slug: "roland-garros-sin-nadal",
@@ -136,7 +135,6 @@ const projects = [
     colSpan: 12,
     rowStart: 7,
   },
-  // FEATURES MIDDLE
   {
     id: "p9",
     slug: "proyecto-9",
@@ -151,7 +149,6 @@ const projects = [
     rowStart: 8,
   },
 
-  // LIST BLOCK
   {
     id: "p10",
     externalUrl: "proyecto-10",
@@ -190,7 +187,6 @@ const projects = [
     rowStart: 14,
   },
 
-  // HERO BOTTOM
   {
     id: "p13",
     slug: "proyecto-13",
@@ -206,7 +202,6 @@ const projects = [
     rowSpan: 3,
   },
 
-  // FINAL GRID
   {
     id: "p14",
     slug: "proyecto-14",
@@ -527,7 +522,6 @@ const projects = [
     homeVisible: false,
   },
 
-  //estilo
   {
     id: "p40",
     externalUrl: "proyecto-40",

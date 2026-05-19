@@ -7,7 +7,6 @@
   let progress = $state(0);
   let visibleItems = $state<boolean[]>(timeline.map(() => false));
 
-  // Caché de posiciones absolutas (recalculadas en resize)
   let itemTops: number[] = [];
   let containerTop = 0;
   let containerHeight = 0;
@@ -29,11 +28,9 @@
   const update = () => {
     const middle = window.scrollY + window.innerHeight / 2;
 
-    // Progreso de la línea
     const raw = middle - containerTop;
     progress = Math.max(0, Math.min(raw, containerHeight));
 
-    // Visibilidad exacta por elemento
     visibleItems = itemTops.map((top) => middle >= top + 40);
   };
 

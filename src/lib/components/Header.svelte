@@ -44,7 +44,6 @@
   const toggleMenu = () => (mobileOpen = !mobileOpen);
   const closeMenu = () => (mobileOpen = false);
 
-  // ✨ microoptimización i18n
   const navLabel = (key: keyof typeof $t.layout.nav) => $t.layout.nav[key];
 </script>
 
@@ -58,7 +57,6 @@
 </svelte:head>
 
 <header class="site-header">
-  <!-- HAMBURGER -->
   {#if visible >= 1}
     <button
       class="hamburger"
@@ -75,14 +73,12 @@
     </button>
   {/if}
 
-  <!-- LOGO -->
   {#if visible >= 1}
     <h1 class="logo" in:fly={flyIn}>
       <a href="{base}/">{$t.layout.nav.mi_porfolio}</a>
     </h1>
   {/if}
 
-  <!-- DESKTOP NAV -->
   {#if visible >= 2}
     <nav class="nav desktop-nav" in:fly={{ ...flyIn, delay: 100 }}>
       {#each navItems as item (item.key)}
@@ -91,7 +87,6 @@
     </nav>
   {/if}
 
-  <!-- LANG -->
   {#if visible >= 3}
     <button
       type="button"
@@ -111,7 +106,6 @@
     </button>
   {/if}
 
-  <!-- MOBILE NAV -->
   {#if mobileOpen}
     <nav
       class="mobile-nav"

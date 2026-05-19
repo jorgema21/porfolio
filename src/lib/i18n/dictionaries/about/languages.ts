@@ -1,5 +1,3 @@
-// src/lib/i18n/dictionaries/about/languages.ts
-
 import type { LanguageId } from "$lib/data/about/languages.data";
 
 type LanguageContent = {
@@ -7,10 +5,7 @@ type LanguageContent = {
   levelLabel: string;
 };
 
-export type LanguageLocale = Record<
-  LanguageId,
-  LanguageContent
-> & {
+export type LanguageLocale = Record<LanguageId, LanguageContent> & {
   scale: {
     beginner: string;
     professional: string;

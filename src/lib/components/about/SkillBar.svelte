@@ -10,13 +10,11 @@
   let open = $state(false);
   const toggle = () => (open = !open);
 
-  // Caché de traducción reactiva
   const content = $derived($t.skills[skill.id as SkillId]);
 </script>
 
 <div class="skill">
   <button class="skill-header" onclick={toggle}>
-    <!-- LEFT -->
     <div class="skill-main">
       {#if skill.logo}
         <img
@@ -33,17 +31,14 @@
       </div>
     </div>
 
-    <!-- BAR -->
     <div class="skill-bar" aria-hidden="true">
       {#each { length: 10 } as _, i (i)}
         <span class="segment" class:filled={i < skill.level}></span>
       {/each}
     </div>
 
-    <!-- LEVEL -->
     <span class="skill-level">{skill.level}/10</span>
 
-    <!-- ICON -->
     <span class:open class="chevron" aria-hidden="true"> + </span>
   </button>
 

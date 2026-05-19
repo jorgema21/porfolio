@@ -7,7 +7,7 @@
   const introLines = $derived($t.home.intro);
 </script>
 
-<main class="layout">
+<div class="layout">
   <section class="home-intro">
     <p>
       {#each introLines as line, i (i)}
@@ -19,17 +19,14 @@
   <section class="home-grid section">
     <AnimatedZone items={homeProjects} />
   </section>
-</main>
+</div>
 
 <style>
   .layout {
     display: grid;
     gap: var(--space-8);
-
     max-width: var(--content-width);
-
     margin-inline: auto;
-
     padding-inline: var(--space-4);
   }
 
@@ -55,7 +52,6 @@
     .home-grid {
       grid-template-columns: 1fr;
     }
-
     .home-intro {
       font-size: var(--text-xs);
     }

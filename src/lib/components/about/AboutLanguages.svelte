@@ -15,18 +15,14 @@
       : [...selected, id];
   };
 
-  // ⚡ Lookup optimizado
   const selectedSet = $derived(new Set(selected));
 
-  // 📦 Idiomas activos
   const activeLanguages = $derived(
     languages.filter((l) => selectedSet.has(l.id)),
   );
 
-  // 🌍 Traducciones
   const dict = $t.languages;
 
-  // 📊 Círculos declarativos + OPTIMIZACIÓN: Inyectamos los datos del idioma aquí directamente
   const circles = $derived(
     Array.from({ length: MAX_LEVEL }, (_, i) => {
       const level = i + 1;
@@ -36,7 +32,6 @@
       return {
         level,
         color: topLanguage?.color ?? "var(--color-border)",
-        // Solo mostramos la etiqueta si el idioma coincide exactamente con este nivel de la escala
         showLabel: isExactMatch && topLanguage,
         langId: topLanguage?.id,
       };
@@ -64,7 +59,6 @@
   aria-labelledby="languages-title"
   bind:this={languagesSection}
 >
-  <!-- SELECTORS -->
   <div class="languages-selector" role="group">
     {#each languages as language, i (language.id)}
       <button
@@ -81,7 +75,6 @@
     {/each}
   </div>
 
-  <!-- CHART -->
   <div class="languages-chart">
     <div class="languages-scale">
       <span class="scale-label">{dict.scale.beginner}</span>
@@ -93,7 +86,6 @@
             class:visible
             style={`background:${circle.color}; --i:${i + 5}`}
           >
-            <!-- OPTIMIZACIÓN: Eliminamos el bucle interno usando la condición directa -->
             {#if circle.showLabel && circle.langId}
               <span
                 class="language-label"

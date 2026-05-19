@@ -5,20 +5,15 @@ import globals from "globals";
 
 export default ts.config(
   {
-    // Reemplaza por completo al archivo .eslintignore
     ignores: ["node_modules/", ".svelte-kit/", "build/", "dist/"],
   },
 
-  // JS base
   js.configs.recommended,
 
-  // TS base
   ...ts.configs.recommended,
 
-  // Svelte base
   ...svelte.configs["flat/recommended"],
 
-  // Configuración global y de entorno
   {
     languageOptions: {
       globals: {
@@ -28,7 +23,6 @@ export default ts.config(
     },
   },
 
-  // Configuración de parseadores para Svelte 5 (Componentes y Archivos de Estado)
   {
     files: ["**/*.svelte", "**/*.svelte.ts", "**/*.svelte.js"],
     languageOptions: {
@@ -41,7 +35,6 @@ export default ts.config(
     },
   },
 
-  // Tus reglas personalizadas
   {
     rules: {
       "svelte/require-each-key": "error",
@@ -50,7 +43,6 @@ export default ts.config(
       "svelte/no-ignored-unsubscribe": "warn",
       "svelte/no-navigation-without-resolve": "off",
 
-      // Ignora variables sin usar si empiezan con un guion bajo
       "@typescript-eslint/no-unused-vars": [
         "error",
         {

@@ -33,8 +33,8 @@ const config = {
       base: "/porfolio",
     },
     prerender: {
-      handleHttpError: "warn", // Ignora imágenes rotas
-      handleUnseenRoutes: "ignore", // Ignora los enlaces a los 22 proyectos vacíos
+      handleHttpError: "warn",
+      handleUnseenRoutes: "ignore",
     },
   },
 };

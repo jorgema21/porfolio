@@ -19,7 +19,7 @@ const sorters = {
   date: (a: Infographic, b: Infographic) => {
     const tA = a.date ? Date.parse(a.date) : 0;
     const tB = b.date ? Date.parse(b.date) : 0;
-    return tB - tA; // Más reciente primero por defecto
+    return tB - tA;
   },
   apartado: (a: Infographic, b: Infographic) =>
     (a.apartado ?? "").localeCompare(b.apartado ?? ""),
@@ -30,7 +30,6 @@ const sorters = {
 export function getFilteredList(filters: Filters, lang: Lang): Infographic[] {
   const q = filters.search.trim().toLowerCase();
 
-  // 1. Filtrado en una sola pasada de CPU
   const list = infographics.filter((p) => {
     const matchSearch = !q || p.title[lang].toLowerCase().includes(q);
 
