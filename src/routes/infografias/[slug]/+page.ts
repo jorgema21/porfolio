@@ -52,12 +52,15 @@ export const load: PageLoad = async ({ params }) => {
   };
 };
 
-export const entries: EntryGenerator = () => {
-  return [
-    { slug: "roland-garros-sin-nadal" },
-    { slug: "adios-xavi" },
-    { slug: "incendio-tenerife" },
-  ];
+export const entries: EntryGenerator = async () => {
+  const modules = import.meta.glob("/src/content/infografias/*/meta.json");
+
+  const slugs = Object.keys(modules).map((path) => {
+    const parts = path.split("/");
+    return { slug: parts[parts.length - 2] };
+  });
+
+  return slugs;
 };
 
 export const prerender = true;
