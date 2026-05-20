@@ -129,7 +129,7 @@
     padding: var(--space-6) var(--space-8);
     margin-bottom: var(--space-8);
     background: var(--color-white);
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: var(--border-1);
     overflow: visible;
   }
 
@@ -137,7 +137,6 @@
     margin: 0;
     font-family: var(--font-serif);
     font-size: var(--text-xl);
-    letter-spacing: 0.5px;
     cursor: default;
     transition: opacity var(--transition-fast);
   }
@@ -282,7 +281,7 @@
     box-sizing: border-box;
     padding: 0 var(--space-4) var(--space-6);
     background: var(--color-white);
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: var(--border-1);
   }
   @media (max-width: 860px) {
     .site-header {

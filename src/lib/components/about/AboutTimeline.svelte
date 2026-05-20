@@ -107,7 +107,7 @@
     position: absolute;
     top: 0;
     left: 50%;
-    width: 4px;
+    width: var(--space-1);
     transform: translateX(-50%);
   }
 
@@ -204,7 +204,7 @@
     position: relative;
     padding: var(--space-4);
     margin: var(--space-4) 0;
-    border: 1px solid var(--color-border);
+    border: var(--border-1);
     border-bottom: 1px solid currentColor;
     border-radius: var(--radius-lg);
     background: var(--color-white);
@@ -226,13 +226,13 @@
   .timeline-card h3 {
     margin: 0;
     font-size: var(--text-base);
-    line-height: 1.2;
+    line-height: var(--lh-titles);
     color: currentColor;
   }
 
   .timeline-card p {
     margin-top: var(--space-3);
-    line-height: 1.7;
+    line-height: var(--lh-base);
     color: var(--color-muted);
     font-size: var(--text-sm);
   }

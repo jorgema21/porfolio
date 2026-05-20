@@ -140,12 +140,12 @@
     place-items: center;
     width: 28px;
     height: 28px;
-    border: 1px solid var(--color-border);
+    border: var(--border-1);
     border-radius: var(--radius-md);
     background: var(--color-white);
     color: var(--color-black);
     font-size: var(--text-base);
-    line-height: 1;
+    line-height: var(--lh-solid);
     cursor: pointer;
     opacity: 0.8;
     z-index: 6;
@@ -214,7 +214,7 @@
 
     .preview-content p {
       font-size: var(--text-sm);
-      line-height: 1.5;
+      line-height: var(--lh-base);
     }
   }
 </style>

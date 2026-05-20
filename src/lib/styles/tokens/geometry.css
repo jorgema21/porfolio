@@ -17,6 +17,9 @@
 
   --focus-ring: 0 0 0 3px color-mix(in oklch, var(--blue-300) 25%, transparent);
   --preview-shadow: 0 40px 100px rgb(0 0 0 / 35%);
+  --border-1: 1px solid var(--color-border);
+  --border-2: 2px solid var(--color-border);
+  --border-blue: 1px solid var(--blue-500);
 
   --content-width: 720px;
   --page-intro-max: 75ch;

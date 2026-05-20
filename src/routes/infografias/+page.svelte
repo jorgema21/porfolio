@@ -176,7 +176,7 @@
     appearance: none;
     cursor: pointer;
     padding-right: 2rem;
-    border-left: 1px solid var(--color-border);
+    border-left: var(--border-1);
     border-radius: var(--radius-md);
     background-color: var(--bg-soft);
     background-image: linear-gradient(
@@ -189,13 +189,13 @@
       calc(100% - 14px) center,
       calc(100% - 8px) center;
     background-repeat: no-repeat;
-    background-size: 6px 6px;
+    background-size: var(--space-2) var(--space-2);
   }
   .toolbar button {
     border-radius: var(--radius-sm);
     margin: 0;
-    padding: 5px var(--space-2);
-    border: 1px solid var(--color-border);
+    padding: var(--space-2);
+    border: var(--border-1);
     cursor: pointer;
   }
   .group-title {
@@ -204,12 +204,12 @@
     margin: var(--space-8) 0 var(--space-4);
     padding-bottom: var(--space-2);
 
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: var(--border-1);
   }
   .input,
   .select {
     padding: var(--space-3);
-    border: 1px solid var(--color-border);
+    border: var(--border-1);
     border-radius: var(--radius-md);
     background: var(--color-white);
     font: inherit;

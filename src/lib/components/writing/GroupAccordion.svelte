@@ -65,7 +65,7 @@
     margin-bottom: var(--space-3);
 
     border: none;
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: var(--border-1);
     background: none;
 
     cursor: pointer;

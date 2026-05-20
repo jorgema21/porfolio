@@ -60,13 +60,13 @@
     margin: 0;
 
     font-size: var(--text-xl);
-    line-height: 1.2;
+    line-height: var(--lh-compact);
   }
 
   .contact-card__content p {
     margin: 0;
 
-    line-height: 1.7;
+    line-height: var(--lh-base);
     color: var(--color-muted);
   }
   .social-link {

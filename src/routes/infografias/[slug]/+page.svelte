@@ -164,7 +164,7 @@
     margin-inline: auto;
     padding: 0 var(--space-6) var(--space-12);
     font-family: var(--font-serif);
-    line-height: 1.75;
+    line-height: var(--lh-base);
   }
   .cover-wrapper,
   .image-wrapper button {
@@ -230,7 +230,7 @@
 
   .tag {
     background-color: var(--bg-soft);
-    border: 1px solid var(--color-border);
+    border: var(--border-1);
     border-radius: var(--radius-sm);
     padding: var(--space-1) var(--space-2);
     display: inline-flex;
@@ -261,7 +261,7 @@
   .text {
     margin-block: var(--space-6);
     font-size: var(--text-base);
-    line-height: 1.85;
+    line-height: var(--lh-base);
   }
   .image {
     width: 100%;
@@ -298,7 +298,7 @@
 
   .tools h3 {
     margin-bottom: var(--space-3);
-    font-size: var(--text-xs);
+    font-size: var(--text-sm);
     letter-spacing: 0.1em;
     text-transform: uppercase;
     color: var(--color-muted);

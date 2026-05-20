@@ -167,8 +167,8 @@
     color: var(--language-color);
     pointer-events: none;
     white-space: nowrap;
-    line-height: 1.1;
-    gap: 1px;
+    line-height: var(--lh-solid);
+    gap: var(--space-1);
 
     transform: translateY(12px) translateX(-10%)
       rotate(var(--label-rotate, -45deg));
@@ -198,7 +198,7 @@
 
   .language-toggle {
     padding: var(--space-3) var(--space-4);
-    border: 1px solid var(--color-border);
+    border: var(--border-1);
     border-radius: var(--radius-full);
     background: var(--color-white);
     color: var(--color-text);

@@ -125,7 +125,7 @@
     justify-content: space-between;
     gap: var(--cta-gap);
     margin-top: var(--space-12);
-    border-top: 1px solid var(--color-border);
+    border-top: var(--border-1);
     padding-top: var(--space-6);
   }
 
@@ -147,7 +147,7 @@
     max-width: 20ch;
     font-size: var(--text-sm);
     font-weight: 600;
-    line-height: 1.2;
+    line-height: var(--lh-base);
   }
 
   .button {

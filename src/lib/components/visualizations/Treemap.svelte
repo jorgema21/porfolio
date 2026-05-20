@@ -128,7 +128,7 @@
           <text
             x="8"
             y="18"
-            font-size="12"
+            font-size="15"
             fill={getTextColor(leaf.value)}
             opacity={$progress}
             pointer-events="none"

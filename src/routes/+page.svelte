@@ -34,7 +34,7 @@
     text-align: center;
     font-family: var(--font-serif);
     font-size: var(--text-sm);
-    line-height: 1.7;
+    line-height: var(--lh-base);
 
     p {
       margin: 0;

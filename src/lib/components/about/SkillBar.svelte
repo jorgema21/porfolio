@@ -60,7 +60,7 @@
 <style>
   .skill {
     position: relative;
-    border-top: 1px solid var(--color-border);
+    border-top: var(--border-1);
     transition:
       background var(--transition),
       border-color var(--transition);
@@ -141,7 +141,7 @@
       font-family: var(--font-sans);
       font-size: var(--text-base);
       font-weight: 700;
-      line-height: 1.1;
+      line-height: var(--lh-titles);
       letter-spacing: -0.02em;
       color: var(--color-text);
     }
@@ -149,7 +149,7 @@
     .skill-description-mobile {
       display: none;
       font-size: var(--text-sm);
-      line-height: 1.5;
+      line-height: var(--lh-base);
       color: var(--color-muted);
     }
 
@@ -212,7 +212,7 @@
     .skill-description {
       margin: 0;
       font-size: var(--text-sm);
-      line-height: 1.8;
+      line-height: var(--lh-base);
       color: var(--color-muted);
     }
 
@@ -224,7 +224,7 @@
       color: var(--color-muted);
 
       li {
-        line-height: 1.65;
+        line-height: var(--lh-base);
 
         &::marker {
           color: var(--bg-hard);
