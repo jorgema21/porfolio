@@ -39,7 +39,6 @@ export const infographics: Infographic[] = projects
       return project as Infographic;
     }
 
-    // Validamos que el apartado configurado en el meta.json exista de verdad en tu config
     if (meta.apartado && !(meta.apartado in APARTADOS)) {
       throw new Error(
         `[Portfolio Error] El apartado "${meta.apartado}" en el proyecto "${project.slug}" no existe en apartados.config.ts`,

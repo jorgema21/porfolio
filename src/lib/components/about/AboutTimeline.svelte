@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { onMount } from "svelte";
   import { timeline } from "$lib/data/about/timeline.data";
   import { t } from "$lib/i18n";
 
@@ -49,7 +48,9 @@
     update();
   };
 
-  onMount(() => {
+  $effect(() => {
+    if (!container) return;
+
     measure();
     update();
 

@@ -7,7 +7,7 @@
     }
   }
 
-  function focusOnMount(node: HTMLElement) {
+  function autoFocus(node: HTMLElement) {
     node.focus();
   }
 </script>
@@ -19,7 +19,7 @@
     role="dialog"
     aria-modal="true"
     tabindex="0"
-    use:focusOnMount
+    use:autoFocus
     onclick={closeLightbox}
     onkeydown={handleKeydown}
   >
@@ -32,6 +32,7 @@
     </button>
   </div>
 {/if}
+
 
 <style>
   .lightbox-overlay {

@@ -96,4 +96,8 @@
     opacity: 1;
     transform: translateY(-1px);
   }
+
+  .button {
+    width: 300px;
+  }
 </style>

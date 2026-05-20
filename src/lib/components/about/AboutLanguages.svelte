@@ -20,8 +20,7 @@
     languages.filter((l) => selectedSet.has(l.id)),
   );
 
-  // 🔥 SOLUCIÓN AL BUG: Volvemos el diccionario reactivo con $derived
-  // Cada vez que el almacén $t cambie de idioma, dict se recalculará automáticamente
+
   const dict = $derived($t.languages);
 
   const circles = $derived(
