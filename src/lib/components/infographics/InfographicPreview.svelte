@@ -144,7 +144,7 @@
     border-radius: var(--radius-md);
     background: var(--color-white);
     color: var(--color-black);
-    font-size: 1rem;
+    font-size: var(--text-base);
     line-height: 1;
     cursor: pointer;
     opacity: 0.8;

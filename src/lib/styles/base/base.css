@@ -1,3 +1,17 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+input,
+select,
+textarea,
+button {
+  font: inherit;
+  color: inherit;
+}
+
 body {
   margin: 0;
   font-family: var(--font-sans);
@@ -5,6 +19,9 @@ body {
   line-height: 1.6;
   color: var(--color-text);
   background: var(--color-white);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 main {

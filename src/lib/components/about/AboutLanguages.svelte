@@ -20,7 +20,6 @@
     languages.filter((l) => selectedSet.has(l.id)),
   );
 
-
   const dict = $derived($t.languages);
 
   const circles = $derived(
@@ -168,7 +167,7 @@
     gap: var(--space-3);
   }
   .language-toggle {
-    padding: 0.65rem 1rem;
+    padding: var(--space-3) var(--space-4);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-full);
     background: var(--color-white);
@@ -220,13 +219,17 @@
     transform: translateY(0) translateX(-10%)
       rotate(var(--label-rotate, -45deg));
   }
+  .scale-label {
+    font-size: var(--text-sm);
+    color: var(--color-muted);
+  }
 
   @media (max-width: 768px) {
     .languages {
       gap: var(--space-6);
     }
     .languages-selector {
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
       overflow-x: auto;
       padding-bottom: var(--space-2);
       scrollbar-width: none;
@@ -236,7 +239,7 @@
     }
     .language-toggle {
       flex: 0 0 auto;
-      padding: 0.55rem 0.9rem;
+      padding: var(--space-2) var(--space-3);
       font-size: var(--text-xs);
     }
     .languages-chart {

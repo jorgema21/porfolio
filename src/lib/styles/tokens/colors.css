@@ -16,6 +16,7 @@
   --color-black: #000;
 
   --bg-soft: rgb(0 0 0 / 3%);
+  --bg-hard: rgb(0 0 0 / 30%);
 
   --overlay-gradient: linear-gradient(
     to top,

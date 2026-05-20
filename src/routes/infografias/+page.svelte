@@ -208,10 +208,13 @@
   }
   .input,
   .select {
-    padding: 0.65rem 0.75rem;
+    padding: var(--space-3);
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     background: var(--color-white);
+    font: inherit;
+    color: var(--color-text);
+    transition: border-color var(--transition);
   }
 
   @media (max-width: 768px) {

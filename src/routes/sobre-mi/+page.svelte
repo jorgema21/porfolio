@@ -145,8 +145,12 @@
 
   .about-cta__text {
     max-width: 20ch;
-    font-size: var(--text-lg);
+    font-size: var(--text-sm);
     font-weight: 600;
     line-height: 1.2;
+  }
+
+  .button {
+    padding: var(--space-2);
   }
 </style>

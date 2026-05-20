@@ -225,7 +225,7 @@
 
   .timeline-card h3 {
     margin: 0;
-    font-size: 1.15rem;
+    font-size: var(--text-base);
     line-height: 1.2;
     color: currentColor;
   }
