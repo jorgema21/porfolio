@@ -1,22 +1,22 @@
 :root {
+  --blue-hue: 243;
+  --blue-chroma: 0.24;
 
-  --blue-100: #e6f0ff;
-  --blue-300: #7aa7ff;
-  --blue-500: #2563eb;
-  --blue-700: #1e3a8a;
+  --blue-100: oklch(93% 0.05 var(--blue-hue));
+  --blue-300: oklch(72% 0.16 var(--blue-hue));
+  --blue-500: oklch(53% var(--blue-chroma) var(--blue-hue));
+  --blue-700: oklch(35% 0.18 var(--blue-hue));
 
   --red-500: #dc2626;
-
-  --green-500: #15803d; 
-
+  --green-500: #15803d;
   --pink-500: #db2777;
 
   --color-text: #1a1a1a;
   --color-muted: #595959;
   --color-border: #e5e7eb;
 
-  --color-white: #fff;
-  --color-black: #000;
+  --color-white: #ffffff;
+  --color-black: #000000;
 
   --bg-soft: rgb(0 0 0 / 3%);
   --bg-hard: rgb(0 0 0 / 30%);
@@ -25,13 +25,12 @@
     to top,
     rgb(0 0 0 / 90%),
     rgb(0 0 0 / 40%) 70%,
-    transparent 100%
+    transparent 100
   );
-
-  --overlay-text-color: #ffffff; 
+  --overlay-text-color: #ffffff;
 
   --timeline-study: #7c3aed;
   --timeline-infography: var(--blue-500);
   --timeline-style: var(--green-500);
-  --timeline-motherhood: var(--pink-500);
+  --timeline-motherhood: #c026d3;
 }

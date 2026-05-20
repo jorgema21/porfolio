@@ -18,7 +18,7 @@ const createApartado = (
   chroma: number,
   options: { lightness?: number; darkLightness?: number; order?: number } = {},
 ): ApartadoConfig => {
-  const { lightness = 55, darkLightness = 70, order = 999 } = options;
+  const { lightness = 52, darkLightness = 72, order = 999 } = options;
   return {
     label,
     color: {
@@ -30,18 +30,17 @@ const createApartado = (
 };
 
 export const APARTADOS = {
-
   sports: createApartado({ es: "Deportes", en: "Sports" }, 25, 0.22, {
     order: 1,
   }),
-  culture: createApartado({ es: "Cultura", en: "Culture" }, 310, 0.18, {
-    lightness: 60,
+  culture: createApartado({ es: "Cultura", en: "Culture" }, 300, 0.18, {
+    lightness: 53,
     darkLightness: 75,
     order: 2,
   }),
-  genero: createApartado({ es: "Género", en: "Gender" }, 340, 0.18, {
-    lightness: 65,
-    darkLightness: 78,
+  genero: createApartado({ es: "Género", en: "Gender" }, 325, 0.2, {
+    lightness: 54,
+    darkLightness: 76,
     order: 3,
   }),
   environment: createApartado(
@@ -50,8 +49,8 @@ export const APARTADOS = {
     0.18,
     { order: 4 },
   ),
-  economia: createApartado({ es: "Economía", en: "Economy" }, 85, 0.15, {
-    lightness: 60,
+  economia: createApartado({ es: "Economía", en: "Economy" }, 85, 0.14, {
+    lightness: 50,
     darkLightness: 75,
     order: 5,
   }),
@@ -60,7 +59,7 @@ export const APARTADOS = {
   }),
   internacional: createApartado(
     { es: "Internacional", en: "International" },
-    180,
+    195,
     0.08,
     { order: 7 },
   ),
