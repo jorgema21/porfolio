@@ -193,7 +193,7 @@
   }
 
   .preview-link:hover {
-    color: var(--blue-300);
+    color: var(--blue-500);
   }
 
   @media (max-width: 768px) {

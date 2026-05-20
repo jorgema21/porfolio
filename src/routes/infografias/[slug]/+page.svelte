@@ -245,7 +245,7 @@
     transition: color var(--transition);
   }
   .medium-link:hover {
-    color: var(--blue-300);
+    color: var(--blue-500);
   }
   .apartado {
     --badge-color: var(--apartado-color);

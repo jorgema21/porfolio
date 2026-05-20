@@ -1,15 +1,18 @@
 :root {
+
   --blue-100: #e6f0ff;
   --blue-300: #7aa7ff;
   --blue-500: #2563eb;
   --blue-700: #1e3a8a;
 
-  --red-500: #ef4444;
+  --red-500: #dc2626;
 
-  --pink-500: #d977a8;
+  --green-500: #15803d; 
+
+  --pink-500: #db2777;
 
   --color-text: #1a1a1a;
-  --color-muted: #666;
+  --color-muted: #595959;
   --color-border: #e5e7eb;
 
   --color-white: #fff;
@@ -20,14 +23,15 @@
 
   --overlay-gradient: linear-gradient(
     to top,
-    rgb(0 0 0 / 85%),
-    transparent 60%
+    rgb(0 0 0 / 90%),
+    rgb(0 0 0 / 40%) 70%,
+    transparent 100%
   );
 
-  --overlay-text-color: rgb(255 255 255 / 75%);
+  --overlay-text-color: #ffffff; 
 
-  --timeline-study: #8e44ad;
-  --timeline-infography: var(--blue-300);
-  --timeline-style: var(--red-500);
+  --timeline-study: #7c3aed;
+  --timeline-infography: var(--blue-500);
+  --timeline-style: var(--green-500);
   --timeline-motherhood: var(--pink-500);
 }

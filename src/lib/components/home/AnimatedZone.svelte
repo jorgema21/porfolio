@@ -207,7 +207,7 @@
       color: var(--blue-500);
     }
     &.estilo_de_vida {
-      color: var(--red-500);
+      color: var(--green-500);
     }
     &.maternidad {
       color: var(--pink-500);
