@@ -1,27 +1,23 @@
 import { APARTADOS } from "$lib/config/apartados.config";
-import type { ProjectContent } from "$lib/types/project.types";
+import type { InfographicRuntime, Lang } from "$lib/types/project.types";
 
-export const createProjectView = (
-  lang: "es" | "en",
-) => {
-  const mediumLabel = (
-    p: ProjectContent,
-  ) => p.medium?.[lang] ?? null;
+export const createProjectView = (lang: Lang) => {
+  const mediumLabel = (p: InfographicRuntime) => {
+    return p.mediumKey ?? null;
+  };
 
-  const apartadoLabel = (
-    p: ProjectContent,
-  ) =>
-    p.apartado
-      ? APARTADOS[p.apartado]?.label[lang] ??
-        null
-      : null;
+  const apartadoLabel = (p: InfographicRuntime) => {
+    const key = p.apartado;
+    if (key && key in APARTADOS) {
+      return APARTADOS[key]?.label[lang] ?? null;
+    }
+    return null;
+  };
 
-  const title = (p: ProjectContent) =>
-    p.title[lang];
+  const title = (p: InfographicRuntime) => p.title[lang];
 
-  const text = (
-    t?: Record<string, string>,
-  ) => (t ? t[lang] ?? t.es ?? "" : "");
+  const text = (t?: Record<string, string>) =>
+    t ? (t[lang] ?? t.es ?? "") : "";
 
   return {
     mediumLabel,

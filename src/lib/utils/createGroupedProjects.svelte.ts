@@ -5,7 +5,6 @@ export function createGroupedProjects(
   category: ProjectCategory,
   fallbackLabel: string,
 ) {
-
   const sortById = (a: ProjectContent, b: ProjectContent) =>
     Number(a.id.slice(1)) - Number(b.id.slice(1));
 
@@ -14,25 +13,20 @@ export function createGroupedProjects(
       .filter((p) => p.category === category)
       .sort(sortById);
 
-    const map = new Map<string, ProjectContent[]>();
+    const groups = Object.groupBy(
+      filtered,
+      (project) => project.mediumStyle ?? fallbackLabel,
+    );
 
-    for (const project of filtered) {
-      const key = project.mediumStyle ?? fallbackLabel;
-      
-      let group = map.get(key);
-      if (!group) {
-        group = [];
-        map.set(key, group);
-      }
-      group.push(project);
-    }
-
-    return Array.from(map, ([key, items]) => ({ key, items }));
+    return Object.entries(groups).map(([key, items]) => ({
+      key,
+      items: items ?? [],
+    }));
   });
 
   return {
     get grouped() {
       return groupedResult;
-    }
+    },
   };
 }

@@ -1,8 +1,11 @@
 import projects from "$lib/data/projects";
 import { error } from "@sveltejs/kit";
 import type { Block } from "$lib/types/block";
-import type { InfographicRuntime } from "$lib/types/infographics-runtime";
-import type { InfographicMeta } from "$lib/data/infographics.data";
+import type {
+  InfographicRuntime,
+  InfographicMeta,
+} from "$lib/types/project.types";
+import type { PageLoad, EntryGenerator } from "./$types";
 
 const contentModules = import.meta.glob(
   "/src/content/infografias/**/content.json",
@@ -13,7 +16,7 @@ const metaModules = import.meta.glob("/src/content/infografias/**/meta.json", {
   import: "default",
 });
 
-export async function load({ params }) {
+export const load: PageLoad = async ({ params }) => {
   const base = projects.find((p) => p.slug === params.slug);
   if (!base || !base.slug) throw error(404, "Project not found");
 
@@ -47,9 +50,9 @@ export async function load({ params }) {
       ...(medium ? { medium } : {}),
     } satisfies InfographicRuntime,
   };
-}
+};
 
-export const entries = () => {
+export const entries: EntryGenerator = () => {
   return [
     { slug: "roland-garros-sin-nadal" },
     { slug: "adios-xavi" },

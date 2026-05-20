@@ -1,7 +1,6 @@
 <script lang="ts">
   import { t } from "$lib/i18n";
   import { languages, type LanguageId } from "$lib/data/about/languages.data";
-  import { onMount } from "svelte";
 
   const MAX_LEVEL = 10;
 
@@ -21,7 +20,9 @@
     languages.filter((l) => selectedSet.has(l.id)),
   );
 
-  const dict = $t.languages;
+  // 🔥 SOLUCIÓN AL BUG: Volvemos el diccionario reactivo con $derived
+  // Cada vez que el almacén $t cambie de idioma, dict se recalculará automáticamente
+  const dict = $derived($t.languages);
 
   const circles = $derived(
     Array.from({ length: MAX_LEVEL }, (_, i) => {
@@ -38,10 +39,12 @@
     }),
   );
 
-  let languagesSection: HTMLElement;
+  let languagesSection = $state<HTMLElement | null>(null);
   let visible = $state(false);
 
-  onMount(() => {
+  $effect(() => {
+    if (!languagesSection) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         visible = entry.isIntersecting;
@@ -49,7 +52,8 @@
       { threshold: 0.35, rootMargin: "0px 0px -10% 0px" },
     );
 
-    if (languagesSection) observer.observe(languagesSection);
+    observer.observe(languagesSection);
+
     return () => observer.disconnect();
   });
 </script>

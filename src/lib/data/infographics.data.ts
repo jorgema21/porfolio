@@ -1,22 +1,6 @@
 import projects from "$lib/data/projects";
-import { APARTADOS, type ApartadoKey } from "$lib/config/apartados.config";
-
-export interface InfographicMeta {
-  apartado?: ApartadoKey;
-  mediumKey?: string;
-  usos?: {
-    es: string;
-    en: string;
-  }[];
-  colaboracion?: {
-    tipo: "solo" | "equipo";
-    rol: string[];
-  };
-  tools?: string[];
-  date?: string;
-  url?: string;
-  featured?: boolean;
-}
+import { APARTADOS } from "$lib/config/apartados.config";
+import type { InfographicMeta } from "$lib/types/project.types";
 
 export type Infographic = Omit<
   (typeof projects)[number],
@@ -55,6 +39,7 @@ export const infographics: Infographic[] = projects
       return project as Infographic;
     }
 
+    // Validamos que el apartado configurado en el meta.json exista de verdad en tu config
     if (meta.apartado && !(meta.apartado in APARTADOS)) {
       throw new Error(
         `[Portfolio Error] El apartado "${meta.apartado}" en el proyecto "${project.slug}" no existe en apartados.config.ts`,
