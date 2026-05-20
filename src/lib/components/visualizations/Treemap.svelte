@@ -80,7 +80,7 @@
   });
 
   const getTextColor = (value: number) =>
-    value > colorMeta.max * 0.4 ? "white" : "var(--color-text)";
+    value > colorMeta.max * 0.4 ? "var(--color-white)" : "var(--color-text)";
 
   const updateMouse = (e: MouseEvent) => {
     mouseX = e.clientX;
@@ -128,7 +128,6 @@
           <text
             x="8"
             y="18"
-            font-size="15"
             fill={getTextColor(leaf.value)}
             opacity={$progress}
             pointer-events="none"
@@ -179,27 +178,26 @@
       height 0.6s cubic-bezier(0.16, 1, 0.3, 1),
       fill 0.3s ease,
       opacity var(--transition-fast);
-  }
 
-  .treemap-rect:hover {
-    opacity: 0.9;
-  }
+    &:hover {
+      opacity: 0.9;
+    }
 
-  .treemap-rect:active {
-    opacity: 0.85;
-  }
+    &:active {
+      opacity: 0.85;
+    }
 
-  .treemap-rect:focus-visible {
-    outline: 2px solid var(--blue-700);
-    outline-offset: -2px;
+    &:focus-visible {
+      outline: 2px solid var(--blue-700);
+      outline-offset: -2px;
+    }
   }
 
   .treemap-text {
-    font-family:
-      system-ui,
-      -apple-system,
-      sans-serif;
+    font-family: var(--font-sans);
+    font-weight: 700;
     user-select: none;
+    font-size: 11px;
   }
 
   .tooltip {
@@ -230,5 +228,9 @@
       max-width: 80vw;
       white-space: normal;
     }
+  }
+  @media (max-width: 400px) {
+    .treemap-text {
+    font-size: 15px;}
   }
 </style>
