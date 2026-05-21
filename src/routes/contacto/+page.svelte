@@ -1,23 +1,23 @@
 <script lang="ts">
-  import { t } from "$lib/i18n";
+  import { t } from "$lib/i18n/index.svelte";
   import { base } from "$app/paths";
 </script>
 
-<main class="page">
-  <h1>{$t.contact.title}</h1>
+<div class="page">
+  <h1>{t.contact.title}</h1>
 
   <p class="page-intro">
-    {$t.contact.text}
+    {t.contact.text}
   </p>
 
   <section class="card contact-card">
     <div class="contact-card__content stack-sm">
-      <h2>{$t.contact.subtitle}</h2>
-      <p>{$t.contact.description}</p>
+      <h2>{t.contact.subtitle}</h2>
+      <p>{t.contact.description}</p>
     </div>
 
     <a class="button" href="mailto:tuemail@email.com">
-      {$t.contact.cta}
+      {t.contact.cta}
     </a>
   </section>
 
@@ -32,7 +32,7 @@
       GitHub
     </a>
   </section>
-</main>
+</div>
 
 <style>
   .contact-card {

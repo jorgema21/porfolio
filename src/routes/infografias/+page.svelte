@@ -8,14 +8,14 @@
   import { fly } from "svelte/transition";
   import { cubicOut } from "svelte/easing";
 
-  import { t, lang } from "$lib/i18n";
+  import { t, langSignal } from "$lib/i18n/index.svelte";
   import { APARTADOS } from "$lib/config/apartados.config";
   import { closePreview } from "$lib/stores/infographicPreview.svelte";
   import { useInfographicsPage } from "./useInfographicsPage";
 
   type ApartadoKey = keyof typeof APARTADOS;
 
-  const info = useInfographicsPage(() => $lang);
+  const info = useInfographicsPage(() => langSignal.current);
 
   const totalWorks = $derived(
     (info.treemap?.apartados ?? []).reduce((acc, item) => acc + item.value, 0),
@@ -28,32 +28,32 @@
   });
 </script>
 
-<main class="page">
-  <h1>{$t.infographics.title}</h1>
+<div class="page">
+  <h1>{t.infographics.title}</h1>
 
   <p class="page-intro">
-    <RichText value={$t.infographics.intro} />
+    <RichText value={t.infographics.intro} />
   </p>
 
   <p class="page-intro">
-    <RichText value={$t.infographics.description} />
+    <RichText value={t.infographics.description} />
   </p>
 
   <section class="insights-header">
     <h2>
-      {$t.infographics.insights.totalWorks} | {totalWorks}
+      {t.infographics.insights.totalWorks} | {totalWorks}
     </h2>
   </section>
 
   <section class="insights">
     <Treemap
-      title={$t.infographics.filters.apartados}
+      title={t.infographics.filters.apartados}
       data={info.treemap.apartados}
       getLabel={(k) => info.labelApartado(k as ApartadoKey)}
     />
 
     <Treemap
-      title={$t.infographics.filters.mediums}
+      title={t.infographics.filters.mediums}
       data={info.treemap.mediums}
       getLabel={info.labelMedium}
     />
@@ -62,19 +62,19 @@
   <div class="toolbar">
     <input
       class="input"
-      placeholder={$t.infographics.searchPlaceholder}
+      placeholder={t.infographics.searchPlaceholder}
       bind:value={info.filters.search}
     />
 
     <div class="filter-field">
       <label for="sort-filter" class="sr-only">
-        {$t.infographics.sort.label}
+        {t.infographics.sort.label}
       </label>
 
       <select id="sort-filter" class="select" bind:value={info.filters.sortBy}>
         {#each info.sortOptions as opt (opt.value)}
           <option value={opt.value}>
-            {$t.infographics.sort[opt.key]}
+            {t.infographics.sort[opt.key]}
           </option>
         {/each}
       </select>
@@ -126,7 +126,7 @@
       {/each}
     </section>
   {/if}
-</main>
+</div>
 
 <InfographicPreview />
 

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { base } from "$app/paths";
-  import { t, lang, toggleLang } from "$lib/i18n";
+  import { t, langSignal, toggleLang } from "$lib/i18n/index.svelte";
   import { fly } from "svelte/transition";
   import { cubicOut } from "svelte/easing";
 
@@ -44,7 +44,7 @@
   const toggleMenu = () => (mobileOpen = !mobileOpen);
   const closeMenu = () => (mobileOpen = false);
 
-  const navLabel = (key: keyof typeof $t.layout.nav) => $t.layout.nav[key];
+  const navLabel = (key: keyof typeof t.layout.nav) => t.layout.nav[key];
 </script>
 
 <svelte:head>
@@ -75,7 +75,7 @@
 
   {#if visible >= 1}
     <h1 class="logo" in:fly={flyIn}>
-      <a href="{base}/">{$t.layout.nav.mi_porfolio}</a>
+      <a href="{base}/">{t.layout.nav.mi_porfolio}</a>
     </h1>
   {/if}
 
@@ -92,14 +92,14 @@
       type="button"
       class="lang-switch"
       onclick={toggleLang}
-      aria-label={$lang === "es"
+      aria-label={langSignal.current === "es"
         ? "Cambiar idioma a inglés"
         : "Switch language to Spanish"}
-      aria-pressed={$lang === "en"}
+      aria-pressed={langSignal.current === "en"}
       in:fly={{ ...flyIn, delay: 150 }}
     >
       <img
-        src={`${base}${$lang === "es" ? "/images/flags/gb.svg" : "/images/flags/es.svg"}`}
+        src={`${base}${langSignal.current === "es" ? "/images/flags/gb.svg" : "/images/flags/es.svg"}`}
         alt=""
         aria-hidden="true"
       />

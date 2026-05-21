@@ -1,5 +1,5 @@
 import type { Block } from "$lib/types/block";
-import type { Lang } from "$lib/i18n/lang";
+import type { Lang } from "$lib/i18n/lang.svelte";
 
 export const getImageSrc = (block: Block, slug: string) => {
   if (block.type !== "image" && block.type !== "hero") {

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { t } from "$lib/i18n";
+  import { t } from "$lib/i18n/index.svelte";
   import { skills } from "$lib/data/about/skills.data";
   import SkillBar from "$lib/components/about/SkillBar.svelte";
   import AboutTimeline from "$lib/components/about/AboutTimeline.svelte";
@@ -25,27 +25,27 @@
   });
 </script>
 
-<main class="page">
-  <h1>{$t.about.title}</h1>
+<div class="page">
+  <h1>{t.about.title}</h1>
 
-  <p class="page-intro"><RichText value={$t.about.intro} /></p>
-  <p class="page-intro"><RichText value={$t.about.focus} /></p>
+  <p class="page-intro"><RichText value={t.about.intro} /></p>
+  <p class="page-intro"><RichText value={t.about.focus} /></p>
 
   <section class="about-section">
-    <h2>{$t.about.timelineTitle}</h2>
+    <h2>{t.about.timelineTitle}</h2>
 
     <div class="timeline-legend cluster">
-      <span class="legend-item study">{$t.about.study}</span>
-      <span class="legend-item infography">{$t.about.infographics}</span>
-      <span class="legend-item style">{$t.about.lifestyle}</span>
-      <span class="legend-item motherhood">{$t.about.motherhood}</span>
+      <span class="legend-item study">{t.about.study}</span>
+      <span class="legend-item infography">{t.about.infographics}</span>
+      <span class="legend-item style">{t.about.lifestyle}</span>
+      <span class="legend-item motherhood">{t.about.motherhood}</span>
     </div>
 
     <AboutTimeline />
   </section>
 
   <section class="about-section" bind:this={skillsSection}>
-    <h2>{$t.about.skillsTitle}</h2>
+    <h2>{t.about.skillsTitle}</h2>
 
     {#each skills as skill, i (skill.id)}
       <div class="skill-wrapper" class:visible={isSectionVisible} style:--i={i}>
@@ -55,19 +55,19 @@
   </section>
 
   <section class="about-section">
-    <h2>{$t.about.languagesTitle}</h2>
+    <h2>{t.about.languagesTitle}</h2>
     <AboutLanguages />
   </section>
 
   <section class="about-section about-cta">
     <div class="about-cta__content">
       <span class="about-cta__eyebrow">Open to work</span>
-      <p class="about-cta__text">{$t.about.cta}</p>
+      <p class="about-cta__text">{t.about.cta}</p>
     </div>
 
-    <button class="button">{$t.about.downloadCV}</button>
+    <button class="button">{t.about.downloadCV}</button>
   </section>
-</main>
+</div>
 
 <style>
   .skill-wrapper {

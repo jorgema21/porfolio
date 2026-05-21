@@ -2,7 +2,7 @@
   import { base } from "$app/paths";
   import { fly } from "svelte/transition";
   import { cubicOut } from "svelte/easing";
-  import { lang, t } from "$lib/i18n";
+  import { langSignal, t } from "$lib/i18n/index.svelte";
   import type { HomeProject, ProjectCategory } from "$lib/data/projects";
 
   const { items } = $props<{ items: HomeProject[] }>();
@@ -56,23 +56,32 @@
     in:fly={{ y: 34, duration: 2000, easing: cubicOut }}
   >
     {#if project.image && project.variant !== "list"}
-      <div class="thumb">
-        <img src={meta.imageSrc} alt={project.title[$lang]} loading="lazy" />
+      <div
+        class="thumb"
+        style="aspect-ratio: 16 / 10; background-color: var(--bg-soft); overflow: hidden;"
+      >
+        <img
+          src={meta.imageSrc}
+          alt={project.title[langSignal.current]}
+          loading="lazy"
+          decoding="async"
+          style="width: 100%; height: 100%; object-fit: cover; display: block;"
+        />
       </div>
     {/if}
 
     <div class="content">
       <span class="category {project.category}">
-        {$t.project.category[project.category as ProjectCategory]}
+        {t.project.category[project.category as ProjectCategory]}
       </span>
 
       <h2 class="title">
-        {project.title[$lang]}
+        {project.title[langSignal.current]}
       </h2>
 
       {#if project.description}
         <p class="description">
-          {project.description[$lang]}
+          {project.description[langSignal.current]}
         </p>
       {/if}
     </div>

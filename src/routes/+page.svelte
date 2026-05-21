@@ -1,10 +1,10 @@
 <script lang="ts">
   import projects from "$lib/data/projects";
   import AnimatedZone from "$lib/components/home/AnimatedZone.svelte";
-  import { t } from "$lib/i18n";
+  import { t } from "$lib/i18n/index.svelte";
 
   const homeProjects = $derived(projects.filter((p) => p.homeVisible ?? true));
-  const introLines = $derived($t.home.intro);
+  const introLines = $derived(t.home.intro);
 </script>
 
 <div class="layout">

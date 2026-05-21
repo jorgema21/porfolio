@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Infographic } from "$lib/data/infographics.data";
-  import { lang } from "$lib/i18n/lang";
+  import { langSignal } from "$lib/i18n/index.svelte";
   import { formatDate } from "$lib/utils/formatDate";
   import { infographics as infographicsI18n } from "$lib/i18n/dictionaries/infographics.i18n";
   import { openPreview } from "$lib/stores/infographicPreview.svelte";
@@ -12,11 +12,15 @@
 
   const medium = $derived(
     project.mediumKey
-      ? infographicsI18n[$lang].mediums[project.mediumKey as MediumKey]
+      ? infographicsI18n[langSignal.current].mediums[
+          project.mediumKey as MediumKey
+        ]
       : null,
   );
 
-  const date = $derived(project.date ? formatDate(project.date, $lang) : null);
+  const date = $derived(
+    project.date ? formatDate(project.date, langSignal.current) : null,
+  );
 
   const hasMeta = $derived(!!(medium || date));
 </script>
@@ -25,13 +29,13 @@
   <div class="thumb">
     <img
       src={`${base}${project.image}`}
-      alt={project.title[$lang]}
+      alt={project.title[langSignal.current]}
       loading="lazy"
       decoding="async"
     />
 
     <div class="overlay">
-      <h3>{project.title[$lang]}</h3>
+      <h3>{project.title[langSignal.current]}</h3>
 
       {#if hasMeta}
         <div class="meta cluster">

@@ -1,6 +1,6 @@
 <script lang="ts">
   import { timeline } from "$lib/data/about/timeline.data";
-  import { t } from "$lib/i18n";
+  import { t } from "$lib/i18n/index.svelte";
 
   let container = $state<HTMLElement | null>(null);
   let progress = $state(0);
@@ -83,8 +83,8 @@
 
       <div class="timeline-card">
         <span class="timeline-date">{item.date}</span>
-        <h3>{$t.timeline[item.id].title}</h3>
-        <p>{$t.timeline[item.id].description}</p>
+        <h3>{t.timeline[item.id].title}</h3>
+        <p>{t.timeline[item.id].description}</p>
       </div>
     </article>
   {/each}

@@ -5,29 +5,19 @@
   import Footer from "$lib/components/Footer.svelte";
   import { page } from "$app/stores";
   import { browser } from "$app/environment";
-  import { lang } from "$lib/i18n/lang";
+
+  import { langSignal } from "$lib/i18n/lang.svelte";
 
   const { children } = $props();
 
-  if (browser) {
-    const saved = localStorage.getItem("lang");
-    if (saved === "es" || saved === "en") {
-      lang.set(saved);
-    } else {
-      const detected = navigator.language.startsWith("es") ? "es" : "en";
-      lang.set(detected);
-      localStorage.setItem("lang", detected);
-    }
+  if (browser && !localStorage.getItem("lang")) {
+    const detected = navigator.language.startsWith("es") ? "es" : "en";
+    langSignal.set(detected);
   }
-
-  let currentLang = $state("es");
-  lang.subscribe((value) => {
-    currentLang = value;
-  });
 
   $effect(() => {
     if (browser) {
-      document.documentElement.lang = currentLang;
+      document.documentElement.lang = langSignal.current;
     }
   });
 
@@ -36,7 +26,6 @@
       $page.url.pathname.endsWith("/portfolio") ||
       $page.url.pathname.endsWith("/portfolio/"),
   );
-
   let currentPath = $derived($page.url.pathname.split("/").pop() || "Inicio");
 </script>
 
@@ -78,7 +67,6 @@
 <ImageLightbox />
 
 <style>
-
   @media (prefers-reduced-motion: reduce) {
     :global(*),
     :global(*::before),

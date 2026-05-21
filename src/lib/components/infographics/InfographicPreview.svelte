@@ -1,7 +1,7 @@
 <script lang="ts">
   import { base } from "$app/paths";
   import { preview, closePreview } from "$lib/stores/infographicPreview.svelte";
-  import { lang } from "$lib/i18n/lang";
+  import { langSignal } from "$lib/i18n/index.svelte";
   import { formatDate } from "$lib/utils/formatDate";
   import { infographics as infographicsI18n } from "$lib/i18n/dictionaries/infographics.i18n";
   import { fade, scale } from "svelte/transition";
@@ -13,7 +13,9 @@
   type MediumKey = keyof typeof infographicsI18n.es.mediums;
 
   const medium = (key?: string) =>
-    key ? (infographicsI18n[$lang].mediums[key as MediumKey] ?? key) : null;
+    key
+      ? (infographicsI18n[langSignal.current].mediums[key as MediumKey] ?? key)
+      : null;
 </script>
 
 {#if preview.project}
@@ -44,8 +46,10 @@
 
       <img
         src={`${base}${preview.project.image}`}
-        alt={preview.project.title[$lang]}
+        alt={preview.project.title[langSignal.current]}
         class="preview-image"
+        loading="lazy"
+        decoding="async"
       />
 
       <div class="preview-content">
@@ -59,7 +63,7 @@
           {/if}
 
           {#if preview.project.date}
-            <span>{formatDate(preview.project.date, $lang)}</span>
+            <span>{formatDate(preview.project.date, langSignal.current)}</span>
           {/if}
 
           {#if preview.project.colaboracion}
@@ -77,12 +81,12 @@
             class="preview-link link-underline"
             href={`${base}/infografias/${preview.project.slug}`}
           >
-            {preview.project.title[$lang]} ↗
+            {preview.project.title[langSignal.current]} ↗
           </a>
         </h2>
 
         {#if preview.project.description}
-          <p>{preview.project.description[$lang]}</p>
+          <p>{preview.project.description[langSignal.current]}</p>
         {/if}
       </div>
     </div>
@@ -127,9 +131,10 @@
 
   .preview-image {
     width: 100%;
-    height: auto;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
     display: block;
+    background-color: var(--bg-soft);
   }
 
   .preview-close {

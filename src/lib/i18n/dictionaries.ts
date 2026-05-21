@@ -1,45 +1,45 @@
-import { layout } from "./dictionaries/layout";
 import { about } from "./dictionaries/about";
+import { languages } from "./dictionaries/about/languages";
+import { skills } from "./dictionaries/about/skills";
+import { timeline } from "./dictionaries/about/timeline";
 import { contact } from "./dictionaries/contact";
-import { metaarticle } from "./dictionaries/meta-article";
+import { home } from "./dictionaries/home";
 import { infographics } from "./dictionaries/infographics.i18n";
-import { style } from "./dictionaries/style.i18n";
+import { layout } from "./dictionaries/layout";
+import { metaarticle } from "./dictionaries/meta-article";
 import { motherhood } from "./dictionaries/motherhood";
 import { project } from "./dictionaries/project";
-import { home } from "./dictionaries/home";
-
-
-import { timeline } from "./dictionaries/about/timeline";
-import { skills } from "./dictionaries/about/skills";
-import { languages } from "./dictionaries/about/languages";
+import { style } from "./dictionaries/style.i18n";
 
 export const dictionaries = {
   es: {
-    layout: layout.es,
     about: about.es,
     contact: contact.es,
-    metaarticle: metaarticle.es,
-    infographics: infographics.es,
-    motherhood: motherhood.es,
-    style: style.es,
-    project: project.es,
     home: home.es,
-    timeline: timeline.es,
-    skills: skills.es, 
+    infographics: infographics.es,
     languages: languages.es,
+    layout: layout.es,
+    metaarticle: metaarticle.es,
+    motherhood: motherhood.es,
+    project: project.es,
+    skills: skills.es,
+    style: style.es,
+    timeline: timeline.es,
   },
   en: {
-    layout: layout.en,
     about: about.en,
     contact: contact.en,
-    metaarticle: metaarticle.en,
-    infographics: infographics.en,
-    motherhood: motherhood.en,
-    style: style.en,
-    project: project.en,
     home: home.en,
-    timeline: timeline.en,
-    skills: skills.en,
+    infographics: infographics.en,
     languages: languages.en,
+    layout: layout.en,
+    metaarticle: metaarticle.en,
+    motherhood: motherhood.en,
+    project: project.en,
+    skills: skills.en,
+    style: style.en,
+    timeline: timeline.en,
   },
 } as const;
+
+export type Dictionary = typeof dictionaries.es;

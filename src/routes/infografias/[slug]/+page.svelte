@@ -1,7 +1,7 @@
 <script lang="ts">
   import { base } from "$app/paths";
   import { openLightbox } from "$lib/stores/lightbox.svelte";
-  import { lang, t } from "$lib/i18n";
+  import { langSignal, t } from "$lib/i18n/index.svelte";
   import { APARTADOS } from "$lib/config/apartados.config";
   import { ROLE_MAP } from "$lib/config/roles";
   import { formatDate } from "$lib/utils/formatDate";
@@ -11,7 +11,7 @@
 
   const { data } = $props<{ data: { project: ProjectContent } }>();
 
-  const view = $derived(createProjectView($lang));
+  const view = $derived(createProjectView(langSignal.current));
   const project = $derived(data?.project);
   const colab = $derived(project?.colaboracion);
 
@@ -24,7 +24,7 @@
 
   const mediumLabel = $derived.by(() => {
     if (!project?.mediumKey) return null;
-    const dict = infographicsI18n[$lang].mediums;
+    const dict = infographicsI18n[langSignal.current].mediums;
     return project.mediumKey in dict
       ? dict[project.mediumKey as keyof typeof dict]
       : null;
@@ -68,14 +68,16 @@
           >
         {/if}
         {#if project?.mediumKey && project?.date}<span>·</span>{/if}
-        {#if project?.date}<span>{formatDate(project.date, $lang)}</span>{/if}
+        {#if project?.date}<span
+            >{formatDate(project.date, langSignal.current)}</span
+          >{/if}
       </div>
 
       <div class="meta-row meta-center">
         <div class="meta-colabs">
           {#if colab?.tipo}
             <span class="tag"
-              >{$t.metaarticle.colaboracion[colab.tipo as "solo" | "equipo"] ??
+              >{t.metaarticle.colaboracion[colab.tipo as "solo" | "equipo"] ??
                 colab.tipo}</span
             >
           {/if}
@@ -83,9 +85,9 @@
           {#each colab?.rol ?? [] as roleKey (roleKey)}
             {@const role = ROLE_MAP[roleKey as keyof typeof ROLE_MAP]}
             {#if role}
-              <span class="tag" title={role.label[$lang]}>
+              <span class="tag" title={role.label[langSignal.current]}>
                 <span>{role.icon}</span>
-                <span>{role.label[$lang]}</span>
+                <span>{role.label[langSignal.current]}</span>
               </span>
             {/if}
           {/each}
@@ -98,7 +100,7 @@
         {#if project?.usos?.length}
           <div class="meta-usos">
             {#each project.usos as uso (uso.es)}
-              <span class="tag">{uso[$lang]}</span>
+              <span class="tag">{uso[langSignal.current]}</span>
             {/each}
           </div>
         {/if}
@@ -121,20 +123,20 @@
 
       {#if block.type === "hero" || block.type === "image"}
         <div class="image-wrapper">
-          {#if block.caption?.[$lang]}<span class="image-title"
-              >{block.caption[$lang]}</span
+          {#if block.caption?.[langSignal.current]}<span class="image-title"
+              >{block.caption[langSignal.current]}</span
             >{/if}
           <button onclick={() => openLightbox(src)} aria-label="Ampliar imagen">
             <img
               class="image image--{block.type}"
               {src}
-              alt={block.alt?.[$lang] ?? ""}
+              alt={block.alt?.[langSignal.current] ?? ""}
               loading="lazy"
             />
           </button>
         </div>
       {:else if block.type === "text"}
-        {@const val = block.value?.[$lang] ?? block.value?.es}
+        {@const val = block.value?.[langSignal.current] ?? block.value?.es}
         <p class="text">{Array.isArray(val) ? val.join(" ") : (val ?? "")}</p>
       {:else if block.type === "divider"}
         <div class="divider"></div>
@@ -144,7 +146,7 @@
 
   {#if project?.tools?.length}
     <footer class="tools">
-      <h3>{$t.metaarticle.tools}</h3>
+      <h3>{t.metaarticle.tools}</h3>
       <ul>
         {#each project.tools as tool (tool)}
           <li class="tag">{tool}</li>

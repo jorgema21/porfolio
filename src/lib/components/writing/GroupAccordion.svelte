@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { lang } from "$lib/i18n";
+  import { langSignal } from "$lib/i18n/index.svelte";
   import type { TranslatedText } from "$lib/types/project.types";
 
   interface AccordionItem {
@@ -41,10 +41,10 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {item.title[$lang]} ↗
+                {item.title[langSignal.current]} ↗
               </a>
             {:else}
-              <span>{item.title[$lang]}</span>
+              <span>{item.title[langSignal.current]}</span>
             {/if}
           </li>
         {/each}

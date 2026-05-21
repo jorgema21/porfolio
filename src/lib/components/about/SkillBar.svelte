@@ -1,7 +1,7 @@
 <script lang="ts">
   import { base } from "$app/paths";
   import { slide } from "svelte/transition";
-  import { t } from "$lib/i18n";
+  import { t } from "$lib/i18n/index.svelte";
   import type { Skill } from "$lib/data/about/skills.data";
   import type { SkillId } from "$lib/data/about/skills.data";
 
@@ -10,7 +10,7 @@
   let open = $state(false);
   const toggle = () => (open = !open);
 
-  const content = $derived($t.skills[skill.id as SkillId]);
+  const content = $derived(t.skills[skill.id as SkillId]);
 </script>
 
 <div class="skill">
@@ -22,6 +22,8 @@
           src={`${base}${skill.logo}`}
           alt={`${content.name} logo`}
           loading="lazy"
+          decoding="async"
+          style="aspect-ratio: 1 / 1; object-fit: contain;"
         />
       {/if}
 

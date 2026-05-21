@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { t } from "$lib/i18n";
+  import { t } from "$lib/i18n/index.svelte";
   import { languages, type LanguageId } from "$lib/data/about/languages.data";
 
   const MAX_LEVEL = 10;
@@ -20,7 +20,7 @@
     languages.filter((l) => selectedSet.has(l.id)),
   );
 
-  const dict = $derived($t.languages);
+  const dict = $derived(t.languages);
 
   const circles = $derived(
     Array.from({ length: MAX_LEVEL }, (_, i) => {
