@@ -5,6 +5,7 @@ type InfographicsDict = {
   searchPlaceholder: string;
 
   sort: {
+    label: string;
     newest: string;
     title: string;
     section: string;
@@ -34,6 +35,7 @@ export const infographics: Record<"es" | "en", InfographicsDict> = {
     searchPlaceholder: "Buscar...",
 
     sort: {
+      label: "Ordenar por",
       newest: "Más recientes",
       title: "A-Z",
       section: "Apartado",
@@ -93,6 +95,7 @@ export const infographics: Record<"es" | "en", InfographicsDict> = {
     searchPlaceholder: "Search...",
 
     sort: {
+      label: "Sort by",
       newest: "Newest",
       title: "A-Z",
       section: "Section",

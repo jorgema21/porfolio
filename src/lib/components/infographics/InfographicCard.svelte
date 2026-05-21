@@ -27,6 +27,7 @@
       src={`${base}${project.image}`}
       alt={project.title[$lang]}
       loading="lazy"
+      decoding="async"
     />
 
     <div class="overlay">
@@ -70,11 +71,14 @@
     width: 100%;
     overflow: hidden;
     border-radius: var(--radius-lg);
+    aspect-ratio: 16 / 9;
+    background-color: var(--bg-soft, #1a1a1a);
   }
 
   .thumb img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover;
     display: block;
   }
 

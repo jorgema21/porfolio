@@ -11,7 +11,8 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "eslint .",
-		"lint:fix": "eslint . --fix"
+		"lint:fix": "eslint . --fix",
+		"deploy": "npm run build && gh-pages -d build"
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",

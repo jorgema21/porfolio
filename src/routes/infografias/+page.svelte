@@ -66,13 +66,19 @@
       bind:value={info.filters.search}
     />
 
-    <select class="select" bind:value={info.filters.sortBy}>
-      {#each info.sortOptions as opt (opt.value)}
-        <option value={opt.value}>
-          {$t.infographics.sort[opt.key]}
-        </option>
-      {/each}
-    </select>
+    <div class="filter-field">
+      <label for="sort-filter" class="sr-only">
+        {$t.infographics.sort.label}
+      </label>
+
+      <select id="sort-filter" class="select" bind:value={info.filters.sortBy}>
+        {#each info.sortOptions as opt (opt.value)}
+          <option value={opt.value}>
+            {$t.infographics.sort[opt.key]}
+          </option>
+        {/each}
+      </select>
+    </div>
 
     <button
       class="control sort-dir"
@@ -206,6 +212,7 @@
 
     border-bottom: var(--border-1);
   }
+
   .input,
   .select {
     padding: var(--space-3);
