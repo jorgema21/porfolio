@@ -186,7 +186,7 @@
     small {
       font-size: var(--text-xs);
       color: var(--color-muted);
-      font-weight: 500;
+      font-weight: 400;
     }
   }
 
@@ -203,7 +203,7 @@
     background: var(--color-white);
     color: var(--color-text);
     font-size: var(--text-sm);
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
     transition:
       border-color var(--transition),

@@ -32,6 +32,8 @@
       alt={project.title[langSignal.current]}
       loading="lazy"
       decoding="async"
+      width="800"
+      height="450"
     />
 
     <div class="overlay">
@@ -81,7 +83,8 @@
 
   .thumb img {
     width: 100%;
-    height: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
     display: block;
   }

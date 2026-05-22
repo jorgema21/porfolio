@@ -50,6 +50,8 @@
         class="preview-image"
         loading="lazy"
         decoding="async"
+        width="450"
+        height="300"
       />
 
       <div class="preview-content">
@@ -131,6 +133,7 @@
 
   .preview-image {
     width: 100%;
+    height: auto;
     aspect-ratio: 16 / 9;
     object-fit: cover;
     display: block;

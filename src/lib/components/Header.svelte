@@ -47,15 +47,6 @@
   const navLabel = (key: keyof typeof t.layout.nav) => t.layout.nav[key];
 </script>
 
-<svelte:head>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Epunda+Slab:wght@300..900&family=Nunito+Sans:wght@200..1000&display=swap"
-    rel="stylesheet"
-  />
-</svelte:head>
-
 <header class="site-header">
   {#if visible >= 1}
     <button

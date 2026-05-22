@@ -56,16 +56,14 @@
     in:fly={{ y: 34, duration: 2000, easing: cubicOut }}
   >
     {#if project.image && project.variant !== "list"}
-      <div
-        class="thumb"
-        style="aspect-ratio: 16 / 10; background-color: var(--bg-soft); overflow: hidden;"
-      >
+      <div class="thumb">
         <img
           src={meta.imageSrc}
           alt={project.title[langSignal.current]}
           loading="lazy"
           decoding="async"
-          style="width: 100%; height: 100%; object-fit: cover; display: block;"
+          width="800"
+          height="450"
         />
       </div>
     {/if}
@@ -134,7 +132,8 @@
 
     img {
       width: 100%;
-      height: 100%;
+      height: auto;
+      aspect-ratio: 16/9;
       object-fit: cover;
       display: block;
       transition: transform var(--transition);

@@ -1,4 +1,7 @@
+@import "./base/fonts.css";
+
 @import "./tokens/index.css";
 @import "./ui/index.css";
 @import "./base/base.css";
 @import "./base/animations.css";
+

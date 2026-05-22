@@ -76,7 +76,7 @@
 
     color: var(--color-muted);
     font-size: var(--text-sm);
-    font-weight: 600;
+    font-weight: 700;
   }
 
   .social-link img {
