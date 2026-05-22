@@ -11,6 +11,9 @@
 </footer>
 
 <style>
+  footer.page-footer {
+    margin-top: auto;
+  }
   .page-footer {
     padding: var(--space-4);
 
