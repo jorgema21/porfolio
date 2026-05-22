@@ -39,8 +39,9 @@
   };
 </script>
 
-{#each items.slice(0, visibleCount) as project (project.id)}
+{#each items.slice(0, visibleCount) as project, i (project.id)}
   {@const meta = getProjectMeta(project)}
+  {@const isCritical = i < 2}
 
   <a
     class="card {project.variant}"
@@ -60,10 +61,11 @@
         <img
           src={meta.imageSrc}
           alt={project.title[langSignal.current]}
-          loading="lazy"
-          decoding="async"
           width="800"
           height="450"
+          decoding="async"
+          loading={isCritical ? "eager" : "lazy"}
+          fetchpriority={isCritical ? "high" : "low"}
         />
       </div>
     {/if}
@@ -209,7 +211,6 @@
     font: 600 var(--text-xs) var(--font-sans);
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    opacity: 0.8;
 
     &.infografia {
       color: var(--blue-500);

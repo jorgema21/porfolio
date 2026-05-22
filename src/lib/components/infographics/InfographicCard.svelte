@@ -6,7 +6,10 @@
   import { openPreview } from "$lib/stores/infographicPreview.svelte";
   import { base } from "$app/paths";
 
-  const { project } = $props<{ project: Infographic }>();
+  const { project, index = 0 } = $props<{
+    project: Infographic;
+    index?: number;
+  }>();
 
   type MediumKey = keyof typeof infographicsI18n.es.mediums;
 
@@ -23,6 +26,7 @@
   );
 
   const hasMeta = $derived(!!(medium || date));
+  const isCritical = $derived(index < 2);
 </script>
 
 <button class="infographics-card" onclick={() => openPreview(project)}>
@@ -30,10 +34,11 @@
     <img
       src={`${base}${project.image}`}
       alt={project.title[langSignal.current]}
-      loading="lazy"
-      decoding="async"
       width="800"
       height="450"
+      decoding="async"
+      loading={isCritical ? "eager" : "lazy"}
+      fetchpriority={isCritical ? "high" : "low"}
     />
 
     <div class="overlay">

@@ -51,13 +51,16 @@
   $effect(() => {
     if (!container) return;
 
-    measure();
-    update();
+    const timer = setTimeout(() => {
+      measure();
+      update();
+    }, 50);
 
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onResize);
 
     return () => {
+      clearTimeout(timer);
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onResize);
     };

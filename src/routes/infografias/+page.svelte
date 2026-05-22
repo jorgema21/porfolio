@@ -102,26 +102,26 @@
       <h2 class="group-title">{currentTitle}</h2>
 
       <section class="infographics-grid grouped">
-        {#each group.items as project (project.id)}
+        {#each group.items as project, i (project.id)}
           <div
             class="animated-card"
             animate:flip={{ duration: 400, easing: cubicOut }}
             transition:fly={{ y: 10, duration: 200, easing: cubicOut }}
           >
-            <InfographicCard {project} />
+            <InfographicCard {project} index={i} />
           </div>
         {/each}
       </section>
     {/each}
   {:else}
     <section class="infographics-grid">
-      {#each info.filtered as project (project.id)}
+      {#each info.filtered as project, i (project.id)}
         <div
           class="animated-card"
           animate:flip={{ duration: 350, easing: cubicOut }}
           transition:fly={{ y: 8, duration: 200, easing: cubicOut }}
         >
-          <InfographicCard {project} />
+          <InfographicCard {project} index={i} />
         </div>
       {/each}
     </section>

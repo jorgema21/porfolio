@@ -93,6 +93,9 @@
         src={`${base}${langSignal.current === "es" ? "/images/flags/gb.svg" : "/images/flags/es.svg"}`}
         alt=""
         aria-hidden="true"
+        width="20"
+        height="20"
+        style="display: inline-block; vertical-align: middle;"
       />
     </button>
   {/if}
