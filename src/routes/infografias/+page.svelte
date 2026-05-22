@@ -9,16 +9,14 @@
   import { cubicOut } from "svelte/easing";
 
   import { t, langSignal } from "$lib/i18n/index.svelte";
-  import { APARTADOS } from "$lib/config/apartados.config";
   import { closePreview } from "$lib/stores/infographicPreview.svelte";
-  import { useInfographicsPage } from "./useInfographicsPage";
 
-  type ApartadoKey = keyof typeof APARTADOS;
+  import { useInfographicsPage } from "./infographics.svelte";
 
   const info = useInfographicsPage(() => langSignal.current);
 
   const totalWorks = $derived(
-    (info.treemap?.apartados ?? []).reduce((acc, item) => acc + item.value, 0),
+    info.treemap.apartados.reduce((acc, item) => acc + item.value, 0),
   );
 
   $effect(() => {
@@ -49,13 +47,13 @@
     <Treemap
       title={t.infographics.filters.apartados}
       data={info.treemap.apartados}
-      getLabel={(k) => info.labelApartado(k as ApartadoKey)}
+      getLabel={(k) => info.groupLabel(k, "apartado")}
     />
 
     <Treemap
       title={t.infographics.filters.mediums}
       data={info.treemap.mediums}
-      getLabel={info.labelMedium}
+      getLabel={(k) => info.groupLabel(k, "medium")}
     />
   </section>
 

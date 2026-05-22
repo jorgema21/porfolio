@@ -1,31 +1,28 @@
 import projects from "$lib/data/projects";
 import { APARTADOS } from "$lib/config/apartados.config";
 import type { InfographicMeta } from "$lib/types/project.types";
-
-export type Infographic = Omit<
-  (typeof projects)[number],
-  keyof InfographicMeta
-> &
-  InfographicMeta;
+export interface Infographic extends Record<string, any>, InfographicMeta {
+  id: string;
+  slug: string;
+  category: string;
+}
 
 const metaModules = import.meta.glob<InfographicMeta>(
   "/src/content/infografias/**/meta.json",
-  {
-    eager: true,
-    import: "default",
-  },
+  { eager: true, import: "default" },
 );
 
-const metaBySlug: Record<string, InfographicMeta> = {};
+const metaBySlug = Object.entries(metaModules).reduce<
+  Record<string, InfographicMeta>
+>((acc, [path, content]) => {
+  const pathParts = path.split("/");
+  const slug = pathParts[pathParts.length - 2];
 
-const slugRegex = /\/infografias\/([^/]+)\/meta\.json$/;
-
-for (const path in metaModules) {
-  const match = path.match(slugRegex);
-  if (match) {
-    metaBySlug[match[1]] = metaModules[path];
+  if (slug) {
+    acc[slug] = content;
   }
-}
+  return acc;
+}, {});
 
 export const infographics: Infographic[] = projects
   .filter(
@@ -36,17 +33,20 @@ export const infographics: Infographic[] = projects
     const meta = metaBySlug[project.slug];
 
     if (!meta) {
+      console.warn(
+        `[Portfolio Warning] No se encontraron metadatos locales para el slug: "${project.slug}"`,
+      );
       return project as Infographic;
     }
 
     if (meta.apartado && !(meta.apartado in APARTADOS)) {
       throw new Error(
-        `[Portfolio Error] El apartado "${meta.apartado}" en el proyecto "${project.slug}" no existe en apartados.config.ts`,
+        `[Portfolio Error] El apartado "${meta.apartado}" asignado en el proyecto "${project.slug}" no está registrado en apartados.config.ts`,
       );
     }
 
     return {
       ...project,
       ...meta,
-    };
+    } as Infographic;
   });
