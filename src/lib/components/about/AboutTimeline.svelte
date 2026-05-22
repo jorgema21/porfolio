@@ -26,10 +26,9 @@
 
   const update = () => {
     const middle = window.scrollY + window.innerHeight / 2;
-
     const raw = middle - containerTop;
-    progress = Math.max(0, Math.min(raw, containerHeight));
 
+    progress = Math.max(0, Math.min(raw, containerHeight));
     visibleItems = itemTops.map((top) => middle >= top + 40);
   };
 
@@ -43,42 +42,34 @@
     });
   };
 
-  const onResize = () => {
-    measure();
-    update();
-  };
-
   $effect(() => {
     if (!container) return;
-
-    const timer = setTimeout(() => {
+    const observer = new ResizeObserver(() => {
       measure();
       update();
-    }, 50);
+    });
+    observer.observe(container);
 
     window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onResize);
 
     return () => {
-      clearTimeout(timer);
+      observer.disconnect();
       window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("resize", onResize);
     };
   });
 </script>
 
 <section class="timeline" bind:this={container}>
   <div class="timeline-line"></div>
-  <div class="timeline-progress" style={`height: ${progress}px`}></div>
+  <div class="timeline-progress" style:height="{progress}px"></div>
 
   {#each timeline as item, index (item.id)}
     {@const side = index % 2 === 0 ? "left" : "right"}
     {@const active = visibleItems[index]}
 
     <article
-      class={["timeline-item", side, active && "visible"]
-        .filter(Boolean)
-        .join(" ")}
+      class="timeline-item {side}"
+      class:visible={active}
       data-category={item.category}
     >
       <div class="timeline-branch"></div>

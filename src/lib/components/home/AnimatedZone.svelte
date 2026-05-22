@@ -230,11 +230,24 @@
       grid-column-end: span 12;
       grid-row-start: auto;
       grid-row-end: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:has(.category.infografia) {
+      order: 1;
+    }
+
+    .card:has(.category.estilo_de_vida) {
+      order: 2;
+    }
+
+    .card:has(.category.maternidad) {
+      order: 3;
     }
 
     .card.feature {
       grid-template-columns: 1fr;
-
       .content,
       .thumb {
         order: initial;
@@ -249,7 +262,6 @@
         width: 100%;
       }
     }
-
     .card .title {
       font-size: var(--text-lg) !important;
       max-width: 100%;

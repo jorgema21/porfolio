@@ -9,24 +9,13 @@
 
 	<title>Portfolio</title>
 
-	<!-- Preconexión rápida a los servidores de Google Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://gstatic.com" crossorigin />
 
-	<!-- LA CLAVE: Prepara la descarga asíncrona pero muta a hoja de estilos de forma nativa -->
-	<link 
-		rel="preload" 
-		href="https://googleapis.com" 
-		as="style" 
-		onload="this.onload=null;this.rel='stylesheet'"
-	/>
-	
-	<!-- Respaldo físico inmediato por si falla el JS o estamos en entornos locales de red (dev) -->
+	<link rel="preload" href="https://googleapis.com" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+
 	<noscript>
-		<link 
-			rel="stylesheet" 
-			href="https://googleapis.com" 
-		/>
+		<link rel="stylesheet" href="https://googleapis.com" />
 	</noscript>
 
 	%sveltekit.head%

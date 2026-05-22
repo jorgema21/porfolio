@@ -7,7 +7,7 @@
   const groupedData = createGroupedProjects("estilo_de_vida", "Otros");
 </script>
 
-<main class="page">
+<div class="page">
   <h1>{t.style.title}</h1>
 
   <RichText value={t.style.intro} />
@@ -15,4 +15,4 @@
   <RichText value={t.style.aim} />
 
   <GroupAccordion groups={groupedData.grouped} />
-</main>
+</div>

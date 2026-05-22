@@ -149,8 +149,4 @@
     font-weight: 700;
     line-height: var(--lh-base);
   }
-
-  .button {
-    padding: var(--space-2);
-  }
 </style>

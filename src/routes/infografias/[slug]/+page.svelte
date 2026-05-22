@@ -63,9 +63,24 @@
     <div class="meta-top">
       <div class="meta-row meta-left">
         {#if mediumLabel}
-          <a class="link-underline medium-link" href={project?.url ?? "#"}
-            >{mediumLabel} {project?.url ? "↗" : ""}</a
-          >
+          <a class="link-underline medium-link" href={project?.url ?? "#"}>
+            {mediumLabel}
+            {#if project?.url}
+              <svg
+                class="icon-external"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <line x1="7" y1="17" x2="17" y2="7"></line>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            {/if}
+          </a>
         {/if}
         {#if project?.mediumKey && project?.date}<span>·</span>{/if}
         {#if project?.date}<span
@@ -241,10 +256,14 @@
   .medium-link {
     color: inherit;
     transition: color var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25em;
   }
   .medium-link:hover {
     color: var(--blue-500);
   }
+
   .apartado {
     --badge-color: var(--apartado-color);
   }

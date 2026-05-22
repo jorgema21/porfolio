@@ -102,9 +102,9 @@
 
     .skill-header {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(160px, 28vw) auto auto;
+      grid-template-columns: minmax(0, 1fr) minmax(160px, min(28vw, 260px)) auto auto;
       align-items: center;
-      gap: var(--space-6);
+      gap: var(--space-8);
       width: 100%;
       padding: var(--space-6) 0;
       border: 0;
@@ -159,6 +159,8 @@
       display: flex;
       align-items: center;
       gap: var(--space-2);
+      width: 100%;
+      max-width: 360px;
     }
 
     .segment {

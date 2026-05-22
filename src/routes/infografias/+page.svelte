@@ -76,6 +76,8 @@
           </option>
         {/each}
       </select>
+
+      <span class="select-arrow" aria-hidden="true">↓</span>
     </div>
 
     <button
