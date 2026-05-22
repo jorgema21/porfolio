@@ -5,6 +5,7 @@
   import { formatDate } from "$lib/utils/formatDate";
   import { infographics as infographicsI18n } from "$lib/i18n/dictionaries/infographics.i18n";
   import { fade, scale } from "svelte/transition";
+  import type { Lang } from "../../../routes/infografias/infographics.svelte";
 
   function handleKey(e: KeyboardEvent) {
     if (e.key === "Escape") closePreview();
@@ -16,6 +17,10 @@
     key
       ? (infographicsI18n[langSignal.current].mediums[key as MediumKey] ?? key)
       : null;
+
+  const getLocalized = (field: unknown): Record<Lang, string> => {
+    return (field || { es: "", en: "" }) as Record<Lang, string>;
+  };
 </script>
 
 {#if preview.project}
@@ -46,7 +51,7 @@
 
       <img
         src={`${base}${preview.project.image}`}
-        alt={preview.project.title[langSignal.current]}
+        alt={getLocalized(preview.project.title)[langSignal.current]}
         class="preview-image"
         loading="lazy"
         decoding="async"
@@ -83,12 +88,12 @@
             class="preview-link link-underline"
             href={`${base}/infografias/${preview.project.slug}`}
           >
-            {preview.project.title[langSignal.current]} ↗
+            {getLocalized(preview.project.title)[langSignal.current]} ↗
           </a>
         </h2>
 
         {#if preview.project.description}
-          <p>{preview.project.description[langSignal.current]}</p>
+          <p>{getLocalized(preview.project.description)[langSignal.current]}</p>
         {/if}
       </div>
     </div>

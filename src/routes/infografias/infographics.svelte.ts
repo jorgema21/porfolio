@@ -1,6 +1,7 @@
 import { infographics } from "$lib/data/infographics.data";
 import { APARTADOS } from "$lib/config/apartados.config";
 import { infographics as infographicsI18n } from "$lib/i18n/dictionaries/infographics.i18n";
+import { SvelteMap } from "svelte/reactivity";
 
 export type Lang = "es" | "en";
 export type SortBy = "date" | "title" | "apartado" | "medium";
@@ -35,7 +36,8 @@ const countBy = <T, K extends PropertyKey>(
   items: readonly T[],
   getKey: (item: T) => K | null | undefined,
 ) => {
-  const map = new Map<K, number>();
+  // Cambiado a SvelteMap nativo de Svelte 5 para evitar errores del linter
+  const map = new SvelteMap<K, number>();
   for (const item of items) {
     const key = getKey(item);
     if (key === null || key === undefined || key === "") continue;
@@ -71,7 +73,9 @@ export function useInfographicsPage(lang: () => Lang) {
   const filtered = $derived(() => {
     const q = filters.search.trim().toLowerCase();
     const list = infographics.filter((p) => {
-      const matchSearch = !q || p.title[lang()].toLowerCase().includes(q);
+      const matchSearch =
+        !q ||
+        (p.title as Record<Lang, string>)[lang()].toLowerCase().includes(q);
       const matchApartado =
         !filters.apartados.length ||
         (p.apartado && filters.apartados.includes(p.apartado));
@@ -87,7 +91,10 @@ export function useInfographicsPage(lang: () => Lang) {
     const direction = getDirection(filters.sortDir);
     if (filters.sortBy === "title") {
       return [...list].sort(
-        (a, b) => a.title[lang()].localeCompare(b.title[lang()]) * direction,
+        (a, b) =>
+          (a.title as Record<Lang, string>)[lang()].localeCompare(
+            (b.title as Record<Lang, string>)[lang()],
+          ) * direction,
       );
     }
     return [...list].sort(
@@ -107,7 +114,7 @@ export function useInfographicsPage(lang: () => Lang) {
       (a, b) => Date.parse(b.date || "0") - Date.parse(a.date || "0"),
     );
 
-    const map = new Map<string, Infographic[]>();
+    const map = new SvelteMap<string, Infographic[]>();
     for (const item of preSortedList) {
       const key =
         filters.sortBy === "medium"
