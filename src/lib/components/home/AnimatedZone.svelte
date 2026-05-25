@@ -213,13 +213,13 @@
     letter-spacing: 0.1em;
 
     &.infografia {
-      color: var(--blue-500);
+      color: var(--color-infography);
     }
     &.estilo_de_vida {
-      color: var(--green-500);
+      color: var(--color-style);
     }
     &.maternidad {
-      color: var(--pink-500);
+      color: var(--color-motherhood);
     }
   }
 
