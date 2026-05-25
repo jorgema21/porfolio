@@ -9,7 +9,7 @@
   import { cubicOut } from "svelte/easing";
 
   import { t, langSignal } from "$lib/i18n/index.svelte";
-  import { closePreview } from "$lib/stores/infographicPreview.svelte";
+  import { closePreview } from "$lib/state/infographicPreview.svelte";
 
   import { useInfographicsPage } from "./infographics.svelte";
 

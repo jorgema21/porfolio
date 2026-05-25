@@ -31,7 +31,7 @@
     },
     {
       "type": "image",
-      "src": "roland-garros-sin-nadal-1.jpg",
+      "src": "roland-garros-sin-nadal-1.webp",
       "alt": {
         "es": "Visualización del torneo sin jugador clave",
         "en": "Tournament visualization without key player"
@@ -56,7 +56,7 @@
     },
     {
       "type": "image",
-      "src": "roland-garros-sin-nadal-1.jpg",
+      "src": "roland-garros-sin-nadal-1.webp",
       "alt": {
         "es": "Gráficos de rendimiento del torneo",
         "en": "Tournament performance charts"

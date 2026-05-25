@@ -1,6 +1,6 @@
 <script lang="ts">
   import { base } from "$app/paths";
-  import { openLightbox } from "$lib/stores/lightbox.svelte";
+  import { openLightbox } from "$lib/state/lightbox.svelte";
   import { langSignal, t } from "$lib/i18n/index.svelte";
   import { APARTADOS } from "$lib/config/apartados.config";
   import { ROLE_MAP } from "$lib/config/roles";

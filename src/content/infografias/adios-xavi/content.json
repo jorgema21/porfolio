@@ -31,7 +31,7 @@
     },
     {
       "type": "image",
-      "src": "adios-xavi-0.jpg",
+      "src": "adios-xavi-0.webp",
       "alt": {
         "es": "Visualización del torneo sin jugador clave",
         "en": "Tournament visualization without key player"
@@ -56,7 +56,7 @@
     },
     {
       "type": "image",
-      "src": "adios-xavi-1.jpg",
+      "src": "adios-xavi-1.webp",
       "alt": {
         "es": "Gráficos de rendimiento del torneo",
         "en": "Tournament performance charts"

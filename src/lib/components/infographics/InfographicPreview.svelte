@@ -1,6 +1,6 @@
 <script lang="ts">
   import { base } from "$app/paths";
-  import { preview, closePreview } from "$lib/stores/infographicPreview.svelte";
+  import { preview, closePreview } from "$lib/state/infographicPreview.svelte";
   import { langSignal } from "$lib/i18n/index.svelte";
   import { formatDate } from "$lib/utils/formatDate";
   import { infographics as infographicsI18n } from "$lib/i18n/dictionaries/infographics.i18n";

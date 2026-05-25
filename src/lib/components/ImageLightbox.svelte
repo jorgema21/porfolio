@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { lightbox, closeLightbox } from "$lib/stores/lightbox.svelte";
+  import { lightbox, closeLightbox } from "$lib/state/lightbox.svelte";
   import { fade, scale } from "svelte/transition";
 
   function handleClose() {

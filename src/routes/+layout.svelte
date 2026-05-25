@@ -50,7 +50,7 @@
     property="og:description"
     content="Narrativas visuales, análisis y visualización de datos y redacción de reportajes."
   />
-  <meta property="og:image" content="/images/portfolio-og.jpg" />
+  <meta property="og:image" content="/images/portfolio-og.webp" />
 </svelte:head>
 
 <div class="sr-only" role="status" aria-live="assertive" aria-atomic="true">

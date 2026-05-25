@@ -3,7 +3,7 @@
   import { langSignal } from "$lib/i18n/index.svelte";
   import { formatDate } from "$lib/utils/formatDate";
   import { infographics as infographicsI18n } from "$lib/i18n/dictionaries/infographics.i18n";
-  import { openPreview } from "$lib/stores/infographicPreview.svelte";
+  import { openPreview } from "$lib/state/infographicPreview.svelte";
   import { base } from "$app/paths";
 
   const { project, index = 0 } = $props<{
