@@ -4,33 +4,31 @@
 
   --blue-100: oklch(93% 0.05 var(--blue-hue));
   --blue-300: oklch(72% 0.16 var(--blue-hue));
-  --blue-500: oklch(46% var(--blue-chroma) var(--blue-hue));
+  --blue-500: oklch(48% var(--blue-chroma) var(--blue-hue));
   --blue-700: oklch(35% 0.18 var(--blue-hue));
 
-  --red-500: #dc2626;
-  --green-500: #15803d;
-  --pink-500: #b51259;
-
-  --color-text: #1a1a1a;
-  --color-muted: #595959;
+  --color-text: #111827;
+  --color-muted: #4b5563;
   --color-border: #e5e7eb;
 
   --color-white: #ffffff;
-  --color-black: #00 black;
+  --color-black: #000000;
 
   --bg-soft: rgb(0 0 0 / 3%);
   --bg-hard: rgb(0 0 0 / 30%);
 
   --overlay-gradient: linear-gradient(
     to top,
-    rgb(0 0 0 / 90%),
+    rgb(0 0 0 / 85%),
     rgb(0 0 0 / 40%) 70%,
     transparent 100%
   );
   --overlay-text-color: #ffffff;
 
-  --timeline-study: #7c3aed;
-  --timeline-infography: var(--blue-500);
-  --timeline-style: var(--green-500);
-  --timeline-motherhood: #c026d3;
+  --color-study: #0f172a;
+  --color-infography: #2563eb;
+  --color-style: #0d9488;
+  --color-motherhood: #db2777;
+
+  --color-spanish: #d62222;
 }

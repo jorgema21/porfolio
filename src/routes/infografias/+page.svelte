@@ -76,8 +76,6 @@
           </option>
         {/each}
       </select>
-
-      <span class="select-arrow" aria-hidden="true">↓</span>
     </div>
 
     <button
@@ -137,11 +135,13 @@
     align-items: start;
     gap: var(--space-4);
   }
+
   .insights {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--space-4);
   }
+
   .insights-header {
     display: flex;
     align-items: center;
@@ -149,6 +149,7 @@
     margin-top: var(--space-6);
     margin-bottom: var(--space-3);
   }
+
   .insights-header h2 {
     display: flex;
     align-items: baseline;
@@ -156,6 +157,7 @@
     margin: 0;
     font: var(--text-lg) var(--font-serif);
   }
+
   .toolbar {
     display: flex;
     align-items: center;
@@ -167,49 +169,45 @@
     border-radius: var(--radius-md);
     transition: transform var(--transition);
   }
+
   .toolbar:hover {
     transform: var(--hover-lift);
   }
-  .toolbar input,
-  .toolbar select {
+
+  .toolbar input {
     flex: 1;
-    padding: var(--space-2);
-    border: none;
-    outline: none;
     background: transparent;
+    outline: none;
   }
+
+  .filter-field {
+    display: flex;
+    flex: 1;
+  }
+
   .toolbar select {
-    appearance: none;
+    width: 100%;
     cursor: pointer;
-    padding-right: 2rem;
-    border-left: var(--border-1);
-    border-radius: var(--radius-md);
-    background-color: var(--bg-soft);
-    background-image: linear-gradient(
-        45deg,
-        transparent 50%,
-        var(--color-muted) 50%
-      ),
-      linear-gradient(135deg, var(--color-muted) 50%, transparent 50%);
-    background-position:
-      calc(100% - 14px) center,
-      calc(100% - 8px) center;
-    background-repeat: no-repeat;
-    background-size: var(--space-2) var(--space-2);
+    background: var(--color-white);
   }
-  .toolbar button {
+
+  .toolbar button.sort-dir {
+    background: var(--color-white);
     border-radius: var(--radius-sm);
     margin: 0;
-    padding: var(--space-2);
+    padding: var(--space-2) var(--space-3);
     border: var(--border-1);
     cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+
   .group-title {
     font: var(--text-lg) var(--font-serif);
-
     margin: var(--space-8) 0 var(--space-4);
     padding-bottom: var(--space-2);
-
     border-bottom: var(--border-1);
   }
 
@@ -218,7 +216,6 @@
     padding: var(--space-3);
     border: var(--border-1);
     border-radius: var(--radius-md);
-    background: var(--color-white);
     font: inherit;
     color: var(--color-text);
     transition: border-color var(--transition);
@@ -229,23 +226,27 @@
       grid-template-columns: 1fr;
       gap: var(--space-3);
     }
+
     .infographics-grid {
       grid-template-columns: 1fr;
       gap: var(--space-3);
     }
+
     .toolbar {
       flex-direction: column;
       align-items: stretch;
       gap: var(--space-2);
       padding: var(--space-3);
     }
+
+    .toolbar input,
+    .filter-field {
+      width: 100%;
+    }
+
     .toolbar input,
     .toolbar select {
-      width: 100%;
       font-size: var(--text-sm);
-    }
-    .toolbar select {
-      padding-right: var(--space-4);
     }
   }
 </style>

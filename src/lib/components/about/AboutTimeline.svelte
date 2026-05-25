@@ -137,17 +137,18 @@
     transform: translateY(0);
   }
   .timeline-item[data-category="study"] {
-    --timeline-color: var(--timeline-study);
+    --timeline-color: var(--color-study);
   }
   .timeline-item[data-category="infography"] {
-    --timeline-color: var(--timeline-infography);
+    --timeline-color: var(--color-infography);
   }
   .timeline-item[data-category="style"] {
-    --timeline-color: var(--timeline-style);
+    --timeline-color: var(--color-style);
   }
   .timeline-item[data-category="motherhood"] {
-    --timeline-color: var(--timeline-motherhood);
+    --timeline-color: var(--color-motherhood);
   }
+
   .timeline-item.left {
     right: 5%;
     text-align: right;

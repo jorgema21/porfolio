@@ -31,6 +31,13 @@
   <p class="page-intro"><RichText value={t.about.intro} /></p>
   <p class="page-intro"><RichText value={t.about.focus} /></p>
 
+  <section class="about-section about-cta">
+    <div class="about-cta__content">
+      <span class="about-cta__eyebrow">Open to work</span>
+      <p class="about-cta__text">{t.about.cta}</p>
+    </div>
+  </section>
+
   <section class="about-section">
     <h2>{t.about.timelineTitle}</h2>
 
@@ -57,15 +64,6 @@
   <section class="about-section">
     <h2>{t.about.languagesTitle}</h2>
     <AboutLanguages />
-  </section>
-
-  <section class="about-section about-cta">
-    <div class="about-cta__content">
-      <span class="about-cta__eyebrow">Open to work</span>
-      <p class="about-cta__text">{t.about.cta}</p>
-    </div>
-
-    <button class="button">{t.about.downloadCV}</button>
   </section>
 </div>
 
@@ -106,16 +104,16 @@
     }
 
     &.study {
-      --timeline-color: var(--timeline-study);
+      --timeline-color: var(--color-study);
     }
     &.infography {
-      --timeline-color: var(--timeline-infography);
+      --timeline-color: var(--color-infography);
     }
     &.style {
-      --timeline-color: var(--timeline-style);
+      --timeline-color: var(--color-style);
     }
     &.motherhood {
-      --timeline-color: var(--timeline-motherhood);
+      --timeline-color: var(--color-motherhood);
     }
   }
 
@@ -123,8 +121,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: var(--cta-gap);
-    margin-top: var(--space-12);
+    gap: var(--space-6);
+    margin-top: var(--space-6);
     border-top: var(--border-1);
     padding-top: var(--space-6);
   }
@@ -133,6 +131,7 @@
     display: flex;
     flex-direction: column;
     gap: var(--space-2);
+    flex: 1;
   }
 
   .about-cta__eyebrow {
@@ -144,9 +143,16 @@
   }
 
   .about-cta__text {
-    max-width: 20ch;
+    max-width: 55ch;
     font-size: var(--text-sm);
     font-weight: 700;
     line-height: var(--lh-base);
+  }
+  @media (max-width: 640px) {
+    .about-cta {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--space-4);
+    }
   }
 </style>
