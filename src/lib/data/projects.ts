@@ -20,6 +20,7 @@ export interface HomeProject {
   homeVisible?: boolean;
   slug?: string;
   externalUrl?: string;
+  featured?: boolean;
 }
 
 const projects = [
@@ -29,6 +30,7 @@ const projects = [
     variant: "hero",
     category: "infografia",
     homeVisible: true,
+    featured: true,
     title: { es: "Roland Garros sin Nadal", en: "Roland Garros without Nadal" },
     description: {
       es: "Primer campeonato sin el español",
@@ -83,6 +85,7 @@ const projects = [
     variant: "grid",
     category: "infografia",
     homeVisible: true,
+    featured: true,
     title: { es: "El adiós de Xavi", en: "The Goodbye of Xavi" },
     description: {
       es: "Xavi anuncia que se va",

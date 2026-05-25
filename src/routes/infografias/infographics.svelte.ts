@@ -6,7 +6,9 @@ import { SvelteMap } from "svelte/reactivity";
 export type Lang = "es" | "en";
 export type SortBy = "date" | "title" | "apartado" | "medium";
 export type SortDir = "asc" | "desc";
-export type Infographic = (typeof infographics)[number];
+export type Infographic = (typeof infographics)[number] & {
+  featured?: boolean;
+};
 
 export type Filters = {
   search: string;
@@ -14,6 +16,7 @@ export type Filters = {
   mediums: string[];
   sortBy: SortBy;
   sortDir: SortDir;
+  onlyFeatured: boolean;
 };
 
 export interface GroupedInfographics {
@@ -54,6 +57,7 @@ export function useInfographicsPage(lang: () => Lang) {
     mediums: [],
     sortBy: "date",
     sortDir: "asc",
+    onlyFeatured: false,
   });
 
   const treemap = {
@@ -61,27 +65,36 @@ export function useInfographicsPage(lang: () => Lang) {
     mediums: countBy(infographics, (p) => p.mediumKey),
   };
 
-  const mediumDict = $derived(() => infographicsI18n[lang()].mediums);
+  const mediumDict = $derived(infographicsI18n[lang()].mediums);
 
   const labelApartado = (k: string) =>
     k in APARTADOS ? APARTADOS[k as keyof typeof APARTADOS].label[lang()] : k;
-  const labelMedium = (k: string) => mediumDict()[k] ?? k;
+
+  const labelMedium = (k: string) => mediumDict[k] ?? k;
+
   const groupLabel = (key: string, type: "medium" | "apartado") =>
     type === "medium" ? labelMedium(key) : labelApartado(key);
 
   const filtered = $derived(() => {
     const q = filters.search.trim().toLowerCase();
+    const currentLang = lang();
+
     const list = infographics.filter((p) => {
       const matchSearch =
         !q ||
-        (p.title as Record<Lang, string>)[lang()].toLowerCase().includes(q);
+        (p.title as Record<Lang, string>)[currentLang]
+          .toLowerCase()
+          .includes(q);
       const matchApartado =
         !filters.apartados.length ||
         (p.apartado && filters.apartados.includes(p.apartado));
       const matchMedium =
         !filters.mediums.length ||
         (p.mediumKey && filters.mediums.includes(p.mediumKey));
-      return matchSearch && matchApartado && matchMedium;
+
+      const matchFeatured = !filters.onlyFeatured || p.featured === true;
+
+      return matchSearch && matchApartado && matchMedium && matchFeatured;
     });
 
     if (filters.sortBy === "apartado" || filters.sortBy === "medium")
@@ -91,8 +104,8 @@ export function useInfographicsPage(lang: () => Lang) {
     if (filters.sortBy === "title") {
       return [...list].sort(
         (a, b) =>
-          (a.title as Record<Lang, string>)[lang()].localeCompare(
-            (b.title as Record<Lang, string>)[lang()],
+          (a.title as Record<Lang, string>)[currentLang].localeCompare(
+            (b.title as Record<Lang, string>)[currentLang],
           ) * direction,
       );
     }

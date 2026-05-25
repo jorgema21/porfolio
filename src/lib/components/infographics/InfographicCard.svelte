@@ -48,6 +48,10 @@
       fetchpriority={isCritical ? "high" : "low"}
     />
 
+    {#if project.featured}
+      <span class="badge-featured" aria-hidden="true">⭐</span>
+    {/if}
+
     <div class="card-overlay">
       <h3>{project.title[langSignal.current]}</h3>
 
@@ -107,6 +111,22 @@
     aspect-ratio: 16 / 9;
     object-fit: cover;
     display: block;
+  }
+
+  .badge-featured {
+    position: absolute;
+    top: var(--space-3);
+    right: var(--space-3);
+    backdrop-filter: blur(4px);
+    background-color: var(--color-muted);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    z-index: 3;
   }
 
   .infographics-card .card-overlay {

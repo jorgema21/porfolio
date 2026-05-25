@@ -17,6 +17,11 @@ type InfographicsDict = {
     mediums: string;
   };
 
+  featured: {
+    toggleShowAll: string;
+    toggleFeaturedOnly: string;
+  };
+
   insights: {
     totalWorks: string;
     works: string;
@@ -45,6 +50,11 @@ export const infographics: Record<"es" | "en", InfographicsDict> = {
     filters: {
       apartados: "Apartados",
       mediums: "Medios",
+    },
+
+    featured: {
+      toggleShowAll: "Ver todas",
+      toggleFeaturedOnly: "Solo destacados",
     },
 
     insights: {
@@ -105,6 +115,11 @@ export const infographics: Record<"es" | "en", InfographicsDict> = {
     filters: {
       apartados: "Sections",
       mediums: "Media",
+    },
+
+    featured: {
+      toggleShowAll: "Show all",
+      toggleFeaturedOnly: "Featured only",
     },
 
     insights: {

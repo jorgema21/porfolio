@@ -58,6 +58,18 @@
   </section>
 
   <div class="toolbar">
+    <button
+      class="control featured-toggle"
+      class:active={info.filters.onlyFeatured}
+      aria-pressed={info.filters.onlyFeatured}
+      onclick={() => (info.filters.onlyFeatured = !info.filters.onlyFeatured)}
+    >
+      <span class="star-icon">⭐</span>
+      {info.filters.onlyFeatured
+        ? t.infographics.featured.toggleShowAll
+        : t.infographics.featured.toggleFeaturedOnly}
+    </button>
+
     <input
       class="input"
       placeholder={t.infographics.searchPlaceholder}
@@ -191,17 +203,44 @@
     background: var(--color-white);
   }
 
-  .toolbar button.sort-dir {
+  .toolbar button.control {
     background: var(--color-white);
-    border-radius: var(--radius-sm);
-    margin: 0;
-    padding: var(--space-2) var(--space-3);
     border: var(--border-1);
     cursor: pointer;
-    font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition:
+      background-color var(--transition),
+      border-color var(--transition);
+  }
+
+  .toolbar button.featured-toggle {
+    border-radius: var(--radius-sm);
+    padding: var(--space-2) var(--space-3);
+    font: inherit;
+    font-size: var(--text-sm);
+    white-space: nowrap;
+    gap: var(--space-1);
+  }
+
+  .toolbar button.featured-toggle.active {
+    background: var(--color-featured-bg);
+    border-color: var(--color-featured-border);
+    color: var(--color-text);
+    font-weight: 600;
+  }
+
+  .star-icon {
+    display: inline-block;
+    font-size: var(--text-base);
+  }
+
+  .toolbar button.sort-dir {
+    border-radius: var(--radius-sm);
+    margin: 0;
+    padding: var(--space-2) var(--space-3);
+    font-weight: bold;
   }
 
   .group-title {
@@ -240,7 +279,8 @@
     }
 
     .toolbar input,
-    .filter-field {
+    .filter-field,
+    .toolbar button.featured-toggle {
       width: 100%;
     }
 
