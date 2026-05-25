@@ -29,11 +29,18 @@
   const isCritical = $derived(index < 2);
 </script>
 
-<button class="infographics-card" onclick={() => openPreview(project)}>
+<div
+  class="infographics-card"
+  onclick={() => openPreview(project)}
+  onkeydown={(e) => e.key === "Enter" && openPreview(project)}
+  role="button"
+  tabindex="0"
+  aria-label="Ver detalles de {project.title[langSignal.current]}"
+>
   <div class="thumb">
     <img
       src={`${base}${project.image}`}
-      alt={project.title[langSignal.current]}
+      alt=""
       width="800"
       height="450"
       decoding="async"
@@ -41,7 +48,7 @@
       fetchpriority={isCritical ? "high" : "low"}
     />
 
-    <div class="overlay">
+    <div class="card-overlay">
       <h3>{project.title[langSignal.current]}</h3>
 
       {#if hasMeta}
@@ -61,7 +68,7 @@
       {/if}
     </div>
   </div>
-</button>
+</div>
 
 <style>
   .infographics-card {
@@ -71,10 +78,18 @@
     cursor: pointer;
     width: 100%;
     display: block;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: transform var(--transition);
   }
 
   .infographics-card:hover {
     transform: var(--hover-lift);
+  }
+
+  .infographics-card:focus-visible {
+    outline: 2px solid var(--color-infography, #2563eb);
+    outline-offset: 4px;
   }
 
   .thumb {
@@ -94,7 +109,7 @@
     display: block;
   }
 
-  .infographics-card .overlay {
+  .infographics-card .card-overlay {
     position: absolute;
     inset: 0;
     display: flex;
@@ -106,25 +121,12 @@
     cursor: pointer;
   }
 
-  .overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 100;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: rgb(0, 0, 0, 0.9);
-    cursor: zoom-out;
-  }
-
-  .infographics-card .overlay h3,
+  .infographics-card .card-overlay h3,
   .infographics-card .meta {
     font-family: var(--font-serif);
   }
 
-  .infographics-card .overlay h3 {
+  .infographics-card .card-overlay h3 {
     margin: 0;
     font-size: var(--text-base);
     color: var(--color-white);

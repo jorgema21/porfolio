@@ -26,8 +26,6 @@
 
   const getProjectMeta = (project: HomeProject) => {
     const isInfographic = project.category === "infografia";
-    const isExternal =
-      project.category !== "infografia" && !!project.externalUrl;
     const href = isInfographic
       ? `${base}/infografias/${project.slug}`
       : project.externalUrl;
@@ -35,57 +33,66 @@
       ? project.image
       : `${base}${project.image}`;
 
-    return { isExternal, href, imageSrc, canNavigate: !!href };
+    return {
+      isExternal: project.category !== "infografia" && !!project.externalUrl,
+      href,
+      imageSrc,
+      canNavigate: !!href,
+    };
   };
 </script>
 
-{#each items.slice(0, visibleCount) as project, i (project.id)}
+{#each items as project, i (project.id)}
   {@const meta = getProjectMeta(project)}
   {@const isCritical = i < 2}
 
-  <a
-    class="card {project.variant}"
-    href={meta.href ?? undefined}
-    target={meta.isExternal ? "_blank" : undefined}
-    rel={meta.isExternal ? "noopener noreferrer" : undefined}
-    aria-disabled={!meta.canNavigate}
-    tabindex={meta.canNavigate ? 0 : -1}
-    style:--col-start={project.colStart}
-    style:--col-span={project.colSpan}
-    style:--row-start={project.rowStart}
-    style:--row-span={project.rowSpan ?? 1}
-    in:fly={{ y: 34, duration: 2000, easing: cubicOut }}
-  >
-    {#if project.image && project.variant !== "list"}
-      <div class="thumb">
-        <img
-          src={meta.imageSrc}
-          alt={project.title[langSignal.current]}
-          width="800"
-          height="450"
-          decoding="async"
-          loading={isCritical ? "eager" : "lazy"}
-          fetchpriority={isCritical ? "high" : "low"}
-        />
-      </div>
-    {/if}
-
-    <div class="content">
-      <span class="category {project.category}">
-        {t.project.category[project.category as ProjectCategory]}
-      </span>
-
-      <h2 class="title">
-        {project.title[langSignal.current]}
-      </h2>
-
-      {#if project.description}
-        <p class="description">
-          {project.description[langSignal.current]}
-        </p>
+  {#if isCritical || i < visibleCount}
+    <a
+      class="card {project.variant}"
+      href={meta.href ?? undefined}
+      target={meta.isExternal ? "_blank" : undefined}
+      rel={meta.isExternal ? "noopener noreferrer" : undefined}
+      aria-disabled={!meta.canNavigate}
+      tabindex={meta.canNavigate ? 0 : -1}
+      style:--col-start={project.colStart}
+      style:--col-span={project.colSpan}
+      style:--row-start={project.rowStart}
+      style:--row-span={project.rowSpan ?? 1}
+      in:fly={isCritical
+        ? { duration: 0 }
+        : { y: 34, duration: 2000, easing: cubicOut }}
+    >
+      {#if project.image && project.variant !== "list"}
+        <div class="thumb">
+          <img
+            src={meta.imageSrc}
+            alt={project.title[langSignal.current]}
+            width="800"
+            height="450"
+            decoding="async"
+            loading={isCritical ? "eager" : "lazy"}
+            fetchpriority={isCritical ? "high" : "low"}
+          />
+        </div>
       {/if}
-    </div>
-  </a>
+
+      <div class="content">
+        <span class="category {project.category}">
+          {t.project.category[project.category as ProjectCategory]}
+        </span>
+
+        <h2 class="title">
+          {project.title[langSignal.current]}
+        </h2>
+
+        {#if project.description}
+          <p class="description">
+            {project.description[langSignal.current]}
+          </p>
+        {/if}
+      </div>
+    </a>
+  {/if}
 {/each}
 
 <style>
@@ -204,7 +211,7 @@
     margin-top: var(--space-2);
     max-width: 50ch;
     font: 350 var(--text-sm) var(--font-sans);
-    color: var(--color-text-muted, inherit);
+    color: var(--color-muted, inherit);
   }
 
   .category {

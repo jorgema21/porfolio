@@ -36,7 +36,6 @@ const countBy = <T, K extends PropertyKey>(
   items: readonly T[],
   getKey: (item: T) => K | null | undefined,
 ) => {
-  // Cambiado a SvelteMap nativo de Svelte 5 para evitar errores del linter
   const map = new SvelteMap<K, number>();
   for (const item of items) {
     const key = getKey(item);

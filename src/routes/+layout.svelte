@@ -21,11 +21,6 @@
     }
   });
 
-  let isHome = $derived(
-    $page.url.pathname === "/" ||
-      $page.url.pathname.endsWith("/portfolio") ||
-      $page.url.pathname.endsWith("/portfolio/"),
-  );
   let currentPath = $derived($page.url.pathname.split("/").pop() || "Inicio");
 </script>
 
@@ -37,10 +32,12 @@
     content="Portfolio profesional de infografías, visualización de datos y reportajes."
   />
 
-  {#if isHome}
-    <meta name="robots" content="index, follow" />
-  {:else}
+  {#if $page.url.pathname.includes("/infografias/") && $page.url.pathname
+      .split("/")
+      .pop() !== "infografias"}
     <meta name="robots" content="noindex, follow" />
+  {:else}
+    <meta name="robots" content="index, follow" />
   {/if}
 
   <meta property="og:type" content="website" />
