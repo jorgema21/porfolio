@@ -31,11 +31,15 @@ const projects = [
     category: "infografia",
     homeVisible: true,
     featured: true,
-    title: { es: "Roland Garros sin Nadal", en: "Roland Garros without Nadal" },
-    description: {
-      es: "Primer campeonato sin el español",
-      en: "First tournament without Nadal",
+    title: {
+      es: "¿Por qué Nadal dominó la tierra batida?",
+      en: "The Biomechanics of Dominance: How Nadal Conquered Clay",
     },
+    description: {
+      es: "Análisis del legado de Rafa Nadal en Roland Garros y su carrera",
+      en: "An analytical breakdown of Rafa Nadal's statistical legacy at Roland Garros and clay.",
+    },
+
     image: "/images/projects/roland-garros-sin-nadal-ip.webp",
     colStart: 1,
     colSpan: 9,
@@ -86,10 +90,13 @@ const projects = [
     category: "infografia",
     homeVisible: true,
     featured: true,
-    title: { es: "El adiós de Xavi", en: "The Goodbye of Xavi" },
+    title: {
+      es: "El efecto Xavi: un adiós que salva la temporada",
+      en: "The Pressure Valve: How Xavi’s Resignation Saved Barcelona’s Season",
+    },
     description: {
-      es: "Xavi anuncia que se va",
-      en: "Xavi announces he leaves",
+      es: "Análisis de datos sobre el vuelco en el rendimiento y la racha de victorias del Barça tras el anuncio de salida de su entrenador",
+      en: "A data-driven analysis of Barcelona’s sudden winning streak and tactical resurgence following the manager’s exit plan.",
     },
     image: "/images/projects/adios-xavi-ip.webp",
     colStart: 1,
@@ -102,10 +109,13 @@ const projects = [
     variant: "grid",
     category: "infografia",
     homeVisible: true,
-    title: { es: "El incendio de Tenerife", en: "The fire in Tenerife" },
+    title: {
+      es: "¿Por qué ardió tanto Tenerife en 2023?",
+      en: "Climate Shock: Why Tenerife Burned out of Control in 2023",
+    },
     description: {
-      es: "La isla de Tenerife está en peligro",
-      en: "Tenerife island is in danger",
+      es: "Análisis de datos sobre la magnitud del incendio forestal",
+      en: "A data analysis measuring the true scale of the Tenerife wildfire.",
     },
     image: "/images/projects/incendio-tenerife-ip.webp",
     colStart: 5,

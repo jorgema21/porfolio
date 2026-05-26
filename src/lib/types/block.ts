@@ -1,13 +1,14 @@
 import type { TranslatedText } from "./project.types";
+import type { RichText } from "$lib/i18n/rich-text.types";
 
 export type TranslatedRichText = {
-  es: string | string[];
-  en: string | string[];
+  es: RichText;
+  en: RichText;
 };
 
 export type TextBlock = {
   type: "text";
-  value: TranslatedText | TranslatedRichText;
+  value: TranslatedRichText;
 };
 
 export type ImageBlock = {

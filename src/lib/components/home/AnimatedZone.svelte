@@ -165,7 +165,7 @@
 
   .card.feature {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
+    grid-template-columns: 1fr 3fr;
     gap: var(--space-8);
     align-items: start;
 

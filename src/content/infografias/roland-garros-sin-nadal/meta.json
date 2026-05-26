@@ -1,19 +1,33 @@
 {
   "apartado": "sports",
-
   "usos": [
-    { "es": "Infografía", "en": "Infographic" },
-    { "es": "Datos", "en": "Data" },
-    { "es": "Visualización", "en": "Visualization" }
+    {
+      "es": "Infografía",
+      "en": "Infographic"
+    },
+    {
+      "es": "Datos",
+      "en": "Data"
+    },
+    {
+      "es": "Visualización",
+      "en": "Visualization"
+    }
   ],
-
   "colaboracion": {
     "tipo": "solo",
-    "rol": ["graficos", "texto"]
+    "rol": [
+      "graficos",
+      "texto"
+    ]
   },
-
-  "tools": ["Figma", "Excel"],
-  "date": "2026-06-01",
-  "mediumKey": "elpais",
-  "url": "https://elpais.com"
+  "tools": [
+    "GoogleSheets",
+    "Datawrapper",
+    "Illustrator",
+    "RStudio"
+  ],
+  "date": "2025-05-23",
+  "mediumKey": "colpisa",
+  "url": "https://www.diariosur.es/deportes/tenis/roland-garros/despues-nadal-roland-garros-rey-absoluto-20250523184840-ntrc.html"
 }

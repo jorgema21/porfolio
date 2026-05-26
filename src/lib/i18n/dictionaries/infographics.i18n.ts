@@ -64,13 +64,23 @@ export const infographics: Record<"es" | "en", InfographicsDict> = {
 
     apartados: {
       sports: "Deportes",
-      environment: "Medio Ambiente",
       culture: "Cultura",
+      gender: "Género",
+      environment: "Medio Ambiente",
+      economy: "Economía",
+      national: "Nacional",
+      international: "Internacional",
+      local: "Local",
+      miscellaneous: "Miscelánea",
     },
 
     mediums: {
       elpais: "El País",
-      elmundo: "El Mundo",
+      colpisa: "Colpisa",
+      sty_forbes: "Forbes (Storydata)",
+      sty_construnews: "Construnews (Storydata)",
+      sty_reuters: "Reuters (Storydata)",
+      dataista: "Dataista",
     },
 
     intro: [
@@ -129,13 +139,23 @@ export const infographics: Record<"es" | "en", InfographicsDict> = {
 
     apartados: {
       sports: "Sports",
-      environment: "Climate",
       culture: "Culture",
+      gender: "Gender",
+      environment: "Climate",
+      economy: "Economy",
+      national: "National",
+      international: "World",
+      local: "Local",
+      miscellaneous: "Features",
     },
 
     mediums: {
       elpais: "El País",
-      elmundo: "El Mundo",
+      colpisa: "Colpisa",
+      sty_forbes: "Forbes (Storydata)",
+      sty_construnews: "Construnews (Storydata)",
+      sty_reuters: "Reuters (Storydata)",
+      dataista: "Dataista",
     },
 
     intro: [

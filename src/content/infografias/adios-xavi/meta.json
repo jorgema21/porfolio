@@ -1,19 +1,27 @@
 {
   "apartado": "sports",
-
   "usos": [
-    { "es": "Mapas", "en": "Maps" },
-    { "es": "Datos", "en": "Data" },
-    { "es": "Visualización", "en": "Visualization" }
+    {
+      "es": "Datos",
+      "en": "Data"
+    },
+    {
+      "es": "Visualización",
+      "en": "Visualization"
+    }
   ],
-
   "colaboracion": {
     "tipo": "solo",
-    "rol": ["graficos", "texto"]
+    "rol": [
+      "graficos",
+      "texto"
+    ]
   },
-
-  "tools": ["Figma", "Excel"],
-  "date": "2025-06-01",
-  "mediumKey": "elmundo",
-  "url": "https://elmundo.com"
+  "tools": [
+    "GoogleSheets",
+    "Datawrapper"
+  ],
+  "date": "2024-03-30",
+  "mediumKey": "elpais",
+  "url": "https://elpais.com/deportes/futbol/2024-03-30/como-ha-mejorado-el-barcelona-desde-el-anuncio-del-adios-de-xavi-hernandez.html"
 }

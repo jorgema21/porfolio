@@ -7,6 +7,7 @@
   import { formatDate } from "$lib/utils/formatDate";
   import { createProjectView } from "$lib/infographics/project.view";
   import { infographics as infographicsI18n } from "$lib/i18n/dictionaries/infographics.i18n";
+  import RichText from "$lib/components/writing/RichText.svelte";
   import type { ProjectContent } from "$lib/types/project.types";
 
   const { data } = $props<{ data: { project: ProjectContent } }>();
@@ -38,6 +39,22 @@
       !!colab?.tipo ||
       !!colab?.rol?.length,
   );
+
+  const toolLogos: Record<string, string> = {
+    GoogleSheets: "GoogleSheets-logo.png",
+    Photoshop: "Photoshop-logo.png",
+    Illustrator: "Illustrator-logo.png",
+    InDesign: "InDesign-logo.png",
+    Blender: "Blender-logo.png",
+    AfterEffects: "AfterEffects-logo.png",
+    Premiere: "Premiere-logo.png",
+    Svelte: "Svelte-logo.png",
+    Code: "code-logo.png",
+    QGIS: "QGIS-logo.png",
+    RStudio: "RStudio-logo.png",
+    Datawrapper: "DataWrapper-logo.png",
+    Flourish: "Flourish-logo.png",
+  };
 </script>
 
 <article
@@ -152,7 +169,13 @@
         </div>
       {:else if block.type === "text"}
         {@const val = block.value?.[langSignal.current] ?? block.value?.es}
-        <p class="text">{Array.isArray(val) ? val.join(" ") : (val ?? "")}</p>
+        <p class="text">
+          {#if Array.isArray(val)}
+            <RichText value={val} />
+          {:else if typeof val === "string"}
+            {val}
+          {/if}
+        </p>
       {:else if block.type === "divider"}
         <div class="divider"></div>
       {/if}
@@ -162,9 +185,23 @@
   {#if project?.tools?.length}
     <footer class="tools">
       <h3>{t.metaarticle.tools}</h3>
-      <ul>
+      <ul class="tools-list">
         {#each project.tools as tool (tool)}
-          <li class="tag">{tool}</li>
+          {@const logoFile = toolLogos[tool]}
+          <li class="tag tool-item">
+            {#if logoFile}
+              <img
+                src={`${base}/images/logos/${logoFile}`}
+                alt=""
+                class="tool-logo"
+                width="20"
+                height="20"
+                loading="lazy"
+                decoding="async"
+              />
+            {/if}
+            <span>{tool}</span>
+          </li>
         {/each}
       </ul>
     </footer>
@@ -293,6 +330,7 @@
   .image--image {
     width: 90%;
     margin-block: var(--space-8);
+    margin-top: var(--space-12);
   }
   .image--cover {
     height: 420px;
@@ -307,10 +345,11 @@
   }
   .image-title {
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
     font: var(--text-sm) var(--font-sans);
     text-decoration: underline;
+    color: var(--color-muted);
   }
 
   .tools h3 {
@@ -327,6 +366,33 @@
     margin: 0;
     padding: 0;
     list-style: none;
+  }
+
+  .tools-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .tool-item {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-1.5) var(--space-3);
+    background: var(--bg-soft);
+    border: var(--border-1);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+  }
+
+  .tool-logo {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    flex-shrink: 0;
   }
 
   @media (max-width: 768px) {

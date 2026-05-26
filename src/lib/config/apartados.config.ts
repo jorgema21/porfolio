@@ -38,31 +38,39 @@ export const APARTADOS = {
     darkLightness: 75,
     order: 2,
   }),
-  genero: createApartado({ es: "Género", en: "Gender" }, 325, 0.2, {
+  gender: createApartado({ es: "Género", en: "Gender" }, 325, 0.2, {
     lightness: 54,
     darkLightness: 76,
     order: 3,
   }),
   environment: createApartado(
-    { es: "Medio Ambiente", en: "Environment" },
+    { es: "Medio Ambiente", en: "Climate" },
     145,
     0.18,
     { order: 4 },
   ),
-  economia: createApartado({ es: "Economía", en: "Economy" }, 85, 0.14, {
+  economy: createApartado({ es: "Economía", en: "Economy" }, 85, 0.14, {
     lightness: 50,
     darkLightness: 75,
     order: 5,
   }),
-  nacional: createApartado({ es: "Nacional", en: "National" }, 250, 0.18, {
+  national: createApartado({ es: "Nacional", en: "National" }, 250, 0.18, {
     order: 6,
   }),
-  internacional: createApartado(
-    { es: "Internacional", en: "International" },
+  international: createApartado(
+    { es: "Internacional", en: "World" },
     195,
     0.08,
     { order: 7 },
   ),
+  local: createApartado({ es: "Local", en: "Local" }, 120, 0.12, {
+    order: 8,
+  }),
+  miscellaneous: createApartado({ es: "Miscelánea", en: "Features" }, 0, 0, {
+    lightness: 60,
+    darkLightness: 80,
+    order: 9,
+  }),
 } satisfies Record<string, ApartadoConfig>;
 
 export type ApartadoKey = keyof typeof APARTADOS;
