@@ -191,7 +191,7 @@
   .title {
     margin-top: var(--space-2);
     margin-bottom: var(--space-2);
-    max-width: 22ch;
+    max-width: 20ch;
     font: 500 var(--text-base) / 1.2 var(--font-serif);
     letter-spacing: -0.01em;
   }
