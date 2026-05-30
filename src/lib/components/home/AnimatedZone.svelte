@@ -8,7 +8,7 @@
   const { items } = $props<{ items: HomeProject[] }>();
 
   let visibleCount = $state(0);
-  const baseDelay = 120;
+  const baseDelay = 50;
 
   $effect(() => {
     if (!items.length) return;
@@ -60,7 +60,7 @@
       style:--row-span={project.rowSpan ?? 1}
       in:fly={isCritical
         ? { duration: 0 }
-        : { y: 34, duration: 2000, easing: cubicOut }}
+        : { y: 50, duration: 2000, easing: cubicOut }}
     >
       {#if project.image && project.variant !== "list"}
         <div class="thumb">

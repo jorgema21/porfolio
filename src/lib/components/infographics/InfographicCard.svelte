@@ -148,7 +148,7 @@
 
   .infographics-card .card-overlay h3 {
     margin: 0;
-    font-size: var(--text-base);
+    font-size: var(--text-sm);
     color: var(--color-white);
   }
 

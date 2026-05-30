@@ -1,0 +1,38 @@
+{
+  "apartado": "economy",
+  "usos": [
+    {
+      "es": "Datos",
+      "en": "Data"
+    },
+    {
+      "es": "Visualización",
+      "en": "Visualization"
+    },
+    {
+      "es": "Infografía",
+      "en": "Infographics"
+    },
+    {
+      "es": "Desarrollo web",
+      "en": "Web development"
+    }
+  ],
+  "colaboracion": {
+    "tipo": "equipo",
+    "rol": [
+      "graficos",
+      "texto",
+      "desarrollo"
+    ]
+  },
+  "tools": [
+    "Illustrator",
+    "Svelte",
+    "Code",
+    "GoogleSheets"
+  ],
+  "date": "2026-03-26",
+  "mediumKey": "sty_construnews",
+  "url": "https://vivienda-construnews-e80a9d.gitlab.io/"
+}
