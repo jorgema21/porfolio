@@ -155,9 +155,11 @@
 
       {#if block.type === "hero" || block.type === "image"}
         <div class="image-wrapper">
-          {#if block.caption?.[langSignal.current]}<span class="image-title"
-              >{block.caption[langSignal.current]}</span
-            >{/if}
+          {#if block.caption?.[langSignal.current]}
+            <span class="image-title">
+              <RichText value={block.caption[langSignal.current]} />
+            </span>
+          {/if}
           <button onclick={() => openLightbox(src)} aria-label="Ampliar imagen">
             <img
               class="image image--{block.type}"
@@ -219,11 +221,11 @@
   .cover-wrapper,
   .image-wrapper button {
     display: block;
-    width: 100%;
+    width: inherit;
     border: none;
     background: none;
     padding: 0;
-    cursor: pointer;
+    margin: 0;
   }
   .meta-top {
     position: relative;
@@ -323,13 +325,13 @@
     object-fit: cover;
     cursor: zoom-in;
     transition: transform var(--transition);
+    cursor: pointer;
   }
   .image:hover {
     transform: scale(1.01);
   }
   .image--image {
     width: 90%;
-    margin-block: var(--space-8);
     margin-top: var(--space-12);
   }
   .image--cover {

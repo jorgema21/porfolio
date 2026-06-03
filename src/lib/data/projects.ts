@@ -87,7 +87,7 @@ const projects = [
   },
   {
     id: "p5",
-    slug: "tren-constrastes",
+    slug: "tren-contrastes",
     variant: "grid",
     category: "infografia",
     homeVisible: true,

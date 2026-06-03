@@ -1,0 +1,28 @@
+{
+  "apartado": "sports",
+  "usos": [
+    {
+      "es": "Datos",
+      "en": "Data"
+    },
+    {
+      "es": "Visualización",
+      "en": "Visualization"
+    }
+  ],
+  "colaboracion": {
+    "tipo": "solo",
+    "rol": [
+      "graficos",
+      "texto"
+    ]
+  },
+  "tools": [
+    "GoogleSheets",
+    "Datawrapper",
+    "Illustrator"
+  ],
+  "date": "2024-03-13",
+  "mediumKey": "elpais",
+  "url": "https://elpais.com/deportes/futbol/2024-03-13/por-que-el-inter-de-milan-rival-del-atletico-es-el-equipo-menos-goleado-de-las-cinco-grandes-ligas.html"
+}

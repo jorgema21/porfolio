@@ -1,0 +1,28 @@
+{
+  "apartado": "culture",
+  "usos": [
+    {
+      "es": "Datos",
+      "en": "Data"
+    },
+    {
+      "es": "Visualización",
+      "en": "Visualization"
+    }
+  ],
+  "colaboracion": {
+    "tipo": "equipo",
+    "rol": [
+      "graficos",
+      "texto"
+    ]
+  },
+  "tools": [
+    "GoogleSheets",
+    "Datawrapper",
+    "Illustrator"
+  ],
+  "date": "2025-05-12",
+  "mediumKey": "colpisa",
+  "url": "https://www.elcorreo.com/culturas/musica/radiografia-musica-directo-datos-explican-entradas-caras-20250512000355-ntrc.html"
+}

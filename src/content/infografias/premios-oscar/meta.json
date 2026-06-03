@@ -1,0 +1,39 @@
+{
+  "apartado": "culture",
+  "usos": [
+    {
+      "es": "Datos",
+      "en": "Data"
+    },
+    {
+      "es": "Mapas",
+      "en": "Maps"
+    },
+    {
+      "es": "Visualización",
+      "en": "Visualization"
+    },
+    {
+      "es": "Desarrollo web",
+      "en": "Web development"
+    }
+  ],
+  "colaboracion": {
+    "tipo": "solo",
+    "rol": [
+      "graficos",
+      "texto"
+    ]
+  },
+  "tools": [
+    "GoogleSheets",
+    "RStudio",
+    "Code",
+    "Svelte",
+    "Illustrator",
+    "Photoshop"
+  ],
+  "date": "2025-03-03",
+  "mediumKey": "github",
+  "url": "https://jorgema21.github.io/reportaje_oscars/"
+}

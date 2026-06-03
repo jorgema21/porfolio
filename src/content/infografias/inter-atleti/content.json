@@ -1,0 +1,139 @@
+{
+  "blocks": [
+    {
+      "type": "divider"
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          "Como previa de un partido de Champions League, propuse un reportaje de datos para analizar a fondo la solidez defensiva ",
+          "del Inter de Milán antes de su enfrentamiento contra el Atlético de Madrid. ",
+          "Me basé en datos de OPTA y de la RFEF, y desarrollé diferentes visualizaciones utilizando Datawrapper e Illustrator."
+        ],
+        "en": [
+          "As a Champions League match preview, I pitched a data-driven feature analyzing Inter Milan's defensive solidity ",
+          "ahead of their match against Atlético de Madrid. ",
+          "Using data from OPTA and RFEF, I developed various visualizations through Datawrapper and Illustrator."
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          "La primera pieza fue un gráfico de dispersión con los equipos de las cinco grandes ligas europeas, ",
+          "donde crucé los goles en contra con los goles esperados en contra (xG), y añadí además ventanas emergentes (tooltips) ",
+          "con barras dinámicas en su interior."
+        ],
+        "en": [
+          "The first piece was a scatterplot including teams from Europe's five major leagues, ",
+          "in which I cross-referenced goals conceded against expected goals conceded (xG), and I added also custom tooltips",
+          "with dynamic bars inside."
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "inter-atleti-1.webp",
+      "alt": {
+        "es": "Gráfico de dispersión que muestra la relación entre goles encajados y goles esperados en contra de los equipos europeos.",
+        "en": "Scatterplot showing the relationship between goals conceded and expected goals against (xG) for European teams."
+      },
+      "caption": {
+        "es": "Relación entre goles en contra y goles esperados en contra, con un enfoque especial en las métricas del Atlético de Madrid",
+        "en": "Correlation between goals conceded and expected goals against (xG), focusing on Atlético de Madrid's metrics"
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          "También incluí un gráfico de barras que mostraba la evolución y mejora de la capacidad defensiva del Inter ",
+          "tanto en su liga local como en Europa según el promedio de goles encajados."
+        ],
+        "en": [
+          "I also included a bar chart showing the evolution and improvement of Inter Milan's defensive capacity ",
+          "across both domestic league and European competitions by goals conceded."
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "inter-atleti-2.webp",
+      "alt": {
+        "es": "Gráfico de barras agrupadas que compara los goles encajados por el Inter por temporada en Liga y competiciones europeas.",
+        "en": "Grouped bar chart comparing Inter's goals conceded per season in domestic league and European matches."
+      },
+      "caption": {
+        "es": "Evolución del rendimiento en el juego defensivo del Inter de Milán",
+        "en": "Performance evolution in Inter Milan's defensive gameplay"
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          "Uno de los pilares del conjunto italiano era su total confianza en una alineación base estructurada bajo un esquema de 3-5-2. ",
+          "Visualicé esto mediante un gráfico de distribución que relacionaba los esquemas tácticos de ambos equipos con los goles encajados por el Inter."
+        ],
+        "en": [
+          "One of the Italian side's main strengths was their reliance on a core starting lineup structured under a 3-5-2 formation. ",
+          "I visualized this through a distribution chart cross-referencing both teams' tactical lineups against Inter's goals conceded."
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "inter-atleti-0.webp",
+      "alt": {
+        "es": "Gráfico de distribución que analiza las alineaciones tácticas del Inter y sus rivales junto al volumen de partidos y goles recibidos.",
+        "en": "Distribution chart analyzing tactical lineups of Inter and its rivals alongside match volumes and goals conceded."
+      },
+      "caption": {
+        "es": "El Inter de Milán jugaba con un bloque cerrado que encajaba muy pocos goles",
+        "en": "Inter Milan played with a core system that conceded very few goals"
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          "Por último, mostré espacialmente otras métricas: un mapa con la ubicación exacta ",
+          "de los tiros recibidos por el Inter de Milán; y un mapa de calor centrado en sus intervenciones defensivas sobre el césped."
+        ],
+        "en": [
+          "Finally, I found it essential to display the first-leg metrics spatially. I designed a shot map showing the exact location ",
+          "of shots faced by Inter Milan, alongside a heatmap highlighting their defensive actions across the pitch."
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "inter-atleti-3.webp",
+      "alt": {
+        "es": "Mapa de disparos recibidos y goles encajados en la portería del Inter de Milán.",
+        "en": "Shot map showing shots faced and goals conceded around Inter Milan's penalty box."
+      },
+      "caption": {
+        "es": "Zonas y tiros en contra del Inter de Milán",
+        "en": "Shot locations against Inter Milan"
+      }
+    },
+    {
+      "type": "image",
+      "src": "inter-atleti-4.webp",
+      "alt": {
+        "es": "Mapa de calor sobre el campo de fútbol que refleja la densidad de las acciones defensivas del Inter de Milán.",
+        "en": "Football pitch heatmap reflecting the density and distribution of Inter Milan's defensive actions."
+      },
+      "caption": {
+        "es": "Distribución e intensidad de las acciones defensivas del Inter de Milán por sectores del campo",
+        "en": "Distribution and intensity of Inter Milan's deffensive actions by pitch sectors"
+      }
+    },
+    {
+      "type": "divider"
+    }
+  ]
+}

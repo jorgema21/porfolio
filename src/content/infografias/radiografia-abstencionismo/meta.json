@@ -1,0 +1,31 @@
+{
+  "apartado": "national",
+  "usos": [
+    {
+      "es": "Datos",
+      "en": "Data"
+    },
+    {
+      "es": "Visualización",
+      "en": "Visualization"
+    },
+    {
+      "es": "Mapas",
+      "en": "Maps"
+    }
+  ],
+  "colaboracion": {
+    "tipo": "equipo",
+    "rol": [
+      "graficos"
+    ]
+  },
+  "tools": [
+    "GoogleSheets",
+    "Datawrapper",
+    "RStudio"
+  ],
+  "date": "2023-08-14",
+  "mediumKey": "elpais",
+  "url": "https://elpais.com/espana/elecciones-generales/2023-08-14/multimedia-los-abstencionistas-cronicos-repitieron-el-23-j-hay-vecinos-que-ni-saben-como-es-el-tramite-para-votar.html"
+}
