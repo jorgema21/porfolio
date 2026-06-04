@@ -1,0 +1,28 @@
+{
+  "apartado": "sports",
+  "usos": [
+    {
+      "es": "Datos",
+      "en": "Data"
+    },
+    {
+      "es": "Visualización",
+      "en": "Visualization"
+    }
+  ],
+  "colaboracion": {
+    "tipo": "solo",
+    "rol": [
+      "graficos",
+      "texto"
+    ]
+  },
+  "tools": [
+    "GoogleSheets",
+    "Datawrapper",
+    "RStudio"
+  ],
+  "date": "2024-03-31",
+  "mediumKey": "elpais",
+  "url": "https://elpais.com/deportes/baloncesto/2024-03-31/por-que-la-nba-vive-una-de-sus-temporadas-mas-anotadoras-de-la-historia-en-graficos.html"
+}

@@ -1,0 +1,131 @@
+{
+  "blocks": [
+    {
+      "type": "divider"
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "En mi primer y, hasta mediados de 2026, único trabajo realizado con Blender, ideé un reportaje visual "
+          },
+          {
+            "text": "con una gran carga interactiva en el segundo proyecto de "
+          },
+          {
+            "text": "scrollytelling ",
+            "italic": true
+          },
+          {
+            "text": "que desarrollé. "
+          },
+          {
+            "text": "A través de una animación en 3D con este programa, el cual aprendí a utilizar a lo largo del proceso "
+          },
+          {
+            "text": "con ayuda de la IA, coordiné la publicación para que coincidiera "
+          },
+          {
+            "text": "con el regreso de Nadal a las pistas en Año Nuevo de 2024."
+          }
+        ],
+        "en": [
+          {
+            "text": "In my first and, until mid-2026, only project done with Blender, I designed a visual feature story "
+          },
+          {
+            "text": "with heavy interactivity for the second scrollytelling "
+          },
+          {
+            "text": "project I have ever developed. "
+          },
+          {
+            "text": "Through a 3D animation created with this software, which I learned to use throughout the project "
+          },
+          {
+            "text": "with AI help, I timed the publication close to Nadal's return "
+          },
+          {
+            "text": " to the courts around New Year 2024."
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Estructuré la narrativa como "
+          },
+          {
+            "text": "scrollytelling ",
+            "italic": true
+          },
+          {
+            "text": "e interactividad gestionada mediante Javascript, "
+          },
+          {
+            "text": "incorporando gráficos sencillos superpuestos. "
+          },
+          {
+            "text": "Para ello, utilicé Adobe Premiere Pro y realicé un trabajo "
+          },
+          {
+            "text": "frame ",
+            "italic": true
+          },
+          {
+            "text": "a "
+          },
+          {
+            "text": "frame ",
+            "italic": true
+          },
+          {
+            "text": " que integré con HTML, CSS y Javascript. "
+          },
+          {
+            "text": "Aunque el resultado final del modelado en Blender no me dejó del todo satisfecho por la curva de aprendizaje y la presión temporal, me sirvió para ganar experiencia."
+          }
+        ],
+        "en": [
+          {
+            "text": "I structured the narrative using scrollytelling "
+          },
+          {
+            "text": "and interactivity managed through Javascript, "
+          },
+          {
+            "text": "incorporating simple overlaid graphics. "
+          },
+          {
+            "text": "To achieve this, I used Adobe Premiere Pro and did a frame-by-frame "
+          },
+          {
+            "text": "workflow integrated with HTML, CSS, and Javascript. "
+          },
+          {
+            "text": "While the final modeling results in Blender did not fully satisfy me due to the learning curve and time pressure, it served as a valuable way to gain experience."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "lesiones-nadal-0.webp",
+      "alt": {
+        "es": "Captura de pantalla del scrollytelling interactivo que muestra las lesiones físicas de Rafa Nadal.",
+        "en": "Screenshot of the interactive scrollytelling showing Rafa Nadal's physical injuries."
+      },
+      "caption": {
+        "es": "Fragmento del scrollytelling con una imagen y una cartela",
+        "en": "Snippet of the scrollytelling feature with an image and an info card"
+      }
+    },
+    {
+      "type": "divider"
+    }
+  ]
+}

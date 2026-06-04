@@ -1,0 +1,32 @@
+{
+  "apartado": "international",
+  "usos": [
+    {
+      "es": "Datos",
+      "en": "Data"
+    },
+    {
+      "es": "Visualización",
+      "en": "Visualization"
+    },
+    {
+      "es": "Mapas",
+      "en": "Maps"
+    }
+  ],
+  "colaboracion": {
+    "tipo": "solo",
+    "rol": [
+      "graficos"
+    ]
+  },
+  "tools": [
+    "GoogleSheets",
+    "Flourish",
+    "Illustrator",
+    "Photoshop"
+  ],
+  "date": "2024-11-06",
+  "mediumKey": "a14",
+  "url": "https://www.articulo14.es/internacional/trump-acaricia-la-victoria-en-estados-unidos-20241106.html"
+}

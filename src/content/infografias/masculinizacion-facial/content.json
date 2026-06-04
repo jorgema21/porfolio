@@ -1,0 +1,96 @@
+{
+  "blocks": [
+    {
+      "type": "divider"
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          "En un reportaje sobre masculinización facial, acompañé el proceso con gráficos y pequeñas infografías utilizando Google Sheets y Datawrapper. ",
+          "Incluí datos clave sobre cómo se realiza el tratamiento, cuáles son sus costes y cuánto dura el ácido hialurónico."
+        ],
+        "en": [
+          "In a feature story about facial masculinization, I accompanied the process with charts and small infographics using Google Sheets and Datawrapper. ",
+          "I included key data on how the treatment is performed, its costs, and how long hyaluronic acid lasts."
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "masculinizacion-facial-1.webp",
+      "alt": {
+        "es": "Grid de dos gráficos: rangeplot de la duración del ácido hialurónico por zona de aplicación y distribución de viales de ácido hialurónico por precio y tratamiento.",
+        "en": "Grid of two charts: a rangeplot of hyaluronic acid duration by application area and a distribution of hyaluronic acid vials by price and treatment."
+      },
+      "caption": {
+        "es": "Así dura por zonas, cuesta y viales necesita el ácido hialurónico",
+        "en": "This is how long hyaluronic acid lasts by area, its cost, and the number of vials needed"
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          "Además, trabajé en Adobe Illustrator con pictogramas para mostrar cuáles fueron los tratamientos más demandados entre hombres y mujeres, ",
+          "junto a datos distribuidos por rangos de pacientes."
+        ],
+        "en": [
+          "Additionally, I worked in Adobe Illustrator with pictograms to show which treatments were the most requested among men and women, ",
+          "alongside data distributed by patient ranges."
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "masculinizacion-facial-2.webp",
+      "alt": {
+        "es": "Pictograma de los tratamientos estéticos más demandados y el rango de años que más común es realizarse un tratamiento.",
+        "en": "Pictogram of the most requested aesthetic treatments and the age range where receiving a treatment is most common."
+      },
+      "caption": {
+        "es": "Esto es lo que más piden por género y qué rangos de edad se tratan más",
+        "en": "This is what is most requested by gender and which age ranges undergo treatments the most"
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          "Para ofrecer un contexto más amplio sobre la cirugía estética, desarrollé unos gráficos de barras apiladas con las intervenciones por género y tipo. ",
+          "Después, sumé un mapa de calor estructurado por rangos de edad y tipología de cirugía."
+        ],
+        "en": [
+          "To offer a broader context on cosmetic surgery, I developed stacked bar charts showing interventions by gender and type. ",
+          "Afterward, I added a heatmap structured by age ranges and surgery typology."
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "masculinizacion-facial-3.webp",
+      "alt": {
+        "es": "Grid de dos gráficos: barras apiladas de cirugía estética por género y zona, y mapa de calor por zona y rango de edad.",
+        "en": "Grid of two charts: stacked bars of cosmetic surgery by gender and area, and a heatmap by area and age range."
+      },
+      "caption": {
+        "es": "Intervenciones de cirugía estética por zona, género y rango de edad",
+        "en": "Cosmetic surgery interventions by area, gender, and age range"
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          "Todos los gráficos e infografías fueron editados posteriormente por el periódico para ajustarlos por completo a su propio libro de estilo."
+        ],
+        "en": [
+          "All the charts and infographics were subsequently edited by the newspaper to fully adapt them to their own style guide."
+        ]
+      }
+    },
+    {
+      "type": "divider"
+    }
+  ]
+}

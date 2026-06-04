@@ -1,0 +1,32 @@
+{
+  "apartado": "international",
+  "usos": [
+    {
+      "es": "Mapas",
+      "en": "Maps"
+    },
+    {
+      "es": "Datos",
+      "en": "Data"
+    },
+        {
+      "es": "Visualización",
+      "en": "Visualization"
+    }
+  ],
+  "colaboracion": {
+    "tipo": "solo",
+    "rol": [
+      "graficos",
+      "texto"
+    ]
+  },
+  "tools": [
+    "RStudio",
+    "Illustrator",
+    "InDesign"
+  ],
+  "date": "2025-06-01",
+  "mediumKey": "sty_forbes",
+  "url": ""
+}

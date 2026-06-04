@@ -1,0 +1,28 @@
+{
+  "apartado": "sports",
+  "usos": [
+    {
+      "es": "Datos",
+      "en": "Data"
+    },
+    {
+      "es": "Visualización",
+      "en": "Visualization"
+    }
+  ],
+  "colaboracion": {
+    "tipo": "solo",
+    "rol": [
+      "graficos",
+      "texto"
+    ]
+  },
+  "tools": [
+    "GoogleSheets",
+    "Datawrapper",
+    "RStudio"
+  ],
+  "date": "2024-02-10",
+  "mediumKey": "elpais",
+  "url": "https://elpais.com/deportes/futbol/2024-02-10/real-madrid-y-girona-se-disputan-la-liga-con-el-gol-por-bandera.html"
+}

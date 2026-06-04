@@ -1,0 +1,30 @@
+{
+  "apartado": "economy",
+  "usos": [
+    {
+      "es": "Datos",
+      "en": "Data"
+    },
+    {
+      "es": "Visualización",
+      "en": "Visualization"
+    },
+    {
+      "es": "Mapas",
+      "en": "Maps"
+    }
+  ],
+  "colaboracion": {
+    "tipo": "solo",
+    "rol": [
+      "graficos"
+    ]
+  },
+  "tools": [
+    "GoogleSheets",
+    "Flourish"
+  ],
+  "date": "2024-11-11",
+  "mediumKey": "a14",
+  "url": "https://www.articulo14.es/economia/las-olivareras-andaluzas-en-vilo-ante-los-nuevos-aranceles-de-trump-20241111.html"
+}

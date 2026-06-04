@@ -1,0 +1,31 @@
+{
+  "apartado": "miscellaneous",
+  "usos": [
+    {
+      "es": "Datos",
+      "en": "Data"
+    },
+    {
+      "es": "Visualización",
+      "en": "Visualization"
+    },
+    {
+      "es": "Infografía",
+      "en": "Infographics"
+    }
+  ],
+  "colaboracion": {
+    "tipo": "equipo",
+    "rol": [
+      "graficos"
+    ]
+  },
+  "tools": [
+    "GoogleSheets",
+    "Datawrapper",
+    "Illustrator"
+  ],
+  "date": "2025-07-16",
+  "mediumKey": "colpisa",
+  "url": "https://www.elcorreo.com/sociedad/claves-masculinizacion-facial-tratamiento-estetico-favorito-jovenes-20250716085506-ntrc.html"
+}

@@ -82,6 +82,8 @@ export const infographics: Record<"es" | "en", InfographicsDict> = {
       sty_reuters: "Reuters (Storydata)",
       dataista: "Dataista",
       github: "GitHub",
+      linkedin: "LinkedIn",
+      a14: "Artículo 14",
     },
 
     intro: [
@@ -158,6 +160,8 @@ export const infographics: Record<"es" | "en", InfographicsDict> = {
       sty_reuters: "Reuters (Storydata)",
       dataista: "Dataista",
       github: "GitHub",
+      linkedin: "LinkedIn",
+      a14: "Artículo 14",
     },
 
     intro: [

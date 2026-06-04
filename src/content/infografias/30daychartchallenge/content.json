@@ -1,0 +1,1281 @@
+{
+  "blocks": [
+    {
+      "type": "divider"
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "En 2025, llevé a cabo el reto #30daychartchallenge, que consistió en publicar cada día un gráfico con una temática concreta. "
+          },
+          {
+            "text": "Yo opté por subirlos todos al final y realicé un total de 24 gráficos de los 30 propuestos. "
+          },
+          {
+            "text": "Las ideas y los estilos de las visualizaciones fueron muy diversos. "
+          },
+          {
+            "text": "Las principales herramientas que utilicé fueron Google Sheets, RStudio y Adobe Illustrator. "
+          },
+          {
+            "text": "A continuación, puedes verlos todos junto a una pequeña descripción. Las visualizaciones están diseñadas en inglés."
+          }
+        ],
+        "en": [
+          {
+            "text": "In 2025, I completed the #30daychartchallenge, which consists of publishing a daily chart based on a specific theme. "
+          },
+          {
+            "text": "I chose to upload them all at the end, completing a total of 24 out of 30 charts. "
+          },
+          {
+            "text": "The ideas and styles of the visualizations were highly diverse. "
+          },
+          {
+            "text": "The main tools I used were Google Sheets, RStudio, and Adobe Illustrator. "
+          },
+          {
+            "text": "Below you can see them all alongside a brief description. The visualizations are designed in English."
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "1. FRACCIONES",
+            "bold": true
+          }
+        ],
+        "en": [
+          {
+            "text": "1. FRACTIONS",
+            "bold": true
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Este lo planteé desde una perspectiva geográfica. El tipo de gráfico elegido fue un pictograma elaborado con datos de Eurostat."
+          }
+        ],
+        "en": [
+          {
+            "text": "I approached this one from a geographical perspective. The chosen chart type was a pictogram built using Eurostat data."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "30daychartchallenge-1.webp",
+      "alt": {
+        "es": "Gráfico de pictogramas que muestra el tamaño de población española frente a la de la UE",
+        "en": "Pictogram chart showing the size of the Spanish population compared to that of the EU"
+      },
+      "caption": {
+        "es": "Población española comparada con la Unión Europea",
+        "en": ""
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "2. SLOPE",
+            "bold": true
+          }
+        ],
+        "en": [
+          {
+            "text": "2. SLOPE",
+            "bold": true
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Este también lo enfoqué en España y en temas de movilidad, utilizando un gráfico de pendientes de cuatro líneas con datos del INE."
+          }
+        ],
+        "en": [
+          {
+            "text": "I focused this one as well on Spain and mobility issues, using a four-line slope chart with data from the INE."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "30daychartchallenge-2.webp",
+      "alt": {
+        "es": "Gráfico de pendientes con las nacionalidades de turistas que más visitan España en 2016, 2020 y 2024",
+        "en": "Slope chart showing the nationalities of tourists who visit Spain the most in 2016, 2020, and 2024"
+      },
+      "caption": {
+        "es": "Nacionalidades de turistas que más visitan España",
+        "en": ""
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "3. CIRCULAR",
+            "bold": true
+          }
+        ],
+        "en": [
+          {
+            "text": "3. CIRCULAR",
+            "bold": true
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Este lo ideé como un mapa de calor circular. Cada circunferencia representó una década y cada segmento correspondió a un año concreto, como si fuera un reloj. "
+          },
+          {
+            "text": "Los datos provinieron del paquete de R 'GmooG' tras ser procesados."
+          }
+        ],
+        "en": [
+          {
+            "text": "I designed this one as a circular heatmap. Each circumference represented a decade and each segment corresponded to a specific year, like a clock. "
+          },
+          {
+            "text": "The data came from the R package 'GmooG' after being processed."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "30daychartchallenge-3.webp",
+      "alt": {
+        "es": "Gráfico de calor circular que muestra cuánta gente estuvo en el espacio entre 1961 y 2019",
+        "en": "Circular heatmap showing how many people were in space between 1961 and 2019"
+      },
+      "caption": {
+        "es": "Personas en el espacio de 1961 a 2019, según el año de la misión",
+        "en": ""
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "4. GRANDE O PEQUEÑO",
+            "bold": true
+          }
+        ],
+        "en": [
+          {
+            "text": "4. LARGE OR SMALL",
+            "bold": true
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Volví a optar por datos de países y curiosidades, mostrando los territorios más grandes y pequeños del mundo. "
+          },
+          {
+            "text": "Decidí plasmarlos con su tamaño proporcional; por ello, los 5 países más pequeños tuvieron que ser ampliados x10000 para ser visibles al ojo humano respecto a los más grandes."
+          }
+        ],
+        "en": [
+          {
+            "text": "I opted once again for country data and curiosities, displaying the largest and smallest territories in the world. "
+          },
+          {
+            "text": "I decided to showcase them using their proportional size; therefore, the 5 smallest countries had to be enlarged x10000 to be visible to the human eye relative to the largest ones."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "30daychartchallenge-4.webp",
+      "alt": {
+        "es": "Círculos por tamaños de los países más grandes por superficie frente a los más pequeños",
+        "en": "Circles by size of the largest countries by surface area compared to the smallest ones"
+      },
+      "caption": {
+        "es": "Mayores países por área",
+        "en": ""
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "5. RANKING",
+            "bold": true
+          }
+        ],
+        "en": [
+          {
+            "text": "5. RANKING",
+            "bold": true
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "En este caso me decidí por una temática deportiva. En concreto, sobre la temporada del Valencia CF, que estuvo en puestos de descenso durante prácticamente toda la liga española. "
+          },
+          {
+            "text": "Tras cambiar de entrenador, comenzó a subir su media de puntos por partido hasta colocarse en una situación cómoda."
+          }
+        ],
+        "en": [
+          {
+            "text": "In this case, I decided on a sports theme. Specifically, about Valencia CF's season, which sat in the relegation zone during almost the entire Spanish league. "
+          },
+          {
+            "text": "After changing managers, their average points per match began to rise until they reached a comfortable position."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "30daychartchallenge-5.webp",
+      "alt": {
+        "es": "Evolución de la posición del Valencia de la 1ª jornada a la 34ª jornada",
+        "en": "Evolution of Valencia's position from matchday 1 to matchday 34"
+      },
+      "caption": {
+        "es": "Remontada del Valencia CF en la clasificación de La Liga",
+        "en": ""
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "6. FLORENCE NIGHTINGALE",
+            "bold": true
+          }
+        ],
+        "en": [
+          {
+            "text": "6. FLORENCE NIGHTINGALE",
+            "bold": true
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Para este apartado, opté por replicar su propio tipo de gráfico, también conocido como "
+          },
+          {
+            "text": "Coxcomb ",
+            "italic": true
+          },
+          {
+            "text": "o área polar. "
+          },
+          {
+            "text": "La temática giró en torno al género, así que realicé por un lado una comparativa de las mujeres que ganaron "
+          },
+          {
+            "text": "premios Nobel por categoría, y por otro, una comparativa directa entre hombres y mujeres. "
+          },
+          {
+            "text": "Todo ello estructurado por décadas."
+          }
+        ],
+        "en": [
+          {
+            "text": "For this section, I chose to replicate her own chart type, also known as a Coxcomb or polar area chart. "
+          },
+          {
+            "text": "The theme revolved around gender, featuring a comparison of women who won Nobel prizes by category on one hand, "
+          },
+          {
+            "text": "and a direct comparison between men and women on the other. "
+          },
+          {
+            "text": "All of it structured by decades."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "30daychartchallenge-6.webp",
+      "alt": {
+        "es": "Dos áreas polares: una que muestra los premios nobel de mujeres por década y categoría; otro que muestra los premios por década y género",
+        "en": "Two polar areas: one showing Nobel prizes won by women by decade and category; the other showing prizes by decade and gender"
+      },
+      "caption": {
+        "es": "Las mujeres en los premios Nobel | Por década y categoría | Por década y género",
+        "en": ""
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "7. OUTLIERS",
+            "bold": true
+          }
+        ],
+        "en": [
+          {
+            "text": "7. OUTLIERS",
+            "bold": true
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Para este gráfico opté por hablar de economía y realizar un "
+          },
+          {
+            "text": "beeswarm",
+            "italic": true
+          },
+          {
+            "text": " en el que se reflejaron los países que destacaron por los extremos, distribuidos por continente."
+          }
+        ],
+        "en": [
+          {
+            "text": "For this chart, I chose to talk about economics and create a beeswarm "
+          },
+          {
+            "text": "that reflected the countries standing out at the extremes, distributed by continent."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "30daychartchallenge-7.webp",
+      "alt": {
+        "es": "Beeswarm que muestra los países más ricos y pobres de cada continente",
+        "en": "Beeswarm chart showing the richest and poorest countries of each continent"
+      },
+      "caption": {
+        "es": "¿Qué países destacan en PIB per Capita en cada continente?",
+        "en": ""
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "8. HISTOGRAMA",
+            "bold": true
+          }
+        ],
+        "en": [
+          {
+            "text": "8. HISTOGRAM",
+            "bold": true
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Para el histograma hablé sobre la altitud media de todos los municipios italianos, según datos del ISTAT. "
+          },
+          {
+            "text": "De fondo coloqué una montaña para reflejar que, a mayor altitud, existía un menor número de municipios."
+          }
+        ],
+        "en": [
+          {
+            "text": "For the histogram, I focused on the average altitude of all Italian municipalities, using ISTAT data. "
+          },
+          {
+            "text": "In the background, I placed a mountain to reflect that higher altitudes correlated with a lower number of municipalities."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "30daychartchallenge-8.webp",
+      "alt": {
+        "es": "Un histograma que muestra cuántos municipios por rangos de 100 metros de altura hay en Italia",
+        "en": "A histogram showing how many municipalities exist in Italy by 100-meter altitude ranges"
+      },
+      "caption": {
+        "es": "El perfil vertical de los municipios de Italia",
+        "en": ""
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "9. DIVERGENTE",
+            "bold": true
+          }
+        ],
+        "en": [
+          {
+            "text": "9. DIVERGING",
+            "bold": true
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Decidí hacer unas barras apiladas sobre la opinión de los españoles respecto a aumentar la defensa de la UE, "
+          },
+          {
+            "text": "abordado desde un punto de vista internacional."
+          }
+        ],
+        "en": [
+          {
+            "text": "I decided to create stacked bars regarding the opinion of Spaniards on increasing EU defense, "
+          },
+          {
+            "text": "approached from an international point of view."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "30daychartchallenge-9.webp",
+      "alt": {
+        "es": "Barras apiladas con rojo, gris y verde divergente según apoyo español a la defensa de la UE",
+        "en": "Stacked bars with diverging red, gray, and green based on Spanish support for EU defense"
+      },
+      "caption": {
+        "es": "Europa y Defensa: ¿Qué piensan los ciudadanos españoles?",
+        "en": ""
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "11. RAYAS",
+            "bold": true
+          }
+        ],
+        "en": [
+          {
+            "text": "11. STRIPES",
+            "bold": true
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Volví a hablar de deportes para visualizar la carrera futbolística de Messi y Cristiano a través de un "
+          },
+          {
+            "text": "heatmap",
+            "italic": true
+          },
+          {
+            "text": " en "
+          },
+          {
+            "text": "stripes",
+            "italic": true
+          },
+          {
+            "text": " en el que se vio su potencial goleador por temporada."
+          }
+        ],
+        "en": [
+          {
+            "text": "I returned to sports to visualize the football careers of Messi and Cristiano through a "
+          },
+          {
+            "text": "heatmap in stripes that showed their goalscoring potential per season."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "30daychartchallenge-11.webp",
+      "alt": {
+        "es": "Mapa de calor por rayas que muestra por tonalidad de rojo los goles de Messi y Cristiano por temporada",
+        "en": "Striped heatmap chart showing Messi and Cristiano's goals per season through shades of red"
+      },
+      "caption": {
+        "es": "Goles por temporada de los GOAT (Los mejores de la historia)",
+        "en": ""
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "12. DATA.GOV",
+            "bold": true
+          }
+        ],
+        "en": [
+          {
+            "text": "12. DATA.GOV",
+            "bold": true
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Escogí un "
+          },
+          {
+            "text": "streamgraph",
+            "italic": true
+          },
+          {
+            "text": " para visualizar cómo Estados Unidos evolucionó respecto a la procedencia de la energía que consumió con datos de data.gov."
+          }
+        ],
+        "en": [
+          {
+            "text": "I chose a streamgraph "
+          },
+          {
+            "text": "to visualize how the United States evolved regarding where it sourced its consumed energy, with data from data.gov."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "30daychartchallenge-12.webp",
+      "alt": {
+        "es": "Streamgraph que muestra desde 1949 a 2024 de dónde sacan los estadounidenses la energía",
+        "en": "Streamgraph showing where Americans sourced their energy from 1949 to 2024"
+      },
+      "caption": {
+        "es": "Consumo de energía en EEUU por fuente (1949-2024)",
+        "en": ""
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "13. CLUSTERS",
+            "bold": true
+          }
+        ],
+        "en": [
+          {
+            "text": "13. CLUSTERS",
+            "bold": true
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Realicé un "
+          },
+          {
+            "text": "scatterplot",
+            "italic": true
+          },
+          {
+            "text": " que visualizó la relación entre el ratio de alfabetización y la esperanza de vida, centrado únicamente en países con datos de 2022 o 2023 en el World Bank."
+          }
+        ],
+        "en": [
+          {
+            "text": "I created a scatterplot "
+          },
+          {
+            "text": "visualizing the relationship between the literacy rate and life expectancy, focusing only on countries with 2022 or 2023 data from the World Bank."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "30daychartchallenge-13.webp",
+      "alt": {
+        "es": "Gráfico de distribución que muestra los grupos de países como clusters con relaciones de educación y longevidad",
+        "en": "Distribution chart showing country groups as clusters with education and longevity relationships"
+      },
+      "caption": {
+        "es": "Vida y aprendizaje: Cómo se agrupan los países por educación y longevidad",
+        "en": ""
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "14. PARENTESCO",
+            "bold": true
+          }
+        ],
+        "en": [
+          {
+            "text": "14. KINSHIP",
+            "bold": true
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Este fue uno de los gráficos que más me costó debido al tiempo que empleé en recabar la información. "
+          },
+          {
+            "text": "Visualicé el árbol genealógico de la Familia Real Española, abarcando desde Alfonso XIII hasta Felipe VI."
+          }
+        ],
+        "en": [
+          {
+            "text": "This was one of the charts that required the most effort due to the time spent gathering information. "
+          },
+          {
+            "text": "I visualized the family tree of the Spanish Royal Family, spanning from Alfonso XIII to Felipe VI."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "30daychartchallenge-14.webp",
+      "alt": {
+        "es": "Árbol genealógico de los Borbones en España con distinción por líneas sucesorias y consortes",
+        "en": "Family tree of the Bourbons in Spain distinguishing between lines of succession and consorts"
+      },
+      "caption": {
+        "es": "Vida y aprendizaje: Cómo se agrupan los países por educación y longevidad",
+        "en": ""
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "16. NEGATIVO",
+            "bold": true
+          }
+        ],
+        "en": [
+          {
+            "text": "16. NEGATIVE",
+            "bold": true
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Desarrollé una cuadrícula por Comunidades Autónomas para plasmar la diferencia registrada en 2015 y 2024 "
+          },
+          {
+            "text": "respecto al saldo entre entradas y salidas de trabajadores por motivos laborales."
+          }
+        ],
+        "en": [
+          {
+            "text": "I developed a grid by Autonomous Communities to reflect the difference recorded in 2015 and 2024 "
+          },
+          {
+            "text": "regarding the balance between incoming and outgoing workers for employment reasons."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "30daychartchallenge-16.webp",
+      "alt": {
+        "es": "Grid de columnas múltiples con el movimiento interregional en España",
+        "en": "Multi-column grid showing interregional movement in Spain"
+      },
+      "caption": {
+        "es": "Movilidad laboral interregional neta en España",
+        "en": ""
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "17. PÁJAROS",
+            "bold": true
+          }
+        ],
+        "en": [
+          {
+            "text": "17. BIRDS",
+            "bold": true
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Realicé un gráfico de donut "
+          },
+          {
+            "text": "para mostrar, mediante una propuesta estética alternativa, cómo se distribuyó la lista roja de las aves según los datos de BirdLife."
+          }
+        ],
+        "en": [
+          {
+            "text": "I created a donut chart "
+          },
+          {
+            "text": "to display, through an alternative aesthetic approach, how the red list of birds was distributed according to BirdLife data."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "30daychartchallenge-17.webp",
+      "alt": {
+        "es": "Gráfico circular de las categorías de la lista roja de especies de aves",
+        "en": "Pie chart of the bird species red list categories"
+      },
+      "caption": {
+        "es": "Las especies de aves en la categoría de la lista roja",
+        "en": ""
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "18. EL PAÍS",
+            "bold": true
+          }
+        ],
+        "en": [
+          {
+            "text": "18. THE COUNTRY",
+            "bold": true
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Aprovechando la temática orientada al periodismo, elaboré un mapa coroplético para reflejar la situación mundial de la libertad de prensa, "
+          },
+          {
+            "text": "utilizando los datos de Reporteros Sin Fronteras."
+          }
+        ],
+        "en": [
+          {
+            "text": "Taking advantage of the journalism-oriented theme, I crafted a choropleth map to reflect the global situation of press freedom, "
+          },
+          {
+            "text": "using data from Reporters Without Borders."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "30daychartchallenge-18.webp",
+      "alt": {
+        "es": "Mapamundi coroplético de la libertad de prensa",
+        "en": "Choropleth world map of press freedom"
+      },
+      "caption": {
+        "es": "Índice de libertad de prensa",
+        "en": ""
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "19. FLUIDO",
+            "bold": true
+          }
+        ],
+        "en": [
+          {
+            "text": "19. FLUID",
+            "bold": true
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Opté por hablar sobre cómo evolucionaron las elecciones federales alemanas desde su reunificación en 1990, "
+          },
+          {
+            "text": "a través de una evolución de posiciones y cantidad de votos."
+          }
+        ],
+        "en": [
+          {
+            "text": "I chose to talk about how German federal elections evolved since reunification in 1990, "
+          },
+          {
+            "text": "through a ranking and amount of votes evolution."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "30daychartchallenge-19.webp",
+      "alt": {
+        "es": "Gráfico de flujos de las elecciones en Alemania por partido desde 1990",
+        "en": "Flow chart of German elections by party since 1990"
+      },
+      "caption": {
+        "es": "Elecciones alemanas desde 1990",
+        "en": ""
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "21. FÓSILES",
+            "bold": true
+          }
+        ],
+        "en": [
+          {
+            "text": "21. FOSSILS",
+            "bold": true
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Volviendo a España, diseñé un mapa localizador sencillo de los lugares donde se encontraron restos fósiles de dinosaurios "
+          },
+          {
+            "text": "en Teruel, utilizando los datos de paleobioDB mediante su paquete de R."
+          }
+        ],
+        "en": [
+          {
+            "text": "Returning to Spain, I designed a simple locator map showing where dinosaur fossil remains were found "
+          },
+          {
+            "text": "in Teruel, using data from paleobioDB via its R package."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "30daychartchallenge-21.webp",
+      "alt": {
+        "es": "Mapa localizador de fósiles de dinosaurio descubiertos en Teruel",
+        "en": "Locator map of dinosaur fossils discovered in Teruel"
+      },
+      "caption": {
+        "es": "Descubrimientos de fósiles descubiertos en Teruel",
+        "en": ""
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "22. ESTRELLAS",
+            "bold": true
+          }
+        ],
+        "en": [
+          {
+            "text": "22. STARS",
+            "bold": true
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Opté de nuevo por un mapa localizador enfocado en los observatorios astronómicos más altos del mundo para la observación de estrellas."
+          }
+        ],
+        "en": [
+          {
+            "text": "I opted once again for a locator map focused on the highest astronomical observatories in the world for stargazing."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "30daychartchallenge-22.webp",
+      "alt": {
+        "es": "Mapamundi localizador de los observatorios astronómicos más altos",
+        "en": "World locator map of the highest astronomical observatories"
+      },
+      "caption": {
+        "es": "Observatorios astronómicos más altos",
+        "en": ""
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "23. ESCALA LOGARÍTMICA",
+            "bold": true
+          }
+        ],
+        "en": [
+          {
+            "text": "23. LOGARITHMIC SCALE",
+            "bold": true
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Utilizando una escala logarítmica en el eje X, visualicé la relación entre los países por esperanza de vida y su gasto sanitario per cápita."
+          }
+        ],
+        "en": [
+          {
+            "text": "Using a logarithmic scale on the X-axis, I visualized the relationship among countries regarding life expectancy and their healthcare expenditure per capita."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "30daychartchallenge-23.webp",
+      "alt": {
+        "es": "Gráfico de dispersión con eje X logarítmico que relaciona mayor gasto en salud con mayor longevidad",
+        "en": "Scatterplot with a logarithmic X-axis relating higher health spending to increased longevity"
+      },
+      "caption": {
+        "es": "A mayor gasto, ¿mayor vida?",
+        "en": ""
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "24. OMS",
+            "bold": true
+          }
+        ],
+        "en": [
+          {
+            "text": "24. WHO",
+            "bold": true
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Para aprovechar la base de datos de la OMS, visualicé mediante un "
+          },
+          {
+            "text": "dotplot ",
+            "italic": true
+          },
+          {
+            "text": "los 10 países con mayor y menor porcentaje de obesidad, ordenados por adultos, e incluyendo niños y adolescentes en otro grupo."
+          }
+        ],
+        "en": [
+          {
+            "text": "To leverage the WHO database, I visualized through a dotplot "
+          },
+          {
+            "text": "the 10 countries with the highest and lowest percentage of obesity, sorted by adults, and including children and adolescents in another group."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "30daychartchallenge-24.webp",
+      "alt": {
+        "es": "Gráfico de rangos de la obesidad en el mundo por países y niños/adultos",
+        "en": "Range chart of global obesity by country and children/adults"
+      },
+      "caption": {
+        "es": "Obesidad en el mundo",
+        "en": ""
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "25. RIESGO",
+            "bold": true
+          }
+        ],
+        "en": [
+          {
+            "text": "25. RISK",
+            "bold": true
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Para abordar el concepto de riesgo, volví a utilizar un "
+          },
+          {
+            "text": "beeswarm",
+            "italic": true
+          },
+          {
+            "text": " para visualizar el peligro de sufrir desastres naturales por país y tipología, "
+          },
+          {
+            "text": "y destaqué aquellos con mayor vulnerabilidad general a partir de datos de la Comisión Europea."
+          }
+        ],
+        "en": [
+          {
+            "text": "To approach the concept of risk, I used a beeswarm "
+          },
+          {
+            "text": "once again to visualize the danger of experiencing natural disasters by country and typology, "
+          },
+          {
+            "text": "and I highlighted those with the highest overall vulnerability based on European Commission data."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "30daychartchallenge-25.webp",
+      "alt": {
+        "es": "Grid de beeswarms con tipo de desastre natural y riesgo de cada país de sufrirlo",
+        "en": "Grid of beeswarm charts showing the type of natural disaster and each country's risk of experiencing it"
+      },
+      "caption": {
+        "es": "A merced de la tierra: riesgo por tipo de desastre",
+        "en": ""
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "26. MONOCROMÁTICO",
+            "bold": true
+          }
+        ],
+        "en": [
+          {
+            "text": "26. MONOCHROME",
+            "bold": true
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Con el objetivo de diseñar un gráfico monocromático, utilicé una gama de grises y líneas para "
+          },
+          {
+            "text": "explicar la evolución decreciente en el tiempo de la población que reside en entornos rurales, distribuida por regiones geográficas."
+          }
+        ],
+        "en": [
+          {
+            "text": "Aiming to design a monochrome chart, I used a gray scale and lines to "
+          },
+          {
+            "text": "explain the decreasing trend over time of the population living in rural environments, distributed by geographical regions."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "30daychartchallenge-26.webp",
+      "alt": {
+        "es": "Gráfico de líneas monocromático con la evolución de porcentaje de habitantes en zonas rurales por región",
+        "en": "Monochrome line chart showing the trend of the percentage of inhabitants in rural areas by region"
+      },
+      "caption": {
+        "es": "De campos a ciudades: Declive rural por región",
+        "en": ""
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "30. NATIONAL GEOGRAPHIC",
+            "bold": true
+          }
+        ],
+        "en": [
+          {
+            "text": "30. NATIONAL GEOGRAPHIC",
+            "bold": true
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Aunque la temática no guardó una relación directa con National Geographic, diseñé un mapa localizador "
+          },
+          {
+            "text": "para mostrar las áreas naturales protegidas de España."
+          }
+        ],
+        "en": [
+          {
+            "text": "Although the theme did not share a direct connection with National Geographic, I designed a locator map "
+          },
+          {
+            "text": "that showed the protected natural areas of Spain."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "30daychartchallenge-30.webp",
+      "alt": {
+        "es": "Mapa coroplético de las áreas naturales protegidas de España",
+        "en": "Choropleth map of the protected natural areas of Spain"
+      },
+      "caption": {
+        "es": "Áreas naturales protegidas en España",
+        "en": ""
+      }
+    },
+    {
+      "type": "divider"
+    }
+  ]
+}

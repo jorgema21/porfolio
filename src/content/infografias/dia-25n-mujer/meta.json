@@ -1,0 +1,36 @@
+{
+  "apartado": "gender",
+  "usos": [
+    {
+      "es": "Datos",
+      "en": "Data"
+    },
+    {
+      "es": "Visualización",
+      "en": "Visualization"
+    },
+    {
+      "es": "Mapas",
+      "en": "Maps"
+    },
+    {
+      "es": "Desarrollo web",
+      "en": "Web development"
+    }
+  ],
+  "colaboracion": {
+    "tipo": "solo",
+    "rol": [
+      "graficos",
+      "texto"
+    ]
+  },
+  "tools": [
+    "GoogleSheets",
+    "Flourish",
+    "Code"
+  ],
+  "date": "2024-11-25",
+  "mediumKey": "a14",
+  "url": "https://www.articulo14.es/violencia-contra-las-mujeres/mas-de-60-mujeres-asesinadas-al-ano-desde-2003-20241125.html"
+}

@@ -1,0 +1,33 @@
+{
+  "apartado": "miscellaneous",
+  "usos": [
+    {
+      "es": "Datos",
+      "en": "Data"
+    },
+    {
+      "es": "Visualización",
+      "en": "Visualization"
+    },
+    {
+      "es": "Mapas",
+      "en": "Maps"
+    }
+  ],
+  "colaboracion": {
+    "tipo": "solo",
+    "rol": [
+      "graficos",
+      "texto"
+    ]
+  },
+  "tools": [
+    "GoogleSheets",
+    "Flourish",
+    "Illustrator",
+    "RStudio"
+  ],
+  "date": "2025-05-05",
+  "mediumKey": "linkedin",
+  "url": ""
+}

@@ -468,21 +468,6 @@ const projects = [
   },
   {
     id: "p27",
-    slug: "canarias-sistema-viogen",
-    title: {
-      es: "La implantación del sistema VioGen en Canarias",
-      en: "Implementing the VioGen System in the Canary Islands",
-    },
-    description: {
-      es: "Cartografía de datos y mapas coropléticos municipales que reflejan la cobertura de la red",
-      en: "Data cartography and municipal choropleth maps reflecting the coverage of the network.",
-    },
-    image: "/images/projects/canarias-sistema-viogen-ip.webp",
-    category: "infografia",
-    homeVisible: false,
-  },
-  {
-    id: "p28",
     slug: "carnaval-brasil-escuela-samba",
     title: {
       es: "Los secretos del Sambódromo: cómo se organiza por dentro una escuela de samba",
@@ -497,7 +482,7 @@ const projects = [
     homeVisible: false,
   },
   {
-    id: "p29",
+    id: "p28",
     slug: "dana-valencia",
     title: {
       es: "Cicatrices en la carretera: el impacto de la DANA en la movilidad de Valencia",
@@ -512,7 +497,7 @@ const projects = [
     homeVisible: false,
   },
   {
-    id: "p30",
+    id: "p29",
     slug: "dia-25n-mujer",
     title: {
       es: "Radiografía de la violencia contra las mujeres en España por el 25N",
@@ -528,8 +513,8 @@ const projects = [
     homeVisible: false,
   },
   {
-    id: "p31",
-    slug: "elecciones-ee-uu",
+    id: "p30",
+    slug: "elecciones-eeuu",
     title: {
       es: "Carrera hacia la Casa Blanca: el rastreo de encuestas y el desenlace entre Trump y Harris",
       en: "Race to the White House: Polling Trends and the Final Outcome Between Trump and Harris",
@@ -543,7 +528,7 @@ const projects = [
     homeVisible: false,
   },
   {
-    id: "p32",
+    id: "p31",
     slug: "estres-termico",
     title: {
       es: "Ciudades al límite por el aumento del estrés térmico en la geografía española",
@@ -558,7 +543,7 @@ const projects = [
     homeVisible: false,
   },
   {
-    id: "p33",
+    id: "p32",
     slug: "final-femenina-mundial",
     title: {
       es: "Una cita con la historia: las claves tácticas de la final femenina entre España e Inglaterra",
@@ -573,7 +558,7 @@ const projects = [
     homeVisible: false,
   },
   {
-    id: "p34",
+    id: "p33",
     slug: "final-qatar-22",
     title: {
       es: "¿La final de Qatar 2022 fue la mejor de la historia?",
@@ -589,7 +574,7 @@ const projects = [
     featured: true,
   },
   {
-    id: "p35",
+    id: "p34",
     slug: "gabinete-petro",
     title: {
       es: "La evolución del gabinete de Gustavo Petro hasta 2023",
@@ -604,7 +589,7 @@ const projects = [
     homeVisible: false,
   },
   {
-    id: "p36",
+    id: "p35",
     slug: "golf-aumento-velocidad-distancia",
     title: {
       es: "El 'boom' de los pegadores y la evolución de la distancia en el golf moderno",
@@ -619,7 +604,7 @@ const projects = [
     homeVisible: false,
   },
   {
-    id: "p37",
+    id: "p36",
     slug: "incendio-tenerife",
     title: {
       es: "¿Por qué ardió tanto Tenerife en 2023?",
@@ -634,7 +619,7 @@ const projects = [
     homeVisible: false,
   },
   {
-    id: "p38",
+    id: "p37",
     slug: "india-china-poblacion",
     title: {
       es: "El gran vuelco demográfico: la India supera a China en población",
@@ -649,7 +634,7 @@ const projects = [
     homeVisible: false,
   },
   {
-    id: "p39",
+    id: "p38",
     slug: "juventud-jugadores-qatar22",
     title: {
       es: "La irrupción de los jóvenes en Qatar 2022",
@@ -664,7 +649,7 @@ const projects = [
     homeVisible: false,
   },
   {
-    id: "p40",
+    id: "p39",
     slug: "lesiones-nadal",
     title: {
       es: "El mapa médico del rey de la tierra: el historial de lesiones de Rafa Nadal",
@@ -679,7 +664,7 @@ const projects = [
     homeVisible: false,
   },
   {
-    id: "p41",
+    id: "p40",
     slug: "madrid-girona",
     title: {
       es: "Real Madrid y Girona frente a frente por el trono de LaLiga",
@@ -694,7 +679,7 @@ const projects = [
     homeVisible: false,
   },
   {
-    id: "p42",
+    id: "p41",
     slug: "nba-maximos-puntos",
     title: {
       es: "¿Por qué la NBA alcanza las puntuaciones más altas de su historia?",
@@ -709,7 +694,7 @@ const projects = [
     homeVisible: false,
   },
   {
-    id: "p43",
+    id: "p42",
     slug: "nieve-pirineos",
     title: {
       es: "El invierno se derrite: el impacto de la falta de nieve en los Pirineos",
@@ -725,7 +710,7 @@ const projects = [
     featured: true,
   },
   {
-    id: "p44",
+    id: "p43",
     slug: "pediatria-madrid",
     title: {
       es: "Pediatría en Madrid: el mapa de la cobertura médica por niño",
@@ -740,7 +725,7 @@ const projects = [
     homeVisible: false,
   },
   {
-    id: "p45",
+    id: "p44",
     slug: "scrolly-congreso",
     title: {
       es: "Cómo ha cambiado el equilibrio de poder en el Congreso a través de las investiduras",

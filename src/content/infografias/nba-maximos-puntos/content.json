@@ -1,0 +1,224 @@
+{
+  "blocks": [
+    {
+      "type": "divider"
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Analicé cómo la NBA estaba viviendo una temporada en la que el juego ofensivo marcaba cada encuentro. "
+          },
+          {
+            "text": "Para ello, procesé datos sobre la evolución de distintos aspectos como puntos, minutos, rebotes ofensivos o asistencias, "
+          },
+          {
+            "text": "para posteriormente diseñar una cuadrícula de líneas con Datawrapper."
+          }
+        ],
+        "en": [
+          {
+            "text": "I analyzed how the NBA was experiencing a season where offensive play defined every game. "
+          },
+          {
+            "text": "To do this, I processed data on the evolution of various aspects such as points, minutes, offensive rebounds, or assists, "
+          },
+          {
+            "text": "to subsequently design a line chart grid using Datawrapper."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "nba-maximos-puntos-1.webp",
+      "alt": {
+        "es": "Grid de evolución de puntos, minutos, rebotes defensivos y asistencias",
+        "en": "Grid showing the trend of points, minutes, defensive rebounds, and assists"
+      },
+      "caption": {
+        "es": "Evoluciones de acciones por partido y temporada",
+        "en": "Trends of actions per game and season"
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "También utilicé las opciones avanzadas del "
+          },
+          {
+            "text": "scatterplot",
+            "italic": true
+          },
+          {
+            "text": " de Datawrapper para reflejar la evolución de cómo se disputaban más partidos y se anotaban más puntos, "
+          },
+          {
+            "text": "añadiendo "
+          },
+          {
+            "text": "tooltips",
+            "italic": true
+          },
+          {
+            "text": " personalizados y elementos en html."
+          }
+        ],
+        "en": [
+          {
+            "text": "I also used the advanced features of Datawrapper's scatterplot "
+          },
+          {
+            "text": "to show the trend of how more games were played and more points were scored, "
+          },
+          {
+            "text": "adding custom tooltips and html elements."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "nba-maximos-puntos-0.webp",
+      "alt": {
+        "es": "Scatterplot como heatmap que señala el porcentaje de acierto por temporada, la cantidad absoluta y los intentos.",
+        "en": "Scatterplot styled as a heatmap indicating shooting percentage per season, absolute volume, and attempts."
+      },
+      "caption": {
+        "es": "Tiros, aciertos y porcentaje de acierto en cada temporada",
+        "en": "Shots, makes, and field goal percentage across each season"
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Más adelante me centré en el rendimiento individual de los jugadores y señalé que, durante esa temporada, "
+          },
+          {
+            "text": "cuatro anotadores se habían colado en el top "
+          },
+          {
+            "text": "de mayor cantidad de puntos en un solo partido, detallando sus respectivos equipos, resultado final, rival y fecha."
+          }
+        ],
+        "en": [
+          {
+            "text": "Later on, I focused on individual player performances and pointed out that, during that season, "
+          },
+          {
+            "text": "four scorers had made it into the top "
+          },
+          {
+            "text": " tier for most points in a single game, detailing their teams, final scores, opponents, and dates."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "nba-maximos-puntos-2.webp",
+      "alt": {
+        "es": "Tabla de los jugadores más anotadores en un partido de la NBA",
+        "en": "Table showing the highest-scoring players in a single NBA game"
+      },
+      "caption": {
+        "es": "Estos son los jugadores que han anotado más puntos en un partido",
+        "en": "These are the players who have scored the most points in a single match"
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Asimismo, para ampliar la información y el contexto, tracé mediante otro "
+          },
+          {
+            "text": "scatterplot",
+            "italic": true
+          },
+          {
+            "text": " a los máximos anotadores por temporada, incorporando más datos dentro de los "
+          },
+          {
+            "text": "tooltips",
+            "italic": true
+          },
+          {
+            "text": " y añadiendo textos explicativos directamente visibles."
+          }
+        ],
+        "en": [
+          {
+            "text": "Furthermore, to broaden the context and insights, I plotted the top scorers per season using another "
+          },
+          {
+            "text": "scatterplot, embedding extra data within the "
+          },
+          {
+            "text": "tooltips and adding directly visible annotations."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "nba-maximos-puntos-3.webp",
+      "alt": {
+        "es": "Scatterplot de mayores anotaciones por puntos y temporada.",
+        "en": "Scatterplot mapping the highest-scoring performances by points and season."
+      },
+      "caption": {
+        "es": "Las mayores anotaciones por partido y temporada",
+        "en": "The highest scoring performances per game and season"
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Para terminar, consideré interesante visualizar la evolución de cada tipo de lanzamiento según su valor, "
+          },
+          {
+            "text": "y mostré tanto la eficacia como el volumen temporada tras temporada. "
+          },
+          {
+            "text": "Para ello, procesé los datos en RStudio y extraje estadísticas para representar mediante colores los periodos de mayor y menor acierto."
+          }
+        ],
+        "en": [
+          {
+            "text": "To conclude, I found it compelling to visualize the evolution of each shot type based on its point value, "
+          },
+          {
+            "text": "and I showed both efficiency and volume season after season. "
+          },
+          {
+            "text": "To achieve this, I processed the data in RStudio and extracted metrics to reflect periods of high and low accuracy using color coding."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "nba-maximos-puntos-4.webp",
+      "alt": {
+        "es": "Evolución de tiros de 3, 2 y 1 por partido y temporada, y el acierto medio.",
+        "en": "Trend of 3-point, 2-point, and 1-point field goals per game and season, alongside average accuracy."
+      },
+      "caption": {
+        "es": "Evolución de los intentos y acierto de tiros de 3, 2 y 1 por temporada",
+        "en": "Trend of attempts and accuracy for 3-point, 2-point, and 1-point shots per season"
+      }
+    },
+    {
+      "type": "divider"
+    }
+  ]
+}

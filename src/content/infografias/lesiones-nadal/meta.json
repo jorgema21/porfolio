@@ -1,0 +1,37 @@
+{
+  "apartado": "environment",
+  "usos": [
+    {
+      "es": "Desarrollo web",
+      "en": "Web development"
+    },
+    {
+      "es": "3D",
+      "en": "3D"
+    },
+    {
+      "es": "Datos",
+      "en": "Data"
+    },
+    {
+      "es": "Infografía",
+      "en": "Infographics"
+    }
+  ],
+  "colaboracion": {
+    "tipo": "equipo",
+    "rol": [
+      "graficos",
+      "texto"
+    ]
+  },
+  "tools": [
+    "GoogleSheets",
+    "Code",
+    "Blender",
+    "Premiere"
+  ],
+  "date": "2024-01-05",
+  "mediumKey": "github",
+  "url": "https://jorgema21.github.io/lesiones_nadal/"
+}

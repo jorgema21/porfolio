@@ -1,0 +1,73 @@
+{
+  "blocks": [
+    {
+      "type": "divider"
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          "Para un reportaje sobre el problema de las olivareras andaluzas debido a los aranceles de Trump, diseñé dos gráficos. ",
+          "El primero reflejó las importaciones de aceite desde Estados Unidos, ",
+          "y el segundo mostró la evolución de la aceituna negra española en el mercado estadounidense."
+        ],
+        "en": [
+          "For a feature story regarding the issues faced by Andalusian olive oil producers due to Trump's tariffs, I designed two charts. ",
+          "The first one reflected olive oil imports to the United States, ",
+          "and the second showcased the trend of Spanish black olives in the US market."
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          "Para el primero, opté por desarrollar un mapa de flujos al contar con datos de diferentes años y países. ",
+          "Utilicé Flourish para crear una evolución interactiva que mostró cómo se movió el aceite desde distintas regiones hacia el país americano."
+        ],
+        "en": [
+          "For the first one, I chose to develop a flow map since I had data from different years and countries. ",
+          "I used Flourish to create an interactive timeline showcasing how olive oil moved from various regions into the American nation."
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "aceite-espanol-0.webp",
+      "alt": {
+        "es": "Captura de pantalla del globo terráqueo interactivo de evolución de ventas de aceite español a EEUU",
+        "en": "Screenshot of the interactive globe showing the trend of Spanish olive oil sales to the US"
+      },
+      "caption": {
+        "es": "Muestra del interactivo del globo terráqueo y el mapa de flujos",
+        "en": "Sample of the interactive globe and the flow map view"
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          "Para el segundo gráfico, elegí una estructura de líneas múltiples con puntos y datos etiquetados en cada año."
+        ],
+        "en": [
+          "For the second chart, I chose a multi-line structure featuring points and labeled data for each year."
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "aceite-espanol-1.webp",
+      "alt": {
+        "es": "Gráfico de líneas con la cuota de mercado de la aceituna negra española en EEUU y sus competidores",
+        "en": "Line chart showing the market share of Spanish black olives in the US alongside its competitors"
+      },
+      "caption": {
+        "es": "Así cayó la cuota de mercado de la aceituna negra española en EEUU",
+        "en": "This is how the market share of Spanish black olives dropped in the US"
+      }
+    },
+    {
+      "type": "divider"
+    }
+  ]
+}
