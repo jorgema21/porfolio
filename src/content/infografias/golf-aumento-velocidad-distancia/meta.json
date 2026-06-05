@@ -1,0 +1,30 @@
+{
+  "apartado": "international",
+  "usos": [
+    {
+      "es": "Infografía",
+      "en": "Infographics"
+    },
+    {
+      "es": "Datos",
+      "en": "Data"
+    },
+    {
+      "es": "Visualización",
+      "en": "Visualization"
+    }
+  ],
+  "colaboracion": {
+    "tipo": "solo",
+    "rol": [
+      "graficos"
+    ]
+  },
+  "tools": [
+    "Illustrator",
+    "GoogleSheets"
+  ],
+  "date": "2023-04-02",
+  "mediumKey": "elpais",
+  "url": "https://elpais.com/deportes/2023-04-02/alto-al-golf-a-300-kilometros-por-hora.html"
+}

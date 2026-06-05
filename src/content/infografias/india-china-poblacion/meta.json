@@ -1,0 +1,26 @@
+{
+  "apartado": "international",
+  "usos": [
+    {
+      "es": "Datos",
+      "en": "Data"
+    },
+    {
+      "es": "Visualización",
+      "en": "Visualization"
+    }
+  ],
+  "colaboracion": {
+    "tipo": "equipo",
+    "rol": [
+      "graficos"
+    ]
+  },
+  "tools": [
+    "Illustrator",
+    "RStudio"
+  ],
+  "date": "2023-04-09",
+  "mediumKey": "elpais",
+  "url": "https://elpais.com/internacional/2023-04-09/por-que-la-india-ya-supera-a-china-en-habitantes-asi-es-la-explosion-demografica-del-pais-de-las-megaciudades.html"
+}

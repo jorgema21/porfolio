@@ -1,0 +1,27 @@
+{
+  "apartado": "sports",
+  "usos": [
+    {
+      "es": "Datos",
+      "en": "Data"
+    },
+    {
+      "es": "Visualización",
+      "en": "Visualization"
+    }
+  ],
+  "colaboracion": {
+    "tipo": "solo",
+    "rol": [
+      "graficos",
+      "texto"
+    ]
+  },
+  "tools": [
+    "GoogleSheets",
+    "Datawrapper"
+  ],
+  "date": "2023-06-08",
+  "mediumKey": "elpais",
+  "url": "https://elpais.com/deportes/2023-06-08/record-de-cambios-de-entrenadores-en-las-grandes-ligas-de-futbol-por-que-un-tecnico-nuevo-no-es-garantia-de-victoria.html"
+}

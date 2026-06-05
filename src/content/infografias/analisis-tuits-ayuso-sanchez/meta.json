@@ -1,0 +1,27 @@
+{
+  "apartado": "local",
+  "usos": [
+    {
+      "es": "Datos",
+      "en": "Data"
+    },
+    {
+      "es": "Visualización",
+      "en": "Visualization"
+    }
+  ],
+  "colaboracion": {
+    "tipo": "solo",
+    "rol": [
+      "graficos"
+    ]
+  },
+  "tools": [
+    "GoogleSheets",
+    "Datawrapper",
+    "RStudio"
+  ],
+  "date": "2023-05-24",
+  "mediumKey": "elpais",
+  "url": "https://elpais.com/espana/elecciones-madrid/2023-05-24/ayuso-no-puede-vivir-sin-sanchez-cuatro-de-cada-10-tuits-son-ataques-a-su-gobierno.html"
+}

@@ -1,0 +1,28 @@
+{
+  "apartado": "sports",
+  "usos": [
+    {
+      "es": "Datos",
+      "en": "Data"
+    },
+    {
+      "es": "Visualización",
+      "en": "Visualization"
+    }
+  ],
+  "colaboracion": {
+    "tipo": "solo",
+    "rol": [
+      "graficos"
+    ]
+  },
+  "tools": [
+    "GoogleSheets",
+    "Datawrapper",
+    "Illustrator",
+    "Photoshop"
+  ],
+  "date": "2022-12-20",
+  "mediumKey": "elpais",
+  "url": "https://elpais.com/deportes/mundial-futbol/2022-12-20/la-final-del-mundial-de-qatar-es-la-mejor-de-la-historia-los-datos-lo-explican.html"
+}

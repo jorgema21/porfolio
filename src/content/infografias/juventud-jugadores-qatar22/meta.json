@@ -1,0 +1,28 @@
+{
+  "apartado": "sports",
+  "usos": [
+    {
+      "es": "Datos",
+      "en": "Data"
+    },
+    {
+      "es": "Visualización",
+      "en": "Visualization"
+    }
+  ],
+  "colaboracion": {
+    "tipo": "solo",
+    "rol": [
+      "graficos"
+    ]
+  },
+  "tools": [
+    "GoogleSheets",
+    "Datawrapper",
+    "Illustrator",
+    "Photoshop"
+  ],
+  "date": "2022-11-20",
+  "mediumKey": "elpais",
+  "url": "https://elpais.com/deportes/mundial-futbol/2022-11-20/el-70-de-los-jugadores-convocados-en-qatar-nunca-ha-jugado-un-mundial.html"
+}

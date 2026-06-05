@@ -1,0 +1,31 @@
+{
+  "apartado": "local",
+  "usos": [
+    {
+      "es": "Datos",
+      "en": "Data"
+    },
+    {
+      "es": "Visualización",
+      "en": "Visualization"
+    },
+    {
+      "es": "Mapas",
+      "en": "Maps"
+    }
+  ],
+  "colaboracion": {
+    "tipo": "solo",
+    "rol": [
+      "graficos"
+    ]
+  },
+  "tools": [
+    "GoogleSheets",
+    "Datawrapper",
+    "RStudio"
+  ],
+  "date": "2023-09-03",
+  "mediumKey": "elpais",
+  "url": "https://elpais.com/espana/madrid/2023-09-03/radiografia-de-instalaciones-publicas-en-madrid-insuficientes-y-mal-repartidas.html"
+}

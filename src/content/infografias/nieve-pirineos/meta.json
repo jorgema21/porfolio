@@ -1,0 +1,27 @@
+{
+  "apartado": "environment",
+  "usos": [
+    {
+      "es": "Datos",
+      "en": "Data"
+    },
+    {
+      "es": "Visualización",
+      "en": "Visualization"
+    }
+  ],
+  "colaboracion": {
+    "tipo": "equipo",
+    "rol": [
+      "graficos"
+    ]
+  },
+  "tools": [
+    "GoogleSheets",
+    "Datawrapper",
+    "RStudio"
+  ],
+  "date": "2023-02-26",
+  "mediumKey": "elpais",
+  "url": "https://elpais.com/clima-y-medio-ambiente/2023-02-26/en-30-anos-la-mitad-de-nieve-y-mas-calor-asi-afectara-el-cambio-climatico-al-esqui-en-los-pirineos.html"
+}

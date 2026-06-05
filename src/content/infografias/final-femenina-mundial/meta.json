@@ -1,0 +1,27 @@
+{
+  "apartado": "sports",
+  "usos": [
+    {
+      "es": "Datos",
+      "en": "Data"
+    },
+    {
+      "es": "Visualización",
+      "en": "Visualization"
+    }
+  ],
+  "colaboracion": {
+    "tipo": "solo",
+    "rol": [
+      "graficos"
+    ]
+  },
+  "tools": [
+    "RStudio",
+    "Illustrator",
+    "Photoshop"
+  ],
+  "date": "2023-08-20",
+  "mediumKey": "elpais",
+  "url": ""
+}

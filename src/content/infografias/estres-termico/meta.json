@@ -1,0 +1,27 @@
+{
+  "apartado": "environment",
+  "usos": [
+    {
+      "es": "Datos",
+      "en": "Data"
+    },
+    {
+      "es": "Visualización",
+      "en": "Visualization"
+    }
+  ],
+  "colaboracion": {
+    "tipo": "equipo",
+    "rol": [
+      "graficos"
+    ]
+  },
+  "tools": [
+    "GoogleSheets",
+    "Datawrapper",
+    "RStudio"
+  ],
+  "date": "2023-08-11",
+  "mediumKey": "elpais",
+  "url": "https://elpais.com/clima-y-medio-ambiente/2023-08-11/que-es-el-estres-termico-y-como-va-a-afectar-a-las-30-ciudades-espanolas-mas-pobladas-en-los-proximos-anos.html"
+}

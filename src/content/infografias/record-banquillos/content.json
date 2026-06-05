@@ -1,0 +1,246 @@
+{
+  "blocks": [
+    {
+      "type": "divider"
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Publiqué un reportaje gráfico sobre el récord de cambios de entrenadores "
+          },
+          {
+            "text": "en las cinco grandes ligas europeas de fútbol durante una sola temporada. "
+          },
+          {
+            "text": "Recopilé y procesé datos de diversas fuentes para ilustrar este fenómeno histórico. "
+          },
+          {
+            "text": "Para empezar, aporté contexto mediante columnas apiladas distribuidas por temporadas y ligas."
+          }
+        ],
+        "en": [
+          {
+            "text": "I published a graphic report on the record number of manager changes "
+          },
+          {
+            "text": "in Europe's top five football leagues during a single season. "
+          },
+          {
+            "text": "I collected and processed data from various sources to illustrate this historical phenomenon. "
+          },
+          {
+            "text": "To begin with, I provided context using stacked columns broken down by seasons and leagues."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "record-banquillos-0.webp",
+      "alt": {
+        "es": "Barras apiladas por temporada y país con recambios de entrenadores.",
+        "en": "Stacked bars by season and country showing football manager replacements."
+      },
+      "caption": {
+        "es": "Evolución por temporada de los cambios de entrenadores por liga",
+        "en": "Evolution of manager changes per league by season"
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Reutilicé esta estructura visual para analizar la evolución temporal de la misma temporada, "
+          },
+          {
+            "text": "desglosando los ceses y contrataciones semana a semana en cada competición nacional."
+          }
+        ],
+        "en": [
+          {
+            "text": "I reused this visual structure to analyze the chronological evolution of that same season, "
+          },
+          {
+            "text": "breaking down dismissals and appointments week by week in each national competition."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "record-banquillos-1.webp",
+      "alt": {
+        "es": "Barras apiladas de cambio de entrenador por liga y semana.",
+        "en": "Stacked bars showing football manager changes by league and week."
+      },
+      "caption": {
+        "es": "Evolución semanal de los cambios de entrenador",
+        "en": "Weekly evolution of football manager changes"
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Evalué el impacto real de los relevos en el rendimiento de los equipos. "
+          },
+          {
+            "text": "Exploté el potencial del "
+          },
+          {
+            "text": "scatterplot",
+            "italic": true
+          },
+          {
+            "text": " de Datawrapper para generar una matriz por liga, con los equipos y el volumen de técnicos. "
+          },
+          {
+            "text": "Apliqué una paleta de color manual para los puntos por partido, tamaños para los encuentros dirigidos "
+          },
+          {
+            "text": "y "
+          },
+          {
+            "text": "tooltips",
+            "italic": true
+          },
+          {
+            "text": " con información detallada de cada profesional."
+          }
+        ],
+        "en": [
+          {
+            "text": "I evaluated the actual impact of these replacements on the teams' performances. "
+          },
+          {
+            "text": "I leveraged the potential of Datawrapper's scatterplot to generate a matrix by league, "
+          },
+          {
+            "text": "displaying the teams and the number of managers. "
+          },
+          {
+            "text": "I applied a manual color palette for points per match, sizing for matches managed, "
+          },
+          {
+            "text": "and tooltips with detailed information for each professional."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "record-banquillos-2.webp",
+      "alt": {
+        "es": "Gráfico de distribución con los cambios de entrenadores por equipo y liga y su efectividad por puntos",
+        "en": "Scatterplot showing manager changes by team and league along with their effectiveness in points."
+      },
+      "caption": {
+        "es": "Rendimiento y puntos por partido obtenidos por cada entrenador según su equipo",
+        "en": "Performance and points per match obtained by each manager according to their team"
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Como la posición liguera es el factor clave, tracé un gráfico de flechas. "
+          },
+          {
+            "text": "Este diseño reflejó el puesto exacto en el que cada entrenador asumió el mando del club "
+          },
+          {
+            "text": "y la posición en la que se encontraba al dejarlo o al concluir el análisis."
+          }
+        ],
+        "en": [
+          {
+            "text": "Since league position is the key factor, I traced an arrow plot. "
+          },
+          {
+            "text": "This design reflected the exact standing where each manager took charge of the club "
+          },
+          {
+            "text": "and the position they were in when they left or when the analysis concluded."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "record-banquillos-3.webp",
+      "alt": {
+        "es": "Dotplot de puestos donde cogieron y dejaron al equipo el primer entrenador y su puesto final",
+        "en": "Dot plot showing the positions where the first manager took and left the team and their final standing."
+      },
+      "caption": {
+        "es": "¿Fue buena idea cambiar de entrenador para cada equipo?",
+        "en": "Was it a good idea for each team to change their manager?"
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Por último, examiné el nivel de los rivales afrontados según el potencial del club. "
+          },
+          {
+            "text": "Desarrollé un gráfico de líneas para mostrar la fluctuación del ELO en los equipos españoles "
+          },
+          {
+            "text": "afectados, complementado con una tabla buscador interactivable que calculó la diferencia neta "
+          },
+          {
+            "text": "de esta métrica entre el inicio y el final de cada etapa en el banquillo."
+          }
+        ],
+        "en": [
+          {
+            "text": "Finally, I examined the level of opponents faced relative to the club's potential. "
+          },
+          {
+            "text": "I developed a line chart to show ELO fluctuations for the affected Spanish teams, "
+          },
+          {
+            "text": "complemented by an interactive search table that calculated the net difference "
+          },
+          {
+            "text": "of this metric between the start and end of each manager's tenure."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "record-banquillos-4.webp",
+      "alt": {
+        "es": "Líneas de la evolución del Elo de los equipos españoles.",
+        "en": "Line chart showing the ELO evolution of Spanish football teams."
+      },
+      "caption": {
+        "es": "Evolución del Elo de los equipos españoles con cambio de entrenador",
+        "en": "ELO evolution of Spanish teams with manager changes"
+      }
+    },
+    {
+      "type": "image",
+      "src": "record-banquillos-5.webp",
+      "alt": {
+        "es": "Tabla buscador de equipos, entrenadores y diferencia ELO al coger y dejar al equipo.",
+        "en": "Searchable table showing teams, managers, and ELO difference when taking and leaving the team."
+      },
+      "caption": {
+        "es": "Buscador para señalar la evolución ELO del equipo con cada entrenador nuevo",
+        "en": "Search tool to track the team's ELO evolution with each new manager"
+      }
+    },
+    {
+      "type": "divider"
+    }
+  ]
+}

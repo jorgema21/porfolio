@@ -1,0 +1,135 @@
+{
+  "blocks": [
+    {
+      "type": "divider"
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "A partir de datos brutos sobre las distintas infraestructuras de Madrid, desarrollé un mapa de puntos "
+          },
+          {
+            "text": "con las localizaciones por distrito y categorías de bibliotecas y centros deportivos. "
+          },
+          {
+            "text": "Tras realizar una limpieza previa de los datos con RStudio y Google Sheets, diseñé otro mapa enfocado "
+          },
+          {
+            "text": "en centros de servicios sociales y escuelas infantiles, incorporando en ambos un "
+          },
+          {
+            "text": "tooltip",
+            "italic": true
+          },
+          {
+            "text": " con el nombre de cada espacio."
+          }
+        ],
+        "en": [
+          {
+            "text": "Based on raw data regarding various infrastructures in Madrid, I developed a dot map "
+          },
+          {
+            "text": "showing the locations by district and categories of libraries and sports centers. "
+          },
+          {
+            "text": "After a preliminary data cleaning using RStudio and Google Sheets, I designed another map focused "
+          },
+          {
+            "text": "on social services centers and nursery schools, incorporating a "
+          },
+          {
+            "text": "tooltip with the name of each site in both."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "bibliotecas-madrid-radiografia-1.webp",
+      "alt": {
+        "es": "Mapa localizador de instalaciones públicas en Madrid distribuidas por puntos según su tipología.",
+        "en": "Locator map of public facilities in Madrid distributed by dots according to their typology."
+      },
+      "caption": {
+        "es": "Reparto de las instalaciones públicas madrileñas por distrito",
+        "en": "Distribution of public facilities in Madrid by district"
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Además, elaboré una cuadrícula de "
+          },
+          {
+            "text": "split bars ",
+            "italic": true
+          },
+          {
+            "text": "para analizar la proporción de estas instalaciones públicas en Madrid en comparación con otras grandes ciudades españolas."
+          }
+        ],
+        "en": [
+          {
+            "text": "Additionally, I developed a grid of split bar charts to analyze the ratio of these public facilities in Madrid compared to other major Spanish cities."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "bibliotecas-madrid-radiografia-2.webp",
+      "alt": {
+        "es": "Barras segmentadas con el ratio de habitantes por tipo de instalación pública y principales ciudades españolas.",
+        "en": "Split bar charts showing the ratio of inhabitants per type of public facility across major Spanish cities."
+      },
+      "caption": {
+        "es": "Comparación del ratio de habitantes por instalación pública y ciudad",
+        "en": "Comparison of the inhabitant ratio per public facility and city"
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Finalmente, generé una cuadrícula "
+          },
+          {
+            "text": "de mapas coropléticos a partir de una plantilla base, "
+          },
+          {
+            "text": "lo que permitió evaluar visualmente cómo se distribuyeron las densidades de los servicios por cada distrito."
+          }
+        ],
+        "en": [
+          {
+            "text": "Finally, I generated a grid of choropleth maps from a base template, which allowed for a visual evaluation "
+          },
+          {
+            "text": "of how service densities were distributed across each district."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "bibliotecas-madrid-radiografia-3.webp",
+      "alt": {
+        "es": "Cuadrícula de 4 mapas coropléticos con el ratio de cobertura por instalación pública en los distritos madrileños.",
+        "en": "Grid of 4 choropleth maps showing the coverage ratio per public facility across Madrid districts."
+      },
+      "caption": {
+        "es": "Así se distribuyen los ratios por instalación pública y distrito",
+        "en": "This is how ratios are distributed by public facility and district"
+      }
+    },
+    {
+      "type": "divider"
+    }
+  ]
+}

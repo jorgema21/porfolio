@@ -1,0 +1,21 @@
+{
+  "apartado": "culture",
+  "usos": [
+    {
+      "es": "Infografía",
+      "en": "Infographics"
+    }
+  ],
+  "colaboracion": {
+    "tipo": "solo",
+    "rol": [
+      "graficos"
+    ]
+  },
+  "tools": [
+    "Illustrator"
+  ],
+  "date": "2023-03-19",
+  "mediumKey": "elpais",
+  "url": "https://web.archive.org/web/20230219121753/https://elpais.com/internacional/2023-02-19/anatomia-de-una-escuela-de-samba-asi-funciona-la-compleja-maquinaria-en-el-gran-desfile-del-carnaval-de-rio.html"
+}
