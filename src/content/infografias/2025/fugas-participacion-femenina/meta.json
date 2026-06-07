@@ -1,0 +1,28 @@
+{
+  "apartado": "gender",
+  "usos": [
+    {
+      "es": "Desarrollo web",
+      "en": "Web development"
+    },
+    {
+      "es": "Visualización",
+      "en": "Visualization"
+    }
+  ],
+  "colaboracion": {
+    "tipo": "solo",
+    "rol": [
+      "graficos",
+      "texto",
+      "desarrollo"
+    ]
+  },
+  "tools": [
+    "Code",
+    "Svelte"
+  ],
+  "date": "2025-11-20",
+  "mediumKey": "dataista",
+  "url": "https://candidatas.dataista.studio/"
+}

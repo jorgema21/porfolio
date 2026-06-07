@@ -1,0 +1,54 @@
+{
+  "blocks": [
+    {
+      "type": "divider"
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          "Diseñé una infografía para visualizar el incremento de la velocidad ",
+          "y la distancia en el golf a lo largo de los años. ",
+          "El gráfico analizó de manera visual la evolución temporal y comparó ",
+          "las métricas de velocidad y distancia con las marcas del líder del circuito."
+        ],
+        "en": [
+          "I designed an infographic to visualize the increase in speed ",
+          "and distance in golf over the years. ",
+          "The graphic visually analyzed chronological evolution and compared ",
+          "speed and distance metrics with the records of the circuit leader."
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          "Traté y estructuré los datos inicialmente con Google Spreadsheets. ",
+          "Posteriormente, desarrollé la infografía con un diseño responsivo en Adobe Illustrator ",
+          "y completé la exportación en formato HTML."
+        ],
+        "en": [
+          "I initially processed and structured the data using Google Spreadsheets. ",
+          "Subsequently, I developed the infographic with a responsive design in Adobe Illustrator ",
+          "and completed the export in HTML format."
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "golf-aumento-velocidad-distancia-1.webp",
+      "alt": {
+        "es": "Evoluciones por años concretos de la distancia recorrida por el driver.",
+        "en": "Chronological evolution of the distance covered by the driver."
+      },
+      "caption": {
+        "es": "Así ha aumentado la distancia de golpeo en el golf",
+        "en": "How hitting distance has increased in golf"
+      }
+    },
+    {
+      "type": "divider"
+    }
+  ]
+}

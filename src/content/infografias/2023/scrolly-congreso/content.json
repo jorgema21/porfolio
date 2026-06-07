@@ -1,0 +1,206 @@
+{
+  "blocks": [
+    {
+      "type": "divider"
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "A raíz de la investidura de Pedro Sánchez en 2023 y sus pactos de gobierno, decidí aprender a desarrollar "
+          },
+          {
+            "text": "scrollytellings",
+            "italic": true
+          },
+          {
+            "text": " utilizando Adobe Illustrator y "
+          },
+          {
+            "text": "ai2html. ",
+            "italic": true
+          },
+          {
+            "text": "Ideé y programé una página web desde cero con HTML, CSS y Javascript "
+          },
+          {
+            "text": "y apliqué de forma autodidacta mis entonces escasos conocimientos en desarrollo web "
+          },
+          {
+            "text": "para ejecutar este primer proyecto."
+          }
+        ],
+        "en": [
+          {
+            "text": "Following Pedro Sánchez's successful investiture in 2023 and his government pacts, "
+          },
+          {
+            "text": "I decided to learn how to develop scrollytellings "
+          },
+          {
+            "text": "using Adobe Illustrator. I designed and programmed a webpage from scratch with HTML, CSS and Javascript "
+          },
+          {
+            "text": "in Visual Studio Code, applying my in that moment poor self-taught web development skills "
+          },
+          {
+            "text": "to execute this first project."
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Tras un breve texto introductorio de contexto, expliqué el proceso de votación sirviéndome de un gráfico "
+          },
+          {
+            "text": "svg",
+            "italic": true
+          },
+          {
+            "text": " del hemiciclo del Congreso. Modifiqué de forma dinámica los colores de los escaños "
+          },
+          {
+            "text": "según avanzaba la narrativa de las cartelas, cuya interacción estructuré mediante la librería "
+          },
+          {
+            "text": "scrollama",
+            "italic": true
+          },
+          {
+            "text": "."
+          }
+        ],
+        "en": [
+          {
+            "text": "After a brief introductory context, I explained the voting process using an svg "
+          },
+          {
+            "text": "graphic of the Congress hemicycle. I dynamically modified the seat colors "
+          },
+          {
+            "text": "as the narrative in the cards advanced, structuring the interaction through the scrollama library."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "scrolly-congreso-1.webp",
+      "alt": {
+        "es": "Hemiciclo del Congreso de los Diputados con una cartela que detalla los resultados finales de la votación de investidura.",
+        "en": "Congress of Deputies hemicycle featuring an overlay card that details the final investiture vote results."
+      },
+      "caption": {
+        "es": "Resultados de la votación en el Congreso",
+        "en": "Investiture vote results in Congress"
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Sobre esta misma base visual, analicé el posicionamiento de los partidos a favor y en contra, "
+          },
+          {
+            "text": "y desglosé detalladamente los acuerdos alcanzados con cada formación política para lograr la mayoría parlamentaria."
+          }
+        ],
+        "en": [
+          {
+            "text": "Using this same visual foundation, I analyzed the positioning of the parties voting in favor and against, "
+          },
+          {
+            "text": "breaking down in detail the agreements reached with each political group to achieve the parliamentary majority."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "scrolly-congreso-2.webp",
+      "alt": {
+        "es": "Hemiciclo detallado con los asientos coloreados por partido político y una cartela explicativa con el sentido de su voto.",
+        "en": "Detailed hemicycle with seats color-coded by political party and an explanatory card showing their vote direction."
+      },
+      "caption": {
+        "es": "Votación de cada partido para la investidura",
+        "en": "Vote breakdown by political party for the investiture"
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Posteriormente, comparé las diferencias de apoyos recibidos por Sánchez frente a la investidura fallida de Feijóo. "
+          },
+          {
+            "text": "Además, amplié el contexto histórico analizando las alianzas clave de la democracia moderna "
+          },
+          {
+            "text": "mediante líneas de tiempo y barras apiladas que examinaron los mandatos desde Suárez hasta la actualidad."
+          }
+        ],
+        "en": [
+          {
+            "text": "Subsequently, I compared the differences in support received by Sánchez against Feijóo's failed investiture. "
+          },
+          {
+            "text": "Additionally, I broadened the historical context by analyzing key alliances in modern democracy "
+          },
+          {
+            "text": "through timelines and stacked bars that examined mandates from Suárez to the present day."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "scrolly-congreso-3.webp",
+      "alt": {
+        "es": "Captura de pantalla de gráficos de barras apiladas que comparan los resultados de las investiduras de Feijóo y Sánchez.",
+        "en": "Screenshot of stacked bar charts comparing the investiture vote results for Feijóo and Sánchez."
+      },
+      "caption": {
+        "es": "Resultados de las investiduras de Feijóo y Sánchez",
+        "en": "Investiture results for Feijóo and Sánchez"
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Este proyecto representó mi primer hito dentro del ámbito del desarrollo de interactivos. "
+          },
+          {
+            "text": "Fue una gran oportunidad de aprendizaje técnico y me sirvió como una sólida base fundamental "
+          },
+          {
+            "text": "para desarrollar soluciones visuales más complejas."
+          }
+        ],
+        "en": [
+          {
+            "text": "This project represented my first major milestone in the field of interactive web development. "
+          },
+          {
+            "text": "It was a great opportunity for technical learning and established a solid foundational base "
+          },
+          {
+            "text": "that allowed me to develope more complex visual solutions."
+          }
+        ]
+      }
+    },
+    {
+      "type": "divider"
+    }
+  ]
+}

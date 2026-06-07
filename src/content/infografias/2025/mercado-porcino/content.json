@@ -1,0 +1,48 @@
+{
+  "blocks": [
+    {
+      "type": "divider"
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          "Para un reportaje en papel traté el tema del mercado porcino y la posición de España en el sector internacional. ",
+          "Incluí gráficos sobre exportaciones e importaciones, evoluciones y un mapa coroplético global para localizar los principales mercados."
+        ],
+        "en": [
+          "For a double-page layout I covered the swine market and Spain's position in the international sector. ",
+          "I included charts on exports and imports, historical trends, and a global choropleth map to locate the main markets."
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          "Para todos los gráficos utilicé Adobe Illustrator. Tanto los gráficos de líneas en cuadrícula ",
+          "como los mapas pasaron por una limpieza previa de datos en R antes de ser editados visualmente."
+        ],
+        "en": [
+          "I used Adobe Illustrator for all the graphics. Both the grid line charts ",
+          "and the maps went through preliminary data cleaning in R before being visually edited."
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "mercado-porcino-0.webp",
+      "alt": {
+        "es": "Diseño a doble página sobre el mercado porcino con datos sobre los países más exportadores e importadores, su evolución y un mapamundi con la compraventa mundial.",
+        "en": "Double-page layout on the swine market featuring data on the top exporting and importing countries, trends, and a world map of global trade."
+      },
+      "caption": {
+        "es": "Vista completa de la doble página diseñada para la edición impresa",
+        "en": "Full view of the double-page layout designed for the print edition"
+      }
+    },
+    {
+      "type": "divider"
+    }
+  ]
+}

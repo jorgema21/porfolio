@@ -1,0 +1,27 @@
+{
+  "apartado": "national",
+  "usos": [
+    {
+      "es": "Mapas",
+      "en": "Maps"
+    },
+    {
+      "es": "Datos",
+      "en": "Data"
+    }
+  ],
+  "colaboracion": {
+    "tipo": "solo",
+    "rol": [
+      "graficos"
+    ]
+  },
+  "tools": [
+    "GoogleSheets",
+    "Flourish",
+    "RStudio"
+  ],
+  "date": "2024-10-31",
+  "mediumKey": "a14",
+  "url": "https://www.articulo14.es/actualidad/espana-se-paraliza-por-la-dana-20241031.html"
+}

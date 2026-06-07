@@ -1,0 +1,54 @@
+{
+  "blocks": [
+    {
+      "type": "divider"
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          "Apoyé el desarrollo visual del reportaje especial mediante la creación de dos pirámides de población. ",
+          "Busqué los registros demográficos pertinentes, analicé las tendencias globales ",
+          "y ejecuté la limpieza exhaustiva de los datos en R."
+        ],
+        "en": [
+          "I supported the visual development of the special report by creating two population pyramids. ",
+          "I sourced the relevant demographic records, analyzed global trends, ",
+          "and executed a thorough cleaning of the data in R."
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          "Una vez estructurada la información, exporté los vectores a Adobe Illustrator ",
+          "para aplicar la línea estética y los estilos corporativos del medio. ",
+          "Finalmente, completé la exportación maquetada en formato HTML ",
+          "para asegurar su correcta integración y visualización responsiva en la web."
+        ],
+        "en": [
+          "Once the information was structured, I exported the vectors to Adobe Illustrator ",
+          "to apply the aesthetic design and corporate styles of the media outlet. ",
+          "Finally, I completed the layout export in HTML format ",
+          "to ensure its correct integration and responsive visualization on the web."
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "india-china-poblacion-0.webp",
+      "alt": {
+        "es": "Distribución de edades de población de la India y China.",
+        "en": "Population age distribution of India and China."
+      },
+      "caption": {
+        "es": "Pirámides de población de la India y China",
+        "en": "Population pyramids of India and China"
+      }
+    },
+    {
+      "type": "divider"
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "blocks": [
+    {
+      "type": "divider"
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Para un reportaje sobre la brecha de paridad en las elecciones argentinas, colaboré en un proyecto "
+          },
+          {
+            "text": "que me permitió profundizar en el desarrollo web y el diseño de interfaces basado en grids."
+          }
+        ],
+        "en": [
+          {
+            "text": "For a feature on the gender parity gap in Argentinian elections, I worked on a project "
+          },
+          {
+            "text": "that helped me dive deeper into web development and grid-based interface design."
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "A partir de un diseño previo, maqueté en HTML gran parte de los "
+          },
+          {
+            "text": "steps",
+            "italic": true
+          },
+          {
+            "text": " interactivos utilizando Scrollama. Este supuso mi primer proyecto de desarrollo web real fuera del entorno personal. Estas son capturas de algunas de las secciones que diseñé para la web:"
+          }
+        ],
+        "en": [
+          {
+            "text": "Based on a pre-existing design, I coded most of the interactive steps in HTML using Scrollama. This was my first real-world web development project outside of personal work. Here are screenshots of some of the sections I designed for the live site:"
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "fugas-participacion-femenina-1.webp",
+      "alt": {
+        "es": "Captura de pantalla de la sección inicial del scrollytelling sobre paridad de género.",
+        "en": "Screenshot of the opening section of the scrollytelling project on gender parity."
+      },
+      "caption": {
+        "es": [
+          {
+            "text": "Capturas de pantalla de diferentes secciones a lo largo del "
+          },
+          {
+            "text": "scrollytelling",
+            "italic": true
+          }
+        ],
+        "en": [
+          {
+            "text": "Screenshots of different sections throughout the scrollytelling piece"
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "fugas-participacion-femenina-2.webp",
+      "alt": {
+        "es": "Captura de pantalla de un paso intermedio de presentación de las fugas sobre la participación femenina.",
+        "en": "Screenshot of an intermediate presentation step showing the drops in female participation."
+      }
+    },
+    {
+      "type": "image",
+      "src": "fugas-participacion-femenina-3.webp",
+      "alt": {
+        "es": "Captura de pantalla de la introducción a la fuga dos.",
+        "en": "Screenshot of the introduction to the second drop."
+      }
+    },
+    {
+      "type": "divider"
+    }
+  ]
+}

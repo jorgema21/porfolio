@@ -1,0 +1,50 @@
+{
+  "blocks": [
+    {
+      "type": "divider"
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          "Para un reportaje en papel sobre la movilidad residencial dentro de España, diseñé un mapa a nivel municipal ",
+          "que muestra el saldo migratorio en todo el territorio nacional, y destaqué los municipios ",
+          "que ganaron o perdieron más población."
+        ],
+        "en": [
+          "For a print feature on residential mobility within Spain, I designed a municipal map ",
+          "showing the net migration balance nationwide, highlighting the municipalities ",
+          "with the highest population gains and losses."
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          "Extraje la información del INE y la traté en RStudio para estructurar el mapa y los distintos gráficos. ",
+          "La otra visualización y el diseño de todo el conjunto lo hice en Illustrator."
+        ],
+        "en": [
+          "I extracted the data from the INE and processed it in RStudio to structure the map and charts. ",
+          "The remaining visualization and the final layout design were completed using Illustrator."
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "mudanzas-estres-1.webp",
+      "alt": {
+        "es": "Diseño impreso a doble página: mapa municipal a la izquierda y gráficos variados a la derecha.",
+        "en": "Double-page print layout: municipal map on the left and various data charts on the right."
+      },
+      "caption": {
+        "es": "Vista completa de la doble página diseñada para la edición impresa",
+        "en": "Full view of the double-page layout designed for the print edition"
+      }
+    },
+    {
+      "type": "divider"
+    }
+  ]
+}

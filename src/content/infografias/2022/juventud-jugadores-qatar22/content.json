@@ -1,0 +1,129 @@
+{
+  "blocks": [
+    {
+      "type": "divider"
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Incluyo este proyecto en el porfolio por su alto valor emocional, ya que supuso "
+          },
+          {
+            "text": "mi primera publicación firmada como autor. "
+          },
+          {
+            "text": "Limpié los datos en Google Spreadsheets y después creé en Datawrapper los gráficos con el diseño del Mundial."
+          }
+        ],
+        "en": [
+          {
+            "text": "I include this project in the portfolio for its high emotional value, as it marked "
+          },
+          {
+            "text": "my first bylined publication as an author. "
+          },
+          {
+            "text": "I cleaned the data in Google Spreadsheets and later created the charts in Datawrapper with the World Cup design."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "juventud-jugadores-qatar22-0.webp",
+      "alt": {
+        "es": "Distribución de edad y partidos internacionales de cada mundialista.",
+        "en": "Age distribution and international caps of each World Cup player."
+      },
+      "caption": {
+        "es": "Distribución de edades e internacionalidades de los jugadores",
+        "en": "Distribution of ages and international caps among players"
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Diseñé un "
+          },
+          {
+            "text": "dotplot ",
+            "italic": true
+          },
+          {
+            "text": "para comparar la media de edad de las selecciones y una tabla interactiva que incluyó "
+          },
+          {
+            "text": "barras e imágenes de los futbolistas, las cuales traté previamente en Photoshop e Illustrator. "
+          },
+          {
+            "text": "Asimismo, incorporé columnas apiladas sobre la procedencia de las ligas y añadí "
+          },
+          {
+            "text": "tooltips ",
+            "italic": true
+          },
+          {
+            "text": "contextuales para tener un mayor contexto."
+          }
+        ],
+        "en": [
+          {
+            "text": "I designed a dotplot to compare the average age of the teams and an interactive table that included "
+          },
+          {
+            "text": "bars and player images, which I previously processed in Photoshop and Illustrator. "
+          },
+          {
+            "text": "Likewise, I incorporated stacked columns showing league origins and added "
+          },
+          {
+            "text": "contextual tooltips to have a better context."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "juventud-jugadores-qatar22-1.webp",
+      "alt": {
+        "es": "Dotplot de la media de edad de las selecciones.",
+        "en": "Dot plot showing the average age of the national teams."
+      },
+      "caption": {
+        "es": "Las selecciones llevaron una media de edad muy diferenciada entre combinado",
+        "en": "The national teams featured widely contrasting average ages between squads"
+      }
+    },
+    {
+      "type": "image",
+      "src": "juventud-jugadores-qatar22-2.webp",
+      "alt": {
+        "es": "Tabla con los jugadores con más participaciones en un Mundial.",
+        "en": "Table showing the football players with the most appearances in a World Cup."
+      },
+      "caption": {
+        "es": "Jugadores que más Mundiales han jugado",
+        "en": "Players who have played in the most World Cups"
+      }
+    },
+    {
+      "type": "image",
+      "src": "juventud-jugadores-qatar22-3.webp",
+      "alt": {
+        "es": "Barras apiladas con el peso de las ligas nacionales en las selecciones.",
+        "en": "Stacked bars showing the influence of national leagues on the squads."
+      },
+      "caption": {
+        "es": "¿Cuántos jugadores juegan en y para su país?",
+        "en": "How many players compete in and for their home country?"
+      }
+    },
+    {
+      "type": "divider"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "blocks": [
+    {
+      "type": "divider"
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          "Traté el tema del rearme en la Unión Europea a través de un contexto de alianzas y rivalidades internacionales. ",
+          "Analicé datos del SIPRI y de la OTAN sobre compraventa de armas, inversión en Defensa y evolución de gastos."
+        ],
+        "en": [
+          "I covered the rearmament of the European Union within a context of international alliances and rivalries. ",
+          "I analyzed SIPRI and NATO data regarding weapons trade, defense investment, and spending trends."
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          "Para todos los gráficos utilicé Adobe Illustrator. En el caso del mapa principal, trabajé con QGIS ",
+          "una proyección que reflejó las alianzas y la rivalidad entre Estados Unidos, Europa y Rusia, y luego la exporté a Illustrator. ",
+          "El resto de gráficos los realicé directamente en Illustrator tras un trabajo previo con ggplot2 en R."
+        ],
+        "en": [
+          "I used Adobe Illustrator for all the graphics. For the main map, I worked in QGIS ",
+          "with a projection reflecting alliances and the US-Europe-Russia rivalry, then exported it to Illustrator. ",
+          "The remaining charts were created in Illustrator after preliminary data work with ggplot2 in R."
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "rearme-ue-0.webp",
+      "alt": {
+        "es": "Diseño a doble página sobre el rearme de la UE con un mapa de la OTAN, datos de gasto del PIB y evoluciones.",
+        "en": "Double-page layout on EU rearmament featuring a NATO map, GDP spending data, and trends."
+      },
+      "caption": {
+        "es": "Vista completa de la doble página diseñada para la edición impresa",
+        "en": "Full view of the double-page layout designed for the print edition"
+      }
+    },
+    {
+      "type": "divider"
+    }
+  ]
+}
