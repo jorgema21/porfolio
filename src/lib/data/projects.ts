@@ -784,97 +784,488 @@ const projects = [
     homeVisible: false,
     featured: true,
   },
-
+  ///
   //edv
+  ///
   {
     id: "p46",
-    externalUrl: "proyecto-46",
+    externalUrl:
+      "https://elpais.com/estilo-de-vida/2026-03-18/la-edad-como-frontera-social-por-que-la-mayoria-de-los-amigos-son-de-nuestra-generacion.html",
     category: "estilo_de_vida",
     mediumStyle: "El País",
     homeVisible: false,
-    title: { es: "Proyecto 47", en: "Project 47" },
-    description: { es: "Texto corto", en: "Short text" },
+    title: {
+      es: "Las nuevas perspectivas que dan las amistades intergeneracionales",
+      en: "The Fresh Perspectives Offered by Intergenerational Friendships",
+    },
   },
   {
     id: "p47",
-    externalUrl: "proyecto-47",
+    externalUrl:
+      "https://elpais.com/estilo-de-vida/2026-02-13/de-la-euforia-de-enero-al-abandono-en-febrero-por-que-fracasan-la-mayoria-de-nuestros-propositos-de-ano-nuevo.html",
     category: "estilo_de_vida",
     mediumStyle: "El País",
     homeVisible: false,
-    title: { es: "Proyecto 47", en: "Project 47" },
-    description: { es: "Texto corto", en: "Short text" },
+    title: {
+      es: "El agujero negro de los propósitos de Año Nuevo",
+      en: "The Black Hole of New Year’s Resolutions",
+    },
   },
   {
     id: "p48",
-    externalUrl: "proyecto-48",
+    externalUrl:
+      "https://elpais.com/estilo-de-vida/2026-01-08/cuando-un-pequeno-malentendido-se-carga-una-gran-amistad-como-identificar-y-evitar-las-rupturas-por-deterioro.html",
     category: "estilo_de_vida",
     mediumStyle: "El País",
     homeVisible: false,
-    title: { es: "Proyecto 48", en: "Project 48" },
-    description: { es: "Texto corto", en: "Short text" },
+    title: {
+      es: "Las amistades destruidas por pequeños malentendidos",
+      en: "The Friendships Destroyed by Minor Misunderstandings",
+    },
   },
   {
     id: "p49",
-    externalUrl: "proyecto-49",
+    externalUrl:
+      "https://elpais.com/estilo-de-vida/2026-01-02/de-reuniones-constantes-a-encuentros-obligados-cuando-la-navidad-se-convierte-en-una-excesiva-maraton-social.html",
     category: "estilo_de_vida",
     mediumStyle: "El País",
     homeVisible: false,
-    title: { es: "Proyecto 49", en: "Project 49" },
-    description: { es: "Texto corto", en: "Short text" },
+    title: {
+      es: "Cuando la Navidad supone una maratón social",
+      en: "When Christmas Becomes a Social Marathon",
+    },
   },
   {
     id: "p50",
-    externalUrl: "proyecto-50",
+    externalUrl:
+      "https://elpais.com/estilo-de-vida/2025-11-07/cuando-la-competicion-destruye-una-amistad-me-dolio-tener-que-ocultar-mi-felicidad-pero-fue-una-leccion-sobre-las-relaciones-y-los-celos.html",
     category: "estilo_de_vida",
     mediumStyle: "El País",
     homeVisible: false,
-    title: { es: "Proyecto 50", en: "Project 50" },
-    description: { es: "Texto corto", en: "Short text" },
+    title: {
+      es: "La competición que provoca rupturas de amistad",
+      en: "The Competition That Shatters Lifelong Friendships",
+    },
   },
   {
     id: "p51",
-    externalUrl: "proyecto-51",
+    externalUrl:
+      "https://elpais.com/estilo-de-vida/2025-10-23/el-poder-de-las-tareas-pendientes-por-que-la-mente-no-puede-evitar-darle-demasiadas-vueltas-a-lo-que-esta-sin-terminar.html",
     category: "estilo_de_vida",
     mediumStyle: "El País",
     homeVisible: false,
-    title: { es: "Proyecto 51", en: "Project 51" },
-    description: { es: "Texto corto", en: "Short text" },
+    title: {
+      es: "El efecto Zeigarnik o la tensión mental por lo inconcluso",
+      en: "The Zeigarnik Effect: The Mental Strain of Unfinished Business",
+    },
   },
   {
     id: "p52",
-    externalUrl: "proyecto-52",
+    externalUrl:
+      "https://elpais.com/estilo-de-vida/2025-10-01/como-superar-el-miedo-a-defraudar-y-dejar-de-vivir-segun-lo-que-esperan-de-ti.html",
     category: "estilo_de_vida",
     mediumStyle: "El País",
     homeVisible: false,
-    title: { es: "Proyecto 52", en: "Project 52" },
-    description: { es: "Texto corto", en: "Short text" },
+    title: {
+      es: "¿Cómo superar el miedo a defraudar?",
+      en: "How to Overcome the Fear of Letting People Down",
+    },
   },
   {
     id: "p53",
-    externalUrl: "proyecto-53",
+    externalUrl:
+      "https://elpais.com/estilo-de-vida/2025-09-13/una-infancia-sin-grupo-de-amigos-significa-tener-una-edad-adulta-sin-raices-sociales.html",
     category: "estilo_de_vida",
     mediumStyle: "El País",
     homeVisible: false,
-    title: { es: "Proyecto 53", en: "Project 53" },
-    description: { es: "Texto corto", en: "Short text" },
+    title: {
+      es: "Las posibles consecuencias adultas de una infancia sin amigos",
+      en: "The Adult Consequences of a Friendless Childhood",
+    },
   },
   {
     id: "p54",
-    externalUrl: "proyecto-54",
-    category: "maternidad",
+    externalUrl:
+      "https://elpais.com/estilo-de-vida/2025-09-06/decir-adios-dos-veces-los-danos-colaterales-de-una-ruptura-sentimental-y-como-afecta-esta-al-circulo-de-amigos-y-familia.html",
+    category: "estilo_de_vida",
     mediumStyle: "El País",
     homeVisible: false,
-    title: { es: "Proyecto 54", en: "Project 54" },
-    description: { es: "Texto corto", en: "Short text" },
+    title: {
+      es: "El doble duelo de una ruptura sentimental y su círculo social",
+      en: "The Double Grief: Losing Both Your Partner and Their Social Circle",
+    },
   },
   {
     id: "p55",
-    externalUrl: "proyecto-55",
+    externalUrl:
+      "https://elpais.com/estilo-de-vida/2025-08-19/vacaciones-sin-compania-cuando-el-verano-idilico-de-otros-se-convierte-en-un-recordatorio-constante-de-lo-que-nos-falta.html",
+    category: "estilo_de_vida",
+    mediumStyle: "El País",
+    homeVisible: false,
+    title: {
+      es: "Las sensaciones negativas de pasar un verano sin compañías",
+      en: "The Negative Experiencse of Spending a Summer Alone",
+    },
+  },
+  {
+    id: "p56",
+    externalUrl:
+      "https://elpais.com/estilo-de-vida/2025-07-29/por-que-algunas-personas-necesitan-silenciar-en-redes-sociales-tras-una-ruptura-emocional-no-hacerlo-es-como-clavarte-un-cuchillo-a-ti-mismo.html",
+    category: "estilo_de_vida",
+    mediumStyle: "El País",
+    homeVisible: false,
+    title: {
+      es: "La necesidad de silenciar en redes tras una ruptura emocional",
+      en: "The Need for a Social Media Blackout After a Breakup",
+    },
+  },
+  {
+    id: "p57",
+    externalUrl:
+      "https://elpais.com/estilo-de-vida/2025-07-10/cuando-decir-adios-se-vuelve-tarea-imposible-por-que-nos-cuesta-rechazar-un-no-te-vayas-es-pronto.html",
+    category: "estilo_de_vida",
+    mediumStyle: "El País",
+    homeVisible: false,
+    title: {
+      es: "Cuando decir adiós se vuelve tarea imposible",
+      en: "When Saying Goodbye Becomes an Impossible Task",
+    },
+  },
+  {
+    id: "p58",
+    externalUrl:
+      "https://elpais.com/estilo-de-vida/2025-06-26/cuando-la-convivencia-mata-la-relacion-por-que-unas-vacaciones-pueden-ser-el-detonante-del-fin-de-una-amistad.html",
+    category: "estilo_de_vida",
+    mediumStyle: "El País",
+    homeVisible: false,
+    title: {
+      es: "La ruptura emocional de no superar la convivencia en vacaciones",
+      en: "Failing the Vacation Test: The Breakups Triggered by Summer Travel",
+    },
+  },
+  {
+    id: "p59",
+    externalUrl:
+      "https://elpais.com/estilo-de-vida/2025-06-19/cuando-actuar-rapido-sale-caro-el-coste-emocional-de-la-impulsividad.html",
+    category: "estilo_de_vida",
+    mediumStyle: "El País",
+    homeVisible: false,
+    title: {
+      es: "El coste emocional de la impulsividad",
+      en: "The Emotional Toll of Impulsivity",
+    },
+  },
+  {
+    id: "p60",
+    externalUrl:
+      "https://elpais.com/estilo-de-vida/2025-06-03/por-que-es-mas-facil-dar-consejos-que-aplicarselos-no-tenemos-la-misma-carga-emocional-si-el-problema-es-nuestro-o-ajeno.html",
+    category: "estilo_de_vida",
+    mediumStyle: "El País",
+    homeVisible: false,
+    title: {
+      es: "La diferencia entre dar consejos, pero no saber aplicarlos",
+      en: "Why We Give Great Advice but Fail to Follow It",
+    },
+  },
+  {
+    id: "p61",
+    externalUrl:
+      "https://elpais.com/estilo-de-vida/2025-05-20/la-vida-en-diferido-el-debate-entre-grabar-eventos-para-tener-un-recuerdo-o-vivirlos.html",
+    category: "estilo_de_vida",
+    mediumStyle: "El País",
+    homeVisible: false,
+    title: {
+      es: "El debate entre grabar eventos para recordarlos o vivirlos",
+      en: "The Lens Dilemma: Capturing Memories vs. Living in the Moment",
+    },
+  },
+  {
+    id: "p62",
+    externalUrl:
+      "https://elpais.com/estilo-de-vida/2025-08-19/vacaciones-sin-compania-cuando-el-verano-idilico-de-otros-se-convierte-en-un-recordatorio-constante-de-lo-que-nos-falta.html",
+    category: "estilo_de_vida",
+    mediumStyle: "El País",
+    homeVisible: false,
+    title: {
+      es: "La asimetría de las emociones",
+      en: "The Asymmetry of Human Emotions",
+    },
+  },
+  {
+    id: "p63",
+    externalUrl:
+      "https://elpais.com/estilo-de-vida/2025-03-20/el-duelo-por-las-vidas-no-vividas-por-que-nos-pesa-la-nostalgia-del-que-hubiera-pasado-si.html",
+    category: "estilo_de_vida",
+    mediumStyle: "El País",
+    homeVisible: false,
+    title: {
+      es: "El duelo por las vidas no vividas",
+      en: "Mourning the Lives We Never Lived",
+    },
+  },
+  {
+    id: "p64",
+    externalUrl:
+      "https://elpais.com/estilo-de-vida/2025-02-20/no-quiero-ir-solo-cuando-el-miedo-al-que-diran-nos-impide-hacer-lo-que-nos-gusta.html",
+    category: "estilo_de_vida",
+    mediumStyle: "El País",
+    homeVisible: false,
+    title: {
+      es: "La dificultad emocional de acudir solo a sitios por el qué dirán",
+      en: "Going Solo: The Emotional Toll of Public Judgment",
+    },
+  },
+  {
+    id: "p65",
+    externalUrl:
+      "https://elpais.com/estilo-de-vida/2025-02-06/el-fenomeno-tsundoku-o-como-hemos-normalizado-acumular-libros-que-no-leeremos.html",
+    category: "estilo_de_vida",
+    mediumStyle: "El País",
+    homeVisible: false,
+    title: {
+      es: "¿Qué es el 'tsundoku'?",
+      en: "What Is 'Tsundoku'?",
+    },
+  },
+  {
+    id: "p66",
+    externalUrl:
+      "https://elpais.com/mamas-papas/expertos/2026-05-04/los-ninos-de-hoy-imaginan-menos-o-tienen-menos-aptitudes-para-hacerlo.html",
     category: "maternidad",
     mediumStyle: "El País",
     homeVisible: false,
-    title: { es: "Proyecto 55", en: "Project 55" },
-    description: { es: "Texto corto", en: "Short text" },
+    title: {
+      es: "¿Cómo es la imaginación actual de los niños?",
+      en: "How is the Actual Imagination of the Children?",
+    },
+  },
+  {
+    id: "p67",
+    externalUrl:
+      "https://elpais.com/mamas-papas/actualidad/2026-04-02/altas-capacidades-y-autismo-un-diagnostico-que-sacude-pero-no-transforma.html",
+    category: "maternidad",
+    mediumStyle: "El País",
+    homeVisible: false,
+    title: {
+      es: "Entrevista sobre el diagnóstico de altas capacidades y autismo",
+      en: "Inside the Dual Diagnosis: An Interview on Giftedness and Autism",
+    },
+  },
+  {
+    id: "p68",
+    externalUrl:
+      "https://elpais.com/mamas-papas/actualidad/2026-03-09/asi-pueden-influir-los-videojuegos-en-el-desarrollo-creativo-de-los-ninos.html",
+    category: "maternidad",
+    mediumStyle: "El País",
+    homeVisible: false,
+    title: {
+      es: "La influencia de los videojuegos en el desarrollo creativo infantil",
+      en: "The Impact of Video Games on Children’s Creative Development",
+    },
+  },
+  {
+    id: "p69",
+    externalUrl:
+      "https://elpais.com/mamas-papas/familia/2026-02-22/la-paradoja-de-los-recuerdos-en-la-primera-infancia-para-que-voy-a-viajar-con-mi-bebe-si-no-se-va-a-acordar-de-nada.html",
+    category: "maternidad",
+    mediumStyle: "El País",
+    homeVisible: false,
+    title: {
+      es: "La paradoja de los recuerdos infantiles abstractos",
+      en: "The Paradox of Abstract Childhood Memories",
+    },
+  },
+  {
+    id: "p70",
+    externalUrl:
+      "https://elpais.com/mamas-papas/familia/2025-12-17/por-que-todos-los-padres-y-madres-dudan-de-si-toman-las-decisiones-correctas-no-hay-perfeccion-en-la-educacion.html",
+    category: "maternidad",
+    mediumStyle: "El País",
+    homeVisible: false,
+    title: {
+      es: "Las dudas eternas de los padres en la crianza",
+      en: "The Endless Doubts of Modern Parenting",
+    },
+  },
+  {
+    id: "p71",
+    externalUrl:
+      "https://elpais.com/mamas-papas/actualidad/2025-11-30/desidealizacion-parental-del-padre-ideal-al-real.html",
+    category: "maternidad",
+    mediumStyle: "El País",
+    homeVisible: false,
+    title: {
+      es: "La desidealización parental como proceso de desarrollo infantil",
+      en: "De-Idealizing Parents as a Milestone in Child Development",
+    },
+  },
+  {
+    id: "p72",
+    externalUrl:
+      "https://elpais.com/mamas-papas/familia/2025-11-23/deberia-preocuparme-si-mi-hijo-tiene-un-amigo-imaginario.html",
+    category: "maternidad",
+    mediumStyle: "El País",
+    homeVisible: false,
+    title: {
+      es: "La incertidumbre de los amigos imaginarios",
+      en: "The Uncertainty of Imaginary Friends",
+    },
+  },
+  {
+    id: "p73",
+    externalUrl:
+      "https://elpais.com/mamas-papas/familia/2025-10-22/esta-afectando-el-uso-de-pantallas-al-desarrollo-del-lenguaje-en-los-ninos.html",
+    category: "maternidad",
+    mediumStyle: "El País",
+    homeVisible: false,
+    title: {
+      es: "El posible perjuicio de las pantallas en el lenguaje infantil",
+      en: "The Potential Toll of Screen Time on Toddlers’ Language Skills",
+    },
+  },
+  {
+    id: "p74",
+    externalUrl:
+      "https://elpais.com/mamas-papas/2025-10-04/es-positivo-recompensar-a-los-hijos-por-sacar-buenas-notas.html",
+    category: "maternidad",
+    mediumStyle: "El País",
+    homeVisible: false,
+    title: {
+      es: "La recompensa infantil por sacar buenas notas",
+      en: "Rewarding Kids for Good Grades: Does It Actually Work?",
+    },
+  },
+  {
+    id: "p75",
+    externalUrl:
+      "https://elpais.com/mamas-papas/actualidad/2025-09-26/olga-sese-experta-en-sueno-si-un-nino-recibe-mucha-ayuda-de-los-padres-para-dormir-no-sabra-gestionar-los-despertares.html",
+    category: "maternidad",
+    mediumStyle: "El País",
+    homeVisible: false,
+    title: {
+      es: "Entrevista a Pepe Pérez, experto en sueño",
+      en: "An Interview With Olga Sesé, Sleep Expert",
+    },
+  },
+  {
+    id: "p76",
+    externalUrl:
+      "https://elpais.com/mamas-papas/actualidad/2025-09-10/confianza-si-pero-con-limites-el-problema-de-la-fina-linea-entre-ser-padre-o-amigo.html",
+    category: "maternidad",
+    mediumStyle: "El País",
+    homeVisible: false,
+    title: {
+      es: "La fina línea entre la confianza de ser padre o volverse amigo",
+      en: "The Fine Line: Striking a Balance Between Parent and Friend",
+    },
+  },
+  {
+    id: "p77",
+    externalUrl:
+      "https://elpais.com/mamas-papas/familia/2025-08-30/como-gestionar-la-culpa-por-perderse-momentos-clave-de-la-vida-de-tu-hijo.html",
+    category: "maternidad",
+    mediumStyle: "El País",
+    homeVisible: false,
+    title: {
+      es: "Cómo gestionar la culpa paternal por la ausencia en momentos infantiles",
+      en: "How to Manage Parental Guilt Over Missing Childhood Milestones",
+    },
+  },
+  {
+    id: "p78",
+    externalUrl:
+      "https://elpais.com/mamas-papas/expertos/2025-08-22/que-hace-que-un-nino-quiera-leer-por-si-mismo.html",
+    category: "maternidad",
+    mediumStyle: "El País",
+    homeVisible: false,
+    title: {
+      es: "Cómo fomentar la lectura infantil",
+      en: "How to Foster a Love of Reading in Children",
+    },
+  },
+  {
+    id: "p79",
+    externalUrl:
+      "https://elpais.com/mamas-papas/familia/2025-07-27/no-no-estoy-llorando-por-que-algunos-padres-esconden-su-tristeza-y-como-afecta-a-los-hijos.html",
+    category: "maternidad",
+    mediumStyle: "El País",
+    homeVisible: false,
+    title: {
+      es: "Ocultar las emociones negativas propias a los hijos",
+      en: "Hiding Negative Emotions From Your Children: Good or Bad?",
+    },
+  },
+  {
+    id: "p80",
+    externalUrl:
+      "https://elpais.com/mamas-papas/familia/2025-07-15/como-lidiar-con-el-sindrome-del-principe-destronado-el-momento-que-muchos-padres-temen-tras-tener-el-segundo-hijo.html",
+    category: "maternidad",
+    mediumStyle: "El País",
+    homeVisible: false,
+    title: {
+      es: "El síndrome del príncipe destronado y cómo gestionarlo",
+      en: "Dethroned Prince Syndrome: How to Manage It",
+    },
+  },
+  {
+    id: "p81",
+    externalUrl:
+      "https://elpais.com/mamas-papas/actualidad/2025-06-20/ser-solo-el-padre-de-o-la-madre-de-cuando-la-identidad-propia-se-desdibuja-detras-de-un-hijo.html",
+    category: "maternidad",
+    mediumStyle: "El País",
+    homeVisible: false,
+    title: {
+      es: "Perder la identidad propia tras la paternal",
+      en: "Lost in Parenthood: Maintaining Your Identity After Having Kids",
+    },
+  },
+  {
+    id: "p82",
+    externalUrl:
+      "https://elpais.com/mamas-papas/actualidad/2025-06-07/por-que-es-importante-encontrar-tiempo-para-jugar-con-los-hijos-a-pesar-del-cansancio.html",
+    category: "maternidad",
+    mediumStyle: "El País",
+    homeVisible: false,
+    title: {
+      es: "La importancia de jugar con los hijos pese al cansancio",
+      en: "The Power of Playtime: Why Bonding With Your Kids Matters Even When Exhausted",
+    },
+  },
+  {
+    id: "p83",
+    externalUrl:
+      "https://elpais.com/mamas-papas/actualidad/2025-05-29/y-si-no-se-lo-pasa-bien-como-gestionar-la-angustia-paternal-en-las-fiestas-infantiles.html",
+    category: "maternidad",
+    mediumStyle: "El País",
+    homeVisible: false,
+    title: {
+      es: "La angustia paternal en las fiestas infantiles",
+      en: "Parental Anxiety at Childern's Parties",
+    },
+  },
+  {
+    id: "p84",
+    externalUrl:
+      "https://elpais.com/mamas-papas/familia/2025-05-09/julia-menu-tiktoker-la-infertilidad-no-solo-es-no-quedarte-embarazada-son-las-hormonas-los-pinchazos-y-encima-a-mi-me-trataron-como-una-mierda.html",
+    category: "maternidad",
+    mediumStyle: "El País",
+    homeVisible: false,
+    title: {
+      es: "Entrevista a la TikToker de maternidad Julia Menú",
+      en: "An Interview With Julia Menú, TikToker Motherhood",
+    },
+  },
+  {
+    id: "p85",
+    externalUrl:
+      "https://elpais.com/mamas-papas/actualidad/2025-04-25/paola-roig-psicologa-perinatal-y-escritora-se-trata-de-ir-abrazando-entendiendo-y-cuidando-la-madre-que-eres-no-la-de-las-redes-o-la-que-te-has-imaginado.html",
+    category: "maternidad",
+    mediumStyle: "El País",
+    homeVisible: false,
+    title: {
+      es: "Entrevista a la psicóloga perinatal Paola Roig",
+      en: "An Interview With Olga Sesé, Perinatal Psychologist",
+    },
   },
 ] satisfies HomeProject[];
 
