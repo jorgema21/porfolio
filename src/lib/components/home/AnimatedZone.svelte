@@ -102,7 +102,6 @@
     gap: var(--space-4);
     height: 100%;
     background: var(--color-white);
-    border-radius: var(--card-radius);
     text-align: left;
     text-decoration: none;
     color: inherit;
@@ -112,6 +111,8 @@
     grid-column-end: span var(--col-span);
     grid-row-start: var(--row-start);
     grid-row-end: span var(--row-span);
+
+    border-bottom: var(--border-1);
 
     will-change: transform, opacity;
     transition:
@@ -132,6 +133,11 @@
       opacity: 0.6;
       cursor: default;
     }
+  }
+  .card:nth-last-child(4),
+  .card:nth-last-child(5) {
+    border-bottom: none;
+    padding-bottom: 0;
   }
 
   .thumb {
@@ -160,7 +166,7 @@
   }
 
   .card.hero {
-    justify-content: flex-end;
+    justify-content: flex-start;
   }
 
   .card.feature {
@@ -168,6 +174,7 @@
     grid-template-columns: 1fr 3fr;
     gap: var(--space-8);
     align-items: start;
+    padding-bottom: var(--space-4);
 
     .content {
       order: 1;
@@ -177,10 +184,14 @@
     }
   }
 
+  .card.grid {
+    padding-bottom: var(--space-6);
+  }
+
   .card.list {
     min-height: 100%;
     flex-direction: row;
-    align-items: center;
+    padding-bottom: var(--space-6);
 
     .thumb {
       width: 180px;
@@ -189,8 +200,7 @@
   }
 
   .title {
-    margin-top: var(--space-2);
-    margin-bottom: var(--space-2);
+    margin: 0;
     max-width: 20ch;
     font: 500 var(--text-base) / 1.2 var(--font-serif);
     letter-spacing: -0.01em;
@@ -208,7 +218,7 @@
   }
 
   .description {
-    margin-top: var(--space-2);
+    margin: 0;
     max-width: 50ch;
     font: 350 var(--text-sm) var(--font-sans);
     color: var(--color-muted, inherit);
@@ -239,6 +249,14 @@
       grid-row-end: auto;
       display: flex;
       flex-direction: column;
+      border-bottom: var(--border-1);
+      padding-bottom: var(--space-6);
+    }
+
+    .card:nth-last-child(4),
+    .card:nth-last-child(5) {
+      border-bottom: var(--border-1);
+      padding-bottom: var(--space-6);
     }
 
     .card:has(.category.infografia) {
@@ -255,6 +273,8 @@
 
     .card.feature {
       grid-template-columns: 1fr;
+      padding-bottom: var(--space-6);
+
       .content,
       .thumb {
         order: initial;
@@ -264,11 +284,13 @@
     .card.list {
       flex-direction: column;
       align-items: flex-start;
+      padding-bottom: var(--space-6);
 
       .thumb {
         width: 100%;
       }
     }
+
     .card .title {
       font-size: var(--text-lg) !important;
       max-width: 100%;

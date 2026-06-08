@@ -32,57 +32,78 @@ const projects = [
     homeVisible: true,
     featured: true,
     title: {
-      es: "Vivienda industrializada: ¿solución para la crisis inmobiliaria en España?",
-      en: "Industrializing Housing: A Potential Solution to Spain's Real Estate Crisis",
+      es: "Vivienda industrializada: ¿solución para la crisis habitacional que sacude España?",
+      en: "Industrialized Housing: A Viable Solution to the Deep Residential Crisis Gripping Spain?",
     },
     description: {
-      es: "Análisis sobre la situación de la vivienda española desde el punto de vista de la construcción modular",
-      en: "An analysis of the Spanish housing market through the lens of modular construction.",
+      es: "Un análisis de datos sobre la falta de mano de obra en el sector de la construcción y la viabilidad técnica de los modelos modulares",
+      en: "A data-driven analysis of construction labor shortages and the technical viability of modular building models.",
     },
 
     image: "/images/projects/vivienda-construnews-ip.webp",
     colStart: 1,
-    colSpan: 9,
+    colSpan: 8,
     rowStart: 1,
     rowSpan: 3,
   },
   {
     id: "p2",
-    externalUrl: "proyecto-2",
+    externalUrl:
+      "https://elpais.com/estilo-de-vida/2026-05-21/falsos-recuerdos-por-que-la-memoria-reconstruye-nuestro-pasado.html",
     variant: "list",
     category: "estilo_de_vida",
     homeVisible: true,
     mediumStyle: "El País",
-    title: { es: "Proyecto 2", en: "Project 2" },
-    description: { es: "Descripción corta", en: "Short description" },
-    colStart: 10,
-    colSpan: 3,
+    title: {
+      es: "Los falsos recuerdos que crea la memoria",
+      en: "The false memories created by memory",
+    },
+    description: {
+      es: "Fenómeno por el que nuestro cerebro reconstruye eventos que no son del todo reales",
+      en: "A phenomenon in which our brain reconstructs events that are not entirely real.",
+    },
+    colStart: 9,
+    colSpan: 4,
     rowStart: 1,
   },
   {
     id: "p3",
-    externalUrl: "proyecto-3",
+    externalUrl:
+      "https://elpais.com/estilo-de-vida/2026-04-25/por-que-llenamos-la-agenda-de-vacaciones-con-meses-de-antelacion-el-verano-ya-esta-decidido-en-abril.html",
     variant: "list",
     category: "estilo_de_vida",
     homeVisible: true,
     mediumStyle: "El País",
-    title: { es: "Proyecto 3", en: "Project 3" },
-    description: { es: "Descripción corta", en: "Short description" },
-    colStart: 10,
-    colSpan: 3,
+    title: {
+      es: "La antelación al organizarse las vacaciones",
+      en: "Planning Vacations Well in Advance",
+    },
+    description: {
+      es: "Factores como el control, la incertidumbre y el contexto pueden cerrar el calendario estival pronto",
+      en: "Factors such as control, uncertainty, and context can lock in summer schedules early.",
+    },
+    colStart: 9,
+    colSpan: 4,
     rowStart: 2,
   },
   {
     id: "p4",
-    externalUrl: "proyecto-4",
+    externalUrl:
+      "https://elpais.com/mamas-papas/actualidad/2026-06-05/ayudar-o-no-a-los-hijos-con-los-deberes.html",
     variant: "list",
     category: "maternidad",
     homeVisible: true,
     mediumStyle: "El País",
-    title: { es: "Proyecto 4", en: "Project 4" },
-    description: { es: "Descripción corta", en: "Short description" },
-    colStart: 10,
-    colSpan: 3,
+    title: {
+      es: "¿Es bueno estar encima de los hijos con los deberes?",
+      en: "Should Parents Micro-Manage Their Children’s Homework?",
+    },
+    description: {
+      es: "La manera de ayudar con las tareas escolares es más importante que la cantidad de apoyo",
+      en: "The way parents help with schoolwork matters more than the amount of support they provide.",
+    },
+    colStart: 9,
+    colSpan: 4,
     rowStart: 3,
   },
   {
@@ -191,41 +212,62 @@ const projects = [
   },
   {
     id: "p10",
-    externalUrl: "proyecto-10",
+    externalUrl:
+      "https://elpais.com/mamas-papas/expertos/2026-05-23/jose-maria-carmona-pediatra-que-los-ninos-necesitan-padres-perfectos-es-el-mito-mas-importante-a-desmontar.html",
     variant: "list",
     category: "maternidad",
     homeVisible: true,
     mediumStyle: "El País",
-    title: { es: "Proyecto 10", en: "Project 10" },
-    description: { es: "Texto corto", en: "Short text" },
+    title: {
+      es: "Entrevista al pediatra José María Carmona",
+      en: "Interview with the pediatrician José María Carmona",
+    },
+    description: {
+      es: "Conversación sobre cómo abordar la crianza desde el embarazo",
+      en: "A conversation on navigating parenting from pregnancy onward.",
+    },
     colStart: 1,
-    colSpan: 3,
+    colSpan: 4,
     rowStart: 12,
   },
   {
     id: "p11",
-    externalUrl: "proyecto-11",
+    externalUrl:
+      "https://elpais.com/estilo-de-vida/2026-04-15/desconocidos-pero-no-tanto-la-importancia-de-los-extranos-familiares-que-nos-cruzamos-a-diario.html",
     variant: "list",
     category: "estilo_de_vida",
     homeVisible: true,
     mediumStyle: "El País",
-    title: { es: "Proyecto 11", en: "Project 11" },
-    description: { es: "Texto corto", en: "Short text" },
+    title: {
+      es: "¿Quiénes son los desconocidos que siempre vemos a diario?",
+      en: "Who Are the Strangers We See Every Day?",
+    },
+    description: {
+      es: "En el ascensor, metro o el barrio nos cruzamos con los mismos desconocidos familiares",
+      en: "In elevators, on the subway, or around the neighborhood, we cross paths with the same familiar strangers.",
+    },
     colStart: 1,
-    colSpan: 3,
+    colSpan: 4,
     rowStart: 13,
   },
   {
     id: "p12",
-    externalUrl: "proyecto-12",
+    externalUrl:
+      "https://elpais.com/estilo-de-vida/2026-04-07/por-que-algunas-personas-llegan-con-extrema-antelacion-a-las-citas-o-eventos-explicaciones-y-algunos-consejos.html",
     variant: "list",
     category: "estilo_de_vida",
     homeVisible: true,
     mediumStyle: "El País",
-    title: { es: "Proyecto 12", en: "Project 12" },
-    description: { es: "Texto corto", en: "Short text" },
+    title: {
+      es: "Las posibles razones detrás de una puntualidad excesiva",
+      en: "The Psychology Behind Extreme Punctuality",
+    },
+    description: {
+      es: "Ansiedad anticipatoria o autoexigencia pueden impulsarnos a llegar demasiado pronto",
+      en: "Anticipatory anxiety or high self-expectations can drive people to arrive far too early.",
+    },
     colStart: 1,
-    colSpan: 3,
+    colSpan: 4,
     rowStart: 14,
   },
   {
@@ -236,8 +278,8 @@ const projects = [
     homeVisible: true,
     featured: true,
     title: {
-      es: "Estadísticas de los Óscar: los secretos detrás de los grandes premios del cine",
-      en: "Oscars Analytics: The Hidden Patterns Behind Cinema's Biggest Night",
+      es: "Estadísticas de los Óscar: los secretos y patrones ocultos detrás de los grandes premios del cine mundial",
+      en: "Oscars Analytics: Decoding the Hidden Data Patterns Behind Cinema's Biggest Night of the Year",
     },
     description: {
       es: "Desarrollo web y visualización de datos históricos para entender las tendencias de la Academia",
@@ -245,8 +287,8 @@ const projects = [
     },
 
     image: "/images/projects/premios-oscar-ip.webp",
-    colStart: 4,
-    colSpan: 9,
+    colStart: 5,
+    colSpan: 8,
     rowStart: 12,
     rowSpan: 3,
   },
@@ -312,7 +354,9 @@ const projects = [
     colSpan: 4,
     rowStart: 10,
   },
+  ///
   //NOHOME
+  ///
   {
     id: "p17",
     slug: "masculinizacion-facial",

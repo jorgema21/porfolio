@@ -1,5 +1,5 @@
 <script lang="ts">
-  import type { Infographic } from "$lib/data/infographics.data";
+  import type { Infographic } from "../../data/infographics.data";
   import { langSignal } from "$lib/i18n/index.svelte";
   import { formatDate } from "$lib/utils/formatDate";
   import { infographics as infographicsI18n } from "$lib/i18n/dictionaries/infographics.i18n";
