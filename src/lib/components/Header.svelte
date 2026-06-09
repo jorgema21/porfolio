@@ -90,7 +90,7 @@
       in:fly={{ ...flyIn, delay: 150 }}
     >
       <img
-        src={`${base}${langSignal.current === "es" ? "/images/flags/gb.svg" : "/images/flags/es.svg"}`}
+        src={`${base}${langSignal.current === "es" ? "/images/flags/us.svg" : "/images/flags/es.svg"}`}
         alt=""
         aria-hidden="true"
         width="20"

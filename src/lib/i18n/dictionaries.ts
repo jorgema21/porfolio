@@ -2,6 +2,7 @@ import { about } from "./dictionaries/about";
 import { languages } from "./dictionaries/about/languages";
 import { skills } from "./dictionaries/about/skills";
 import { timeline } from "./dictionaries/about/timeline";
+import { timelineUI } from "./dictionaries/about/timelineUI";
 import { contact } from "./dictionaries/contact";
 import { home } from "./dictionaries/home";
 import { infographics } from "./dictionaries/infographics.i18n";
@@ -25,6 +26,7 @@ export const dictionaries = {
     skills: skills.es,
     style: style.es,
     timeline: timeline.es,
+    timelineUI: timelineUI.es,
   },
   en: {
     about: about.en,
@@ -39,6 +41,7 @@ export const dictionaries = {
     skills: skills.en,
     style: style.en,
     timeline: timeline.en,
+    timelineUI: timelineUI.en,
   },
 } as const;
 

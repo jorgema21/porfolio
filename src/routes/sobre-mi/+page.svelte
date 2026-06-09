@@ -41,6 +41,36 @@
   <section class="about-section">
     <h2>{t.about.timelineTitle}</h2>
 
+    <p class="timeline-description">
+      {t.about.timelineDesc}
+    </p>
+
+    <details class="mini-timeline-details">
+      <summary class="mini-timeline-summary">
+        <span class="summary-text">{t.about.miniTimelineTitle}</span>
+        <svg
+          class="summary-chevron"
+          xmlns="http://w3.org"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="m6 9 6 6 6-6" />
+        </svg>
+      </summary>
+
+      <div class="mini-timeline-content">
+        <ul class="mini-timeline-list">
+          {#each t.about.miniTimeline as event, i (i)}
+            <li class="mini-timeline-item">{event}</li>
+          {/each}
+        </ul>
+      </div>
+    </details>
+
     <div class="timeline-legend cluster">
       <span class="legend-item study">{t.about.study}</span>
       <span class="legend-item infography">{t.about.infographics}</span>
@@ -68,6 +98,26 @@
 </div>
 
 <style>
+  .timeline-description {
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    font-weight: 500;
+    line-height: var(--lh-base);
+    letter-spacing: 0.02em;
+    color: var(--color-muted);
+    text-align: center;
+  }
+
+  h2 {
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    line-height: var(--lh-titles, 1.15);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border-bottom: var(--border-1);
+  }
+
   .skill-wrapper {
     opacity: 0;
     transform: translateY(var(--space-4));
@@ -84,7 +134,108 @@
   .timeline-legend {
     display: flex;
     justify-content: center;
+    margin-top: var(--space-4);
     margin-bottom: var(--space-10);
+  }
+
+  .mini-timeline-details {
+    max-width: 480px;
+    margin: var(--space-4) auto var(--space-8) auto;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-white);
+    overflow: hidden;
+    transition: box-shadow var(--transition-fast);
+  }
+
+  .mini-timeline-details[open] {
+    box-shadow: 0 4px 12px rgb(0 0 0 / 5%);
+  }
+
+  .mini-timeline-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-3) var(--space-4);
+    list-style: none;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .mini-timeline-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .summary-text {
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text);
+  }
+
+  .summary-chevron {
+    width: 14px;
+    height: 14px;
+    color: var(--color-muted);
+    transition: transform var(--transition-fast);
+  }
+
+  .mini-timeline-details[open] .summary-chevron {
+    transform: rotate(180deg);
+  }
+
+  .mini-timeline-content {
+    padding: 0 var(--space-6) var(--space-6) var(--space-6);
+    border-top: 1px solid var(--color-border);
+    background: var(--color-muted-background, #fafafa);
+  }
+
+  .mini-timeline-list {
+    position: relative;
+    list-style: none;
+    margin: var(--space-4) 0 0 0;
+    padding: 0;
+  }
+
+  .mini-timeline-list::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 4px;
+    bottom: 6px;
+    width: 1px;
+    background: var(--color-border);
+    opacity: 0.7;
+  }
+
+  .mini-timeline-item {
+    position: relative;
+    padding-left: var(--space-6);
+    margin-bottom: var(--space-5);
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    line-height: var(--lh-base);
+    color: var(--color-text);
+    text-align: left;
+  }
+
+  .mini-timeline-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .mini-timeline-item::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 1px;
+    width: 7px;
+    height: 7px;
+    border-radius: var(--radius-full);
+    background: var(--color-border);
+    border: 1px solid var(--color-white);
+    z-index: 1;
   }
 
   .legend-item {
@@ -147,11 +298,16 @@
     font-weight: 700;
     line-height: var(--lh-base);
   }
+
   @media (max-width: 640px) {
     .about-cta {
       flex-direction: column;
       align-items: flex-start;
       gap: var(--space-4);
+    }
+    .timeline-description {
+      font-size: 11px;
+      padding-inline: var(--space-2);
     }
   }
 </style>

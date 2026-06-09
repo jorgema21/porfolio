@@ -61,14 +61,14 @@
   aria-labelledby="languages-title"
   bind:this={languagesSection}
 >
-  <div class="languages-selector" role="group">
+  <div class="languages-selector" role="group" aria-label="Seleccionar idioma">
     {#each languages as language, i (language.id)}
       <button
         type="button"
         class="language-toggle"
         class:selected={selectedSet.has(language.id)}
         class:visible
-        style={`--i:${i}`}
+        style:--i={i}
         aria-pressed={selectedSet.has(language.id)}
         onclick={() => toggleLanguage(language.id)}
       >
@@ -82,17 +82,20 @@
       <span class="scale-label">{dict.scale.beginner}</span>
 
       <div class="languages-circles" aria-hidden="true">
-        {#each circles as circle, i (circle.level)}
+        <!-- Combinamos level e i para asegurar una clave única y evitar errores de duplicados -->
+        {#each circles as circle, i (circle.level + "-" + i)}
           <span
             class="language-circle"
             class:visible
-            style={`background:${circle.color}; --i:${i + 5}`}
+            style:background={circle.color}
+            style:--i={i + 5}
           >
             {#if circle.showLabel && circle.langId}
               <span
                 class="language-label"
                 class:visible
-                style={`--language-color:${circle.color}; --i:${circle.level + 10}`}
+                style:--language-color={circle.color}
+                style:--i={circle.level + 10}
               >
                 <strong>{dict[circle.langId].name}</strong>
                 <small>{dict[circle.langId].levelLabel}</small>

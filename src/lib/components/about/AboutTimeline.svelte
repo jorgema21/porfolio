@@ -6,6 +6,8 @@
   let progress = $state(0);
   let visibleItems = $state<boolean[]>(timeline.map(() => false));
 
+  let isAtBottom = $state(false);
+
   let itemTops: number[] = [];
   let containerTop = 0;
   let containerHeight = 0;
@@ -30,6 +32,17 @@
 
     progress = Math.max(0, Math.min(raw, containerHeight));
     visibleItems = itemTops.map((top) => middle >= top + 60);
+
+    isAtBottom = progress >= containerHeight - 20;
+  };
+
+  const scrollToBottom = () => {
+    if (!container) return;
+    const targetY = containerTop + containerHeight - window.innerHeight / 2;
+    window.scrollTo({
+      top: targetY,
+      behavior: "smooth",
+    });
   };
 
   let ticking = false;
@@ -82,9 +95,30 @@
       </div>
     </article>
   {/each}
+
+  <button
+    class="timeline-skip-btn"
+    class:hidden={isAtBottom}
+    onclick={scrollToBottom}
+    aria-label="Saltar al final de la línea de tiempo"
+  >
+    <svg
+      xmlns="http://w3.org"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path d="M12 5v14M19 12l-7 7-7-7" />
+    </svg>
+    <span>{t.timelineUI.goToBottom}</span>
+  </button>
 </section>
 
 <style>
+
   .timeline {
     position: relative;
     display: flex;
@@ -275,6 +309,69 @@
 
     .timeline-item.visible {
       transform: translateY(0);
+    }
+  }
+
+  .timeline-skip-btn {
+    position: fixed;
+    bottom: var(--space-12);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+
+    border: var(--border-1);
+    border-radius: var(--radius-full);
+    background: var(--color-white);
+    color: var(--color-text);
+
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
+
+    transition:
+      opacity 400ms var(--ease-out),
+      transform 400ms var(--ease-out),
+      background-color 200ms ease;
+    will-change: opacity, transform;
+  }
+
+  .timeline-skip-btn svg {
+    width: 14px;
+    height: 14px;
+    animation: pulseArrow 2s infinite ease-in-out;
+  }
+
+  .timeline-skip-btn:hover {
+    background: var(--color-muted-background, #f3f4f6);
+  }
+
+  .timeline-skip-btn.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-50%) translateY(20px);
+  }
+
+  @keyframes pulseArrow {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(3px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .timeline-skip-btn {
+      bottom: var(--space-4);
     }
   }
 </style>

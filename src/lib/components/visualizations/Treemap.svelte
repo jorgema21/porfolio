@@ -91,12 +91,6 @@
     hovered = { key: leaf.key, value: leaf.value };
     updateMouse(e);
   };
-
-  const handleFocus = (leaf: (typeof leaves)[number]) => {
-    hovered = { key: leaf.key, value: leaf.value };
-    mouseX = leaf.x + leaf.w / 2;
-    mouseY = leaf.y + leaf.h;
-  };
 </script>
 
 <div class="treemap-wrapper">
@@ -113,28 +107,31 @@
           rx="6"
           fill={colorMeta.scale(leaf.value)}
           opacity={$progress}
-          role="button"
-          tabindex="0"
+          role="img"
           aria-label="{getLabel(leaf.key)}: {leaf.value}"
           class="treemap-rect"
           onmouseenter={(e) => handleEnter(leaf, e)}
           onmousemove={updateMouse}
           onmouseleave={() => (hovered = null)}
-          onfocus={() => handleFocus(leaf)}
-          onblur={() => (hovered = null)}
         />
 
-        {#if leaf.w * $progress > 60 && leaf.h * $progress > 30}
-          <text
+        <!-- Renderizamos el texto usando HTML nativo dentro del SVG -->
+        {#if leaf.w * $progress > 50 && leaf.h * $progress > 30}
+          <foreignObject
             x="8"
-            y="18"
-            fill={getTextColor(leaf.value)}
-            opacity={$progress}
+            y="6"
+            width={leaf.w * $progress - 16}
+            height={leaf.h * $progress - 12}
             pointer-events="none"
-            class="treemap-text"
           >
-            {getLabel(leaf.key)}
-          </text>
+            <div
+              class="treemap-text-container"
+              style:color={getTextColor(leaf.value)}
+              style:opacity={$progress}
+            >
+              {getLabel(leaf.key)}
+            </div>
+          </foreignObject>
         {/if}
       </g>
     {/each}
@@ -193,11 +190,17 @@
     }
   }
 
-  .treemap-text {
+  .treemap-text-container {
     font-family: var(--font-sans);
     font-weight: 700;
-    user-select: none;
     font-size: 11px;
+    line-height: 1.2;
+    user-select: none;
+
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   .tooltip {
@@ -230,7 +233,8 @@
     }
   }
   @media (max-width: 400px) {
-    .treemap-text {
-    font-size: 15px;}
+    .treemap-text-container {
+      font-size: var(--text-xs);
+    }
   }
 </style>

@@ -201,7 +201,7 @@ export const timeline = {
     },
 
     "this-portfolio": {
-      title: "¡Este porfolio!",
+      title: "This portfolio!",
       description:
         "Spent months developing my portfolio as a standalone project to showcase my best work in a visual, engaging way",
     },
