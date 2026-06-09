@@ -45,7 +45,7 @@ export const about: Record<"es" | "en", AboutDict> = {
       },
     ],
 
-    timelineTitle: "Cómo he llegado hasta aquí",
+    timelineTitle: "Mi trayectoria",
     timelineDesc:
       "Haz scroll para explorar mi trayectoria o investiga el resumen y pulsa el botón inferior para ir directamente al final.",
 
@@ -62,8 +62,8 @@ export const about: Record<"es" | "en", AboutDict> = {
     infographics: "Infografía",
     lifestyle: "Estilo de vida",
     motherhood: "Maternidad",
-    skillsTitle: "Lo que me gusta hacer",
-    languagesTitle: "Idiomas que utilizo",
+    skillsTitle: "Herramientas que uso",
+    languagesTitle: "Idiomas que hablo",
     cta: "Disponible para proyectos de infografía y datos y colaboraciones de estilo de vida y maternidad",
   },
 
@@ -92,7 +92,7 @@ export const about: Record<"es" | "en", AboutDict> = {
       },
     ],
 
-    timelineTitle: "How I got here",
+    timelineTitle: "My Journey",
     timelineDesc:
       "Scroll down to explore my career path, review the summary, or click the button below to jump straight to the end.",
     miniTimelineTitle: "Quick summary",
@@ -108,8 +108,8 @@ export const about: Record<"es" | "en", AboutDict> = {
     infographics: "Infographics",
     lifestyle: "Lifestyle",
     motherhood: "Motherhood",
-    skillsTitle: "What I enjoy doing",
-    languagesTitle: "Languages I use",
+    skillsTitle: "Tools I Use",
+    languagesTitle: "Languages I Speak",
     cta: "Available for data and infographic projects, as well as lifestyle and maternity collaborations",
   },
 };

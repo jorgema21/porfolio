@@ -39,7 +39,7 @@ export const skills = {
       ],
     },
     illustrator: {
-      name: "Adobe Illustrator",
+      name: "Illustrator",
       description:
         "Herramienta clave para diseño vectorial, infografía estática y tratamiento de visualizaciones de datos.",
       details: [
@@ -63,7 +63,7 @@ export const skills = {
       ],
     },
     photoshop: {
-      name: "Adobe Photoshop",
+      name: "Photoshop",
       description:
         "Herramienta de aprendizaje autodidacta para montajes y edición fotográfica digital.",
       details: [
@@ -96,7 +96,7 @@ export const skills = {
       ],
     },
     premiere: {
-      name: "Adobe Premiere Pro",
+      name: "Premiere Pro",
       description:
         "Herramientas de edición para montaje de video y piezas multimedia.",
       details: [
@@ -106,7 +106,7 @@ export const skills = {
       ],
     },
     code: {
-      name: "HTML5 / CSS3 / JavaScript (Nativo)",
+      name: "HTML5 / CSS3 / JS (Nativo)",
       description:
         "Salto al desarrollo web en para superar los límites de las plantillas de gráficos sin código.",
       details: [
@@ -141,7 +141,7 @@ export const skills = {
       ],
     },
     aftereffects: {
-      name: "Adobe After Effects",
+      name: "After Effects",
       description:
         "Herramienta enfocada en la introducción al movimiento gráfico.",
       details: [
@@ -176,7 +176,7 @@ export const skills = {
       ],
     },
     illustrator: {
-      name: "Adobe Illustrator",
+      name: "Illustrator",
       description:
         "My primary tool for vector design, static infographics, and data visualization processing.",
       details: [
@@ -200,7 +200,7 @@ export const skills = {
       ],
     },
     photoshop: {
-      name: "Adobe Photoshop",
+      name: "Photoshop",
       description:
         "A self-taught tool used for compositing and digital image editing.",
       details: [
@@ -233,7 +233,7 @@ export const skills = {
       ],
     },
     premiere: {
-      name: "Adobe Premiere Pro",
+      name: "Premiere Pro",
       description:
         "Editing toolsets used for video assembly and multimedia pieces.",
       details: [
@@ -243,7 +243,7 @@ export const skills = {
       ],
     },
     code: {
-      name: "HTML5 / CSS3 / JavaScript (Native)",
+      name: "HTML5 / CSS3 / JS (Native)",
       description:
         "Stepping into web development to bypass no-code data visualization template restrictions.",
       details: [
@@ -278,7 +278,7 @@ export const skills = {
       ],
     },
     aftereffects: {
-      name: "Adobe After Effects",
+      name: "After Effects",
       description:
         "An entry-level toolset focused on introducing motion graphics core concepts.",
       details: [

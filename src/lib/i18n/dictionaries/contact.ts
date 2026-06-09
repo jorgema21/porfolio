@@ -7,6 +7,7 @@ export const contact = {
     description:
       "Si buscas dar forma a un proyecto visual con análisis y visualización de datos con enfoque periodístico, redacción de temas de psicología cotidiana o simplemente quieres ponerte en contacto, charlemos por email o por LinkedIn.",
 
+    location: "Madrid, España | Remoto",
     cta: "Escríbeme por email",
   },
 
@@ -18,6 +19,7 @@ export const contact = {
     description:
       "Whether you want to shape a visual project combining journalistic data analysis and visualization, need content on everyday psychology, or simply want to connect, let's chat via email or LinkedIn.",
 
+    location: "Madrid, Spain | Remote",
     cta: "Send me an email",
   },
 } as const;

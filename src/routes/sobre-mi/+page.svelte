@@ -139,12 +139,12 @@
   }
 
   .mini-timeline-details {
+    position: relative;
     max-width: 480px;
     margin: var(--space-4) auto var(--space-8) auto;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     background: var(--color-white);
-    overflow: hidden;
     transition: box-shadow var(--transition-fast);
   }
 
@@ -187,9 +187,17 @@
   }
 
   .mini-timeline-content {
+    position: absolute;
+    top: 100%;
+    left: -1px;
+    right: -1px;
+    z-index: 50;
+    border: 1px solid var(--color-border);
+    border-top: none;
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
     padding: 0 var(--space-6) var(--space-6) var(--space-6);
-    border-top: 1px solid var(--color-border);
-    background: var(--color-muted-background, #fafafa);
+    background: var(--color-minitimeline);
+    box-shadow: 0 10px 25px rgb(0 0 0 / 10%);
   }
 
   .mini-timeline-list {

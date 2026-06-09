@@ -6,7 +6,6 @@ export type SkillId =
   | "photoshop"
   | "rstudio"
   | "premiere"
-  | "rstudio"
   | "code"
   | "svelte"
   | "qgis"

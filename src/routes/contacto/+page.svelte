@@ -10,6 +10,15 @@
     {t.contact.text}
   </p>
 
+  <div class="contact-location">
+    <img
+      src={`${base}/images/logos/ubi-logo.png`}
+      alt=""
+      class="location-icon"
+    />
+    <span class="location-text">{t.contact.location}</span>
+  </div>
+
   <section class="card contact-card">
     <div class="contact-card__content stack-sm">
       <h2>{t.contact.subtitle}</h2>
@@ -53,6 +62,28 @@
 </div>
 
 <style>
+  .contact-location {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-8);
+  }
+
+  .location-icon {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  .location-text {
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    color: var(--color-muted);
+  }
+
   .contact-card {
     display: flex;
     align-items: center;
@@ -66,9 +97,7 @@
     background: var(--card-gradient-soft);
 
     box-shadow: var(--shadow-sm, 0 2px 8px rgba(0, 0, 0, 0.02));
-    transition:
-      transform var(--transition),
-      box-shadow var(--transition);
+    transition: transform var(--transition);
   }
 
   .contact-card:hover {
@@ -138,6 +167,10 @@
   }
 
   @media (max-width: 768px) {
+    .contact-location {
+      margin-bottom: var(--space-6);
+    }
+
     .contact-card {
       flex-direction: column;
       align-items: flex-start;

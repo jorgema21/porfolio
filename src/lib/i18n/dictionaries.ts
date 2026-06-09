@@ -1,6 +1,7 @@
 import { about } from "./dictionaries/about";
 import { languages } from "./dictionaries/about/languages";
 import { skills } from "./dictionaries/about/skills";
+import { skillLevels } from "./dictionaries/about/skill-levels";
 import { timeline } from "./dictionaries/about/timeline";
 import { timelineUI } from "./dictionaries/about/timelineUI";
 import { contact } from "./dictionaries/contact";
@@ -24,6 +25,7 @@ export const dictionaries = {
     motherhood: motherhood.es,
     project: project.es,
     skills: skills.es,
+    skillLevels: skillLevels.es,
     style: style.es,
     timeline: timeline.es,
     timelineUI: timelineUI.es,
@@ -39,6 +41,7 @@ export const dictionaries = {
     motherhood: motherhood.en,
     project: project.en,
     skills: skills.en,
+    skillLevels: skillLevels.en,
     style: style.en,
     timeline: timeline.en,
     timelineUI: timelineUI.en,

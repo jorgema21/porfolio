@@ -11,6 +11,16 @@
   const toggle = () => (open = !open);
 
   const content = $derived(t.skills[skill.id as SkillId]);
+
+  const levelInfo = $derived.by(() => {
+    const lvl = skill.level;
+    if (lvl >= 9) return { key: "advanced", label: t.skillLevels.advanced };
+    if (lvl >= 7) return { key: "proficient", label: t.skillLevels.proficient };
+    if (lvl >= 5)
+      return { key: "intermediate", label: t.skillLevels.intermediate };
+    if (lvl >= 3) return { key: "learning", label: t.skillLevels.learning };
+    return { key: "nextup", label: t.skillLevels.nextup };
+  });
 </script>
 
 <div class="skill">
@@ -31,6 +41,12 @@
         <span class="skill-name">{content.name}</span>
         <span class="skill-description-mobile">{content.description}</span>
       </div>
+    </div>
+
+    <div class="skill-badge-container">
+      <span class="skill-badge {levelInfo.key}">
+        {levelInfo.label}
+      </span>
     </div>
 
     <div class="skill-bar" aria-hidden="true">
@@ -102,9 +118,9 @@
 
     .skill-header {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(160px, min(28vw, 260px)) auto auto;
+      grid-template-columns: minmax(0, 1fr) auto minmax(160px, min(24vw, 240px)) auto auto;
       align-items: center;
-      gap: var(--space-8);
+      gap: var(--space-6);
       width: 100%;
       padding: var(--space-6) 0;
       border: 0;
@@ -155,6 +171,50 @@
       color: var(--color-muted);
     }
 
+    .skill-badge-container {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .skill-badge {
+      display: inline-block;
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-sans);
+      font-size: var(--text-2xs);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+      opacity: 0.75;
+    }
+
+    .skill-badge.advanced {
+      background: var(--color-badge-advanced-bg);
+      color: var(--color-badge-advanced-text);
+    }
+
+    .skill-badge.proficient {
+      background: var(--color-badge-proficient-bg);
+      color: var(--color-badge-proficient-text);
+    }
+
+    .skill-badge.intermediate {
+      background: var(--color-badge-intermediate-bg);
+      color: var(--color-badge-intermediate-text);
+    }
+
+    .skill-badge.learning {
+      background: var(--color-badge-learning-bg);
+      color: var(--color-badge-learning-text);
+    }
+
+    .skill-badge.nextup {
+      background: var(--color-badge-nextup-bg);
+      color: var(--color-badge-nextup-text);
+    }
+
     .skill-bar {
       display: flex;
       align-items: center;
@@ -173,17 +233,14 @@
         background var(--transition);
 
       &.filled {
-        background: var(--blue-500);
+        background: var(--color-muted);
       }
     }
 
     .skill-level {
-      min-width: 3.2rem;
       font-size: var(--text-sm);
-      font-variant-numeric: tabular-nums;
       letter-spacing: -0.03em;
       color: var(--color-muted);
-      text-align: right;
     }
 
     .chevron {
@@ -239,11 +296,12 @@
     @media (max-width: 768px) {
       .skill-header {
         grid-template-columns: 1fr auto;
-        grid-template-rows: auto auto;
+        grid-template-rows: auto auto auto;
         grid-template-areas:
           "main chevron"
-          "bar level";
-        gap: var(--space-3);
+          "badge level"
+          "bar bar";
+        gap: var(--space-2);
       }
       .skill-main {
         grid-area: main;
@@ -251,6 +309,12 @@
       .chevron {
         grid-area: chevron;
         justify-self: end;
+      }
+      .skill-badge-container {
+        grid-area: badge;
+        justify-content: flex-start;
+        min-width: 0;
+        margin-top: var(--space-1);
       }
       .skill-bar {
         grid-area: bar;
@@ -262,6 +326,7 @@
         justify-self: end;
         min-width: 2.5rem;
         width: auto;
+        margin-top: var(--space-1);
       }
       .skill-details {
         padding: 0 0 var(--space-6);

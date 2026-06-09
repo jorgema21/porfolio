@@ -34,4 +34,17 @@
 
   --color-featured-bg: #fef08a;
   --color-featured-border: #eab308;
+  --color-minitimeline: #fafafa;
+
+  --color-badge-advanced-bg: #eff6ff;
+  --color-badge-proficient-bg: #ecfdf5;
+  --color-badge-intermediate-bg: #fff7ed;
+  --color-badge-learning-bg: #fdf2f8; 
+  --color-badge-nextup-bg: #f3f4f6; 
+
+  --color-badge-advanced-text: #1e40af;
+  --color-badge-proficient-text: #065f46;
+  --color-badge-intermediate-text: #9a3412;
+  --color-badge-learning-text: #9d174d;
+  --color-badge-nextup-text: #374151;
 }
