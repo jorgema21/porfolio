@@ -11,7 +11,7 @@ export const home = {
   en: {
     intro: [
       "Welcome to my portfolio!",
-      "Here you’ll find a selection of my work, organized by relevance and recency.",
+      "Here you'll find a selection of my work, organized by relevance and recency.",
       "To explore everything by category or learn more about me,",
       "use the navigation above."
     ],

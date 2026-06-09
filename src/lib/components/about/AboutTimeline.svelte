@@ -29,7 +29,7 @@
     const raw = middle - containerTop;
 
     progress = Math.max(0, Math.min(raw, containerHeight));
-    visibleItems = itemTops.map((top) => middle >= top + 40);
+    visibleItems = itemTops.map((top) => middle >= top + 60);
   };
 
   let ticking = false;

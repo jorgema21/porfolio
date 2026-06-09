@@ -2,17 +2,21 @@ export type TimelineCategory = "study" | "infography" | "style" | "motherhood";
 
 export type TimelineId =
   | "journalism-degree"
-  | "student-media"
-  | "data-discovery"
-  | "visual-storytelling"
-  | "editorial-design"
-  | "visual-narratives"
-  | "interactive-graphics"
-  | "frontend-learning"
-  | "svelte-start"
+  | "erasmus-year"
+  | "end-degree"
+  | "start-ep"
+  | "start-internship"
+  | "end-internship"
+  | "sports-ep"
+  | "start-freelance"
+  | "end-a14"
   | "start-lifestyle"
   | "start-motherhood"
-  | "data-visual-specialization";
+  | "start-sty"
+  | "start-col"
+  | "start-epgente"
+  | "start-dataista"
+  | "this-portfolio";
 
 export type TimelineItem = {
   readonly id: TimelineId;
@@ -20,20 +24,23 @@ export type TimelineItem = {
   readonly category: TimelineCategory;
 };
 
-
 const rawTimeline = [
-  { id: "journalism-degree", date: "2018", category: "study" },
-  { id: "student-media", date: "2018", category: "study" },
-  { id: "data-discovery", date: "2019", category: "infography" },
-  { id: "visual-storytelling", date: "2020", category: "infography" },
-  { id: "editorial-design", date: "2021", category: "style" },
-  { id: "visual-narratives", date: "2022", category: "infography" },
-  { id: "interactive-graphics", date: "2023", category: "infography" },
-  { id: "frontend-learning", date: "2023", category: "study" },
-  { id: "svelte-start", date: "2024", category: "infography" },
-  { id: "start-lifestyle", date: "2024", category: "style" },
-  { id: "start-motherhood", date: "2025", category: "motherhood" },
-  { id: "data-visual-specialization", date: "2025", category: "infography" },
+  { id: "journalism-degree", date: "09-2017", category: "study" },
+  { id: "erasmus-year", date: "09-2019", category: "study" },
+  { id: "end-degree", date: "07-2021", category: "study" },
+  { id: "start-ep", date: "10-2021", category: "study" },
+  { id: "start-internship", date: "09-2022", category: "infography" },
+  { id: "end-internship", date: "09-2023", category: "infography" },
+  { id: "sports-ep", date: "02-2024", category: "infography" },
+  { id: "start-freelance", date: "04-2024", category: "infography" },
+  { id: "end-a14", date: "12-2024", category: "infography" },
+  { id: "start-lifestyle", date: "02-2025", category: "style" },
+  { id: "start-motherhood", date: "04-2025", category: "motherhood" },
+  { id: "start-sty", date: "05-2025", category: "infography" },
+  { id: "start-col", date: "05-2025", category: "infography" },
+  { id: "start-epgente", date: "09-2025", category: "style" },
+  { id: "start-dataista", date: "11-2025", category: "study" },
+  { id: "this-portfolio", date: "06-2026", category: "study" },
 ] as const satisfies readonly TimelineItem[];
 
 export const timeline: TimelineItem[] = [...rawTimeline].sort(

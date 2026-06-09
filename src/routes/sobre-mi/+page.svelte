@@ -143,7 +143,6 @@
   }
 
   .about-cta__text {
-    max-width: 55ch;
     font-size: var(--text-sm);
     font-weight: 700;
     line-height: var(--lh-base);

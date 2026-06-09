@@ -8,10 +8,6 @@ export const metaarticle = {
     mi_porfolio: {
       porfolio: "Mi Portfolio",
     },
-    headers: {
-      autoria: "Autoría",
-      enfoque: "Enfoque",
-    },
   },
 
   en: {
@@ -22,10 +18,6 @@ export const metaarticle = {
     },
     mi_porfolio: {
       porfolio: "My Portfolio",
-    },
-    headers: {
-      autoria: "Authorship",
-      enfoque: "Approach",
     },
   },
 } as const;

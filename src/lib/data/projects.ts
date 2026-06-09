@@ -96,7 +96,7 @@ const projects = [
     mediumStyle: "El País",
     title: {
       es: "¿Es bueno estar encima de los hijos con los deberes?",
-      en: "Should Parents Micro-Manage Their Children’s Homework?",
+      en: "Should Parents Micro-Manage Their Children's Homework?",
     },
     description: {
       es: "La manera de ayudar con las tareas escolares es más importante que la cantidad de apoyo",
@@ -808,7 +808,7 @@ const projects = [
     homeVisible: false,
     title: {
       es: "El agujero negro de los propósitos de Año Nuevo",
-      en: "The Black Hole of New Year’s Resolutions",
+      en: "The Black Hole of New Year's Resolutions",
     },
   },
   {
@@ -1060,7 +1060,7 @@ const projects = [
     homeVisible: false,
     title: {
       es: "La influencia de los videojuegos en el desarrollo creativo infantil",
-      en: "The Impact of Video Games on Children’s Creative Development",
+      en: "The Impact of Video Games on Children's Creative Development",
     },
   },
   {
@@ -1120,7 +1120,7 @@ const projects = [
     homeVisible: false,
     title: {
       es: "El posible perjuicio de las pantallas en el lenguaje infantil",
-      en: "The Potential Toll of Screen Time on Toddlers’ Language Skills",
+      en: "The Potential Toll of Screen Time on Toddlers' Language Skills",
     },
   },
   {

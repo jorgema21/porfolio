@@ -101,14 +101,25 @@ export const infographics: Record<"es" | "en", InfographicsDict> = {
 
     description: [
       {
-        text: "Comencé a interesarme por el mundo de la infografía y el periodismo de datos en ",
+        text: "Mi interés por el mundo de la infografía y el periodismo de datos despertó en ",
       },
       {
         text: "marzo de 2022. ",
         bold: true,
       },
       {
-        text: "Durante los primeros meses aprendí a través de otros, pero desde entonces he aprendido prácticamente autodidacta.",
+        text: "En septiembre de ese año comencé una ",
+      },
+      {
+        text: "beca en Narrativas Visuales del periódico El País ",
+        bold: true,
+      },
+      {
+        text: "donde aprendí las bases del periodismo visual y de datos, aunque los meses y años posteriores continué mi formación ",
+      },
+      {
+        text: "de manera prácticamente autodidacta en diferentes medios y empresas como autónomo.",
+        bold: true,
       },
     ] satisfies RichText,
   },
@@ -179,14 +190,25 @@ export const infographics: Record<"es" | "en", InfographicsDict> = {
 
     description: [
       {
-        text: "I first became interested in infographics and data journalism in ",
+        text: "My interest in the world of infographics and data journalism awoke in ",
       },
       {
-        text: "March 2022",
+        text: "March 2022. ",
         bold: true,
       },
       {
-        text: ". For the first month I learned by others, but from then I have learn mainly by myself.",
+        text: "That September, I started an ",
+      },
+      {
+        text: "internship at Visual Storytelling section of El País newspaper ",
+        bold: true,
+      },
+      {
+        text: "where I learned the fundamentals of visual and data journalism, though in the following months and years I continued my training ",
+      },
+      {
+        text: "practically on my own at different media and companies as a freelance.",
+        bold: true,
       },
     ] satisfies RichText,
   },

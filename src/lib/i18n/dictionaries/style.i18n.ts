@@ -2,12 +2,10 @@ import type { RichText } from "$lib/i18n/rich-text.types";
 
 type InfographicsDict = {
   title: string;
-others: string;
+  others: string;
   intro: RichText;
   description: RichText;
   aim: RichText;
-
-  
 };
 
 export const style: Record<"es" | "en", InfographicsDict> = {
@@ -35,7 +33,7 @@ export const style: Record<"es" | "en", InfographicsDict> = {
     ],
     aim: [
       {
-        text: "Mi propósito es escribir sobre ",
+        text: "Mi propósito principal es escribir sobre ",
       },
       {
         text: "cómo la psicología afecta a la vida cotidiana de las personas.",
@@ -71,10 +69,10 @@ export const style: Record<"es" | "en", InfographicsDict> = {
     ],
     aim: [
       {
-        text: "My aim is to write about ",
+        text: "My main aim is to write about ",
       },
       {
-        text: "how psychology influence people’s daily lives.",
+        text: "how psychology influence people's daily lives.",
         bold: true,
       },
     ] satisfies RichText,

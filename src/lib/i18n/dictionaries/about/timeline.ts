@@ -17,131 +17,193 @@ export const timeline = {
   es: {
     "journalism-degree": {
       title: "Grado en Periodismo",
-      description: "Inicio de la carrera y primeros proyectos narrativos.",
-    },
-
-    "student-media": {
-      title: "Medios universitarios",
       description:
-        "Participación en proyectos de redacción, entrevistas y reportajes.",
+        "Comencé la carrera de periodismo en la Universidad de Valladolid (España)",
     },
 
-    "data-discovery": {
-      title: "Descubrimiento del periodismo de datos",
+    "erasmus-year": {
+      title: "Año Erasmus",
+      description: "Hice un curso internacional en Bérgamo (Italia)",
+    },
+
+    "end-degree": {
+      title: "Final de carrera",
       description:
-        "Primer contacto con visualización, hojas de cálculo y gráficos.",
+        "Terminé el grado universitario sin cursar infografía ni periodismo de datos",
     },
 
-    "visual-storytelling": {
-      title: "Narrativa visual",
+    "start-ep": {
+      title: "Inicio máster de El País",
+      description: "Comencé el año teórico de los dos cursos de duración.",
+    },
+
+    "start-internship": {
+      title: "Beca en Narrativas Visuales",
       description:
-        "Desarrollo de piezas donde diseño y texto trabajan conjuntamente.",
+        "Estuve un año como becario en El País y aprendí infografía y datos casi desde cero",
     },
 
-    "editorial-design": {
-      title: "Diseño editorial",
+    "end-internship": {
+      title: "Final de máster",
       description:
-        "Aprendizaje de composición visual, jerarquía y ritmo gráfico.",
+        "Terminé la beca y me centré en aprender infografía y datos por mi cuenta unos meses",
     },
 
-    "visual-narratives": {
-      title: "Narrativas Visuales",
-      description: "Especialización intensiva en infografía y datos.",
-    },
-
-    "interactive-graphics": {
-      title: "Visualizaciones interactivas",
+    "sports-ep": {
+      title: "Baja en El País Deportes",
       description:
-        "Creación de proyectos digitales con enfoque scrollytelling.",
+        "Durante dos meses realicé directos en web, edité textos y escribí temas de datos",
     },
 
-    "frontend-learning": {
-      title: "Aprendizaje frontend",
-      description: "HTML, CSS y JavaScript orientado a visualización.",
-    },
-
-    "svelte-start": {
-      title: "Primeros proyectos con Svelte",
+    "start-freelance": {
+      title: "Inicio como autónomo",
       description:
-        "Componentes interactivos y reutilizables para visualización.",
+        "Comencé por mi cuenta y entre a colaborar como infografista de Artículo 14",
+    },
+
+    "end-a14": {
+      title: "Fin colaboración Artículo 14",
+      description:
+        "Dejé de colaborar con el periódico y estudié ampliar horizontes laborales",
     },
 
     "start-lifestyle": {
-      title: "Inicio estilo de vida",
-      description: "Inicio escribir estilo de vida",
+      title: "Colaboración con la sección Estilo de Vida de El País",
+      description:
+        "Empecé a escribir en la sección y me centré en temas de psicología cotidiana",
     },
 
     "start-motherhood": {
-      title: "Inicio maternidad",
-      description: "Inicio escribir maternidad",
+      title: "Colaboración con la sección Mamas&Papas de El País",
+      description:
+        "Comencé a hacer temas de maternidad con el foco en psicología materna e infantil",
     },
 
-    "data-visual-specialization": {
-      title: "Especialización en visualización de datos",
-      description: "Profundización en gráficos interactivos y scrollytelling.",
+    "start-sty": {
+      title: "Colaboración con Storydata",
+      description:
+        "Inicié una colaboración con Storydata para temas de infografía y datos de papel y web",
+    },
+
+    "start-col": {
+      title: "Colaboración con Colpisa",
+      description:
+        "También comencé una colaboración con Colpisa de infografía, análisis y visualización de datos para temas web trabajados",
+    },
+
+    "start-epgente": {
+      title: "Colaboración con la sección Gente de El País",
+      description:
+        "Empecé a escribir perfiles de famosos internacionales de cultura que eran noticia",
+    },
+
+    "start-dataista": {
+      title: "Colaboración con Dataista",
+      description:
+        "Trabajé en un proyecto en el que aprendí más a fondo desarrollo web",
+    },
+
+    "this-portfolio": {
+      title: "¡Este porfolio!",
+      description:
+        "Desarrollé durante meses un porfolio como un proyecto en sí mismo en el que mostrar mis trabajos más importantes de un modo visual y ameno",
     },
   },
 
   en: {
     "journalism-degree": {
-      title: "Journalism Degree",
-      description: "Beginning of the degree and first storytelling projects.",
-    },
-
-    "student-media": {
-      title: "University media",
+      title: "Journalism degree",
       description:
-        "Participation in editorial, interviews and reporting projects.",
+        "I started my journalism degree at the University of Valladolid (Spain)",
     },
 
-    "data-discovery": {
-      title: "Data journalism discovery",
-      description: "First contact with visualization, spreadsheets and charts.",
+    "erasmus-year": {
+      title: "Erasmus year",
+      description: "I completed an international course in Rome (Italy)",
     },
 
-    "visual-storytelling": {
-      title: "Visual storytelling",
-      description: "Design and text working together in narrative pieces.",
+    "end-degree": {
+      title: "End of degree",
+      description:
+        "I graduated university without taking infographics or data journalism classes",
     },
 
-    "editorial-design": {
-      title: "Editorial design",
-      description: "Learning visual hierarchy, layout and rhythm.",
+    "start-ep": {
+      title: "Started a master's program with El País",
+      description:
+        "I completed the first theoretical year of a two-year program",
     },
 
-    "visual-narratives": {
-      title: "Visual narratives",
-      description: "Intensive specialization in infographics and data.",
+    "start-internship": {
+      title: "Visual Storytelling internship",
+      description:
+        "I did a one-year internship at El País newspaper, learning infographics and data from scratch",
     },
 
-    "interactive-graphics": {
-      title: "Interactive graphics",
-      description: "Digital projects focused on scrollytelling.",
+    "end-internship": {
+      title: "Completed my master's degree",
+      description:
+        "After my internship, I spent a few months self-teaching infographics and data journalism",
     },
 
-    "frontend-learning": {
-      title: "Frontend learning",
-      description: "HTML, CSS and JavaScript applied to visualization.",
+    "sports-ep": {
+      title: "Covered a temporary leave in the El País Sports section",
+      description:
+        "For two months, I managed live web coverage, edited copy, and wrote data-driven stories.",
     },
 
-    "svelte-start": {
-      title: "First projects with Svelte",
-      description: "Reusable interactive components for data visualization.",
+    "start-freelance": {
+      title: "Launched my freelance career",
+      description:
+        "Started working independently and began collaborating as an infographer for Artículo 14",
+    },
+
+    "end-a14": {
+      title: "Ended collaboration with Artículo 14",
+      description:
+        "Stopped collaborating with the newspaper to focus on expanding my career horizons",
     },
 
     "start-lifestyle": {
-      title: "Start lifestyle",
-      description: "Start writing lifestyle",
+      title: "Collaboration with El País Lifestyle section",
+      description:
+        "Started writing for the section, focusing on everyday psychology.",
     },
 
     "start-motherhood": {
-      title: "Start motherhood",
-      description: "Start writing motherhood",
+      title: "Collaboration with El País Mamas&Papas section",
+      description:
+        "Began covering parenting topics, with a focus on maternal and child psychology",
     },
 
-    "data-visual-specialization": {
-      title: "Data visualization specialization",
-      description: "Advanced scrollytelling and interactive graphics.",
+    "start-sty": {
+      title: "Collaboration with Storydata",
+      description:
+        "Started collaborating with Storydata on print and web infographics and data projects.",
+    },
+
+    "start-col": {
+      title: "Collaboration with Colpisa",
+      description:
+        "Began collaborating with Colpisa specializing in web-based infographics, data analysis, and visualization.",
+    },
+
+    "start-epgente": {
+      title: "Collaboration with El País People section",
+      description:
+        "Started writing profiles on trending international cultural figures",
+    },
+
+    "start-dataista": {
+      title: "Colaboración Dataista",
+      description:
+        "Worked on a project where I gained a deeper understanding of web development",
+    },
+
+    "this-portfolio": {
+      title: "¡Este porfolio!",
+      description:
+        "Spent months developing my portfolio as a standalone project to showcase my best work in a visual, engaging way",
     },
   },
 } satisfies TimelineI18n;

@@ -13,7 +13,6 @@ type AboutDict = {
   skillsTitle: string;
   languagesTitle: string;
   cta: string;
-  downloadCV: string;
 };
 
 export const about: Record<"es" | "en", AboutDict> = {
@@ -22,24 +21,23 @@ export const about: Record<"es" | "en", AboutDict> = {
 
     intro: [
       {
-        text: "Soy periodista y diseñador especializado en ",
+        text: "Soy periodista e infografista independiente, especializado en ",
       },
       {
-        text: "visualización de datos e infografía.",
+        text: "visualización de datos, periodismo visual y contenidos de estilo de vida y maternidad.",
         bold: true,
       },
     ],
 
     focus: [
       {
-        text: "Me gusta transformar información compleja en historias ",
+        text: "Trabajo de forma autónoma, en solitario o equipo, con medios y marcas para elaborar ",
       },
       {
-        text: "claras, visuales y fáciles de entender",
-        bold: true,
+        text: "historias claras, rigurosas y de alto impacto. Me apasiona explorar desde fenómenos de masas o de interés popular a través de datos ",
       },
       {
-        text: ", con un enfoque creativo y cercano.",
+        text: "hasta temas de psicología aplicados a la vida cotidiana de las personas en general o padres y madres en particular. ",
       },
     ],
 
@@ -50,8 +48,7 @@ export const about: Record<"es" | "en", AboutDict> = {
     motherhood: "Maternidad",
     skillsTitle: "Lo que me gusta hacer",
     languagesTitle: "Idiomas que utilizo",
-    cta: "Disponible para proyectos y colaboraciones",
-    downloadCV: "Descargar CV",
+    cta: "Disponible para proyectos de infografía y datos y colaboraciones de estilo de vida y maternidad",
   },
 
   en: {
@@ -59,24 +56,23 @@ export const about: Record<"es" | "en", AboutDict> = {
 
     intro: [
       {
-        text: "I’m a journalist and designer specializing in ",
+        text: "I am a freelance journalist and information designer, specializing in ",
       },
       {
-        text: "data visualization and infographics.",
+        text: "data visualization, visual journalism, and lifestyle and maternity content.",
         bold: true,
       },
     ],
 
     focus: [
       {
-        text: "I enjoy turning complex information into ",
+        text: "I work independently, either solo or as part of a team, collaborating with media outlets and brands to craft ",
       },
       {
-        text: "clear, visual and easy-to-understand stories",
-        bold: true,
+        text: "clear, rigorous, and high-impact stories. I am deeply passionate about exploring everything from mass phenomena and trending cultural topics through data, ",
       },
       {
-        text: ", with a creative and approachable touch.",
+        text: "to psychological concepts applied to everyday life for the general public, as well as mothers and fathers in particular. ",
       },
     ],
 
@@ -87,7 +83,6 @@ export const about: Record<"es" | "en", AboutDict> = {
     motherhood: "Motherhood",
     skillsTitle: "What I enjoy doing",
     languagesTitle: "Languages I use",
-    cta: "Available for projects and collaborations",
-    downloadCV: "Download CV",
+    cta: "Available for data and infographic projects, as well as lifestyle and maternity collaborations",
   },
 };
