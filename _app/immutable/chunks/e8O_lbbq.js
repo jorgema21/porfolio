@@ -1,0 +1,1 @@
+const o="sports",s=[{es:"Datos",en:"Data"},{es:"Visualización",en:"Visualization"}],t={tipo:"solo",rol:["graficos"]},a=["RStudio","Illustrator","Photoshop"],i="2023-08-20",n="elpais",c="",l={apartado:o,usos:s,colaboracion:t,tools:a,date:i,mediumKey:n,url:c};export{o as apartado,t as colaboracion,i as date,l as default,n as mediumKey,a as tools,c as url,s as usos};
