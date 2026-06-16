@@ -1,0 +1,186 @@
+{
+  "blocks": [
+    {
+      "type": "divider"
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "A través de una colaboración intensa enfocada en desarrollo web, análisis y visualización de datos, "
+          },
+          {
+            "text": "nos propusimos investigar el papel de la industrialización como una alternativa frente a la crisis de vivienda. "
+          },
+          {
+            "text": "Le tengo un cariño especial a este proyecto porque fue el escenario perfecto para aprender nociones "
+          },
+          {
+            "text": "imprescindibles de Svelte 5, SvelteKit y el flujo de trabajo con Git."
+          }
+        ],
+        "en": [
+          {
+            "text": "Through a close collaboration focused on web development, data analysis, and visualization, "
+          },
+          {
+            "text": "we investigated the role of industrialized construction as an alternative to the current housing crisis. "
+          },
+          {
+            "text": "This project holds a special place for me because it served as the perfect milestone to master "
+          },
+          {
+            "text": "the essentials of Svelte 5, SvelteKit, and production workflows using Git."
+          }
+        ]
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Para lograr una lectura fluida y bien organizada, decidimos estructurar los diferentes "
+          },
+          {
+            "text": "apartados del reportaje utilizando infografías isométricas de un bloque de viviendas en construcción."
+          }
+        ],
+        "en": [
+          {
+            "text": "To guarantee a fluid and well-structured reading experience, we decided to organize "
+          },
+          {
+            "text": "the different sections of the report using isometric infographics of a housing block under construction."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "digital-news-report-1.webp",
+      "alt": {
+        "es": "Cuadrícula con cuatro edificios isométricos que ilustran las fases del proceso de construcción.",
+        "en": "Grid layout showing four isometric buildings illustrating the stages of the construction process."
+      },
+      "caption": {
+        "es": "Infografías isométricas diseñadas para mostrar la evolución modular de un edificio",
+        "en": "Isometric infographics designed to display the modular evolution of a building"
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Uno de los puntos a tratar fue analizar el envejecimiento de la mano de obra en el sector y cómo esto puede repercutir "
+          },
+          {
+            "text": "en la capacidad de construir vivienda tradicional. Desarrollamos pirámides de población adaptadas a móvil y web con "
+          },
+          {
+            "text": "ai2html.",
+            "italic": true
+          }
+        ],
+        "en": [
+          {
+            "text": "One of our core focuses was analyzing the aging workforce within the sector and its direct impact "
+          },
+          {
+            "text": "on traditional home-building capacity. We developed population pyramids optimized for mobile and web using ai2html."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "digital-news-report-2.webp",
+      "alt": {
+        "es": "Pirámides de población organizadas por género y edad de los trabajadores en el sector de la construcción.",
+        "en": "Population pyramids broken down by gender and age of workers in the construction industry."
+      },
+      "caption": {
+        "es": "Radiografía sobre la edad y el género de la mano de obra en el sector de la construcción",
+        "en": "An in-depth look at the age and gender distribution of the construction workforce"
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "También aporté ideas de visualizaciones interactivas que terminaron en la pieza final para mostrar el peso de los trabajadores extranjeros. "
+          },
+          {
+            "text": "Para ello realizamos un gráfico de área y barras apiladas interactivas."
+          }
+        ],
+        "en": [
+          {
+            "text": "I also contributed design concepts for the interactive visualizations included in the final piece to highlight the impact of foreign labor. "
+          },
+          {
+            "text": "We made an interactive area chart and stacked bars."
+          }
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "digital-news-report-3.webp",
+      "alt": {
+        "es": "Gráfico de área que muestra la evolución de los trabajadores según su zona geográfica de origen.",
+        "en": "Area chart showing the chronological evolution of workers based on their geographic region of origin."
+      },
+      "caption": {
+        "es": "Evolución histórica del peso de la nacionalidad extranjera en la construcción",
+        "en": "Historical evolution of the share of foreign nationalities in the construction sector"
+      }
+    },
+    {
+      "type": "image",
+      "src": "digital-news-report-4.webp",
+      "alt": {
+        "es": "Cuadrícula con cuatro gráficos de barras apiladas que clasifican a los trabajadores por tipo de contrato y origen.",
+        "en": "Grid layout with four stacked bar charts classifying workers by contract type and nationality."
+      },
+      "caption": {
+        "es": "Distribución actual de los trabajadores según su nacionalidad y tipo de contrato",
+        "en": "Current distribution of workers grouped by nationality and employment contract type"
+      }
+    },
+    {
+      "type": "text",
+      "value": {
+        "es": [
+          {
+            "text": "Por último, ideé el código base de un "
+          },
+          {
+            "text": "dotplot",
+            "italic": true
+          },
+          {
+            "text": " interactivo que se añadió al reportaje final "
+          },
+          {
+            "text": "para comparar visualmente cómo se dispararon los costes de los materiales entre el año 2005 y 2024."
+          }
+        ],
+        "en": [
+          {
+            "text": "Finally, I designed the core codebase for an interactive dotplot integrated into the final layout "
+          },
+          {
+            "text": "to visually compare how material costs have skyrocketed from 2005 to 2024."
+          }
+        ]
+      }
+    },
+    {
+      "type": "divider"
+    }
+  ]
+}

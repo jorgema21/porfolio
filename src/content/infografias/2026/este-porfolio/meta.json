@@ -1,0 +1,35 @@
+{
+    "apartado": "miscellaneous",
+    "usos": [
+        {
+            "es": "Desarrollo web",
+            "en": "Web development"
+        },
+        {
+            "es": "Datos",
+            "en": "Data"
+        },
+        {
+            "es": "Visualización",
+            "en": "Visualization"
+        }
+    ],
+    "colaboracion": {
+        "tipo": "solo",
+        "rol": [
+            "graficos",
+            "texto",
+            "desarrollo"
+        ]
+    },
+    "tools": [
+        "GoogleSheets",
+        "Code",
+        "Svelte",
+        "Illustrator",
+        "Photoshop"
+    ],
+    "date": "2026-06-12",
+    "mediumKey": "github",
+    "url": "#"
+}

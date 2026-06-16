@@ -1,42 +1,15 @@
-# sv
+# Portfolio Editorial | Periodismo de Datos y Visualización
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Este portfolio es un proyecto en sí mismo. Desarrollé un sistema editorial propio diseñado desde cero para organizar mi trabajo en periodismo de datos, infografía y reportajes escritos bajo la forma de funcionar de un medio digital.
 
-## Creating a project
+## Características del Sistema
 
-If you're seeing this, you've probably already done this step. Congrats!
+* **Arquitectura Local**: El contenido se apoya en archivos estáticos estructurados como `content.json` y `meta.json`. Esto garantiza un control absoluto de los metadatos sin necesidad de bases de datos externas.
 
-```sh
-# create a new project
-npx sv create my-app
-```
+* **Enrutamiento Automático**: El framework SvelteKit gestiona todas las rutas del sitio de forma automática. Esto permite una escalabilidad inmediata para futuros proyectos.
 
-To recreate this project with the same configuration:
+* **Diseño por Tokens**: La jerarquía visual y las paletas cromáticas se centralizan en la carpeta `styles/` (`/base`, `/tokens`, `/ui`) mediante CSS nativo y variables personalizadas.
 
-```sh
-# recreate this project
-npx sv@0.13.0 create --template minimal --types ts --install npm portfolio
-```
+* **Rendimiento Óptimo**: Sitio estático alojado en GitHub Pages con el uso del nuevo sistema de runas de Svelte 5.
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+* **Desarrollo Asistido**: Uso de Inteligencia Artificial como copiloto técnico diario para la optimización de código, arquitectura e internacionalización en español e inglés.

@@ -194,7 +194,7 @@
     z-index: 50;
     border: 1px solid var(--color-border);
     border-top: none;
-    border-radius: 0 0 var(--radius-md) var(--radius-md);
+    border-radius: var(--radius-md) var(--radius-md);
     padding: 0 var(--space-6) var(--space-6) var(--space-6);
     background: var(--color-minitimeline);
     box-shadow: 0 10px 25px rgb(0 0 0 / 10%);

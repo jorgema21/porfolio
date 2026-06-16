@@ -7,44 +7,43 @@
   --blue-500: oklch(48% var(--blue-chroma) var(--blue-hue));
   --blue-700: oklch(35% 0.18 var(--blue-hue));
 
-  --color-text: #111827;
-  --color-muted: #4b5563;
-  --color-border: #e5e7eb;
+  --color-text: oklch(21.1% 0.023 230.8);
+  --color-muted: oklch(44.8% 0.011 240.9);
+  --color-border: oklch(88.531% 0.0001 271.152);
 
-  --color-white: #ffffff;
-  --color-black: #000000;
+  --color-white: oklch(100% 0 0);
+  --color-black: oklch(0% 0 0);
 
-  --bg-soft: rgb(0 0 0 / 3%);
-  --bg-hard: rgb(0 0 0 / 30%);
+  --bg-soft: oklch(0% 0 0 / 3%);
+  --bg-hard: oklch(0% 0 0 / 30%);
 
   --overlay-gradient: linear-gradient(
     to top,
-    rgb(0 0 0 / 85%),
-    rgb(0 0 0 / 40%) 50%,
+    oklch(0% 0 0 / 85%),
+    oklch(0% 0 0 / 40%) 50%,
     transparent 100%
   );
-  --overlay-text-color: #ffffff;
+  --overlay-text-color: oklch(100% 0 0);
 
-  --color-study: #0f172a;
-  --color-infography: #2563eb;
-  --color-style: #166534;
-  --color-motherhood: #db2777;
+  --color-study: oklch(20.9% 0.031 228.9);
+  --color-infography: oklch(54.7% 0.227 217.5);
+  --color-style: oklch(45% 0.052 132.7);
+  --color-motherhood: oklch(59.3% 0.186 2.6);
 
-  --color-spanish: #d62222;
+  --color-spanish: oklch(56.4% 0.208 17.1);
+  --color-featured-bg: oklch(94.7% 0.103 56.2);
+  --color-featured-border: oklch(79.6% 0.138 47.6);
+  --color-minitimeline: oklch(96.416% 0.00011 271.152);
 
-  --color-featured-bg: #fef08a;
-  --color-featured-border: #eab308;
-  --color-minitimeline: #fafafa;
+  --color-badge-advanced-bg: oklch(96.5% 0.025 217.4);
+  --color-badge-proficient-bg: oklch(96.8% 0.015 155.4);
+  --color-badge-intermediate-bg: oklch(96.2% 0.035 22.1);
+  --color-badge-learning-bg: oklch(95.8% 0.038 4.7);
+  --color-badge-nextup-bg: oklch(96% 0.012 235.1);
 
-  --color-badge-advanced-bg: #eff6ff;
-  --color-badge-proficient-bg: #ecfdf5;
-  --color-badge-intermediate-bg: #fff7ed;
-  --color-badge-learning-bg: #fdf2f8; 
-  --color-badge-nextup-bg: #f3f4f6; 
-
-  --color-badge-advanced-text: #1e40af;
-  --color-badge-proficient-text: #065f46;
-  --color-badge-intermediate-text: #9a3412;
-  --color-badge-learning-text: #9d174d;
-  --color-badge-nextup-text: #374151;
+  --color-badge-advanced-text: oklch(42.4% 0.194 217.4);
+  --color-badge-proficient-text: oklch(43.4% 0.046 155.4);
+  --color-badge-intermediate-text: oklch(47% 0.144 22.1);
+  --color-badge-learning-text: oklch(46% 0.149 4.7);
+  --color-badge-nextup-text: oklch(37.4% 0.017 235.1);
 }

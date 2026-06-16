@@ -1,0 +1,22 @@
+{
+  "apartado": "miscellaneous",
+  "usos": [
+    {
+      "es": "Visualización",
+      "en": "Visualization"
+    }
+  ],
+  "colaboracion": {
+    "tipo": "equipo",
+    "rol": [
+      "graficos"
+    ]
+  },
+  "tools": [
+    "Datawrapper",
+    "GoogleSheets"
+  ],
+  "date": "2026-06-16",
+  "mediumKey": "sty_reuters",
+  "url": "https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2026"
+}
