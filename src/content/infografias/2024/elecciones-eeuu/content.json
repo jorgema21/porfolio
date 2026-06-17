@@ -7,46 +7,26 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Para la cobertura de las elecciones en Estados Unidos, diseñé una serie de gráficos "
-          },
-          {
-            "text": "a demanda tanto en las jornadas previas como durante la noche electoral. "
-          },
-          {
-            "text": "Desarrollé un mapa hexagonal del territorio estadounidense distribuido por colegios electorales, "
-          },
-          {
-            "text": "donde incorporé un "
-          },
+          "Para la cobertura de las elecciones en Estados Unidos, diseñé una serie de gráficos ",
+          "a demanda tanto en las jornadas previas como durante la noche electoral. ",
+          "Desarrollé un mapa hexagonal del territorio estadounidense distribuido por colegios electorales, ",
+          "donde incorporé un ",
           {
             "text": "tooltip",
             "italic": true
           },
-          {
-            "text": " de contexto, un buscador de estados y el marcado de los llamados "
-          },
+          " de contexto, un buscador de estados y el marcado de los llamados ",
           {
             "text": "swing states",
             "italic": true
           },
-          {
-            "text": "."
-          }
+          "."
         ],
         "en": [
-          {
-            "text": "For the United States election coverage, I designed a series of on-demand graphics "
-          },
-          {
-            "text": "both in the days leading up to the vote and during election night. "
-          },
-          {
-            "text": "I developed a hexagonal map of the US structured by electoral college votes, "
-          },
-          {
-            "text": "incorporating an informative tooltip, a state search tool, and a spotlight on the swing states."
-          }
+          "For the United States election coverage, I designed a series of on-demand graphics ",
+          "both in the days leading up to the vote and during election night. ",
+          "I developed a hexagonal map of the US structured by electoral college votes, ",
+          "incorporating an informative tooltip, a state search tool, and a spotlight on the swing states."
         ]
       }
     },
@@ -66,26 +46,14 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Antes de la votación, tracé la evolución de la intención de voto. "
-          },
-          {
-            "text": "Elaboré varias piezas estáticas y propuse un modelo interactivo final "
-          },
-          {
-            "text": "que, aunque no llegó a publicarse en el medio, decidí recuperar para este porfolio."
-          }
+          "Antes de la votación, tracé la evolución de la intención de voto. ",
+          "Elaboré varias piezas estáticas y propuse un modelo interactivo final ",
+          "que, aunque no llegó a publicarse en el medio, decidí recuperar para este porfolio."
         ],
         "en": [
-          {
-            "text": "Prior to election day, I tracked the polling trends for the candidates. "
-          },
-          {
-            "text": "I created several static pieces and proposed a final interactive design "
-          },
-          {
-            "text": "which, although left unpublished by the media outlet, I included here for the portfolio."
-          }
+          "Prior to election day, I tracked the polling trends for the candidates. ",
+          "I created several static pieces and proposed a final interactive design ",
+          "which, although left unpublished by the media outlet, I included here for the portfolio."
         ]
       }
     },

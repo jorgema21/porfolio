@@ -7,32 +7,16 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Para analizar la evolución de los galardonados y nominados en los Premios Óscar, desarrollé "
-          },
-          {
-            "text": "un sitio web desde cero combinando diseño, narrativa, desarrollo y visualización de datos. "
-          },
-          {
-            "text": "Con Visual Studio Code, Svelte y Google Sheets procesé el histórico de películas "
-          },
-          {
-            "text": "nominadas y premiadas para crear gráficos personalizados sin limitaciones técnicas."
-          }
+          "Para analizar la evolución de los galardonados y nominados en los Premios Óscar, desarrollé ",
+          "un sitio web desde cero combinando diseño, narrativa, desarrollo y visualización de datos. ",
+          "Con Visual Studio Code, Svelte y Google Sheets procesé el histórico de películas ",
+          "nominadas y premiadas para crear gráficos personalizados sin limitaciones técnicas."
         ],
         "en": [
-          {
-            "text": "To analyze Academy Award winners and nominees, I built a website from scratch combining "
-          },
-          {
-            "text": "design, storytelling, development, and data visualization. "
-          },
-          {
-            "text": "Using Visual Studio Code, Svelte, and Google Sheets, I processed historical film data. "
-          },
-          {
-            "text": "This allowed me to build fully custom visualizations without technical constraints."
-          }
+          "To analyze Academy Award winners and nominees, I built a website from scratch combining ",
+          "design, storytelling, development, and data visualization. ",
+          "Using Visual Studio Code, Svelte, and Google Sheets, I processed historical film data. ",
+          "This allowed me to build fully custom visualizations without technical constraints."
         ]
       }
     },
@@ -40,45 +24,23 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Este fue mi primer proyecto con Svelte. Diseñé la web con una paleta en tonos dorados inspirada en las estatuillas, "
-          },
-          {
-            "text": "combinada con grises y negros. "
-          },
-          {
-            "text": "Creé una portada con Adobe Illustrator y Photoshop usando imágenes de Wikipedia. "
-          },
-          {
-            "text": "Desarrollé un "
-          },
+          "Este fue mi primer proyecto con Svelte. Diseñé la web con una paleta en tonos dorados ",
+          "inspirada en las estatuillas, combinada con grises y negros. ",
+          "Creé una portada con Adobe Illustrator y Photoshop usando imágenes de Wikipedia. ",
+          "Desarrollé un ",
           {
             "text": "scrollytelling ",
             "italic": true
           },
-          {
-            "text": "donde las tarjetas simulaban claquetas de cine con años clave. "
-          },
-          {
-            "text": "Las imágenes de fondo cambiaban según el dispositivo."
-          }
+          "donde las tarjetas simulaban claquetas de cine con años clave. ",
+          "Las imágenes de fondo cambiaban según el dispositivo."
         ],
         "en": [
-          {
-            "text": "This was my first project with Svelte. I designed the site with a gold palette inspired by the statuettes, "
-          },
-          {
-            "text": "combined with greys and blacks."
-          },
-          {
-            "text": "I created a cover using Adobe Illustrator and Photoshop with Wikipedia images. "
-          },
-          {
-            "text": "I built a scrollytelling experience where text cards acted as movie clapperboards with key years. "
-          },
-          {
-            "text": "Background images adapted dynamically to each device."
-          }
+          "This was my first project with Svelte. I designed the site with a gold palette ",
+          "inspired by the statuettes, combined with greys and blacks.",
+          "I created a cover using Adobe Illustrator and Photoshop with Wikipedia images. ",
+          "I built a scrollytelling experience where text cards acted as movie clapperboards ",
+          "with key years. Background images adapted dynamically to each device."
         ]
       }
     },
@@ -98,27 +60,17 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Después, diseñé un mapa de calor tipo calendario para visualizar los años con más premios. "
-          },
-          {
-            "text": "Añadí "
-          },
+          "Después, diseñé un mapa de calor tipo calendario para visualizar los años con más premios. ",
+          "Añadí ",
           {
             "text": "tooltips ",
             "italic": true
           },
-          {
-            "text": "con información por año y una escala de color por niveles."
-          }
+          "con información por año y una escala de color por niveles."
         ],
         "en": [
-          {
-            "text": "I designed a calendar-style heatmap to visualize the most awarded years. "
-          },
-          {
-            "text": "I added tooltips with yearly data and a stepped color scale."
-          }
+          "I designed a calendar-style heatmap to visualize the most awarded years. ",
+          "I added tooltips with yearly data and a stepped color scale."
         ]
       }
     },
@@ -138,40 +90,24 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "A continuación, desarrollé un "
-          },
+          "A continuación, desarrollé un ",
           {
             "text": "scatterplot ",
             "italic": true
           },
-          {
-            "text": "con todas las películas nominadas del certamen. "
-          },
-          {
-            "text": "Con más de 5.000 registros, apliqué "
-          },
+          "con todas las películas nominadas del certamen. ",
+          "Con más de 5.000 registros, apliqué ",
           {
             "text": "jitter ",
             "italic": true
           },
-          {
-            "text": " para evitar solapamiento de puntos. "
-          },
-          {
-            "text": "Esto permitió visualizar mejor la densidad de premios y nominaciones."
-          }
+          "para evitar solapamiento de puntos. ",
+          "Esto permitió visualizar mejor la densidad de premios y nominaciones."
         ],
         "en": [
-          {
-            "text": "Next, I built a scatterplot with all nominated films in the dataset. "
-          },
-          {
-            "text": "With over 5,000 records, I applied jitter to reduce overlap. "
-          },
-          {
-            "text": "This made award and nomination density easier to interpret."
-          }
+          "Next, I built a scatterplot with all nominated films in the dataset. ",
+          "With over 5,000 records, I applied jitter to reduce overlap. ",
+          "This made award and nomination density easier to interpret."
         ]
       }
     },
@@ -179,31 +115,21 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Añadí un "
-          },
+          "Añadí un ",
           {
             "text": "checkbox ",
             "italic": true
           },
-          {
-            "text": "para aislar nominados de 2025 y atenuar el resto y filtros por categorías y "
-          },
+          "para aislar nominados de 2025 y atenuar el resto y filtros por categorías y ",
           {
             "text": "tooltips ",
             "italic": true
           },
-          {
-            "text": "con información detallada."
-          }
+          "con información detallada."
         ],
         "en": [
-          {
-            "text": "I added a checkbox to isolate 2025 nominees and fade the rest. "
-          },
-          {
-            "text": "I also implemented category filters and detailed tooltips."
-          }
+          "I added a checkbox to isolate 2025 nominees and fade the rest. ",
+          "I also implemented category filters and detailed tooltips."
         ]
       }
     },
@@ -223,20 +149,12 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Para facilitar la exploración, creé una tabla con buscador y ordenación múltiple. "
-          },
-          {
-            "text": "Añadí barras visuales dentro de las celdas para enriquecer la lectura de datos."
-          }
+          "Para facilitar la exploración, creé una tabla con buscador y ordenación múltiple. ",
+          "Añadí barras visuales dentro de las celdas para enriquecer la lectura de datos."
         ],
         "en": [
-          {
-            "text": "To improve exploration, I built a searchable and sortable table. "
-          },
-          {
-            "text": "I added inline data bars to enhance readability."
-          }
+          "To improve exploration, I built a searchable and sortable table. ",
+          "I added inline data bars to enhance readability."
         ]
       }
     },
@@ -256,20 +174,12 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Como cierre, añadí un mapa coroplético de países según su éxito en Mejor Película Internacional. "
-          },
-          {
-            "text": "Dupliqué la lógica de búsqueda y añadí un sistema de pestañas para alternar vistas."
-          }
+          "Como cierre, añadí un mapa coroplético de países según su éxito en Mejor Película Internacional. ",
+          "Dupliqué la lógica de búsqueda y añadí un sistema de pestañas para alternar vistas."
         ],
         "en": [
-          {
-            "text": "Finally, I added a choropleth map showing country success in Best International Feature Film. "
-          },
-          {
-            "text": "I reused search logic and built tab-based view switching."
-          }
+          "Finally, I added a choropleth map showing country success in Best International Feature Film. ",
+          "I reused search logic and built tab-based view switching."
         ]
       }
     },
@@ -289,38 +199,20 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Este proyecto fue mi primera gran inmersión en Svelte sin SvelteKit. "
-          },
-          {
-            "text": "Aunque ya entendía conceptos HTML, CSS y JavaScript, el reto fue crear visualizaciones complejas. "
-          },
-          {
-            "text": "Trabajé con datos estructurados que limpié y procesé manualmente. "
-          },
-          {
-            "text": "El uso de IA me ayudó a acelerar el aprendizaje y la implementación. "
-          },
-          {
-            "text": "Este proyecto consolidó mi base para futuros desarrollos más eficientes."
-          }
+          "Este proyecto fue mi primera gran inmersión en Svelte sin SvelteKit. ",
+          "Aunque ya entendía conceptos HTML, CSS y JavaScript, el reto fue crear ",
+          "visualizaciones complejas. Trabajé con datos estructurados que limpié y ",
+          "procesé manualmente. El uso de IA me ayudó a acelerar el aprendizaje ",
+          "y la implementación. Este proyecto consolidó mi base para futuros ",
+          "desarrollos más eficientes."
         ],
         "en": [
-          {
-            "text": "This was my first major dive into Svelte without SvelteKit. "
-          },
-          {
-            "text": "Although I already knew some HTML, CSS, and JavaScript, the challenge was building complex visualizations. "
-          },
-          {
-            "text": "I worked with structured data that I cleaned and processed myself. "
-          },
-          {
-            "text": "AI helped me speed up learning and implementation. "
-          },
-          {
-            "text": "This project became the foundation for more efficient future work."
-          }
+          "This was my first major dive into Svelte without SvelteKit. Although ",
+          "I already knew some HTML, CSS, and JavaScript, the challenge was ",
+          "building complex visualizations. I worked with structured data that I ",
+          "cleaned and processed myself. AI helped me speed up learning and ",
+          "implementation. This project became the foundation for more efficient ",
+          "future work."
         ]
       }
     },

@@ -7,32 +7,16 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Para un reportaje de datos englobado dentro de la cobertura del 25N, realicé en día y medio "
-          },
-          {
-            "text": "numerosas visualizaciones que representaron distintos aspectos de la violencia contra la mujer. "
-          },
-          {
-            "text": "Desarrollé gráficos sobre violencia vicaria, feminicidios, asesinatos por violencia de género, datos y mapas del "
-          },
-          {
-            "text": "sistema VioGén, denuncias interpuestas, órdenes de protección y consultas al 016, entre otros."
-          }
+          "Para un reportaje de datos englobado dentro de la cobertura del 25N, realicé en día y medio ",
+          "numerosas visualizaciones que representaron distintos aspectos de la violencia contra la mujer. ",
+          "Desarrollé gráficos sobre violencia vicaria, feminicidios, asesinatos por violencia de género, datos y mapas del ",
+          "sistema VioGén, denuncias interpuestas, órdenes de protección y consultas al 016, entre otros."
         ],
         "en": [
-          {
-            "text": "For a data feature included in the 25N coverage, I created numerous data visualizations "
-          },
-          {
-            "text": "representing different aspects of violence against women within a day and a half. "
-          },
-          {
-            "text": "I developed charts on vicarious violence, femicides, gender violence murders, data and maps on the "
-          },
-          {
-            "text": "VioGen system, filed complaints, protection orders, and 016 helpline inquiries, among others."
-          }
+          "For a data feature included in the 25N coverage, I created numerous data visualizations ",
+          "representing different aspects of violence against women within a day and a half. ",
+          "I developed charts on vicarious violence, femicides, gender violence murders, data and maps on the ",
+          "VioGen system, filed complaints, protection orders, and 016 helpline inquiries, among others."
         ]
       }
     },
@@ -52,45 +36,24 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Además, llevé a cabo uno de los primeros "
-          },
+          "Además, llevé a cabo uno de los primeros ",
           {
             "text": "scrollytellings",
             "italic": true
           },
-          {
-            "text": " que he hecho fuera de GitHub; una propuesta sencilla construida con "
-          },
+          " que he hecho fuera de GitHub; una propuesta sencilla construida con ",
           {
             "text": "ai2html",
             "italic": true
           },
-          {
-            "text": " y un "
-          },
+          " y un ",
           {
             "text": "scrollytelling",
             "italic": true
           },
-          {
-            "text": " breve."
-          }
+          " breve."
         ],
-        "en": [
-          {
-            "text": "Additionally, I carried out one of the first scrollytellings "
-          },
-          {
-            "text": "I have ever done out of GitHub; a simple approach built with ai2html "
-          },
-          {
-            "text": " and a brief scrollytelling "
-          },
-          {
-            "text": "experience."
-          }
-        ]
+        "en": "Additionally, I carried out one of the first scrollytellings I have ever done out of GitHub; a simple approach built with ai2html and a brief scrollytelling experience."
       }
     },
     {
@@ -108,16 +71,8 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          {
-            "text": "Trabajé con bastantes tipos de gráficos, incluyendo barras, columnas, dónuts y mapas."
-          }
-        ],
-        "en": [
-          {
-            "text": "I worked with quite a few chart types, including bars, columns, donuts and maps."
-          }
-        ]
+        "es": "Trabajé con bastantes tipos de gráficos, incluyendo barras, columnas, dónuts y mapas.",
+        "en": "I worked with quite a few chart types, including bars, columns, donuts and maps."
       }
     },
     {
@@ -136,30 +91,17 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "El proceso consistió en descargar los datos desde el Ministerio de Igualdad, limpiarlos en Google Sheets "
-          },
-          {
-            "text": "y, a partir de ahí, trasladarlos a cada tipo de gráfico para aplicarles su estilo y añadirles "
-          },
+          "El proceso consistió en descargar los datos desde el Ministerio de Igualdad, limpiarlos en Google Sheets ",
+          "y, a partir de ahí, trasladarlos a cada tipo de gráfico para aplicarles su estilo y añadirles ",
           {
             "text": "tooltips",
             "italic": true
           },
-          {
-            "text": " con información detallada."
-          }
+          " con información detallada."
         ],
         "en": [
-          {
-            "text": "The process consisted of downloading the data from the Ministry of Equality, cleaning it in Google Sheets, "
-          },
-          {
-            "text": "and from there, transferring it to each chart type to apply its style and add tooltips "
-          },
-          {
-            "text": "for detailed information."
-          }
+          "The process consisted of downloading the data from the Ministry of Equality, cleaning it in Google Sheets, ",
+          "and from there, transferring it to each chart type to apply its style and add tooltips for detailed information."
         ]
       }
     },

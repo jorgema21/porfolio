@@ -7,39 +7,20 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Analicé una base de datos bruta sobre la situación de la pediatría en la Comunidad de Madrid. "
-          },
-          {
-            "text": "Para ello, mostré en primer lugar un mapa de símbolos interactivo con los centros de salud, "
-          },
-          {
-            "text": "el número de pediatras asignados y el ratio de población. "
-          },
-          {
-            "text": "Además, incorporé "
-          },
+          "Analicé una base de datos bruta sobre la situación de la pediatría en la Comunidad de Madrid. ",
+          "Para ello, mostré en primer lugar un mapa de símbolos interactivo con los centros de salud, ",
+          "el número de pediatras asignados y el ratio de población. Además, incorporé ",
           {
             "text": "tooltips",
             "italic": true
           },
-          {
-            "text": " para ofrecer información detallada y contextualizada a los lectores."
-          }
+          " para ofrecer información detallada y contextualizada a los lectores."
         ],
         "en": [
-          {
-            "text": "I analyzed a raw dataset regarding the situation of pediatrics in the Community of Madrid. "
-          },
-          {
-            "text": "To achieve this, I first showed an interactive symbol map showing healthcare centers, "
-          },
-          {
-            "text": "the number of assigned pediatricians, and the population ratio. "
-          },
-          {
-            "text": "Additionally, I incorporated tooltips to offer detailed and contextualized information to the readers."
-          }
+          "I analyzed a raw dataset regarding the situation of pediatrics in the Community of Madrid. ",
+          "To achieve this, I first showed an interactive symbol map showing healthcare centers, ",
+          "the number of assigned pediatricians, and the population ratio. Additionally, ",
+          "I incorporated tooltips to offer detailed and contextualized information to the readers."
         ]
       }
     },
@@ -59,32 +40,16 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Completé el reportaje gráfico con unas barras apiladas sobre el ratio de niños por especialista, "
-          },
-          {
-            "text": "acompañadas de un gráfico de líneas que reflejó el descenso histórico de estos profesionales. "
-          },
-          {
-            "text": "También trabajé en una tabla buscador por centro de salud para facilitar la consulta "
-          },
-          {
-            "text": "y un mapa coroplético para extrapolar la problemática al resto de las comunidades autónomas."
-          }
+          "Completé el reportaje gráfico con unas barras apiladas sobre el ratio de niños por especialista, ",
+          "acompañadas de un gráfico de líneas que reflejó el descenso histórico de estos professionals. ",
+          "También trabajé en una tabla buscador por centro de salud para facilitar la consulta ",
+          "y un mapa coroplético para extrapolar la problemática al resto de las comunidades autónomas."
         ],
         "en": [
-          {
-            "text": "I completed the graphic report with stacked bars showing the ratio of children per specialist, "
-          },
-          {
-            "text": "accompanied by a line chart that reflected the historical decline of these professionals. "
-          },
-          {
-            "text": "I also worked on a search table tool by healthcare center to ease user queries "
-          },
-          {
-            "text": "and a choropleth map to extrapolate the issue to the rest of the autonomous communities."
-          }
+          "I completed the graphic report with stacked bars showing the ratio of children per specialist, ",
+          "accompanied by a line chart that reflected the historical decline of these professionals. ",
+          "I also worked on a search table tool by healthcare center to ease user queries ",
+          "and a choropleth map to extrapolate the issue to the rest of the autonomous communities."
         ]
       }
     },

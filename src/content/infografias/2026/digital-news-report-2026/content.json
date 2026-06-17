@@ -7,32 +7,14 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "A través de una colaboración intensa enfocada en desarrollo web, análisis y visualización de datos, "
-          },
-          {
-            "text": "nos propusimos investigar el papel de la industrialización como una alternativa frente a la crisis de vivienda. "
-          },
-          {
-            "text": "Le tengo un cariño especial a este proyecto porque fue el escenario perfecto para aprender nociones "
-          },
-          {
-            "text": "imprescindibles de Svelte 5, SvelteKit y el flujo de trabajo con Git."
-          }
+          "En una colaboración con una gran densidad de trabajo con gráficos de Datawrapper, expusimos la situación del ",
+          "consumo de medios de comunicación a talla mundial a través del principal informe anual relacionado con el periodismo. ",
+          "El trabajo consistió en la realización de centenares de gráficos y el contraste de la información y un estilo definido."
         ],
         "en": [
-          {
-            "text": "Through a close collaboration focused on web development, data analysis, and visualization, "
-          },
-          {
-            "text": "we investigated the role of industrialized construction as an alternative to the current housing crisis. "
-          },
-          {
-            "text": "This project holds a special place for me because it served as the perfect milestone to master "
-          },
-          {
-            "text": "the essentials of Svelte 5, SvelteKit, and production workflows using Git."
-          }
+          "In a highly collaborative and graphics-heavy project with Datawrapper, we showcased the state of global news consumption ",
+          "through the leading annual report in journalism. The work involved creating hundreds of charts while ensuring data ",
+          "accuracy and maintaining a cohesive visual style."
         ]
       }
     },
@@ -40,20 +22,14 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Para lograr una lectura fluida y bien organizada, decidimos estructurar los diferentes "
-          },
-          {
-            "text": "apartados del reportaje utilizando infografías isométricas de un bloque de viviendas en construcción."
-          }
+          "Aquí enseño una muestra de los distintos gráficos que hice, en el que estuvimos atentos tanto a la versión ",
+          "de escritorio como a la versión de móvil. El trabajo está dividido en un resumen, capítulos por tema ",
+          "y la situación de los medios en determinados países."
         ],
         "en": [
-          {
-            "text": "To guarantee a fluid and well-structured reading experience, we decided to organize "
-          },
-          {
-            "text": "the different sections of the report using isometric infographics of a housing block under construction."
-          }
+          "Here is a sample of the various charts I created, where we closely optimized both the desktop and ",
+          "mobile experiences. The project is structured into an executive summary, thematic chapters, and a breakdown of ",
+          "the media landscape across specific countries."
         ]
       }
     },
@@ -61,121 +37,72 @@
       "type": "image",
       "src": "digital-news-report-1.webp",
       "alt": {
-        "es": "Cuadrícula con cuatro edificios isométricos que ilustran las fases del proceso de construcción.",
-        "en": "Grid layout showing four isometric buildings illustrating the stages of the construction process."
+        "es": "Barras que muestran el alcance semanal de medios en España fuera de Internet.",
+        "en": "Bar chart showing the weekly reach of traditional media outlets in Spain."
       },
       "caption": {
-        "es": "Infografías isométricas diseñadas para mostrar la evolución modular de un edificio",
-        "en": "Isometric infographics designed to display the modular evolution of a building"
-      }
-    },
-    {
-      "type": "text",
-      "value": {
-        "es": [
-          {
-            "text": "Uno de los puntos a tratar fue analizar el envejecimiento de la mano de obra en el sector y cómo esto puede repercutir "
-          },
-          {
-            "text": "en la capacidad de construir vivienda tradicional. Desarrollamos pirámides de población adaptadas a móvil y web con "
-          },
-          {
-            "text": "ai2html.",
-            "italic": true
-          }
-        ],
-        "en": [
-          {
-            "text": "One of our core focuses was analyzing the aging workforce within the sector and its direct impact "
-          },
-          {
-            "text": "on traditional home-building capacity. We developed population pyramids optimized for mobile and web using ai2html."
-          }
-        ]
+        "es": "Barras con el porcentaje de alcance semanal de TV, radio y prensa escrita en España",
+        "en": "Bar chart illustrating the weekly reach percentages for TV, radio, and print media in Spain"
       }
     },
     {
       "type": "image",
       "src": "digital-news-report-2.webp",
       "alt": {
-        "es": "Pirámides de población organizadas por género y edad de los trabajadores en el sector de la construcción.",
-        "en": "Population pyramids broken down by gender and age of workers in the construction industry."
+        "es": "Mapamundi de coropletas con la popularidad de redes sociales y vídeo frente a webs y apps de noticias.",
+        "en": "Choropleth world map showing the popularity of social media and video compared to news websites and apps."
       },
       "caption": {
-        "es": "Radiografía sobre la edad y el género de la mano de obra en el sector de la construcción",
-        "en": "An in-depth look at the age and gender distribution of the construction workforce"
+        "es": "Popularidad de redes sociales frente a webs y apps de noticias en el mundo",
+        "en": "Global popularity of social media networks versus news websites and apps"
       }
     },
     {
       "type": "text",
       "value": {
-        "es": [
-          {
-            "text": "También aporté ideas de visualizaciones interactivas que terminaron en la pieza final para mostrar el peso de los trabajadores extranjeros. "
-          },
-          {
-            "text": "Para ello realizamos un gráfico de área y barras apiladas interactivas."
-          }
-        ],
-        "en": [
-          {
-            "text": "I also contributed design concepts for the interactive visualizations included in the final piece to highlight the impact of foreign labor. "
-          },
-          {
-            "text": "We made an interactive area chart and stacked bars."
-          }
-        ]
+        "es": "En las versiones móvil nos centramos en que la información fuese bien visible de manera responsiva.",
+        "en": "For the mobile versions, we focused on ensuring the information remained highly visible and fully responsive."
       }
     },
     {
       "type": "image",
       "src": "digital-news-report-3.webp",
       "alt": {
-        "es": "Gráfico de área que muestra la evolución de los trabajadores según su zona geográfica de origen.",
-        "en": "Area chart showing the chronological evolution of workers based on their geographic region of origin."
+        "es": "Líneas que muestran las fuentes de noticias en la última semana de todos los mercados",
+        "en": "Line chart showing weekly news sources across all analyzed markets."
       },
       "caption": {
-        "es": "Evolución histórica del peso de la nacionalidad extranjera en la construcción",
-        "en": "Historical evolution of the share of foreign nationalities in the construction sector"
-      }
-    },
-    {
-      "type": "image",
-      "src": "digital-news-report-4.webp",
-      "alt": {
-        "es": "Cuadrícula con cuatro gráficos de barras apiladas que clasifican a los trabajadores por tipo de contrato y origen.",
-        "en": "Grid layout with four stacked bar charts classifying workers by contract type and nationality."
-      },
-      "caption": {
-        "es": "Distribución actual de los trabajadores según su nacionalidad y tipo de contrato",
-        "en": "Current distribution of workers grouped by nationality and employment contract type"
+        "es": "Evolución de las principales fuentes de noticias en la última semana",
+        "en": "Trends in primary weekly news sources over time"
       }
     },
     {
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Por último, ideé el código base de un "
-          },
-          {
-            "text": "dotplot",
-            "italic": true
-          },
-          {
-            "text": " interactivo que se añadió al reportaje final "
-          },
-          {
-            "text": "para comparar visualmente cómo se dispararon los costes de los materiales entre el año 2005 y 2024."
-          }
+          "El trabajo también consistió en pasar muchos de los gráficos al español, dado que el informe también estaba ",
+          "en ese idioma."
         ],
         "en": [
-          {
-            "text": "Finally, I designed the core codebase for an interactive dotplot integrated into the final layout "
-          },
-          {
-            "text": "to visually compare how material costs have skyrocketed from 2005 to 2024."
-          }
+          "The scope of work also included localizing many of the charts into Spanish, as the report was published ",
+          "in both languages."
+        ]
+      }
+    },
+    {
+      "type": "image",
+      "src": "digital-news-report-4.webp",
+      "alt": {
+        "es": "Scatterplot de la influencia de los medios frente a la confianza en las noticias por país",
+        "en": "Scatter plot mapping media influence against news trust levels by country."
+      },
+      "caption": {
+        "es": [
+          "Distribución del efecto neto de las noticias en la vida de un país frente al porcentaje que confía ",
+          "en las noticias"
+        ],
+        "en": [
+          "Distribution of the net impact of news on national life plotted against news trust percentages"
         ]
       }
     },

@@ -7,26 +7,14 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Incluyo este proyecto en el porfolio por su alto valor emocional, ya que supuso "
-          },
-          {
-            "text": "mi primera publicación firmada como autor. "
-          },
-          {
-            "text": "Limpié los datos en Google Spreadsheets y después creé en Datawrapper los gráficos con el diseño del Mundial."
-          }
+          "Incluyo este proyecto en el porfolio por su alto valor emocional, ya que supuso ",
+          "mi primera publicación firmada como autor. ",
+          "Limpié los datos en Google Spreadsheets y después creé en Datawrapper los gráficos con el diseño del Mundial."
         ],
         "en": [
-          {
-            "text": "I include this project in the portfolio for its high emotional value, as it marked "
-          },
-          {
-            "text": "my first bylined publication as an author. "
-          },
-          {
-            "text": "I cleaned the data in Google Spreadsheets and later created the charts in Datawrapper with the World Cup design."
-          }
+          "I include this project in the portfolio for its high emotional value, as it marked ",
+          "my first bylined publication as an author. ",
+          "I cleaned the data in Google Spreadsheets and later created the charts in Datawrapper with the World Cup design."
         ]
       }
     },
@@ -46,43 +34,25 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Diseñé un "
-          },
+          "Diseñé un ",
           {
             "text": "dotplot ",
             "italic": true
           },
-          {
-            "text": "para comparar la media de edad de las selecciones y una tabla interactiva que incluyó "
-          },
-          {
-            "text": "barras e imágenes de los futbolistas, las cuales traté previamente en Photoshop e Illustrator. "
-          },
-          {
-            "text": "Asimismo, incorporé columnas apiladas sobre la procedencia de las ligas y añadí "
-          },
+          "para comparar la media de edad de las selecciones y una tabla interactiva que incluyó ",
+          "barras e imágenes de los futbolistas, las cuales traté previamente en Photoshop e Illustrator. ",
+          "Asimismo, incorporé columnas apiladas sobre la procedencia de las ligas y añadí ",
           {
             "text": "tooltips ",
             "italic": true
           },
-          {
-            "text": "contextuales para tener un mayor contexto."
-          }
+          "contextuales para tener un mayor contexto."
         ],
         "en": [
-          {
-            "text": "I designed a dotplot to compare the average age of the teams and an interactive table that included "
-          },
-          {
-            "text": "bars and player images, which I previously processed in Photoshop and Illustrator. "
-          },
-          {
-            "text": "Likewise, I incorporated stacked columns showing league origins and added "
-          },
-          {
-            "text": "contextual tooltips to have a better context."
-          }
+          "I designed a dotplot to compare the average age of the teams and an interactive table that included ",
+          "bars and player images, which I previously processed in Photoshop and Illustrator. ",
+          "Likewise, I incorporated stacked columns showing league origins and added ",
+          "contextual tooltips to have a better context."
         ]
       }
     },

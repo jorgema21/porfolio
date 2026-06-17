@@ -134,11 +134,12 @@
       cursor: default;
     }
   }
-  .card:nth-last-child(4),
-  .card:nth-last-child(5) {
+  .card:nth-last-child(3) {
     border-bottom: none;
     padding-bottom: 0;
   }
+
+
 
   .thumb {
     overflow: hidden;

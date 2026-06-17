@@ -7,32 +7,16 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Recibí una base de datos bruta con publicaciones de Isabel Díaz Ayuso en la red social X. "
-          },
-          {
-            "text": "Analicé cómo sus mensajes aludían al presidente Pedro Sánchez. "
-          },
-          {
-            "text": "Limpié los registros en Google Spreadsheets, procesé el volumen de datos con R "
-          },
-          {
-            "text": "y diseñé los interactivos finales con Datawrapper."
-          }
+          "Recibí una base de datos bruta con publicaciones de Isabel Díaz Ayuso en la red social X. ",
+          "Analicé cómo sus mensajes aludían al presidente Pedro Sánchez. ",
+          "Limpié los registros en Google Spreadsheets, procesé el volumen de datos con R ",
+          "y diseñé los interactivos finales con Datawrapper."
         ],
         "en": [
-          {
-            "text": "I received a raw dataset containing posts by Isabel Díaz Ayuso on the social network X. "
-          },
-          {
-            "text": "I analyzed how her messages referred to the president Pedro Sánchez. "
-          },
-          {
-            "text": "I cleaned the records in Google Spreadsheets, processed the data volume with R, "
-          },
-          {
-            "text": "and designed the final interactive elements using Datawrapper."
-          }
+          "I received a raw dataset containing posts by Isabel Díaz Ayuso on the social network X. ",
+          "I analyzed how her messages referred to the president Pedro Sánchez. ",
+          "I cleaned the records in Google Spreadsheets, processed the data volume with R, ",
+          "and designed the final interactive elements using Datawrapper."
         ]
       }
     },
@@ -40,37 +24,23 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Desarrollé un "
-          },
+          "Desarrollé un ",
           {
             "text": "scatterplot ",
             "italic": true
           },
-          {
-            "text": "interactivo que distribuyó las publicaciones según sus citas, respuestas, retuits y favoritos. "
-          },
-          {
-            "text": "La visualización diferenció las categorías por colores e incorporó "
-          },
+          "interactivo que distribuyó las publicaciones según sus citas, respuestas, retuits y favoritos. ",
+          "La visualización diferenció las categorías por colores e incorporó ",
           {
             "text": "tooltips",
             "italic": true
           },
-          {
-            "text": " explicativos con los textos originales y métricas adicionales de impacto."
-          }
+          " explicativos con los textos originales y métricas adicionales de impacto."
         ],
         "en": [
-          {
-            "text": "I developed an interactive scatterplot that distributed the posts according to quotes, replies, retweets, and favorites. "
-          },
-          {
-            "text": "The visualization differentiated the categories by color and incorporated explanatory tooltips "
-          },
-          {
-            "text": "with the original texts and additional impact metrics."
-          }
+          "I developed an interactive scatterplot that distributed the posts according to quotes, replies, retweets, and favorites. ",
+          "The visualization differentiated the categories by color and incorporated explanatory tooltips ",
+          "with the original texts and additional impact metrics."
         ]
       }
     },
@@ -82,7 +52,7 @@
         "en": "Scatterplot showing the distribution of quotes, replies, retweets, favorites, and post types."
       },
       "caption": {
-        "es": "Relación entre el tipo de publicación en la red social y su nivel de interacción",
+        "es": "Relación entre el tipo de publicación en la red social y su level de interacción",
         "en": "Relationship between the type of social media post and its level of engagement"
       }
     },
@@ -90,32 +60,16 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Representé la frecuencia temporal mediante un gráfico de barras que reflejó las alusiones a La Moncloa. "
-          },
-          {
-            "text": "Esta métrica alcanzó un pico de 27 menciones en noviembre, promediando casi un ataque diario. "
-          },
-          {
-            "text": "Dividí el vocabulario recurrente mediante columnas apiladas por temáticas "
-          },
-          {
-            "text": "e incluí una nota metodológica al cierre para explicar la metodología."
-          }
+          "Representé la frecuencia temporal mediante un gráfico de barras que reflejó las alusiones a La Moncloa. ",
+          "Esta métrica alcanzó un pico de 27 menciones en noviembre, promediando casi un ataque diario. ",
+          "Dividí el vocabulario recurrente mediante columnas apiladas por temáticas ",
+          "e incluí una nota metodológica al cierre para explicar la metodología."
         ],
         "en": [
-          {
-            "text": "I represented the chronological frequency through a bar chart reflecting the mentions of La Moncloa. "
-          },
-          {
-            "text": "This metric reached a peak of 27 mentions in November, averaging nearly one attack per day. "
-          },
-          {
-            "text": "I divided the recurring vocabulary using columns stacked by theme "
-          },
-          {
-            "text": "and included a methodological note at the end."
-          }
+          "I represented the chronological frequency through a bar chart reflecting the mentions of La Moncloa. ",
+          "This metric reached a peak of 27 mentions in November, averaging nearly one attack per day. ",
+          "I divided the recurring vocabulary using columns stacked by theme ",
+          "and included a methodological note at the end."
         ]
       }
     },

@@ -7,20 +7,12 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "El técnico del FC Barcelona, Xavi Hernández, anunció que dejaría el club al final de la temporada tras una mala racha de resultados. "
-          },
-          {
-            "text": "Sin embargo, desde aquel anuncio el rendimiento del equipo mejoró notablemente, lo que me llevó a desarrollar un reportaje de datos sobre el impacto del cambio de contexto."
-          }
+          "El técnico del FC Barcelona, Xavi Hernández, anunció que dejaría el club al final de la temporada tras una mala racha de resultados. ",
+          "Sin embargo, desde aquel anuncio el rendimiento del equipo mejoró notablemente, lo que me llevó a desarrollar un reportaje de datos sobre el impacto del cambio de contexto."
         ],
         "en": [
-          {
-            "text": "FC Barcelona manager Xavi Hernández announced that he would leave the club at the end of the season after a difficult run of results. "
-          },
-          {
-            "text": "However, the team's form improved significantly after the announcement, which led me to develop a data-driven story around the shift in performance."
-          }
+          "FC Barcelona manager Xavi Hernández announced that he would leave the club at the end of the season after a difficult run of results. ",
+          "However, the team's form improved significantly after the announcement, which led me to develop a data-driven story around the shift in performance."
         ]
       }
     },
@@ -28,27 +20,22 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Para aportar contexto histórico recurrí a datos de OPTA y analicé el rendimiento de todos los entrenadores del Barcelona según sus puntos por partido. "
-          },
-          {
-            "text": "Con Datawrapper desarrollé un "
-          },
+          "Para aportar contexto histórico recurrí a datos de OPTA y analicé el rendimiento de todos los entrenadores del Barcelona según sus puntos por partido. ",
+          "Con Datawrapper desarrolló un ",
           {
             "text": "scatterplot",
             "italic": true
           },
-          {
-            "text": " centrado en comparar el rendimiento del Barça antes y después del anuncio de Xavi."
-          }
+          " centrado en comparar el rendimiento del Barça antes y después del anuncio de Xavi."
         ],
         "en": [
+          "To provide historical context, I used OPTA data to analyze every Barcelona manager based on points per match. ",
+          "Using Datawrapper, I designed a ",
           {
-            "text": "To provide historical context, I used OPTA data to analyze every Barcelona manager based on points per match. "
+            "text": "scatterplot",
+            "italic": true
           },
-          {
-            "text": "Using Datawrapper, I designed a scatterplot focused on comparing the team's performance before and after Xavi's announcement."
-          }
+          " focused on comparing the team's performance before and after Xavi's announcement."
         ]
       }
     },
@@ -56,7 +43,10 @@
       "type": "image",
       "src": "adios-xavi-0.webp",
       "alt": {
-        "es": "Scatterplot con la relación entre puntos por partido y entrenadores del FC Barcelona, destacando el rendimiento de Xavi antes y después de anunciar su salida.",
+        "es": [
+          "Scatterplot con la relación entre puntos por partido y entrenadores del FC Barcelona, destacando el rendimiento de Xavi antes y después de ",
+          "anunciar su salida."
+        ],
         "en": "Scatterplot comparing Barcelona managers by points per match, highlighting Xavi's performance before and after announcing his departure."
       },
       "caption": {
@@ -68,34 +58,30 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "El siguiente gráfico ordenó los resultados de la temporada mediante un "
-          },
+          "El siguiente gráfico ordenó los resultados de la temporada mediante un ",
           {
             "text": "scatterplot",
             "italic": true
           },
-          {
-            "text": " dividido por competiciones. "
-          },
-          {
-            "text": "Además, incorporé "
-          },
+          " dividido por competiciones. Además, incorporé ",
           {
             "text": "tooltips",
             "italic": true
           },
-          {
-            "text": " con información contextual de cada encuentro, como el rival y el marcador."
-          }
+          " con información contextual de cada encuentro, como el rival y el marcador."
         ],
         "en": [
+          "The following visualization organized the season's results through a competition-based ",
           {
-            "text": "The following visualization organized the season's results through a competition-based scatterplot. "
+            "text": "scatterplot",
+            "italic": true
           },
+          ". I also added ",
           {
-            "text": "I also added tooltips with contextual information such as the opponent and the final score of each match."
-          }
+            "text": "tooltips",
+            "italic": true
+          },
+          " with contextual information such as the opponent and the final score of each match."
         ]
       }
     },
@@ -115,27 +101,22 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "También quise incorporar el nivel competitivo de cada rival utilizando las puntuaciones ELO obtenidas de ClubElo. "
-          },
-          {
-            "text": "Para ello construí un "
-          },
+          "También quise incorporar el nivel competitivo de cada rival utilizando las puntuaciones ELO obtenidas de ClubElo. ",
+          "Para ello construí un ",
           {
             "text": "dotplot",
             "italic": true
           },
-          {
-            "text": " vertical donde cada partido mostraba la diferencia de nivel entre el Barcelona y su oponente."
-          }
+          " vertical donde cada partido mostraba la diferencia de nivel entre el Barcelona y su oponente."
         ],
         "en": [
+          "I also wanted to include the competitive level of each opponent by using ELO ratings from ClubElo. ",
+          "To represent this, I created a vertical ",
           {
-            "text": "I also wanted to include the competitive level of each opponent by using ELO ratings from ClubElo. "
+            "text": "dotplot",
+            "italic": true
           },
-          {
-            "text": "To represent this, I created a vertical dotplot comparing Barcelona's rating difference against every rival."
-          }
+          " comparing Barcelona's rating difference against every rival."
         ]
       }
     },
@@ -155,20 +136,12 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Por último, representé la evolución clasificatoria de Real Madrid, Girona y Barcelona a lo largo de la temporada. "
-          },
-          {
-            "text": "El Barça pasó gran parte del campeonato en cuarta posición, pero tras el anuncio de Xavi logró escalar hasta el segundo puesto."
-          }
+          "Por último, representé la evolución clasificatoria de Real Madrid, Girona y Barcelona a lo largo de la temporada. ",
+          "El Barça pasó gran parte del campeonato en cuarta posición, pero tras el anuncio de Xavi logró escalar hasta el segundo puesto."
         ],
         "en": [
-          {
-            "text": "Finally, I visualized the league progression of Real Madrid, Girona and Barcelona throughout the season. "
-          },
-          {
-            "text": "Barcelona spent much of the campaign in fourth place, but climbed to second after Xavi's announcement."
-          }
+          "Finally, I visualized the league progression of Real Madrid, Girona and Barcelona throughout the season. ",
+          "Barcelona spent much of the campaign in fourth place, but climbed to second after Xavi's announcement."
         ]
       }
     },

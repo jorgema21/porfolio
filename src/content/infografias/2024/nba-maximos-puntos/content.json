@@ -7,26 +7,14 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Analicé cómo la NBA estaba viviendo una temporada en la que el juego ofensivo marcaba cada encuentro. "
-          },
-          {
-            "text": "Para ello, procesé datos sobre la evolución de distintos aspectos como puntos, minutos, rebotes ofensivos o asistencias, "
-          },
-          {
-            "text": "para posteriormente diseñar una cuadrícula de líneas con Datawrapper."
-          }
+          "Analicé cómo la NBA estaba viviendo una temporada en la que el juego ofensivo marcaba cada encuentro. ",
+          "Para ello, procesé datos sobre la evolución de distintos aspectos como puntos, minutos, rebotes ofensivos o asistencias, ",
+          "para posteriormente diseñar una cuadrícula de líneas con Datawrapper."
         ],
         "en": [
-          {
-            "text": "I analyzed how the NBA was experiencing a season where offensive play defined every game. "
-          },
-          {
-            "text": "To do this, I processed data on the evolution of various aspects such as points, minutes, offensive rebounds, or assists, "
-          },
-          {
-            "text": "to subsequently design a line chart grid using Datawrapper."
-          }
+          "I analyzed how the NBA was experiencing a season where offensive play defined every game. ",
+          "To do this, I processed data on the evolution of various aspects such as points, minutes, ",
+          "offensive rebounds, or assists, to subsequently design a line chart grid using Datawrapper."
         ]
       }
     },
@@ -46,37 +34,22 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "También utilicé las opciones avanzadas del "
-          },
+          "También utilicé las opciones avanzadas del ",
           {
             "text": "scatterplot",
             "italic": true
           },
-          {
-            "text": " de Datawrapper para reflejar la evolución de cómo se disputaban más partidos y se anotaban más puntos, "
-          },
-          {
-            "text": "añadiendo "
-          },
+          " de Datawrapper para reflejar la evolución de cómo se disputaban más partidos y se anotaban más puntos, ",
+          "añadiendo ",
           {
             "text": "tooltips",
             "italic": true
           },
-          {
-            "text": " personalizados y elementos en html."
-          }
+          " personalizados y elementos en html."
         ],
         "en": [
-          {
-            "text": "I also used the advanced features of Datawrapper's scatterplot "
-          },
-          {
-            "text": "to show the trend of how more games were played and more points were scored, "
-          },
-          {
-            "text": "adding custom tooltips and html elements."
-          }
+          "I also used the advanced features of Datawrapper's scatterplot to show the trend of how ",
+          "more games were played and more points were scored, adding custom tooltips and html elements."
         ]
       }
     },
@@ -96,26 +69,14 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Más adelante me centré en el rendimiento individual de los jugadores y señalé que, durante esa temporada, "
-          },
-          {
-            "text": "cuatro anotadores se habían colado en el top "
-          },
-          {
-            "text": "de mayor cantidad de puntos en un solo partido, detallando sus respectivos equipos, resultado final, rival y fecha."
-          }
+          "Más adelante me centré en el rendimiento individual de los jugadores y señalé que, durante esa temporada, ",
+          "cuatro anotadores se habían colado en el top de mayor cantidad de puntos en un solo partido, ",
+          "detallando sus respectivos equipos, resultado final, rival y fecha."
         ],
         "en": [
-          {
-            "text": "Later on, I focused on individual player performances and pointed out that, during that season, "
-          },
-          {
-            "text": "four scorers had made it into the top "
-          },
-          {
-            "text": " tier for most points in a single game, detailing their teams, final scores, opponents, and dates."
-          }
+          "Later on, I focused on individual player performances and pointed out that, during that season, ",
+          "four scorers had made it into the top tier for most points in a single game, ",
+          "detallando sus respectivos equipos, resultado final, rival y fecha."
         ]
       }
     },
@@ -135,34 +96,25 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Asimismo, para ampliar la información y el contexto, tracé mediante otro "
-          },
+          "Asimismo, para ampliar la información y el contexto, tracé mediante otro ",
           {
             "text": "scatterplot",
             "italic": true
           },
-          {
-            "text": " a los máximos anotadores por temporada, incorporando más datos dentro de los "
-          },
+          " a los máximos anotadores por temporada, incorporando más datos dentro de los ",
           {
             "text": "tooltips",
             "italic": true
           },
-          {
-            "text": " y añadiendo textos explicativos directamente visibles."
-          }
+          " y añadiendo textos explicativos directamente visibles."
         ],
         "en": [
+          "Furthermore, to broaden the context and insights, I plotted the top scorers per season using another ",
           {
-            "text": "Furthermore, to broaden the context and insights, I plotted the top scorers per season using another "
+            "text": "scatterplot, embedding extra data within the ",
+            "italic": true
           },
-          {
-            "text": "scatterplot, embedding extra data within the "
-          },
-          {
-            "text": "tooltips and adding directly visible annotations."
-          }
+          "tooltips and adding directly visible annotations."
         ]
       }
     },
@@ -182,26 +134,15 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Para terminar, consideré interesante visualizar la evolución de cada tipo de lanzamiento según su valor, "
-          },
-          {
-            "text": "y mostré tanto la eficacia como el volumen temporada tras temporada. "
-          },
-          {
-            "text": "Para ello, procesé los datos en RStudio y extraje estadísticas para representar mediante colores los periodos de mayor y menor acierto."
-          }
+          "Para terminar, consideré interesante visualizar la evolución de cada tipo de lanzamiento según su valor, ",
+          "y mostré tanto la eficacia como el volumen temporada tras temporada. Para ello, procesé los datos ",
+          "en RStudio y extraje estadísticas para representar mediante colores los periodos de mayor y menor acierto."
         ],
         "en": [
-          {
-            "text": "To conclude, I found it compelling to visualize the evolution of each shot type based on its point value, "
-          },
-          {
-            "text": "and I showed both efficiency and volume season after season. "
-          },
-          {
-            "text": "To achieve this, I processed the data in RStudio and extracted metrics to reflect periods of high and low accuracy using color coding."
-          }
+          "To conclude, I found it compelling to visualize the evolution of each shot type based on its point value, ",
+          "and I showed both efficiency and volume season after season. To achieve this, ",
+          "I processed the data in RStudio and extracted metrics to reflect periods of high and low accuracy ",
+          "using color coding."
         ]
       }
     },

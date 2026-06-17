@@ -25,7 +25,7 @@ export interface HomeProject {
 
 const projects = [
   {
-    id: "p1",
+    id: "p0",
     slug: "digital-news-report-2026",
     variant: "hero",
     category: "infografia",
@@ -47,7 +47,7 @@ const projects = [
     rowSpan: 3,
   },
   {
-    id: "p2",
+    id: "p1",
     slug: "vivienda-construnews",
     variant: "feature",
     category: "infografia",
@@ -68,7 +68,7 @@ const projects = [
     rowStart: 8,
   },
   {
-    id: "p3",
+    id: "p2",
     externalUrl:
       "https://elpais.com/estilo-de-vida/2026-05-21/falsos-recuerdos-por-que-la-memoria-reconstruye-nuestro-pasado.html",
     variant: "list",
@@ -88,7 +88,7 @@ const projects = [
     rowStart: 1,
   },
   {
-    id: "p4",
+    id: "p3",
     externalUrl:
       "https://elpais.com/estilo-de-vida/2026-04-25/por-que-llenamos-la-agenda-de-vacaciones-con-meses-de-antelacion-el-verano-ya-esta-decidido-en-abril.html",
     variant: "list",
@@ -108,6 +108,26 @@ const projects = [
     rowStart: 2,
   },
   {
+    id: "p4",
+    externalUrl:
+      "https://elpais.com/mamas-papas/actualidad/2026-06-16/regalos-de-fin-de-curso-a-los-profesores-por-que-una-carta-significa-mas-que-un-obsequio-caro.html",
+    variant: "list",
+    category: "maternidad",
+    homeVisible: true,
+    mediumStyle: "El País",
+    title: {
+      es: "La metáfora detrás del regalo de final de curso a los profesores",
+      en: "The Metaphor Behind Year-End Teacher Gifts",
+    },
+    description: {
+      es: "Para los tutores, una carta de los alumnos puede significar más que un obsequio caro de los padres",
+      en: "For educators, a letter from students can mean far more than an expensive present from parents.",
+    },
+    colStart: 9,
+    colSpan: 4,
+    rowStart: 3,
+  },
+  {
     id: "p5",
     externalUrl:
       "https://elpais.com/mamas-papas/actualidad/2026-06-05/ayudar-o-no-a-los-hijos-con-los-deberes.html",
@@ -123,9 +143,9 @@ const projects = [
       es: "La manera de ayudar con las tareas escolares es más importante que la cantidad de apoyo",
       en: "The way parents help with schoolwork matters more than the amount of support they provide.",
     },
-    colStart: 9,
+    colStart: 1,
     colSpan: 4,
-    rowStart: 3,
+    rowStart: 12,
   },
   {
     id: "p6",
@@ -235,17 +255,12 @@ const projects = [
     id: "p11",
     externalUrl:
       "https://elpais.com/mamas-papas/expertos/2026-05-23/jose-maria-carmona-pediatra-que-los-ninos-necesitan-padres-perfectos-es-el-mito-mas-importante-a-desmontar.html",
-    variant: "list",
     category: "maternidad",
-    homeVisible: true,
+    homeVisible: false,
     mediumStyle: "El País",
     title: {
       es: "Entrevista al pediatra José María Carmona",
       en: "Interview with the pediatrician José María Carmona",
-    },
-    description: {
-      es: "Conversación sobre cómo abordar la crianza desde el embarazo",
-      en: "A conversation on navigating parenting from pregnancy onward.",
     },
     colStart: 1,
     colSpan: 4,

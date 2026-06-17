@@ -7,38 +7,18 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "En 2025, llevé a cabo el reto #30daychartchallenge, que consistió en publicar cada día un gráfico con una temática concreta. "
-          },
-          {
-            "text": "Yo opté por subirlos todos al final y realicé un total de 24 gráficos de los 30 propuestos. "
-          },
-          {
-            "text": "Las ideas y los estilos de las visualizaciones fueron muy diversos. "
-          },
-          {
-            "text": "Las principales herramientas que utilicé fueron Google Sheets, RStudio y Adobe Illustrator. "
-          },
-          {
-            "text": "Añado todos al portfolio junto a una pequeña descripción. Las visualizaciones están diseñadas en inglés."
-          }
+          "En 2025, llevé a cabo el reto #30daychartchallenge, que consistió en publicar cada día un gráfico con una ",
+          "temática concreta. Yo opté por subirlos todos al final y realicé un total de 24 gráficos de los 30 propuestos. ",
+          "Las ideas y los estilos de las visualizaciones fueron muy diversos. Las principales herramientas que utilicé ",
+          "fueron Google Sheets, RStudio y Adobe Illustrator. Añado todos al portfolio junto a una pequeña descripción. ",
+          "Las visualizaciones están diseñadas en inglés."
         ],
         "en": [
-          {
-            "text": "In 2025, I completed the #30daychartchallenge, which consists of publishing a daily chart based on a specific theme. "
-          },
-          {
-            "text": "I chose to upload them all at the end, completing a total of 24 out of 30 charts. "
-          },
-          {
-            "text": "The ideas and styles of the visualizations were highly diverse. "
-          },
-          {
-            "text": "The main tools I used were Google Sheets, RStudio, and Adobe Illustrator. "
-          },
-          {
-            "text": "I add them all to the portfolio alongside a brief description. The visualizations are designed in English."
-          }
+          "In 2025, I completed the #30daychartchallenge, which consists of publishing a daily chart based on a specific ",
+          "theme. I chose to upload them all at the end, completing a total of 24 out of 30 charts. ",
+          "The ideas and styles of the visualizations were highly diverse. The main tools I used were Google Sheets, ",
+          "RStudio, and Adobe Illustrator. I add them all to the portfolio alongside a brief description. ",
+          "The visualizations are designed in English."
         ]
       }
     },
@@ -62,16 +42,8 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          {
-            "text": "Creé una matriz de puntos que comparó la población española con la europea."
-          }
-        ],
-        "en": [
-          {
-            "text": "I created a dot matrix chart that compared Spanish population with the European."
-          }
-        ]
+        "es": "Creé una matriz de puntos que comparó la población española con la europea.",
+        "en": "I created a dot matrix chart that compared Spanish population with the European."
       }
     },
     {
@@ -107,14 +79,12 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Este también lo enfoqué en España y en temas de movilidad, a través de un gráfico de pendientes de cuatro líneas con datos del INE."
-          }
+          "Este también lo enfoqué en España y en temas de movilidad, a través de un gráfico de pendientes de ",
+          "cuatro líneas con datos del INE."
         ],
         "en": [
-          {
-            "text": "I focused this one as well on Spain and mobility issues, using a four-line slope chart with data from the INE."
-          }
+          "I focused this one as well on Spain and mobility issues, using a four-line slope chart with data ",
+          "from the INE."
         ]
       }
     },
@@ -151,26 +121,14 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Este lo ideé como un mapa de calor circular. Cada circunferencia representó una década "
-          },
-          {
-            "text": "y cada segmento correspondió a un año concreto, como si fuera un reloj. "
-          },
-          {
-            "text": "Los datos fueron del paquete de R GmooG tras ser procesados."
-          }
+          "Este lo ideé como un mapa de calor circular. Cada circunferencia representó una década y cada segmento ",
+          "correspondió a un año concreto, como si fuera un reloj. Los datos fueron del paquete de R GmooG ",
+          "tras ser procesados."
         ],
         "en": [
-          {
-            "text": "I designed this one as a circular heatmap. Each circumference represented a decade "
-          },
-          {
-            "text": "and each segment corresponded to a specific year, like a clock. "
-          },
-          {
-            "text": "The data came from the R package GmooG after being processed."
-          }
+          "I designed this one as a circular heatmap. Each circumference represented a decade and each segment ",
+          "corresponded to a specific year, like a clock. The data came from the R package GmooG after ",
+          "being processed."
         ]
       }
     },
@@ -207,26 +165,14 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Volví a optar por datos de países y curiosidades al mostrar los territorios más grandes y pequeños del mundo. "
-          },
-          {
-            "text": "Decidí plasmarlos con su tamaño proporcional; por ello, los 5 países más pequeños tuvieron "
-          },
-          {
-            "text": "que ser ampliados x10000 para ser visibles al ojo humano respecto a los más grandes."
-          }
+          "Volví a optar por datos de países y curiosidades al mostrar los territorios más grandes y pequeños del mundo. ",
+          "Decidí plasmarlos con su tamaño proporcional; por ello, los 5 países más pequeños tuvieron ",
+          "que ser ampliados x10000 para ser visibles al ojo humano respecto a los más grandes."
         ],
         "en": [
-          {
-            "text": "I opted once again for country data and curiosities, displaying the largest and smallest territories in the world. "
-          },
-          {
-            "text": "I decided to showcase them using their proportional size; therefore, the 5 smallest countries had "
-          },
-          {
-            "text": "to be enlarged x10000 to be visible to the human eye relative to the largest ones."
-          }
+          "I opted once again for country data and curiosities, displaying the largest and smallest territories in the world. ",
+          "I decided to showcase them using their proportional size; therefore, the 5 smallest countries had ",
+          "to be enlarged x10000 to be visible to the human eye relative to the largest ones."
         ]
       }
     },
@@ -263,26 +209,14 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "En este caso me decidí por una temática deportiva. En concreto, sobre la temporada del Valencia CF, "
-          },
-          {
-            "text": "que estuvo en puestos de descenso durante prácticamente toda la liga española. "
-          },
-          {
-            "text": "Tras cambiar de entrenador, comenzó a subir su media de puntos por partido hasta colocarse en una situación cómoda."
-          }
+          "En este caso me decidí por una temática deportiva. En concreto, sobre la temporada del Valencia CF, ",
+          "que estuvo en puestos de descenso durante prácticamente toda la liga española. ",
+          "Tras cambiar de entrenador, comenzó a subir su media de puntos por partido hasta colocarse en una situación cómoda."
         ],
         "en": [
-          {
-            "text": "In this case, I decided on a sports theme. Specifically, about Valencia CF's season,  "
-          },
-          {
-            "text": "which sat in the relegation zone during almost the entire Spanish league. "
-          },
-          {
-            "text": "After changing managers, their average points per match began to rise until they reached a comfortable position."
-          }
+          "In this case, I decided on a sports theme. Specifically, about Valencia CF's season,  ",
+          "which sat in the relegation zone during almost the entire Spanish league. ",
+          "After changing managers, their average points per match began to rise until they reached a comfortable position."
         ]
       }
     },
@@ -319,39 +253,19 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Para este apartado, opté por replicar su propio tipo de gráfico, también conocido como "
-          },
+          "Para este apartado, opté por replicar su propio tipo de gráfico, también conocido como ",
           {
             "text": "Coxcomb ",
             "italic": true
           },
-          {
-            "text": "o área polar. "
-          },
-          {
-            "text": "La temática giró en torno al género, así que realicé por un lado una comparativa de las mujeres que ganaron "
-          },
-          {
-            "text": "premios Nobel por categoría, y por otro, una comparativa directa entre hombres y mujeres. "
-          },
-          {
-            "text": "Todo ello estructurado por décadas."
-          }
+          "o área polar. La temática giró en torno al género, así que realicé por un lado una comparativa de las mujeres ",
+          "que ganaron premios Nobel por categoría, y por otro, una comparativa directa entre hombres y mujeres. ",
+          "Todo ello estructurado por décadas."
         ],
         "en": [
-          {
-            "text": "For this section, I chose to replicate her own chart type, also known as a Coxcomb or polar area chart. "
-          },
-          {
-            "text": "The theme revolved around gender, featuring a comparison of women who won Nobel prizes by category on one hand, "
-          },
-          {
-            "text": "and a direct comparison between men and women on the other. "
-          },
-          {
-            "text": "All of it structured by decades."
-          }
+          "For this section, I chose to replicate her own chart type, also known as a Coxcomb or polar area chart. ",
+          "The theme revolved around gender, featuring a comparison of women who won Nobel prizes by category on one hand, ",
+          "and a direct comparison between men and women on the other. All of it structured by decades."
         ]
       }
     },
@@ -359,8 +273,14 @@
       "type": "image",
       "src": "30daychartchallenge-6.webp",
       "alt": {
-        "es": "Dos áreas polares: una que muestra los premios nobel de mujeres por década y categoría; otro que muestra los premios por década y género",
-        "en": "Two polar areas: one showing Nobel prizes won by women by decade and category; the other showing prizes by decade and gender"
+        "es": [
+          "Dos áreas polares: una que muestra los premios nobel de mujeres por década y categoría; otro que muestra ",
+          "los premios por década y género"
+        ],
+        "en": [
+          "Two polar areas: one showing Nobel prizes won by women by decade and category; the other showing ",
+          "prizes by decade and gender"
+        ]
       },
       "caption": {
         "es": "Las mujeres en los premios Nobel | Por década y categoría | Por década y género",
@@ -388,24 +308,16 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Para este gráfico opté por hablar de economía y realizar un "
-          },
+          "Para este gráfico opté por hablar de economía y realizar un ",
           {
             "text": "beeswarm",
             "italic": true
           },
-          {
-            "text": " en el que se reflejaron los países que destacaron por los extremos, distribuidos por continente."
-          }
+          " en el que se reflejaron los países que destacaron por los extremos, distribuidos por continente."
         ],
         "en": [
-          {
-            "text": "For this chart, I chose to talk about economics and create a beeswarm "
-          },
-          {
-            "text": "that reflected the countries standing out at the extremes, distributed by continent."
-          }
+          "For this chart, I chose to talk about economics and create a beeswarm ",
+          "that reflected the countries standing out at the extremes, distributed by continent."
         ]
       }
     },
@@ -442,20 +354,13 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Para el histograma hablé sobre la altitud media de todos los municipios italianos, según datos del ISTAT. "
-          },
-          {
-            "text": "De fondo coloqué una montaña para mostrar que, a mayor altitud, existía un menor número de municipios."
-          }
+          "Para el histograma hablé sobre la altitud media de todos los municipios italianos, según datos del ISTAT. ",
+          "De fondo coloqué una montaña para mostrar que, a mayor altitud, existía un menor número de municipios."
         ],
         "en": [
-          {
-            "text": "For the histogram, I focused on the average altitude of all Italian municipalities, using ISTAT data. "
-          },
-          {
-            "text": "In the background, I placed a mountain to show that higher altitudes correlated with a lower number of municipalities."
-          }
+          "For the histogram, I focused on the average altitude of all Italian municipalities, using ISTAT data. ",
+          "In the background, I placed a mountain to show that higher altitudes correlated with a lower number ",
+          "of municipalities."
         ]
       }
     },
@@ -492,20 +397,12 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Decidí hacer unas barras apiladas sobre la opinión de los españoles respecto a aumentar la defensa de la UE, "
-          },
-          {
-            "text": "abordado desde un punto de vista internacional."
-          }
+          "Decidí hacer unas barras apiladas sobre la opinión de los españoles respecto a aumentar la defensa de la UE, ",
+          "abordado desde un punto de vista internacional."
         ],
         "en": [
-          {
-            "text": "I decided to create stacked bars regarding the opinion of Spaniards on increasing EU defense, "
-          },
-          {
-            "text": "approached from an international point of view."
-          }
+          "I decided to create stacked bars regarding the opinion of Spaniards on increasing EU defense, ",
+          "approached from an international point of view."
         ]
       }
     },
@@ -513,7 +410,7 @@
       "type": "image",
       "src": "30daychartchallenge-9.webp",
       "alt": {
-        "es": "Barras apiladas con rojo, gris y verde divergente según apoyo español a la defensa de la UE",
+        "es": "Barras apiladas con rojo, gris y verde divergente según apoyo español a la defense de la UE",
         "en": "Stacked bars with diverging red, gray, and green based on Spanish support for EU defense"
       },
       "caption": {
@@ -542,31 +439,21 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Volví a hablar de deportes para visualizar la carrera futbolística de Messi y Cristiano a través de un "
-          },
+          "Volví a hablar de deportes para visualizar la carrera futbolística de Messi y Cristiano a través de un ",
           {
             "text": "heatmap",
             "italic": true
           },
-          {
-            "text": " en "
-          },
+          " en ",
           {
             "text": "stripes",
             "italic": true
           },
-          {
-            "text": " en el que se vio su potencial goleador por temporada."
-          }
+          " en el que se vio su potencial goleador por temporada."
         ],
         "en": [
-          {
-            "text": "I returned to sports to visualize the football careers of Messi and Cristiano through a "
-          },
-          {
-            "text": "heatmap in stripes that showed their goalscoring potential per season."
-          }
+          "I returned to sports to visualize the football careers of Messi and Cristiano through a ",
+          "heatmap in stripes that showed their goalscoring potential per season."
         ]
       }
     },
@@ -603,24 +490,17 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Escogí un "
-          },
+          "Escogí un ",
           {
             "text": "streamgraph",
             "italic": true
           },
-          {
-            "text": " para visualizar cómo Estados Unidos evolucionó respecto a la procedencia de la energía que consumió con datos de data.gov."
-          }
+          " para visualizar cómo Estados Unidos evolucionó respecto a la procedencia de la energía que consumió con ",
+          "datos de data.gov."
         ],
         "en": [
-          {
-            "text": "I chose a streamgraph "
-          },
-          {
-            "text": "to visualize how the United States evolved regarding where it sourced its consumed energy, with data from data.gov."
-          }
+          "I chose a streamgraph ",
+          "to visualize how the United States evolved regarding where it sourced its consumed energy, with data from data.gov."
         ]
       }
     },
@@ -657,30 +537,18 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Realicé un "
-          },
+          "Realicé un ",
           {
             "text": "scatterplot ",
             "italic": true
           },
-          {
-            "text": "que visualizó la relación entre el ratio de alfabetización y la esperanza de vida, "
-          },
-          {
-            "text": "centrado únicamente en países con datos de 2022 o 2023 en el World Bank."
-          }
+          "que visualizó la relación entre el ratio de alfabetización y la esperanza de vida, ",
+          "centrado únicamente en países con datos de 2022 o 2023 en el World Bank."
         ],
         "en": [
-          {
-            "text": "I created a scatterplot "
-          },
-          {
-            "text": "visualizing the relationship between the literacy rate and life expectancy, "
-          },
-          {
-            "text": "focusing only on countries with 2022 or 2023 data from the World Bank."
-          }
+          "I created a scatterplot ",
+          "visualizing the relationship between the literacy rate and life expectancy, ",
+          "focusing only on countries with 2022 or 2023 data from the World Bank."
         ]
       }
     },
@@ -717,20 +585,12 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Este fue uno de los gráficos que más me costó debido al tiempo que empleé en recabar la información. "
-          },
-          {
-            "text": "Visualicé el árbol genealógico de la Familia Real Española, abarcando desde Alfonso XIII hasta Felipe VI."
-          }
+          "Este fue uno de los gráficos que más me costó debido al tiempo que empleé en recabar la información. ",
+          "Visualicé el árbol genealógico de la Familia Real Española, abarcando desde Alfonso XIII hasta Felipe VI."
         ],
         "en": [
-          {
-            "text": "This was one of the charts that required the most effort due to the time spent gathering information. "
-          },
-          {
-            "text": "I visualized the family tree of the Spanish Royal Family, spanning from Alfonso XIII to Felipe VI."
-          }
+          "This was one of the charts that required the most effort due to the time spent gathering information. ",
+          "I visualized the family tree of the Spanish Royal Family, spanning from Alfonso XIII to Felipe VI."
         ]
       }
     },
@@ -767,20 +627,12 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Desarrollé una cuadrícula por comunidades autónomas para plasmar la diferencia registrada en 2015 y 2024 "
-          },
-          {
-            "text": "respecto al saldo entre entradas y salidas de trabajadores por motivos laborales."
-          }
+          "Desarrollé una cuadrícula por comunidades autónomas para plasmar la diferencia registrada en 2015 y 2024 ",
+          "respecto al saldo entre entradas y salidas de trabajadores por motivos laborales."
         ],
         "en": [
-          {
-            "text": "I developed a grid by autonomous communities to reflect the difference recorded in 2015 and 2024 "
-          },
-          {
-            "text": "regarding the balance between incoming and outgoing workers for employment reasons."
-          }
+          "I developed a grid by autonomous communities to reflect the difference recorded in 2015 and 2024 ",
+          "regarding the balance between incoming and outgoing workers for employment reasons."
         ]
       }
     },
@@ -817,20 +669,12 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Realicé un gráfico de donut "
-          },
-          {
-            "text": "para mostrar cómo se distribuyó la lista roja de las aves según los datos de BirdLife."
-          }
+          "Realicé un gráfico de donut para mostrar cómo se distribuyó la lista roja de las aves según ",
+          "los datos de BirdLife."
         ],
         "en": [
-          {
-            "text": "I created a donut chart "
-          },
-          {
-            "text": "to display how the red list of birds was distributed according to BirdLife data."
-          }
+          "I created a donut chart to display how the red list of birds was distributed according ",
+          "to BirdLife data."
         ]
       }
     },
@@ -867,26 +711,12 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Aprovechando la temática orientada al periodismo, elaboré un mapa coroplético "
-          },
-          {
-            "text": "para mostrar la situación mundial de la libertad de prensa, "
-          },
-          {
-            "text": "a través los datos de Reporteros Sin Fronteras."
-          }
+          "Aprovechando la temática orientada al periodismo, elaboré un mapa coroplético para mostrar la situación mundial de la ",
+          "libertad de prensa, a través los datos de Reporteros Sin Fronteras."
         ],
         "en": [
-          {
-            "text": "Taking advantage of the journalism-oriented theme, I crafted a choropleth map "
-          },
-          {
-            "text": "to show the global situation of press freedom, "
-          },
-          {
-            "text": "using data from Reporters Without Borders."
-          }
+          "Taking advantage of the journalism-oriented theme, I crafted a choropleth map to show the global situation of ",
+          "press freedom, using data from Reporters Without Borders."
         ]
       }
     },
@@ -923,20 +753,12 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Opté por hablar sobre cómo evolucionaron las elecciones federales alemanas desde su reunificación en 1990 "
-          },
-          {
-            "text": "a través de una evolución de posiciones y cantidad de votos."
-          }
+          "Opté por hablar sobre cómo evolucionaron las elecciones federales alemanas desde su reunificación en 1990 ",
+          "a través de una evolución de posiciones y cantidad de votos."
         ],
         "en": [
-          {
-            "text": "I chose to talk about how German federal elections evolved since reunification in 1990 "
-          },
-          {
-            "text": "through a ranking and amount of votes evolution."
-          }
+          "I chose to talk about how German federal elections evolved since reunification in 1990 ",
+          "through a ranking and amount of votes evolution."
         ]
       }
     },
@@ -973,20 +795,12 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Volviendo a España, diseñé un mapa localizador sencillo de los lugares donde se encontraron restos fósiles de dinosaurios "
-          },
-          {
-            "text": "en Teruel, utilizando los datos de paleobioDB mediante su paquete de R."
-          }
+          "Volviendo a España, diseñé un mapa localizador sencillo de los lugares donde se encontraron restos fósiles de ",
+          "dinosaurios en Teruel, utilizando los datos de paleobioDB mediante su paquete de R."
         ],
         "en": [
-          {
-            "text": "Returning to Spain, I designed a simple locator map showing where dinosaur fossil remains were found "
-          },
-          {
-            "text": "in Teruel, using data from paleobioDB via its R package."
-          }
+          "Returning to Spain, I designed a simple locator map showing where dinosaur fossil remains were found ",
+          "in Teruel, using data from paleobioDB via its R package."
         ]
       }
     },
@@ -1023,14 +837,12 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Opté de nuevo por un mapa localizador enfocado en los observatorios astronómicos más altos del mundo para la observación de estrellas."
-          }
+          "Opté de nuevo por un mapa localizador enfocado en los observatorios astronómicos más altos del mundo para ",
+          "la observación de estrellas."
         ],
         "en": [
-          {
-            "text": "I opted once again for a locator map focused on the highest astronomical observatories in the world for stargazing."
-          }
+          "I opted once again for a locator map focused on the highest astronomical observatories in the world ",
+          "for stargazing."
         ]
       }
     },
@@ -1067,20 +879,12 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Utilizando una escala logarítmica en el eje X, visualicé la relación entre los países "
-          },
-          {
-            "text": "por esperanza de vida y su gasto sanitario per cápita."
-          }
+          "Utilizando una escala logarítmica en el eje X, visualicé la relación entre los países ",
+          "por esperanza de vida y su gasto sanitario per cápita."
         ],
         "en": [
-          {
-            "text": "Using a logarithmic scale on the X-axis, I visualized the relationship among countries "
-          },
-          {
-            "text": "regarding life expectancy and their healthcare expenditure per capita."
-          }
+          "Using a logarithmic scale on the X-axis, I visualized the relationship among countries ",
+          "regarding life expectancy and their healthcare expenditure per capita."
         ]
       }
     },
@@ -1117,24 +921,18 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Para aprovechar la base de datos de la OMS, visualicé mediante un "
-          },
+          "Para aprovechar la base de datos de la OMS, visualicé mediante un ",
           {
             "text": "dotplot ",
             "italic": true
           },
-          {
-            "text": "los 10 países con mayor y menor porcentaje de obesidad, ordenados por adultos, e incluyendo niños y adolescentes en otro grupo."
-          }
+          "los 10 países con mayor y menor porcentaje de obesidad, ordenados por adultos, e incluyendo niños y adolescentes ",
+          "en otro grupo."
         ],
         "en": [
-          {
-            "text": "To leverage the WHO database, I visualized through a dotplot "
-          },
-          {
-            "text": "the 10 countries with the highest and lowest percentage of obesity, sorted by adults, and including children and adolescents in another group."
-          }
+          "To leverage the WHO database, I visualized through a dotplot ",
+          "the 10 countries with the highest and lowest percentage of obesity, sorted by adults, and including ",
+          "children and adolescents in another group."
         ]
       }
     },
@@ -1171,30 +969,18 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Para abordar el concepto de riesgo, volví a utilizar un "
-          },
+          "Para abordar el concept de riesgo, volví a utilizar un ",
           {
             "text": "beeswarm",
             "italic": true
           },
-          {
-            "text": " para visualizar el peligro de sufrir desastres naturales por país y tipología, "
-          },
-          {
-            "text": "y destaqué aquellos con mayor vulnerabilidad general a partir de datos de la Comisión Europea."
-          }
+          " para visualizar el peligro de sufrir desastres naturales por país y tipología, ",
+          "y destaqué aquellos con mayor vulnerabilidad general a partir de datos de la Comisión Europea."
         ],
         "en": [
-          {
-            "text": "To approach the concept of risk, I used a beeswarm "
-          },
-          {
-            "text": "once again to visualize the danger of experiencing natural disasters by country and typology, "
-          },
-          {
-            "text": "and I highlighted those with the highest overall vulnerability based on European Commission data."
-          }
+          "To approach the concept of risk, I used a beeswarm ",
+          "once again to visualize the danger of experiencing natural disasters by country and typology, ",
+          "and I highlighted those with the highest overall vulnerability based on European Commission data."
         ]
       }
     },
@@ -1231,20 +1017,12 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Con el objetivo de diseñar un gráfico monocromático, utilicé una gama de grises y líneas para "
-          },
-          {
-            "text": "explicar la evolución decreciente en el tiempo de la población que reside en entornos rurales, distribuida por regiones geográficas."
-          }
+          "Con el objetivo de diseñar un gráfico monocromático, utilicé una gama de grises y líneas para ",
+          "explicar la evolución decreciente en el tiempo de la población que reside en entornos rurales, distribuida por regiones geográficas."
         ],
         "en": [
-          {
-            "text": "Aiming to design a monochrome chart, I used a gray scale and lines to "
-          },
-          {
-            "text": "explain the decreasing trend over time of the population living in rural environments, distributed by geographical regions."
-          }
+          "Aiming to design a monochrome chart, I used a gray scale and lines to ",
+          "explain the decreasing trend over time of the population living in rural environments, distributed by geographical regions."
         ]
       }
     },
@@ -1281,20 +1059,12 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Aunque la temática no guardó una relación directa con National Geographic, diseñé un mapa localizador "
-          },
-          {
-            "text": "para mostrar las áreas naturales protegidas de España."
-          }
+          "Aunque la temática no guardó una relación directa con National Geographic, diseñé un mapa localizador ",
+          "para mostrar las áreas naturales protegidas de España."
         ],
         "en": [
-          {
-            "text": "Although the theme did not share a direct connection with National Geographic, I designed a locator map "
-          },
-          {
-            "text": "that showed the protected natural areas of Spain."
-          }
+          "Although the theme did not share a direct connection with National Geographic, I designed a locator map ",
+          "that showed the protected natural areas of Spain."
         ]
       }
     },

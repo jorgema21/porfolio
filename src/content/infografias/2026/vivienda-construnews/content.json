@@ -7,32 +7,16 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "A través de una colaboración intensa enfocada en desarrollo web, análisis y visualización de datos, "
-          },
-          {
-            "text": "nos propusimos investigar el papel de la industrialización como una alternativa frente a la crisis de vivienda. "
-          },
-          {
-            "text": "Le tengo un cariño especial a este proyecto porque fue el escenario perfecto para aprender nociones "
-          },
-          {
-            "text": "imprescindibles de Svelte 5, SvelteKit y el flujo de trabajo con Git."
-          }
+          "A través de una colaboración intensa enfocada en desarrollo web, análisis y visualización de datos, ",
+          "nos propusimos investigar el papel de la industrialización como una alternativa frente a la crisis de vivienda. ",
+          "Le tengo un cariño especial a este proyecto porque fue el escenario perfecto para aprender nociones ",
+          "imprescindibles de Svelte 5, SvelteKit y el flujo de trabajo con Git."
         ],
         "en": [
-          {
-            "text": "Through a close collaboration focused on web development, data analysis, and visualization, "
-          },
-          {
-            "text": "we investigated the role of industrialized construction as an alternative to the current housing crisis. "
-          },
-          {
-            "text": "This project holds a special place for me because it served as the perfect milestone to master "
-          },
-          {
-            "text": "the essentials of Svelte 5, SvelteKit, and production workflows using Git."
-          }
+          "Through a close collaboration focused on web development, data analysis, and visualization, ",
+          "we investigated the role of industrialized construction as an alternative to the current housing crisis. ",
+          "This project holds a special place for me because it served as the perfect milestone to master ",
+          "the essentials of Svelte 5, SvelteKit, and production workflows using Git."
         ]
       }
     },
@@ -40,20 +24,12 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Para lograr una lectura fluida y bien organizada, decidimos estructurar los diferentes "
-          },
-          {
-            "text": "apartados del reportaje utilizando infografías isométricas de un bloque de viviendas en construcción."
-          }
+          "Para lograr una lectura fluida y bien organizada, decidimos estructurar los diferentes ",
+          "apartados del reportaje utilizando infografías isométricas de un bloque de viviendas en construcción."
         ],
         "en": [
-          {
-            "text": "To guarantee a fluid and well-structured reading experience, we decided to organize "
-          },
-          {
-            "text": "the different sections of the report using isometric infographics of a housing block under construction."
-          }
+          "To guarantee a fluid and well-structured reading experience, we decided to organize ",
+          "the different sections of the report using isometric infographics of a housing block under construction."
         ]
       }
     },
@@ -73,23 +49,19 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Uno de los puntos a tratar fue analizar el envejecimiento de la mano de obra en el sector y cómo esto puede repercutir "
-          },
-          {
-            "text": "en la capacidad de construir vivienda tradicional. Desarrollamos pirámides de población adaptadas a móvil y web con "
-          },
+          "Uno de los puntos a tratar fue analizar el envejecimiento de la mano de obra en el sector y cómo esto puede ",
+          "repercutir en la capacidad de construir vivienda tradicional. Desarrollamos pirámides de población adaptadas a móvil y web con ",
           {
             "text": "ai2html.",
             "italic": true
           }
         ],
         "en": [
+          "One of our core focuses was analyzing the aging workforce within the sector and its direct impact ",
+          "on traditional home-building capacity. We developed population pyramids optimized for mobile and web using ",
           {
-            "text": "One of our core focuses was analyzing the aging workforce within the sector and its direct impact "
-          },
-          {
-            "text": "on traditional home-building capacity. We developed population pyramids optimized for mobile and web using ai2html."
+            "text": "ai2html.",
+            "italic": true
           }
         ]
       }
@@ -110,20 +82,12 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "También aporté ideas de visualizaciones interactivas que terminaron en la pieza final para mostrar el peso de los trabajadores extranjeros. "
-          },
-          {
-            "text": "Para ello realizamos un gráfico de área y barras apiladas interactivas."
-          }
+          "También aporté ideas de visualizaciones interactivas que terminaron en la pieza final para mostrar el peso de los ",
+          "trabajadores extranjeros. Para ello realizamos un gráfico de área y barras apiladas interactivas."
         ],
         "en": [
-          {
-            "text": "I also contributed design concepts for the interactive visualizations included in the final piece to highlight the impact of foreign labor. "
-          },
-          {
-            "text": "We made an interactive area chart and stacked bars."
-          }
+          "I also contributed design concepts for the interactive visualizations included in the final piece to highlight the impact ",
+          "of foreign labor. We made an interactive area chart and stacked bars."
         ]
       }
     },
@@ -155,27 +119,21 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Por último, ideé el código base de un "
-          },
+          "Por último, ideé el código base de un ",
           {
             "text": "dotplot",
             "italic": true
           },
-          {
-            "text": " interactivo que se añadió al reportaje final "
-          },
-          {
-            "text": "para comparar visualmente cómo se dispararon los costes de los materiales entre el año 2005 y 2024."
-          }
+          " interactivo que se añadió al reportaje final para comparar visualmente cómo se dispararon los costes ",
+          "de los materiales entre el año 2005 y 2024."
         ],
         "en": [
+          "Finally, I designed the core codebase for an interactive ",
           {
-            "text": "Finally, I designed the core codebase for an interactive dotplot integrated into the final layout "
+            "text": "dotplot",
+            "italic": true
           },
-          {
-            "text": "to visually compare how material costs have skyrocketed from 2005 to 2024."
-          }
+          " integrated into the final layout to visually compare how material costs have skyrocketed from 2005 to 2024."
         ]
       }
     },

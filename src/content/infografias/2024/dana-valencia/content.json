@@ -7,32 +7,17 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "En un día crítico para la sociedad española y especialmente para la valenciana, la DANA destruyó, "
-          },
-          {
-            "text": "entre otras infraestructuras, múltiples carreteras de la zona y puso en riesgo otras tantas vías. "
-          },
-          {
-            "text": "Como información de interés público, realicé durante la misma jornada y a partir de datos brutos un mapa localizador "
-          },
-          {
-            "text": "para que los lectores pudieran comprobar cuáles eran las carreteras cortadas, las que presentaban dificultades o las que contaban con carriles restringidos."
-          }
+          "En un día crítico para la sociedad española y especialmente para la valenciana, la DANA destruyó, ",
+          "entre otras infraestructuras, múltiples carreteras de la zona y puso en riesgo otras tantas vías. ",
+          "Como información de interés público, realicé durante la misma jornada y a partir de datos brutos un mapa localizador ",
+          "para que los lectores pudieran comprobar cuáles eran las carreteras cortadas, las que presentaban dificultades o las ",
+          "que contaban con carriles restringidos."
         ],
         "en": [
-          {
-            "text": "On a critical day for Spanish society and especially for Valencia, the DANA storm destroyed, "
-          },
-          {
-            "text": "among other infrastructures, multiple roads in the area and put many other routes at risk. "
-          },
-          {
-            "text": "As information of public interest, I created a locator map within the same day using raw data "
-          },
-          {
-            "text": "so readers could check which roads were closed, had difficult driving conditions, or had restricted lanes."
-          }
+          "On a critical day for Spanish society and especially for Valencia, the DANA storm destroyed, ",
+          "among other infrastructures, multiple roads in the area and put many other routes at risk. ",
+          "As information of public interest, I created a locator map within the same day using raw data ",
+          "so readers could check which roads were closed, had difficult driving conditions, or had restricted lanes."
         ]
       }
     },
@@ -40,40 +25,19 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Además, incorporé un "
-          },
+          "Además, incorporé un ",
           {
             "text": "tooltip",
             "italic": true
           },
-          {
-            "text": " que reunió gran parte de la información detallada de la base de datos. "
-          },
-          {
-            "text": "El conjunto de datos lo procesé previamente en Google Sheets y posteriormente en RStudio, "
-          },
-          {
-            "text": "donde gestioné la geolocalización y la exportación final en formato JSON hacia Flourish."
-          }
+          " que reunió gran parte de la información detallada de la base de datos. ",
+          "El conjunto de datos lo procesé previamente en Google Sheets y posteriormente en RStudio, ",
+          "donde gestioné la geolocalización y la exportación final en formato JSON hacia Flourish."
         ],
         "en": [
-          {
-            "text": "Additionally, I incorporated a "
-          },
-          {
-            "text": "tooltip",
-            "italic": true
-          },
-          {
-            "text": " that gathered much of the detailed information from the database. "
-          },
-          {
-            "text": "I previously processed the dataset in Google Sheets and later in RStudio, "
-          },
-          {
-            "text": "where I managed the geolocation and the final export in JSON format to Flourish."
-          }
+          "Additionally, I incorporated a tooltip that gathered much of the detailed information from the database. ",
+          "I previously processed the dataset in Google Sheets and later in RStudio, ",
+          "where I managed the geolocation and the final export in JSON format to Flourish."
         ]
       }
     },

@@ -7,26 +7,14 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Como previa de un partido de Champions League, propuse un reportaje de datos para analizar a fondo la solidez defensiva "
-          },
-          {
-            "text": "del Inter de Milán antes de su enfrentamiento contra el Atlético de Madrid. "
-          },
-          {
-            "text": "Me basado en datos de OPTA y de la RFEF, y desarrollé diferentes visualizaciones utilizando Datawrapper e Illustrator."
-          }
+          "Como previa de un partido de Champions League, propuse un reportaje de datos para analizar a fondo la solidez defensiva ",
+          "del Inter de Milán antes de su enfrentamiento contra el Atlético de Madrid. ",
+          "Me basado en datos de OPTA y de la RFEF, y desarrollé diferentes visualizaciones utilizando Datawrapper e Illustrator."
         ],
         "en": [
-          {
-            "text": "As a Champions League match preview, I pitched a data-driven feature analyzing Inter Milan's defensive solidity "
-          },
-          {
-            "text": "ahead of their match against Atlético de Madrid. "
-          },
-          {
-            "text": "Using data from OPTA and RFEF, I developed various visualizations through Datawrapper and Illustrator."
-          }
+          "As a Champions League match preview, I pitched a data-driven feature analyzing Inter Milan's defensive solidity ",
+          "ahead of their match against Atlético de Madrid. ",
+          "Using data from OPTA and RFEF, I developed various visualizations through Datawrapper and Illustrator."
         ]
       }
     },
@@ -34,37 +22,23 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "La primera pieza fue un gráfico de dispersión o "
-          },
+          "La primera pieza fue un gráfico de dispersión o ",
           {
             "text": "scatterplot ",
             "italic": true
           },
-          {
-            "text": "con los equipos de las cinco grandes ligas europeas, donde crucé los goles en contra "
-          },
-          {
-            "text": "con los goles esperados en contra (xG), y añadí además "
-          },
+          "con los equipos de las cinco grandes ligas europeas, donde crucé los goles en contra ",
+          "con los goles esperados en contra (xG), y añadí además ",
           {
             "text": "tooltips ",
             "italic": true
           },
-          {
-            "text": "con barras dinámicas en su interior."
-          }
+          "con barras dinámicas en su interior."
         ],
         "en": [
-          {
-            "text": "The first piece was a scatterplot including teams from Europe's five major leagues, "
-          },
-          {
-            "text": "in which I cross-referenced goals conceded against expected goals conceded (xG), and I also added custom tooltips "
-          },
-          {
-            "text": "with dynamic bars inside."
-          }
+          "The first piece was a scatterplot including teams from Europe's five major leagues, ",
+          "in which I cross-referenced goals conceded against expected goals conceded (xG), and I also added custom tooltips ",
+          "with dynamic bars inside."
         ]
       }
     },
@@ -84,20 +58,12 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "También incluí un gráfico de barras que mostraba la evolución y mejora de la capacidad defensiva del Inter "
-          },
-          {
-            "text": "tanto en su liga local como en Europa según el promedio de goles encajados."
-          }
+          "También incluí un gráfico de barras que mostraba la evolución y mejora de la capacidad defensiva del Inter ",
+          "tanto en su liga local como en Europa según el promedio de goles encajados."
         ],
         "en": [
-          {
-            "text": "I also included a bar chart showing the evolution and improvement of Inter Milan's defensive capacity "
-          },
-          {
-            "text": "across both domestic league and European competitions by goals conceded."
-          }
+          "I also included a bar chart showing the evolution and improvement of Inter Milan's defensive capacity ",
+          "across both domestic league and European competitions by goals conceded."
         ]
       }
     },
@@ -117,20 +83,12 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Uno de los pilares del conjunto italiano era su total confianza en una alineación base estructurada bajo un esquema de 3-5-2. "
-          },
-          {
-            "text": "Visualicé esto mediante un gráfico de distribución que relacionaba los esquemas tácticos de ambos equipos con los goles encajados por el Inter."
-          }
+          "Uno de los pilares del conjunto italiano era su total confianza en una alineación base estructurada bajo un esquema de 3-5-2. ",
+          "Visualicé esto mediante un gráfico de distribución que relacionaba los esquemas tácticos de ambos equipos con los goles encajados por el Inter."
         ],
         "en": [
-          {
-            "text": "One of the Italian side's main strengths was their reliance on a core starting lineup structured under a 3-5-2 formation. "
-          },
-          {
-            "text": "I visualized this through a distribution chart cross-referencing both teams' tactical lineups against Inter's goals conceded."
-          }
+          "One of the Italian side's main strengths was their reliance on a core starting lineup structured under a 3-5-2 formation. ",
+          "I visualized this through a distribution chart cross-referencing both teams' tactical lineups against Inter's goals conceded."
         ]
       }
     },
@@ -138,7 +96,7 @@
       "type": "image",
       "src": "inter-atleti-0.webp",
       "alt": {
-        "es": "Gráfico de distribución que analiza las alineaciones tácticas del Inter y sus rivales junto al volumen de partidos y goles recibidos.",
+        "es": "Gráfico de distribución que analiza las alineaciones tácticas del Inter and sus rivales junto al volumen de partidos y goles recibidos.",
         "en": "Distribution chart analyzing tactical lineups of Inter and its rivals alongside match volumes and goals conceded."
       },
       "caption": {
@@ -150,20 +108,12 @@
       "type": "text",
       "value": {
         "es": [
-          {
-            "text": "Por último, mostré espacialmente otras métricas: un mapa con la ubicación exacta "
-          },
-          {
-            "text": "de los tiros recibidos por el Inter de Milán; y un mapa de calor centrado en sus intervenciones defensivas sobre el césped."
-          }
+          "Por último, mostré espacialmente otras métricas: un mapa con la ubicación exacta ",
+          "de los tiros recibidos por el Inter de Milán; y un mapa de calor centrado en sus intervenciones defensivas sobre el césped."
         ],
         "en": [
-          {
-            "text": "Finally, I displayed the metrics spatially. I designed a shot map showing the exact location "
-          },
-          {
-            "text": "of shots faced by Inter Milan, alongside a heatmap highlighting their defensive actions across the pitch."
-          }
+          "Finally, I displayed the metrics spatially. I designed a shot map showing the exact location ",
+          "of shots faced by Inter Milan, alongside a heatmap highlighting their defensive actions across the pitch."
         ]
       }
     },
