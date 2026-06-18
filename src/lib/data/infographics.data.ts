@@ -1,5 +1,5 @@
 import projects from "$lib/data/projects";
-// import { APARTADOS } from "$lib/config/apartados.config";
+
 import type { InfographicMeta } from "$lib/types/project.types";
 export interface Infographic extends Record<string, unknown>, InfographicMeta {
   id: string;
@@ -35,19 +35,6 @@ export const infographics: Infographic[] = projects
   )
   .map((project): Infographic => {
     const meta = metaBySlug[project.slug];
-
-    // if (!meta) {
-    //   console.warn(
-    //     `[Portfolio Warning] No se encontraron metadatos locales para el slug: "${project.slug}"`,
-    //   );
-    //   return project as Infographic;
-    // }
-
-    // if (meta.apartado && !(meta.apartado in APARTADOS)) {
-    //   throw new Error(
-    //     `[Portfolio Error] El apartado "${meta.apartado}" asignado en el proyecto "${project.slug}" no está registrado en apartados.config.ts`,
-    //   );
-    // }
 
     return {
       ...project,

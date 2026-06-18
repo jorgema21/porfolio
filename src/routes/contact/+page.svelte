@@ -25,15 +25,16 @@
       <p>{t.contact.description}</p>
     </div>
 
-    <a class="button" href="mailto:tuemail@email.com">
-      {t.contact.cta}
+    <a class="button" href="mailto:jorge.marzoara@gmail.com">
+      {t.contact.cta}:<br>
+      jorge.marzoara@gmail.com
     </a>
   </section>
 
   <section class="cluster social-cluster">
     <a
       class="social-link"
-      href="https://linkedin.com"
+      href="https://www.linkedin.com/in/jorge-marzo-arauzo"
       target="_blank"
       rel="noopener noreferrer"
     >
@@ -47,7 +48,7 @@
 
     <a
       class="social-link"
-      href="https://github.com"
+      href="https://github.com/jorgema21"
       target="_blank"
       rel="noopener noreferrer"
     >
