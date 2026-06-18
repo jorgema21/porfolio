@@ -119,7 +119,7 @@ export const timeline = {
 
     "erasmus-year": {
       title: "Erasmus year",
-      description: "I completed an international course in Rome (Italy)",
+      description: "I completed an international course in Bergamo (Italy)",
     },
 
     "end-degree": {

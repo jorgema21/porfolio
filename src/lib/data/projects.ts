@@ -97,7 +97,7 @@ const projects = [
     mediumStyle: "El País",
     title: {
       es: "Los falsos recuerdos que crea la memoria",
-      en: "The false memories created by memory",
+      en: "The False Memories Created by Memory",
     },
     description: {
       es: "Fenómeno por el que nuestro cerebro reconstruye eventos que no son del todo reales",

@@ -78,8 +78,8 @@
             <span>·</span>
             <span>
               {preview.project.colaboracion.tipo === "equipo"
-                ? "Equipo"
-                : "Solo"}
+                ? t.metaarticle.colaboracion.equipo
+                : t.metaarticle.colaboracion.solo}
             </span>
           {/if}
         </div>
