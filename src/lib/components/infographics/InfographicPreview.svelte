@@ -6,6 +6,7 @@
   import { infographics as infographicsI18n } from "$lib/i18n/dictionaries/infographics.i18n";
   import { fade, scale } from "svelte/transition";
   import type { Lang } from "../../../routes/graphics/infographics.svelte";
+  import { t } from "$lib/i18n/index.svelte";
 
   function handleKey(e: KeyboardEvent) {
     if (e.key === "Escape") closePreview();
@@ -29,13 +30,13 @@
     open
     autofocus
     onkeydown={handleKey}
-    aria-label="Preview del proyecto"
+    aria-label={t.infographics.aria.projectPreview}
     transition:fade={{ duration: 150 }}
   >
     <button
       class="preview-backdrop"
       type="button"
-      aria-label="Cerrar preview"
+      aria-label={t.infographics.aria.closePreview}
       onclick={closePreview}
     ></button>
 
@@ -44,7 +45,7 @@
         class="preview-close"
         type="button"
         onclick={closePreview}
-        aria-label="Cerrar preview"
+        aria-label={t.infographics.aria.closePreview}
       >
         ✕
       </button>

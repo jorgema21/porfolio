@@ -29,6 +29,12 @@ export const layout = {
       part1: "Todos los derechos reservados",
       part2: "Imágenes Creative Commons",
     },
+
+    lightbox: {
+      enlargedImage: "Imagen ampliada",
+      closeImage: "Cerrar imagen",
+      altImage: "Visualización ampliada del proyecto",
+    },
   },
 
   en: {
@@ -60,6 +66,12 @@ export const layout = {
     footer: {
       part1: "All rights reserved",
       part2: "Creative Commons Images",
+    },
+
+    lightbox: {
+      enlargedImage: "Enlarged image",
+      closeImage: "Close image overlay",
+      altImage: "Enlarged project view",
     },
   },
 } as const;

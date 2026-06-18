@@ -69,7 +69,7 @@
       <button
         class="cover-wrapper"
         onclick={() => openLightbox(src)}
-        aria-label="Ampliar portada"
+        aria-label={t.infographics.aria.expandCover}
       >
         <img class="image image--cover" {src} alt="" />
       </button>
@@ -160,7 +160,7 @@
               <RichText value={block.caption[langSignal.current]} />
             </span>
           {/if}
-          <button onclick={() => openLightbox(src)} aria-label="Ampliar imagen">
+          <button onclick={() => openLightbox(src)} aria-label={t.infographics.aria.expandImage}>
             <img
               class="image image--{block.type}"
               {src}

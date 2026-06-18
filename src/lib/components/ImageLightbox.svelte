@@ -2,6 +2,8 @@
   import { lightbox, closeLightbox } from "$lib/state/lightbox.svelte";
   import { fade, scale } from "svelte/transition";
 
+  import { t } from "$lib/i18n/index.svelte";
+
   function handleClose() {
     closeLightbox();
   }
@@ -12,13 +14,13 @@
     class="lightbox-overlay"
     open
     onclose={handleClose}
-    aria-label="Imagen ampliada"
+    aria-label={t.layout.lightbox.enlargedImage}
     transition:fade={{ duration: 150 }}
   >
     <button
       class="lightbox-backdrop"
       type="button"
-      aria-label="Cerrar imagen"
+      aria-label={t.layout.lightbox.closeImage}
       onclick={closeLightbox}
     ></button>
 
@@ -30,13 +32,13 @@
         class="lightbox-close"
         type="button"
         onclick={closeLightbox}
-        aria-label="Cerrar imagen"
+        aria-label={t.layout.lightbox.closeImage}
       >
         ✕
       </button>
       <img
         src={lightbox.image}
-        alt="Visualización ampliada del proyecto"
+        alt={t.layout.lightbox.altImage}
         class="lightbox-image"
       />
     </div>

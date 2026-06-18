@@ -17,6 +17,10 @@ type AboutDict = {
   skillsTitle: string;
   languagesTitle: string;
   cta: string;
+
+  aria: {
+    languagesSelector: string;
+  };
 };
 
 export const about: Record<"es" | "en", AboutDict> = {
@@ -65,6 +69,9 @@ export const about: Record<"es" | "en", AboutDict> = {
     skillsTitle: "Herramientas que uso",
     languagesTitle: "Idiomas que hablo",
     cta: "Disponible para proyectos de infografía y datos y colaboraciones de estilo de vida y maternidad",
+    aria: {
+      languagesSelector: "Seleccionar idioma",
+    },
   },
 
   en: {
@@ -98,7 +105,7 @@ export const about: Record<"es" | "en", AboutDict> = {
     miniTimelineTitle: "Quick summary",
     miniTimeline: [
       "Journalism Degree at Valladolid (sep. 2017-jul. 2021)",
-      "Erasmus at Bérgamo (sep. 2019-jul. 2020)",
+      "Erasmus at Bergamo (sep. 2019-jul. 2020)",
       "Master Degree with El País (oct. 2021-sep. 2023)",
       "Visual Storytelling Internship (sep. 2022-sep. 2023)",
       "El País Sports (feb. to apr. 2024)",
@@ -111,5 +118,8 @@ export const about: Record<"es" | "en", AboutDict> = {
     skillsTitle: "Tools I Use",
     languagesTitle: "Languages I Speak",
     cta: "Available for data and infographic projects, as well as lifestyle and maternity collaborations",
+    aria: {
+      languagesSelector: "Select language",
+    },
   },
 };

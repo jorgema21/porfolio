@@ -53,7 +53,9 @@
       class="hamburger"
       class:is-open={mobileOpen}
       type="button"
-      aria-label="Abrir navegación"
+      aria-label={langSignal.current === "es"
+        ? "Abrir navegación"
+        : "Open navigation"}
       aria-expanded={mobileOpen}
       onclick={toggleMenu}
       in:fly={flyIn}

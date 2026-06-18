@@ -6,6 +6,8 @@
   import { openPreview } from "$lib/state/infographicPreview.svelte";
   import { base } from "$app/paths";
 
+  import { t } from "$lib/i18n/index.svelte";
+
   const { project, index = 0 } = $props<{
     project: Infographic;
     index?: number;
@@ -35,8 +37,12 @@
   onkeydown={(e) => e.key === "Enter" && openPreview(project)}
   role="button"
   tabindex="0"
-  aria-label="Ver detalles de {project.title[langSignal.current]}"
+  aria-label={t.infographics.aria.viewDetails.replace(
+    "{title}", 
+    project.title[langSignal.current]
+  )}
 >
+
   <div class="thumb">
     <img
       src={`${base}${project.image}`}

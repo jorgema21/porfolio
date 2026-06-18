@@ -115,7 +115,6 @@
           onmouseleave={() => (hovered = null)}
         />
 
-        <!-- Renderizamos el texto usando HTML nativo dentro del SVG -->
         {#if leaf.w * $progress > 50 && leaf.h * $progress > 30}
           <foreignObject
             x="8"

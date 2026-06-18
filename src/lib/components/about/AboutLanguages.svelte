@@ -61,7 +61,7 @@
   aria-labelledby="languages-title"
   bind:this={languagesSection}
 >
-  <div class="languages-selector" role="group" aria-label="Seleccionar idioma">
+  <div class="languages-selector" role="group" aria-label={t.about.aria.languagesSelector}>
     {#each languages as language, i (language.id)}
       <button
         type="button"
@@ -82,7 +82,6 @@
       <span class="scale-label">{dict.scale.beginner}</span>
 
       <div class="languages-circles" aria-hidden="true">
-        <!-- Combinamos level e i para asegurar una clave única y evitar errores de duplicados -->
         {#each circles as circle, i (circle.level + "-" + i)}
           <span
             class="language-circle"

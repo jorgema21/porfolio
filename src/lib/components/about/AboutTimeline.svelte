@@ -97,11 +97,11 @@
   {/each}
 
   <button
-    class="timeline-skip-btn"
-    class:hidden={isAtBottom}
-    onclick={scrollToBottom}
-    aria-label="Saltar al final de la línea de tiempo"
-  >
+  class="timeline-skip-btn"
+  class:hidden={isAtBottom}
+  onclick={scrollToBottom}
+  aria-label={t.timelineUI.aria.skipToBottom}
+>
     <svg
       xmlns="http://w3.org"
       viewBox="0 0 24 24"

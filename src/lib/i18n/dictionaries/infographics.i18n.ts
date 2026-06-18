@@ -32,6 +32,14 @@ type InfographicsDict = {
 
   intro: RichText;
   description: RichText;
+
+  aria: {
+    expandCover: string;
+    expandImage: string;
+    viewDetails: string;
+    projectPreview: string;
+    closePreview: string;
+  };
 };
 
 export const infographics: Record<"es" | "en", InfographicsDict> = {
@@ -121,7 +129,14 @@ export const infographics: Record<"es" | "en", InfographicsDict> = {
         text: "de manera prácticamente autodidacta en diferentes medios y empresas como autónomo.",
         bold: true,
       },
-    ] satisfies RichText,
+    ],
+    aria: {
+      expandCover: "Ampliar portada",
+      expandImage: "Ampliar imagen",
+      viewDetails: "Ver detalles de {title}",
+      projectPreview: "Previsualización del proyecto",
+      closePreview: "Cerrar previsualización",
+    },
   },
 
   en: {
@@ -210,6 +225,13 @@ export const infographics: Record<"es" | "en", InfographicsDict> = {
         text: "practically on my own at different media and companies as a freelance.",
         bold: true,
       },
-    ] satisfies RichText,
+    ],
+    aria: {
+      expandCover: "Enlarge cover image",
+      expandImage: "Enlarge image",
+      viewDetails: "View details for {title}",
+      projectPreview: "Project preview",
+      closePreview: "Close preview",
+    },
   },
 };
