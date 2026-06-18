@@ -13,7 +13,7 @@ type AboutDict = {
   study: string;
   infographics: string;
   lifestyle: string;
-  motherhood: string;
+  parenting: string;
   skillsTitle: string;
   languagesTitle: string;
   cta: string;
@@ -61,7 +61,7 @@ export const about: Record<"es" | "en", AboutDict> = {
     study: "Estudio",
     infographics: "Infografía",
     lifestyle: "Estilo de vida",
-    motherhood: "Maternidad",
+    parenting: "Maternidad",
     skillsTitle: "Herramientas que uso",
     languagesTitle: "Idiomas que hablo",
     cta: "Disponible para proyectos de infografía y datos y colaboraciones de estilo de vida y maternidad",
@@ -107,7 +107,7 @@ export const about: Record<"es" | "en", AboutDict> = {
     study: "Study",
     infographics: "Infographics",
     lifestyle: "Lifestyle",
-    motherhood: "Motherhood",
+    parenting: "Parenting",
     skillsTitle: "Tools I Use",
     languagesTitle: "Languages I Speak",
     cta: "Available for data and infographic projects, as well as lifestyle and maternity collaborations",

@@ -150,7 +150,7 @@
     {#each project?.blocks ?? [] as block, i (i)}
       {@const src =
         "src" in block
-          ? `${base}/images/infografias/${project?.slug}/${block.src}`
+          ? `${base}/images/graphics/${project?.slug}/${block.src}`
           : ""}
 
       {#if block.type === "hero" || block.type === "image"}

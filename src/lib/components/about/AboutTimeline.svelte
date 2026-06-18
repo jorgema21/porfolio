@@ -179,8 +179,8 @@
   .timeline-item[data-category="style"] {
     --timeline-color: var(--color-style);
   }
-  .timeline-item[data-category="motherhood"] {
-    --timeline-color: var(--color-motherhood);
+  .timeline-item[data-category="parenting"] {
+    --timeline-color: var(--color-parenting);
   }
 
   .timeline-item.left {

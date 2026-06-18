@@ -6,7 +6,7 @@ export const getImageSrc = (block: Block, slug: string) => {
     return "";
   }
 
-  return `/images/infografias/${slug}/${block.src}`;
+  return `/images/graphics/${slug}/${block.src}`;
 };
 
 export const getText = (block: Block, lang: Lang) => {

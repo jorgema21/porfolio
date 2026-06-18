@@ -1,4 +1,4 @@
-export type TimelineCategory = "study" | "infography" | "style" | "motherhood";
+export type TimelineCategory = "study" | "infography" | "style" | "parenting";
 
 export type TimelineId =
   | "journalism-degree"
@@ -11,7 +11,7 @@ export type TimelineId =
   | "start-freelance"
   | "end-a14"
   | "start-lifestyle"
-  | "start-motherhood"
+  | "start-parenting"
   | "start-sty"
   | "start-col"
   | "start-epgente"
@@ -35,7 +35,7 @@ const rawTimeline = [
   { id: "start-freelance", date: "04-2024", category: "infography" },
   { id: "end-a14", date: "12-2024", category: "infography" },
   { id: "start-lifestyle", date: "02-2025", category: "style" },
-  { id: "start-motherhood", date: "04-2025", category: "motherhood" },
+  { id: "start-parenting", date: "04-2025", category: "parenting" },
   { id: "start-sty", date: "05-2025", category: "infography" },
   { id: "start-col", date: "05-2025", category: "infography" },
   { id: "start-epgente", date: "09-2025", category: "style" },

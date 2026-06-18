@@ -5,7 +5,7 @@
   import { formatDate } from "$lib/utils/formatDate";
   import { infographics as infographicsI18n } from "$lib/i18n/dictionaries/infographics.i18n";
   import { fade, scale } from "svelte/transition";
-  import type { Lang } from "../../../routes/infografias/infographics.svelte";
+  import type { Lang } from "../../../routes/graphics/infographics.svelte";
 
   function handleKey(e: KeyboardEvent) {
     if (e.key === "Escape") closePreview();
@@ -86,7 +86,7 @@
         <h2>
           <a
             class="preview-link link-underline"
-            href={`${base}/infografias/${preview.project.slug}`}
+            href={`${base}/graphics/${preview.project.slug}`}
           >
             {getLocalized(preview.project.title)[langSignal.current]}
             <svg

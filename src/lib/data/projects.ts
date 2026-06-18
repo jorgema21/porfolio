@@ -1194,7 +1194,7 @@ const projects = [
     homeVisible: false,
     title: {
       es: "Entrevista a Pepe Pérez, experto en sueño",
-      en: "An Interview With Olga Sesé, Sleep Expert",
+      en: "Interview With Olga Sesé, Sleep Expert",
     },
   },
   {
@@ -1302,7 +1302,7 @@ const projects = [
     homeVisible: false,
     title: {
       es: "Entrevista a la TikToker de maternidad Julia Menú",
-      en: "An Interview With Julia Menú, TikToker Motherhood",
+      en: "Interview With Julia Menú, TikToker parenting",
     },
   },
   {
@@ -1314,7 +1314,7 @@ const projects = [
     homeVisible: false,
     title: {
       es: "Entrevista a la psicóloga perinatal Paola Roig",
-      en: "An Interview With Olga Sesé, Perinatal Psychologist",
+      en: "Interview With Paola Roig, Perinatal Psychologist",
     },
   },
 ] satisfies HomeProject[];

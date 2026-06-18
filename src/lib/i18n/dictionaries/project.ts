@@ -10,7 +10,7 @@ export const project = {
     category: {
       infografia: "Infographics",
       estilo_de_vida: "Lifestyle",
-      maternidad: "Motherhood",
+      maternidad: "parenting",
     },
   },
 } as const;

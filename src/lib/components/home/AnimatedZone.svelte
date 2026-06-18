@@ -27,7 +27,7 @@
   const getProjectMeta = (project: HomeProject) => {
     const isInfographic = project.category === "infografia";
     const href = isInfographic
-      ? `${base}/infografias/${project.slug}`
+      ? `${base}/graphics/${project.slug}`
       : project.externalUrl;
     const imageSrc = project.image?.startsWith("http")
       ? project.image
@@ -237,7 +237,7 @@
       color: var(--color-style);
     }
     &.maternidad {
-      color: var(--color-motherhood);
+      color: var(--color-parenting);
     }
   }
 

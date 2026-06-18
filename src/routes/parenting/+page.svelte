@@ -8,11 +8,11 @@
 </script>
 
 <div class="page">
-  <h1>{t.motherhood.title}</h1>
+  <h1>{t.parenting.title}</h1>
 
-  <RichText value={t.motherhood.intro} />
-  <RichText value={t.motherhood.description} />
-  <RichText value={t.motherhood.aim} />
+  <RichText value={t.parenting.intro} />
+  <RichText value={t.parenting.description} />
+  <RichText value={t.parenting.aim} />
 
   <GroupAccordion groups={groupedData.grouped} />
 </div>

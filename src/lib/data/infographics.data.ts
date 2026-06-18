@@ -12,7 +12,7 @@ export interface Infographic extends Record<string, unknown>, InfographicMeta {
 }
 
 const metaModules = import.meta.glob<InfographicMeta>(
-  "/src/content/infografias/**/meta.json",
+  "/src/content/graphics/**/meta.json",
   { eager: true, import: "default" },
 );
 

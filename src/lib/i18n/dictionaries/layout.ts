@@ -1,13 +1,13 @@
 export const layout = {
   es: {
     nav: {
-      mi_porfolio: "Mi Porfolio",
+      my_portfolio: "Mi Porfolio",
       home: "Inicio",
-      infografias: "Infografías",
-      estilo: "Estilo de vida",
-      maternidad: "Maternidad",
-      about: "Sobre mí",
-      contacto: "Contacto",
+      graphics: "Infografías",
+      lifestyle: "Estilo de vida",
+      parenting: "Maternidad",
+      "about-me": "Sobre mí",
+      contact: "Contacto",
     },
 
     langSwitch: {
@@ -33,18 +33,18 @@ export const layout = {
 
   en: {
     nav: {
-      mi_porfolio: "My Portfolio",
+      my_portfolio: "My Portfolio",
       home: "Home",
-      infografias: "Graphics",
-      estilo: "Lifestyle",
-      maternidad: "Parenting",
-      about: "About Me",
-      contacto: "Contact",
+      graphics: "Graphics",
+      lifestyle: "Lifestyle",
+      parenting: "Parenting",
+      "about-me": "About Me",
+      contact: "Contact",
     },
 
     langSwitch: {
       labelToEn: "Switch language to English",
-      labelToEs: "Switch language to Spanish",
+      labelToEs: "Cambiar idioma a español",
       flagEs: "/images/flags/es.svg",
       flagEn: "/images/flags/us.svg",
     },

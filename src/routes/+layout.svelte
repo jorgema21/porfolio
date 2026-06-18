@@ -65,9 +65,9 @@
   <title>{t.seo.title}</title>
   <meta name="description" content={t.seo.description} />
 
-  {#if $page.url.pathname.includes("/infografias/") && $page.url.pathname
+  {#if $page.url.pathname.includes("/graphics/") && $page.url.pathname
       .split("/")
-      .pop() !== "infografias"}
+      .pop() !== "graphics"}
     <meta name="robots" content="noindex, follow" />
   {:else}
     <meta name="robots" content="index, follow" />

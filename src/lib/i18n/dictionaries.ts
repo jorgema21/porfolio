@@ -9,7 +9,7 @@ import { home } from "./dictionaries/home";
 import { infographics } from "./dictionaries/infographics.i18n";
 import { layout } from "./dictionaries/layout";
 import { metaarticle } from "./dictionaries/meta-article";
-import { motherhood } from "./dictionaries/motherhood";
+import { parenting } from "./dictionaries/parenting";
 import { project } from "./dictionaries/project";
 import { style } from "./dictionaries/style.i18n";
 
@@ -22,7 +22,7 @@ export const dictionaries = {
     languages: languages.es,
     layout: layout.es,
     metaarticle: metaarticle.es,
-    motherhood: motherhood.es,
+    parenting: parenting.es,
     project: project.es,
     skills: skills.es,
     skillLevels: skillLevels.es,
@@ -38,7 +38,7 @@ export const dictionaries = {
     languages: languages.en,
     layout: layout.en,
     metaarticle: metaarticle.en,
-    motherhood: motherhood.en,
+    parenting: parenting.en,
     project: project.en,
     skills: skills.en,
     skillLevels: skillLevels.en,

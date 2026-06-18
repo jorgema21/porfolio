@@ -75,7 +75,7 @@
       <span class="legend-item study">{t.about.study}</span>
       <span class="legend-item infography">{t.about.infographics}</span>
       <span class="legend-item style">{t.about.lifestyle}</span>
-      <span class="legend-item motherhood">{t.about.motherhood}</span>
+      <span class="legend-item parenting">{t.about.parenting}</span>
     </div>
 
     <AboutTimeline />
@@ -271,8 +271,8 @@
     &.style {
       --timeline-color: var(--color-style);
     }
-    &.motherhood {
-      --timeline-color: var(--color-motherhood);
+    &.parenting {
+      --timeline-color: var(--color-parenting);
     }
   }
 

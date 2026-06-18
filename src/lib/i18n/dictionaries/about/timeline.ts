@@ -73,7 +73,7 @@ export const timeline = {
         "Empecé a escribir en la sección y me centré en temas de psicología cotidiana",
     },
 
-    "start-motherhood": {
+    "start-parenting": {
       title: "Colaboración con la sección Mamas&Papas de El País",
       description:
         "Comencé a hacer temas de maternidad con el foco en psicología materna e infantil",
@@ -170,7 +170,7 @@ export const timeline = {
         "Started writing for the section, focusing on everyday psychology.",
     },
 
-    "start-motherhood": {
+    "start-parenting": {
       title: "Collaboration with El País Mamas&Papas section",
       description:
         "Began covering parenting topics, with a focus on maternal and child psychology",

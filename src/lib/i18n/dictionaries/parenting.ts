@@ -8,7 +8,7 @@ type InfographicsDict = {
   aim: RichText;
 };
 
-export const motherhood: Record<"es" | "en", InfographicsDict> = {
+export const parenting: Record<"es" | "en", InfographicsDict> = {
   es: {
     title: "Maternidad",
     others: "Otros",
@@ -43,7 +43,7 @@ export const motherhood: Record<"es" | "en", InfographicsDict> = {
   },
 
   en: {
-    title: "Motherhood",
+    title: "Parenting",
     others: "Others",
 
     intro: [
@@ -51,7 +51,7 @@ export const motherhood: Record<"es" | "en", InfographicsDict> = {
         text: "Welcome to the ",
       },
       {
-        text: "motherhood ",
+        text: "parenting ",
         bold: true,
       },
       {

@@ -8,10 +8,10 @@ import type {
 import type { PageLoad, EntryGenerator } from "./$types";
 
 const contentModules = import.meta.glob(
-  "/src/content/infografias/**/content.json",
+  "/src/content/graphics/**/content.json",
   { import: "default" },
 );
-const metaModules = import.meta.glob("/src/content/infografias/**/meta.json", {
+const metaModules = import.meta.glob("/src/content/graphics/**/meta.json", {
   import: "default",
 });
 

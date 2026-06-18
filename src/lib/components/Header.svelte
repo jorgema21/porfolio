@@ -5,11 +5,11 @@
   import { cubicOut } from "svelte/easing";
 
   const navItems = [
-    { href: `${base}/infografias`, key: "infografias" },
-    { href: `${base}/estilo-de-vida`, key: "estilo" },
-    { href: `${base}/maternidad`, key: "maternidad" },
-    { href: `${base}/sobre-mi`, key: "about" },
-    { href: `${base}/contacto`, key: "contacto" },
+    { href: `${base}/graphics`, key: "graphics" },
+    { href: `${base}/lifestyle`, key: "lifestyle" },
+    { href: `${base}/parenting`, key: "parenting" },
+    { href: `${base}/about-me`, key: "about-me" },
+    { href: `${base}/contact`, key: "contact" },
   ] as const;
 
   const delay = 120;
@@ -66,7 +66,7 @@
 
   {#if visible >= 1}
     <h1 class="logo" in:fly={flyIn}>
-      <a href="{base}/">{t.layout.nav.mi_porfolio}</a>
+      <a href="{base}/">{t.layout.nav.my_portfolio}</a>
     </h1>
   {/if}
 
