@@ -33,11 +33,11 @@ const projects = [
     featured: true,
     title: {
       es: "Digital News Report 2026: La situación de los medios de comunicación en el mundo y su consumo",
-      en: "Industrialized Housing: A Viable Solution to the Deep Residential Crisis Gripping Spain?",
+      en: "Digital News Report 2026: The Global State of News Media and Media Consumption",
     },
     description: {
       es: "Apoyo gráfico extenso a través de decenas de visualizaciones de datos al principal informe anual mundial de los medios de comunicación",
-      en: "A data-driven analysis of construction labor shortages and the technical viability of modular building models.",
+      en: "Extensive visual support through dozens of data visualizations for the leading annual global report on news media and audience consumption trends.",
     },
 
     image: "/images/projects/digital-news-report-2026-ip.webp",

@@ -5,7 +5,7 @@
 </script>
 
 <footer class="page-footer">
-  <p>Portfolio © {year}</p>
+  <p>{t.layout.footer.part0} © {year}</p>
   <p>{t.layout.footer.part1}</p>
   <p>{t.layout.footer.part2}</p>
 </footer>

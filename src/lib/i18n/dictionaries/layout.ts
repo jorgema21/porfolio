@@ -26,8 +26,9 @@ export const layout = {
     },
 
     footer: {
-      part1: "Todos los derechos reservados",
-      part2: "Imágenes Creative Commons",
+      part0: "Porfolio",
+      part1: "Última actualización: 18 de junio",
+      part2: "Un porfolio diseñado y desarrollado por Jorge Marzo",
     },
 
     lightbox: {
@@ -64,8 +65,9 @@ export const layout = {
     },
 
     footer: {
-      part1: "All rights reserved",
-      part2: "Creative Commons Images",
+      part0: "Portfolio",
+      part1: "Last updated: June 18",
+      part2: "A portfolio designed and developed by Jorge Marzo",
     },
 
     lightbox: {

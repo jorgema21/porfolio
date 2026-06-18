@@ -215,7 +215,7 @@
     max-width: var(--content-width);
     margin-inline: auto;
     padding: 0 var(--space-6) var(--space-12);
-    font-family: var(--font-serif);
+    font-family: var(--font-sans);
     line-height: var(--lh-base);
   }
   .cover-wrapper,
