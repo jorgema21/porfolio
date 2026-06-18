@@ -172,7 +172,7 @@
 
   .card.feature {
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr 2fr;
     gap: var(--space-8);
     align-items: start;
     padding-bottom: var(--space-4);

@@ -6,7 +6,7 @@ export const metaarticle = {
       equipo: "👥 En equipo",
     },
     mi_porfolio: {
-      porfolio: "Mi Portfolio",
+      porfolio: "Mi Porfolio",
     },
   },
 

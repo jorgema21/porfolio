@@ -58,7 +58,7 @@ export const infographics: Record<"es" | "en", InfographicsDict> = {
     },
 
     insights: {
-      totalWorks: "Trabajos en el portfolio",
+      totalWorks: "Trabajos en el porfolio",
       works: "trabajos",
     },
 

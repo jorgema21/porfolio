@@ -22,13 +22,13 @@
             "value": {
                 "es": [
                     {
-                        "text": "Este portfolio es un proyecto en sí mismo. ",
+                        "text": "Este porfolio es un proyecto en sí mismo. ",
                         "bold": true
                     },
                     "Desarrollé un entorno editorial propio diseñado desde cero para organizar ",
                     "mi trabajo en periodismo de datos, infografía y reportajes escritos ",
                     "bajo una lógica inspirada en los medios digitales. ",
-                    "Haber trabajado en redacciones me llevó a plantear el portfolio como una portada periodística, ",
+                    "Haber trabajado en redacciones me llevó a plantear el porfolio como una portada periodística, ",
                     "donde los proyectos destacados aparecen jerarquizados visualmente y el resto se distribuye por secciones. ",
                     "Además, cada proyecto cuenta con una página propia para ampliar contexto, metodología y resultados."
                 ],
@@ -53,7 +53,7 @@
                     "El orden interno busca una gestión centralizada del contenido y un control directo sobre cómo construyo y presento cada pieza. ",
                     "Cada proyecto se compone de archivos locales que separan texto, imágenes y metadatos, ",
                     "lo que evita tener que reestructurar el código cada vez que añado un proyecto nuevo. ",
-                    "Las rutas se generan de forma automática, por tanto, el portfolio crece sin obligarme a cambiar el código cada vez que incorporo nuevos contenidos."
+                    "Las rutas se generan de forma automática, por tanto, el porfolio crece sin obligarme a cambiar el código cada vez que incorporo nuevos contenidos."
                 ],
                 "en": [
                     "Internal structure aims for centralized content management and direct control over how I build and present each piece. ",
@@ -158,7 +158,7 @@
             "type": "text",
             "value": {
                 "es": [
-                    "Hace unos años usé y vi portfolios tradicionales basados en cuadrículas de proyectos y enlaces externos. ",
+                    "Hace unos años usé y vi porfolios tradicionales basados en cuadrículas de proyectos y enlaces externos. ",
                     "Los trabajos aparecían como elementos aislados, sin contexto ni relación entre ellos."
                 ],
                 "en": [
@@ -204,7 +204,7 @@
                     "Al mismo tiempo, el proyecto refleja mi propio proceso de aprendizaje. ",
                     "Meses antes existió una primera versión que nunca llegó a publicarse. ",
                     "El estudio de SvelteKit y Svelte 5 redefinió aquella idea inicial y me permitió construir un sitio mucho más flexible, escalable y veloz. ",
-                    "En ese sentido, este portfolio muestra tanto proyectos terminados como la evolución técnica y profesional que hay detrás de ellos."
+                    "En ese sentido, este porfolio muestra tanto proyectos terminados como la evolución técnica y profesional que hay detrás de ellos."
                 ],
                 "en": [
                     "At the same time, the project reflects my own learning process. ",
@@ -235,7 +235,7 @@
             "type": "text",
             "value": {
                 "es": [
-                    "En lugar de organizar el proyecto como un conjunto de páginas estáticas, el portfolio funciona como una publicación continua. ",
+                    "En lugar de organizar el proyecto como un conjunto de páginas estáticas, el porfolio funciona como una publicación continua. ",
                     "Cada pieza no es una página aislada, sino parte de un archivo más amplio."
                 ],
                 "en": [
@@ -307,7 +307,7 @@
             "type": "text",
             "value": {
                 "es": [
-                    "El resultado es un portfolio que crece sin alterar su base. ",
+                    "El resultado es un porfolio que crece sin alterar su base. ",
                     "Subir nuevos proyectos significa únicamente incorporar nuevos datos y no cambiar apenas el código. ",
                     "Con esto puedo seguir añadiendo textos e infografías para no tener que reorganizar todo."
                 ],
@@ -473,7 +473,7 @@
                     "Otras páginas priorizan la lectura y el ritmo narrativo. ",
                     "En el caso de las secciones de estilo de vida y maternidad, presento todos los proyectos ",
                     "con un título y enlace a la web del periódico, y divido los trabajos por desplegables según el medio. ",
-                    "Los textos e imágenes de cada pieza dentro de este portfolio los organizo en bloques para ",
+                    "Los textos e imágenes de cada pieza dentro de este porfolio los organizo en bloques para ",
                     "evitar la saturación visual y presentar un recorrido limpio. Con ",
                     {
                         "text": "RichText ",
@@ -505,7 +505,7 @@
                         "italic": true
                     },
                     "provienen siempre de fuentes con licencia Creative Commons. ",
-                    "En mi portfolio anterior, la idea inicial era utilizar el mejor gráfico de cada proyecto como portada. ",
+                    "En mi porfolio anterior, la idea inicial era utilizar el mejor gráfico de cada proyecto como portada. ",
                     "Sin embargo, al considerar que no alcanzaban la calidad óptima, opté por diseñar una imagen personalizada para cada uno. ",
                     "En esta nueva versión he puesto mayor dedicación, he aplicado nuevas nociones de diseño y he consolidado una línea gráfica mucho más definida para los proyectos recientes."
                 ],
@@ -611,7 +611,7 @@
                         "text": "i18n ",
                         "italic": true
                     },
-                    "forma parte troncal de este portfolio desde su origen. ",
+                    "forma parte troncal de este porfolio desde su origen. ",
                     "Planteé el entorno para gestionar la parte escrita en dos idiomas mediante un archivo centralizado que simplifica el mantenimiento y evita duplicaciones."
                 ],
                 "en": [
@@ -692,7 +692,7 @@
             "type": "text",
             "value": {
                 "es": [
-                    "La accesibilidad forma parte de las condiciones iniciales de este portfolio. ",
+                    "La accesibilidad forma parte de las condiciones iniciales de este porfolio. ",
                     "Busco una lectura cómoda en distintos contextos de atención y dispositivos para eliminar la fricción en los textos largos."
                 ],
                 "en": [
@@ -838,7 +838,7 @@
             "type": "text",
             "value": {
                 "es": [
-                    "En el portfolio antiguo las imágenes estaban en formato JPG y pesaban demasiado. ",
+                    "En el porfolio antiguo las imágenes estaban en formato JPG y pesaban demasiado. ",
                     "Para este proyecto he realizado una conversión manual a ",
                     {
                         "text": "WebP ",
@@ -880,7 +880,7 @@
                         "italic": true
                     },
                     "lo que elimina las llamadas a servicios externos como Google Fonts y asegura una carga estable. ",
-                    "El portfolio se basa en un diseño estático para funcionar en GitHub Pages."
+                    "El porfolio se basa en un diseño estático para funcionar en GitHub Pages."
                 ],
                 "en": [
                     "Even font files are part of this strategy. ",
@@ -915,7 +915,7 @@
             "type": "text",
             "value": {
                 "es": [
-                    "Este proyecto marca un punto de inflexión en mi forma de construir y entender un portfolio. ",
+                    "Este proyecto marca un punto de inflexión en mi forma de construir y entender un porfolio. ",
                     "Su estado actual representa el fruto de varios intentos previos, pruebas incompletas y decisiones que maduran con el tiempo."
                 ],
                 "en": [
@@ -942,7 +942,7 @@
             "value": {
                 "es": [
                     "La creación de este entorno consolida mi perfil de aprendizaje rápido y mi capacidad de esfuerzo. ",
-                    "El desarrollo de este portfolio y mi ambición por hacerlo mejor y aprender me obligó a combinar diseño editorial, orden de archivos y contenidos, accesibilidad, traducción y desarrollo dentro de un mismo proyecto.",
+                    "El desarrollo de este porfolio y mi ambición por hacerlo mejor y aprender me obligó a combinar diseño editorial, orden de archivos y contenidos, accesibilidad, traducción y desarrollo dentro de un mismo proyecto.",
                     "Exploro herramientas vanguardistas y complejas que simplifiquen el desarrollo y generen un impacto visual potente. ",
                     "Mi propósito es elevar el nivel de calidad con cada gran proyecto."
                 ],
@@ -971,7 +971,7 @@
             "type": "text",
             "value": {
                 "es": [
-                    "Al final, este portfolio abre una metodología de trabajo a largo plazo. ",
+                    "Al final, este porfolio abre una metodología de trabajo a largo plazo. ",
                     "Consiste en una base preparada para evolucionar junto a mis futuras infografías y narrativas interactivas de periodismo de datos."
                 ],
                 "en": [

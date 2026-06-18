@@ -1,7 +1,7 @@
 export const layout = {
   es: {
     nav: {
-      mi_porfolio: "Mi Portfolio",
+      mi_porfolio: "Mi Porfolio",
       home: "Inicio",
       infografias: "Infografías",
       estilo: "Estilo de vida",
@@ -17,6 +17,14 @@ export const layout = {
       flagEn: "/images/flags/us.svg",
     },
 
+    seo: {
+      title: "Porfolio | Dataviz y reportajes",
+      description:
+        "Porfolio profesional de infografías, visualización de datos y reportajes.",
+      ogDescription:
+        "Narrativas visuales, análisis y visualización de datos y redacción de reportajes.",
+    },
+
     footer: {
       part1: "Todos los derechos reservados",
       part2: "Imágenes Creative Commons",
@@ -27,10 +35,10 @@ export const layout = {
     nav: {
       mi_porfolio: "My Portfolio",
       home: "Home",
-      infografias: "Infographics",
+      infografias: "Graphics",
       estilo: "Lifestyle",
-      maternidad: "Motherhood",
-      about: "About me",
+      maternidad: "Parenting",
+      about: "About Me",
       contacto: "Contact",
     },
 
@@ -39,6 +47,14 @@ export const layout = {
       labelToEs: "Switch language to Spanish",
       flagEs: "/images/flags/es.svg",
       flagEn: "/images/flags/us.svg",
+    },
+
+    seo: {
+      title: "Portfolio | Graphics & Data Journalism",
+      description:
+        "Professional portfolio specializing in graphics, data visualization, and reporting.",
+      ogDescription:
+        "Visual narratives, data analysis, information design, and feature reporting.",
     },
 
     footer: {

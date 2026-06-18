@@ -7,10 +7,13 @@
   import { browser } from "$app/environment";
 
   import { langSignal } from "$lib/i18n/lang.svelte";
+  import { layout } from "$lib/i18n/dictionaries/layout";
 
   const { children } = $props();
 
   let showScrollTop = $state(false);
+
+  const t = $derived(layout[langSignal.current]);
 
   if (browser && !localStorage.getItem("lang")) {
     const detected = navigator.language.startsWith("es") ? "es" : "en";
@@ -19,9 +22,7 @@
 
   const handleScroll = () => {
     const documentHeight = document.documentElement.scrollHeight;
-
     const windowHeight = window.innerHeight;
-
     const totalScrollableDistance = documentHeight - windowHeight;
 
     if (totalScrollableDistance <= 0) {
@@ -29,7 +30,6 @@
       return;
     }
     const scrollPercentage = (window.scrollY / totalScrollableDistance) * 100;
-
     showScrollTop = scrollPercentage >= 95;
   };
 
@@ -43,7 +43,6 @@
   $effect(() => {
     if (browser) {
       document.documentElement.lang = langSignal.current;
-
       window.addEventListener("scroll", handleScroll, { passive: true });
     }
 
@@ -54,16 +53,17 @@
     };
   });
 
-  let currentPath = $derived($page.url.pathname.split("/").pop() || "Inicio");
+  let currentPath = $derived($page.url.pathname.split("/").pop() || "home");
+  let announcePath = $derived(
+    langSignal.current === "es"
+      ? `Navegando a la página de ${t.nav[currentPath as keyof typeof t.nav] || t.nav.home}`
+      : `Navigating to ${t.nav[currentPath as keyof typeof t.nav] || t.nav.home} page`,
+  );
 </script>
 
 <svelte:head>
-  <title>Portfolio | Dataviz y reportajes</title>
-
-  <meta
-    name="description"
-    content="Portfolio profesional de infografías, visualización de datos y reportajes."
-  />
+  <title>{t.seo.title}</title>
+  <meta name="description" content={t.seo.description} />
 
   {#if $page.url.pathname.includes("/infografias/") && $page.url.pathname
       .split("/")
@@ -75,16 +75,13 @@
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Portfolio" />
-  <meta property="og:title" content="Portfolio | Dataviz y reportajes" />
-  <meta
-    property="og:description"
-    content="Narrativas visuales, análisis y visualización de datos y redacción de reportajes."
-  />
-  <meta property="og:image" content="/images/portfolio-og.webp" />
+  <meta property="og:title" content={t.seo.title} />
+  <meta property="og:description" content={t.seo.ogDescription} />
+  <meta property="og:image" content="/images/projects/este-porfolio-ip.webp" />
 </svelte:head>
 
 <div class="sr-only" role="status" aria-live="assertive" aria-atomic="true">
-  Navegando a la página de {currentPath}
+  {announcePath}
 </div>
 
 <Header />
@@ -92,11 +89,14 @@
 <main>
   {@render children()}
 </main>
+
 <button
   class="scroll-top-btn"
   class:visible={showScrollTop}
   onclick={scrollToTop}
-  aria-label="Volver al inicio de la página"
+  aria-label={langSignal.current === "es"
+    ? "Volver al inicio de la página"
+    : "Scroll to top"}
 >
   <svg
     xmlns="http://w3.org"
@@ -115,18 +115,17 @@
 <ImageLightbox />
 
 <style>
+
   .scroll-top-btn {
     position: fixed;
     bottom: var(--space-6, 24px);
     right: var(--space-6, 24px);
     z-index: 90;
-
     display: flex;
     align-items: center;
     justify-content: center;
     width: 40px;
     height: 40px;
-
     border: 1px solid var(--color-border, #e5e7eb);
     border-radius: var(--radius-full, 9999px);
     background: var(--color-white, #ffffff);
@@ -141,27 +140,22 @@
       transform 300ms cubic-bezier(0.16, 1, 0.3, 1),
       background-color 200ms ease;
   }
-
   .scroll-top-btn svg {
     width: 16px;
     height: 16px;
     transition: transform 200ms ease;
   }
-
   .scroll-top-btn.visible {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
   }
-
   .scroll-top-btn:hover {
     background: var(--color-muted-background, #f9fafb);
   }
-
   .scroll-top-btn:hover svg {
     transform: translateY(-2px);
   }
-
   @media (max-width: 768px) {
     .scroll-top-btn {
       bottom: var(--space-4, 16px);
@@ -170,7 +164,6 @@
       height: 36px;
     }
   }
-
   @media (prefers-reduced-motion: reduce) {
     :global(*),
     :global(*::before),
@@ -180,7 +173,6 @@
       transition-duration: 0.01ms !important;
       scroll-behavior: auto !important;
     }
-
     .scroll-top-btn {
       transition: none !important;
     }

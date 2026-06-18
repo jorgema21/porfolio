@@ -31,8 +31,8 @@
   }
 
   .home-intro {
-    text-align: center;
-    font-family: var(--font-serif);
+    text-align: left;
+    font-family: var(--font-sans);
     font-size: var(--text-sm);
     line-height: var(--lh-base);
 

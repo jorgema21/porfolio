@@ -1,19 +1,18 @@
 export const home = {
   es: {
     intro: [
-      "¡Bienvenido/a a mi porfolio!",
-      "Aquí verás varios de los trabajos que he hecho, por novedad e importancia.",
-      "Para verlos todos por clase, o para más información sobre mí,",
-      "navega por las secciones superiores."
+      "¡Te doy la bienvenida a mi porfolio!",
+      "Aquí selecciono mis mejores proyectos de periodismo de datos, infografía y desarrollo web.",
+      "También una biblioteca con todos los reportajes escritos en prensa.",
+      "Explora las diferentes categorías y mi trayectoria en las secciones superiores.",
     ],
   },
-
   en: {
     intro: [
       "Welcome to my portfolio!",
-      "Here you'll find a selection of my work, organized by relevance and recency.",
-      "To explore everything by category or learn more about me,",
-      "use the navigation above."
+      "Here I select my finest data journalism, infographics and web development projects.",
+      "Also a repository containing all my published press features.",
+      "Explore the different categories and my background in the sections above.",
     ],
   },
 } as const;
