@@ -27,15 +27,19 @@ function ViteStaticResize() {
             await resizeImagesRecursively(fullPath);
           } else if (file.endsWith(".webp")) {
             try {
-              const image = sharp(fullPath);
+              const fileBuffer = fs.readFileSync(fullPath);
+              const image = sharp(fileBuffer);
               const metadata = await image.metadata();
 
               if (metadata.width && metadata.width > 1200) {
-                const buffer = await image
+                const outputBuffer = await image
                   .resize({ width: 1200, withoutEnlargement: true })
                   .toBuffer();
                 
-                fs.writeFileSync(fullPath, buffer);
+                image.destroy();
+                await fs.promises.writeFile(fullPath, outputBuffer);
+              } else {
+                image.destroy();
               }
             } catch (err) {
               console.error(`Error optimizando dimensiones de: ${file}`, err);
@@ -44,7 +48,7 @@ function ViteStaticResize() {
         }
       };
 
-      console.log("Redimensionando imágenes WebP estáticas a un máximo de 1200px");
+      console.log(" Redimensionando imágenes WebP estáticas");
       await resizeImagesRecursively(outDir);
       console.log("Redimensionamiento completado con éxito");
     }

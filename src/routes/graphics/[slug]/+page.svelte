@@ -182,6 +182,7 @@
               class="image image--{block.type}"
               {src}
               alt={block.alt?.[langSignal.current] ?? ""}
+              sizes="(max-width: 768px) 100vw, 1200px"
               loading={isFirstBlock ? "eager" : "lazy"}
               fetchpriority={isFirstBlock ? "high" : "low"}
               decoding={isFirstBlock ? "sync" : "async"}
