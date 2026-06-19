@@ -71,7 +71,17 @@
         onclick={() => openLightbox(src)}
         aria-label={t.infographics.aria.expandCover}
       >
-        <img class="image image--cover" {src} alt="" />
+        <img
+          class="image image--cover"
+          {src}
+          alt=""
+          width="16"
+          height="9"
+          style="aspect-ratio: 16 / 9; width: 100%; height: auto;"
+          loading="eager"
+          fetchpriority="high"
+          decoding="sync"
+        />
       </button>
     {/if}
   </header>
@@ -152,20 +162,29 @@
         "src" in block
           ? `${base}/images/graphics/${project?.slug}/${block.src}`
           : ""}
+      {@const isFirstBlock = i === 0}
 
       {#if block.type === "hero" || block.type === "image"}
-        <div class="image-wrapper">
+        <div
+          class="image-wrapper"
+          style="content-visibility: auto; contain-intrinsic-size: 0 500px;"
+        >
           {#if block.caption?.[langSignal.current]}
             <span class="image-title">
               <RichText value={block.caption[langSignal.current]} />
             </span>
           {/if}
-          <button onclick={() => openLightbox(src)} aria-label={t.infographics.aria.expandImage}>
+          <button
+            onclick={() => openLightbox(src)}
+            aria-label={t.infographics.aria.expandImage}
+          >
             <img
               class="image image--{block.type}"
               {src}
               alt={block.alt?.[langSignal.current] ?? ""}
-              loading="lazy"
+              loading={isFirstBlock ? "eager" : "lazy"}
+              fetchpriority={isFirstBlock ? "high" : "low"}
+              decoding={isFirstBlock ? "sync" : "async"}
             />
           </button>
         </div>

@@ -7,12 +7,16 @@
 
   const { items } = $props<{ items: HomeProject[] }>();
 
-  let visibleCount = $state(0);
+  let visibleCount = $state(2);
   const baseDelay = 50;
 
   $effect(() => {
     if (!items.length) return;
-    visibleCount = 0;
+
+    if (items.length <= 2) {
+      visibleCount = items.length;
+      return;
+    }
 
     const interval = setInterval(() => {
       visibleCount += 1;
@@ -58,9 +62,9 @@
       style:--col-span={project.colSpan}
       style:--row-start={project.rowStart}
       style:--row-span={project.rowSpan ?? 1}
-      in:fly={isCritical
-        ? { duration: 0 }
-        : { y: 50, duration: 2000, easing: cubicOut }}
+      in:fly={!isCritical
+        ? { y: 20, duration: 400, easing: cubicOut }
+        : undefined}
     >
       {#if project.image && project.variant !== "list"}
         <div class="thumb">
@@ -69,7 +73,7 @@
             alt={project.title[langSignal.current]}
             width="800"
             height="450"
-            decoding="async"
+            decoding={isCritical ? "sync" : "async"}
             loading={isCritical ? "eager" : "lazy"}
             fetchpriority={isCritical ? "high" : "low"}
           />
@@ -138,8 +142,6 @@
     border-bottom: none;
     padding-bottom: 0;
   }
-
-
 
   .thumb {
     overflow: hidden;
