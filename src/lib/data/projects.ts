@@ -70,7 +70,7 @@ const projects = [
   {
     id: "p2",
     externalUrl:
-      "https://elpais.com/estilo-de-vida/2026-05-21/falsos-recuerdos-por-que-la-memoria-reconstruye-nuestro-pasado.html",
+      "https://elpais.com/estilo-de-vida/2026-06-18/humor-rutina-y-cercania-cuando-la-vida-de-oficina-se-convierte-en-contenido-para-redes-sociales.html",
     variant: "list",
     category: "estilo_de_vida",
     homeVisible: true,
