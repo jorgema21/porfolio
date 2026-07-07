@@ -2,6 +2,8 @@
 
 Este portfolio es un proyecto en sí mismo. Desarrollé un sistema editorial propio diseñado desde cero para organizar mi trabajo en periodismo de datos, infografía y reportajes escritos bajo la forma de funcionar de un medio digital.
 
+https://jorgema21.github.io/porfolio/
+
 ## Características del Sistema
 
 * **Arquitectura Local**: El contenido se apoya en archivos estáticos estructurados como `content.json` y `meta.json`. Esto garantiza un control absoluto de los metadatos sin necesidad de bases de datos externas.
