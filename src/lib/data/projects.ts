@@ -25,7 +25,7 @@ export interface HomeProject {
 
 const projects = [
   {
-    id: "p0",
+    id: "p1",
     slug: "digital-news-report-2026",
     variant: "hero",
     category: "infografia",
@@ -47,7 +47,7 @@ const projects = [
     rowSpan: 3,
   },
   {
-    id: "p1",
+    id: "p2",
     slug: "vivienda-construnews",
     variant: "feature",
     category: "infografia",
@@ -68,7 +68,7 @@ const projects = [
     rowStart: 8,
   },
   {
-    id: "p2",
+    id: "p3",
     externalUrl:
       "https://elpais.com/estilo-de-vida/2026-06-27/es-normal-que-los-novios-se-queden-sin-bateria-social-en-su-boda-es-un-dia-emocionante-pero-tambien-un-evento-con-una-carga-social-enorme.html",
     variant: "list",
@@ -88,7 +88,7 @@ const projects = [
     rowStart: 1,
   },
   {
-    id: "p3",
+    id: "p4",
     externalUrl:
       "https://elpais.com/estilo-de-vida/2026-06-18/humor-rutina-y-cercania-cuando-la-vida-de-oficina-se-convierte-en-contenido-para-redes-sociales.html",
     variant: "list",
@@ -108,7 +108,7 @@ const projects = [
     rowStart: 2,
   },
   {
-    id: "p4",
+    id: "p5",
     externalUrl:
       "https://elpais.com/estilo-de-vida/2026-05-21/falsos-recuerdos-por-que-la-memoria-reconstruye-nuestro-pasado.html",
     variant: "list",
@@ -128,7 +128,7 @@ const projects = [
     rowStart: 13,
   },
   {
-    id: "p5",
+    id: "p6",
     externalUrl:
       "https://elpais.com/estilo-de-vida/2026-04-25/por-que-llenamos-la-agenda-de-vacaciones-con-meses-de-antelacion-el-verano-ya-esta-decidido-en-abril.html",
     variant: "list",
@@ -148,7 +148,7 @@ const projects = [
     rowStart: 14,
   },
   {
-    id: "p6",
+    id: "p7",
     externalUrl:
       "https://elpais.com/mamas-papas/actualidad/2026-06-16/regalos-de-fin-de-curso-a-los-profesores-por-que-una-carta-significa-mas-que-un-obsequio-caro.html",
     variant: "list",
@@ -168,7 +168,7 @@ const projects = [
     rowStart: 3,
   },
   {
-    id: "p7",
+    id: "p8",
     externalUrl:
       "https://elpais.com/mamas-papas/actualidad/2026-06-05/ayudar-o-no-a-los-hijos-con-los-deberes.html",
     variant: "list",
@@ -188,7 +188,7 @@ const projects = [
     rowStart: 12,
   },
   {
-    id: "p8",
+    id: "p9",
     slug: "tren-contrastes",
     variant: "grid",
     category: "infografia",
@@ -209,7 +209,7 @@ const projects = [
     rowStart: 5,
   },
   {
-    id: "p9",
+    id: "p10",
     slug: "mudanzas-estres",
     variant: "grid",
     category: "infografia",
@@ -229,7 +229,7 @@ const projects = [
     rowStart: 5,
   },
   {
-    id: "p10",
+    id: "p11",
     slug: "fugas-participacion-femenina",
     variant: "grid",
     category: "infografia",
@@ -250,7 +250,7 @@ const projects = [
     rowStart: 5,
   },
   {
-    id: "p11",
+    id: "p12",
     slug: "este-porfolio",
     variant: "feature",
     category: "infografia",
@@ -271,7 +271,7 @@ const projects = [
     rowStart: 7,
   },
   {
-    id: "p12",
+    id: "p13",
     slug: "radiografia-musica-vivo",
     variant: "grid",
     category: "infografia",
@@ -292,7 +292,7 @@ const projects = [
     rowStart: 10,
   },
   {
-    id: "p13",
+    id: "p14",
     externalUrl:
       "https://elpais.com/mamas-papas/expertos/2026-05-23/jose-maria-carmona-pediatra-que-los-ninos-necesitan-padres-perfectos-es-el-mito-mas-importante-a-desmontar.html",
     category: "maternidad",
@@ -307,7 +307,7 @@ const projects = [
     rowStart: 12,
   },
   {
-    id: "p16",
+    id: "p17",
     slug: "premios-oscar",
     variant: "hero",
     category: "infografia",
@@ -329,7 +329,7 @@ const projects = [
     rowSpan: 3,
   },
   {
-    id: "p17",
+    id: "p18",
     slug: "roland-garros-sin-nadal",
     variant: "grid",
     category: "infografia",
@@ -349,7 +349,7 @@ const projects = [
     rowStart: 10,
   },
   {
-    id: "p18",
+    id: "p19",
     slug: "radiografia-abstencionismo",
     variant: "grid",
     category: "infografia",
@@ -373,7 +373,7 @@ const projects = [
   //NOHOME
   ///
     {
-    id: "p14",
+    id: "p15",
     externalUrl:
       "https://elpais.com/estilo-de-vida/2026-04-15/desconocidos-pero-no-tanto-la-importancia-de-los-extranos-familiares-que-nos-cruzamos-a-diario.html",
     variant: "list",
@@ -390,7 +390,7 @@ const projects = [
     },
   },
   {
-    id: "p15",
+    id: "p16",
     externalUrl:
       "https://elpais.com/estilo-de-vida/2026-04-07/por-que-algunas-personas-llegan-con-extrema-antelacion-a-las-citas-o-eventos-explicaciones-y-algunos-consejos.html",
     variant: "list",
@@ -407,7 +407,7 @@ const projects = [
     },
   },
   {
-    id: "p19",
+    id: "p20",
     slug: "inter-atleti",
     category: "infografia",
     homeVisible: false,
@@ -424,7 +424,7 @@ const projects = [
     image: "/images/projects/inter-atleti-ip.webp",
   },
   {
-    id: "p20",
+    id: "p21",
     slug: "masculinizacion-facial",
     category: "infografia",
     homeVisible: false,
@@ -439,7 +439,7 @@ const projects = [
     },
   },
   {
-    id: "p21",
+    id: "p22",
     slug: "rearme-ue",
     category: "infografia",
     homeVisible: false,
@@ -454,7 +454,7 @@ const projects = [
     },
   },
   {
-    id: "p22",
+    id: "p23",
     slug: "30daychartchallenge",
     category: "infografia",
     homeVisible: false,
@@ -470,7 +470,7 @@ const projects = [
     },
   },
   {
-    id: "p23",
+    id: "p24",
     slug: "cableado-submarino",
     category: "infografia",
     homeVisible: false,
@@ -485,7 +485,7 @@ const projects = [
     },
   },
   {
-    id: "p24",
+    id: "p25",
     slug: "record-banquillos",
     category: "infografia",
     homeVisible: false,
@@ -501,7 +501,7 @@ const projects = [
     },
   },
   {
-    id: "p25",
+    id: "p26",
     slug: "mercado-porcino",
     category: "infografia",
     homeVisible: false,
@@ -516,7 +516,7 @@ const projects = [
     },
   },
   {
-    id: "p26",
+    id: "p27",
     slug: "aceite-espanol",
     category: "infografia",
     homeVisible: false,
@@ -531,7 +531,7 @@ const projects = [
     },
   },
   {
-    id: "p27",
+    id: "p28",
     slug: "adios-xavi",
     category: "infografia",
     homeVisible: false,
@@ -546,7 +546,7 @@ const projects = [
     },
   },
   {
-    id: "p28",
+    id: "p29",
     slug: "analisis-tuits-ayuso-sanchez",
     title: {
       es: "La estrategia digital de Ayuso frente a Sánchez antes del 28M",
@@ -562,7 +562,7 @@ const projects = [
     featured: true,
   },
   {
-    id: "p29",
+    id: "p30",
     slug: "bibliotecas-madrid-radiografia",
     title: {
       es: "El mapa de las bibliotecas municipales en Madrid",
@@ -577,7 +577,7 @@ const projects = [
     homeVisible: false,
   },
   {
-    id: "p30",
+    id: "p31",
     slug: "carnaval-brasil-escuela-samba",
     title: {
       es: "Los secretos del Sambódromo: cómo se organiza por dentro una escuela de samba",
@@ -592,7 +592,7 @@ const projects = [
     homeVisible: false,
   },
   {
-    id: "p31",
+    id: "p32",
     slug: "dana-valencia",
     title: {
       es: "Cicatrices en la carretera: el impacto de la DANA en la movilidad de Valencia",
@@ -607,7 +607,7 @@ const projects = [
     homeVisible: false,
   },
   {
-    id: "p32",
+    id: "p33",
     slug: "dia-25n-mujer",
     title: {
       es: "Radiografía de la violencia contra las mujeres en España por el 25N",
@@ -623,7 +623,7 @@ const projects = [
     homeVisible: false,
   },
   {
-    id: "p33",
+    id: "p34",
     slug: "elecciones-eeuu",
     title: {
       es: "Carrera hacia la Casa Blanca: el rastreo de encuestas y el desenlace entre Trump y Harris",
@@ -638,7 +638,7 @@ const projects = [
     homeVisible: false,
   },
   {
-    id: "p34",
+    id: "p35",
     slug: "estres-termico",
     title: {
       es: "Ciudades al límite por el aumento del estrés térmico en la geografía española",
@@ -653,7 +653,7 @@ const projects = [
     homeVisible: false,
   },
   {
-    id: "p35",
+    id: "p36",
     slug: "final-femenina-mundial",
     title: {
       es: "Una cita con la historia: las claves tácticas de la final femenina entre España e Inglaterra",
@@ -668,7 +668,7 @@ const projects = [
     homeVisible: false,
   },
   {
-    id: "p36",
+    id: "p37",
     slug: "final-qatar-22",
     title: {
       es: "¿La final de Qatar 2022 fue la mejor de la historia?",
@@ -684,7 +684,7 @@ const projects = [
     featured: true,
   },
   {
-    id: "p37",
+    id: "p38",
     slug: "gabinete-petro",
     title: {
       es: "La evolución del gabinete de Gustavo Petro hasta 2023",
@@ -699,7 +699,7 @@ const projects = [
     homeVisible: false,
   },
   {
-    id: "p38",
+    id: "p39",
     slug: "golf-aumento-velocidad-distancia",
     title: {
       es: "El 'boom' de los pegadores y la evolución de la distancia en el golf moderno",
@@ -714,7 +714,7 @@ const projects = [
     homeVisible: false,
   },
   {
-    id: "p39",
+    id: "p40",
     slug: "incendio-tenerife",
     title: {
       es: "¿Por qué ardió tanto Tenerife en 2023?",
@@ -729,7 +729,7 @@ const projects = [
     homeVisible: false,
   },
   {
-    id: "p40",
+    id: "p41",
     slug: "india-china-poblacion",
     title: {
       es: "El gran vuelco demográfico: la India supera a China en población",
@@ -744,7 +744,7 @@ const projects = [
     homeVisible: false,
   },
   {
-    id: "p41",
+    id: "p42",
     slug: "juventud-jugadores-qatar22",
     title: {
       es: "La irrupción de los jóvenes en Qatar 2022",
@@ -759,7 +759,7 @@ const projects = [
     homeVisible: false,
   },
   {
-    id: "p42",
+    id: "p43",
     slug: "lesiones-nadal",
     title: {
       es: "El mapa médico del rey de la tierra: el historial de lesiones de Rafa Nadal",
@@ -774,7 +774,7 @@ const projects = [
     homeVisible: false,
   },
   {
-    id: "p43",
+    id: "p44",
     slug: "madrid-girona",
     title: {
       es: "Real Madrid y Girona frente a frente por el trono de LaLiga",
@@ -789,7 +789,7 @@ const projects = [
     homeVisible: false,
   },
   {
-    id: "p44",
+    id: "p45",
     slug: "nba-maximos-puntos",
     title: {
       es: "¿Por qué la NBA alcanza las puntuaciones más altas de su historia?",
@@ -804,7 +804,7 @@ const projects = [
     homeVisible: false,
   },
   {
-    id: "p45",
+    id: "p46",
     slug: "nieve-pirineos",
     title: {
       es: "El invierno se derrite: el impacto de la falta de nieve en los Pirineos",
@@ -820,7 +820,7 @@ const projects = [
     featured: true,
   },
   {
-    id: "p46",
+    id: "p47",
     slug: "pediatria-madrid",
     title: {
       es: "Pediatría en Madrid: el mapa de la cobertura médica por niño",
@@ -835,7 +835,7 @@ const projects = [
     homeVisible: false,
   },
   {
-    id: "p47",
+    id: "p48",
     slug: "scrolly-congreso",
     title: {
       es: "Cómo ha cambiado el equilibrio de poder en el Congreso a través de las investiduras",
@@ -854,7 +854,7 @@ const projects = [
   //edv
   ///
   {
-    id: "p49",
+    id: "p50",
     externalUrl:
       "https://elpais.com/estilo-de-vida/2026-03-18/la-edad-como-frontera-social-por-que-la-mayoria-de-los-amigos-son-de-nuestra-generacion.html",
     category: "estilo_de_vida",
@@ -866,7 +866,7 @@ const projects = [
     },
   },
   {
-    id: "p50",
+    id: "p51",
     externalUrl:
       "https://elpais.com/estilo-de-vida/2026-02-13/de-la-euforia-de-enero-al-abandono-en-febrero-por-que-fracasan-la-mayoria-de-nuestros-propositos-de-ano-nuevo.html",
     category: "estilo_de_vida",
@@ -878,7 +878,7 @@ const projects = [
     },
   },
   {
-    id: "p51",
+    id: "p52",
     externalUrl:
       "https://elpais.com/estilo-de-vida/2026-01-08/cuando-un-pequeno-malentendido-se-carga-una-gran-amistad-como-identificar-y-evitar-las-rupturas-por-deterioro.html",
     category: "estilo_de_vida",
@@ -890,7 +890,7 @@ const projects = [
     },
   },
   {
-    id: "p52",
+    id: "p53",
     externalUrl:
       "https://elpais.com/estilo-de-vida/2026-01-02/de-reuniones-constantes-a-encuentros-obligados-cuando-la-navidad-se-convierte-en-una-excesiva-maraton-social.html",
     category: "estilo_de_vida",
@@ -902,7 +902,7 @@ const projects = [
     },
   },
   {
-    id: "p53",
+    id: "p54",
     externalUrl:
       "https://elpais.com/estilo-de-vida/2025-11-07/cuando-la-competicion-destruye-una-amistad-me-dolio-tener-que-ocultar-mi-felicidad-pero-fue-una-leccion-sobre-las-relaciones-y-los-celos.html",
     category: "estilo_de_vida",
@@ -914,7 +914,7 @@ const projects = [
     },
   },
   {
-    id: "p54",
+    id: "p55",
     externalUrl:
       "https://elpais.com/estilo-de-vida/2025-10-23/el-poder-de-las-tareas-pendientes-por-que-la-mente-no-puede-evitar-darle-demasiadas-vueltas-a-lo-que-esta-sin-terminar.html",
     category: "estilo_de_vida",
@@ -926,7 +926,7 @@ const projects = [
     },
   },
   {
-    id: "p55",
+    id: "p56",
     externalUrl:
       "https://elpais.com/estilo-de-vida/2025-10-01/como-superar-el-miedo-a-defraudar-y-dejar-de-vivir-segun-lo-que-esperan-de-ti.html",
     category: "estilo_de_vida",
@@ -938,7 +938,7 @@ const projects = [
     },
   },
   {
-    id: "p56",
+    id: "p57",
     externalUrl:
       "https://elpais.com/estilo-de-vida/2025-09-13/una-infancia-sin-grupo-de-amigos-significa-tener-una-edad-adulta-sin-raices-sociales.html",
     category: "estilo_de_vida",
@@ -950,7 +950,7 @@ const projects = [
     },
   },
   {
-    id: "p57",
+    id: "p58",
     externalUrl:
       "https://elpais.com/estilo-de-vida/2025-09-06/decir-adios-dos-veces-los-danos-colaterales-de-una-ruptura-sentimental-y-como-afecta-esta-al-circulo-de-amigos-y-familia.html",
     category: "estilo_de_vida",
@@ -962,7 +962,7 @@ const projects = [
     },
   },
   {
-    id: "p58",
+    id: "p59",
     externalUrl:
       "https://elpais.com/estilo-de-vida/2025-08-19/vacaciones-sin-compania-cuando-el-verano-idilico-de-otros-se-convierte-en-un-recordatorio-constante-de-lo-que-nos-falta.html",
     category: "estilo_de_vida",
@@ -974,7 +974,7 @@ const projects = [
     },
   },
   {
-    id: "p59",
+    id: "p60",
     externalUrl:
       "https://elpais.com/estilo-de-vida/2025-07-29/por-que-algunas-personas-necesitan-silenciar-en-redes-sociales-tras-una-ruptura-emocional-no-hacerlo-es-como-clavarte-un-cuchillo-a-ti-mismo.html",
     category: "estilo_de_vida",
@@ -986,7 +986,7 @@ const projects = [
     },
   },
   {
-    id: "p60",
+    id: "p61",
     externalUrl:
       "https://elpais.com/estilo-de-vida/2025-07-10/cuando-decir-adios-se-vuelve-tarea-imposible-por-que-nos-cuesta-rechazar-un-no-te-vayas-es-pronto.html",
     category: "estilo_de_vida",
@@ -998,7 +998,7 @@ const projects = [
     },
   },
   {
-    id: "p61",
+    id: "p62",
     externalUrl:
       "https://elpais.com/estilo-de-vida/2025-06-26/cuando-la-convivencia-mata-la-relacion-por-que-unas-vacaciones-pueden-ser-el-detonante-del-fin-de-una-amistad.html",
     category: "estilo_de_vida",
@@ -1010,7 +1010,7 @@ const projects = [
     },
   },
   {
-    id: "p62",
+    id: "p63",
     externalUrl:
       "https://elpais.com/estilo-de-vida/2025-06-19/cuando-actuar-rapido-sale-caro-el-coste-emocional-de-la-impulsividad.html",
     category: "estilo_de_vida",
@@ -1022,7 +1022,7 @@ const projects = [
     },
   },
   {
-    id: "p63",
+    id: "p64",
     externalUrl:
       "https://elpais.com/estilo-de-vida/2025-06-03/por-que-es-mas-facil-dar-consejos-que-aplicarselos-no-tenemos-la-misma-carga-emocional-si-el-problema-es-nuestro-o-ajeno.html",
     category: "estilo_de_vida",
@@ -1034,7 +1034,7 @@ const projects = [
     },
   },
   {
-    id: "p64",
+    id: "p65",
     externalUrl:
       "https://elpais.com/estilo-de-vida/2025-05-20/la-vida-en-diferido-el-debate-entre-grabar-eventos-para-tener-un-recuerdo-o-vivirlos.html",
     category: "estilo_de_vida",
@@ -1046,7 +1046,7 @@ const projects = [
     },
   },
   {
-    id: "p65",
+    id: "p66",
     externalUrl:
       "https://elpais.com/estilo-de-vida/2025-08-19/vacaciones-sin-compania-cuando-el-verano-idilico-de-otros-se-convierte-en-un-recordatorio-constante-de-lo-que-nos-falta.html",
     category: "estilo_de_vida",
@@ -1058,7 +1058,7 @@ const projects = [
     },
   },
   {
-    id: "p66",
+    id: "p67",
     externalUrl:
       "https://elpais.com/estilo-de-vida/2025-03-20/el-duelo-por-las-vidas-no-vividas-por-que-nos-pesa-la-nostalgia-del-que-hubiera-pasado-si.html",
     category: "estilo_de_vida",
@@ -1070,7 +1070,7 @@ const projects = [
     },
   },
   {
-    id: "p67",
+    id: "p68",
     externalUrl:
       "https://elpais.com/estilo-de-vida/2025-02-20/no-quiero-ir-solo-cuando-el-miedo-al-que-diran-nos-impide-hacer-lo-que-nos-gusta.html",
     category: "estilo_de_vida",
@@ -1082,7 +1082,7 @@ const projects = [
     },
   },
   {
-    id: "p68",
+    id: "p69",
     externalUrl:
       "https://elpais.com/estilo-de-vida/2025-02-06/el-fenomeno-tsundoku-o-como-hemos-normalizado-acumular-libros-que-no-leeremos.html",
     category: "estilo_de_vida",
@@ -1094,7 +1094,7 @@ const projects = [
     },
   },
   {
-    id: "p69",
+    id: "p70",
     externalUrl:
       "https://elpais.com/mamas-papas/expertos/2026-05-04/los-ninos-de-hoy-imaginan-menos-o-tienen-menos-aptitudes-para-hacerlo.html",
     category: "maternidad",
@@ -1106,7 +1106,7 @@ const projects = [
     },
   },
   {
-    id: "p70",
+    id: "p71",
     externalUrl:
       "https://elpais.com/mamas-papas/actualidad/2026-04-02/altas-capacidades-y-autismo-un-diagnostico-que-sacude-pero-no-transforma.html",
     category: "maternidad",
@@ -1118,7 +1118,7 @@ const projects = [
     },
   },
   {
-    id: "p71",
+    id: "p72",
     externalUrl:
       "https://elpais.com/mamas-papas/actualidad/2026-03-09/asi-pueden-influir-los-videojuegos-en-el-desarrollo-creativo-de-los-ninos.html",
     category: "maternidad",
@@ -1130,7 +1130,7 @@ const projects = [
     },
   },
   {
-    id: "p72",
+    id: "p73",
     externalUrl:
       "https://elpais.com/mamas-papas/familia/2026-02-22/la-paradoja-de-los-recuerdos-en-la-primera-infancia-para-que-voy-a-viajar-con-mi-bebe-si-no-se-va-a-acordar-de-nada.html",
     category: "maternidad",
@@ -1142,7 +1142,7 @@ const projects = [
     },
   },
   {
-    id: "p73",
+    id: "p74",
     externalUrl:
       "https://elpais.com/mamas-papas/familia/2025-12-17/por-que-todos-los-padres-y-madres-dudan-de-si-toman-las-decisiones-correctas-no-hay-perfeccion-en-la-educacion.html",
     category: "maternidad",
@@ -1154,7 +1154,7 @@ const projects = [
     },
   },
   {
-    id: "p74",
+    id: "p75",
     externalUrl:
       "https://elpais.com/mamas-papas/actualidad/2025-11-30/desidealizacion-parental-del-padre-ideal-al-real.html",
     category: "maternidad",
@@ -1166,7 +1166,7 @@ const projects = [
     },
   },
   {
-    id: "p75",
+    id: "p76",
     externalUrl:
       "https://elpais.com/mamas-papas/familia/2025-11-23/deberia-preocuparme-si-mi-hijo-tiene-un-amigo-imaginario.html",
     category: "maternidad",
@@ -1178,7 +1178,7 @@ const projects = [
     },
   },
   {
-    id: "p76",
+    id: "p77",
     externalUrl:
       "https://elpais.com/mamas-papas/familia/2025-10-22/esta-afectando-el-uso-de-pantallas-al-desarrollo-del-lenguaje-en-los-ninos.html",
     category: "maternidad",
@@ -1190,7 +1190,7 @@ const projects = [
     },
   },
   {
-    id: "p77",
+    id: "p78",
     externalUrl:
       "https://elpais.com/mamas-papas/2025-10-04/es-positivo-recompensar-a-los-hijos-por-sacar-buenas-notas.html",
     category: "maternidad",
@@ -1202,7 +1202,7 @@ const projects = [
     },
   },
   {
-    id: "p78",
+    id: "p79",
     externalUrl:
       "https://elpais.com/mamas-papas/actualidad/2025-09-26/olga-sese-experta-en-sueno-si-un-nino-recibe-mucha-ayuda-de-los-padres-para-dormir-no-sabra-gestionar-los-despertares.html",
     category: "maternidad",
@@ -1214,7 +1214,7 @@ const projects = [
     },
   },
   {
-    id: "p79",
+    id: "p80",
     externalUrl:
       "https://elpais.com/mamas-papas/actualidad/2025-09-10/confianza-si-pero-con-limites-el-problema-de-la-fina-linea-entre-ser-padre-o-amigo.html",
     category: "maternidad",
@@ -1226,7 +1226,7 @@ const projects = [
     },
   },
   {
-    id: "p80",
+    id: "p81",
     externalUrl:
       "https://elpais.com/mamas-papas/familia/2025-08-30/como-gestionar-la-culpa-por-perderse-momentos-clave-de-la-vida-de-tu-hijo.html",
     category: "maternidad",
@@ -1238,7 +1238,7 @@ const projects = [
     },
   },
   {
-    id: "p81",
+    id: "p82",
     externalUrl:
       "https://elpais.com/mamas-papas/expertos/2025-08-22/que-hace-que-un-nino-quiera-leer-por-si-mismo.html",
     category: "maternidad",
@@ -1250,7 +1250,7 @@ const projects = [
     },
   },
   {
-    id: "p82",
+    id: "p83",
     externalUrl:
       "https://elpais.com/mamas-papas/familia/2025-07-27/no-no-estoy-llorando-por-que-algunos-padres-esconden-su-tristeza-y-como-afecta-a-los-hijos.html",
     category: "maternidad",
@@ -1262,7 +1262,7 @@ const projects = [
     },
   },
   {
-    id: "p83",
+    id: "p84",
     externalUrl:
       "https://elpais.com/mamas-papas/familia/2025-07-15/como-lidiar-con-el-sindrome-del-principe-destronado-el-momento-que-muchos-padres-temen-tras-tener-el-segundo-hijo.html",
     category: "maternidad",
@@ -1274,7 +1274,7 @@ const projects = [
     },
   },
   {
-    id: "p84",
+    id: "p85",
     externalUrl:
       "https://elpais.com/mamas-papas/actualidad/2025-06-20/ser-solo-el-padre-de-o-la-madre-de-cuando-la-identidad-propia-se-desdibuja-detras-de-un-hijo.html",
     category: "maternidad",
@@ -1286,7 +1286,7 @@ const projects = [
     },
   },
   {
-    id: "p85",
+    id: "p86",
     externalUrl:
       "https://elpais.com/mamas-papas/actualidad/2025-06-07/por-que-es-importante-encontrar-tiempo-para-jugar-con-los-hijos-a-pesar-del-cansancio.html",
     category: "maternidad",
@@ -1298,7 +1298,7 @@ const projects = [
     },
   },
   {
-    id: "p86",
+    id: "p87",
     externalUrl:
       "https://elpais.com/mamas-papas/actualidad/2025-05-29/y-si-no-se-lo-pasa-bien-como-gestionar-la-angustia-paternal-en-las-fiestas-infantiles.html",
     category: "maternidad",
@@ -1310,7 +1310,7 @@ const projects = [
     },
   },
   {
-    id: "p87",
+    id: "p88",
     externalUrl:
       "https://elpais.com/mamas-papas/familia/2025-05-09/julia-menu-tiktoker-la-infertilidad-no-solo-es-no-quedarte-embarazada-son-las-hormonas-los-pinchazos-y-encima-a-mi-me-trataron-como-una-mierda.html",
     category: "maternidad",
@@ -1322,7 +1322,7 @@ const projects = [
     },
   },
   {
-    id: "p88",
+    id: "p89",
     externalUrl:
       "https://elpais.com/mamas-papas/actualidad/2025-04-25/paola-roig-psicologa-perinatal-y-escritora-se-trata-de-ir-abrazando-entendiendo-y-cuidando-la-madre-que-eres-no-la-de-las-redes-o-la-que-te-has-imaginado.html",
     category: "maternidad",
