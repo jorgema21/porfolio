@@ -27,7 +27,7 @@ export const layout = {
 
     footer: {
       part0: "Porfolio",
-      part1: "Última actualización: 18 de junio",
+      part1: "Última actualización: 07 de julio",
       part2: "Un porfolio diseñado y desarrollado por Jorge Marzo",
     },
 
@@ -66,7 +66,7 @@ export const layout = {
 
     footer: {
       part0: "Portfolio",
-      part1: "Last updated: June 18",
+      part1: "Last updated: July 07",
       part2: "A portfolio designed and developed by Jorge Marzo",
     },
 
