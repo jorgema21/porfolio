@@ -1,15 +1,17 @@
-# Portfolio Editorial | Periodismo de Datos y Visualización
+# Editorial Portfolio | Data Journalism and Visualization
 
-Este portfolio es un proyecto en sí mismo. Desarrollé un sistema editorial propio diseñado desde cero para organizar mi trabajo en periodismo de datos, infografía y reportajes escritos bajo la forma de funcionar de un medio digital.
+This portfolio is a project in itself. I developed a custom editorial system from scratch to organize my work in data journalism, infographics, and written features under the logic of a digital news outlet.
 
-## Características del Sistema
+https://jorgema21.github.io/porfolio/
 
-* **Arquitectura Local**: El contenido se apoya en archivos estáticos estructurados como `content.json` y `meta.json`. Esto garantiza un control absoluto de los metadatos sin necesidad de bases de datos externas.
+## System Features
 
-* **Enrutamiento Automático**: El framework SvelteKit gestiona todas las rutas del sitio de forma automática. Esto permite una escalabilidad inmediata para futuros proyectos.
+* **Local Architecture**: The content is built around structured static files such as `content.json` and `meta.json`. This provides full control over metadata without relying on external databases.
 
-* **Diseño por Tokens**: La jerarquía visual y las paletas cromáticas se centralizan en la carpeta `styles/` (`/base`, `/tokens`, `/ui`) mediante CSS nativo y variables personalizadas.
+* **Automatic Routing**: The SvelteKit framework handles all site routes automatically. This allows the portfolio to scale immediately as new projects are added.
 
-* **Rendimiento Óptimo**: Sitio estático alojado en GitHub Pages con el uso del nuevo sistema de runas de Svelte 5.
+* **Token-Based Design**: The visual hierarchy and color palettes are centralized in the `styles/` folder (`/base`, `/tokens`, `/ui`) through native CSS and custom properties.
 
-* **Desarrollo Asistido**: Uso de Inteligencia Artificial como copiloto técnico diario para la optimización de código, arquitectura e internacionalización en español e inglés.
+* **Optimized Performance**: A static site hosted on GitHub Pages, built with Svelte 5’s new runes system.
+
+* **AI-Assisted Development**: I use Artificial Intelligence as a daily technical copilot for code optimization, architecture, and Spanish-English internationalization.
