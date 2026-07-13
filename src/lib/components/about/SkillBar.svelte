@@ -2,44 +2,105 @@
   import { base } from "$app/paths";
   import { slide } from "svelte/transition";
   import { t } from "$lib/i18n/index.svelte";
-  import type { Skill } from "$lib/data/about/skills.data";
-  import type { SkillId } from "$lib/data/about/skills.data";
+  import type { Skill, SkillId } from "$lib/data/about/skills.data";
 
-  const { skill } = $props<{ skill: Skill }>();
+  type SkillLevelKey =
+    | "advanced"
+    | "proficient"
+    | "intermediate"
+    | "learning"
+    | "nextup";
+
+  const {
+  skill,
+  index
+} = $props<{
+  skill: Skill;
+  index: number;
+}>();
 
   let open = $state(false);
-  const toggle = () => (open = !open);
 
   const content = $derived(t.skills[skill.id as SkillId]);
+  const detailsId = $derived(`skill-details-${skill.id}`);
+  const levelLabelId = $derived(`skill-level-${skill.id}`);
 
-  const levelInfo = $derived.by(() => {
-    const lvl = skill.level;
-    if (lvl >= 9) return { key: "advanced", label: t.skillLevels.advanced };
-    if (lvl >= 7) return { key: "proficient", label: t.skillLevels.proficient };
-    if (lvl >= 5)
-      return { key: "intermediate", label: t.skillLevels.intermediate };
-    if (lvl >= 3) return { key: "learning", label: t.skillLevels.learning };
-    return { key: "nextup", label: t.skillLevels.nextup };
-  });
+  const toggle = (): void => {
+    open = !open;
+  };
+
+  const levelInfo = $derived.by(
+    (): {
+      key: SkillLevelKey;
+      label: string;
+    } => {
+      const level = skill.level;
+
+      if (level >= 9) {
+        return {
+          key: "advanced",
+          label: t.skillLevels.advanced
+        };
+      }
+
+      if (level >= 7) {
+        return {
+          key: "proficient",
+          label: t.skillLevels.proficient
+        };
+      }
+
+      if (level >= 5) {
+        return {
+          key: "intermediate",
+          label: t.skillLevels.intermediate
+        };
+      }
+
+      if (level >= 3) {
+        return {
+          key: "learning",
+          label: t.skillLevels.learning
+        };
+      }
+
+      return {
+        key: "nextup",
+        label: t.skillLevels.nextup
+      };
+    }
+  );
 </script>
 
-<div class="skill">
-  <button class="skill-header" onclick={toggle}>
+<div class="skill" class:no-top-border={index === 0}>
+  <button
+    class="skill-header"
+    type="button"
+    onclick={toggle}
+    aria-expanded={open}
+    aria-controls={detailsId}
+    aria-describedby={levelLabelId}
+  >
     <div class="skill-main">
       {#if skill.logo}
         <img
           class="skill-logo"
           src={`${base}${skill.logo}`}
-          alt={`${content.name} logo`}
+          alt=""
+          aria-hidden="true"
           loading="lazy"
           decoding="async"
-          style="aspect-ratio: 1 / 1; object-fit: contain;"
         />
       {/if}
 
       <div class="skill-info">
-        <span class="skill-name">{content.name}</span>
-        <span class="skill-description-mobile">{content.description}</span>
+        <span class="skill-name">
+          {content.name}
+        </span>
+
+        <span class="skill-description-mobile" aria-hidden="true">
+          {content.description}
+        </span>
       </div>
     </div>
 
@@ -51,18 +112,39 @@
 
     <div class="skill-bar" aria-hidden="true">
       {#each { length: 10 } as _, i (i)}
-        <span class="segment" class:filled={i < skill.level}></span>
+        <span
+          class="segment"
+          class:filled={i < skill.level}
+        ></span>
       {/each}
     </div>
 
-    <span class="skill-level">{skill.level}/10</span>
+    <span id={levelLabelId} class="skill-level">
+      <span class="sr-only">
+        {levelInfo.label}:
+      </span>
 
-    <span class:open class="chevron" aria-hidden="true"> + </span>
+      {skill.level}/10
+    </span>
+
+    <span
+      class="chevron"
+      class:open
+      aria-hidden="true"
+    >
+      +
+    </span>
   </button>
 
   {#if open}
-    <div class="skill-details" transition:slide>
-      <p class="skill-description">{content.description}</p>
+    <div
+      id={detailsId}
+      class="skill-details"
+      transition:slide
+    >
+      <p class="skill-description">
+        {content.description}
+      </p>
 
       {#if content.details?.length}
         <ul class="skill-list">
@@ -76,26 +158,254 @@
 </div>
 
 <style>
-  .skill {
-    position: relative;
-    border-top: var(--border-1);
-    transition:
-      background var(--transition),
-      border-color var(--transition);
+.skill {
+  position: relative;
+  border-top: var(--border-1);
+  transition:
+    background var(--transition),
+    border-color var(--transition);
 
-    &::before {
-      content: "";
-      position: absolute;
-      inset: 0 auto 0 0;
-      width: 2px;
-      opacity: 0;
-      transform: scaleY(0.4);
-      transition:
-        opacity 700ms var(--ease-out),
-        transform 700ms var(--ease-out);
+  &.no-top-border {
+    border-top: 0;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 2px;
+    opacity: 0;
+    transform: scaleY(0.4);
+    transform-origin: center;
+    pointer-events: none;
+    transition:
+      opacity 700ms var(--ease-out),
+      transform 700ms var(--ease-out);
+  }
+}
+
+  .skill-header {
+    display: grid;
+    grid-template-columns:
+      minmax(0, 1fr)
+      auto
+      minmax(160px, min(24vw, 240px))
+      auto
+      auto;
+    align-items: center;
+    gap: var(--space-6);
+    width: 100%;
+    min-width: 0;
+    padding: var(--space-6) 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    text-align: left;
+    -webkit-tap-highlight-color: transparent;
+
+    &:focus-visible {
+      outline: 2px solid currentColor;
+      outline-offset: 4px;
+      border-radius: var(--radius-sm);
+    }
+  }
+
+  .skill-main {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    min-width: 0;
+  }
+
+  .skill-logo {
+    width: var(--space-8);
+    height: var(--space-8);
+    aspect-ratio: 1;
+    object-fit: contain;
+    flex-shrink: 0;
+    filter: saturate(0.92);
+    transition:
+      transform var(--transition-slow),
+      filter var(--transition),
+      opacity var(--transition);
+  }
+
+  .skill-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    min-width: 0;
+  }
+
+  .skill-name {
+    overflow-wrap: anywhere;
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    font-weight: 700;
+    line-height: var(--lh-titles);
+    letter-spacing: -0.02em;
+    color: var(--color-text);
+  }
+
+  .skill-description-mobile {
+    display: none;
+    overflow-wrap: anywhere;
+    font-size: var(--text-sm);
+    line-height: var(--lh-base);
+    color: var(--color-muted);
+  }
+
+  .skill-badge-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: 0;
+  }
+
+  .skill-badge {
+    display: inline-block;
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-sm);
+    font-family: var(--font-sans);
+    font-size: var(--text-2xs);
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    white-space: nowrap;
+    opacity: 0.75;
+
+    &.advanced {
+      background: var(--color-badge-advanced-bg);
+      color: var(--color-badge-advanced-text);
     }
 
-    &:hover {
+    &.proficient {
+      background: var(--color-badge-proficient-bg);
+      color: var(--color-badge-proficient-text);
+    }
+
+    &.intermediate {
+      background: var(--color-badge-intermediate-bg);
+      color: var(--color-badge-intermediate-text);
+    }
+
+    &.learning {
+      background: var(--color-badge-learning-bg);
+      color: var(--color-badge-learning-text);
+    }
+
+    &.nextup {
+      background: var(--color-badge-nextup-bg);
+      color: var(--color-badge-nextup-text);
+    }
+  }
+
+  .skill-bar {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    width: 100%;
+    max-width: 360px;
+    min-width: 0;
+  }
+
+  .segment {
+    flex: 1;
+    min-width: 0;
+    height: var(--space-2);
+    border-radius: var(--radius-full);
+    background: var(--color-border);
+    transform-origin: center;
+    transition:
+      transform var(--transition),
+      background var(--transition);
+
+    &.filled {
+      background: var(--color-muted);
+    }
+  }
+
+  .skill-level {
+    font-size: var(--text-sm);
+    letter-spacing: -0.03em;
+    color: var(--color-muted);
+    white-space: nowrap;
+  }
+
+  .chevron {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--space-8);
+    height: var(--space-8);
+    margin-left: calc(var(--space-2) * -1);
+    border-radius: var(--radius-full);
+    font-size: var(--text-base);
+    font-weight: 300;
+    color: var(--color-muted);
+    flex-shrink: 0;
+    transition:
+      transform var(--transition-slow),
+      background var(--transition-fast),
+      color var(--transition-fast);
+
+    &.open {
+      transform: rotate(45deg);
+    }
+  }
+
+  .skill-details {
+    max-width: 72ch;
+    padding:
+      0
+      0
+      var(--space-6)
+      calc(var(--space-8) + var(--space-4));
+    font-size: var(--text-sm);
+  }
+
+  .skill-description {
+    margin: 0;
+    overflow-wrap: anywhere;
+    font-size: var(--text-sm);
+    line-height: var(--lh-base);
+    color: var(--color-muted);
+  }
+
+  .skill-list {
+    display: grid;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+    padding-left: var(--space-4);
+    color: var(--color-muted);
+
+    li {
+      overflow-wrap: anywhere;
+      line-height: var(--lh-base);
+
+      &::marker {
+        color: var(--bg-hard);
+      }
+    }
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .skill:is(:hover, :focus-within) {
       &::before {
         opacity: 1;
         transform: scaleY(1);
@@ -115,226 +425,67 @@
         color: var(--color-text);
       }
     }
+  }
 
+  @media (max-width: 768px) {
     .skill-header {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto minmax(160px, min(24vw, 240px)) auto auto;
-      align-items: center;
-      gap: var(--space-6);
-      width: 100%;
-      padding: var(--space-6) 0;
-      border: 0;
-      background: transparent;
-      cursor: pointer;
-      text-align: left;
+      grid-template-columns: 1fr auto;
+      grid-template-rows: auto auto auto;
+      grid-template-areas:
+        "main chevron"
+        "badge level"
+        "bar bar";
+      gap: var(--space-2);
     }
 
     .skill-main {
-      display: flex;
-      align-items: center;
-      gap: var(--space-4);
-      min-width: 0;
-    }
-
-    .skill-logo {
-      width: var(--space-8);
-      height: var(--space-8);
-      object-fit: contain;
-      flex-shrink: 0;
-      filter: saturate(0.92);
-      transition:
-        transform var(--transition-slow),
-        filter var(--transition),
-        opacity var(--transition);
-    }
-
-    .skill-info {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-1);
-      min-width: 0;
-    }
-
-    .skill-name {
-      font-family: var(--font-sans);
-      font-size: var(--text-base);
-      font-weight: 700;
-      line-height: var(--lh-titles);
-      letter-spacing: -0.02em;
-      color: var(--color-text);
-    }
-
-    .skill-description-mobile {
-      display: none;
-      font-size: var(--text-sm);
-      line-height: var(--lh-base);
-      color: var(--color-muted);
-    }
-
-    .skill-badge-container {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-    }
-
-    .skill-badge {
-      display: inline-block;
-      padding: var(--space-1) var(--space-3);
-      border-radius: var(--radius-sm);
-      font-family: var(--font-sans);
-      font-size: var(--text-2xs);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      white-space: nowrap;
-      opacity: 0.75;
-    }
-
-    .skill-badge.advanced {
-      background: var(--color-badge-advanced-bg);
-      color: var(--color-badge-advanced-text);
-    }
-
-    .skill-badge.proficient {
-      background: var(--color-badge-proficient-bg);
-      color: var(--color-badge-proficient-text);
-    }
-
-    .skill-badge.intermediate {
-      background: var(--color-badge-intermediate-bg);
-      color: var(--color-badge-intermediate-text);
-    }
-
-    .skill-badge.learning {
-      background: var(--color-badge-learning-bg);
-      color: var(--color-badge-learning-text);
-    }
-
-    .skill-badge.nextup {
-      background: var(--color-badge-nextup-bg);
-      color: var(--color-badge-nextup-text);
-    }
-
-    .skill-bar {
-      display: flex;
-      align-items: center;
-      gap: var(--space-2);
-      width: 100%;
-      max-width: 360px;
-    }
-
-    .segment {
-      flex: 1;
-      height: var(--space-2);
-      border-radius: var(--radius-full);
-      background: var(--color-border);
-      transition:
-        transform var(--transition),
-        background var(--transition);
-
-      &.filled {
-        background: var(--color-muted);
-      }
-    }
-
-    .skill-level {
-      font-size: var(--text-sm);
-      letter-spacing: -0.03em;
-      color: var(--color-muted);
+      grid-area: main;
     }
 
     .chevron {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: var(--space-8);
-      height: var(--space-8);
-      margin-left: calc(var(--space-2) * -1);
-      border-radius: var(--radius-full);
-      font-size: var(--text-base);
-      font-weight: 300;
-      color: var(--color-muted);
-      transition:
-        transform var(--transition-slow),
-        background var(--transition-fast),
-        color var(--transition-fast);
+      grid-area: chevron;
+      justify-self: end;
+    }
 
-      &.open {
-        transform: rotate(45deg);
-      }
+    .skill-badge-container {
+      grid-area: badge;
+      justify-content: flex-start;
+      min-width: 0;
+      margin-top: var(--space-1);
+    }
+
+    .skill-bar {
+      grid-area: bar;
+      width: 100%;
+      margin-top: var(--space-2);
+    }
+
+    .skill-level {
+      grid-area: level;
+      justify-self: end;
+      min-width: 2.5rem;
+      width: auto;
+      margin-top: var(--space-1);
     }
 
     .skill-details {
-      padding: 0 0 var(--space-6) calc(var(--space-8) + var(--space-4));
-      max-width: 72ch;
-      font-size: var(--text-sm);
+      padding: 0 0 var(--space-6);
+      margin-left: var(--space-4);
     }
 
-    .skill-description {
-      margin: 0;
-      font-size: var(--text-sm);
-      line-height: var(--lh-base);
-      color: var(--color-muted);
+    .skill-description-mobile {
+      display: block;
     }
+  }
 
-    .skill-list {
-      display: grid;
-      gap: var(--space-2);
-      margin-top: var(--space-4);
-      padding-left: var(--space-4);
-      color: var(--color-muted);
-
-      li {
-        line-height: var(--lh-base);
-
-        &::marker {
-          color: var(--bg-hard);
-        }
-      }
-    }
-
-    @media (max-width: 768px) {
-      .skill-header {
-        grid-template-columns: 1fr auto;
-        grid-template-rows: auto auto auto;
-        grid-template-areas:
-          "main chevron"
-          "badge level"
-          "bar bar";
-        gap: var(--space-2);
-      }
-      .skill-main {
-        grid-area: main;
-      }
-      .chevron {
-        grid-area: chevron;
-        justify-self: end;
-      }
-      .skill-badge-container {
-        grid-area: badge;
-        justify-content: flex-start;
-        min-width: 0;
-        margin-top: var(--space-1);
-      }
-      .skill-bar {
-        grid-area: bar;
-        width: 100%;
-        margin-top: var(--space-2);
-      }
-      .skill-level {
-        grid-area: level;
-        justify-self: end;
-        min-width: 2.5rem;
-        width: auto;
-        margin-top: var(--space-1);
-      }
-      .skill-details {
-        padding: 0 0 var(--space-6);
-        margin-left: var(--space-4);
-      }
-      .skill-description-mobile {
-        display: block;
-      }
+  @media (prefers-reduced-motion: reduce) {
+    .skill,
+    .skill::before,
+    .skill-logo,
+    .segment,
+    .chevron {
+      transition-duration: 0.01ms;
+      transition-delay: 0ms;
     }
   }
 </style>

@@ -6,18 +6,25 @@
   import AboutLanguages from "$lib/components/about/AboutLanguages.svelte";
   import RichText from "$lib/components/writing/RichText.svelte";
 
-  let skillsSection: HTMLElement | null = null;
+  let skillsSection = $state<HTMLElement | null>(null);
   let isSectionVisible = $state(false);
 
   $effect(() => {
+    const section = skillsSection;
+
+    if (!section) return;
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         isSectionVisible = entry.isIntersecting;
       },
-      { threshold: 0.2, rootMargin: "0px 0px -10% 0px" },
+      {
+        threshold: 0.2,
+        rootMargin: "0px 0px -10% 0px",
+      },
     );
 
-    if (skillsSection) observer.observe(skillsSection);
+    observer.observe(section);
 
     return () => {
       observer.disconnect();
@@ -84,9 +91,13 @@
   <section class="about-section" bind:this={skillsSection}>
     <h2>{t.about.skillsTitle}</h2>
 
-    {#each skills as skill, i (skill.id)}
-      <div class="skill-wrapper" class:visible={isSectionVisible} style:--i={i}>
-        <SkillBar {skill} />
+    {#each skills as skill, index (skill.id)}
+      <div
+        class="skill-wrapper"
+        class:visible={isSectionVisible}
+        style:--i={index}
+      >
+        <SkillBar {skill} {index} />
       </div>
     {/each}
   </section>
