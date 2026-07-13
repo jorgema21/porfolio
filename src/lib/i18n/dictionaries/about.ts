@@ -79,23 +79,23 @@ export const about: Record<"es" | "en", AboutDict> = {
 
     intro: [
       {
-        text: "I am a freelance journalist and information designer, specializing in ",
+        text: "I am a freelance journalist and information designer specializing in ",
       },
       {
-        text: "data visualization, visual journalism, and lifestyle and maternity content.",
+        text: "data visualization, visual journalism, and lifestyle and parenting coverage.",
         bold: true,
       },
     ],
 
     focus: [
       {
-        text: "I work independently, either solo or as part of a team, collaborating with media outlets and brands to craft ",
+        text: "I work independently and as part of teams, collaborating with media organizations and brands to produce ",
       },
       {
-        text: "clear, rigorous, and high-impact stories. I am deeply passionate about exploring everything from mass phenomena and trending cultural topics through data, ",
+        text: "clear, rigorous, and compelling stories. I am especially interested in using data to explore mass behavior and widely shared cultural phenomena, ",
       },
       {
-        text: "to psychological concepts applied to everyday life for the general public, as well as mothers and fathers in particular. ",
+        text: "as well as applying insights from psychology to everyday life, both broadly and with a particular focus on parents and families. ",
       },
     ],
 
@@ -117,7 +117,7 @@ export const about: Record<"es" | "en", AboutDict> = {
     parenting: "Parenting",
     skillsTitle: "Tools I Use",
     languagesTitle: "Languages I Speak",
-    cta: "Available for data and infographic projects, as well as lifestyle and maternity collaborations",
+    cta: "Available for data and graphics projects, as well as lifestyle and parenting collaborations",
     aria: {
       languagesSelector: "Select language",
     },

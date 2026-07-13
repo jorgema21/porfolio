@@ -195,7 +195,7 @@ export const infographics: Record<"es" | "en", InfographicsDict> = {
         text: "Welcome to the ",
       },
       {
-        text: "infographics and data visualization section. ",
+        text: "graphics and data visualization section. ",
         bold: true,
       },
       {
@@ -205,7 +205,7 @@ export const infographics: Record<"es" | "en", InfographicsDict> = {
 
     description: [
       {
-        text: "My interest in the world of infographics and data journalism awoke in ",
+        text: "My interest in the world of graphics and data journalism awoke in ",
       },
       {
         text: "March 2022. ",

@@ -39,7 +39,7 @@
                         "bold": true
                     },
                     "I built a custom editorial environment from scratch to organize ",
-                    "my work in data journalism, infographics, and written reporting ",
+                    "my work in data journalism, graphics, and written reporting ",
                     "under a logic inspired by digital media. ",
                     "My work in newsrooms led me to structure the portfolio as a journalistic front page, ",
                     "where featured projects are visually prioritized while the rest is distributed across sections. ",
@@ -316,7 +316,7 @@
                 "en": [
                     "The result is a portfolio that grows without altering its core. ",
                     "New projects added only requires inserting new data, with almost no changes to the code. ",
-                    "This allows me to continue adding texts and infographics without reorganizing everything."
+                    "This allows me to continue adding texts and graphics without reorganizing everything."
                 ]
             }
         },
@@ -457,7 +457,7 @@
                     "Cada pieza abre un contexto ampliado con sus metadatos y narrativa visual."
                 ],
                 "en": [
-                    "The infographics section concentrates the highest level of exploration. ",
+                    "The graphics section concentrates the highest level of exploration. ",
                     "Its design enables effective data navigation and visualization, combining a ",
                     {
                         "text": "treemap",
@@ -547,7 +547,7 @@
                     ". ",
                     "Images are not static on the page; instead, they expand into a detailed view. ",
                     "When clicking an image, the background darkens and the graphic comes to the foreground. ",
-                    "This allows comfortable full-size viewing of infographics."
+                    "This allows comfortable full-size viewing of graphics."
                 ]
             }
         },
@@ -996,7 +996,7 @@
                 ],
                 "en": [
                     "Ultimately, this portfolio opens a long-term working methodology. ",
-                    "It is a foundation designed to evolve alongside my future infographics and interactive data journalism narratives."
+                    "It is a foundation designed to evolve alongside my future graphics and interactive data journalism narratives."
                 ]
             }
         }

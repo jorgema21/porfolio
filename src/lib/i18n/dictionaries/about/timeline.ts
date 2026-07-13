@@ -125,7 +125,7 @@ export const timeline = {
     "end-degree": {
       title: "End of degree",
       description:
-        "I graduated university without taking infographics or data journalism classes",
+        "I graduated university without taking graphics or data journalism classes",
     },
 
     "start-ep": {
@@ -137,13 +137,13 @@ export const timeline = {
     "start-internship": {
       title: "Visual Storytelling internship",
       description:
-        "I did a one-year internship at El País newspaper, learning infographics and data from scratch",
+        "I did a one-year internship at El País newspaper, learning graphics and data from scratch",
     },
 
     "end-internship": {
       title: "Completed my master's degree",
       description:
-        "After my internship, I spent a few months self-teaching infographics and data journalism",
+        "After my internship, I spent a few months self-teaching graphics and data journalism",
     },
 
     "sports-ep": {
@@ -179,13 +179,13 @@ export const timeline = {
     "start-sty": {
       title: "Collaboration with Storydata",
       description:
-        "Started collaborating with Storydata on print and web infographics and data projects.",
+        "Started collaborating with Storydata on print and web graphics and data projects.",
     },
 
     "start-col": {
       title: "Collaboration with Colpisa",
       description:
-        "Began collaborating with Colpisa specializing in web-based infographics, data analysis, and visualization.",
+        "Began collaborating with Colpisa specializing in web-based graphics, data analysis, and visualization.",
     },
 
     "start-epgente": {

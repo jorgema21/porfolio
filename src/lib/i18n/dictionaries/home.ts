@@ -10,7 +10,7 @@ export const home = {
   en: {
     intro: [
       "Welcome to my portfolio!",
-      "Here I select my finest data journalism, infographics and web development projects.",
+      "Here I select my finest data journalism, graphics and web development projects.",
       "Also a repository containing all my published press features.",
       "Explore the different categories and my background in the sections above.",
     ],

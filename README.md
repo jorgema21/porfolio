@@ -1,6 +1,6 @@
 # Editorial Portfolio | Data Journalism and Visualization
 
-This portfolio is a project in itself. I developed a custom editorial system from scratch to organize my work in data journalism, infographics, and written features under the logic of a digital news outlet.
+This portfolio is a project in itself. I developed a custom editorial system from scratch to organize my work in data journalism, graphics, and written features under the logic of a digital news outlet.
 
 https://jorgema21.github.io/porfolio/
 

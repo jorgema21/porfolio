@@ -178,7 +178,7 @@ export const skills = {
     illustrator: {
       name: "Illustrator",
       description:
-        "My primary tool for vector design, static infographics, and data visualization processing.",
+        "My primary tool for vector design, static graphics, and data visualization processing.",
       details: [
         "Streamlined workflow with ai2html to deploy responsive, web-ready vector graphics.",
         "Handling clipping masks, gradients, multi-artboard systems, and SVG/PDF imports.",

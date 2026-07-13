@@ -200,7 +200,7 @@ const projects = [
     },
     description: {
       es: "Un recorrido visual por el vacío ferroviario de la Península que contrasta la España aislada con la hiperconectada a través de datos, mapas e infografías",
-      en: "A visual exploration of Spain's railway gaps, contrasting isolated regions with hyper-connected hubs through data, maps and infographics.",
+      en: "A visual exploration of Spain's railway gaps, contrasting isolated regions with hyper-connected hubs through data, maps and graphics.",
     },
 
     image: "/images/projects/tren-contrastes-ip.webp",
@@ -283,7 +283,7 @@ const projects = [
     },
     description: {
       es: "Datos e infografías para entender la compleja situación actual de los conciertos en directo",
-      en: "Data and infographics to understand the complex realities of today's live concert industry.",
+      en: "Data and graphics to understand the complex realities of today's live concert industry.",
     },
 
     image: "/images/projects/radiografia-musica-vivo-ip.webp",
