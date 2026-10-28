@@ -1,17 +1,18 @@
 <script lang="ts">
   import type { Infographic } from "../../data/infographics.data";
-  import { langSignal } from "$lib/i18n/index.svelte";
-  import { formatDate } from "$lib/utils/formatDate";
-  import { infographics as infographicsI18n } from "$lib/i18n/dictionaries/infographics.i18n";
-  import { openPreview } from "$lib/state/infographicPreview.svelte";
-  import { base } from "$app/paths";
+  import { langSignal } from "#lib/i18n/index.svelte.js";
+  import { formatDate } from "#lib/utils/formatDate.js";
+  import { infographics as infographicsI18n } from "#lib/i18n/dictionaries/infographics.i18n.js";
+  import { openPreview } from "#lib/state/infographicPreview.svelte.js";
+  import { asset } from "$app/paths";
+  import type { AssetPath } from "$app/types";
 
-  import { t } from "$lib/i18n/index.svelte";
+  import { t } from "#lib/i18n/index.svelte.js";
 
-  const { project, index = 0 } = $props<{
+  const { project, index = 0 }: {
     project: Infographic;
     index?: number;
-  }>();
+  } = $props();
 
   type MediumKey = keyof typeof infographicsI18n.es.mediums;
 
@@ -45,7 +46,7 @@
 
   <div class="thumb">
     <img
-      src={`${base}${project.image}`}
+      src={asset(String(project.image ?? "").replace(/^\/+/, "") as AssetPath)}
       alt=""
       width="800"
       height="450"

@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { timeline } from "$lib/data/about/timeline.data";
-  import { t } from "$lib/i18n/index.svelte";
+  import { timeline } from "#lib/data/about/timeline.data.js";
+  import { t } from "#lib/i18n/index.svelte.js";
 
   let container = $state<HTMLElement | null>(null);
   let progress = $state(0);

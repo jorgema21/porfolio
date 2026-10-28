@@ -1,16 +1,17 @@
 <script lang="ts">
-  import { base } from "$app/paths";
-  import { openLightbox } from "$lib/state/lightbox.svelte";
-  import { langSignal, t } from "$lib/i18n/index.svelte";
-  import { APARTADOS } from "$lib/config/apartados.config";
-  import { ROLE_MAP } from "$lib/config/roles";
-  import { formatDate } from "$lib/utils/formatDate";
-  import { createProjectView } from "$lib/infographics/project.view";
-  import { infographics as infographicsI18n } from "$lib/i18n/dictionaries/infographics.i18n";
-  import RichText from "$lib/components/writing/RichText.svelte";
-  import type { ProjectContent } from "$lib/types/project.types";
+  import { asset } from "$app/paths";
+  import type { AssetPath } from "$app/types";
+  import { openLightbox } from "#lib/state/lightbox.svelte.js";
+  import { langSignal, t } from "#lib/i18n/index.svelte.js";
+  import { APARTADOS } from "#lib/config/apartados.config.js";
+  import { ROLE_MAP } from "#lib/config/roles.js";
+  import { formatDate } from "#lib/utils/formatDate.js";
+  import { createProjectView } from "#lib/infographics/project.view.js";
+  import { infographics as infographicsI18n } from "#lib/i18n/dictionaries/infographics.i18n.js";
+  import RichText from "#lib/components/writing/RichText.svelte";
+  import type { InfographicRuntime } from "#lib/types/project.types.js";
 
-  const { data } = $props<{ data: { project: ProjectContent } }>();
+  let { data }: { data: { project: InfographicRuntime } } = $props();
 
   const view = $derived(createProjectView(langSignal.current));
   const project = $derived(data?.project);
@@ -21,6 +22,7 @@
       ? APARTADOS[project.apartado as keyof typeof APARTADOS]?.color?.light
       : "transparent",
   );
+
   const apartadoLabel = $derived(view.apartadoLabel(project));
 
   const mediumLabel = $derived.by(() => {
@@ -64,8 +66,10 @@
 >
   <header class="project-header">
     <h1>{view.title(project) ?? ""}</h1>
+
     {#if project?.image}
-      {@const src = `${base}${project.image}`}
+      {@const src = asset(project.image.replace(/^\/+/, "") as AssetPath)}
+
       <button
         class="cover-wrapper"
         onclick={() => openLightbox(src)}
@@ -92,6 +96,7 @@
         {#if mediumLabel}
           <a class="link-underline medium-link" href={project?.url ?? "#"}>
             {mediumLabel}
+
             {#if project?.url}
               <svg
                 class="icon-external"
@@ -109,23 +114,30 @@
             {/if}
           </a>
         {/if}
-        {#if project?.mediumKey && project?.date}<span>·</span>{/if}
-        {#if project?.date}<span
-            >{formatDate(project.date, langSignal.current)}</span
-          >{/if}
+
+        {#if project?.mediumKey && project?.date}
+          <span>·</span>
+        {/if}
+
+        {#if project?.date}
+          <span>
+            {formatDate(project.date, langSignal.current)}
+          </span>
+        {/if}
       </div>
 
       <div class="meta-row meta-center">
         <div class="meta-colabs">
           {#if colab?.tipo}
-            <span class="tag"
-              >{t.metaarticle.colaboracion[colab.tipo as "solo" | "equipo"] ??
-                colab.tipo}</span
-            >
+            <span class="tag">
+              {t.metaarticle.colaboracion[colab.tipo as "solo" | "equipo"] ??
+                colab.tipo}
+            </span>
           {/if}
 
           {#each colab?.rol ?? [] as roleKey (roleKey)}
             {@const role = ROLE_MAP[roleKey as keyof typeof ROLE_MAP]}
+
             {#if role}
               <span class="tag" title={role.label[langSignal.current]}>
                 <span>{role.icon}</span>
@@ -160,8 +172,9 @@
     {#each project?.blocks ?? [] as block, i (i)}
       {@const src =
         "src" in block
-          ? `${base}/images/graphics/${project?.slug}/${block.src}`
+          ? asset(`images/graphics/${project?.slug}/${block.src}` as AssetPath)
           : ""}
+
       {@const isFirstBlock = i === 0}
 
       {#if block.type === "hero" || block.type === "image"}
@@ -171,9 +184,10 @@
         >
           {#if block.caption?.[langSignal.current]}
             <span class="image-title">
-              <RichText value={block.caption[langSignal.current]} />
+              {block.caption[langSignal.current]}
             </span>
           {/if}
+
           <button
             onclick={() => openLightbox(src)}
             aria-label={t.infographics.aria.expandImage}
@@ -191,6 +205,7 @@
         </div>
       {:else if block.type === "text"}
         {@const val = block.value?.[langSignal.current] ?? block.value?.es}
+
         <p class="text">
           {#if Array.isArray(val)}
             <RichText value={val} />
@@ -207,13 +222,15 @@
   {#if project?.tools?.length}
     <footer class="tools">
       <h3>{t.metaarticle.tools}</h3>
+
       <ul class="tools-list">
         {#each project.tools as tool (tool)}
           {@const logoFile = toolLogos[tool]}
+
           <li class="tag tool-item">
             {#if logoFile}
               <img
-                src={`${base}/images/logos/${logoFile}`}
+                src={asset(`images/logos/${logoFile}` as AssetPath)}
                 alt=""
                 class="tool-logo"
                 width="20"
@@ -222,6 +239,7 @@
                 decoding="async"
               />
             {/if}
+
             <span>{tool}</span>
           </li>
         {/each}
@@ -238,6 +256,7 @@
     font-family: var(--font-sans);
     line-height: var(--lh-base);
   }
+
   .cover-wrapper,
   .image-wrapper button {
     display: block;
@@ -247,6 +266,7 @@
     padding: 0;
     margin: 0;
   }
+
   .meta-top {
     position: relative;
     display: flex;
@@ -257,6 +277,7 @@
     padding-top: var(--space-4);
     width: 100%;
   }
+
   .meta-top::before {
     content: "";
     position: absolute;
@@ -265,6 +286,7 @@
     background: var(--apartado-color);
     opacity: 0.4;
   }
+
   .meta-row {
     width: 100%;
     display: flex;
@@ -278,6 +300,7 @@
     font-size: var(--text-sm);
     color: var(--color-muted);
   }
+
   .meta-center {
     display: flex;
     align-items: center;
@@ -319,6 +342,7 @@
     align-items: center;
     gap: 0.25em;
   }
+
   .medium-link:hover {
     color: var(--blue-500);
   }
@@ -330,15 +354,18 @@
   .blocks {
     margin-top: var(--space-8);
   }
+
   .project-header h1 {
     margin: 0;
     font: var(--text-2xl) var(--font-serif);
   }
+
   .text {
     margin-block: var(--space-6);
     font-size: var(--text-base);
     line-height: var(--lh-base);
   }
+
   .image {
     width: 100%;
     border-radius: var(--radius-lg);
@@ -347,24 +374,29 @@
     transition: transform var(--transition);
     cursor: pointer;
   }
+
   .image:hover {
     transform: scale(1.01);
   }
+
   .image--image {
     width: 90%;
     margin-top: var(--space-12);
   }
+
   .image--cover {
     height: 420px;
     margin: var(--space-6) 0 var(--space-4);
     border-radius: var(--radius-xl);
   }
+
   .image-wrapper {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
+
   .image-title {
     position: absolute;
     text-align: center;
@@ -379,8 +411,8 @@
     font-size: var(--text-sm);
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--color-muted);
   }
+
   .tools ul {
     display: flex;
     flex-wrap: wrap;
@@ -403,7 +435,7 @@
     display: inline-flex;
     align-items: center;
     gap: var(--space-2);
-    padding: var(--space-1.5) var(--space-3);
+    padding: var(--space-2) var(--space-3);
     background: var(--bg-soft);
     border: var(--border-1);
     border-radius: var(--radius-full);
@@ -422,15 +454,18 @@
       height: auto;
       object-fit: contain;
     }
+
     .image--image {
       width: 100%;
     }
+
     .image-title {
       position: static;
       margin-bottom: var(--space-2);
       transform: none;
       text-align: center;
     }
+
     .meta-center {
       flex-direction: column;
       align-items: flex-start;

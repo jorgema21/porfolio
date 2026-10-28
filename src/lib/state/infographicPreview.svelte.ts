@@ -1,4 +1,4 @@
-import type { Infographic } from "$lib/data/infographics.data";
+import type { Infographic } from "#lib/data/infographics.data.js";
 
 let currentProject = $state<Infographic | null>(null);
 

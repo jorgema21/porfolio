@@ -1,23 +1,24 @@
 <script lang="ts">
-  import { base } from "$app/paths";
+  import { asset } from "$app/paths";
+  import type { AssetPath } from "$app/types";
   import { slide } from "svelte/transition";
-  import { t } from "$lib/i18n/index.svelte";
-  import type { Skill, SkillId } from "$lib/data/about/skills.data";
+  import { t } from "#lib/i18n/index.svelte.js";
+  import type { Skill, SkillId } from "#lib/data/about/skills.data.js";
 
   type SkillLevelKey =
-    | "advanced"
-    | "proficient"
-    | "intermediate"
-    | "learning"
-    | "nextup";
+    "advanced" |
+    "proficient" |
+    "intermediate" |
+    "learning" |
+    "nextup";
 
   const {
   skill,
   index
-} = $props<{
+}: {
   skill: Skill;
   index: number;
-}>();
+} = $props();
 
   let open = $state(false);
 
@@ -57,12 +58,12 @@
         };
       }
 
-      if (level >= 3) {
+    if (level >= 3) {
         return {
           key: "learning",
           label: t.skillLevels.learning
         };
-      }
+    }
 
       return {
         key: "nextup",
@@ -85,7 +86,7 @@
       {#if skill.logo}
         <img
           class="skill-logo"
-          src={`${base}${skill.logo}`}
+          src={asset(skill.logo.replace(/^\/+/, "") as AssetPath)}
           alt=""
           aria-hidden="true"
           loading="lazy"
@@ -181,8 +182,8 @@
     transition:
       opacity 700ms var(--ease-out),
       transform 700ms var(--ease-out);
+    }
   }
-}
 
   .skill-header {
     display: grid;
@@ -359,8 +360,7 @@
 
   .skill-details {
     max-width: 72ch;
-    padding:
-      0
+    padding: 0
       0
       var(--space-6)
       calc(var(--space-8) + var(--space-4));

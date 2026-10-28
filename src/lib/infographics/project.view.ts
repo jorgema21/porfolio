@@ -1,5 +1,5 @@
-import { APARTADOS } from "$lib/config/apartados.config";
-import type { InfographicRuntime, Lang } from "$lib/types/project.types";
+import { APARTADOS } from "#lib/config/apartados.config.js";
+import type { InfographicRuntime, Lang } from "#lib/types/project.types.js";
 
 export const createProjectView = (lang: Lang) => {
   const mediumLabel = (p: InfographicRuntime) => {

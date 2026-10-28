@@ -1,11 +1,12 @@
 <script lang="ts">
-  import { base } from "$app/paths";
+  import { asset, resolve } from "$app/paths";
+  import type { AssetPath } from "$app/types";
   import { fly } from "svelte/transition";
   import { cubicOut } from "svelte/easing";
-  import { langSignal, t } from "$lib/i18n/index.svelte";
-  import type { HomeProject, ProjectCategory } from "$lib/data/projects";
+  import { langSignal, t } from "#lib/i18n/index.svelte.js";
+  import type { HomeProject, ProjectCategory } from "#lib/data/projects.js";
 
-  const { items } = $props<{ items: HomeProject[] }>();
+  const { items }: { items: HomeProject[] } = $props();
 
   let visibleCount = $state(2);
   const baseDelay = 50;
@@ -19,10 +20,10 @@
     }
 
     const interval = setInterval(() => {
-      visibleCount += 1;
-      if (visibleCount >= items.length) {
-        clearInterval(interval);
-      }
+        visibleCount += 1;
+        if (visibleCount >= items.length) {
+          clearInterval(interval);
+        }
     }, baseDelay);
 
     return () => clearInterval(interval);
@@ -31,11 +32,10 @@
   const getProjectMeta = (project: HomeProject) => {
     const isInfographic = project.category === "infografia";
     const href = isInfographic
-      ? `${base}/graphics/${project.slug}`
+      ? resolve(`graphics/${project.slug}`)
       : project.externalUrl;
-    const imageSrc = project.image?.startsWith("http")
-      ? project.image
-      : `${base}${project.image}`;
+
+    const imageSrc = project.image?.startsWith("http") ? project.image : project.image ? asset(project.image.replace(/^\/+/, "") as AssetPath) : "";
 
     return {
       isExternal: project.category !== "infografia" && !!project.externalUrl,
@@ -81,13 +81,8 @@
       {/if}
 
       <div class="content">
-        <span class="category {project.category}">
-          {t.project.category[project.category as ProjectCategory]}
-        </span>
-
-        <h2 class="title">
-          {project.title[langSignal.current]}
-        </h2>
+        <span class="category {project.category}">{t.project.category[project.category as ProjectCategory]}</span>
+        <h2 class="title">{project.title[langSignal.current]}</h2>
 
         {#if project.description}
           <p class="description">

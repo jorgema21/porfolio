@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { t } from "$lib/i18n/index.svelte";
-  import { skills } from "$lib/data/about/skills.data";
-  import SkillBar from "$lib/components/about/SkillBar.svelte";
-  import AboutTimeline from "$lib/components/about/AboutTimeline.svelte";
-  import AboutLanguages from "$lib/components/about/AboutLanguages.svelte";
-  import RichText from "$lib/components/writing/RichText.svelte";
+  import { t } from "#lib/i18n/index.svelte.js";
+  import { skills } from "#lib/data/about/skills.data.js";
+  import SkillBar from "#lib/components/about/SkillBar.svelte";
+  import AboutTimeline from "#lib/components/about/AboutTimeline.svelte";
+  import AboutLanguages from "#lib/components/about/AboutLanguages.svelte";
+  import RichText from "#lib/components/writing/RichText.svelte";
 
   let skillsSection = $state<HTMLElement | null>(null);
   let isSectionVisible = $state(false);

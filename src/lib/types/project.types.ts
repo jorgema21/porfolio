@@ -1,5 +1,5 @@
 import type { Block } from "./block";
-import type { ApartadoKey } from "$lib/config/apartados.config";
+import type { ApartadoKey } from "#lib/config/apartados.config.js";
 
 export type Lang = "es" | "en";
 export type TranslatedText = Record<Lang, string>;

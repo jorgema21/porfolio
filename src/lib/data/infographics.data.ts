@@ -1,6 +1,6 @@
-import projects from "$lib/data/projects";
+import projects from "#lib/data/projects.js";
 
-import type { InfographicMeta } from "$lib/types/project.types";
+import type { InfographicMeta } from "#lib/types/project.types.js";
 export interface Infographic extends Record<string, unknown>, InfographicMeta {
   id: string;
   slug: string;

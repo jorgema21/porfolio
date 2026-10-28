@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { t } from "$lib/i18n/index.svelte";
-  import { base } from "$app/paths";
+  import { t } from "#lib/i18n/index.svelte.js";
+  import { asset } from "$app/paths";
 </script>
 
 <div class="page">
@@ -12,7 +12,7 @@
 
   <div class="contact-location">
     <img
-      src={`${base}/images/logos/ubi-logo.png`}
+      src={asset("images/logos/ubi-logo.png")}
       alt=""
       class="location-icon"
     />
@@ -25,10 +25,10 @@
       <p>{t.contact.description}</p>
     </div>
 
-    <a class="button" href="mailto:jorge.marzoara@gmail.com">
-      {t.contact.cta}:<br>
-      jorge.marzoara@gmail.com
-    </a>
+    <a
+      class="button"
+      href="mailto:jorge.marzoara@gmail.com"
+    >{t.contact.cta}:<br />jorge.marzoara@gmail.com</a>
   </section>
 
   <section class="cluster social-cluster">
@@ -39,7 +39,7 @@
       rel="noopener noreferrer"
     >
       <img
-        src={`${base}/images/logos/LinkedIn_Logo.svg`}
+        src={asset("images/logos/LinkedIn_Logo.svg")}
         alt="LinkedIn"
         class="social-icon"
       />
@@ -53,7 +53,7 @@
       rel="noopener noreferrer"
     >
       <img
-        src={`${base}/images/logos/GitHub_logo.svg`}
+        src={asset("images/logos/GitHub_logo.svg")}
         alt="GitHub"
         class="social-icon"
       />

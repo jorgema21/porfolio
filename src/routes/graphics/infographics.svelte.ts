@@ -1,6 +1,6 @@
-import { infographics } from "$lib/data/infographics.data";
-import { APARTADOS } from "$lib/config/apartados.config";
-import { infographics as infographicsI18n } from "$lib/i18n/dictionaries/infographics.i18n";
+import { infographics } from "#lib/data/infographics.data.js";
+import { APARTADOS } from "#lib/config/apartados.config.js";
+import { infographics as infographicsI18n } from "#lib/i18n/dictionaries/infographics.i18n.js";
 import { SvelteMap } from "svelte/reactivity";
 
 export type Lang = "es" | "en";

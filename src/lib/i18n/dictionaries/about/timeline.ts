@@ -1,4 +1,4 @@
-import type { TimelineId } from "$lib/data/about/timeline.data";
+import type { TimelineId } from "#lib/data/about/timeline.data.js";
 
 export type TimelineLocale = Record<
   TimelineId,

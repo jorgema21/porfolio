@@ -1,13 +1,17 @@
+<script module lang="ts">
+export type TreemapItem<K extends string = string> = {
+    key: K;
+    value: number;
+  };
+</script>
+
 <script lang="ts">
   import { hierarchy, treemap, treemapSquarify } from "d3-hierarchy";
   import { scaleLinear } from "d3-scale";
   import { tweened } from "svelte/motion";
   import { cubicOut } from "svelte/easing";
 
-  export type TreemapItem<K extends string = string> = {
-    key: K;
-    value: number;
-  };
+
 
   type TreemapNode = {
     key?: string;
@@ -21,13 +25,13 @@
     height = 250,
     title = "",
     getLabel = (d: string) => d,
-  } = $props<{
+  }: {
     data: TreemapItem[];
     width?: number;
     height?: number;
     title?: string;
     getLabel?: (key: string) => string;
-  }>();
+  } = $props();
 
   let hovered = $state<TreemapItem | null>(null);
   let mouseX = $state(0);

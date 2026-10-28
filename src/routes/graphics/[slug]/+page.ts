@@ -1,10 +1,10 @@
-import projects from "$lib/data/projects";
+import projects from "#lib/data/projects.js";
 import { error } from "@sveltejs/kit";
-import type { Block } from "$lib/types/block";
+import type { Block } from "#lib/types/block.js";
 import type {
   InfographicRuntime,
   InfographicMeta,
-} from "$lib/types/project.types";
+} from "#lib/types/project.types.js";
 import type { PageLoad, EntryGenerator } from "./$types";
 
 const contentModules = import.meta.glob(

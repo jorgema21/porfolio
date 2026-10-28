@@ -1,9 +1,9 @@
 <script lang="ts">
-  import type { RichText } from "$lib/i18n/rich-text.types";
+  import type { RichText } from "#lib/i18n/rich-text.types.js";
 
-  const { value } = $props<{
+  const { value }: {
     value: RichText;
-  }>();
+  } = $props();
 </script>
 
 <span>

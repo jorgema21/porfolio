@@ -1,8 +1,8 @@
 <script lang="ts">
-  import { lightbox, closeLightbox } from "$lib/state/lightbox.svelte";
+  import { lightbox, closeLightbox } from "#lib/state/lightbox.svelte.js";
   import { fade, scale } from "svelte/transition";
 
-  import { t } from "$lib/i18n/index.svelte";
+  import { t } from "#lib/i18n/index.svelte.js";
 
   function handleClose() {
     closeLightbox();

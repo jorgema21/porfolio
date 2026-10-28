@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { langSignal } from "$lib/i18n/index.svelte";
-  import type { TranslatedText } from "$lib/types/project.types";
+  import { langSignal } from "#lib/i18n/index.svelte.js";
+  import type { TranslatedText } from "#lib/types/project.types.js";
 
   interface AccordionItem {
     id: string;
@@ -8,9 +8,9 @@
     externalUrl?: string;
   }
 
-  const { groups } = $props<{
+  const { groups }: {
     groups: { key: string; items: AccordionItem[] }[];
-  }>();
+  } = $props();
 
   let open = $state<string | null>(null);
 

@@ -1,15 +1,15 @@
 <script lang="ts">
-  import { base } from "$app/paths";
-  import { t, langSignal, toggleLang } from "$lib/i18n/index.svelte";
+  import { asset, resolve } from "$app/paths";
+  import { t, langSignal, toggleLang } from "#lib/i18n/index.svelte.js";
   import { fly } from "svelte/transition";
   import { cubicOut } from "svelte/easing";
 
   const navItems = [
-    { href: `${base}/graphics`, key: "graphics" },
-    { href: `${base}/lifestyle`, key: "lifestyle" },
-    { href: `${base}/parenting`, key: "parenting" },
-    { href: `${base}/about-me`, key: "about-me" },
-    { href: `${base}/contact`, key: "contact" },
+    { href: resolve("/graphics"), key: "graphics" },
+    { href: resolve("/lifestyle"), key: "lifestyle" },
+    { href: resolve("/parenting"), key: "parenting" },
+    { href: resolve("/about-me"), key: "about-me" },
+    { href: resolve("/contact"), key: "contact" }
   ] as const;
 
   const delay = 120;
@@ -35,15 +35,9 @@
     };
   });
 
-  const flyIn = {
-    y: -30,
-    duration: 1000,
-    easing: cubicOut,
-  };
-
-  const toggleMenu = () => (mobileOpen = !mobileOpen);
-  const closeMenu = () => (mobileOpen = false);
-
+  const flyIn = { y: -30, duration: 1000, easing: cubicOut };
+  const toggleMenu = () => mobileOpen = !mobileOpen;
+  const closeMenu = () => mobileOpen = false;
   const navLabel = (key: keyof typeof t.layout.nav) => t.layout.nav[key];
 </script>
 
@@ -67,9 +61,7 @@
   {/if}
 
   {#if visible >= 1}
-    <h1 class="logo" in:fly={flyIn}>
-      <a href="{base}/">{t.layout.nav.my_portfolio}</a>
-    </h1>
+    <h1 class="logo" in:fly={flyIn}><a href={resolve("/")}>{t.layout.nav.my_portfolio}</a></h1>
   {/if}
 
   {#if visible >= 2}
@@ -92,7 +84,7 @@
       in:fly={{ ...flyIn, delay: 150 }}
     >
       <img
-        src={`${base}${langSignal.current === "es" ? "/images/flags/us.svg" : "/images/flags/es.svg"}`}
+        src={langSignal.current === "es" ? asset("images/flags/us.svg") : asset("images/flags/es.svg")}
         alt=""
         aria-hidden="true"
         width="20"

@@ -1,4 +1,4 @@
-import type { RoleType } from "$lib/types/project.types";
+import type { RoleType } from "#lib/types/project.types.js";
 
 type RoleConfig = {
   readonly icon: string;

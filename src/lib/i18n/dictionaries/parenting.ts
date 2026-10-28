@@ -1,4 +1,4 @@
-import type { RichText } from "$lib/i18n/rich-text.types";
+import type { RichText } from "#lib/i18n/rich-text.types.js";
 
 type InfographicsDict = {
   title: string;

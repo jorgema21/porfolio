@@ -1,12 +1,13 @@
 <script lang="ts">
-  import { base } from "$app/paths";
-  import { preview, closePreview } from "$lib/state/infographicPreview.svelte";
-  import { langSignal } from "$lib/i18n/index.svelte";
-  import { formatDate } from "$lib/utils/formatDate";
-  import { infographics as infographicsI18n } from "$lib/i18n/dictionaries/infographics.i18n";
+  import { asset, resolve } from "$app/paths";
+  import type { AssetPath } from "$app/types";
+  import { preview, closePreview } from "#lib/state/infographicPreview.svelte.js";
+  import { langSignal } from "#lib/i18n/index.svelte.js";
+  import { formatDate } from "#lib/utils/formatDate.js";
+  import { infographics as infographicsI18n } from "#lib/i18n/dictionaries/infographics.i18n.js";
   import { fade, scale } from "svelte/transition";
   import type { Lang } from "../../../routes/graphics/infographics.svelte";
-  import { t } from "$lib/i18n/index.svelte";
+  import { t } from "#lib/i18n/index.svelte.js";
 
   function handleKey(e: KeyboardEvent) {
     if (e.key === "Escape") closePreview();
@@ -14,10 +15,9 @@
 
   type MediumKey = keyof typeof infographicsI18n.es.mediums;
 
-  const medium = (key?: string) =>
-    key
-      ? (infographicsI18n[langSignal.current].mediums[key as MediumKey] ?? key)
-      : null;
+  const medium = (key?: string) => key
+    ? infographicsI18n[langSignal.current].mediums[key as MediumKey] ?? key
+    : null;
 
   const getLocalized = (field: unknown): Record<Lang, string> => {
     return (field || { es: "", en: "" }) as Record<Lang, string>;
@@ -51,7 +51,7 @@
       </button>
 
       <img
-        src={`${base}${preview.project.image}`}
+        src={asset(String(preview.project.image ?? "").replace(/^\/+/, "") as AssetPath)}
         alt={getLocalized(preview.project.title)[langSignal.current]}
         class="preview-image"
         loading="lazy"
@@ -87,7 +87,7 @@
         <h2>
           <a
             class="preview-link link-underline"
-            href={`${base}/graphics/${preview.project.slug}`}
+            href={resolve(`graphics/${preview.project.slug}`)}
           >
             {getLocalized(preview.project.title)[langSignal.current]}
             <svg

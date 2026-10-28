@@ -1,4 +1,4 @@
-import type { Lang } from "$lib/types/project.types";
+import type { Lang } from "#lib/types/project.types.js";
 
 const formatters = {
   es: new Intl.DateTimeFormat("es-ES", {

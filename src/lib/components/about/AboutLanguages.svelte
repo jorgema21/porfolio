@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { t } from "$lib/i18n/index.svelte";
-  import { languages, type LanguageId } from "$lib/data/about/languages.data";
+  import { t } from "#lib/i18n/index.svelte.js";
+  import { languages, type LanguageId } from "#lib/data/about/languages.data.js";
 
   const MAX_LEVEL = 10;
 

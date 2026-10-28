@@ -1,5 +1,5 @@
-import projects from "$lib/data/projects";
-import type { ProjectCategory, ProjectContent } from "$lib/types/project.types";
+import projects from "#lib/data/projects.js";
+import type { ProjectCategory, ProjectContent } from "#lib/types/project.types.js";
 
 export function createGroupedProjects(
   category: ProjectCategory,

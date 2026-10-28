@@ -1,5 +1,5 @@
 import type { TranslatedText } from "./project.types";
-import type { RichText } from "$lib/i18n/rich-text.types";
+import type { RichText } from "#lib/i18n/rich-text.types.js";
 
 export type TranslatedRichText = {
   es: RichText;

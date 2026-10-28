@@ -1,3 +1,6 @@
+import adapter from "@sveltejs/adapter-static";
+import { mdsvex } from "mdsvex";
+import { relative, sep } from "node:path";
 import { sveltekit } from "@sveltejs/kit/vite";
 import { defineConfig } from "vite";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
@@ -57,7 +60,23 @@ function ViteStaticResize() {
 
 export default defineConfig({
   plugins: [
-    sveltekit(),
+    sveltekit({
+      extensions: [".svelte", ".md", ".svx"],
+      compilerOptions: {
+        runes: ({ filename }) => {
+          const relativePath = relative(import.meta.dirname, filename);
+          const pathSegments = relativePath.toLowerCase().split(sep);
+          const isExternalLibrary = pathSegments.includes("node_modules");
+
+          return isExternalLibrary ? undefined : true;
+        }
+      },
+      preprocess: [mdsvex({ extensions: [".md"] })],
+      adapter: adapter({ pages: "build", assets: "build", fallback: "404.html" }),
+      paths: { base: "/porfolio" },
+      prerender: { handleHttpError: "warn", handleUnseenRoutes: "ignore" }
+    }),
+
     ViteImageOptimizer({
       png: { compressionLevel: 9, palette: true },
       jpeg: { quality: 80 },

@@ -1,13 +1,14 @@
 <script lang="ts">
-  import "$lib/styles/global.css";
-  import ImageLightbox from "$lib/components/ImageLightbox.svelte";
-  import Header from "$lib/components/Header.svelte";
-  import Footer from "$lib/components/Footer.svelte";
-  import { page } from "$app/stores";
-  import { browser } from "$app/environment";
+  import { asset } from "$app/paths";
+  import "#lib/styles/global.css";
+  import ImageLightbox from "#lib/components/ImageLightbox.svelte";
+  import Header from "#lib/components/Header.svelte";
+  import Footer from "#lib/components/Footer.svelte";
+  import { page } from "$app/state";
+  import { browser } from "$app/env";
 
-  import { langSignal } from "$lib/i18n/lang.svelte";
-  import { layout } from "$lib/i18n/dictionaries/layout";
+  import { langSignal } from "#lib/i18n/lang.svelte.js";
+  import { layout } from "#lib/i18n/dictionaries/layout.js";
 
   const { children } = $props();
 
@@ -53,7 +54,8 @@
     };
   });
 
-  let currentPath = $derived($page.url.pathname.split("/").pop() || "home");
+  let currentPath = $derived(page.url.pathname.split("/").pop() || "home");
+
   let announcePath = $derived(
     langSignal.current === "es"
       ? `Navegando a la página de ${t.nav[currentPath as keyof typeof t.nav] || t.nav.home}`
@@ -65,7 +67,7 @@
   <title>{t.seo.title}</title>
   <meta name="description" content={t.seo.description} />
 
-  {#if $page.url.pathname.includes("/graphics/") && $page.url.pathname
+  {#if page.url.pathname.includes("/graphics/") && page.url.pathname
       .split("/")
       .pop() !== "graphics"}
     <meta name="robots" content="noindex, follow" />
@@ -77,7 +79,10 @@
   <meta property="og:site_name" content="Portfolio" />
   <meta property="og:title" content={t.seo.title} />
   <meta property="og:description" content={t.seo.ogDescription} />
-  <meta property="og:image" content="/images/projects/este-porfolio-ip.webp" />
+  <meta
+    property="og:image"
+    content={asset("images/projects/este-porfolio-ip.webp")}
+  />
 </svelte:head>
 
 <div class="sr-only" role="status" aria-live="assertive" aria-atomic="true">
@@ -105,17 +110,14 @@
     stroke="currentColor"
     stroke-width="2.5"
     stroke-linecap="round"
-    stroke-linejoin="round"
+    stroke-linejoin="round"><path d="m18 15-6-6-6 6"></path></svg
   >
-    <path d="m18 15-6-6-6 6" />
-  </svg>
 </button>
 
 <Footer />
 <ImageLightbox />
 
 <style>
-
   .scroll-top-btn {
     position: fixed;
     bottom: var(--space-6, 24px);

@@ -1,15 +1,15 @@
 <script lang="ts">
-  import InfographicCard from "$lib/components/infographics/InfographicCard.svelte";
-  import Treemap from "$lib/components/visualizations/Treemap.svelte";
-  import InfographicPreview from "$lib/components/infographics/InfographicPreview.svelte";
-  import RichText from "$lib/components/writing/RichText.svelte";
+  import InfographicCard from "#lib/components/infographics/InfographicCard.svelte";
+  import Treemap from "#lib/components/visualizations/Treemap.svelte";
+  import InfographicPreview from "#lib/components/infographics/InfographicPreview.svelte";
+  import RichText from "#lib/components/writing/RichText.svelte";
 
   import { flip } from "svelte/animate";
   import { fly } from "svelte/transition";
   import { cubicOut } from "svelte/easing";
 
-  import { t, langSignal } from "$lib/i18n/index.svelte";
-  import { closePreview } from "$lib/state/infographicPreview.svelte";
+  import { t, langSignal } from "#lib/i18n/index.svelte.js";
+  import { closePreview } from "#lib/state/infographicPreview.svelte.js";
 
   import { useInfographicsPage } from "./infographics.svelte";
 
@@ -47,13 +47,13 @@
     <Treemap
       title={t.infographics.filters.apartados}
       data={info.treemap.apartados}
-      getLabel={(k) => info.groupLabel(k, "apartado")}
+      getLabel={(k: string) => info.groupLabel(k, "apartado")}
     />
 
     <Treemap
       title={t.infographics.filters.mediums}
       data={info.treemap.mediums}
-      getLabel={(k) => info.groupLabel(k, "medium")}
+      getLabel={(k: string) => info.groupLabel(k, "medium")}
     />
   </section>
 

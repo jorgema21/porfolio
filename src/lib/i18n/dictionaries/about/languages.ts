@@ -1,4 +1,4 @@
-import type { LanguageId } from "$lib/data/about/languages.data";
+import type { LanguageId } from "#lib/data/about/languages.data.js";
 
 type LanguageContent = {
   name: string;
