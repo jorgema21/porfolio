@@ -174,7 +174,7 @@ const projects = [
       es: "Agrupación de trabajos realizados para la web Voronoi, de Visual Capitalist",
       en: "A selection of infographics created for Voronoi, Visual Capitalist's data visualization platform.",
     },
-    image: "/images/projects/digital-news-report-2026-ip.webp",
+    image: "/images/projects/graficos-voronoi-ip.webp",
   },
   {
     id: "p8",
