@@ -92,6 +92,7 @@ export const infographics: Record<"es" | "en", InfographicsDict> = {
       github: "GitHub",
       linkedin: "LinkedIn",
       a14: "Artículo 14",
+      voronoi: "Voronoi"
     },
 
     intro: [
@@ -188,6 +189,7 @@ export const infographics: Record<"es" | "en", InfographicsDict> = {
       github: "GitHub",
       linkedin: "LinkedIn",
       a14: "Artículo 14",
+      voronoi: "Voronoi"
     },
 
     intro: [

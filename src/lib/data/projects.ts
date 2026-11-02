@@ -314,6 +314,7 @@ const projects = [
       en: "Factors such as control, uncertainty, and context can lock in summer schedules early.",
     },
   },
+
   {
     id: "p16",
     externalUrl:
@@ -324,11 +325,11 @@ const projects = [
     homeSlot: "A4",
     title: {
       es: "¿Cómo pueden afectar a los niños las comparaciones familiares?",
-      en: "FAMILIARS PERSONALITY",
+      en: "How Family Comparisons Can Affect Children",
     },
     description: {
       es: "Los padres pueden descubrir en sus hijos la personalidad de adultos cuyas reacciones no les parecen correctas",
-      en: "Temporary description of FAMILIAR PERSONALITY.",
+      en: "Parents may recognize personality traits in their children that remind them of adults whose behavior they disapprove of.",
     },
   },
   {
@@ -341,11 +342,11 @@ const projects = [
     homeSlot: "E1",
     title: {
       es: "La intervención paterna constante puede derivar en falta de independencia infantojuvenil",
-      en: "RESOLVE PROBLEMS",
+      en: "How Constant Parental Intervention Can Undermine Children's Independence",
     },
     description: {
       es: "Resolver los problemas de los hijos no debería suponer que se ralentice su autonomía y su capacidad de resolución",
-      en: "Temporary description of the RESOLVE PROBLEMS.",
+      en: "Helping children solve problems shouldn't come at the expense of their independence and problem-solving skills.",
     },
   },
   {
@@ -358,11 +359,11 @@ const projects = [
     mediumStyle: "El País",
     title: {
       es: "Vuelta al cole: cuando la flexibilidad del verano se termina",
-      en: "ROUTINE LIMITS",
+      en: "Back to School: When Summer's Flexibility Comes to an End",
     },
     description: {
       es: "La libertad del periodo estival se termina cuando llega la época escolar y hay que actuar en consecuencia con los límites",
-      en: "Temporary description of ROUTINE LIMITS.",
+      en: "As summer gives way to the school year, families must readjust expectations and reestablish boundaries.",
     },
   },
   {
@@ -375,11 +376,11 @@ const projects = [
     mediumStyle: "El País",
     title: {
       es: "¿Cómo hablarles de dinero a los niños?",
-      en: "DINERO HIJOS",
+      en: "How to Talk to Kids About Money",
     },
     description: {
       es: "La economía familiar y general es un campo sobre el que hablar con naturalidad a partir de cierta edad",
-      en: "Temporary description of the new parenting project.",
+      en: "As children grow older, conversations about family finances and the broader economy can become a natural part of everyday life.",
     },
   },
   {
@@ -392,11 +393,11 @@ const projects = [
     mediumStyle: "El País",
     title: {
       es: "¿Qué puede haber detrás del colecho con los hijos?",
-      en: "CHILDS COSLEEPING",
+      en: "Why Some Parents Choose to Share a Bed With Their Children",
     },
     description: {
       es: "Rutina familiar, ventajas nocturnas o factores relacionales y de desarrollo pueden estar detrás de dormir juntos",
-      en: "Temporary description of CHILDS COSLEEPING.",
+      en: "Family routines, nighttime convenience, and emotional or developmental factors can all play a role in bed-sharing.",
     },
   },
   {
@@ -409,11 +410,11 @@ const projects = [
     mediumStyle: "El País",
     title: {
       es: "La oportunidad de aprovechar la autonomía infantil en verano",
-      en: "CHILDHOOD AUTONOMY",
+      en: "Why Summer Is an Opportunity to Foster Children's Independence",
     },
     description: {
       es: "La época estival puede ser un buen momento para que los niños aprendan a ser más independientes",
-      en: "Temporary description of CHILDHOOD AUTONOMY.",
+      en: "Summer can be an ideal time for children to develop greater independence.",
     },
   },
   {
