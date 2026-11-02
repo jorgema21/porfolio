@@ -5,6 +5,7 @@
   import { cubicOut } from "svelte/easing";
   import { langSignal, t } from "#lib/i18n/index.svelte.js";
   import type { HomeProject, ProjectCategory } from "#lib/data/projects.js";
+  import { homeSlots } from "#lib/data/home-slots.js";
 
   const { items }: { items: HomeProject[] } = $props();
 
@@ -20,10 +21,10 @@
     }
 
     const interval = setInterval(() => {
-        visibleCount += 1;
-        if (visibleCount >= items.length) {
-          clearInterval(interval);
-        }
+      visibleCount += 1;
+      if (visibleCount >= items.length) {
+        clearInterval(interval);
+      }
     }, baseDelay);
 
     return () => clearInterval(interval);
@@ -35,7 +36,11 @@
       ? resolve(`graphics/${project.slug}`)
       : project.externalUrl;
 
-    const imageSrc = project.image?.startsWith("http") ? project.image : project.image ? asset(project.image.replace(/^\/+/, "") as AssetPath) : "";
+    const imageSrc = project.image?.startsWith("http")
+      ? project.image
+      : project.image
+        ? asset(project.image.replace(/^\/+/, "") as AssetPath)
+        : "";
 
     return {
       isExternal: project.category !== "infografia" && !!project.externalUrl,
@@ -48,25 +53,26 @@
 
 {#each items as project, i (project.id)}
   {@const meta = getProjectMeta(project)}
+  {@const slot = project.homeSlot ? homeSlots[project.homeSlot] : undefined}
   {@const isCritical = i < 2}
 
-  {#if isCritical || i < visibleCount}
+  {#if slot && (isCritical || i < visibleCount)}
     <a
-      class="card {project.variant}"
+      class="card {slot.variant}"
       href={meta.href ?? undefined}
       target={meta.isExternal ? "_blank" : undefined}
       rel={meta.isExternal ? "noopener noreferrer" : undefined}
       aria-disabled={!meta.canNavigate}
       tabindex={meta.canNavigate ? 0 : -1}
-      style:--col-start={project.colStart}
-      style:--col-span={project.colSpan}
-      style:--row-start={project.rowStart}
-      style:--row-span={project.rowSpan ?? 1}
+      style:--col-start={slot.colStart}
+      style:--col-span={slot.colSpan}
+      style:--row-start={slot.rowStart}
+      style:--row-span={slot.rowSpan}
       in:fly={!isCritical
         ? { y: 20, duration: 400, easing: cubicOut }
         : undefined}
     >
-      {#if project.image && project.variant !== "list"}
+      {#if project.image && slot.variant !== "list"}
         <div class="thumb">
           <img
             src={meta.imageSrc}
@@ -152,7 +158,6 @@
       transition: transform var(--transition);
     }
   }
-
   .card:hover .thumb img {
     transform: scale(1.03);
   }

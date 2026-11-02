@@ -1,9 +1,17 @@
 <script lang="ts">
   import projects from "#lib/data/projects.js";
+  import { homeSlots } from "#lib/data/home-slots.js";
   import AnimatedZone from "#lib/components/home/AnimatedZone.svelte";
   import { t } from "#lib/i18n/index.svelte.js";
 
-  const homeProjects = $derived(projects.filter((p) => p.homeVisible ?? true));
+  const slotOrder = Object.keys(homeSlots);
+  const homeProjects = $derived(
+    projects
+      .filter((p) => p.homeVisible === true && p.homeSlot)
+      .sort((a, b) =>
+        slotOrder.indexOf(a.homeSlot!) - slotOrder.indexOf(b.homeSlot!)
+      )
+  );
   const introLines = $derived(t.home.intro);
 </script>
 
