@@ -136,11 +136,11 @@ const projects = [
     homeSlot: "A1",
     title: {
       es: "El teletrabajo: una nueva opción de producción laboral en España",
-      en: "The Distribution of Agricultural Land",
+      en: "Remote Work in Spain: A New Way of Working",
     },
     description: {
       es: "Desde la pandemia, trabajar sin estar en la oficina gana más adeptos gracias a su flexibilidad, pero también detractores",
-      en: "A visual and cartographic analysis of agricultural land distribution and different land uses.",
+      en: "Since the pandemic, remote work has gained supporters thanks to its flexibility, but it has also attracted critics",
     },
     image: "/images/projects/implantacion-teletrabajo-ip.webp",
   },
