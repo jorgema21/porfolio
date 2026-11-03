@@ -1,25 +1,50 @@
 <script lang="ts">
   import { lightbox, closeLightbox } from "#lib/state/lightbox.svelte.js";
   import { fade, scale } from "svelte/transition";
-
   import { t } from "#lib/i18n/index.svelte.js";
 
-  function handleClose() {
-    closeLightbox();
+  function activateModal(node: HTMLDialogElement) {
+    const previousFocus = document.activeElement;
+
+    node.showModal();
+
+    node.querySelector<HTMLButtonElement>(".lightbox-close")?.focus();
+
+    return {
+      destroy() {
+        if (node.open) {
+          node.close();
+        }
+
+        if (previousFocus instanceof HTMLElement && previousFocus.isConnected) {
+          previousFocus.focus();
+        }
+      },
+    };
   }
 </script>
 
 {#if lightbox.image}
   <dialog
     class="lightbox-overlay"
-    open
-    onclose={handleClose}
+    use:activateModal
+    oncancel={(e) => {
+      e.preventDefault();
+      closeLightbox();
+    }}
+    onkeydown={(e) => {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        closeLightbox();
+      }
+    }}
     aria-label={t.layout.lightbox.enlargedImage}
     transition:fade={{ duration: 150 }}
   >
     <button
       class="lightbox-backdrop"
       type="button"
+      tabindex="-1"
       aria-label={t.layout.lightbox.closeImage}
       onclick={closeLightbox}
     ></button>
@@ -36,6 +61,7 @@
       >
         ✕
       </button>
+
       <img
         src={lightbox.image}
         alt={t.layout.lightbox.altImage}
@@ -50,8 +76,10 @@
     position: fixed;
     inset: 0;
     z-index: 10000;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
     border: none;
     padding: 0;
     margin: 0;
@@ -60,6 +88,10 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+  }
+
+  .lightbox-overlay::backdrop {
+    background: transparent;
   }
 
   .lightbox-backdrop {
@@ -95,21 +127,18 @@
     position: absolute;
     top: var(--space-3, 0.75rem);
     right: var(--space-3, 0.75rem);
-
     background: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(4px);
     border: none;
     color: var(--color-white, #fff);
     font-size: var(--text-base, 1rem);
     cursor: pointer;
-
     width: 36px;
     height: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: var(--radius-full, 50%);
-
     opacity: 0.85;
     transition:
       opacity var(--transition, 0.2s),

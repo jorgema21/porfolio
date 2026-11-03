@@ -54,12 +54,22 @@
     };
   });
 
-  let currentPath = $derived(page.url.pathname.split("/").pop() || "home");
+  const routeLabels: Record<string, keyof typeof layout.es.nav> = {
+    "/": "home",
+    "/graphics": "graphics",
+    "/graphics/[slug]": "graphics",
+    "/lifestyle": "lifestyle",
+    "/parenting": "parenting",
+    "/about-me": "about-me",
+    "/contact": "contact",
+  };
+
+  let currentPath = $derived(routeLabels[page.route.id ?? "/"] ?? "home");
 
   let announcePath = $derived(
     langSignal.current === "es"
-      ? `Navegando a la página de ${t.nav[currentPath as keyof typeof t.nav] || t.nav.home}`
-      : `Navigating to ${t.nav[currentPath as keyof typeof t.nav] || t.nav.home} page`,
+      ? `Navegando a la página de ${t.nav[currentPath]}`
+      : `Navigating to ${t.nav[currentPath]} page`,
   );
 </script>
 

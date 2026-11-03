@@ -9,7 +9,7 @@
     { href: resolve("/lifestyle"), key: "lifestyle" },
     { href: resolve("/parenting"), key: "parenting" },
     { href: resolve("/about-me"), key: "about-me" },
-    { href: resolve("/contact"), key: "contact" }
+    { href: resolve("/contact"), key: "contact" },
   ] as const;
 
   const delay = 120;
@@ -36,8 +36,8 @@
   });
 
   const flyIn = { y: -30, duration: 1000, easing: cubicOut };
-  const toggleMenu = () => mobileOpen = !mobileOpen;
-  const closeMenu = () => mobileOpen = false;
+  const toggleMenu = () => (mobileOpen = !mobileOpen);
+  const closeMenu = () => (mobileOpen = false);
   const navLabel = (key: keyof typeof t.layout.nav) => t.layout.nav[key];
 </script>
 
@@ -47,9 +47,13 @@
       class="hamburger"
       class:is-open={mobileOpen}
       type="button"
-      aria-label={langSignal.current === "es"
-        ? "Abrir navegación"
-        : "Open navigation"}
+      aria-label={mobileOpen
+        ? langSignal.current === "es"
+          ? "Cerrar navegación"
+          : "Close navigation"
+        : langSignal.current === "es"
+          ? "Abrir navegación"
+          : "Open navigation"}
       aria-expanded={mobileOpen}
       onclick={toggleMenu}
       in:fly={flyIn}
@@ -61,7 +65,9 @@
   {/if}
 
   {#if visible >= 1}
-    <h1 class="logo" in:fly={flyIn}><a href={resolve("/")}>{t.layout.nav.my_portfolio}</a></h1>
+    <h1 class="logo" in:fly={flyIn}>
+      <a href={resolve("/")}>{t.layout.nav.my_portfolio}</a>
+    </h1>
   {/if}
 
   {#if visible >= 2}
@@ -84,7 +90,9 @@
       in:fly={{ ...flyIn, delay: 150 }}
     >
       <img
-        src={langSignal.current === "es" ? asset("images/flags/us.svg") : asset("images/flags/es.svg")}
+        src={langSignal.current === "es"
+          ? asset("images/flags/us.svg")
+          : asset("images/flags/es.svg")}
         alt=""
         aria-hidden="true"
         width="20"
