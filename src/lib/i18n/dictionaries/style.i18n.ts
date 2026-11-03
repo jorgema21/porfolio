@@ -60,19 +60,19 @@ export const style: Record<"es" | "en", InfographicsDict> = {
     ],
     description: [
       {
-        text: "Here you can access directly to ",
+        text: "Here you can explore ",
       },
       {
-        text: "all the works that have been published.",
+        text: "all my published articles.",
         bold: true,
       },
     ],
     aim: [
       {
-        text: "My main aim is to write about ",
+        text: "My main aim is to explore ",
       },
       {
-        text: "how psychology influence people's daily lives.",
+        text: "how psychology influences people's everyday lives.",
         bold: true,
       },
     ] satisfies RichText,

@@ -39,19 +39,19 @@ export const about: Record<"es" | "en", AboutDict> = {
 
     focus: [
       {
-        text: "Trabajo de forma autónoma, en solitario o equipo, con medios y marcas para elaborar ",
+        text: "Trabajo de manera independiente, tanto por mi cuenta como en equipo, y colaboro con medios de comunicación y marcas para crear ",
       },
       {
-        text: "historias claras, rigurosas y de alto impacto. Me apasiona explorar desde fenómenos de masas o de interés popular a través de datos ",
+        text: "historias claras, rigurosas y de impacto. Me interesa explorar fenómenos sociales y temas de actualidad a través de los datos, ",
       },
       {
-        text: "hasta temas de psicología aplicados a la vida cotidiana de las personas en general o padres y madres en particular. ",
+        text: "así como investigar cómo influye la psicología en la vida cotidiana, especialmente en el ámbito de la crianza y las familias.",
       },
     ],
 
     timelineTitle: "Mi trayectoria",
     timelineDesc:
-      "Haz scroll para explorar mi trayectoria o investiga el resumen y pulsa el botón inferior para ir directamente al final.",
+      "Desplázate para descubrir mi trayectoria, consulta el resumen o utiliza el botón inferior para ir directamente al final.",
 
     miniTimelineTitle: "Ver resumen rápido",
     miniTimeline: [
@@ -75,49 +75,50 @@ export const about: Record<"es" | "en", AboutDict> = {
   },
 
   en: {
-    title: "About me",
+    title: "About Me",
 
     intro: [
       {
-        text: "I am a freelance journalist and information designer specializing in ",
+        text: "I'm a freelance journalist and information designer specializing in ",
       },
       {
-        text: "data visualization, visual journalism, and lifestyle and parenting coverage.",
+        text: "data visualization, visual journalism, and lifestyle and parenting journalism.",
         bold: true,
       },
     ],
 
     focus: [
       {
-        text: "I work independently and as part of teams, collaborating with media organizations and brands to produce ",
+        text: "I work independently and as part of a team, collaborating with media outlets and brands to create ",
       },
       {
-        text: "clear, rigorous, and compelling stories. I am especially interested in using data to explore mass behavior and widely shared cultural phenomena, ",
+        text: "clear, accurate, and impactful stories. I'm particularly interested in exploring popular trends and wider social phenomena through data, ",
       },
       {
-        text: "as well as applying insights from psychology to everyday life, both broadly and with a particular focus on parents and families. ",
+        text: "as well as examining how psychology shapes everyday life, especially for parents and families.",
       },
     ],
 
-    timelineTitle: "My Journey",
+    timelineTitle: "My Career Journey",
     timelineDesc:
-      "Scroll down to explore my career path, review the summary, or click the button below to jump straight to the end.",
-    miniTimelineTitle: "Quick summary",
+      "Scroll down to explore my career journey, check the summary, or use the button below to jump straight to the end.",
+
+    miniTimelineTitle: "Quick Overview",
     miniTimeline: [
-      "Journalism Degree at Valladolid (sep. 2017-jul. 2021)",
-      "Erasmus at Bergamo (sep. 2019-jul. 2020)",
-      "Master Degree with El País (oct. 2021-sep. 2023)",
-      "Visual Storytelling Internship (sep. 2022-sep. 2023)",
-      "El País Sports (feb. to apr. 2024)",
-      "Freelance (from apr. 2024): Collaborations with Artículo 14; El País Lifestyle, Mamas&Papas and People; Storydata; Colpisa and Dataista",
+      "Journalism degree at the University of Valladolid (Sep 2017–Jul 2021)",
+      "Erasmus exchange in Bergamo (Sep 2019–Jul 2020)",
+      "Master's degree at El País (Oct 2021–Sep 2023)",
+      "Visual Storytelling internship (Sep 2022–Sep 2023)",
+      "El País Sports (Feb–Apr 2024)",
+      "Freelance journalist and information designer (since Apr 2024): Collaborations with Artículo 14; El País Lifestyle, Mamas&Papas and Gente; Storydata; Colpisa; and Dataista",
     ],
-    study: "Study",
+    study: "Education",
     infographics: "Infographics",
     lifestyle: "Lifestyle",
     parenting: "Parenting",
     skillsTitle: "Tools I Use",
     languagesTitle: "Languages I Speak",
-    cta: "Available for data and graphics projects, as well as lifestyle and parenting collaborations",
+    cta: "Available for data visualization and information graphics projects, as well as lifestyle and parenting journalism collaborations",
     aria: {
       languagesSelector: "Select language",
     },

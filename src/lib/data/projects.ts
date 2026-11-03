@@ -612,7 +612,7 @@ const projects = [
     featured: true,
     title: {
       es: "Cómo la brecha socioeconómica impulsa el abstencionismo en España",
-      en: "How Socioeconomics Gaps Drive Spanish Voter Abstention",
+      en: "How Socioeconomic Gaps Drive Voter Abstention in Spain",
     },
     description: {
       es: "Análisis de datos y mapeo interactivo que visualiza los factores económicos detrás de la decisión de no votar",
@@ -695,7 +695,7 @@ const projects = [
     image: "/images/projects/rearme-ue-ip.webp",
     title: {
       es: "La Unión Europea se rearma frente a los nuevos desafíos globales",
-      en: "Europe's Military Reshaping: How the EU Reharms in a New Global Era",
+      en: "Europe's Military Transformation: How the EU Rearms in a Changing World",
     },
     description: {
       es: "Diseño editorial a doble página que desglosa el gasto militar y la estrategia de defensa comunitaria",
@@ -921,7 +921,7 @@ const projects = [
     slug: "final-qatar-22",
     title: {
       es: "¿La final de Qatar 2022 fue la mejor de la historia?",
-      en: "Qatar 2022 Final Was the Greatest World Cup History?",
+      en: "Was the Qatar 2022 Final the Greatest in World Cup History?",
     },
     description: {
       es: "Grupos de gráficos para evaluar si el duelo de Lusail fue el mejor de todos los tiempos",
@@ -1216,7 +1216,7 @@ const projects = [
     homeVisible: false,
     title: {
       es: "Las sensaciones negativas de pasar un verano sin compañías",
-      en: "The Negative Experiencse of Spending a Summer Alone",
+      en: "The Challenges of Spending a Summer Alone",
     },
   },
   {
@@ -1455,7 +1455,7 @@ const projects = [
     mediumStyle: "El País",
     homeVisible: false,
     title: {
-      es: "Entrevista a Pepe Pérez, experto en sueño",
+      es: "Entrevista a Olga Sesé, experta en sueño",
       en: "Interview With Olga Sesé, Sleep Expert",
     },
   },
@@ -1527,7 +1527,7 @@ const projects = [
     mediumStyle: "El País",
     homeVisible: false,
     title: {
-      es: "Perder la identidad propia tras la paternal",
+      es: "La pérdida de identidad personal tras la maternidad o paternidad",
       en: "Lost in Parenthood: Maintaining Your Identity After Having Kids",
     },
   },
@@ -1552,7 +1552,7 @@ const projects = [
     homeVisible: false,
     title: {
       es: "La angustia paternal en las fiestas infantiles",
-      en: "Parental Anxiety at Childern's Parties",
+      en: "Parental Anxiety at Children's Parties",
     },
   },
   {

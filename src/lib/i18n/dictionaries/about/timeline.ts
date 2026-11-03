@@ -18,192 +18,192 @@ export const timeline = {
     "journalism-degree": {
       title: "Grado en Periodismo",
       description:
-        "Comencé la carrera de periodismo en la Universidad de Valladolid (España)",
+        "Comencé el grado en Periodismo en la Universidad de Valladolid (España).",
     },
 
     "erasmus-year": {
       title: "Año Erasmus",
-      description: "Hice un curso internacional en Bérgamo (Italia)",
+      description: "Cursé un año académico de intercambio Erasmus en Bérgamo (Italia).",
     },
 
     "end-degree": {
       title: "Final de carrera",
       description:
-        "Terminé el grado universitario sin cursar infografía ni periodismo de datos",
+        "Terminé el grado sin haber cursado asignaturas de infografía ni periodismo de datos.",
     },
 
     "start-ep": {
       title: "Inicio máster de El País",
-      description: "Comencé el año teórico de los dos cursos de duración.",
+      description: "Comencé el primer año, de formación teórica, del máster de El País.",
     },
 
     "start-internship": {
       title: "Beca en Narrativas Visuales",
       description:
-        "Estuve un año como becario en El País y aprendí infografía y datos casi desde cero",
+        "Realicé un año de prácticas en El País, donde aprendí infografía y periodismo de datos prácticamente desde cero.",
     },
 
     "end-internship": {
       title: "Final de máster",
       description:
-        "Terminé la beca y me centré en aprender infografía y datos por mi cuenta unos meses",
+        "Finalicé las prácticas y dediqué varios meses a seguir formándome por mi cuenta en infografía y periodismo de datos.",
     },
 
     "sports-ep": {
       title: "Baja en El País Deportes",
       description:
-        "Durante dos meses realicé directos en web, edité textos y escribí temas de datos",
+        "Durante dos meses trabajé en coberturas en directo para la web, edité artículos y redacté reportajes de datos.",
     },
 
     "start-freelance": {
       title: "Inicio como autónomo",
       description:
-        "Comencé por mi cuenta y entre a colaborar como infografista de Artículo 14",
+        "Comencé mi trayectoria como autónomo y empecé a colaborar con Artículo 14 como infografista.",
     },
 
     "end-a14": {
       title: "Fin colaboración Artículo 14",
       description:
-        "Dejé de colaborar con el periódico y estudié ampliar horizontes laborales",
+        "Finalicé mi colaboración con el periódico y exploré nuevas oportunidades profesionales.",
     },
 
     "start-lifestyle": {
       title: "Colaboración con la sección Estilo de Vida de El País",
       description:
-        "Empecé a escribir en la sección y me centré en temas de psicología cotidiana",
+        "Comencé a escribir para la sección de Estilo de Vida de El País, centrándome en temas de psicología cotidiana.",
     },
 
     "start-parenting": {
       title: "Colaboración con la sección Mamas&Papas de El País",
       description:
-        "Comencé a hacer temas de maternidad con el foco en psicología materna e infantil",
+        "Empecé a escribir sobre maternidad y crianza, con especial atención a la psicología materna e infantil.",
     },
 
     "start-sty": {
       title: "Colaboración con Storydata",
       description:
-        "Inicié una colaboración con Storydata para temas de infografía y datos de papel y web",
+        "Inicié una colaboración con Storydata para desarrollar proyectos de infografía y periodismo de datos destinados a medios impresos y digitales.",
     },
 
     "start-col": {
       title: "Colaboración con Colpisa",
       description:
-        "También comencé una colaboración con Colpisa de infografía, análisis y visualización de datos para temas web trabajados",
+        "Comencé a colaborar con Colpisa en la elaboración de reportajes digitales que combinan infografía, análisis y visualización de datos.",
     },
 
     "start-epgente": {
       title: "Colaboración con la sección Gente de El País",
       description:
-        "Empecé a escribir perfiles de famosos internacionales de cultura que eran noticia",
+        "Empecé a escribir perfiles de personalidades internacionales del ámbito cultural y del entretenimiento que eran noticia.",
     },
 
     "start-dataista": {
       title: "Colaboración con Dataista",
       description:
-        "Trabajé en un proyecto en el que aprendí más a fondo desarrollo web",
+        "Participé en un proyecto con Dataista que me permitió profundizar en mis conocimientos de desarrollo web.",
     },
 
     "this-portfolio": {
       title: "¡Este porfolio!",
       description:
-        "Desarrollé durante meses un porfolio como un proyecto en sí mismo en el que mostrar mis trabajos más importantes de un modo visual y ameno",
+        "Dediqué varios meses a desarrollar este portfolio como un proyecto en sí mismo, con el objetivo de presentar mis trabajos más destacados de una forma visual y atractiva.",
     },
   },
 
   en: {
     "journalism-degree": {
-      title: "Journalism degree",
+      title: "Journalism Degree",
       description:
-        "I started my journalism degree at the University of Valladolid (Spain)",
+        "I began studying journalism at the University of Valladolid, Spain",
     },
 
     "erasmus-year": {
-      title: "Erasmus year",
-      description: "I completed an international course in Bergamo (Italy)",
+      title: "Erasmus Exchange",
+      description: "I spent an academic year studying in Bergamo, Italy",
     },
 
     "end-degree": {
-      title: "End of degree",
+      title: "Completed My Journalism Degree",
       description:
-        "I graduated university without taking graphics or data journalism classes",
+        "I graduated without having studied information graphics or data journalism as part of my degree",
     },
 
     "start-ep": {
-      title: "Started a master's program with El País",
+      title: "Started My Master's Degree at El País",
       description:
-        "I completed the first theoretical year of a two-year program",
+        "I began the classroom-based first year of a two-year master's programme",
     },
 
     "start-internship": {
-      title: "Visual Storytelling internship",
+      title: "Visual Storytelling Internship",
       description:
-        "I did a one-year internship at El País newspaper, learning graphics and data from scratch",
+        "I spent a year as an intern at El País, learning information graphics and data journalism almost from scratch",
     },
 
     "end-internship": {
-      title: "Completed my master's degree",
+      title: "Completed My Master's Degree",
       description:
-        "After my internship, I spent a few months self-teaching graphics and data journalism",
+        "After finishing my internship, I spent several months developing my information graphics and data journalism skills independently",
     },
 
     "sports-ep": {
-      title: "Covered a temporary leave in the El País Sports section",
+      title: "Temporary Role at El País Sports",
       description:
-        "For two months, I managed live web coverage, edited copy, and wrote data-driven stories.",
+        "For two months, I worked on live online coverage, edited articles, and wrote data-driven stories",
     },
 
     "start-freelance": {
-      title: "Launched my freelance career",
+      title: "Began My Freelance Career",
       description:
-        "Started working independently and began collaborating as an infographer for Artículo 14",
+        "I started working independently and began collaborating with Artículo 14 as an information designer",
     },
 
     "end-a14": {
-      title: "Ended collaboration with Artículo 14",
+      title: "End of My Collaboration with Artículo 14",
       description:
-        "Stopped collaborating with the newspaper to focus on expanding my career horizons",
+        "I ended my collaboration with the newspaper and explored new professional opportunities",
     },
 
     "start-lifestyle": {
-      title: "Collaboration with El País Lifestyle section",
+      title: "Collaboration with El País Lifestyle",
       description:
-        "Started writing for the section, focusing on everyday psychology.",
+        "I began writing for the section, focusing on psychology and everyday life",
     },
 
     "start-parenting": {
-      title: "Collaboration with El País Mamas&Papas section",
+      title: "Collaboration with El País Mamas&Papas",
       description:
-        "Began covering parenting topics, with a focus on maternal and child psychology",
+        "I began writing about parenting, focusing on maternal and child psychology",
     },
 
     "start-sty": {
       title: "Collaboration with Storydata",
       description:
-        "Started collaborating with Storydata on print and web graphics and data projects.",
+        "I began collaborating with Storydata on information graphics and data journalism projects for print and digital publications",
     },
 
     "start-col": {
       title: "Collaboration with Colpisa",
       description:
-        "Began collaborating with Colpisa specializing in web-based graphics, data analysis, and visualization.",
+        "I began collaborating with Colpisa on in-depth digital stories involving information graphics, data analysis, and visualization",
     },
 
     "start-epgente": {
-      title: "Collaboration with El País People section",
+      title: "Collaboration with El País Gente",
       description:
-        "Started writing profiles on trending international cultural figures",
+        "I began writing profiles of international figures in culture and entertainment who were making headlines",
     },
 
     "start-dataista": {
-      title: "Colaboración Dataista",
+      title: "Collaboration with Dataista",
       description:
-        "Worked on a project where I gained a deeper understanding of web development",
+        "I worked on a project that helped me deepen my web development skills",
     },
 
     "this-portfolio": {
-      title: "This portfolio!",
+      title: "This Portfolio!",
       description:
-        "Spent months developing my portfolio as a standalone project to showcase my best work in a visual, engaging way",
+        "I spent several months building this portfolio as a project in its own right, creating a visual and engaging way to showcase my most important work",
     },
   },
 } satisfies TimelineI18n;
