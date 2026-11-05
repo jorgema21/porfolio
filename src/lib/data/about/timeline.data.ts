@@ -43,6 +43,11 @@ const rawTimeline = [
   { id: "this-portfolio", date: "06-2026", category: "study" },
 ] as const satisfies readonly TimelineItem[];
 
+const dateToNumber = (date: string): number => {
+  const [month, year] = date.split("-").map(Number);
+  return year * 100 + month;
+};
+
 export const timeline: TimelineItem[] = [...rawTimeline].sort(
-  (a, b) => Number(a.date) - Number(b.date),
+  (a, b) => dateToNumber(a.date) - dateToNumber(b.date),
 );
