@@ -6,29 +6,15 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "Para un reportaje en papel sobre la movilidad residencial dentro de España, diseñé un mapa a nivel municipal ",
-          "que muestra el saldo migratorio en todo el territorio nacional, y destaqué los municipios ",
-          "que ganaron o perdieron más población."
-        ],
-        "en": [
-          "For a print feature on residential mobility within Spain, I designed a municipal map ",
-          "showing the net migration balance nationwide, highlighting the municipalities ",
-          "with the highest population gains and losses."
-        ]
+        "es": "Para un reportaje en papel sobre la movilidad residencial dentro de España, diseñé un mapa a nivel municipal que muestra el saldo migratorio en todo el territorio nacional, y destaqué los municipios que ganaron o perdieron más población.",
+        "en": "For a print feature on residential mobility within Spain, I designed a municipal map showing the net migration balance nationwide, highlighting the municipalities with the highest population gains and losses."
       }
     },
     {
       "type": "text",
       "value": {
-        "es": [
-          "Extraje la información del INE y la traté en RStudio para estructurar el mapa y los distintos gráficos. ",
-          "La otra visualización y el diseño de todo el conjunto lo hice en Illustrator."
-        ],
-        "en": [
-          "I extracted the data from the INE and processed it in RStudio to structure the map and charts. ",
-          "The remaining visualization and the final layout design were completed using Illustrator."
-        ]
+        "es": "Extraje la información del INE y la traté en RStudio para estructurar el mapa y los distintos gráficos. La otra visualización y el diseño de todo el conjunto lo hice en Illustrator.",
+        "en": "I extracted the data from the INE and processed it in RStudio to structure the map and charts. The remaining visualization and the final layout design were completed using Illustrator."
       }
     },
     {

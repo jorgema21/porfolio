@@ -6,29 +6,15 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "Para un reportaje en papel sobre el coste de la vivienda en España y Europa, diseñé un mapa a nivel municipal ",
-          "europeo que muestra el precio de alquiler y compra de cada zona, y también minimapas localizadores de ",
-          "aquellos más caros por país."
-        ],
-        "en": [
-          "For a print feature on housing costs in Spain and across Europe, I designed a municipality-level map ",
-          "showing rental and home purchase prices in each area, along with smaller locator maps ",
-          "highlighting the most expensive areas in each country."
-        ]
+        "es": "Para un reportaje en papel sobre el coste de la vivienda en España y Europa, diseñé un mapa a nivel municipal europeo que muestra el precio de alquiler y compra de cada zona, y también minimapas localizadores de aquellos más caros por país.",
+        "en": "For a print feature on housing costs in Spain and across Europe, I designed a municipality-level map showing rental and home purchase prices in each area, along with smaller locator maps highlighting the most expensive areas in each country."
       }
     },
     {
       "type": "text",
       "value": {
-        "es": [
-          "Extraje la información de House4All y la traté en RStudio para estructurar el mapa y los distintos gráficos. ",
-          "El diseño de todo el conjunto lo hice en Illustrator."
-        ],
-        "en": [
-          "I sourced the data from House4All and processed it in RStudio to build the map and accompanying charts. ",
-          "I designed the entire layout in Illustrator."
-        ]
+        "es": "Extraje la información de House4All y la traté en RStudio para estructurar el mapa y los distintos gráficos. El diseño de todo el conjunto lo hice en Illustrator.",
+        "en": "I sourced the data from House4All and processed it in RStudio to build the map and accompanying charts. I designed the entire layout in Illustrator."
       }
     },
     {

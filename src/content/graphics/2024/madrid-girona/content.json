@@ -6,18 +6,8 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "Escribí un reportaje de análisis visual ante el partido de vuelta entre el Real Madrid y el Girona en la temporada 2023-24, ",
-          "un encuentro clave que definió el liderato tras la sobresaliente campaña del club gerundense. ",
-          "Para plasmar el rendimiento de ambos conjuntos como los más goleadores del campeonato y destacar a figuras como Dovbyk, Stuani o Bellingham, ",
-          "procesé los datos con Google Sheets y RStudio, desarrollando posteriormente los gráficos base mediante la herramienta Datawrapper."
-        ],
-        "en": [
-          "I wrote a visual analysis feature story ahead of the second-leg match between Real Madrid and Girona during the 2023-24 season, ",
-          "a key fixture that defined the leadership after an outstanding campaign by the Girona club. ",
-          "To showcase the performance of both squads as the top scorers in the league and highlight figures like Dovbyk, Stuani, or Bellingham, ",
-          "I processed the data using Google Sheets and RStudio, subsequently developing the base charts with Datawrapper."
-        ]
+        "es": "Escribí un reportaje de análisis visual ante el partido de vuelta entre el Real Madrid y el Girona en la temporada 2023-24, un encuentro clave que definió el liderato tras la sobresaliente campaña del club gerundense. Para plasmar el rendimiento de ambos conjuntos como los más goleadores del campeonato y destacar a figuras como Dovbyk, Stuani o Bellingham, procesé los datos con Google Sheets y RStudio, desarrollando posteriormente los gráficos base mediante la herramienta Datawrapper.",
+        "en": "I wrote a visual analysis feature story ahead of the second-leg match between Real Madrid and Girona during the 2023-24 season, a key fixture that defined the leadership after an outstanding campaign by the Girona club. To showcase the performance of both squads as the top scorers in the league and highlight figures like Dovbyk, Stuani, or Bellingham, I processed the data using Google Sheets and RStudio, subsequently developing the base charts with Datawrapper."
       }
     },
     {
@@ -35,12 +25,8 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "También quise mostrar el contexto del resto de la competición, reflejando la evolución de todos los goles que marcaron ambos equipos a lo largo de las jornadas."
-        ],
-        "en": [
-          "I also wanted to provide context for the rest of the competition, reflecting the trend of all goals scored by both teams across the matchdays."
-        ]
+        "es": "También quise mostrar el contexto del resto de la competición, reflejando la evolución de todos los goles que marcaron ambos equipos a lo largo de las jornadas.",
+        "en": "I also wanted to provide context for the rest of the competition, reflecting the trend of all goals scored by both teams across the matchdays."
       }
     },
     {
@@ -58,12 +44,8 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "Asimismo, añadí el contexto europeo de los principales realizadores de cada plantilla, comparándolos con los futbolistas de las cinco grandes ligas."
-        ],
-        "en": [
-          "Likewise, I added the European context of the top scorers from each squad, comparing them with players across the top five leagues."
-        ]
+        "es": "Asimismo, añadí el contexto europeo de los principales realizadores de cada plantilla, comparándolos con los futbolistas de las cinco grandes ligas.",
+        "en": "Likewise, I added the European context of the top scorers from each squad, comparing them with players across the top five leagues."
       }
     },
     {
@@ -81,12 +63,8 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "Además, entre otras visualizaciones de datos, elaboré un mapa de calor para evidenciar que, aunque recibían más goles al inicio de los partidos, anotaban más que sus rivales en los tramos finales."
-        ],
-        "en": [
-          "Additionally, among other data visualizations, I crafted a heatmap to demonstrate that, although they conceded more goals early in the matches, they outscored opponents in the final periods."
-        ]
+        "es": "Además, entre otras visualizaciones de datos, elaboré un mapa de calor para evidenciar que, aunque recibían más goles al inicio de los partidos, anotaban más que sus rivales en los tramos finales.",
+        "en": "Additionally, among other data visualizations, I crafted a heatmap to demonstrate that, although they conceded more goals early in the matches, they outscored opponents in the final periods."
       }
     },
     {

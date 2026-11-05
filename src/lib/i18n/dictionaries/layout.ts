@@ -10,11 +10,17 @@ export const layout = {
       contact: "Contacto",
     },
 
+    navigationControls: {
+      open: "Abrir navegación",
+      close: "Cerrar navegación",
+    },
+
+    navigationAnnouncement: "Navegando a la página de {page}",
+    scrollToTop: "Volver al inicio de la página",
+
     langSwitch: {
       labelToEn: "Cambiar idioma a inglés",
       labelToEs: "Cambiar idioma a español",
-      flagEs: "/images/flags/es.svg",
-      flagEn: "/images/flags/us.svg",
     },
 
     seo: {
@@ -27,8 +33,8 @@ export const layout = {
 
     footer: {
       part0: "Porfolio",
-      part1: "Última actualización: 2 de noviembre",
-      part2: "Un porfolio diseñado y desarrollado por Jorge Marzo",
+      part1: "Última actualización:",
+      part2: "Un porfolio diseñado y desarrollado por xxxxx",
     },
 
     lightbox: {
@@ -49,11 +55,17 @@ export const layout = {
       contact: "Contact",
     },
 
+    navigationControls: {
+      open: "Open navigation",
+      close: "Close navigation",
+    },
+
+    navigationAnnouncement: "Navigating to {page} page",
+    scrollToTop: "Scroll to top",
+
     langSwitch: {
       labelToEn: "Switch language to English",
-      labelToEs: "Cambiar idioma a español",
-      flagEs: "/images/flags/es.svg",
-      flagEn: "/images/flags/us.svg",
+      labelToEs: "Switch language to Spanish",
     },
 
     seo: {
@@ -66,8 +78,8 @@ export const layout = {
 
     footer: {
       part0: "Portfolio",
-      part1: "Last updated: November 02",
-      part2: "A portfolio designed and developed by Jorge Marzo",
+      part1: "Last updated:",
+      part2: "A portfolio designed and developed by xxxxx",
     },
 
     lightbox: {

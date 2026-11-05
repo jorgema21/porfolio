@@ -4,7 +4,6 @@ type InfographicsDict = {
   title: string;
   others: string;
   intro: RichText;
-  description: RichText;
   aim: RichText;
 };
 
@@ -15,29 +14,26 @@ export const parenting: Record<"es" | "en", InfographicsDict> = {
 
     intro: [
       {
-        text: "Bienvenido/a a la sección de ",
+        text: "Aquí encontrarás mis reportajes sobre ",
       },
       {
-        text: "maternidad. ",
+        text: "maternidad, paternidad y crianza, ",
         bold: true,
       },
-    ],
-    description: [
       {
-        text: "Aquí puedes acceder directamente a ",
-      },
-      {
-        text: "todos los trabajos que se han publicado.",
-        bold: true,
+        text: "con especial atención al bienestar emocional de las familias.",
       },
     ],
     aim: [
       {
-        text: "Mi propósito es escribir sobre ",
+        text: "Me interesa especialmente ",
       },
       {
-        text: "cómo la psicología afecta a la vida cotidiana de los padres y madres y a sus hijos.",
+        text: "la psicología que hay detrás de ser madre o padre, ",
         bold: true,
+      },
+      {
+        text: "cómo crecen los niños y todas las dudas, cambios o errores que aparecen en la vida familiar.",
       },
     ] satisfies RichText,
   },
@@ -56,15 +52,6 @@ export const parenting: Record<"es" | "en", InfographicsDict> = {
       },
       {
         text: "section.",
-      },
-    ],
-    description: [
-      {
-        text: "Here you can explore ",
-      },
-      {
-        text: "all my published articles.",
-        bold: true,
       },
     ],
     aim: [

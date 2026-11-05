@@ -73,9 +73,7 @@
     <input
       class="input"
       type="search"
-      aria-label={langSignal.current === "es"
-        ? "Buscar infografías"
-        : "Search infographics"}
+      aria-label={t.infographics.aria.search}
       placeholder={t.infographics.searchPlaceholder}
       bind:value={info.filters.search}
     />
@@ -98,12 +96,8 @@
       class="control sort-dir"
       type="button"
       aria-label={info.filters.sortDir === "asc"
-        ? langSignal.current === "es"
-          ? "Orden ascendente"
-          : "Ascending order"
-        : langSignal.current === "es"
-          ? "Orden descendente"
-          : "Descending order"}
+        ? t.infographics.aria.sortAscending
+        : t.infographics.aria.sortDescending}
       onclick={() =>
         (info.filters.sortDir =
           info.filters.sortDir === "asc" ? "desc" : "asc")}

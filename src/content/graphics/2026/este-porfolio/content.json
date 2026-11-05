@@ -51,18 +51,8 @@
         {
             "type": "text",
             "value": {
-                "es": [
-                    "El orden interno busca una gestión centralizada del contenido y un control directo sobre cómo construyo y presento cada pieza. ",
-                    "Cada proyecto se compone de archivos locales que separan texto, imágenes y metadatos, ",
-                    "lo que evita tener que reestructurar el código cada vez que añado un proyecto nuevo. ",
-                    "Las rutas se generan de forma automática, por tanto, el porfolio crece sin obligarme a cambiar el código cada vez que incorporo nuevos contenidos."
-                ],
-                "en": [
-                    "Internal structure aims for centralized content management and direct control over how I build and present each piece. ",
-                    "Each project consists of local files that separate text, images, and metadata, ",
-                    "which avoids the need to restructure the code every time I add a new project. ",
-                    "Routes are generated automatically; therefore, the portfolio grows without requiring changes to the core code whenever new content is added."
-                ]
+                "es": "El orden interno busca una gestión centralizada del contenido y un control directo sobre cómo construyo y presento cada pieza. Cada proyecto se compone de archivos locales que separan texto, imágenes y metadatos, lo que evita tener que reestructurar el código cada vez que añado un proyecto nuevo. Las rutas se generan de forma automática, por tanto, el porfolio crece sin obligarme a cambiar el código cada vez que incorporo nuevos contenidos.",
+                "en": "Internal structure aims for centralized content management and direct control over how I build and present each piece. Each project consists of local files that separate text, images, and metadata, which avoids the need to restructure the code every time I add a new project. Routes are generated automatically; therefore, the portfolio grows without requiring changes to the core code whenever new content is added."
             }
         },
         {
@@ -81,45 +71,21 @@
                     "Elegí SvelteKit y Svelte 5 porque me permitían crear páginas estáticas veloces y flexibles, ",
                     "al mismo tiempo que me servían para ampliar mis conocimientos en estas herramientas de cara a futuros proyectos de datos."
                 ],
-                "en": [
-                    "For the visual layer, the code uses native CSS, ",
-                    "custom variables, and reusable components. The collages ",
-                    "for the cover images use photos with a Creative Commons license. ",
-                    "The typography hierarchy, colors, and interface elements are managed from a single shared foundation. ",
-                    "This provides visual consistency and simplifies future design changes. ",
-                    "I chose SvelteKit and Svelte 5 because they allowed me to build fast and flexible static pages, ",
-                    "while also helping me expand my knowledge of these tools for future data projects."
-                ]
+                "en": "For the visual layer, the code uses native CSS, custom variables, and reusable components. The collages for the cover images use photos with a Creative Commons license. The typography hierarchy, colors, and interface elements are managed from a single shared foundation. This provides visual consistency and simplifies future design changes. I chose SvelteKit and Svelte 5 because they allowed me to build fast and flexible static pages, while also helping me expand my knowledge of these tools for future data projects."
             }
         },
         {
             "type": "text",
             "value": {
-                "es": [
-                    "El proyecto nace con soporte para dos idiomas, accesibilidad y una carga rápida de los recursos. ",
-                    "La Inteligencia Artificial funcionó como un copiloto técnico durante el proceso ",
-                    "para resolver dudas de aprendizaje, código, refactorización y traducción."
-                ],
-                "en": [
-                    "The project was built with support for two languages, accessibility, and fast resource loading from the start. ",
-                    "Artificial intelligence acted as a technical copilot during the process ",
-                    "helping with learning, code, refactoring, and translation challenges."
-                ]
+                "es": "El proyecto nace con soporte para dos idiomas, accesibilidad y una carga rápida de los recursos. La Inteligencia Artificial funcionó como un copiloto técnico durante el proceso para resolver dudas de aprendizaje, código, refactorización y traducción.",
+                "en": "The project was built with support for two languages, accessibility, and fast resource loading from the start. Artificial intelligence acted as a technical copilot during the process helping with learning, code, refactoring, and translation challenges."
             }
         },
         {
             "type": "text",
             "value": {
-                "es": [
-                    "Más que una colección de trabajos, el propósito es disponer de un medio de publicación propio. ",
-                    "Quise reunir diseño, periodismo, datos y desarrollo en un mismo entorno, ",
-                    "capaz de mostrar mis reportajes y de sostener de forma directa su publicación y crecimiento futuro."
-                ],
-                "en": [
-                    "More than a collection of work, the purpose is to create a personal publishing platform. ",
-                    "I wanted to bring together design, journalism, data, and development in a single environment, ",
-                    "capable of showcasing my stories and directly supporting their publication and future growth."
-                ]
+                "es": "Más que una colección de trabajos, el propósito es disponer de un medio de publicación propio. Quise reunir diseño, periodismo, datos y desarrollo en un mismo entorno, capaz de mostrar mis reportajes y de sostener de forma directa su publicación y crecimiento futuro.",
+                "en": "More than a collection of work, the purpose is to create a personal publishing platform. I wanted to bring together design, journalism, data, and development in a single environment, capable of showcasing my stories and directly supporting their publication and future growth."
             }
         },
         {
@@ -159,61 +125,29 @@
         {
             "type": "text",
             "value": {
-                "es": [
-                    "Hace unos años usé y vi porfolios tradicionales basados en cuadrículas de proyectos y enlaces externos. ",
-                    "Los trabajos aparecían como elementos aislados, sin contexto ni relación entre ellos."
-                ],
-                "en": [
-                    "A few years ago, I used and saw traditional portfolios based on project grids and external links. ",
-                    "Projects appeared as isolated elements with no context or relationship between them."
-                ]
+                "es": "Hace unos años usé y vi porfolios tradicionales basados en cuadrículas de proyectos y enlaces externos. Los trabajos aparecían como elementos aislados, sin contexto ni relación entre ellos.",
+                "en": "A few years ago, I used and saw traditional portfolios based on project grids and external links. Projects appeared as isolated elements with no context or relationship between them."
             }
         },
         {
             "type": "text",
             "value": {
-                "es": [
-                    "Por ello decidí construir un entorno editorial propio inspirado en la lógica de los medios digitales. ",
-                    "En lugar de presentar una simple colección de trabajos, quise crear un espacio donde cada proyecto tuviera una jerarquía, una narrativa y un papel dentro de un conjunto más amplio. ",
-                    "La portada funciona como un primer plano y cada proyecto dispone de un espacio donde ampliar metodología, decisiones de diseño y proceso de trabajo."
-                ],
-                "en": [
-                    "For that reason, I decided to build a custom editorial environment inspired by the logic of digital media. ",
-                    "Rather than presenting a simple collection of work, I wanted to create a space where each project had a hierarchy, a narrative, and a role within a larger whole. ",
-                    "The homepage acts as a front page, and each project has a dedicated space to expand on methodology, design decisions, and workflow."
-                ]
+                "es": "Por ello decidí construir un entorno editorial propio inspirado en la lógica de los medios digitales. En lugar de presentar una simple colección de trabajos, quise crear un espacio donde cada proyecto tuviera una jerarquía, una narrativa y un papel dentro de un conjunto más amplio. La portada funciona como un primer plano y cada proyecto dispone de un espacio donde ampliar metodología, decisiones de diseño y proceso de trabajo.",
+                "en": "For that reason, I decided to build a custom editorial environment inspired by the logic of digital media. Rather than presenting a simple collection of work, I wanted to create a space where each project had a hierarchy, a narrative, and a role within a larger whole. The homepage acts as a front page, and each project has a dedicated space to expand on methodology, design decisions, and workflow."
             }
         },
         {
             "type": "text",
             "value": {
-                "es": [
-                    "Este enfoque elimina la dependencia de herramientas de terceros, pero también me exige asumir el control de todo el diseño. ",
-                    "En esos servicios externos, el formato queda condicionado por plantillas predeterminadas. ",
-                    "Aquí, en cambio, cada componente responde a necesidades concretas de cada proyecto."
-                ],
-                "en": [
-                    "This approach removes dependency on third-party tools, but also requires me to take full control of the design. ",
-                    "In those external services, layouts are constrained by predefined templates. ",
-                    "Here, instead, each component responds to the specific needs of each project."
-                ]
+                "es": "Este enfoque elimina la dependencia de herramientas de terceros, pero también me exige asumir el control de todo el diseño. En esos servicios externos, el formato queda condicionado por plantillas predeterminadas. Aquí, en cambio, cada componente responde a necesidades concretas de cada proyecto.",
+                "en": "This approach removes dependency on third-party tools, but also requires me to take full control of the design. In those external services, layouts are constrained by predefined templates. Here, instead, each component responds to the specific needs of each project."
             }
         },
         {
             "type": "text",
             "value": {
-                "es": [
-                    "Al mismo tiempo, el proyecto refleja mi propio proceso de aprendizaje. ",
-                    "Meses antes existió una primera versión que nunca llegó a publicarse. ",
-                    "El estudio de SvelteKit y Svelte 5 redefinió aquella idea inicial y me permitió construir un sitio mucho más flexible, escalable y veloz. ",
-                    "En ese sentido, este porfolio muestra tanto proyectos terminados como la evolución técnica y profesional que hay detrás de ellos."
-                ],
-                "en": [
-                    "At the same time, the project reflects my own learning process. ",
-                    "Months earlier, an initial version existed but was never published. ",
-                    "Studying SvelteKit and Svelte 5 redefined that original idea and allowed me to build a much more flexible, scalable, and fast site. ",
-                    "In that sense, this portfolio shows not only finished projects but also the technical and professional evolution behind them."
-                ]
+                "es": "Al mismo tiempo, el proyecto refleja mi propio proceso de aprendizaje. Meses antes existió una primera versión que nunca llegó a publicarse. El estudio de SvelteKit y Svelte 5 redefinió aquella idea inicial y me permitió construir un sitio mucho más flexible, escalable y veloz. En ese sentido, este porfolio muestra tanto proyectos terminados como la evolución técnica y profesional que hay detrás de ellos.",
+                "en": "At the same time, the project reflects my own learning process. Months earlier, an initial version existed but was never published. Studying SvelteKit and Svelte 5 redefined that original idea and allowed me to build a much more flexible, scalable, and fast site. In that sense, this portfolio shows not only finished projects but also the technical and professional evolution behind them."
             }
         },
         {
@@ -236,27 +170,15 @@
         {
             "type": "text",
             "value": {
-                "es": [
-                    "En lugar de organizar el proyecto como un conjunto de páginas estáticas, el porfolio funciona como una publicación continua. ",
-                    "Cada pieza no es una página aislada, sino parte de un archivo más amplio."
-                ],
-                "en": [
-                    "Rather than organizing the project as a set of static pages, the portfolio works as a continuous publication. ",
-                    "Each piece is not an isolated page but part of a larger archive."
-                ]
+                "es": "En lugar de organizar el proyecto como un conjunto de páginas estáticas, el porfolio funciona como una publicación continua. Cada pieza no es una página aislada, sino parte de un archivo más amplio.",
+                "en": "Rather than organizing the project as a set of static pages, the portfolio works as a continuous publication. Each piece is not an isolated page but part of a larger archive."
             }
         },
         {
             "type": "text",
             "value": {
-                "es": [
-                    "Cada proyecto combina tres elementos: contenido, metadatos y visualización. El contenido recoge la narrativa del trabajo, los metadatos organizan su clasificación y contexto, y la capa visual transforma esa información en una página navegable. ",
-                    "La visualización nace de forma dinámica a partir de esta información. Gracias a esto puedo añadir nuevos proyectos sin tener que modificar gran parte del código."
-                ],
-                "en": [
-                    "Each project combines three elements: content, metadata, and visualization. The content carries the narrative of the work, metadata organizes classification and context, and the visual layer transforms this information into a navigable page. ",
-                    "The visualization is generated dynamically from this data. Thanks to this, I can add new projects without having to modify large parts of the code."
-                ]
+                "es": "Cada proyecto combina tres elementos: contenido, metadatos y visualización. El contenido recoge la narrativa del trabajo, los metadatos organizan su clasificación y contexto, y la capa visual transforma esa información en una página navegable. La visualización nace de forma dinámica a partir de esta información. Gracias a esto puedo añadir nuevos proyectos sin tener que modificar gran parte del código.",
+                "en": "Each project combines three elements: content, metadata, and visualization. The content carries the narrative of the work, metadata organizes classification and context, and the visual layer transforms this information into a navigable page. The visualization is generated dynamically from this data. Thanks to this, I can add new projects without having to modify large parts of the code."
             }
         },
         {
@@ -295,29 +217,15 @@
         {
             "type": "text",
             "value": {
-                "es": [
-                    "He elegido SvelteKit porque me permite tratar cada proyecto como una pieza independiente y así no tengo que escribir una y otra vez las rutas. ",
-                    "La estructura interna de las carpetas no condiciona la navegación, que se resuelve sola a partir del contenido."
-                ],
-                "en": [
-                    "I chose SvelteKit because it allows me to treat each project as an independent unit, avoiding manual route creation. ",
-                    "The internal folder structure does not dictate navigation, which is resolved automatically from the content itself."
-                ]
+                "es": "He elegido SvelteKit porque me permite tratar cada proyecto como una pieza independiente y así no tengo que escribir una y otra vez las rutas. La estructura interna de las carpetas no condiciona la navegación, que se resuelve sola a partir del contenido.",
+                "en": "I chose SvelteKit because it allows me to treat each project as an independent unit, avoiding manual route creation. The internal folder structure does not dictate navigation, which is resolved automatically from the content itself."
             }
         },
         {
             "type": "text",
             "value": {
-                "es": [
-                    "El resultado es un porfolio que crece sin alterar su base. ",
-                    "Subir nuevos proyectos significa únicamente incorporar nuevos datos y no cambiar apenas el código. ",
-                    "Con esto puedo seguir añadiendo textos e infografías para no tener que reorganizar todo."
-                ],
-                "en": [
-                    "The result is a portfolio that grows without altering its core. ",
-                    "New projects added only requires inserting new data, with almost no changes to the code. ",
-                    "This allows me to continue adding texts and graphics without reorganizing everything."
-                ]
+                "es": "El resultado es un porfolio que crece sin alterar su base. Subir nuevos proyectos significa únicamente incorporar nuevos datos y no cambiar apenas el código. Con esto puedo seguir añadiendo textos e infografías para no tener que reorganizar todo.",
+                "en": "The result is a portfolio that grows without altering its core. New projects added only requires inserting new data, with almost no changes to the code. This allows me to continue adding texts and graphics without reorganizing everything."
             }
         },
         {
@@ -340,16 +248,8 @@
         {
             "type": "text",
             "value": {
-                "es": [
-                    "La portada presenta un diseño editorial jerarquizado y huye de las listas convencionales de proyectos. ",
-                    "Cada elemento tiene un peso visual específico dentro de una composición global que replica la primera página de un medio digital. ",
-                    "Con esto guío la atención de los lectores según relevancia, actualidad e impacto visual, para no equiparar todos los trabajos."
-                ],
-                "en": [
-                    "The homepage features a hierarchical editorial design and avoids conventional project lists. ",
-                    "Each element has a specific visual weight within a global composition that resembles a digital publication front page. ",
-                    "With this, I guide attention based on relevance, recency, and visual impact, avoiding equal treatment of all projects."
-                ]
+                "es": "La portada presenta un diseño editorial jerarquizado y huye de las listas convencionales de proyectos. Cada elemento tiene un peso visual específico dentro de una composición global que replica la primera página de un medio digital. Con esto guío la atención de los lectores según relevancia, actualidad e impacto visual, para no equiparar todos los trabajos.",
+                "en": "The homepage features a hierarchical editorial design and avoids conventional project lists. Each element has a specific visual weight within a global composition that resembles a digital publication front page. With this, I guide attention based on relevance, recency, and visual impact, avoiding equal treatment of all projects."
             }
         },
         {
@@ -390,29 +290,15 @@
         {
             "type": "text",
             "value": {
-                "es": [
-                    "La composición alterna piezas de gran protagonismo visual con grupos secundarios. ",
-                    "Esta relación entre escala, densidad y ausencia de imagen define el ritmo de lectura de la portada. ",
-                    "Así consigo emular el comportamiento de un periódico digital donde cada noticia posee un peso informativo diferente."
-                ],
-                "en": [
-                    "The composition alternates high-impact visual pieces with secondary groups. ",
-                    "This relationship between scale, density, and image absence defines the reading rhythm of the homepage. ",
-                    "This way, I emulate a digital newspaper where each article carries a different informational weight."
-                ]
+                "es": "La composición alterna piezas de gran protagonismo visual con grupos secundarios. Esta relación entre escala, densidad y ausencia de imagen define el ritmo de lectura de la portada. Así consigo emular el comportamiento de un periódico digital donde cada noticia posee un peso informativo diferente.",
+                "en": "The composition alternates high-impact visual pieces with secondary groups. This relationship between scale, density, and image absence defines the reading rhythm of the homepage. This way, I emulate a digital newspaper where each article carries a different informational weight."
             }
         },
         {
             "type": "text",
             "value": {
-                "es": [
-                    "En los teléfonos móviles, todo pasa a una única columna fluida. ",
-                    "Los proyectos visuales mantienen prioridad, mientras que los elementos más densos o de puro texto se desplazan hacia zonas inferiores."
-                ],
-                "en": [
-                    "On mobile devices, everything shifts into a single fluid column. ",
-                    "Visual projects remain prioritized, while denser or text-heavy elements move further down."
-                ]
+                "es": "En los teléfonos móviles, todo pasa a una única columna fluida. Los proyectos visuales mantienen prioridad, mientras que los elementos más densos o de puro texto se desplazan hacia zonas inferiores.",
+                "en": "On mobile devices, everything shifts into a single fluid column. Visual projects remain prioritized, while denser or text-heavy elements move further down."
             }
         },
         {
@@ -435,12 +321,8 @@
         {
             "type": "text",
             "value": {
-                "es": [
-                    "Cada sección adapta su forma según el tipo de contenido y mantiene una lógica común de organización y lectura."
-                ],
-                "en": [
-                    "Each section adapts its form depending on content type while maintaining a shared logic of structure and reading flow."
-                ]
+                "es": "Cada sección adapta su forma según el tipo de contenido y mantiene una lógica común de organización y lectura.",
+                "en": "Each section adapts its form depending on content type while maintaining a shared logic of structure and reading flow."
             }
         },
         {
@@ -577,14 +459,8 @@
         {
             "type": "text",
             "value": {
-                "es": [
-                    "El contacto reduce la interfaz a lo esencial. ",
-                    "No hay capas innecesarias: solo una entrada directa a la comunicación profesional."
-                ],
-                "en": [
-                    "The contact section reduces the interface to its essentials. ",
-                    "There are no unnecessary layers—just a direct entry point for professional communication."
-                ]
+                "es": "El contacto reduce la interfaz a lo esencial. No hay capas innecesarias: solo una entrada directa a la comunicación profesional.",
+                "en": "The contact section reduces the interface to its essentials. There are no unnecessary layers—just a direct entry point for professional communication."
             }
         },
         {
@@ -691,14 +567,8 @@
         {
             "type": "text",
             "value": {
-                "es": [
-                    "La accesibilidad forma parte de las condiciones iniciales de este porfolio. ",
-                    "Busco una lectura cómoda en distintos contextos de atención y dispositivos para eliminar la fricción en los textos largos."
-                ],
-                "en": [
-                    "Accessibility is a core condition of this portfolio. ",
-                    "I aim for comfortable reading across different attention contexts and devices, reducing friction in long-form content."
-                ]
+                "es": "La accesibilidad forma parte de las condiciones iniciales de este porfolio. Busco una lectura cómoda en distintos contextos de atención y dispositivos para eliminar la fricción en los textos largos.",
+                "en": "Accessibility is a core condition of this portfolio. I aim for comfortable reading across different attention contexts and devices, reducing friction in long-form content."
             }
         },
         {
@@ -844,14 +714,8 @@
         {
             "type": "text",
             "value": {
-                "es": [
-                    "La velocidad de la web es una prioridad desde el primer día. ",
-                    "Así, las imágenes grandes aparecen rápido y la navegación fluye en cualquier pantalla."
-                ],
-                "en": [
-                    "Website performance has been a priority from day one. ",
-                    "Large images load quickly and navigation remains smooth across all devices."
-                ]
+                "es": "La velocidad de la web es una prioridad desde el primer día. Así, las imágenes grandes aparecen rápido y la navegación fluye en cualquier pantalla.",
+                "en": "Website performance has been a priority from day one. Large images load quickly and navigation remains smooth across all devices."
             }
         },
         {
@@ -934,70 +798,36 @@
         {
             "type": "text",
             "value": {
-                "es": [
-                    "Este proyecto marca un punto de inflexión en mi forma de construir y entender un porfolio. ",
-                    "Su estado actual representa el fruto de varios intentos previos, pruebas incompletas y decisiones que maduran con el tiempo."
-                ],
-                "en": [
-                    "This project marks a turning point in how I build and understand a portfolio. ",
-                    "Its current state is the result of multiple previous attempts, unfinished experiments, and decisions that have evolved over time."
-                ]
+                "es": "Este proyecto marca un punto de inflexión en mi forma de construir y entender un porfolio. Su estado actual representa el fruto de varios intentos previos, pruebas incompletas y decisiones que maduran con el tiempo.",
+                "en": "This project marks a turning point in how I build and understand a portfolio. Its current state is the result of multiple previous attempts, unfinished experiments, and decisions that have evolved over time."
             }
         },
         {
             "type": "text",
             "value": {
-                "es": [
-                    "Al comparar este trabajo con una versión anterior que quedó en un cajón, el cambio radical reside en el enfoque. ",
-                    "El diseño previo acumulaba piezas aisladas, mientras que este proyecto nace para crecer, reorganizarse y sostener contenido de forma coherente."
-                ],
-                "en": [
-                    "When comparing this work to a previous version that remained unfinished, the shift lies in the approach. ",
-                    "The previous design accumulated isolated pieces, while this project is built to grow, reorganize, and sustain content coherently."
-                ]
+                "es": "Al comparar este trabajo con una versión anterior que quedó en un cajón, el cambio radical reside en el enfoque. El diseño previo acumulaba piezas aisladas, mientras que este proyecto nace para crecer, reorganizarse y sostener contenido de forma coherente.",
+                "en": "When comparing this work to a previous version that remained unfinished, the shift lies in the approach. The previous design accumulated isolated pieces, while this project is built to grow, reorganize, and sustain content coherently."
             }
         },
         {
             "type": "text",
             "value": {
-                "es": [
-                    "La creación de este entorno consolida mi perfil de aprendizaje rápido y mi capacidad de esfuerzo. ",
-                    "El desarrollo de este porfolio y mi ambición por hacerlo mejor y aprender me obligó a combinar diseño editorial, orden de archivos y contenidos, accesibilidad, traducción y desarrollo dentro de un mismo proyecto. ",
-                    "Exploro herramientas vanguardistas y complejas que simplifiquen el desarrollo y generen un impacto visual potente. ",
-                    "Mi propósito es elevar el nivel de calidad con cada gran proyecto."
-                ],
-                "en": [
-                    "The creation of this environment consolidates my profile of fast learning and sustained effort. ",
-                    "Building this portfolio and the ambition to improve and learn pushed me to combine editorial design, file structure, content organization, accessibility, translation, and development within a single project. ",
-                    "I explore advanced and complex tools that simplify development and create strong visual impact. ",
-                    "My goal is to continuously raise the level of quality with every major project."
-                ]
+                "es": "La creación de este entorno consolida mi perfil de aprendizaje rápido y mi capacidad de esfuerzo. El desarrollo de este porfolio y mi ambición por hacerlo mejor y aprender me obligó a combinar diseño editorial, orden de archivos y contenidos, accesibilidad, traducción y desarrollo dentro de un mismo proyecto. Exploro herramientas vanguardistas y complejas que simplifiquen el desarrollo y generen un impacto visual potente. Mi propósito es elevar el nivel de calidad con cada gran proyecto.",
+                "en": "The creation of this environment consolidates my profile of fast learning and sustained effort. Building this portfolio and the ambition to improve and learn pushed me to combine editorial design, file structure, content organization, accessibility, translation, and development within a single project. I explore advanced and complex tools that simplify development and create strong visual impact. My goal is to continuously raise the level of quality with every major project."
             }
         },
         {
             "type": "text",
             "value": {
-                "es": [
-                    "La inteligencia artificial funciona como un copiloto técnico en fases clave como el orden de las carpetas, la traducción a inglés bajo supervisión y la iteración. ",
-                    "Su uso optimiza mi flujo diario y aporta celeridad, por lo que actúa como una herramienta de apoyo en mi formación autodidacta."
-                ],
-                "en": [
-                    "Artificial intelligence acts as a technical copilot in key stages such as folder organization, supervised translation into English, and iteration. ",
-                    "Its use optimizes my workflow and increases speed, serving as a supportive tool in my self-taught learning process."
-                ]
+                "es": "La inteligencia artificial funciona como un copiloto técnico en fases clave como el orden de las carpetas, la traducción a inglés bajo supervisión y la iteración. Su uso optimiza mi flujo diario y aporta celeridad, por lo que actúa como una herramienta de apoyo en mi formación autodidacta.",
+                "en": "Artificial intelligence acts as a technical copilot in key stages such as folder organization, supervised translation into English, and iteration. Its use optimizes my workflow and increases speed, serving as a supportive tool in my self-taught learning process."
             }
         },
         {
             "type": "text",
             "value": {
-                "es": [
-                    "Al final, este porfolio abre una metodología de trabajo a largo plazo. ",
-                    "Consiste en una base preparada para evolucionar junto a mis futuras infografías y narrativas interactivas de periodismo de datos."
-                ],
-                "en": [
-                    "Ultimately, this portfolio opens a long-term working methodology. ",
-                    "It is a foundation designed to evolve alongside my future graphics and interactive data journalism narratives."
-                ]
+                "es": "Al final, este porfolio abre una metodología de trabajo a largo plazo. Consiste en una base preparada para evolucionar junto a mis futuras infografías y narrativas interactivas de periodismo de datos.",
+                "en": "Ultimately, this portfolio opens a long-term working methodology. It is a foundation designed to evolve alongside my future graphics and interactive data journalism narratives."
             }
         }
     ]

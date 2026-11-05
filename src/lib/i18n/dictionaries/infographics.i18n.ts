@@ -39,6 +39,9 @@ type InfographicsDict = {
     viewDetails: string;
     projectPreview: string;
     closePreview: string;
+    search: string;
+    sortAscending: string;
+    sortDescending: string;
   };
 };
 
@@ -92,7 +95,7 @@ export const infographics: Record<"es" | "en", InfographicsDict> = {
       github: "GitHub",
       linkedin: "LinkedIn",
       a14: "Artículo 14",
-      voronoi: "Voronoi"
+      voronoi: "Voronoi",
     },
 
     intro: [
@@ -131,12 +134,16 @@ export const infographics: Record<"es" | "en", InfographicsDict> = {
         bold: true,
       },
     ],
+
     aria: {
       expandCover: "Ampliar portada",
       expandImage: "Ampliar imagen",
       viewDetails: "Ver detalles de {title}",
       projectPreview: "Previsualización del proyecto",
       closePreview: "Cerrar previsualización",
+      search: "Buscar infografías",
+      sortAscending: "Orden ascendente",
+      sortDescending: "Orden descendente",
     },
   },
 
@@ -189,7 +196,7 @@ export const infographics: Record<"es" | "en", InfographicsDict> = {
       github: "GitHub",
       linkedin: "LinkedIn",
       a14: "Artículo 14",
-      voronoi: "Voronoi"
+      voronoi: "Voronoi",
     },
 
     intro: [
@@ -228,12 +235,16 @@ export const infographics: Record<"es" | "en", InfographicsDict> = {
         bold: true,
       },
     ],
+
     aria: {
       expandCover: "Enlarge cover image",
       expandImage: "Enlarge image",
       viewDetails: "View details for {title}",
       projectPreview: "Project preview",
       closePreview: "Close preview",
+      search: "Search infographics",
+      sortAscending: "Ascending order",
+      sortDescending: "Descending order",
     },
   },
 };

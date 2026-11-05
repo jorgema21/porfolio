@@ -9,6 +9,7 @@
 
   import { langSignal } from "#lib/i18n/lang.svelte.js";
   import { layout } from "#lib/i18n/dictionaries/layout.js";
+  import { onMount } from "svelte";
 
   const { children } = $props();
 
@@ -16,10 +17,9 @@
 
   const t = $derived(layout[langSignal.current]);
 
-  if (browser && !localStorage.getItem("lang")) {
-    const detected = navigator.language.startsWith("es") ? "es" : "en";
-    langSignal.set(detected);
-  }
+  onMount(() => {
+    langSignal.initialize();
+  });
 
   const handleScroll = () => {
     const documentHeight = document.documentElement.scrollHeight;
@@ -67,9 +67,7 @@
   let currentPath = $derived(routeLabels[page.route.id ?? "/"] ?? "home");
 
   let announcePath = $derived(
-    langSignal.current === "es"
-      ? `Navegando a la página de ${t.nav[currentPath]}`
-      : `Navigating to ${t.nav[currentPath]} page`,
+    t.navigationAnnouncement.replace("{page}", t.nav[currentPath]),
   );
 </script>
 
@@ -77,9 +75,7 @@
   <title>{t.seo.title}</title>
   <meta name="description" content={t.seo.description} />
 
-  {#if page.url.pathname.includes("/graphics/") && page.url.pathname
-      .split("/")
-      .pop() !== "graphics"}
+  {#if page.route.id === "/graphics/[slug]"}
     <meta name="robots" content="noindex, follow" />
   {:else}
     <meta name="robots" content="index, follow" />
@@ -109,9 +105,7 @@
   class="scroll-top-btn"
   class:visible={showScrollTop}
   onclick={scrollToTop}
-  aria-label={langSignal.current === "es"
-    ? "Volver al inicio de la página"
-    : "Scroll to top"}
+  aria-label={t.scrollToTop}
 >
   <svg
     xmlns="http://w3.org"

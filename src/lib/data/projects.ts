@@ -595,7 +595,7 @@ const projects = [
     featured: true,
     title: {
       es: "Los secretos de la tierra batida: ¿Por qué Nadal impuso su dominio?",
-      en: "The Biomechanics of Dominance: How Nadal Conquered Clay",
+      en: "The Secrets of Clay: How Nadal Dominated the Surface",
     },
     description: {
       es: "Análisis del legado de Rafa Nadal en Roland Garros y su carrera",
@@ -772,7 +772,7 @@ const projects = [
     image: "/images/projects/aceite-espanol-ip.webp",
     title: {
       es: "Cómo los aranceles de Trump en 2024 sacudieron a las olivareras andaluzas",
-      en: "How Trump's 2024 Tariffs Hit Spanish Olive Oil Exports",
+      en: "How Trump's 2024 Tariffs Affected Andalusian Olive Producers",
     },
     description: {
       es: "Mapas y gráficos de exportación para explicar el impacto del conflicto arancelario con Estados Unidos",
@@ -910,7 +910,7 @@ const projects = [
     },
     description: {
       es: "Doble página con infografías de rendimiento sobre cómo la selección española e inglesa llegaron a la final",
-      en: "A double-page print layout featuring performance infographics on the match between the Spanish and English national teams.",
+      en: "A double-page print layout featuring performance graphics showing how Spain and England reached the final.",
     },
     image: "/images/projects/final-femenina-mundial-ip.webp",
     category: "infografia",
@@ -952,7 +952,7 @@ const projects = [
     slug: "golf-aumento-velocidad-distancia",
     title: {
       es: "El 'boom' de los pegadores y la evolución de la distancia en el golf moderno",
-      en: "The Long-Drive Boom and the Evolution of Swing Speed in Modern Golf",
+      en: "The Boom in Long Hitters and Driving Distance in Modern Golf",
     },
     description: {
       es: "Infografía sobre cómo el desarrollo físico y el material han transformado el golpeo",
@@ -1031,7 +1031,7 @@ const projects = [
     },
     description: {
       es: "Estadísticas de los dos equipos punteros antes del duelo directo de la competición",
-      en: "Statistics and team performance ahead of the definitive championship head-to-head match.",
+      en: "A statistical comparison of the two leading teams ahead of their head-to-head league match.",
     },
     image: "/images/projects/madrid-girona-ip.webp",
     category: "infografia",
@@ -1042,7 +1042,7 @@ const projects = [
     slug: "nba-maximos-puntos",
     title: {
       es: "¿Por qué la NBA alcanza las puntuaciones más altas de su historia?",
-      en: "Why the NBA Is Reaching Its Highest Scores Ever?",
+      en: "Why Is NBA Scoring Reaching Record Highs?",
     },
     description: {
       es: "Métricas de juego para identificar las causas del aumento de anotación en las canchas",
@@ -1348,7 +1348,7 @@ const projects = [
     homeVisible: false,
     title: {
       es: "¿Cómo es la imaginación actual de los niños?",
-      en: "How is the Actual Imagination of the Children?",
+      en: "What Is Children's Imagination Like Today?",
     },
   },
   {
@@ -1564,7 +1564,7 @@ const projects = [
     homeVisible: false,
     title: {
       es: "Entrevista a la TikToker de maternidad Julia Menú",
-      en: "Interview With Julia Menú, TikToker parenting",
+      en: "Interview With Julia Menú, Parenting Content Creator",
     },
   },
   {

@@ -1,7 +1,8 @@
 import type { Block } from "./block";
 import type { ApartadoKey } from "#lib/config/apartados.config.js";
+import type { Lang } from "#lib/i18n/lang.svelte.js";
 
-export type Lang = "es" | "en";
+export type { Lang };
 export type TranslatedText = Record<Lang, string>;
 export type ProjectCategory = "infografia" | "estilo_de_vida" | "maternidad";
 export type ProjectVariant = "hero" | "grid" | "list" | "feature";
@@ -14,12 +15,12 @@ export interface ProjectContent {
   image?: string;
   category: ProjectCategory;
   variant?: ProjectVariant;
-  
+
   colStart?: number;
   colSpan?: number;
   rowStart?: number;
   rowSpan?: number;
-  
+
   homeVisible?: boolean;
   slug?: string;
   externalUrl?: string;
@@ -40,6 +41,7 @@ export interface InfographicMeta {
   featured?: boolean;
 }
 
-export type InfographicRuntime = ProjectContent & InfographicMeta & {
-  blocks: Block[];
-};
+export type InfographicRuntime = ProjectContent &
+  InfographicMeta & {
+    blocks: Block[];
+  };

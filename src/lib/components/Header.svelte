@@ -48,12 +48,8 @@
       class:is-open={mobileOpen}
       type="button"
       aria-label={mobileOpen
-        ? langSignal.current === "es"
-          ? "Cerrar navegación"
-          : "Close navigation"
-        : langSignal.current === "es"
-          ? "Abrir navegación"
-          : "Open navigation"}
+        ? t.layout.navigationControls.close
+        : t.layout.navigationControls.open}
       aria-expanded={mobileOpen}
       onclick={toggleMenu}
       in:fly={flyIn}
@@ -84,8 +80,8 @@
       class="lang-switch"
       onclick={toggleLang}
       aria-label={langSignal.current === "es"
-        ? "Cambiar idioma a inglés"
-        : "Switch language to Spanish"}
+        ? t.layout.langSwitch.labelToEn
+        : t.layout.langSwitch.labelToEs}
       aria-pressed={langSignal.current === "en"}
       in:fly={{ ...flyIn, delay: 150 }}
     >

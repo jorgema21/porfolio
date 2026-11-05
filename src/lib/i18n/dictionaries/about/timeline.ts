@@ -23,7 +23,8 @@ export const timeline = {
 
     "erasmus-year": {
       title: "Año Erasmus",
-      description: "Cursé un año académico de intercambio Erasmus en Bérgamo (Italia).",
+      description:
+        "Cursé un año académico de intercambio Erasmus en Bérgamo (Italia).",
     },
 
     "end-degree": {
@@ -34,7 +35,8 @@ export const timeline = {
 
     "start-ep": {
       title: "Inicio máster de El País",
-      description: "Comencé el primer año, de formación teórica, del máster de El País.",
+      description:
+        "Comencé el primer año, de formación teórica, del máster de El País.",
     },
 
     "start-internship": {
@@ -114,7 +116,7 @@ export const timeline = {
     "journalism-degree": {
       title: "Journalism Degree",
       description:
-        "I began studying journalism at the University of Valladolid, Spain",
+        "I began the classroom-based first year of a two-year master's program",
     },
 
     "erasmus-year": {
@@ -131,7 +133,7 @@ export const timeline = {
     "start-ep": {
       title: "Started My Master's Degree at El País",
       description:
-        "I began the classroom-based first year of a two-year master's programme",
+        "I began the classroom-based first year of a two-year master's program",
     },
 
     "start-internship": {

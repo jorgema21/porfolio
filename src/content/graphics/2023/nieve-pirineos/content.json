@@ -6,20 +6,8 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "Este proyecto supuso un hito clave en mi desarrollo técnico porque consolidó mis competencias iniciales ",
-          "en el entorno RStudio aplicadas al periodismo de datos. Abordé un reportaje gráfico ",
-          "sobre la preocupante reducción del manto nival en la cordillera de los Pirineos. ",
-          "Para ello, analicé, limpié y formateé los registros climáticos del OPCC con RStudio, ",
-          "y trasladé la información estructurada a Google Spreadsheets y Datawrapper para su visualización."
-        ],
-        "en": [
-          "This project marked a key milestone in my technical development, because it consolidated my early skills ",
-          "in the RStudio environment applied to data journalism. I tackled a graphic report ",
-          "on the worrying reduction of the snowpack in the Pyrenees mountain range. ",
-          "To achieve this, I analyzed, cleaned, and formatted climate records from the OPCC using RStudio, ",
-          "and I transferred the structured information to Google Spreadsheets and Datawrapper for visualization."
-        ]
+        "es": "Este proyecto supuso un hito clave en mi desarrollo técnico porque consolidó mis competencias iniciales en el entorno RStudio aplicadas al periodismo de datos. Abordé un reportaje gráfico sobre la preocupante reducción del manto nival en la cordillera de los Pirineos. Para ello, analicé, limpié y formateé los registros climáticos del OPCC con RStudio, y trasladé la información estructurada a Google Spreadsheets y Datawrapper para su visualización.",
+        "en": "This project marked a key milestone in my technical development, because it consolidated my early skills in the RStudio environment applied to data journalism. I tackled a graphic report on the worrying reduction of the snowpack in the Pyrenees mountain range. To achieve this, I analyzed, cleaned, and formatted climate records from the OPCC using RStudio, and I transferred the structured information to Google Spreadsheets and Datawrapper for visualization."
       }
     },
     {
@@ -86,18 +74,8 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "Completé la narrativa con un gráfico de área que detalló el descenso de las precipitaciones, ",
-          "lo cual evidenció que la pérdida de nieve avanza a un ritmo más acelerado que la de agua líquida. ",
-          "Como cierre interactivo, programé una tabla buscador con la información clave ",
-          "de las estaciones de esquí pirenaicas, incluyendo cotas, dominios esquiables y su distribución geográfica."
-        ],
-        "en": [
-          "I completed the narrative with an area chart detailing the decline in precipitation, ",
-          "which showed that snow loss progresses at a faster rate than liquid water. ",
-          "As an interactive closing, I programmed a searchable table with key information ",
-          "from Pyrenean ski resorts, including elevations, skiable domains, and their geographical distribution."
-        ]
+        "es": "Completé la narrativa con un gráfico de área que detalló el descenso de las precipitaciones, lo cual evidenció que la pérdida de nieve avanza a un ritmo más acelerado que la de agua líquida. Como cierre interactivo, programé una tabla buscador con la información clave de las estaciones de esquí pirenaicas, incluyendo cotas, dominios esquiables y su distribución geográfica.",
+        "en": "I completed the narrative with an area chart detailing the decline in precipitation, which showed that snow loss progresses at a faster rate than liquid water. As an interactive closing, I programmed a searchable table with key information from Pyrenean ski resorts, including elevations, skiable domains, and their geographical distribution."
       }
     },
     {

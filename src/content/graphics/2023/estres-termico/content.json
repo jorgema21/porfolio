@@ -6,17 +6,8 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "Brindé apoyo gráfico mediante dos visualizaciones de datos interactivas que explicaron ",
-          "las consecuencias del estrés térmico en las urbes españolas. ",
-          "La primera de ellas analizó cómo evolucionaría este fenómeno ",
-          "en las principales ciudades afectadas a lo largo del tiempo."
-        ],
-        "en": [
-          "I provided graphic support through two interactive data visualizations ",
-          "that explained the consequences of thermal stress in Spanish cities. ",
-          "The first one analyzed how this phenomenon would evolve in the main affected cities over time."
-        ]
+        "es": "Brindé apoyo gráfico mediante dos visualizaciones de datos interactivas que explicaron las consecuencias del estrés térmico en las urbes españolas. La primera de ellas analizó cómo evolucionaría este fenómeno en las principales ciudades afectadas a lo largo del tiempo.",
+        "en": "I provided graphic support through two interactive data visualizations that explained the consequences of thermal stress in Spanish cities. The first one analyzed how this phenomenon would evolve in the main affected cities over time."
       }
     },
     {
@@ -34,17 +25,8 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "La segunda visualización consistió en un mapa de calor que reflejó dicha evolución, ",
-          "pero desglosada de forma detallada por municipios. ",
-          "Tras procesar los datos con R, trasladé la información limpia a Google Sheets y, finalmente, ",
-          "generé los interactivos en Datawrapper."
-        ],
-        "en": [
-          "The second visualization consisted of a heatmap that reflected this evolution, but broken down in detail by municipalities. ",
-          "After processing the data with R, I transferred the clean information to Google Sheets and, finally, ",
-          "generated the interactives in Datawrapper."
-        ]
+        "es": "La segunda visualización consistió en un mapa de calor que reflejó dicha evolución, pero desglosada de forma detallada por municipios. Tras procesar los datos con R, trasladé la información limpia a Google Sheets y, finalmente, generé los interactivos en Datawrapper.",
+        "en": "The second visualization consisted of a heatmap that reflected this evolution, but broken down in detail by municipalities. After processing the data with R, I transferred the clean information to Google Sheets and, finally, generated the interactives in Datawrapper."
       }
     },
     {

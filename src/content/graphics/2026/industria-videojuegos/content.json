@@ -6,27 +6,15 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "Para un reportaje en papel sobre la industria de los videojuegos en España y Europa, diseñé una serie ",
-          "de gráficos acerca de su popularidad por rango de edad o género."
-        ],
-        "en": [
-          "For a print feature on the video game industry in Spain and across Europe, I designed a series ",
-          "of charts exploring the popularity of video games across different age groups and genders."
-        ]
+        "es": "Para un reportaje en papel sobre la industria de los videojuegos en España y Europa, diseñé una serie de gráficos acerca de su popularidad por rango de edad o género.",
+        "en": "For a print feature on the video game industry in Spain and across Europe, I designed a series of charts exploring the popularity of video games across different age groups and genders."
       }
     },
     {
       "type": "text",
       "value": {
-        "es": [
-          "Extraje la información de varios informes y la traté en RStudio para crear ",
-          "las distintas visualizaciones de datos y el diseño de todo el conjunto a través de Illustrator."
-        ],
-        "en": [
-          "I gathered data from several reports and processed it in RStudio to create ",
-          "the data visualizations. I then used Illustrator to design the overall layout."
-        ]
+        "es": "Extraje la información de varios informes y la traté en RStudio para crear las distintas visualizaciones de datos y el diseño de todo el conjunto a través de Illustrator.",
+        "en": "I gathered data from several reports and processed it in RStudio to create the data visualizations. I then used Illustrator to design the overall layout."
       }
     },
     {

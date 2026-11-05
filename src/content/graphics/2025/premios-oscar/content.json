@@ -6,18 +6,8 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "Para analizar la evolución de los galardonados y nominados en los Premios Óscar, desarrollé ",
-          "un sitio web desde cero combinando diseño, narrativa, desarrollo y visualización de datos. ",
-          "Con Visual Studio Code, Svelte y Google Sheets procesé el histórico de películas ",
-          "nominadas y premiadas para crear gráficos personalizados sin limitaciones técnicas."
-        ],
-        "en": [
-          "To analyze Academy Award winners and nominees, I built a website from scratch combining ",
-          "design, storytelling, development, and data visualization. ",
-          "Using Visual Studio Code, Svelte, and Google Sheets, I processed historical film data. ",
-          "This allowed me to build fully custom visualizations without technical constraints."
-        ]
+        "es": "Para analizar la evolución de los galardonados y nominados en los Premios Óscar, desarrollé un sitio web desde cero combinando diseño, narrativa, desarrollo y visualización de datos. Con Visual Studio Code, Svelte y Google Sheets procesé el histórico de películas nominadas y premiadas para crear gráficos personalizados sin limitaciones técnicas.",
+        "en": "To analyze Academy Award winners and nominees, I built a website from scratch combining design, storytelling, development, and data visualization. Using Visual Studio Code, Svelte, and Google Sheets, I processed historical film data. This allowed me to build fully custom visualizations without technical constraints."
       }
     },
     {
@@ -35,13 +25,7 @@
           "donde las tarjetas simulaban claquetas de cine con años clave. ",
           "Las imágenes de fondo cambiaban según el dispositivo."
         ],
-        "en": [
-          "This was my first project with Svelte. I designed the site with a gold palette ",
-          "inspired by the statuettes, combined with greys and blacks.",
-          "I created a cover using Adobe Illustrator and Photoshop with Wikipedia images. ",
-          "I built a scrollytelling experience where text cards acted as movie clapperboards ",
-          "with key years. Background images adapted dynamically to each device."
-        ]
+        "en": "This was my first project with Svelte. I designed the site with a gold palette inspired by the statuettes, combined with greys and blacks.I created a cover using Adobe Illustrator and Photoshop with Wikipedia images. I built a scrollytelling experience where text cards acted as movie clapperboards with key years. Background images adapted dynamically to each device."
       }
     },
     {
@@ -68,10 +52,7 @@
           },
           "con información por año y una escala de color por niveles."
         ],
-        "en": [
-          "I designed a calendar-style heatmap to visualize the most awarded years. ",
-          "I added tooltips with yearly data and a stepped color scale."
-        ]
+        "en": "I designed a calendar-style heatmap to visualize the most awarded years. I added tooltips with yearly data and a stepped color scale."
       }
     },
     {
@@ -104,11 +85,7 @@
           "para evitar solapamiento de puntos. ",
           "Esto permitió visualizar mejor la densidad de premios y nominaciones."
         ],
-        "en": [
-          "Next, I built a scatterplot with all nominated films in the dataset. ",
-          "With over 5,000 records, I applied jitter to reduce overlap. ",
-          "This made award and nomination density easier to interpret."
-        ]
+        "en": "Next, I built a scatterplot with all nominated films in the dataset. With over 5,000 records, I applied jitter to reduce overlap. This made award and nomination density easier to interpret."
       }
     },
     {
@@ -127,10 +104,7 @@
           },
           "con información detallada."
         ],
-        "en": [
-          "I added a checkbox to isolate 2025 nominees and fade the rest. ",
-          "I also implemented category filters and detailed tooltips."
-        ]
+        "en": "I added a checkbox to isolate 2025 nominees and fade the rest. I also implemented category filters and detailed tooltips."
       }
     },
     {
@@ -148,14 +122,8 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "Para facilitar la exploración, creé una tabla con buscador y ordenación múltiple. ",
-          "Añadí barras visuales dentro de las celdas para enriquecer la lectura de datos."
-        ],
-        "en": [
-          "To improve exploration, I built a searchable and sortable table. ",
-          "I added inline data bars to enhance readability."
-        ]
+        "es": "Para facilitar la exploración, creé una tabla con buscador y ordenación múltiple. Añadí barras visuales dentro de las celdas para enriquecer la lectura de datos.",
+        "en": "To improve exploration, I built a searchable and sortable table. I added inline data bars to enhance readability."
       }
     },
     {
@@ -173,14 +141,8 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "Como cierre, añadí un mapa coroplético de países según su éxito en Mejor Película Internacional. ",
-          "Dupliqué la lógica de búsqueda y añadí un sistema de pestañas para alternar vistas."
-        ],
-        "en": [
-          "Finally, I added a choropleth map showing country success in Best International Feature Film. ",
-          "I reused search logic and built tab-based view switching."
-        ]
+        "es": "Como cierre, añadí un mapa coroplético de países según su éxito en Mejor Película Internacional. Dupliqué la lógica de búsqueda y añadí un sistema de pestañas para alternar vistas.",
+        "en": "Finally, I added a choropleth map showing country success in Best International Feature Film. I reused search logic and built tab-based view switching."
       }
     },
     {
@@ -198,22 +160,8 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "Este proyecto fue mi primera gran inmersión en Svelte sin SvelteKit. ",
-          "Aunque ya entendía conceptos HTML, CSS y JavaScript, el reto fue crear ",
-          "visualizaciones complejas. Trabajé con datos estructurados que limpié y ",
-          "procesé manualmente. El uso de IA me ayudó a acelerar el aprendizaje ",
-          "y la implementación. Este proyecto consolidó mi base para futuros ",
-          "desarrollos más eficientes."
-        ],
-        "en": [
-          "This was my first major dive into Svelte without SvelteKit. Although ",
-          "I already knew some HTML, CSS, and JavaScript, the challenge was ",
-          "building complex visualizations. I worked with structured data that I ",
-          "cleaned and processed myself. AI helped me speed up learning and ",
-          "implementation. This project became the foundation for more efficient ",
-          "future work."
-        ]
+        "es": "Este proyecto fue mi primera gran inmersión en Svelte sin SvelteKit. Aunque ya entendía conceptos HTML, CSS y JavaScript, el reto fue crear visualizaciones complejas. Trabajé con datos estructurados que limpié y procesé manualmente. El uso de IA me ayudó a acelerar el aprendizaje y la implementación. Este proyecto consolidó mi base para futuros desarrollos más eficientes.",
+        "en": "This was my first major dive into Svelte without SvelteKit. Although I already knew some HTML, CSS, and JavaScript, the challenge was building complex visualizations. I worked with structured data that I cleaned and processed myself. AI helped me speed up learning and implementation. This project became the foundation for more efficient future work."
       }
     },
     {

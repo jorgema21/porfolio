@@ -6,26 +6,15 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "Para explicar por qué las entradas de los conciertos son más caras que nunca, propuse un reportaje basado en datos. ",
-          "La publicación de un informe que anunció récords históricos tanto en la facturación de la música en vivo como ",
-          "en el precio de los tickets me sirvió como punto de partida para la investigación."
-        ],
-        "en": [
-          "To explain why concert tickets are more expensive than ever, I pitched a data-driven feature. ",
-          "A report showing record highs in both live music revenue and ticket prices served as the main baseline for this investigation."
-        ]
+        "es": "Para explicar por qué las entradas de los conciertos son más caras que nunca, propuse un reportaje basado en datos. La publicación de un informe que anunció récords históricos tanto en la facturación de la música en vivo como en el precio de los tickets me sirvió como punto de partida para la investigación.",
+        "en": "To explain why concert tickets are more expensive than ever, I pitched a data-driven feature. A report showing record highs in both live music revenue and ticket prices served as the main baseline for this investigation."
       }
     },
     {
       "type": "text",
       "value": {
-        "es": [
-          "Extraje y procesé los datos del documento PDF original a Google Sheets y creé los gráficos base en Datawrapper para su posterior edición. "
-        ],
-        "en": [
-          "I extracted and processed the data from the original PDF report using Google Sheets, then created the base charts in Datawrapper for final editing. "
-        ]
+        "es": "Extraje y procesé los datos del documento PDF original a Google Sheets y creé los gráficos base en Datawrapper para su posterior edición. ",
+        "en": "I extracted and processed the data from the original PDF report using Google Sheets, then created the base charts in Datawrapper for final editing. "
       }
     },
     {

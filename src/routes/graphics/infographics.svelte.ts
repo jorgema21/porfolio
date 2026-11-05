@@ -2,8 +2,9 @@ import { infographics } from "#lib/data/infographics.data.js";
 import { APARTADOS } from "#lib/config/apartados.config.js";
 import { infographics as infographicsI18n } from "#lib/i18n/dictionaries/infographics.i18n.js";
 import { SvelteMap } from "svelte/reactivity";
+import type { Lang } from "#lib/i18n/lang.svelte.js";
 
-export type Lang = "es" | "en";
+export type { Lang };
 export type SortBy = "date" | "title" | "apartado" | "medium";
 export type SortDir = "asc" | "desc";
 export type Infographic = (typeof infographics)[number] & {
@@ -26,14 +27,8 @@ export interface GroupedInfographics {
 
 const getDirection = (dir: SortDir): number => (dir === "asc" ? 1 : -1);
 
-const sorters = {
-  date: (a: Infographic, b: Infographic) =>
-    Date.parse(b.date || "0") - Date.parse(a.date || "0"),
-  apartado: (a: Infographic, b: Infographic) =>
-    (a.apartado ?? "").localeCompare(b.apartado ?? ""),
-  medium: (a: Infographic, b: Infographic) =>
-    (a.mediumKey ?? "").localeCompare(b.mediumKey ?? ""),
-};
+const sortByDate = (a: Infographic, b: Infographic) =>
+  Date.parse(b.date || "0") - Date.parse(a.date || "0");
 
 const countBy = <T, K extends PropertyKey>(
   items: readonly T[],
@@ -109,12 +104,7 @@ export function useInfographicsPage(lang: () => Lang) {
           ) * direction,
       );
     }
-    return [...list].sort(
-      (a, b) =>
-        sorters[
-          filters.sortBy as Exclude<SortBy, "title" | "apartado" | "medium">
-        ](a, b) * direction,
-    );
+    return [...list].sort((a, b) => sortByDate(a, b) * direction);
   });
 
   const grouped = $derived(() => {
@@ -159,9 +149,6 @@ export function useInfographicsPage(lang: () => Lang) {
     { value: "medium", key: "medium" },
   ] as const;
 
-  const renderNode = (node: string | { text: string }) =>
-    typeof node === "string" ? node : (node?.text ?? "");
-
   return {
     filters,
     get filtered() {
@@ -173,6 +160,5 @@ export function useInfographicsPage(lang: () => Lang) {
     treemap,
     groupLabel,
     sortOptions,
-    renderNode,
   };
 }

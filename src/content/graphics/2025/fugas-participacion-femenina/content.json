@@ -6,14 +6,8 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "Para un reportaje sobre la brecha de paridad en las elecciones argentinas, colaboré en un proyecto ",
-          "que me permitió profundizar en el desarrollo web y el diseño de interfaces basado en grids."
-        ],
-        "en": [
-          "For a feature on the gender parity gap in Argentinian elections, I worked on a project ",
-          "that helped me dive deeper into web development and grid-based interface design."
-        ]
+        "es": "Para un reportaje sobre la brecha de paridad en las elecciones argentinas, colaboré en un proyecto que me permitió profundizar en el desarrollo web y el diseño de interfaces basado en grids.",
+        "en": "For a feature on the gender parity gap in Argentinian elections, I worked on a project that helped me dive deeper into web development and grid-based interface design."
       }
     },
     {
@@ -29,12 +23,7 @@
           "real fuera del entorno personal. Estas son capturas de algunas de las ",
           "secciones que diseñé para la web:"
         ],
-        "en": [
-          "Based on a pre-existing design, I coded most of the interactive steps ",
-          "in HTML using Scrollama. This was my first real-world web development ",
-          "project outside of personal work. Here are screenshots of some of ",
-          "the sections I designed for the live site:"
-        ]
+        "en": "Based on a pre-existing design, I coded most of the interactive steps in HTML using Scrollama. This was my first real-world web development project outside of personal work. Here are screenshots of some of the sections I designed for the live site:"
       }
     },
     {

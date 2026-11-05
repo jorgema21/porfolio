@@ -6,30 +6,15 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "Para un reportaje en papel sobre los vehículos autónomos y su presencia alrededor del mundo, ",
-          "diseñé un mapa mundial localizador con las principales ciudades donde operan estos medios de transporte ",
-          "y su integración y modelo en la ciudad."
-        ],
-        "en": [
-          "For a print feature on autonomous vehicles and their presence around the world, ",
-          "I designed a world map highlighting major cities where these vehicles operate, ",
-          "along with how they are integrated into urban transportation systems and their operating models."
-        ]
+        "es": "Para un reportaje en papel sobre los vehículos autónomos y su presencia alrededor del mundo, diseñé un mapa mundial localizador con las principales ciudades donde operan estos medios de transporte y su integración y modelo en la ciudad.",
+        "en": "For a print feature on autonomous vehicles and their presence around the world, I designed a world map highlighting major cities where these vehicles operate, along with how they are integrated into urban transportation systems and their operating models."
       }
     },
     {
       "type": "text",
       "value": {
-        "es": [
-          "Extraje la información de distintas webs de cada empresa y la traté en RStudio para estructurar el mapa ",
-          "y los distintos gráficos. Las infografías y el diseño de todo el conjunto lo hice en Illustrator."
-        ],
-        "en": [
-          "I gathered information from the websites of the companies involved and processed it in RStudio ",
-          "to structure the map and accompanying charts. I created the infographics and designed ",
-          "the overall layout in Illustrator."
-        ]
+        "es": "Extraje la información de distintas webs de cada empresa y la traté en RStudio para estructurar el mapa y los distintos gráficos. Las infografías y el diseño de todo el conjunto lo hice en Illustrator.",
+        "en": "I gathered information from the websites of the companies involved and processed it in RStudio to structure the map and accompanying charts. I created the infographics and designed the overall layout in Illustrator."
       }
     },
     {
