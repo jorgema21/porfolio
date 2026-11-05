@@ -13,25 +13,20 @@ export const style: Record<"es" | "en", InfographicsDict> = {
     others: "Otros",
 
     intro: [
+      { text: "En esta sección encontrarás mis artículos sobre " },
       {
-        text: "En esta sección encontrarás mis artículos sobre ",
-      },
-      {
-        text: "estilo de vida, relaciones personales y psicología. ",
+        text: "estilo de vida, relaciones personales y psicología.",
         bold: true,
       },
-    ],
+    ] satisfies RichText,
+
     aim: [
+      { text: "Me gusta escribir sobre " },
       {
-        text: "Me gusta escribir sobre ",
-      },
-      {
-        text: "las cosas del día a día que nos hacen pensar o actuar ",
+        text: "las pequeñas cosas del día a día que influyen en cómo pensamos, sentimos y actuamos",
         bold: true,
       },
-      {
-        text: "de determinada manera e intentar entender por qué nos pasan."
-      }
+      { text: ", e intentar entender por qué nos afectan." },
     ] satisfies RichText,
   },
 
@@ -40,25 +35,20 @@ export const style: Record<"es" | "en", InfographicsDict> = {
     others: "Others",
 
     intro: [
+      { text: "Here you'll find my articles on " },
       {
-        text: "Welcome to the ",
-      },
-      {
-        text: "lifestyle ",
+        text: "lifestyle, personal relationships, and psychology.",
         bold: true,
       },
-      {
-        text: "section.",
-      },
-    ],
+    ] satisfies RichText,
+
     aim: [
+      { text: "I enjoy writing about " },
       {
-        text: "My main aim is to explore ",
-      },
-      {
-        text: "how psychology influences people's everyday lives.",
+        text: "the everyday things that shape how we think, feel, and act",
         bold: true,
       },
+      { text: ", and trying to understand why they affect us." },
     ] satisfies RichText,
   },
 };

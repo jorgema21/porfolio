@@ -13,28 +13,21 @@ export const parenting: Record<"es" | "en", InfographicsDict> = {
     others: "Otros",
 
     intro: [
+      { text: "Aquí reúno mis textos sobre " },
       {
-        text: "Aquí encontrarás mis reportajes sobre ",
-      },
-      {
-        text: "maternidad, paternidad y crianza, ",
+        text: "maternidad, crianza y vida familiar",
         bold: true,
       },
-      {
-        text: "con especial atención al bienestar emocional de las familias.",
-      },
-    ],
+      { text: "." },
+    ] satisfies RichText,
+
     aim: [
+      { text: "Estos reportajes exploran " },
       {
-        text: "Me interesa especialmente ",
-      },
-      {
-        text: "la psicología que hay detrás de ser madre o padre, ",
+        text: "los cambios, las dudas y los retos que viven adultos y niños en su relación cotidiana",
         bold: true,
       },
-      {
-        text: "cómo crecen los niños y todas las dudas, cambios o errores que aparecen en la vida familiar.",
-      },
+      { text: "." },
     ] satisfies RichText,
   },
 
@@ -43,25 +36,21 @@ export const parenting: Record<"es" | "en", InfographicsDict> = {
     others: "Others",
 
     intro: [
+      { text: "Here I've brought together my writing on " },
       {
-        text: "Welcome to the ",
-      },
-      {
-        text: "parenting ",
+        text: "motherhood, parenting, and family life",
         bold: true,
       },
-      {
-        text: "section.",
-      },
-    ],
+      { text: "." },
+    ] satisfies RichText,
+
     aim: [
+      { text: "These stories explore " },
       {
-        text: "My aim is to explore ",
-      },
-      {
-        text: "how psychology influences the everyday lives of parents and their children.",
+        text: "the changes, questions, and challenges that adults and children experience as they navigate everyday life together",
         bold: true,
       },
+      { text: "." },
     ] satisfies RichText,
   },
 };

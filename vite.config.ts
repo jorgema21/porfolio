@@ -71,7 +71,7 @@ const resizeAdapter = {
 };
 
 export default defineConfig({
-  logLevel: "warn",
+  logLevel: process.env.NODE_ENV === "production" ? "warn" : "info",
 
   plugins: [
     sveltekit({
