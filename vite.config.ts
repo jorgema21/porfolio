@@ -8,57 +8,71 @@ import fs from "fs";
 import path from "path";
 import sharp from "sharp";
 
-function ViteStaticResize() {
-  return {
-    name: "vite-plugin-static-resize",
-    async closeBundle() {
-      const outDir = path.resolve("build/images");
+async function resizeStaticImages() {
+  const outDir = path.resolve("build/images/projects");
 
-      if (!fs.existsSync(outDir)) {
-        console.log("No se encontró la carpeta de imágenes en el build final:", outDir);
-        return;
-      }
+  if (!fs.existsSync(outDir)) {
+    throw new Error(`No se encontró la carpeta de imágenes: ${outDir}`);
+  }
 
-      const resizeImagesRecursively = async (dir: string) => {
-        const files = fs.readdirSync(dir);
+  let resized = 0;
 
-        for (const file of files) {
-          const fullPath = path.join(dir, file);
-          const stat = fs.statSync(fullPath);
+  const resizeImagesRecursively = async (dir: string): Promise<void> => {
+    const files = fs.readdirSync(dir);
 
-          if (stat.isDirectory()) {
-            await resizeImagesRecursively(fullPath);
-          } else if (file.endsWith(".webp")) {
-            try {
-              const fileBuffer = fs.readFileSync(fullPath);
-              const image = sharp(fileBuffer);
-              const metadata = await image.metadata();
+    for (const file of files) {
+      const fullPath = path.join(dir, file);
+      const stat = fs.statSync(fullPath);
 
-              if (metadata.width && metadata.width > 1200) {
-                const outputBuffer = await image
-                  .resize({ width: 1200, withoutEnlargement: true })
-                  .toBuffer();
-                
-                image.destroy();
-                await fs.promises.writeFile(fullPath, outputBuffer);
-              } else {
-                image.destroy();
-              }
-            } catch (err) {
-              console.error(`Error optimizando dimensiones de: ${file}`, err);
-            }
+      if (stat.isDirectory()) {
+        await resizeImagesRecursively(fullPath);
+      } else if (file.toLowerCase().endsWith(".webp")) {
+        try {
+          const originalBuffer = await fs.promises.readFile(fullPath);
+          const metadata = await sharp(originalBuffer).metadata();
+
+          if (metadata.width && metadata.width > 1200) {
+            const resizedBuffer = await sharp(originalBuffer)
+              .resize({ width: 1200, withoutEnlargement: true })
+              .webp()
+              .toBuffer();
+
+            await fs.promises.writeFile(fullPath, resizedBuffer);
+            resized++;
           }
+        } catch (err) {
+          console.error(`Error redimensionando: ${file}`, err);
+          throw err;
         }
-      };
-
-      console.log(" Redimensionando imágenes WebP estáticas");
-      await resizeImagesRecursively(outDir);
-      console.log("Redimensionamiento completado con éxito");
+      }
     }
   };
+
+  console.log("Redimensionando imágenes WebP de proyectos...");
+
+  await resizeImagesRecursively(outDir);
+
+  console.log(`${resized} imágenes redimensionadas.`);
+  console.log("Redimensionamiento completado con éxito.");
 }
 
+const staticAdapter = adapter({
+  pages: "build",
+  assets: "build",
+  fallback: "404.html",
+});
+
+const resizeAdapter = {
+  ...staticAdapter,
+  async adapt(builder: Parameters<typeof staticAdapter.adapt>[0]) {
+    await staticAdapter.adapt(builder);
+    await resizeStaticImages();
+  },
+};
+
 export default defineConfig({
+  logLevel: "warn",
+
   plugins: [
     sveltekit({
       extensions: [".svelte", ".md", ".svx"],
@@ -69,12 +83,15 @@ export default defineConfig({
           const isExternalLibrary = pathSegments.includes("node_modules");
 
           return isExternalLibrary ? undefined : true;
-        }
+        },
       },
       preprocess: [mdsvex({ extensions: [".md"] })],
-      adapter: adapter({ pages: "build", assets: "build", fallback: "404.html" }),
+      adapter: resizeAdapter,
       paths: { base: "/porfolio" },
-      prerender: { handleHttpError: "warn", handleUnseenRoutes: "ignore" }
+      prerender: {
+        handleHttpError: "warn",
+        handleUnseenRoutes: "ignore",
+      },
     }),
 
     ViteImageOptimizer({
@@ -83,6 +100,5 @@ export default defineConfig({
       jpg: { quality: 80 },
       webp: { quality: 80 },
     }),
-    ViteStaticResize()
   ],
 });
