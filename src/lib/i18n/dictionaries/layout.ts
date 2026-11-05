@@ -24,11 +24,11 @@ export const layout = {
     },
 
     seo: {
-      title: "Porfolio | Dataviz y reportajes",
+      title: "Porfolio | Infografía, visualización de datos y reportajes",
       description:
-        "Porfolio profesional de infografías, visualización de datos y reportajes.",
+        "Una selección de trabajos de infografía, visualización de datos, periodismo visual y reportajes.",
       ogDescription:
-        "Narrativas visuales, análisis y visualización de datos y redacción de reportajes.",
+        "Infografías, visualización de datos, periodismo visual y reportajes.",
     },
 
     footer: {
@@ -69,11 +69,11 @@ export const layout = {
     },
 
     seo: {
-      title: "Portfolio | Graphics & Data Journalism",
+      title: "Portfolio | Infographics, Data Visualization & Reporting",
       description:
-        "Professional portfolio specializing in graphics, data visualization, and reporting.",
+        "A selection of work in infographics, data visualization, visual journalism, and feature reporting.",
       ogDescription:
-        "Visual narratives, data analysis, information design, and feature reporting.",
+        "Infographics, data visualization, visual journalism, and feature reporting.",
     },
 
     footer: {
