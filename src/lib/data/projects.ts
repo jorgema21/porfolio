@@ -1,28 +1,18 @@
 import type { HomeSlotKey } from "./home-slots.js";
 
-export interface ProjectTitle {
-  es: string;
-  en: string;
-}
-export type ProjectCategory = "infografia" | "estilo_de_vida" | "maternidad";
-export type ProjectVariant = "hero" | "grid" | "list" | "feature";
+import type {
+  ProjectCategory,
+  ProjectVariant,
+  ProjectContent,
+  TranslatedText,
+} from "#lib/types/project.types.js";
 
-export interface HomeProject {
-  id: string;
-  title: ProjectTitle;
-  description?: ProjectTitle;
-  image?: string;
-  mediumStyle?: string;
-  category: ProjectCategory;
-  variant?: ProjectVariant;
-  colStart?: number;
-  colSpan?: number;
-  rowStart?: number;
-  rowSpan?: number;
-  homeVisible?: boolean;
+export type { ProjectCategory, ProjectVariant };
+
+export type ProjectTitle = TranslatedText;
+
+export interface HomeProject extends ProjectContent {
   homeSlot?: HomeSlotKey;
-  slug?: string;
-  externalUrl?: string;
   featured?: boolean;
 }
 

@@ -1,14 +1,12 @@
 import projects from "#lib/data/projects.js";
 
-import type { InfographicMeta } from "#lib/types/project.types.js";
-export interface Infographic extends Record<string, unknown>, InfographicMeta {
-  id: string;
+import type {
+  InfographicMeta,
+  ProjectContent,
+} from "#lib/types/project.types.js";
+
+export interface Infographic extends ProjectContent, InfographicMeta {
   slug: string;
-  category: string;
-  title: {
-    es: string;
-    en: string;
-  };
 }
 
 const metaModules = import.meta.glob<InfographicMeta>(

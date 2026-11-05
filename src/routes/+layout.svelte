@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { asset } from "$app/paths";
   import "#lib/styles/global.css";
   import ImageLightbox from "#lib/components/ImageLightbox.svelte";
   import Header from "#lib/components/Header.svelte";
@@ -75,19 +74,21 @@
   <title>{t.seo.title}</title>
   <meta name="description" content={t.seo.description} />
 
-  {#if page.route.id === "/graphics/[slug]"}
-    <meta name="robots" content="noindex, follow" />
-  {:else}
+  {#if page.route.id === "/"}
     <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://jorgema21.github.io/porfolio/" />
+  {:else}
+    <meta name="robots" content="noindex, follow" />
   {/if}
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Portfolio" />
   <meta property="og:title" content={t.seo.title} />
   <meta property="og:description" content={t.seo.ogDescription} />
+
   <meta
     property="og:image"
-    content={asset("images/projects/este-porfolio-ip.webp")}
+    content="https://jorgema21.github.io/porfolio/images/projects/este-porfolio-ip.webp"
   />
 </svelte:head>
 
