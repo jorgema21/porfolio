@@ -7,6 +7,7 @@
   const navItems = [
     { href: resolve("/graphics"), key: "graphics" },
     { href: resolve("/lifestyle"), key: "lifestyle" },
+        { href: resolve("/travel"), key: "travel" },
     { href: resolve("/parenting"), key: "parenting" },
     { href: resolve("/about-me"), key: "about-me" },
     { href: resolve("/contact"), key: "contact" },

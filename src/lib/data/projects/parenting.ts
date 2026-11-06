@@ -25,9 +25,8 @@ export const parentingProjects = [
     externalUrl:
       "https://elpais.com/mamas-papas/2026-09-27/de-ya-lo-hago-yo-a-intentalo-tu-por-que-hay-que-dejar-de-resolver-la-vida-cotidiana-de-los-hijos.html",
     category: "maternidad",
-    homeVisible: true,
+    homeVisible: false,
     mediumStyle: "El País",
-    homeSlot: "E1",
     title: {
       es: "La intervención paterna constante puede derivar en falta de independencia infantojuvenil",
       en: "How Constant Parental Intervention Can Undermine Children's Independence",

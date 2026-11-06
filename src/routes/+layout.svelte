@@ -58,6 +58,7 @@
     "/graphics": "graphics",
     "/graphics/[slug]": "graphics",
     "/lifestyle": "lifestyle",
+    "/travel": "travel",
     "/parenting": "parenting",
     "/about-me": "about-me",
     "/contact": "contact",

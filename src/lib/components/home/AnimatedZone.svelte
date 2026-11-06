@@ -240,6 +240,9 @@
     &.maternidad {
       color: var(--color-parenting);
     }
+    &.viajes {
+      color: var(--color-travel);
+    }
   }
 
   @media (max-width: 768px) {

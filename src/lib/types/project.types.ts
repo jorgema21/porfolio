@@ -4,7 +4,7 @@ import type { Lang } from "#lib/i18n/lang.svelte.js";
 
 export type { Lang };
 export type TranslatedText = Record<Lang, string>;
-export type ProjectCategory = "infografia" | "estilo_de_vida" | "maternidad";
+export type ProjectCategory = "infografia" | "estilo_de_vida" | "maternidad" | "viajes";
 export type ProjectVariant = "hero" | "grid" | "list" | "feature";
 export type ColaboracionTipo = "solo" | "equipo";
 export type RoleType = "graficos" | "texto" | "desarrollo" | "datos";

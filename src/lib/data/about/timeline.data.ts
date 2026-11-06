@@ -1,4 +1,9 @@
-export type TimelineCategory = "study" | "infography" | "style" | "parenting";
+export type TimelineCategory =
+  | "study"
+  | "infography"
+  | "style"
+  | "parenting"
+  | "travel";
 
 export type TimelineId =
   | "journalism-degree"
@@ -16,7 +21,8 @@ export type TimelineId =
   | "start-col"
   | "start-epgente"
   | "start-dataista"
-  | "this-portfolio";
+  | "this-portfolio"
+  | "start-travel";
 
 export type TimelineItem = {
   readonly id: TimelineId;
@@ -41,6 +47,7 @@ const rawTimeline = [
   { id: "start-epgente", date: "09-2025", category: "style" },
   { id: "start-dataista", date: "11-2025", category: "study" },
   { id: "this-portfolio", date: "06-2026", category: "study" },
+  { id: "start-travel", date: "07-2026", category: "travel" },
 ] as const satisfies readonly TimelineItem[];
 
 const dateToNumber = (date: string): number => {

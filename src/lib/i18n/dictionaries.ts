@@ -12,6 +12,7 @@ import { metaarticle } from "./dictionaries/meta-article";
 import { parenting } from "./dictionaries/parenting";
 import { project } from "./dictionaries/project";
 import { style } from "./dictionaries/style.i18n";
+import { travel } from "./dictionaries/travel.i18n.js";
 
 export const dictionaries = {
   es: {
@@ -27,6 +28,7 @@ export const dictionaries = {
     skills: skills.es,
     skillLevels: skillLevels.es,
     style: style.es,
+    travel: travel.es,
     timeline: timeline.es,
     timelineUI: timelineUI.es,
   },
@@ -43,6 +45,7 @@ export const dictionaries = {
     skills: skills.en,
     skillLevels: skillLevels.en,
     style: style.en,
+    travel: travel.en,
     timeline: timeline.en,
     timelineUI: timelineUI.en,
   },

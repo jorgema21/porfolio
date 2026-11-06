@@ -110,6 +110,12 @@ export const timeline = {
       description:
         "Dediqué varios meses a desarrollar este porfolio como un proyecto en sí mismo, con el objetivo de presentar mis trabajos más destacados de una forma visual y atractiva.",
     },
+
+    "start-travel": {
+      title: "Colaboración con El Viajero de El País",
+      description:
+        "Comencé a publicar reportajes sobre destinos y experiencias de viaje.",
+    },
   },
 
   en: {
@@ -206,6 +212,12 @@ export const timeline = {
       title: "This Portfolio!",
       description:
         "I spent several months building this portfolio as a project in its own right, creating a visual and engaging way to showcase my most important work.",
+    },
+
+    "start-travel": {
+      title: "Started Writing for El Viajero at El País",
+      description:
+        "I began writing travel features about destinations and travel experiences.",
     },
   },
 } satisfies TimelineI18n;

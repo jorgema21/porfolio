@@ -19,11 +19,13 @@ export interface HomeProject extends ProjectContent {
 import { infographicProjects } from "./projects/infographics.js";
 import { lifestyleProjects } from "./projects/lifestyle.js";
 import { parentingProjects } from "./projects/parenting.js";
+import { travelProjects } from "./projects/travel.js";
 
 const projects: HomeProject[] = [
   ...infographicProjects,
   ...lifestyleProjects,
   ...parentingProjects,
+  ...travelProjects,
 ];
 
 export default projects;

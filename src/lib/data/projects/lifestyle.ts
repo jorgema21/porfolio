@@ -25,7 +25,7 @@ export const lifestyleProjects = [
       "https://elpais.com/estilo-de-vida/2026-10-07/lo-guardo-para-una-ocasion-especial-por-que-nos-cuesta-tanto-estrenar-algunos-objetos.html",
     category: "estilo_de_vida",
     homeVisible: true,
-    homeSlot: "A3",
+    homeSlot: "E2",
     mediumStyle: "El País",
     title: {
       es: "¿Por qué nos cuesta tanto estrenar algunos objetos?",
@@ -43,7 +43,7 @@ export const lifestyleProjects = [
       "https://elpais.com/estilo-de-vida/2026-09-29/hasta-que-punto-mis-padres-pueden-convertirse-en-mis-amigos.html",
     category: "estilo_de_vida",
     homeVisible: true,
-    homeSlot: "E2",
+    homeSlot: "E3",
     mediumStyle: "El País",
     title: {
       es: "La posible relación de amistad vertical intrafamiliar",
@@ -60,8 +60,7 @@ export const lifestyleProjects = [
     externalUrl:
       "https://elpais.com/estilo-de-vida/2026-09-22/cuando-un-amigo-de-la-infancia-despierta-las-versiones-de-nuestra-personalidad-que-creiamos-olvidadas.html",
     category: "estilo_de_vida",
-    homeVisible: true,
-    homeSlot: "E3",
+    homeVisible: false,
     mediumStyle: "El País",
     title: {
       es: "Las versiones ocultas de nuestra personalidad",

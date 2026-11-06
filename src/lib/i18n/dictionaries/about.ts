@@ -14,6 +14,7 @@ type AboutDict = {
   infographics: string;
   lifestyle: string;
   parenting: string;
+  travel: string;
   skillsTitle: string;
   languagesTitle: string;
   cta: string;
@@ -32,7 +33,7 @@ export const about: Record<"es" | "en", AboutDict> = {
         text: "Soy periodista e infografista independiente, especializado en ",
       },
       {
-        text: "visualización de datos, periodismo visual y contenidos de estilo de vida y maternidad.",
+        text: "visualización de datos, periodismo visual y contenidos de estilo de vida y maternidad y viajes.",
         bold: true,
       },
     ],
@@ -45,7 +46,10 @@ export const about: Record<"es" | "en", AboutDict> = {
         text: "historias claras, rigurosas y de impacto. Me interesa explorar fenómenos sociales y temas de actualidad a través de los datos, ",
       },
       {
-        text: "así como investigar cómo influye la psicología en la vida cotidiana, especialmente en el ámbito de la crianza y las familias.",
+        text: "así como investigar cómo influye la psicología en la vida cotidiana, especialmente en el ámbito de la crianza y las familias. ",
+      },
+      {
+        text: "También disfruto descubriendo lugares y contando las historias que hay detrás de ellos.",
       },
     ],
 
@@ -60,15 +64,16 @@ export const about: Record<"es" | "en", AboutDict> = {
       "Máster de El País (oct. 2021-sep. 2023)",
       "Beca en Narrativas Visuales (sep. 2022-sep. 2023)",
       "El País Deportes (feb. a abr. 2024)",
-      "Autónomo (desde abr. 2024): Colaboraciones con Artículo 14; El País Estilo de Vida, Mamas&Papas y Gente; Storydata; Colpisa y Dataista",
+      "Autónomo (desde abr. 2024): Colaboraciones con Artículo 14; El País Estilo de Vida, Mamas&Papas, Gente y El Viajero; Storydata; Colpisa y Dataista",
     ],
     study: "Estudio",
     infographics: "Infografía",
     lifestyle: "Estilo de vida",
     parenting: "Maternidad",
+    travel: "Viajes",
     skillsTitle: "Herramientas que uso",
     languagesTitle: "Idiomas que hablo",
-    cta: "Disponible para proyectos de infografía y datos, así como para colaboraciones de estilo de vida y maternidad",
+    cta: "Disponible para proyectos de infografía y datos, así como para colaboraciones de estilo de vida, maternidad y viajes",
     aria: {
       languagesSelector: "Seleccionar idioma",
     },
@@ -82,7 +87,7 @@ export const about: Record<"es" | "en", AboutDict> = {
         text: "I'm a freelance journalist and information designer specializing in ",
       },
       {
-        text: "data visualization, visual journalism, and lifestyle and parenting journalism.",
+        text: "data visualization, visual journalism, and lifestyle, parenting and travel journalism.",
         bold: true,
       },
     ],
@@ -95,7 +100,10 @@ export const about: Record<"es" | "en", AboutDict> = {
         text: "clear, accurate, and compelling stories. I'm particularly interested in exploring social issues and current events through data, ",
       },
       {
-        text: "as well as examining how psychology shapes everyday life, especially for parents and families.",
+        text: "as well as examining how psychology shapes everyday life, especially for parents and families. ",
+      },
+      {
+        text: "I also enjoy discovering places and telling the stories behind them.",
       },
     ],
 
@@ -110,15 +118,16 @@ export const about: Record<"es" | "en", AboutDict> = {
       "Master's degree at El País (Oct 2021–Sep 2023)",
       "Visual Storytelling internship (Sep 2022–Sep 2023)",
       "El País Sports (Feb–Apr 2024)",
-      "Freelance journalist and information designer (since Apr 2024): Collaborations with Artículo 14; El País Lifestyle, Mamas&Papas and Gente; Storydata; Colpisa; and Dataista",
+      "Freelance journalist and information designer (since Apr 2024): Collaborations with Artículo 14; El País Lifestyle, Mamas&Papas, Gente and El Viajero; Storydata; Colpisa; and Dataista",
     ],
     study: "Education",
     infographics: "Infographics",
     lifestyle: "Lifestyle",
     parenting: "Parenting",
+    travel: "Travel",
     skillsTitle: "Tools I Use",
     languagesTitle: "Languages I Speak",
-    cta: "Available for data visualization and information graphics projects, as well as lifestyle and parenting journalism collaborations",
+    cta: "Available for data visualization and information graphics projects, as well as lifestyle, parenting and travel journalism collaborations",
     aria: {
       languagesSelector: "Select language",
     },
