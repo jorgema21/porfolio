@@ -9,6 +9,7 @@ export type ProjectVariant = "hero" | "grid" | "list" | "feature";
 export type ColaboracionTipo = "solo" | "equipo";
 export type RoleType = "graficos" | "texto" | "desarrollo" | "datos";
 export interface ProjectContent {
+  publishedAt?: string;
   id: string;
   title: TranslatedText;
   description?: TranslatedText;

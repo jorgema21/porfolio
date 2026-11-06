@@ -5,7 +5,7 @@ import type {
 } from "#lib/types/project.types.js";
 
 function getPublicationDate(project: ProjectContent): string {
-  return project.externalUrl?.match(/\/(\d{4}-\d{2}-\d{2})\//)?.[1] ?? "";
+  return project.publishedAt ?? project.externalUrl?.match(/\/(\d{4}-\d{2}-\d{2})\//)?.[1] ?? "";
 }
 
 function sortByPublicationDate(a: ProjectContent, b: ProjectContent): number {
@@ -16,7 +16,7 @@ function sortByPublicationDate(a: ProjectContent, b: ProjectContent): number {
     return dateB.localeCompare(dateA);
   }
 
-  return Number(a.id.slice(1)) - Number(b.id.slice(1));
+  return 0;
 }
 
 export function createGroupedProjects(
