@@ -68,7 +68,7 @@ export const about: Record<"es" | "en", AboutDict> = {
     parenting: "Maternidad",
     skillsTitle: "Herramientas que uso",
     languagesTitle: "Idiomas que hablo",
-    cta: "Disponible para proyectos de infografía y datos y colaboraciones de estilo de vida y maternidad",
+    cta: "Disponible para proyectos de infografía y datos, así como para colaboraciones de estilo de vida y maternidad",
     aria: {
       languagesSelector: "Seleccionar idioma",
     },
@@ -92,7 +92,7 @@ export const about: Record<"es" | "en", AboutDict> = {
         text: "I work independently and as part of a team, collaborating with media outlets and brands to create ",
       },
       {
-        text: "clear, accurate, and impactful stories. I'm particularly interested in exploring popular trends and wider social phenomena through data, ",
+        text: "clear, accurate, and compelling stories. I'm particularly interested in exploring social issues and current events through data, ",
       },
       {
         text: "as well as examining how psychology shapes everyday life, especially for parents and families.",

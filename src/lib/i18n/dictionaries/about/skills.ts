@@ -19,9 +19,9 @@ export const skills = {
     datawrapper: {
       name: "Datawrapper",
       description:
-        "Mi mayor fuerte en visualización interactiva y la primera herramienta que dominé.",
+        "Mi principal fortaleza en visualización interactiva y la primera herramienta que dominé.",
       details: [
-        "De gráficos simples a integración con la API de R.",
+        "Desde gráficos sencillos hasta su integración con R mediante API.",
         "Importación de JSON en mapas localizadores e imágenes en tablas.",
         "Personalización de títulos, descripciones y tooltips con HTML, CSS y Javascript.",
         "Gráficos de dispersión y de calor con ideas avanzadas.",
@@ -31,7 +31,7 @@ export const skills = {
     flourish: {
       name: "Flourish",
       description:
-        "Herramienta aprendida de manera autodidacta para narrativas visuales fáciles y complejas.",
+        "Herramienta que aprendí de forma autodidacta para crear narrativas visuales sencillas y complejas.",
       details: [
         "Creación desde gráficos simples a diagramas de Sankey, treemaps y gráficos animados.",
         "Mapas coropléticos interactivos con archivos JSON propios.",
@@ -43,7 +43,7 @@ export const skills = {
       description:
         "Herramienta clave para diseño vectorial, infografía estática y tratamiento de visualizaciones de datos.",
       details: [
-        "Flujo de trabajo con ai2html para exportar vectores web adaptativos.",
+        "Flujo de trabajo con ai2html para exportar gráficos vectoriales adaptables a la web.",
         "Manejo de transparencias, degradados, múltiples artboards e importación de SVG/PDF.",
         "Uso de la herramienta nativa de gráficos.",
         "Scrollytelling estático controlando la visibilidad de capas.",
@@ -55,7 +55,7 @@ export const skills = {
       description:
         "Entorno principal para la limpieza y análisis sencillo de datos.",
       details: [
-        "Filtrado condicional, orden y uso de fórmulas de búsqueda como VLOOKUP.",
+        "Filtros, ordenación de datos y fórmulas de búsqueda como VLOOKUP.",
         "Conexión directa de hojas de cálculo con Datawrapper y RStudio a través de GoogleSheets4 con API.",
         "Uso de tablas dinámicas.",
         "Pruebas en la automatización con fórmulas personalizadas en Apps Script.",
@@ -69,7 +69,7 @@ export const skills = {
       details: [
         "Recorte de imágenes, ajustes de contraste, niveles y virado a blanco y negro.",
         "Gestión funcional de archivos mediante capas de ajuste y uso de pinceles.",
-        "Próximo objetivo: Aprender más a fondo nuevas funciones, agilizar flujo de trabajo y estudiar características de composición, paleta cromática y jerarquía.",
+        "Próximo objetivo: Agilizar mi flujo de trabajo y mejorar mis conocimientos de composición, color y jerarquía visual.",
       ],
     },
     rstudio: {
@@ -79,15 +79,15 @@ export const skills = {
       details: [
         "Limpieza y transformación de datasets mediante Tidyverse.",
         "Generación y modelado de gráficos con el paquete ggplot2.",
-        "Desarrollo y aprendizaje ágil asistido por IA enfocado en la resolución de problemas y consumo de APIs.",
+        "Aprendizaje y desarrollo asistidos por IA, centrados en resolver problemas y trabajar con APIs.",
         "Herramienta prioritaria en mi plan de crecimiento y especialización profesional.",
-        "Próximo objetivo: Profundizar en estadística avanzada, cartografía y desarrollo y conocimiento de paquetes.",
+        "Próximo objetivo: Profundizar en estadística avanzada, cartografía y desarrollo y funcionamiento de paquetes de R.",
       ],
     },
     qgis: {
       name: "QGIS",
       description:
-        "Uso cartográfico para la exploración y análisis de datos geográficos complejos.",
+        "Herramienta cartográfica para explorar y analizar datos geográficos complejos.",
       details: [
         "Carga y visualización de capas vectoriales (GeoJSON, Shapefiles) y proyecciones.",
         "Datos e información geográfica básica mediante la API de OpenStreetMap.",
@@ -102,19 +102,19 @@ export const skills = {
       details: [
         "Composición de clips de video y audio mediante efectos y transiciones sencillas.",
         "Animación básica de textos, grafismos y cartelas utilizando fotogramas clave (keyframes).",
-        "Próximo objetivo: Dominar y conocer más a fondo flujos profesionales. ",
+        "Próximo objetivo: Profundizar en los flujos de trabajo profesionales de edición de vídeo.",
       ],
     },
     code: {
       name: "HTML5 / CSS3 / JS (Nativo)",
       description:
-        "Salto al desarrollo web en para superar los límites de las plantillas de gráficos sin código.",
+        "Primeros pasos en desarrollo web para superar las limitaciones de las plantillas de visualización sin código.",
       details: [
         "Maquetación de documentos estáticos e interactivos con HTML5 y CSS3.",
         "Despliegue y control de versiones en proyectos alojados en GitHub y GitLab propios y colaborativos mediante git.",
         "Uso de la IA como copiloto para optimizar y aprender código dinámico.",
         "Enfoque en crear narrativas web estáticas con una personalización única.",
-        "Próximo objetivo: Ganar autonomía completa en JavaScript para depender menos de la IA como aprendizaje.",
+        "Próximo objetivo: Ganar autonomía en JavaScript y depender menos de la IA durante el aprendizaje.",
       ],
     },
     svelte: {
@@ -125,8 +125,8 @@ export const skills = {
         "Desarrollo de interfaces reactivas con la sintaxis de Runes en Svelte 5 y en SvelteKit.",
         "Integración guiada de D3.js para trabajar con cálculos matemáticos y escalas.",
         "Práctica intensiva asistida por IA orientada a proyectos personales y soporte profesional.",
-        "Objetivo prioritario de aprendizaje para crear historias visuales complejas interactivas",
-        "Próximo objetivo: Aprender más a fondo Svelte 5, SvelteKit y modos de optimización de trabajo",
+        "Objetivo prioritario de aprendizaje para crear historias visuales complejas e interactivas.",
+        "Próximo objetivo: Profundizar en Svelte 5 y SvelteKit y mejorar mis flujos de trabajo.",
       ],
     },
     blender: {
@@ -137,7 +137,7 @@ export const skills = {
         "Modelado básico enfocado en la exportación de siluetas hacia Illustrator.",
         "Composición sencilla de escenas mediante personajes, escenarios estáticos e iluminación.",
         "Animación guiada de elementos de la escena y desplazamientos de cámara mediante keyframes.",
-        "Próximo objetivo: Dominar el flujo técnico de importaciones de mapas, texturas complejas y optimización de renderizado.",
+        "Próximo objetivo: Aprender a importar mapas, trabajar con texturas complejas y optimizar el renderizado.",
       ],
     },
     aftereffects: {
@@ -147,7 +147,7 @@ export const skills = {
       details: [
         "Creación de composiciones y grafismos elementales mediante capas independientes.",
         "Uso inicial de fotogramas clave (keyframes) para animar transformaciones lineales sencillas.",
-        "Próximo objetivo: Aprender más a fondo la herramienta enfocado en la visualización de datos.",
+        "Próximo objetivo: Profundizar en la herramienta y aplicarla a la visualización de datos.",
       ],
     },
   },
@@ -158,21 +158,21 @@ export const skills = {
       description:
         "My core strength for interactive visualization and the very first tool I mastered.",
       details: [
-        "From simple charts to R API integration.",
+        "From simple charts to integration with R through APIs.",
         "Importing JSON into locator maps and embedding images in tables.",
         "Customizing titles, descriptions, and tooltips using HTML, CSS, and JavaScript.",
-        "Scatter plots and heatmaps with advanced insights.",
+        "Scatter plots and heatmaps with advanced customization.",
         "Next up: Data automation, advanced R-driven charting, and JSON choropleth maps.",
       ],
     },
     flourish: {
       name: "Flourish",
       description:
-        "A self-taught tool used to create both simple and complex visual narratives.",
+        "A tool I taught myself to use for creating both simple and complex visual stories.",
       details: [
         "Building everything from simple plots to Sankey diagrams, treemaps, and animated charts.",
         "Developing interactive choropleth maps using custom JSON files.",
-        "Next up: Mastering advanced scrollytelling projects and live data feed connections.",
+        "Next up: Learning advanced scrollytelling techniques and connecting projects to live data sources.",
       ],
     },
     illustrator: {
@@ -180,10 +180,10 @@ export const skills = {
       description:
         "My primary tool for vector design, static graphics, and data visualization processing.",
       details: [
-        "Streamlined workflow with ai2html to deploy responsive, web-ready vector graphics.",
-        "Handling clipping masks, gradients, multi-artboard systems, and SVG/PDF imports.",
+        "Using ai2html to export responsive graphics for the web.",
+        "Working with transparency, gradients, multiple artboards, and SVG/PDF imports.",
         "Utilizing native charting tools.",
-        "Structuring static scrollytelling by controlling layer visibility parameters.",
+        "Creating static scrollytelling experiences by controlling layer visibility.",
         "Next up: Improving complex drawing, creative perspective layouts, and script automation.",
       ],
     },
@@ -192,10 +192,10 @@ export const skills = {
       description:
         "My primary environment for data cleaning and straightforward analysis.",
       details: [
-        "Conditional filtering, advanced sorting, and implementing lookup functions like VLOOKUP.",
+        "Filtering and sorting data, and using lookup functions such as VLOOKUP.",
         "Directly connecting spreadsheets to Datawrapper and RStudio using the googlesheets4 API package.",
         "Utilizing pivot tables.",
-        "Experimenting with custom workflow automation via Apps Script formulas.",
+        "Experimenting with automation using custom functions in Apps Script.",
         "Next up: Expanding my core function catalog to optimize numerical data processing.",
       ],
     },
@@ -205,8 +205,8 @@ export const skills = {
         "A self-taught tool used for compositing and digital image editing.",
       details: [
         "Image cropping, contrast adjustments, levels tuning, and black-and-white conversion.",
-        "Functional asset management utilizing adjustment layers and brushes.",
-        "Next up: Deep-diving into new features, streamlining workflows, and studying compositing characteristics, color palettes, and hierarchy frameworks.",
+        "Working with adjustment layers and brushes to edit images.",
+        "Next up: Exploring more features, improving my workflow, and developing my understanding of composition, color, and visual hierarchy.",
       ],
     },
     rstudio: {
@@ -216,34 +216,33 @@ export const skills = {
       details: [
         "Data cleaning and transformation workflows utilizing Tidyverse.",
         "Generating and modeling statistical graphics via the ggplot2 package.",
-        "AI-assisted agile development and learning focused on problem-solving and visual API consumption.",
+        "AI-assisted learning and development focused on problem-solving and working with APIs.",
         "A high-priority tool in my roadmap for professional growth and specialization.",
-        "Next up: Deep-diving into advanced statistics, script-driven mapping, and custom package development and mechanics.",
+        "Next up: Developing my skills in advanced statistics, mapping, and understanding and developing R packages.",
       ],
     },
     qgis: {
       name: "QGIS",
       description:
-        "Cartographic framework used for exploring and analyzing complex geographic datasets.",
+        "A mapping tool for exploring and analyzing complex geographic data.",
       details: [
         "Loading and visualizing vector layers (GeoJSON, Shapefiles) and handling coordinate projections.",
         "Basic ingestion of geographic data and features utilizing the OpenStreetMap API.",
-        "AI-assisted spatial data associations and attribute table joins.",
+        "AI-assisted spatial and attribute data joins.",
         "Next up: Gaining autonomy in large-scale cartographic storytelling and physical map modeling.",
       ],
     },
     premiere: {
       name: "Premiere Pro",
-      description:
-        "Editing toolsets used for video assembly and multimedia pieces.",
+      description: "A tool for video editing and multimedia production.",
       details: [
         "Editing video and audio clips using straightforward effects and transitions.",
         "Basic animation of titles, graphic assets, and text lower-thirds using keyframes.",
-        "Next up: Mastering and deep-diving into professional post-production workflows.",
+        "Next up: Learning more about professional video editing workflows.",
       ],
     },
     code: {
-      name: "HTML5 / CSS3 / JS (Native)",
+      name: "HTML5 / CSS3 / JS (Vanilla)",
       description:
         "Stepping into web development to bypass no-code data visualization template restrictions.",
       details: [
@@ -251,40 +250,39 @@ export const skills = {
         "Deploying and managing version control for personal and collaborative projects hosted on GitHub and GitLab via git.",
         "Leveraging AI as a co-pilot to optimize workflows and learn dynamic scripting.",
         "Focused on building static web narratives with unique, custom styling.",
-        "Next up: Gaining complete syntactic autonomy in JavaScript to reduce AI dependency throughout the learning process.",
+        "Next up: Becoming more independent in JavaScript and relying less on AI while learning.",
       ],
     },
     svelte: {
       name: "Svelte 5 & D3.js",
       description:
-        "Tech stack built to power custom visualization layouts, maps, and tailored visual narratives.",
+        "Tools for building custom data visualizations, maps, and interactive visual stories.",
       details: [
-        "Developing reactive interfaces implementing modern Runes syntax in Svelte 5 and SvelteKit architectures.",
+        "Building reactive interfaces using runes in Svelte 5 and SvelteKit.",
         "Guided D3.js integration to process mathematical calculations and scales.",
         "Intensive AI-assisted practice focused on personal development projects and professional support.",
         "A high-priority learning objective aimed at creating complex, interactive visual stories.",
-        "Next up: Deep-diving into Svelte 5, SvelteKit, and workflow optimization methods.",
+        "Next up: Developing a deeper understanding of Svelte 5 and SvelteKit, and improving my workflow.",
       ],
     },
     blender: {
       name: "Blender",
       description:
-        "A self-taught sandbox for 3D exploration and experimentation outside of professional scope.",
+        "A self-taught tool for experimenting with 3D, without professional experience.",
       details: [
-        "Basic modeling focused on exporting mesh silhouettes into Illustrator pipelines.",
+        "Basic 3D modeling focused on exporting silhouettes to Illustrator.",
         "Simple scene composition including character layout, static environments, and lighting setups.",
         "Guided animation of scene elements and camera sweeps utilizing keyframe parameters.",
-        "Next up: Mastering autonomous workflows for map imports, custom textures, and render optimization.",
+        "Next up: Learning to import maps, work with complex textures, and optimize rendering.",
       ],
     },
     aftereffects: {
       name: "After Effects",
-      description:
-        "An entry-level toolset focused on introducing motion graphics core concepts.",
+      description: "A tool I'm learning to use for motion graphics.",
       details: [
         "Creating simple compositions and elemental motion assets using separate layers.",
-        "Early-stage use of keyframes to drive simple, linear transform property transitions.",
-        "Next up: Deep-diving into the tool with a specialized focus on data visualization integration.",
+        "Using keyframes for simple, linear animations.",
+        "Next up: Learning more about After Effects, with a focus on data visualization.",
       ],
     },
   },
