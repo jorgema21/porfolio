@@ -52,7 +52,7 @@ export const timeline = {
     },
 
     "sports-ep": {
-      title: "Baja en El País Deportes",
+      title: "Sustitución temporal en El País Deportes",
       description:
         "Durante dos meses trabajé en coberturas en directo para la web, edité artículos y redacté reportajes de datos.",
     },
@@ -108,104 +108,104 @@ export const timeline = {
     "this-portfolio": {
       title: "¡Este porfolio!",
       description:
-        "Dediqué varios meses a desarrollar este portfolio como un proyecto en sí mismo, con el objetivo de presentar mis trabajos más destacados de una forma visual y atractiva.",
+        "Dediqué varios meses a desarrollar este porfolio como un proyecto en sí mismo, con el objetivo de presentar mis trabajos más destacados de una forma visual y atractiva.",
     },
   },
 
   en: {
     "journalism-degree": {
-      title: "Journalism Degree",
+      title: "Started My Journalism Degree",
       description:
-        "I began the classroom-based first year of a two-year master's program",
+        "I began studying journalism at the University of Valladolid in Spain.",
     },
 
     "erasmus-year": {
       title: "Erasmus Exchange",
-      description: "I spent an academic year studying in Bergamo, Italy",
+      description: "I spent an academic year studying in Bergamo, Italy.",
     },
 
     "end-degree": {
       title: "Completed My Journalism Degree",
       description:
-        "I graduated without having studied information graphics or data journalism as part of my degree",
+        "I graduated without having studied information graphics or data journalism as part of my degree.",
     },
 
     "start-ep": {
-      title: "Started My Master's Degree at El País",
+      title: "Started the El País Master's Program",
       description:
-        "I began the classroom-based first year of a two-year master's program",
+        "I began the first year of the El País master's program, focused on classroom-based learning.",
     },
 
     "start-internship": {
       title: "Visual Storytelling Internship",
       description:
-        "I spent a year as an intern at El País, learning information graphics and data journalism almost from scratch",
+        "I spent a year as an intern at El País, learning information graphics and data journalism almost from scratch.",
     },
 
     "end-internship": {
       title: "Completed My Master's Degree",
       description:
-        "After finishing my internship, I spent several months developing my information graphics and data journalism skills independently",
+        "After finishing my internship, I spent several months developing my information graphics and data journalism skills independently.",
     },
 
     "sports-ep": {
-      title: "Temporary Role at El País Sports",
+      title: "Temporary Assignment at El País Sports",
       description:
-        "For two months, I worked on live online coverage, edited articles, and wrote data-driven stories",
+        "For two months, I worked on live online coverage, edited articles, and wrote data-driven stories.",
     },
 
     "start-freelance": {
       title: "Began My Freelance Career",
       description:
-        "I started working independently and began collaborating with Artículo 14 as an information designer",
+        "I started working independently and began collaborating with Artículo 14 as an information designer.",
     },
 
     "end-a14": {
       title: "End of My Collaboration with Artículo 14",
       description:
-        "I ended my collaboration with the newspaper and explored new professional opportunities",
+        "I ended my collaboration with the newspaper and explored new professional opportunities.",
     },
 
     "start-lifestyle": {
-      title: "Collaboration with El País Lifestyle",
+      title: "Started Writing for El País's Lifestyle Section",
       description:
-        "I began writing for the section, focusing on psychology and everyday life",
+        "I began writing for El País's lifestyle section, focusing on everyday psychology.",
     },
 
     "start-parenting": {
-      title: "Collaboration with El País Mamas&Papas",
+      title: "Started Writing for El País's Mamas&Papas Section",
       description:
-        "I began writing about parenting, focusing on maternal and child psychology",
+        "I began writing about motherhood and parenting, with a particular focus on maternal and child psychology.",
     },
 
     "start-sty": {
       title: "Collaboration with Storydata",
       description:
-        "I began collaborating with Storydata on information graphics and data journalism projects for print and digital publications",
+        "I began collaborating with Storydata on information graphics and data journalism projects for print and digital publications.",
     },
 
     "start-col": {
       title: "Collaboration with Colpisa",
       description:
-        "I began collaborating with Colpisa on in-depth digital stories involving information graphics, data analysis, and visualization",
+        "I began collaborating with Colpisa on in-depth digital stories involving information graphics, data analysis, and visualization.",
     },
 
     "start-epgente": {
-      title: "Collaboration with El País Gente",
+      title: "Started Writing for El País's Gente Section",
       description:
-        "I began writing profiles of international figures in culture and entertainment who were making headlines",
+        "I began writing profiles of international figures in culture and entertainment who were making headlines.",
     },
 
     "start-dataista": {
       title: "Collaboration with Dataista",
       description:
-        "I worked on a project that helped me deepen my web development skills",
+        "I worked on a project that helped me deepen my web development skills.",
     },
 
     "this-portfolio": {
       title: "This Portfolio!",
       description:
-        "I spent several months building this portfolio as a project in its own right, creating a visual and engaging way to showcase my most important work",
+        "I spent several months building this portfolio as a project in its own right, creating a visual and engaging way to showcase my most important work.",
     },
   },
 } satisfies TimelineI18n;
