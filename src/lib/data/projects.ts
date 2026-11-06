@@ -18,6 +18,22 @@ export interface HomeProject extends ProjectContent {
 
 const projects = [
   {
+    id: "p0",
+    category: "estilo_de_vida",
+    homeVisible: true,
+    homeSlot: "A2",
+    externalUrl: "https://elpais.com/estilo-de-vida/2026-11-03/de-pedir-ayuda-a-los-padres-a-prestarla-como-afrontar-el-cambio-de-roles-que-llega-con-la-edad-adulta.html",
+    mediumStyle: "El País",
+    title: {
+      es: "Cómo afrontar el cambio de roles que llega con la edad adulta",
+      en: "How to Navigate Changing Roles as You Enter Adulthood",
+    },
+    description: {
+      es: "El cambio hacia una inversión de responsabilidad puede darse desde la tecnología hasta situaciones médicas",
+      en: "The shift toward a reversal of responsibilities can occur in situations ranging from technology to medical care.",
+    },
+  },
+  {
     id: "p107",
     category: "infografia",
     homeVisible: true,
@@ -56,7 +72,7 @@ const projects = [
       "https://elpais.com/estilo-de-vida/2026-10-07/lo-guardo-para-una-ocasion-especial-por-que-nos-cuesta-tanto-estrenar-algunos-objetos.html",
     category: "estilo_de_vida",
     homeVisible: true,
-    homeSlot: "A2",
+    homeSlot: "A3",
     mediumStyle: "El País",
     title: {
       es: "¿Por qué nos cuesta tanto estrenar algunos objetos?",
@@ -73,7 +89,7 @@ const projects = [
       "https://elpais.com/estilo-de-vida/2026-09-29/hasta-que-punto-mis-padres-pueden-convertirse-en-mis-amigos.html",
     category: "estilo_de_vida",
     homeVisible: true,
-    homeSlot: "A3",
+    homeSlot: "E2",
     mediumStyle: "El País",
     title: {
       es: "La posible relación de amistad vertical intrafamiliar",
@@ -90,7 +106,7 @@ const projects = [
       "https://elpais.com/estilo-de-vida/2026-09-22/cuando-un-amigo-de-la-infancia-despierta-las-versiones-de-nuestra-personalidad-que-creiamos-olvidadas.html",
     category: "estilo_de_vida",
     homeVisible: true,
-    homeSlot: "E2",
+    homeSlot: "E3",
     mediumStyle: "El País",
     title: {
       es: "Las versiones ocultas de nuestra personalidad",
@@ -106,8 +122,7 @@ const projects = [
     externalUrl:
       "https://elpais.com/estilo-de-vida/2026-08-29/de-conocerse-en-vacaciones-a-una-relacion-duradera-asi-arraigan-las-amistades-de-verano.html",
     category: "estilo_de_vida",
-    homeVisible: true,
-    homeSlot: "E3",
+    homeVisible: false,
     mediumStyle: "El País",
     title: {
       es: "De desconocidos a amigos por unas vacaciones",
