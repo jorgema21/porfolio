@@ -1,7 +1,20 @@
 <script lang="ts">
   import type { Snippet } from "svelte";
+
   import { t } from "#lib/i18n/index.svelte.js";
+
   import type { AtlasDonutSegment } from "#lib/types/travel-atlas.types.js";
+
+  import {
+    ATLAS_CENTER as center,
+    ATLAS_VIEWBOX_SIZE,
+  } from "#lib/utils/travel-atlas/globe/geometry.js";
+
+  import {
+    ATLAS_DONUT_RADIUS as radius,
+    getAtlasDonutLabelFontSize,
+    getAtlasDonutLayout,
+  } from "#lib/utils/travel-atlas/donut.js";
 
   interface Props {
     segments: readonly AtlasDonutSegment[];
@@ -21,89 +34,17 @@
     children,
   }: Props = $props();
 
-  const center = 160;
-  const radius = 140;
-  const circumference = 2 * Math.PI * radius;
   const pathPrefix = $props.id();
+
   let stageWidth = $state(0);
-
-  let targetLabelSize = $derived(Math.max(12, Math.min(16, stageWidth / 45)));
-
-  let labelFontSize = $derived(
-    Math.min(12, (targetLabelSize * 320) / (stageWidth || 560)),
-  );
-
-  let positiveSegments = $derived(
-    segments.filter(
-      (segment) => Number.isFinite(segment.value) && segment.value > 0,
-    ),
-  );
-
-  let total = $derived(
-    positiveSegments.reduce((sum, segment) => sum + segment.value, 0),
-  );
-
-  function estimateTextWidth(value: string): number {
-    return Array.from(value).reduce((width, character) => {
-      if (character === " ") return width + 2.8;
-      if ("ilIjtfr.,'".includes(character)) return width + 3;
-      if ("MWmwÁÉÓÚÑÜ".includes(character)) return width + 8;
-      return width + 5.5;
-    }, 0);
-  }
-
-  function getTextPath(
-    offset: number,
-    length: number,
-    name: string,
-  ): string | null {
-    const available = Math.min(
-      (circumference * length) / 100 - labelFontSize * 2,
-      circumference / 2,
-    );
-
-    const textWidth = estimateTextWidth(name) * (labelFontSize / 10.4);
-
-    if (textWidth + labelFontSize > available) return null;
-
-    const midAngle = ((offset + length / 2) / 100) * Math.PI * 2 - Math.PI / 2;
-
-    const halfAngle = available / (2 * radius);
-
-    const bottomHalf = Math.sin(midAngle) > 0;
-
-    const start = bottomHalf ? midAngle + halfAngle : midAngle - halfAngle;
-
-    const end = bottomHalf ? midAngle - halfAngle : midAngle + halfAngle;
-
-    function point(angle: number): string {
-      const x = center + Math.cos(angle) * radius;
-      const y = center + Math.sin(angle) * radius;
-
-      return `${x.toFixed(2)} ${y.toFixed(2)}`;
-    }
-
-    return `M ${point(start)} A ${radius} ${radius} 0 0 ${bottomHalf ? 0 : 1} ${point(end)}`;
-  }
-
-  let arcs = $derived.by(() => {
-    let offset = 0;
-
-    return positiveSegments.map((segment) => {
-      const length = (segment.value / total) * 100;
-      const arc = {
-        ...segment,
-        length,
-        offset,
-        textPath: getTextPath(offset, length, segment.label),
-      };
-
-      offset += length;
-      return arc;
-    });
-  });
-
   let hoveredId = $state<string | null>(null);
+
+  let labelFontSize = $derived(getAtlasDonutLabelFontSize(stageWidth));
+
+  let layout = $derived(getAtlasDonutLayout(segments, labelFontSize));
+
+  let arcs = $derived(layout.arcs);
+  let total = $derived(layout.total);
 
   let activeArc = $derived(arcs.find((arc) => arc.id === hoveredId) ?? null);
 
@@ -138,7 +79,7 @@
   <div class="donut-stage" bind:clientWidth={stageWidth}>
     <svg
       class="donut-svg"
-      viewBox="0 0 320 320"
+      viewBox={`0 0 ${ATLAS_VIEWBOX_SIZE} ${ATLAS_VIEWBOX_SIZE}`}
       role="group"
       aria-label={label}
     >
@@ -164,9 +105,9 @@
         <circle
           class="donut-segment"
           class:is-selected={selectedId === arc.id}
-          cx="160"
-          cy="160"
-          r="140"
+          cx={center}
+          cy={center}
+          r={radius}
           pathLength="100"
           fill="none"
           stroke={arc.color}
@@ -184,8 +125,7 @@
           onmouseleave={() => (hoveredId = null)}
           onfocus={() => (hoveredId = arc.id)}
           onblur={() => (hoveredId = null)}
-        >
-        </circle>
+        />
       {/each}
 
       <g class="donut-arc-labels" aria-hidden="true">
