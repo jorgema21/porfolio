@@ -1,6 +1,5 @@
 import type { AtlasPlace } from "#lib/types/travel-atlas.types.js";
-import type { AtlasIndex } from "./travel-atlas.js";
-import { getAtlasPath } from "./travel-atlas.js";
+import { getAtlasPath, type AtlasIndex } from "./index.js";
 
 const countryColors: Readonly<Record<string, string>> = {
   es: "#C62828",

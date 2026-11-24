@@ -1,6 +1,6 @@
 <script lang="ts">
   import { t } from "#lib/i18n/index.svelte.js";
-  import type { getAtlasCoverage } from "#lib/utils/travel-atlas.js";
+  import type { getAtlasCoverage } from "#lib/utils/travel-atlas/index.js";
   import type { AtlasPlace } from "#lib/types/travel-atlas.types.js";
 
   type Coverage = ReturnType<typeof getAtlasCoverage>;

@@ -6,7 +6,7 @@ import {
   type AtlasCoverage,
   type AtlasFilter,
   type AtlasIndex,
-} from "./travel-atlas.js";
+} from "./index.js";
 
 export interface AtlasDestination {
   place: AtlasPlace;

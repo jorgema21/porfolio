@@ -5,7 +5,7 @@ import type { AtlasPlace } from "#lib/types/travel-atlas.types.js";
 import {
   clampLatitude,
   initialZoomFor,
-} from "#lib/utils/travel-atlas-camera.js";
+} from "#lib/utils/travel-atlas/globe/camera.js";
 
 export interface CameraPosition {
   longitude: number;

@@ -10,22 +10,22 @@
     getAtlasWorldTopology,
     type AtlasAreaCollection,
     type AtlasCountryTopology,
-  } from "#lib/utils/travel-atlas-topology.js";
+  } from "#lib/utils/travel-atlas/globe/topology.js";
 
-  import { getVisibleAtlasFeatures } from "#lib/utils/travel-atlas-viewport.js";
+  import { getVisibleAtlasFeatures } from "#lib/utils/travel-atlas/globe/viewport.js";
 
   import {
     getAtlasMarkerPoints,
     getAtlasMarkerClusters,
     getAtlasMarkerSize,
-  } from "#lib/utils/travel-atlas-markers.js";
+  } from "#lib/utils/travel-atlas/globe/markers.js";
 
-  import { createGlobePointerGestures } from "#lib/utils/travel-atlas-globe-gestures.js";
+  import { createGlobePointerGestures } from "#lib/utils/travel-atlas/globe/gestures.js";
   import {
     clampLatitude,
     ATLAS_PROVINCE_ZOOM,
-  } from "#lib/utils/travel-atlas-camera.js";
-  import { AtlasGlobeCamera } from "#lib/utils/travel-atlas-camera-controller.svelte.js";
+  } from "#lib/utils/travel-atlas/globe/camera.js";
+  import { AtlasGlobeCamera } from "#lib/utils/travel-atlas/globe/camera-controller.svelte.js";
 
   import type {
     AtlasPlace,
@@ -34,9 +34,9 @@
 
   import AtlasGlobeMarkers from "./AtlasGlobeMarkers.svelte";
 
-  import { fitAtlasBoundary } from "#lib/utils/travel-atlas-fit.js";
+  import { fitAtlasBoundary } from "#lib/utils/travel-atlas/globe/fit.js";
 
-  import type { AtlasAreaFeature } from "#lib/utils/travel-atlas-topology.js";
+  import type { AtlasAreaFeature } from "#lib/utils/travel-atlas/globe/topology.js";
 
   interface Props {
     focus: AtlasPlace | null;

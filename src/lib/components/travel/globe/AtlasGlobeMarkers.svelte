@@ -2,7 +2,7 @@
   import {
     getAtlasMarkerSize,
     type GlobeMarker,
-  } from "#lib/utils/travel-atlas-markers.js";
+  } from "#lib/utils/travel-atlas/globe/markers.js";
 
   interface Props {
     markers: readonly GlobeMarker[];

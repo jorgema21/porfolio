@@ -1,5 +1,5 @@
-import type { AtlasGlobeCamera } from "#lib/utils/travel-atlas-camera-controller.svelte.js";
-import { clampLatitude, dragRotation } from "#lib/utils/travel-atlas-camera.js";
+import type { AtlasGlobeCamera } from "#lib/utils/travel-atlas/globe/camera-controller.svelte.js";
+import { clampLatitude, dragRotation } from "#lib/utils/travel-atlas/globe/camera.js";
 
 interface GlobeGestureOptions {
   camera: AtlasGlobeCamera;

@@ -9,17 +9,17 @@
     getAtlasCoverage,
     getAtlasPath,
     type AtlasFilter,
-  } from "#lib/utils/travel-atlas.js";
+  } from "#lib/utils/travel-atlas/index.js";
 
-  import { getAtlasMarkerEditorial } from "#lib/utils/travel-atlas-editorial.js";
-  import { getAtlasNavigation } from "#lib/utils/travel-atlas-navigation.js";
-  import { getAtlasPlaceColor } from "#lib/utils/travel-atlas-colors.js";
+  import { getAtlasMarkerEditorial } from "#lib/utils/travel-atlas/editorial.js";
+  import { getAtlasNavigation } from "#lib/utils/travel-atlas/navigation.js";
+  import { getAtlasPlaceColor } from "#lib/utils/travel-atlas/colors.js";
 
   import type { AtlasDonutSegment } from "#lib/types/travel-atlas.types.js";
 
   import AtlasBoardingPass from "./AtlasBoardingPass.svelte";
   import AtlasDonut from "./AtlasDonut.svelte";
-  import AtlasGlobe from "./AtlasGlobe.svelte";
+  import AtlasGlobe from "./globe/AtlasGlobe.svelte";
 
   let globe: ReturnType<typeof AtlasGlobe> | undefined = $state();
 

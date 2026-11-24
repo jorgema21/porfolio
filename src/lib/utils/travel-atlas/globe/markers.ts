@@ -1,7 +1,7 @@
 import { geoDistance } from "d3-geo";
 import type { GeoProjection } from "d3-geo";
 
-import { ATLAS_PROVINCE_ZOOM } from "#lib/utils/travel-atlas-camera.js";
+import { ATLAS_PROVINCE_ZOOM } from "#lib/utils/travel-atlas/globe/camera.js";
 
 import type {
   AtlasPlace,

@@ -4,7 +4,7 @@ import type {
   AtlasRelevance,
 } from "#lib/types/travel-atlas.types.js";
 
-import type { AtlasFilter } from "#lib/utils/travel-atlas.js";
+import type { AtlasFilter } from "#lib/utils/travel-atlas/index.js";
 
 interface AtlasMarkerEditorial {
   markerPlaces: readonly AtlasPlace[];
