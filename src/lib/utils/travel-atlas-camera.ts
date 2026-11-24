@@ -39,10 +39,3 @@ export function dragRotation(
     latitudeChange: (deltaY / height) * 180,
   };
 }
-
-export function wheelZoomFactor(deltaY: number, deltaMode: number): number {
-  const delta =
-    deltaMode === 1 ? deltaY * 16 : deltaMode === 2 ? deltaY * 320 : deltaY;
-
-  return Math.max(0.8, Math.min(1.25, Math.exp(-delta * 0.002)));
-}

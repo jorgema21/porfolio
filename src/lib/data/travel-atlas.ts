@@ -8,7 +8,6 @@ export const travelAtlasDataset: AtlasDataset = {
       type: "country",
       parentId: null,
       coordinates: [-3.56, 40.37],
-      isoCode: "ES",
       boundaryId: "ESP",
     },
     {

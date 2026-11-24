@@ -14,10 +14,7 @@ export interface AtlasPlace {
   type: AtlasPlaceType;
   parentId: string | null;
   coordinates: AtlasCoordinates;
-  isoCode?: string;
   boundaryId?: string;
-  illustration?: string;
-  initialLabelVisible?: boolean;
 }
 
 export interface AtlasArticlePlace {

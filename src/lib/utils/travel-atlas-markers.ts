@@ -22,8 +22,6 @@ export interface GlobeMarker {
   placeId: string | null;
   x: number;
   y: number;
-  originX: number;
-  originY: number;
   count: number;
   activeCount: number;
   relevance: AtlasRelevance | null;
@@ -90,8 +88,6 @@ export function getAtlasMarkerClusters(
         articleCount: point.articleCount,
         x: point.x,
         y: point.y,
-        originX: point.x,
-        originY: point.y,
         count: 1,
         activeCount: point.active ? 1 : 0,
       }),
@@ -141,8 +137,6 @@ export function getAtlasMarkerClusters(
       articleCount: group.length === 1 ? group[0].articleCount : 0,
       x,
       y,
-      originX: x,
-      originY: y,
       count: group.length,
       activeCount: group.filter((point) => point.active).length,
     });

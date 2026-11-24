@@ -25,10 +25,8 @@ export interface AtlasArticleMatch {
   article: AtlasArticle;
   title: TranslatedText;
 
-  /** Solo las relaciones que corresponden al territorio y filtro activos. */
   relations: AtlasArticlePlace[];
 
-  /** El artículo está vinculado expresamente al territorio seleccionado. */
   isDirect: boolean;
 }
 
@@ -36,8 +34,6 @@ export interface AtlasCoverage {
   placeCount: number;
   articleCount: number;
   countryCount: number;
-  placeIds: string[];
-  articleIds: string[];
   articles: AtlasArticleMatch[];
 }
 
@@ -99,7 +95,6 @@ function validateHierarchy(places: ReadonlyMap<string, AtlasPlace>): void {
       }
 
       current = parent;
-
     }
 
     const [longitude, latitude] = place.coordinates;
@@ -226,7 +221,6 @@ export function createAtlasIndex(
   };
 }
 
-/** Devuelve la ruta ordenada: país → región → ... → lugar. */
 export function getAtlasPath(index: AtlasIndex, placeId: string): AtlasPlace[] {
   const path: AtlasPlace[] = [];
   let current = index.places.get(placeId);
@@ -247,7 +241,6 @@ export function getAtlasPath(index: AtlasIndex, placeId: string): AtlasPlace[] {
   return path.reverse();
 }
 
-/** Incluye el territorio seleccionado y todos sus descendientes. */
 function getBranchIds(index: AtlasIndex, placeId: string | null): Set<string> {
   if (placeId === null) {
     return new Set(index.places.keys());
@@ -298,12 +291,6 @@ function publicationTime(article: AtlasArticle): number {
   return Number.isFinite(timestamp) ? timestamp : 0;
 }
 
-/**
- * placeId = null: cobertura geográfica completa.
- * placeId concreto: cobertura del territorio y sus descendientes.
- *
- * Los artículos sin destino se consultarán por separado.
- */
 export function getAtlasCoverage(
   index: AtlasIndex,
   filter: AtlasFilter = "all",
@@ -358,12 +345,10 @@ export function getAtlasCoverage(
   }
 
   articles.sort((a, b) => {
-    // Primero los artículos vinculados al territorio en sí.
     if (a.isDirect !== b.isDirect) {
       return a.isDirect ? -1 : 1;
     }
 
-    // Para artículos directos, importa su relevancia en este territorio.
     const aRelations = a.isDirect
       ? a.relations.filter((relation) => relation.placeId === placeId)
       : a.relations;
@@ -389,8 +374,6 @@ export function getAtlasCoverage(
     placeCount: placeIds.length,
     articleCount: articles.length,
     countryCount: countryIds.size,
-    placeIds,
-    articleIds: articles.map(({ article }) => article.id),
     articles,
   };
 }
