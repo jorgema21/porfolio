@@ -30,3 +30,5 @@ vite.config.ts.timestamp-*
 add-project.js
 .project-migration-backup-*/
 *.backup-*
+
+.cache/atlas/

@@ -1,7 +1,10 @@
 <script lang="ts">
   import { t } from "#lib/i18n/index.svelte.js";
+
   import RichText from "#lib/components/writing/RichText.svelte";
   import GroupAccordion from "#lib/components/writing/GroupAccordion.svelte";
+  import TravelAtlas from "#lib/components/travel/TravelAtlas.svelte";
+
   import { createGroupedProjects } from "#lib/utils/createGroupedProjects.svelte.js";
 
   const groupedData = createGroupedProjects("viajes", "Otros");
@@ -14,4 +17,6 @@
   <RichText value={t.travel.aim} />
 
   <GroupAccordion groups={groupedData.grouped} />
+
+  <TravelAtlas />
 </div>
