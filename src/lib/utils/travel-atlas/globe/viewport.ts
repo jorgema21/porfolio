@@ -2,6 +2,7 @@ import { geoBounds, geoDistance } from "d3-geo";
 
 import type { GeoProjection } from "d3-geo";
 import type { Feature, FeatureCollection, Geometry } from "geojson";
+import { ATLAS_CENTER } from "./geometry.js";
 
 interface GeographicExtent {
   center: [number, number];
@@ -42,7 +43,7 @@ export function getVisibleAtlasFeatures<G extends Geometry>(
   const center: [number, number] = [-longitude, -latitude];
 
   const viewportRadius = Math.asin(
-    Math.min(1, (160 * Math.SQRT2) / projection.scale()),
+    Math.min(1, (ATLAS_CENTER * Math.SQRT2) / projection.scale()),
   );
 
   const features = collection.features.filter((feature) => {

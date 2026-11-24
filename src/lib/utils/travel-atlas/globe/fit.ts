@@ -4,6 +4,7 @@ import type { Polygon } from "geojson";
 import type { AtlasPlace } from "#lib/types/travel-atlas.types.js";
 import type { AtlasAreaFeature } from "#lib/utils/travel-atlas/globe/topology.js";
 import type { CameraPosition } from "#lib/utils/travel-atlas/globe/camera-controller.svelte.js";
+import { ATLAS_CENTER, ATLAS_GLOBE_RADIUS } from "./geometry.js";
 
 import { clampLatitude } from "#lib/utils/travel-atlas/globe/camera.js";
 
@@ -69,7 +70,9 @@ export function fitAtlasBoundary(
   }
 
   const zoom =
-    radius >= Math.PI / 2 ? minZoom : (160 * 0.84) / (158 * Math.sin(radius));
+    radius >= Math.PI / 2
+      ? minZoom
+      : (ATLAS_CENTER * 0.84) / (ATLAS_GLOBE_RADIUS * Math.sin(radius));
 
   return {
     longitude: center[0],

@@ -1,42 +1,48 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { geoOrthographic, geoPath } from "d3-geo";
 
   import { langSignal, t } from "#lib/i18n/index.svelte.js";
 
   import {
-    findAtlasBoundary,
     getAtlasCountryTopology,
     getAtlasWorldTopology,
+    getAtlasFocusBoundary,
     type AtlasAreaCollection,
     type AtlasCountryTopology,
   } from "#lib/utils/travel-atlas/globe/topology.js";
 
-  import { getVisibleAtlasFeatures } from "#lib/utils/travel-atlas/globe/viewport.js";
-
   import {
     getAtlasMarkerPoints,
     getAtlasMarkerClusters,
-    getAtlasMarkerSize,
+    getAtlasMarkerAtPointer,
   } from "#lib/utils/travel-atlas/globe/markers.js";
 
   import { createGlobePointerGestures } from "#lib/utils/travel-atlas/globe/gestures.js";
+  import { createAtlasWheelZoom } from "#lib/utils/travel-atlas/globe/wheel-zoom.js";
+
   import {
     clampLatitude,
     ATLAS_PROVINCE_ZOOM,
   } from "#lib/utils/travel-atlas/globe/camera.js";
+
   import { AtlasGlobeCamera } from "#lib/utils/travel-atlas/globe/camera-controller.svelte.js";
+
+  import { fitAtlasBoundary } from "#lib/utils/travel-atlas/globe/fit.js";
+
+  import {
+    ATLAS_VIEWBOX_SIZE,
+    ATLAS_MIN_ZOOM as minZoom,
+    ATLAS_MAX_ZOOM as maxZoom,
+    createAtlasProjection,
+  } from "#lib/utils/travel-atlas/globe/geometry.js";
 
   import type {
     AtlasPlace,
     AtlasRelevance,
   } from "#lib/types/travel-atlas.types.js";
 
+  import AtlasGlobeLayers from "./AtlasGlobeLayers.svelte";
   import AtlasGlobeMarkers from "./AtlasGlobeMarkers.svelte";
-
-  import { fitAtlasBoundary } from "#lib/utils/travel-atlas/globe/fit.js";
-
-  import type { AtlasAreaFeature } from "#lib/utils/travel-atlas/globe/topology.js";
 
   interface Props {
     focus: AtlasPlace | null;
@@ -66,10 +72,6 @@
 
   let individualMarkerZoom = $state(ATLAS_PROVINCE_ZOOM);
 
-  const minZoom = 1;
-  const maxZoom = 64;
-  const detailZoom = 2.5;
-
   const cameraController = new AtlasGlobeCamera(minZoom, maxZoom);
   const camera = cameraController.camera;
 
@@ -77,8 +79,6 @@
   const stopAutoRotation = cameraController.stopAutoRotation;
   const zoomBy = cameraController.zoomBy;
   const rotateBy = cameraController.rotateBy;
-
-  const sphereGradientId = $props.id();
 
   let dragging = $state(false);
   let globeElement: HTMLDivElement | undefined = $state();
@@ -91,10 +91,6 @@
     code: string;
     data: AtlasCountryTopology;
   } | null>(null);
-
-  let sphereOpacity = $derived(
-    Math.max(0, Math.min(1, 1 - Math.log(camera.current.zoom) / Math.log(16))),
-  );
 
   export function resetView(
     place: AtlasPlace | null = focus,
@@ -112,7 +108,7 @@
 
     const requestedTarget = camera.target;
 
-    void getFocusBoundary(place, code)
+    void getAtlasFocusBoundary(place, code)
       .then((boundary) => {
         if (
           !boundary ||
@@ -143,110 +139,13 @@
       });
   }
 
-  function wheelZoom(node: HTMLElement) {
-    let frame: number | null = null;
-    let pendingDelta = 0;
-
-    const sensitivity = 0.0009;
-    const maxDeltaPerFrame = 80;
-
-    function applyZoom(): void {
-      frame = null;
-
-      const delta = Math.max(
-        -maxDeltaPerFrame,
-        Math.min(maxDeltaPerFrame, pendingDelta),
-      );
-
-      pendingDelta = 0;
-
-      if (delta === 0) return;
-
-      const factor = Math.exp(-delta * sensitivity);
-
-      moveCamera(
-        {
-          ...camera.target,
-          zoom: cameraController.clampZoom(camera.target.zoom * factor),
-        },
-        false,
-      );
-    }
-
-    function handleWheel(event: WheelEvent): void {
-      if (!event.ctrlKey || !event.cancelable) return;
-
-      event.preventDefault();
-
-      stopAutoRotation();
-      cameraController.stopInertia();
-
-      const delta =
-        event.deltaMode === 1
-          ? event.deltaY * 16
-          : event.deltaMode === 2
-            ? event.deltaY * 320
-            : event.deltaY;
-
-      pendingDelta += delta;
-
-      if (frame === null) {
-        frame = requestAnimationFrame(applyZoom);
-      }
-    }
-
-    node.addEventListener("wheel", handleWheel, {
-      passive: false,
-    });
-
-    return {
-      destroy() {
-        node.removeEventListener("wheel", handleWheel);
-
-        if (frame !== null) {
-          cancelAnimationFrame(frame);
-        }
-      },
-    };
-  }
+  const wheelZoom = createAtlasWheelZoom(cameraController);
 
   function activateMarker(
     event: PointerEvent,
     element: HTMLDivElement,
   ): boolean {
-    const rect = element.getBoundingClientRect();
-    const size = Math.min(rect.width, rect.height);
-
-    if (size <= 0) return false;
-
-    const offsetX = (rect.width - size) / 2;
-    const offsetY = (rect.height - size) / 2;
-
-    const x = ((event.clientX - rect.left - offsetX) / size) * 320;
-    const y = ((event.clientY - rect.top - offsetY) / size) * 320;
-
-    const marker = [...markerClusters]
-      .filter((item) => {
-        const distance = Math.hypot(item.x - x, item.y - y);
-
-        if (item.count > 1) {
-          return distance <= 14;
-        }
-
-        const markerSize = getAtlasMarkerSize(item.articleCount);
-
-        const hitRadius =
-          item.relevance === "mention"
-            ? Math.max(7, markerSize * 1.3)
-            : item.relevance === "detailed"
-              ? Math.max(7, markerSize * Math.SQRT2)
-              : Math.max(7, markerSize);
-
-        return distance <= hitRadius;
-      })
-      .sort(
-        (a, b) => Math.hypot(a.x - x, a.y - y) - Math.hypot(b.x - x, b.y - y),
-      )[0];
+    const marker = getAtlasMarkerAtPointer(event, element, markerClusters);
 
     if (!marker) return false;
 
@@ -326,41 +225,6 @@
     }
 
     event.preventDefault();
-  }
-
-  async function getFocusBoundary(
-    place: AtlasPlace,
-    code: string | null,
-  ): Promise<AtlasAreaFeature | null> {
-    if (place.type === "country") {
-      const world = await getAtlasWorldTopology("full");
-
-      return findAtlasBoundary(world, place, ["country"], ["admin", "name"]);
-    }
-
-    if (!code || place.type === "municipality") {
-      return null;
-    }
-
-    const data = await getAtlasCountryTopology(code);
-
-    if (!data) return null;
-
-    if (place.type === "region") {
-      return findAtlasBoundary(
-        data.regions,
-        place,
-        ["regionCode"],
-        ["regionName"],
-      );
-    }
-
-    return findAtlasBoundary(
-      data.units,
-      place,
-      ["code", "unitId"],
-      ["name", "name_es", "name_en"],
-    );
   }
 
   onMount(() => {
@@ -449,105 +313,7 @@
     };
   });
 
-  let projection = $derived(
-    geoOrthographic()
-      .translate([160, 160])
-      .scale(158 * camera.current.zoom)
-      .rotate([-camera.current.longitude, -camera.current.latitude, 0])
-      .clipAngle(90)
-      .clipExtent([
-        [0, 0],
-        [320, 320],
-      ])
-      .precision(2),
-  );
-
-  let pathGenerator = $derived(geoPath(projection));
-
-  let visibleWorld = $derived(
-    camera.current.zoom < detailZoom
-      ? (overviewCountries ?? worldCountries)
-      : (worldCountries ?? overviewCountries),
-  );
-
-  let detailedWorldVisible = $derived(
-    worldCountries !== null && visibleWorld === worldCountries,
-  );
-
-  let worldPath = $derived(
-    visibleWorld
-      ? pathGenerator(getVisibleAtlasFeatures(visibleWorld, projection))
-      : null,
-  );
-
-  let activeCountry = $derived(
-    detailedWorldVisible && countryData?.code === countryCode
-      ? (countryData?.data ?? null)
-      : null,
-  );
-
-  let selectedCountry = $derived(
-    focus?.type === "country" || (!detailedWorldVisible && countryCode !== null)
-      ? (visibleWorld?.features.find(
-          (item) => item.properties.country === countryCode,
-        ) ?? null)
-      : null,
-  );
-
-  let selectedRegion = $derived(
-    findAtlasBoundary(
-      activeCountry?.regions ?? null,
-      region,
-      ["regionCode"],
-      ["regionName"],
-    ),
-  );
-
-  let selectedProvince = $derived.by(() => {
-    if (!activeCountry || !selectedRegion || !province) return null;
-
-    const code = selectedRegion.properties.regionCode;
-
-    const units = {
-      ...activeCountry.units,
-      features: activeCountry.units.features.filter(
-        (item) => item.properties.regionCode === code,
-      ),
-    };
-
-    return findAtlasBoundary(
-      units,
-      province,
-      ["code", "unitId"],
-      ["name", "nameEs", "nameEn", "name_es", "name_en"],
-    );
-  });
-
-  let highlightedCountryPath = $derived(
-    selectedCountry ? pathGenerator(selectedCountry) : null,
-  );
-
-  let regionHighlightPath = $derived(
-    selectedRegion ? pathGenerator(selectedRegion) : null,
-  );
-
-  let provinceHighlightPath = $derived(
-    selectedProvince ? pathGenerator(selectedProvince) : null,
-  );
-
-  let regionBordersPath = $derived(
-    activeCountry ? pathGenerator(activeCountry.regionBorders) : null,
-  );
-
-  let unitBordersPath = $derived.by(() => {
-    const code = selectedRegion?.properties.regionCode;
-
-    if (!activeCountry || typeof code !== "string") return null;
-
-    const borders = activeCountry.unitBorders.get(code);
-
-    return borders ? pathGenerator(borders) : null;
-  });
+  let projection = $derived(createAtlasProjection(camera.current));
 
   let markerPoints = $derived(
     getAtlasMarkerPoints(
@@ -586,73 +352,23 @@
     use:wheelZoom
     use:globePointerGestures
   >
-    <svg viewBox="0 0 320 320" role="img" aria-label={accessibleLabel}>
-      <defs>
-        <radialGradient id={sphereGradientId} cx="32%" cy="26%" r="82%">
-          <stop offset="0%" stop-color="#ffffff" stop-opacity="0.26" />
-          <stop offset="45%" stop-color="#ffffff" stop-opacity="0" />
-          <stop offset="70%" stop-color="#233c4b" stop-opacity="0.05" />
-          <stop offset="100%" stop-color="#233c4b" stop-opacity="0.38" />
-        </radialGradient>
-      </defs>
-
-      {#if worldPath}
-        <path
-          d={worldPath}
-          class="country"
-          vector-effect="non-scaling-stroke"
-        />
-      {/if}
-
-      {#if highlightedCountryPath}
-        <path
-          d={highlightedCountryPath}
-          class="country highlighted"
-          vector-effect="non-scaling-stroke"
-        />
-      {/if}
-
-      {#if regionHighlightPath}
-        <path
-          d={regionHighlightPath}
-          class="country highlighted"
-          class:context={provinceHighlightPath !== null}
-          vector-effect="non-scaling-stroke"
-        />
-      {/if}
-
-      {#if provinceHighlightPath}
-        <path
-          d={provinceHighlightPath}
-          class="country highlighted"
-          vector-effect="non-scaling-stroke"
-        />
-      {/if}
-
-      {#if unitBordersPath}
-        <path
-          d={unitBordersPath}
-          class="unit-borders"
-          vector-effect="non-scaling-stroke"
-        />
-      {/if}
-
-      {#if regionBordersPath}
-        <path
-          d={regionBordersPath}
-          class="region-borders"
-          vector-effect="non-scaling-stroke"
-        />
-      {/if}
-      <circle
-        cx="160"
-        cy="160"
-        r="160"
-        fill={`url(#${sphereGradientId})`}
-        opacity={sphereOpacity}
-        pointer-events="none"
-        aria-hidden="true"
+    <svg
+      viewBox={`0 0 ${ATLAS_VIEWBOX_SIZE} ${ATLAS_VIEWBOX_SIZE}`}
+      role="img"
+      aria-label={accessibleLabel}
+    >
+      <AtlasGlobeLayers
+        {projection}
+        zoom={camera.current.zoom}
+        {focus}
+        {countryCode}
+        {region}
+        {province}
+        {worldCountries}
+        {overviewCountries}
+        {countryData}
       />
+
       <AtlasGlobeMarkers
         markers={markerClusters}
         selectedPlaceId={focus?.id ?? null}
@@ -735,40 +451,5 @@
     width: 100%;
     height: 100%;
     pointer-events: none;
-  }
-
-  .country {
-    fill: #f8f6ee;
-    stroke: #8b9699;
-    stroke-width: 0.65;
-    stroke-linejoin: round;
-  }
-
-  .country.highlighted {
-    fill: #ebc1a9;
-    stroke: #9e654c;
-    stroke-width: 1;
-  }
-  .country.highlighted.context {
-    fill-opacity: 0.18;
-    stroke-opacity: 0.5;
-  }
-
-  .unit-borders,
-  .region-borders {
-    fill: none;
-    stroke-linejoin: round;
-  }
-
-  .unit-borders {
-    stroke: #a5aaa5;
-    stroke-width: 0.45;
-    stroke-opacity: 0.65;
-  }
-
-  .region-borders {
-    stroke: #8b9699;
-    stroke-width: 0.7;
-    stroke-opacity: 0.85;
   }
 </style>

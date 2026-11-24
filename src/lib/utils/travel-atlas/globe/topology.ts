@@ -234,3 +234,38 @@ export function findAtlasBoundary(
     ) ?? null
   );
 }
+
+export async function getAtlasFocusBoundary(
+  place: AtlasPlace,
+  code: string | null,
+): Promise<AtlasAreaFeature | null> {
+  if (place.type === "country") {
+    const world = await getAtlasWorldTopology("full");
+
+    return findAtlasBoundary(world, place, ["country"], ["admin", "name"]);
+  }
+
+  if (!code || place.type === "municipality") {
+    return null;
+  }
+
+  const data = await getAtlasCountryTopology(code);
+
+  if (!data) return null;
+
+  if (place.type === "region") {
+    return findAtlasBoundary(
+      data.regions,
+      place,
+      ["regionCode"],
+      ["regionName"],
+    );
+  }
+
+  return findAtlasBoundary(
+    data.units,
+    place,
+    ["code", "unitId"],
+    ["name", "name_es", "name_en"],
+  );
+}

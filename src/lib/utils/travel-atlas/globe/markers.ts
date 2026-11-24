@@ -1,6 +1,8 @@
 import { geoDistance } from "d3-geo";
 import type { GeoProjection } from "d3-geo";
 
+import { ATLAS_VIEWBOX_SIZE } from "./geometry.js";
+
 import { ATLAS_PROVINCE_ZOOM } from "#lib/utils/travel-atlas/globe/camera.js";
 
 import type {
@@ -143,4 +145,47 @@ export function getAtlasMarkerClusters(
   }
 
   return clusters;
+}
+
+export function getAtlasMarkerAtPointer(
+  event: PointerEvent,
+  element: HTMLElement,
+  markers: readonly GlobeMarker[],
+): GlobeMarker | null {
+  const rect = element.getBoundingClientRect();
+  const size = Math.min(rect.width, rect.height);
+
+  if (size <= 0) return null;
+
+  const offsetX = (rect.width - size) / 2;
+  const offsetY = (rect.height - size) / 2;
+
+  const x = ((event.clientX - rect.left - offsetX) / size) * ATLAS_VIEWBOX_SIZE;
+
+  const y = ((event.clientY - rect.top - offsetY) / size) * ATLAS_VIEWBOX_SIZE;
+
+  return (
+    [...markers]
+      .filter((item) => {
+        const distance = Math.hypot(item.x - x, item.y - y);
+
+        if (item.count > 1) {
+          return distance <= 14;
+        }
+
+        const markerSize = getAtlasMarkerSize(item.articleCount);
+
+        const hitRadius =
+          item.relevance === "mention"
+            ? Math.max(7, markerSize * 1.3)
+            : item.relevance === "detailed"
+              ? Math.max(7, markerSize * Math.SQRT2)
+              : Math.max(7, markerSize);
+
+        return distance <= hitRadius;
+      })
+      .sort(
+        (a, b) => Math.hypot(a.x - x, a.y - y) - Math.hypot(b.x - x, b.y - y),
+      )[0] ?? null
+  );
 }
