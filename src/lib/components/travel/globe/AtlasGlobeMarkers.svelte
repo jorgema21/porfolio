@@ -96,7 +96,7 @@
     stroke: var(--color-white);
     stroke-width: 0.8;
     opacity: 0.95;
-    transition: opacity 180ms ease;
+    transition: opacity var(--transition-fast);
   }
 
   .article-marker.inactive,
@@ -114,7 +114,7 @@
 
   .article-cluster {
     opacity: 1;
-    transition: opacity 180ms ease;
+    transition: opacity var(--transition-fast);
   }
 
   .cluster-core {

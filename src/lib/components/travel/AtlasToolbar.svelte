@@ -174,7 +174,7 @@
   select {
     box-sizing: border-box;
     width: 100%;
-    min-height: 44px;
+    min-height: var(--atlas-control-min-size);
     padding: var(--space-2) var(--space-3);
 
     border: var(--border-1);
@@ -214,7 +214,7 @@
   .atlas-search input {
     box-sizing: border-box;
     width: 100%;
-    min-height: 44px;
+    min-height: var(--atlas-control-min-size);
     padding: var(--space-2) var(--space-3);
 
     border: var(--border-1);
@@ -239,7 +239,7 @@
     border: var(--border-1);
     border-radius: var(--radius-sm);
     background: var(--color-white);
-    box-shadow: 0 6px 20px rgb(0 0 0 / 0.08);
+    box-shadow: var(--atlas-dropdown-shadow);
   }
 
   .atlas-destination-list {
@@ -253,7 +253,7 @@
     align-items: center;
     gap: var(--space-2);
 
-    min-height: 44px;
+    min-height: var(--atlas-control-min-size);
     padding: var(--space-2) var(--space-3);
 
     border: var(--border-1);
@@ -301,14 +301,14 @@
     border: var(--border-1);
     border-radius: var(--radius-sm);
     background: var(--color-white);
-    box-shadow: 0 6px 20px rgb(0 0 0 / 0.08);
+    box-shadow: var(--atlas-dropdown-shadow);
   }
 
   .atlas-search-results button,
   .atlas-destination-options button {
     display: block;
     width: 100%;
-    min-height: 44px;
+    min-height: var(--atlas-control-min-size);
     padding: var(--space-2);
 
     border: 0;
@@ -338,7 +338,7 @@
     display: block;
     margin-top: 2px;
     color: var(--color-muted);
-    font-size: 0.8rem;
+    font-size: var(--text-xs);
     line-height: 1.4;
   }
 

@@ -207,7 +207,8 @@
     --atlas-accent: var(--color-travel);
 
     align-self: center;
-    width: min(1200px, calc(100vw - 2 * var(--space-6)));
+    width: min(var(--atlas-max-width), calc(100vw - 2 * var(--space-6)));
+
     min-width: 0;
     margin-top: var(--space-8);
     padding-top: var(--space-8);
@@ -231,8 +232,6 @@
   }
 
   .atlas-map {
-    --atlas-donut-max-width: 900px;
-
     width: 100%;
   }
 
@@ -244,8 +243,8 @@
   }
 
   .globe-controls button {
-    min-width: 44px;
-    min-height: 44px;
+    min-width: var(--atlas-control-min-size);
+    min-height: var(--atlas-control-min-size);
     padding: var(--space-2) var(--space-3);
 
     border: var(--border-1);
@@ -284,7 +283,7 @@
 
   @media (max-width: 640px) {
     .travel-atlas {
-      width: min(1200px, calc(100vw - 2 * var(--space-3)));
+      width: min(var(--atlas-max-width), calc(100vw - 2 * var(--space-3)));
     }
   }
 </style>

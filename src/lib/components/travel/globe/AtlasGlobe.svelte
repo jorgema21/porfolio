@@ -397,17 +397,20 @@
   }
 
   .globe {
+    display: block;
     width: 100%;
     height: 100%;
     overflow: hidden;
+
+    padding: 0;
+    border: 0;
     border-radius: 50%;
-    background: #d8e6eb;
+
+    background: var(--atlas-color-ocean);
+
     cursor: grab;
     touch-action: none;
     user-select: none;
-    display: block;
-    padding: 0;
-    border: 0;
     appearance: none;
   }
 
@@ -421,6 +424,7 @@
     height: 1px;
     padding: 0;
     margin: -1px;
+
     overflow: hidden;
     clip-path: inset(50%);
     white-space: nowrap;
@@ -431,17 +435,22 @@
     top: 0;
     left: 50%;
     z-index: 2;
+
     width: auto;
     height: auto;
     margin: 0;
-    padding: 6px 10px;
+    padding: var(--space-2) var(--space-3);
+
     overflow: visible;
     clip-path: none;
     transform: translateX(-50%);
+
     background: var(--color-white);
     color: var(--color-travel);
+
     border: 1px solid currentColor;
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
+
     outline: 2px solid currentColor;
     outline-offset: 2px;
   }

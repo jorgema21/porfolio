@@ -140,10 +140,21 @@
 <g class="globe-layers" aria-hidden="true">
   <defs>
     <radialGradient id={sphereGradientId} cx="32%" cy="26%" r="82%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.26" />
-      <stop offset="45%" stop-color="#ffffff" stop-opacity="0" />
-      <stop offset="70%" stop-color="#233c4b" stop-opacity="0.05" />
-      <stop offset="100%" stop-color="#233c4b" stop-opacity="0.38" />
+      <stop offset="0%" stop-color="var(--color-white)" stop-opacity="0.26" />
+
+      <stop offset="45%" stop-color="var(--color-white)" stop-opacity="0" />
+
+      <stop
+        offset="70%"
+        stop-color="var(--atlas-color-sphere-shadow)"
+        stop-opacity="0.05"
+      />
+
+      <stop
+        offset="100%"
+        stop-color="var(--atlas-color-sphere-shadow)"
+        stop-opacity="0.38"
+      />
     </radialGradient>
   </defs>
 
@@ -205,15 +216,15 @@
 
 <style>
   .country {
-    fill: #f8f6ee;
-    stroke: #8b9699;
+    fill: var(--atlas-color-land);
+    stroke: var(--atlas-color-boundary);
     stroke-width: 0.65;
     stroke-linejoin: round;
   }
 
   .country.highlighted {
-    fill: #ebc1a9;
-    stroke: #9e654c;
+    fill: var(--atlas-color-highlight);
+    stroke: var(--atlas-color-highlight-border);
     stroke-width: 1;
   }
 
@@ -229,13 +240,13 @@
   }
 
   .unit-borders {
-    stroke: #a5aaa5;
+    stroke: var(--atlas-color-subdivision);
     stroke-width: 0.45;
     stroke-opacity: 0.65;
   }
 
   .region-borders {
-    stroke: #8b9699;
+    stroke: var(--atlas-color-boundary);
     stroke-width: 0.7;
     stroke-opacity: 0.85;
   }

@@ -87,7 +87,7 @@
                   >
                     {match.title[lang]}
                     <span aria-hidden="true">↗</span>
-                    <span class="visually-hidden">
+                    <span class="sr-only">
                       {t.travelAtlas.aria.newTab}
                     </span>
                   </a>
@@ -309,7 +309,7 @@
     align-self: flex-start;
     gap: var(--space-2);
 
-    min-height: 44px;
+    min-height: var(--atlas-control-min-size);
     padding: 0;
 
     border: 0;
@@ -329,16 +329,6 @@
   a:focus-visible {
     outline: 2px solid var(--atlas-accent);
     outline-offset: 3px;
-  }
-
-  .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    overflow: hidden;
-    clip-path: inset(50%);
-    white-space: nowrap;
   }
 
   @media (max-width: 640px) {
@@ -362,7 +352,7 @@
     }
 
     .ticket-path button {
-      min-height: 44px;
+      min-height: var(--atlas-control-min-size);
     }
 
     h3 {

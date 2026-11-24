@@ -1,0 +1,24 @@
+:root {
+  /* Cartography */
+  --atlas-color-ocean: #d8e6eb;
+  --atlas-color-land: #f8f6ee;
+  --atlas-color-boundary: #8b9699;
+  --atlas-color-subdivision: #a5aaa5;
+
+  --atlas-color-highlight: #ebc1a9;
+  --atlas-color-highlight-border: #9e654c;
+
+  --atlas-color-sphere-shadow: #233c4b;
+  --atlas-color-label-outline: rgb(0 0 0 / 75%);
+
+  /* Layout */
+  --atlas-max-width: 1200px;
+  --atlas-donut-max-width: var(--content-width);
+  --atlas-control-min-size: 44px;
+
+  /* Shadows */
+  --atlas-dropdown-shadow: 0 6px 20px rgb(0 0 0 / 8%);
+
+  --atlas-globe-shadow:
+    0 3px 10px rgb(25 45 55 / 9%), 0 1px 3px rgb(25 45 55 / 5%);
+}

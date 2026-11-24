@@ -213,7 +213,7 @@
   .donut-stage {
     position: relative;
     width: 100%;
-    max-width: var(--atlas-donut-max-width, 560px);
+    max-width: var(--atlas-donut-max-width);
     margin-inline: auto;
     aspect-ratio: 1;
   }
@@ -251,8 +251,8 @@
   }
 
   .donut-arc-label {
-    fill: #ffffff;
-    stroke: rgb(0 0 0 / 75%);
+    fill: var(--color-white);
+    stroke: var(--atlas-color-label-outline);
     stroke-width: 0.1em;
     stroke-linejoin: round;
     paint-order: stroke;
@@ -269,9 +269,7 @@
     overflow: hidden;
     border-radius: 50%;
 
-    box-shadow:
-      0 3px 10px rgb(25 45 55 / 9%),
-      0 1px 3px rgb(25 45 55 / 5%);
+    box-shadow: var(--atlas-globe-shadow);
   }
 
   .center-placeholder {
