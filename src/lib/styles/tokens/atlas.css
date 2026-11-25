@@ -25,3 +25,9 @@
   /* Markers */
   --atlas-marker-inactive-opacity: 0.25;
 }
+
+@media (min-width: 641px) {
+  :root {
+    --atlas-donut-max-width: clamp(320px, calc(100svh - 300px), 800px);
+  }
+}
