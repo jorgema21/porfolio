@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { asset } from "$app/paths";
   import { t } from "#lib/i18n/index.svelte.js";
   import type { getAtlasCoverage } from "#lib/utils/travel-atlas/index.js";
   import type { AtlasPlace } from "#lib/types/travel-atlas.types.js";
@@ -23,6 +24,26 @@
   let previousPlaceId: string | null | undefined;
 
   const articleListId = $props.id();
+  const villageIllustrations: Readonly<Partial<Record<string, string>>> = {
+    ESP: "spain/village.svg",
+  };
+
+  let illustrationPath = $derived(
+    selectedPlace?.illustration ??
+      (selectedPlace?.type === "municipality"
+        ? villageIllustrations[path[0]?.boundaryId ?? ""]
+        : undefined),
+  );
+
+  let illustrationUrl = $derived(
+    illustrationPath
+      ? asset(
+          `atlas/illustrations/${illustrationPath}` as Parameters<
+            typeof asset
+          >[0],
+        )
+      : null,
+  );
 
   let visibleArticles = $derived(
     showAllArticles ? coverage.articles : coverage.articles.slice(0, 1),
@@ -43,7 +64,10 @@
   aria-label={t.travelAtlas.aria.destinationCard}
   style:--atlas-accent={accentColor}
 >
-  <div class="ticket-identity">
+  <div
+    class="ticket-identity"
+    class:has-illustration={illustrationUrl !== null}
+  >
     {#if selectedPlace}
       <nav class="ticket-path" aria-label={t.travelAtlas.aria.geographicPath}>
         <button type="button" onclick={() => onselect(null)}>
@@ -63,6 +87,13 @@
     <h3>
       {selectedPlace ? selectedPlace.name[lang] : t.travelAtlas.allDestinations}
     </h3>
+    {#if illustrationUrl}
+      <span
+        class="ticket-illustration"
+        style:--ticket-illustration-image={`url("${illustrationUrl}")`}
+        aria-hidden="true"
+      ></span>
+    {/if}
   </div>
 
   <div class="ticket-editorial">
@@ -176,7 +207,37 @@
   }
 
   .ticket-identity {
+    --ticket-illustration-width: clamp(64px, 9vw, 112px);
+
+    position: relative;
     gap: var(--space-1);
+  }
+
+  .ticket-identity.has-illustration {
+    padding-inline-end: calc(
+      var(--space-5) + var(--ticket-illustration-width) + var(--space-2)
+    );
+  }
+
+  .ticket-illustration {
+    position: absolute;
+
+    inset-block: var(--space-2);
+    inset-inline-end: var(--space-5);
+
+    width: var(--ticket-illustration-width);
+
+    background-color: var(--atlas-accent);
+
+    mask-image: var(--ticket-illustration-image);
+    mask-mode: alpha;
+    mask-size: contain;
+    mask-position: center;
+    mask-repeat: no-repeat;
+
+    opacity: 0.85;
+
+    pointer-events: none;
   }
 
   .ticket-path {
@@ -357,6 +418,20 @@
 
     h3 {
       font-size: var(--text-xl);
+    }
+
+    .ticket-identity {
+      --ticket-illustration-width: clamp(64px, 18vw, 96px);
+    }
+
+    .ticket-identity.has-illustration {
+      padding-inline-end: calc(
+        var(--space-4) + var(--ticket-illustration-width) + var(--space-2)
+      );
+    }
+
+    .ticket-illustration {
+      inset-inline-end: var(--space-4);
     }
   }
 </style>

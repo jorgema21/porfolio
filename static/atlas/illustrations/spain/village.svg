@@ -1,0 +1,307 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 240 240"
+    fill="none"
+    stroke="#000"
+    stroke-width="1.65"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+>
+    <defs>
+        <pattern
+            id="roof"
+            width="7"
+            height="6"
+            patternUnits="userSpaceOnUse"
+            patternTransform="rotate(25)"
+        >
+            <path
+                d="M0 0V6"
+                stroke="#000"
+                stroke-width="1"
+                opacity=".38"
+            />
+        </pattern>
+    </defs>
+
+    <!-- Distant hills -->
+    <g stroke-width="1.1" opacity=".32">
+        <path d="M8 100 27 88 43 77 57 81 76 64 99 79 111 88" />
+        <path d="M166 94 184 77 199 80 213 69 232 83" />
+        <path d="M10 107 36 94M65 87 76 77 91 85M193 88 201 86 210 80" />
+    </g>
+
+    <!-- Church nave -->
+    <path
+        d="M79 115H124V181H79Z"
+        fill="#000"
+        fill-opacity=".065"
+    />
+    <path
+        d="M75 115 101 91 128 115Z"
+        fill="#000"
+        fill-opacity=".13"
+    />
+    <path
+        d="M75 115 101 91 128 115Z"
+        fill="url(#roof)"
+        stroke="none"
+    />
+    <path d="M75 115H128" stroke-width="2.3" />
+
+    <!-- Rose window -->
+    <circle cx="101" cy="129" r="5" />
+    <path
+        d="M101 124V134M96 129H106"
+        stroke-width=".9"
+    />
+
+    <!-- Church entrance -->
+    <path
+        d="M91 181V158A10 10 0 0 1 111 158V181"
+        fill="#000"
+        fill-opacity=".55"
+    />
+    <path
+        d="M87 181V158A14 14 0 0 1 115 158V181
+       M101 150V181"
+        stroke-width="1"
+    />
+    <path
+        d="M86 139H94M109 139H118
+       M82 147H88M114 147H121
+       M82 170H86M116 173H122"
+        stroke-width="1"
+        opacity=".45"
+    />
+
+    <!-- Stone bell tower -->
+    <path
+        d="M124 54H157V181H124Z"
+        fill="#000"
+        fill-opacity=".10"
+    />
+    <path
+        d="M150 57H157V181H150Z"
+        fill="#000"
+        fill-opacity=".10"
+        stroke="none"
+    />
+    <path
+        d="M120 54 140.5 33 161 54Z"
+        fill="#000"
+        fill-opacity=".22"
+    />
+    <path
+        d="M120 54 140.5 33 161 54Z"
+        fill="url(#roof)"
+        stroke="none"
+    />
+
+    <!-- Cross and cornices -->
+    <path
+        d="M140.5 33V20M135.5 25H145.5"
+        stroke-width="1.8"
+    />
+    <path
+        d="M121 55H160
+       M124 60H157
+       M124 101H157
+       M124 105H157"
+    />
+
+    <!-- Bell opening -->
+    <path
+        d="M131 94V77A9 9 0 0 1 149 77V94Z"
+        fill="#000"
+        fill-opacity=".32"
+    />
+    <path
+        d="M140 73V77
+       M135 86V82Q140 75 145 82V86
+       L147 88H133Z"
+        fill="#000"
+        fill-opacity=".85"
+        stroke-width="1.1"
+    />
+    <path d="M140 88V91" stroke-width="1.2" />
+
+    <!-- Tower window -->
+    <path
+        d="M137 126V115H144V126Z"
+        fill="#000"
+        fill-opacity=".65"
+        stroke-width="1.2"
+    />
+
+    <!-- Tower stonework -->
+    <path
+        d="M125 68H130M151 68H156
+       M125 98H131
+       M125 112H131M149 112H156
+       M125 133H135M143 138H156
+       M125 151H133M148 158H156
+       M125 172H135"
+        stroke-width="1"
+        opacity=".48"
+    />
+
+    <!-- Left house -->
+    <path
+        d="M20 111H77V181H20Z"
+        fill="#000"
+        fill-opacity=".06"
+    />
+    <path
+        d="M14 111 48.5 83 83 111Z"
+        fill="#000"
+        fill-opacity=".17"
+    />
+    <path
+        d="M14 111 48.5 83 83 111Z"
+        fill="url(#roof)"
+        stroke="none"
+    />
+    <path d="M14 111H83" stroke-width="2.5" />
+
+    <!-- Chimney -->
+    <path
+        d="M64 95V82H70V100"
+        fill="#000"
+        fill-opacity=".17"
+    />
+
+    <!-- Left house windows -->
+    <path
+        d="M27 122H39V137H27Z
+       M57 122H69V137H57Z
+       M57 153H69V166H57Z"
+        fill="#000"
+        fill-opacity=".56"
+    />
+    <path
+        d="M33 122V137M27 129.5H39
+       M63 122V137M57 129.5H69
+       M63 153V166M57 159.5H69"
+        stroke-width=".85"
+    />
+
+    <!-- Left house door -->
+    <path
+        d="M29 181V154H44V181Z"
+        fill="#000"
+        fill-opacity=".36"
+    />
+    <path
+        d="M36.5 154V181M40 167H41"
+        stroke-width="1"
+    />
+
+    <!-- Window sills and doorstep -->
+    <path
+        d="M25 139H41
+       M55 139H71
+       M55 168H71
+       M26 181H47"
+    />
+
+    <!-- Left house stonework -->
+    <path
+        d="M22 116H30M45 118H51
+       M22 145H31M48 146H56
+       M72 148H76
+       M22 173H26M47 175H57"
+        opacity=".45"
+        stroke-width="1"
+    />
+
+    <!-- Right house -->
+    <path
+        d="M162 126H221V181H162Z"
+        fill="#000"
+        fill-opacity=".075"
+    />
+    <path
+        d="M156 126 191.5 99 227 126Z"
+        fill="#000"
+        fill-opacity=".16"
+    />
+    <path
+        d="M156 126 191.5 99 227 126Z"
+        fill="url(#roof)"
+        stroke="none"
+    />
+    <path d="M156 126H227" stroke-width="2.5" />
+
+    <!-- Chimney -->
+    <path
+        d="M211 114V101H217V119"
+        fill="#000"
+        fill-opacity=".16"
+    />
+
+    <!-- Right house windows -->
+    <path
+        d="M169 135H181V148H169Z
+       M201 135H213V148H201Z"
+        fill="#000"
+        fill-opacity=".55"
+    />
+    <path
+        d="M175 135V148M169 141.5H181
+       M207 135V148M201 141.5H213"
+        stroke-width=".85"
+    />
+
+    <!-- Right house door -->
+    <path
+        d="M184 181V157H199V181Z"
+        fill="#000"
+        fill-opacity=".38"
+    />
+    <path
+        d="M191.5 157V181M195 168H196"
+        stroke-width="1"
+    />
+
+    <!-- Window sills and doorstep -->
+    <path
+        d="M167 150H183
+       M199 150H215
+       M181 181H202"
+    />
+
+    <!-- Right house stonework -->
+    <path
+        d="M163 157H173
+       M164 165H177
+       M169 174H180
+       M203 160H214
+       M207 169H220
+       M165 130H176"
+        stroke-width="1"
+        opacity=".46"
+    />
+
+    <!-- Ground -->
+    <path d="M12 181H229" stroke-width="2" />
+
+    <!-- Field marks and vegetation -->
+    <g opacity=".50" stroke-width="1.05">
+        <path
+            d="M8 188H55M61 188H95
+         M105 188H164M172 188H232"
+        />
+        <path
+            d="M24 195H80M89 195H132
+         M144 195H213
+         M56 202H111M122 202H179"
+        />
+        <path
+            d="M16 183 12 178
+         M16 183 18 176
+         M224 183 222 175
+         M224 183 230 178"
+        />
+    </g>
+</svg>
