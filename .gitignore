@@ -27,7 +27,7 @@ pnpm-debug.log*
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
-add-project.js
+/scripts/
 .project-migration-backup-*/
 *.backup-*
 

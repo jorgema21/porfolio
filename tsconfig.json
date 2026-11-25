@@ -13,11 +13,5 @@
     "noFallthroughCasesInSwitch": true,
     "exactOptionalPropertyTypes": true
   },
-  "include": [
-    "src",
-    "vite.config.ts",
-    "scripts",
-    "prepare-atlas-natural-earth-regions.mjs",
-    "export-atlas-natural-earth.mjs"
-  ]
+  "include": ["src", "vite.config.ts"]
 }
