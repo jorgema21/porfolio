@@ -32,3 +32,4 @@ vite.config.ts.timestamp-*
 *.backup-*
 
 .cache/atlas/
+/.vscode/

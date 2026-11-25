@@ -2,9 +2,15 @@ import type { AtlasPlace } from "#lib/types/travel-atlas.types.js";
 import { getAtlasPath, type AtlasIndex } from "./index.js";
 
 const countryColors: Readonly<Record<string, string>> = {
-  es: "#C62828",
-  fr: "#1756B8",
-  it: "#13824B",
+  ESP: "#C62828",
+  FRA: "#1756B8",
+  ITA: "#13824B",
+  DEU: "#D69A00",
+  CHE: "#8C244C",
+  CZE: "#7541A6",
+  POL: "#C23879",
+  EST: "#147A78",
+  FIN: "#087F99",
 };
 
 const spanishMunicipalityColors = [
@@ -58,12 +64,12 @@ export function getAtlasPlaceColor(
     return "var(--color-travel)";
   }
 
-  const baseColor = getCountryColor(country.id);
+  const baseColor = getCountryColor(country.boundaryId ?? country.id);
 
   if (place.type === "country") {
     return baseColor;
   }
-  if (country.id === "es" && place.type === "municipality") {
+  if (country.boundaryId === "ESP" && place.type === "municipality") {
     const siblings = [...(index.children.get(place.parentId) ?? [])]
       .filter((sibling) => sibling.type === "municipality")
       .sort((a, b) => a.id.localeCompare(b.id));
