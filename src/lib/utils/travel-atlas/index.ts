@@ -4,6 +4,7 @@ import type {
   AtlasArticleStatus,
   AtlasDataset,
   AtlasPlace,
+  AtlasPlaceType,
   AtlasRelevance,
 } from "#lib/types/travel-atlas.types.js";
 
@@ -59,6 +60,12 @@ function uniqueById<T extends { id: string }>(
 
   return result;
 }
+const hierarchyLevel: Record<AtlasPlaceType, number> = {
+  country: 0,
+  region: 1,
+  province: 2,
+  municipality: 3,
+};
 
 function validateHierarchy(places: ReadonlyMap<string, AtlasPlace>): void {
   for (const place of places.values()) {
@@ -91,6 +98,12 @@ function validateHierarchy(places: ReadonlyMap<string, AtlasPlace>): void {
       if (!parent) {
         throw new Error(
           `Atlas: padre inexistente "${current.parentId}" en "${current.id}".`,
+        );
+      }
+
+      if (hierarchyLevel[parent.type] >= hierarchyLevel[current.type]) {
+        throw new Error(
+          `Atlas: jerarquía inválida entre "${parent.id}" (${parent.type}) y "${current.id}" (${current.type}).`,
         );
       }
 

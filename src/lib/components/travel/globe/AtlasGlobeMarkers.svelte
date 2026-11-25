@@ -101,7 +101,7 @@
 
   .article-marker.inactive,
   .article-cluster.inactive {
-    opacity: 0.12;
+    opacity: var(--atlas-marker-inactive-opacity);
   }
 
   .article-marker.selected,

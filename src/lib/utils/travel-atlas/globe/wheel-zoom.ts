@@ -1,6 +1,9 @@
 import type { AtlasGlobeCamera } from "./camera-controller.svelte.js";
 
-export function createAtlasWheelZoom(controller: AtlasGlobeCamera) {
+export function createAtlasWheelZoom(
+  controller: AtlasGlobeCamera,
+  onInteraction: () => void,
+) {
   const camera = controller.camera;
 
   return function wheelZoom(node: HTMLElement) {
@@ -37,6 +40,8 @@ export function createAtlasWheelZoom(controller: AtlasGlobeCamera) {
       if (!event.ctrlKey || !event.cancelable) return;
 
       event.preventDefault();
+
+      onInteraction();
 
       controller.stopAutoRotation();
       controller.stopInertia();

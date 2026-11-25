@@ -51,14 +51,17 @@ type TravelAtlasDict = {
     globeControls: string;
     destinationCard: string;
     newTab: string;
-    globeEurope: string;
-    globeCenteredPrefix: string;
+    globe: string;
+    globeSelectedPrefix: string;
   };
   ticketList: {
     moreArticles: string;
     lessArticles: string;
   };
   groupedPlaces: string;
+  stopRotation: string;
+  retry: string;
+  mapLoadError: string;
 };
 
 export const travelAtlas: Record<"es" | "en", TravelAtlasDict> = {
@@ -117,14 +120,17 @@ export const travelAtlas: Record<"es" | "en", TravelAtlasDict> = {
       globeControls: "Controles del globo",
       destinationCard: "Tarjeta de destino",
       newTab: "(abre en otra pestaña)",
-      globeEurope: "Globo terráqueo orientado hacia Europa",
-      globeCenteredPrefix: "Globo centrado en",
+      globe: "Globo terráqueo interactivo",
+      globeSelectedPrefix: "Globo terráqueo. Destino seleccionado:",
     },
     ticketList: {
       moreArticles: "Ver más reportajes ({count})",
       lessArticles: "Ver menos reportajes",
     },
     groupedPlaces: "Lugares agrupados",
+    stopRotation: "Detener giro",
+    retry: "Reintentar",
+    mapLoadError: "No se ha podido cargar toda la cartografía.",
   },
   en: {
     title: "Travel atlas",
@@ -181,13 +187,16 @@ export const travelAtlas: Record<"es" | "en", TravelAtlasDict> = {
       globeControls: "Globe controls",
       destinationCard: "Destination card",
       newTab: "(opens in a new tab)",
-      globeEurope: "Globe facing Europe",
-      globeCenteredPrefix: "Globe centered on",
+      globe: "Interactive globe",
+      globeSelectedPrefix: "Globe. Selected destination:",
     },
     ticketList: {
       moreArticles: "More stories ({count})",
       lessArticles: "Show fewer stories",
     },
     groupedPlaces: "Grouped places",
+    stopRotation: "Stop rotation",
+    retry: "Retry",
+    mapLoadError: "Some map data could not be loaded.",
   },
 };

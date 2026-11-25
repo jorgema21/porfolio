@@ -4,12 +4,13 @@ import type {
   AtlasRelevance,
 } from "#lib/types/travel-atlas.types.js";
 
-import type { AtlasFilter } from "#lib/utils/travel-atlas/index.js";
+import type { AtlasFilter } from "./index.js";
 
 interface AtlasMarkerEditorial {
   markerPlaces: readonly AtlasPlace[];
   markerRelevance: ReadonlyMap<string, AtlasRelevance>;
   articleCountByPlace: ReadonlyMap<string, number>;
+  activeMarkerIds: ReadonlySet<string>;
 }
 
 const relevancePriority: Record<AtlasRelevance, number> = {
@@ -24,12 +25,9 @@ export function getAtlasMarkerEditorial(
 ): AtlasMarkerEditorial {
   const markerRelevance = new Map<string, AtlasRelevance>();
   const articleIdsByPlace = new Map<string, Set<string>>();
+  const activeMarkerIds = new Set<string>();
 
   for (const relation of dataset.relations) {
-    if (filter === "substantial" && relation.relevance === "mention") {
-      continue;
-    }
-
     const articleIds =
       articleIdsByPlace.get(relation.placeId) ?? new Set<string>();
 
@@ -44,6 +42,10 @@ export function getAtlasMarkerEditorial(
         relevancePriority[currentRelevance]
     ) {
       markerRelevance.set(relation.placeId, relation.relevance);
+    }
+
+    if (filter === "all" || relation.relevance !== "mention") {
+      activeMarkerIds.add(relation.placeId);
     }
   }
 
@@ -61,5 +63,6 @@ export function getAtlasMarkerEditorial(
     markerPlaces,
     markerRelevance,
     articleCountByPlace,
+    activeMarkerIds,
   };
 }

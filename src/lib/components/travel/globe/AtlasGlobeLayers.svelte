@@ -87,16 +87,20 @@
   );
 
   let selectedProvince = $derived.by(() => {
-    if (!activeCountry || !selectedRegion || !province) return null;
+    if (!activeCountry || !province) return null;
 
-    const code = selectedRegion.properties.regionCode;
+    if (region && !selectedRegion) return null;
 
-    const units = {
-      ...activeCountry.units,
-      features: activeCountry.units.features.filter(
-        (item) => item.properties.regionCode === code,
-      ),
-    };
+    const units = selectedRegion
+      ? {
+          ...activeCountry.units,
+          features: activeCountry.units.features.filter(
+            (item) =>
+              item.properties.regionCode ===
+              selectedRegion.properties.regionCode,
+          ),
+        }
+      : activeCountry.units;
 
     return findAtlasBoundary(
       units,
@@ -123,9 +127,13 @@
   );
 
   let unitBordersPath = $derived.by(() => {
-    const code = selectedRegion?.properties.regionCode;
+    const code =
+      selectedRegion?.properties.regionCode ??
+      selectedProvince?.properties.regionCode;
 
-    if (!activeCountry || typeof code !== "string") return null;
+    if (!activeCountry || typeof code !== "string") {
+      return null;
+    }
 
     const borders = activeCountry.unitBorders.get(code);
 

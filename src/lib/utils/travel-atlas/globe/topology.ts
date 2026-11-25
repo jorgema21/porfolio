@@ -152,6 +152,8 @@ export function getAtlasCountryTopology(
   const request = (async () => {
     const manifest = await getJson("manifest.json");
     if (!isRecord(manifest) || !Array.isArray(manifest.countries)) {
+      requests.delete("manifest.json");
+
       throw new Error("Manifiesto cartográfico no válido.");
     }
     if (!manifest.countries.includes(country)) return null;

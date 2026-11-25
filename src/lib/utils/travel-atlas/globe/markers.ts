@@ -1,7 +1,7 @@
 import { geoDistance } from "d3-geo";
 import type { GeoProjection } from "d3-geo";
 
-import { ATLAS_VIEWBOX_SIZE } from "./geometry.js";
+import { ATLAS_CENTER, ATLAS_VIEWBOX_SIZE } from "./geometry.js";
 
 import { ATLAS_PROVINCE_ZOOM } from "#lib/utils/travel-atlas/globe/camera.js";
 
@@ -60,11 +60,23 @@ export function getAtlasMarkerPoints(
 
     if (!point) return [];
 
+    const [x, y] = point;
+
+    if (!Number.isFinite(x) || !Number.isFinite(y)) {
+      return [];
+    }
+
+    const distanceFromCenter = Math.hypot(x - ATLAS_CENTER, y - ATLAS_CENTER);
+
+    if (distanceFromCenter > ATLAS_CENTER) {
+      return [];
+    }
+
     return [
       {
         id: place.id,
-        x: point[0],
-        y: point[1],
+        x,
+        y,
         active: activeMarkerIds.has(place.id),
         relevance: relevanceByPlace.get(place.id),
         articleCount: articleCountByPlace.get(place.id) ?? 0,

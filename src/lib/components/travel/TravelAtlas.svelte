@@ -30,6 +30,10 @@
 
   let globe: ReturnType<typeof AtlasGlobe> | undefined = $state();
 
+  let canStopRotation = $derived(globe?.canStopRotation() ?? false);
+
+  let mapLoadFailed = $derived(globe?.hasMapLoadError() ?? false);
+
   const index = createAtlasIndex(travelAtlasDataset, travelProjects);
 
   const nonGeographicArticles = travelProjects
@@ -53,9 +57,7 @@
 
   let articleCountByPlace = $derived(markerEditorial.articleCountByPlace);
 
-  let activeMarkerIds = $derived(
-    new Set(markerPlaces.map((place) => place.id)),
-  );
+  let activeMarkerIds = $derived(markerEditorial.activeMarkerIds);
 
   let selectedPlace = $derived(
     selectedId === null ? null : (index.places.get(selectedId) ?? null),
@@ -157,6 +159,30 @@
       <button type="button" onclick={() => globe?.resetView()}>
         {t.travelAtlas.recenter}
       </button>
+
+      <button
+        type="button"
+        aria-disabled={!canStopRotation}
+        onclick={() => {
+          if (canStopRotation) {
+            globe?.stopRotation();
+          }
+        }}
+      >
+        {t.travelAtlas.stopRotation}
+      </button>
+
+      {#if mapLoadFailed}
+        <button type="button" onclick={() => globe?.retryMap()}>
+          {t.travelAtlas.retry}
+        </button>
+      {/if}
+    </div>
+
+    <div class="map-load-status" role="status">
+      {#if mapLoadFailed}
+        <p>{t.travelAtlas.mapLoadError}</p>
+      {/if}
     </div>
 
     <div class="atlas-map">
@@ -254,13 +280,20 @@
     cursor: pointer;
   }
 
-  .globe-controls button:hover:not(:disabled) {
+  .globe-controls button:hover:not(:disabled):not([aria-disabled="true"]) {
     background: var(--bg-soft);
   }
 
-  .globe-controls button:disabled {
+  .globe-controls button:disabled,
+  .globe-controls button[aria-disabled="true"] {
     opacity: 0.4;
     cursor: not-allowed;
+  }
+
+  .map-load-status p {
+    margin: var(--space-2) 0;
+    color: var(--color-muted);
+    font-size: var(--text-sm);
   }
 
   button:focus-visible,

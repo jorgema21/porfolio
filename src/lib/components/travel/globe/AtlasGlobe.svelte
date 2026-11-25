@@ -92,6 +92,13 @@
     data: AtlasCountryTopology;
   } | null>(null);
 
+  let mounted = false;
+  let worldLoading = false;
+
+  let worldLoadFailed = $state(false);
+  let failedCountryCode = $state<string | null>(null);
+  let countryRetry = $state(0);
+
   export function resetView(
     place: AtlasPlace | null = focus,
     code: string | null = countryCode,
@@ -139,7 +146,36 @@
       });
   }
 
-  const wheelZoom = createAtlasWheelZoom(cameraController);
+  function cancelPendingFocus(): void {
+    resetSequence += 1;
+  }
+
+  export function canStopRotation(): boolean {
+    return cameraController.canStopAutoRotation;
+  }
+
+  export function stopRotation(): void {
+    cameraController.stopAutoRotation();
+  }
+
+  export function hasMapLoadError(): boolean {
+    return (
+      worldLoadFailed ||
+      (failedCountryCode !== null && failedCountryCode === countryCode)
+    );
+  }
+
+  export function retryMap(): void {
+    if (worldLoadFailed) {
+      void loadWorldTopology();
+    }
+
+    if (failedCountryCode !== null && failedCountryCode === countryCode) {
+      countryRetry += 1;
+    }
+  }
+
+  const wheelZoom = createAtlasWheelZoom(cameraController, cancelPendingFocus);
 
   function activateMarker(
     event: PointerEvent,
@@ -176,6 +212,10 @@
     camera: cameraController,
 
     onDraggingChange(value) {
+      if (value) {
+        cancelPendingFocus();
+      }
+
       dragging = value;
     },
 
@@ -194,6 +234,8 @@
 
       case "ArrowUp":
         stopAutoRotation();
+        cameraController.stopInertia();
+
         moveCamera({
           ...camera.target,
           latitude: clampLatitude(camera.target.latitude + 15),
@@ -202,6 +244,8 @@
 
       case "ArrowDown":
         stopAutoRotation();
+        cameraController.stopInertia();
+
         moveCamera({
           ...camera.target,
           latitude: clampLatitude(camera.target.latitude - 15),
@@ -224,86 +268,139 @@
         return;
     }
 
+    if (event.key !== "Home") {
+      cancelPendingFocus();
+    }
+
     event.preventDefault();
   }
+  async function loadWorldTopology(): Promise<void> {
+    if (!mounted || worldLoading) return;
 
-  onMount(() => {
-    let mounted = true;
-    let started = false;
-    let observer: IntersectionObserver | null = null;
+    worldLoading = true;
+    worldLoadFailed = false;
 
-    function initializeAtlas(): void {
-      if (started) return;
+    try {
+      if (!overviewCountries && !worldCountries) {
+        try {
+          const collection = await getAtlasWorldTopology("overview");
 
-      started = true;
-
-      cameraController.startAutoRotation(focus === null);
-
-      void getAtlasWorldTopology("overview")
-        .then((collection) => {
-          if (mounted) overviewCountries = collection;
-        })
-        .catch((error: unknown) => {
+          if (mounted) {
+            overviewCountries = collection;
+          }
+        } catch (error: unknown) {
           if (mounted) {
             console.error("Error al cargar el mapamundi ligero:", error);
           }
-        })
-        .finally(() => {
-          if (!mounted) return;
+        }
+      }
 
-          void getAtlasWorldTopology("full")
-            .then((collection) => {
-              if (mounted) worldCountries = collection;
-            })
-            .catch((error: unknown) => {
-              if (mounted) {
-                console.error("Error al cargar el mapamundi detallado:", error);
-              }
-            });
-        });
+      if (!mounted) return;
+
+      if (!worldCountries) {
+        try {
+          const collection = await getAtlasWorldTopology("full");
+
+          if (mounted) {
+            worldCountries = collection;
+          }
+        } catch (error: unknown) {
+          if (mounted) {
+            worldLoadFailed = true;
+
+            console.error("Error al cargar el mapamundi detallado:", error);
+          }
+        }
+      }
+    } finally {
+      worldLoading = false;
     }
+  }
+  onMount(() => {
+    mounted = true;
+
+    let started = false;
+
+    let preloadObserver: IntersectionObserver | null = null;
+    let visibilityObserver: IntersectionObserver | null = null;
+
+    function initializeAtlas(): void {
+      if (started || !mounted) return;
+
+      started = true;
+
+      void loadWorldTopology();
+    }
+
+    cameraController.startAutoRotation(focus === null);
 
     if (typeof IntersectionObserver === "undefined" || !globeElement) {
       initializeAtlas();
+      cameraController.setViewportVisible(true);
     } else {
-      observer = new IntersectionObserver(
+      preloadObserver = new IntersectionObserver(
         (entries) => {
+          if (!mounted) return;
+
           if (entries.some((entry) => entry.isIntersecting)) {
-            observer?.disconnect();
+            preloadObserver?.disconnect();
             initializeAtlas();
           }
         },
         { rootMargin: "200px 0px" },
       );
 
-      observer.observe(globeElement);
+      visibilityObserver = new IntersectionObserver(
+        (entries) => {
+          if (!mounted) return;
+
+          const visible = entries.some((entry) => entry.isIntersecting);
+
+          cameraController.setViewportVisible(visible);
+
+          if (visible) {
+            initializeAtlas();
+          }
+        },
+        { threshold: 0 },
+      );
+
+      preloadObserver.observe(globeElement);
+      visibilityObserver.observe(globeElement);
     }
 
     return () => {
       mounted = false;
       resetSequence += 1;
-      observer?.disconnect();
+
+      preloadObserver?.disconnect();
+      visibilityObserver?.disconnect();
+
       cameraController.destroy();
     };
   });
 
   $effect(() => {
     const code = countryCode;
+    const attempt = countryRetry;
 
     let cancelled = false;
 
     countryData = null;
+    failedCountryCode = null;
 
     if (!code) return;
 
     void getAtlasCountryTopology(code)
       .then((data) => {
-        if (!cancelled && data) {
+        if (!cancelled && attempt === countryRetry && data) {
           countryData = { code, data };
         }
       })
       .catch((error: unknown) => {
-        if (!cancelled) {
+        if (!cancelled && attempt === countryRetry) {
+          failedCountryCode = code;
+
           console.error("Error al cargar las subdivisiones:", error);
         }
       });
@@ -339,8 +436,8 @@
 
   let accessibleLabel = $derived(
     focus
-      ? `${t.travelAtlas.aria.globeCenteredPrefix} ${focus.name[lang]}`
-      : t.travelAtlas.aria.globeEurope,
+      ? `${t.travelAtlas.aria.globeSelectedPrefix} ${focus.name[lang]}`
+      : t.travelAtlas.aria.globe,
   );
 </script>
 

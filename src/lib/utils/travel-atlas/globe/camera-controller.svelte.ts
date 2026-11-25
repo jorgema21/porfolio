@@ -19,7 +19,9 @@ export class AtlasGlobeCamera {
   private inertiaFrame: number | null = null;
   private autoRotationFrame: number | null = null;
   private previousAutoRotationTime: number | null = null;
-  private autoRotationStopped = false;
+  private autoRotationStopped = $state(false);
+  private autoRotationEnabled = $state(false);
+  private viewportVisible = false;
 
   constructor(
     private readonly minZoom: number,
@@ -137,9 +139,7 @@ export class AtlasGlobeCamera {
     this.inertiaFrame = requestAnimationFrame(animate);
   };
 
-  stopAutoRotation = (): void => {
-    this.autoRotationStopped = true;
-
+  private pauseAutoRotation = (): void => {
     if (this.autoRotationFrame !== null) {
       cancelAnimationFrame(this.autoRotationFrame);
       this.autoRotationFrame = null;
@@ -148,16 +148,32 @@ export class AtlasGlobeCamera {
     this.previousAutoRotationTime = null;
   };
 
+  stopAutoRotation = (): void => {
+    this.autoRotationStopped = true;
+    this.pauseAutoRotation();
+  };
+  get canStopAutoRotation(): boolean {
+    return (
+      this.autoRotationEnabled &&
+      !this.autoRotationStopped &&
+      !prefersReducedMotion.current
+    );
+  }
+  private canAutoRotate = (): boolean => {
+    return (
+      this.autoRotationEnabled &&
+      !this.autoRotationStopped &&
+      this.viewportVisible &&
+      !document.hidden &&
+      !prefersReducedMotion.current
+    );
+  };
+
   private animateAutoRotation = (now: number): void => {
     this.autoRotationFrame = null;
 
-    if (this.autoRotationStopped || prefersReducedMotion.current) {
-      this.stopAutoRotation();
-      return;
-    }
-
-    if (document.hidden) {
-      this.previousAutoRotationTime = null;
+    if (!this.canAutoRotate()) {
+      this.pauseAutoRotation();
       return;
     }
 
@@ -177,31 +193,28 @@ export class AtlasGlobeCamera {
     }
 
     this.previousAutoRotationTime = now;
+
     this.autoRotationFrame = requestAnimationFrame(this.animateAutoRotation);
   };
 
   private handleVisibilityChange = (): void => {
-    if (document.hidden) {
-      if (this.autoRotationFrame !== null) {
-        cancelAnimationFrame(this.autoRotationFrame);
-        this.autoRotationFrame = null;
-      }
-
-      this.previousAutoRotationTime = null;
+    if (!this.canAutoRotate()) {
+      this.pauseAutoRotation();
       return;
     }
 
-    if (
-      !this.autoRotationStopped &&
-      !prefersReducedMotion.current &&
-      this.autoRotationFrame === null
-    ) {
+    if (this.autoRotationFrame === null) {
       this.autoRotationFrame = requestAnimationFrame(this.animateAutoRotation);
     }
   };
 
+  setViewportVisible = (visible: boolean): void => {
+    this.viewportVisible = visible;
+    this.handleVisibilityChange();
+  };
+
   startAutoRotation = (enabled: boolean): void => {
-    if (!enabled || prefersReducedMotion.current) return;
+    this.autoRotationEnabled = enabled;
 
     document.addEventListener("visibilitychange", this.handleVisibilityChange);
 
@@ -214,6 +227,7 @@ export class AtlasGlobeCamera {
       this.handleVisibilityChange,
     );
 
+    this.autoRotationEnabled = false;
     this.stopAutoRotation();
     this.stopInertia();
   };
