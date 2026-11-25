@@ -235,7 +235,7 @@
     mask-position: center;
     mask-repeat: no-repeat;
 
-    opacity: 0.85;
+    opacity: 1;
 
     pointer-events: none;
   }

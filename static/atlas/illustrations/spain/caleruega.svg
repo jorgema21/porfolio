@@ -1,0 +1,310 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 240 240"
+    fill="none"
+    stroke="#000"
+    stroke-width="1.7"
+    stroke-linecap="round"
+    stroke-linejoin="round">
+
+    <defs>
+        <pattern id="roof" width="5" height="5"
+            patternUnits="userSpaceOnUse"
+            patternTransform="rotate(25)">
+            <path d="M0 0V5" stroke-width=".85" opacity=".45" />
+        </pattern>
+
+        <g id="window">
+            <rect width="6" height="9" rx=".4"
+                fill="#000" fill-opacity=".67" stroke-width="1.1" />
+            <path d="M3 1V8M-1 10H7" stroke-width=".8" />
+        </g>
+
+        <g id="sprig" stroke-width="1.1">
+            <path d="M0 0V-12M0-3-3-6M0-5 3-8" />
+            <path d="M0-7-2-10 0-14 2-10Z"
+                fill="#000" fill-opacity=".55" stroke-width=".7" />
+        </g>
+    </defs>
+
+    <!-- Hill and cross -->
+    <g stroke-width="1.05" opacity=".46">
+        <path d="M8 78 23 70 38 73 53 65 67 68 79 63 96 71" />
+        <path d="M174 72 188 64 203 67 216 59 232 67
+             M185 73 195 70M219 67 229 71" />
+        <path d="M209 60 211 54H221L224 63" />
+    </g>
+
+    <path d="M214 53V38H208V35H214V27H217V35H223V38H217V53Z"
+        fill="#000" fill-opacity=".65" stroke-width="1.2" />
+
+
+    <!-- Gentle hills -->
+    <g stroke-width="1.05" opacity=".32">
+        <path d="M8 79Q16 75 23 74M64 73Q77 64 96 72" />
+        <path d="M180 73Q195 68 207 61Q214 56 217 57Q225 61 232 65" />
+    </g>
+
+    <path d="M209 57 211 53H221L223 59"
+        stroke-width="1.05" opacity=".45" />
+
+    <path d="M214 53V38H208V35H214V27H217V35H223V38H217V53Z"
+        fill="#000" fill-opacity=".65" stroke-width="1.2" />
+
+    <!-- Medieval tower -->
+    <path
+        d="M111 85V42H117V49H123V42H129V49
+           H135V42H141V49H147V42H153V49
+           H158V42H164V85Z"
+        fill="#000" fill-opacity=".09" />
+
+    <path d="M164 42 168 44V51L172 53V46L177 49V85H164Z"
+        fill="#000" fill-opacity=".19" />
+
+    <path d="M111 54H164L177 60M111 58H164L177 64"
+        stroke-width="1.05" />
+
+    <path d="M134 71V66H140V71Z"
+        fill="#000" fill-opacity=".8" stroke-width="1.1" />
+
+    <path
+        d="M112 64H119M147 65H163M115 73H126
+           M150 77H163M113 83H122M143 82H152
+           M168 71 175 74M168 77 175 80"
+        stroke-width=".85" opacity=".55" />
+
+    <!-- Monastery facade -->
+    <path d="M77 104H190V160H77Z"
+        fill="#000" fill-opacity=".065" stroke="none" />
+
+    <path d="M77 104H190V160H150.5
+           M116.5 160H77V104" />
+
+    <path d="M190 104 226 87V143L190 160Z"
+        fill="#000" fill-opacity=".15" />
+
+    <!-- Roofs -->
+    <path d="M74 104 90 85H207L190 104Z"
+        fill="#000" fill-opacity=".18" />
+
+    <path d="M74 104 90 85H207L190 104Z"
+        fill="url(#roof)" stroke="none" />
+
+    <path d="M190 104 207 85 226 87Z"
+        fill="#000" fill-opacity=".22" />
+
+    <path d="M190 104 207 85 226 87Z"
+        fill="url(#roof)" stroke="none" />
+
+    <path d="M74 104H190L226 87"
+        stroke-width="2.3" />
+
+    <path d="M78 109H190L226 92"
+        stroke-width=".95" />
+
+    <!-- Centered portal and stairs -->
+    <path d="M121.5 156V129Q133.5 113 145.5 129V156"
+        stroke-width="1.5" />
+
+    <path d="M125.5 156V130Q133.5 119 141.5 130V156Z"
+        fill="#000" fill-opacity=".75" />
+
+    <path
+        d="M133.5 128V156
+           M118.5 156H148.5
+           M116.5 159H150.5
+           M113.5 162H153.5
+           M110.5 165H156.5"
+        stroke-width="1.15" />
+
+    <path d="M128.5 126 133.5 123 138.5 126"
+        stroke-width=".85" />
+
+    <!-- Symmetrical front windows -->
+    <use href="#window" x="88" y="115" />
+    <use href="#window" x="104" y="115" />
+    <use href="#window" x="157" y="115" />
+    <use href="#window" x="173" y="115" />
+
+    <use href="#window" x="88" y="138" />
+    <use href="#window" x="104" y="138" />
+    <use href="#window" x="157" y="138" />
+    <use href="#window" x="173" y="138" />
+
+    <!-- Side windows -->
+    <path
+        d="M198 113 204 110V119L198 122Z
+           M214 105 220 102V111L214 114Z
+           M198 134 204 131V140L198 143Z
+           M214 126 220 123V132L214 135Z"
+        fill="#000" fill-opacity=".63" stroke-width="1.15" />
+
+    <!-- Masonry -->
+    <path
+        d="M78 113H85M78 143H84
+           M95 132H102M111 132H117
+           M150 132H155M165 132H171M180 132H187
+           M91 154H99M105 153H116
+           M151 153H155M162 154H170M180 152H188
+           M191 126 196 123M207 125 212 122
+           M215 140 225 135"
+        stroke-width=".85" opacity=".43" />
+
+    <path d="M77 163H109M158 163H190L226 146"
+        stroke-width="1.05" />
+
+
+    <!-- Statue of Saint Dominic -->
+    <g stroke-width="1.45">
+        <path
+            d="M36 112 37 88 39 72 34 64 28 53 28 45
+             31 43 33 50 40 59 43 62 48 58 54 60
+             59 68 57 81 55 86 59 111Z"
+            fill="#000" fill-opacity=".17" />
+
+        <path
+            d="M44 59Q40 55 41 50L41 46
+             Q42 40 48 40 54 41 55 47
+             L54 52 51 57V60"
+            fill="#000" fill-opacity=".24" />
+
+        <path d="M43 46Q48 43 53 46M44 52 47 54M50 49H51"
+            stroke-width=".8" />
+
+        <!-- Raised hand -->
+        <path d="M28 45Q26 41 29 36L30 29
+             Q31 26 32 29L33 37Q36 40 33 45"
+            fill="#000" fill-opacity=".23" stroke-width="1.2" />
+
+        <!-- Habit folds -->
+        <path
+            d="M36 65 42 72 46 63
+             M40 75 44 84 41 110
+             M48 68 52 79 50 88 55 109
+             M37 96 39 107"
+            stroke-width="1.1" />
+
+        <path d="M53 64 59 69 57 77 49 75 48 70Z"
+            fill="#000" fill-opacity=".36" />
+
+        <path d="M49 70 54 73M45 89 46 110"
+            stroke-width=".85" />
+
+        <path d="M34 112H61L64 116H31Z"
+            fill="#000" fill-opacity=".23" />
+    </g>
+
+    <!-- Stone pedestal -->
+    <path d="M25 120H65V126H25Z"
+        fill="#000" fill-opacity=".2" />
+
+    <path d="M29 126H61V164H29Z"
+        fill="#000" fill-opacity=".07" />
+
+    <path d="M61 126 69 122V159L61 164Z"
+        fill="#000" fill-opacity=".16" />
+
+    <path d="M65 120 69 118V122L65 126"
+        fill="#000" fill-opacity=".2" />
+
+    <path d="M25 120 31 116H64L69 118 65 120Z"
+        fill="#000" fill-opacity=".17" />
+
+    <path d="M34 131H56V158H34Z"
+        stroke-width=".9" opacity=".65" />
+
+    <path d="M40 141Q45 137 50 141V148L45 153 40 148Z"
+        fill="#000" fill-opacity=".23" stroke-width=".9" />
+
+    <path d="M29 143H33M57 143H61M29 153H33
+           M57 153H61M63 137 68 135M63 149 68 147"
+        stroke-width=".85" opacity=".5" />
+
+
+    <!-- Lateral stone pier -->
+    <path d="M65 129 70 126V161L65 164Z"
+        fill="#000" fill-opacity=".12" stroke-width="1.2" />
+
+    <path d="M70 126 74 124V159L70 161Z"
+        fill="#000" fill-opacity=".25" stroke-width="1.2" />
+
+    <path d="M64 126 71 122 75 123V126L68 130 64 129Z"
+        fill="#000" fill-opacity=".19" stroke-width="1.15" />
+
+    <path d="M65 143 70 140M70 140 74 138
+           M65 154 70 151M70 151 74 149"
+        stroke-width=".8" opacity=".45" />
+
+    <!-- Stepped pedestal base -->
+    <path d="M26 164H64L67 168H23Z
+           M22 168H68V172H22Z"
+        fill="#000" fill-opacity=".16" stroke-width="1.3" />
+
+    <path d="M64 164 74 159 77 163 67 168Z"
+        fill="#000" fill-opacity=".20" stroke-width="1.3" />
+
+    <path d="M68 168 77 163V167L68 172Z"
+        fill="#000" fill-opacity=".27" stroke-width="1.3" />
+
+
+    <!-- Plaza -->
+    <path d="M8 174H231M80 169H104
+         M162 169H194M200 163 227 151"
+        stroke-width="1" opacity=".45" />
+
+    <!-- Lavender rows -->
+    <g stroke="#000" stroke-opacity=".16" stroke-linecap="round">
+        <path d="M78 177Q40 188 14 210" stroke-width="7" />
+        <path d="M96 178Q67 195 57 221" stroke-width="8" />
+        <path d="M117 179Q112 199 114 225" stroke-width="9" />
+        <path d="M139 178Q159 195 174 221" stroke-width="8" />
+        <path d="M158 177Q201 190 226 210" stroke-width="7" />
+    </g>
+
+    <!-- Lavender flowers -->
+    <g opacity=".85">
+        <use href="#sprig" transform="translate(18 209) rotate(-30) scale(.85)" />
+        <use href="#sprig" transform="translate(28 200) rotate(-28) scale(.65)" />
+        <use href="#sprig" transform="translate(42 190) rotate(-30) scale(.46)" />
+
+        <use href="#sprig" transform="translate(58 217) rotate(-17)" />
+        <use href="#sprig" transform="translate(67 204) rotate(-15) scale(.78)" />
+        <use href="#sprig" transform="translate(79 191) rotate(-14) scale(.55)" />
+
+        <use href="#sprig" transform="translate(112 223) scale(1.1)" />
+        <use href="#sprig" transform="translate(118 207) scale(.82)" />
+        <use href="#sprig" transform="translate(116 192) scale(.55)" />
+
+        <use href="#sprig" transform="translate(172 217) rotate(18)" />
+        <use href="#sprig" transform="translate(161 203) rotate(15) scale(.78)" />
+        <use href="#sprig" transform="translate(151 191) rotate(14) scale(.55)" />
+
+        <use href="#sprig" transform="translate(222 209) rotate(30) scale(.85)" />
+        <use href="#sprig" transform="translate(211 200) rotate(28) scale(.65)" />
+        <use href="#sprig" transform="translate(196 190) rotate(30) scale(.46)" />
+
+        <use href="#sprig" transform="translate(10 213) rotate(-32) scale(.68)" />
+        <use href="#sprig" transform="translate(24 205) rotate(-20) scale(.56)" />
+        <use href="#sprig" transform="translate(34 196) rotate(-36) scale(.53)" />
+        <use href="#sprig" transform="translate(53 185) rotate(-30) scale(.37)" />
+
+        <use href="#sprig" transform="translate(52 223) rotate(-22) scale(.8)" />
+        <use href="#sprig" transform="translate(62 211) rotate(-8) scale(.7)" />
+        <use href="#sprig" transform="translate(73 198) rotate(-20) scale(.59)" />
+        <use href="#sprig" transform="translate(88 184) rotate(-18) scale(.35)" />
+
+        <use href="#sprig" transform="translate(119 226) rotate(9) scale(.88)" />
+        <use href="#sprig" transform="translate(109 215) rotate(-8) scale(.77)" />
+        <use href="#sprig" transform="translate(114 200) scale(.67)" />
+        <use href="#sprig" transform="translate(119 185) scale(.35)" />
+
+        <use href="#sprig" transform="translate(179 223) rotate(23) scale(.8)" />
+        <use href="#sprig" transform="translate(166 211) rotate(10) scale(.7)" />
+        <use href="#sprig" transform="translate(155 198) rotate(20) scale(.59)" />
+        <use href="#sprig" transform="translate(145 184) rotate(18) scale(.35)" />
+
+        <use href="#sprig" transform="translate(230 213) rotate(32) scale(.68)" />
+        <use href="#sprig" transform="translate(216 205) rotate(20) scale(.56)" />
+        <use href="#sprig" transform="translate(205 196) rotate(36) scale(.53)" />
+        <use href="#sprig" transform="translate(185 185) rotate(30) scale(.37)" />
+    </g>
+</svg>

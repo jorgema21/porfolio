@@ -1,0 +1,365 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" fill="none" stroke="#000" stroke-width="1.65" stroke-linejoin="round" stroke-linecap="round">
+<defs>
+  <linearGradient id="ground-wash" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#000" stop-opacity=".08"/>
+    <stop offset=".63" stop-color="#000" stop-opacity=".055"/>
+    <stop offset="1" stop-color="#000" stop-opacity="0"/>
+  </linearGradient>
+  <pattern id="tiles" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(27)"><path d="M0 0V6" stroke="#000" stroke-width=".8" opacity=".30"/></pattern>
+  <g id="window"><rect width="7" height="10" fill="#000" fill-opacity=".52" stroke-width="1.15"/><path d="M3.5 1V9M-1 11H8" stroke-width=".9"/></g>
+  <clipPath id="church-roof-visible"><path d="M138 0H240V240H146V79.56L142 80.12V76.12L138 76.68Z" fill="#000" stroke="none"/></clipPath>
+  <g id="lavender" stroke-width="1.05"><path d="M0 0Q-1-6 0-13M0-2-3-6M0-4 3-8"/><path d="M0-8C-2.5-9-2-11-1.5-11.8C-2.8-12.5-2-14-1.2-14.5C-2-15.8-.8-17 0-18C.8-17 2-15.8 1.2-14.5C2-14 2.8-12.5 1.5-11.8C2-11 2.5-9 0-8Z" fill="#000" fill-opacity=".72" stroke-width=".65"/><path d="M-1.2-11.8H1.2M-1-14.2H1" stroke-width=".65" opacity=".5"/></g>
+</defs>
+<!-- Open countryside behind the village. The line stops at the buildings. -->
+<g stroke-width="1.1" opacity=".40"><path d="M6 96Q21 86 37 90Q59 77 85 86L97 87M218 100Q226 94 234 96M6 102L15 99"/></g>
+
+<!-- Shared village ground: the buildings stand on one continuous surface. -->
+<path d="M5 137L12 137L40 133.08L51 136.05L54 138L86 133.52L97 136.49L100 135L146 128.56L216 147.46L229 143L236 145L237 154Q201 164 169 163Q121 156 85 155Q39 152 5 147Z"
+  fill="url(#ground-wash)" stroke="none"/>
+<path d="M12 137L40 133.08L51 136.05M54 138L86 133.52L97 136.49M100 135L146 128.56L216 147.46"
+  stroke-width="3.1" opacity=".14"/>
+
+<path d="M40 100.08L51 103.05V136.05L40 133.08Z" fill="#000" fill-opacity=".13"/>
+<path d="M26 90.04L37 93.01L51 103.05L40 100.08Z" fill="#000" fill-opacity=".20"/>
+<path d="M26 90.04L37 93.01L51 103.05L40 100.08Z" fill="url(#tiles)" stroke-width="0"/>
+<g transform="matrix(1 -.14 0 1 12 137)">
+<path d="M0 0V-33L14.0 -45L28 -33V0Z" fill="#000" fill-opacity=".065"/>
+<path d="M0 -33L14.0 -45L28 -33Z" fill="#000" fill-opacity=".12"/>
+<path d="M-1 -32H29" fill="none" stroke-width="1.8"/>
+<path d="M10.0 0V-14H18.0V0Z" fill="#000" fill-opacity=".44" stroke-width="1.2"/>
+<path d="M14.0 -14V0" fill="none" stroke-width="0.85"/>
+<path d="M3 -27H10V-18H3Z" fill="#000" fill-opacity=".42" stroke-width="1"/>
+<path d="M1 -4H5M20 -18H26M20 -4H26" fill="none" stroke-width="0.8" opacity="0.48"/>
+</g>
+<g transform="matrix(1 .27 0 1 40 133.08)">
+<path d="M3 -23H8V-14H3Z" fill="#000" fill-opacity=".48" stroke-width="1.1"/>
+<path d="M2 -5H9" fill="none" stroke-width="0.9" opacity="0.4"/>
+</g>
+<path d="M86 90.52L97 93.49V136.49L86 133.52Z" fill="#000" fill-opacity=".13"/>
+<path d="M70 79.76L81 82.73L97 93.49L86 90.52Z" fill="#000" fill-opacity=".20"/>
+<path d="M70 79.76L81 82.73L97 93.49L86 90.52Z" fill="url(#tiles)" stroke-width="0"/>
+<g transform="matrix(1 -.14 0 1 54 138)">
+<path d="M0 0V-43L16.0 -56L32 -43V0Z" fill="#000" fill-opacity=".065"/>
+<path d="M0 -43L16.0 -56L32 -43Z" fill="#000" fill-opacity=".12"/>
+<path d="M-1 -42H33" fill="none" stroke-width="1.8"/>
+<use href="#window" x="5" y="-36"/>
+<use href="#window" x="20" y="-36"/>
+<path d="M12.0 0V-14H20.0V0Z" fill="#000" fill-opacity=".44" stroke-width="1.2"/>
+<path d="M16.0 -14V0" fill="none" stroke-width="0.85"/>
+<path d="M3 -14H9V-5H3Z" fill="#000" fill-opacity=".42" stroke-width="1"/>
+<path d="M1 -4H5M24 -18H30M24 -4H30" fill="none" stroke-width="0.8" opacity="0.48"/>
+</g>
+<g transform="matrix(1 .27 0 1 86 133.52)">
+<path d="M3 -33H8V-24H3Z" fill="#000" fill-opacity=".48" stroke-width="1.1"/>
+<path d="M2 -5H9" fill="none" stroke-width="0.9" opacity="0.4"/>
+</g>
+<!-- Church: west gable and long southern wall share an oblique projection. -->
+
+<g transform="matrix(1 .27 0 1 146 128.56)">
+<path d="M0 0V-49H70V0Z" fill="#000" fill-opacity=".10"/>
+<path d="M65 -49H70V0H65Z" fill="#000" fill-opacity=".055" stroke-width="1.1"/>
+<path d="M0 -45H70" fill="none" stroke-width="1.1"/>
+<path d="M23 0V-27H49V0M21 -27H51M26 -27L36 -38L46 -27" fill="none" stroke-width="1.45"/>
+<path d="M31 -28V-31A5 5 0 0 1 41 -31V-28" fill="none" stroke-width="1.0"/>
+<path d="M28 0V-17A8 8 0 0 1 44 -17V0Z" fill="#000" fill-opacity=".67" stroke-width="1.25"/>
+<path d="M36 -24V0M27 -1H45" fill="none" stroke-width="1.0"/>
+<!-- Two shallow entrance steps, projected along the wall. -->
+<path d="M23 0H49L51 2H21Z" fill="#000" fill-opacity=".07" stroke-width=".95"/>
+<path d="M21 2H51V3.5H21Z" fill="#000" fill-opacity=".15" stroke-width=".85"/>
+<path d="M21 3.5H51L53 5.5H19Z" fill="#000" fill-opacity=".07" stroke-width=".95"/>
+<path d="M19 5.5H53" stroke-width="1.15"/>
+<path d="M9 -24V-31H15V-24Z" fill="#000" fill-opacity=".48" stroke-width="1.05"/>
+<path d="M3 -39H13M18 -40H26M47 -39H59M3 -17H14M3 -7H12M52 -31H61M52 -16H62M54 -5H62" fill="none" stroke-width="0.9" opacity="0.44"/>
+</g>
+<g clip-path="url(#church-roof-visible)">
+<path d="M123 61L193 79.9L216 98.46L146 79.56Z" fill="#000" fill-opacity=".19"/>
+<path d="M123 61L193 79.9L216 98.46L146 79.56Z" fill="url(#tiles)" stroke-width="0"/>
+<path d="M147.50 67.61L170.50 86.17" fill="none" stroke-width="0.75" opacity="0.36"/>
+<path d="M156.60 70.07L179.60 88.63" fill="none" stroke-width="0.75" opacity="0.36"/>
+<path d="M165.70 72.53L188.70 91.09" fill="none" stroke-width="0.75" opacity="0.36"/>
+<path d="M174.80 74.99L197.80 93.55" fill="none" stroke-width="0.75" opacity="0.36"/>
+<path d="M183.90 77.44L206.90 96.00" fill="none" stroke-width="0.75" opacity="0.36"/>
+</g>
+<path d="M146 79.56L216 98.46" fill="none" stroke-width="2.0"/>
+<g transform="matrix(1 -.14 0 1 100 135)">
+<path d="M0 0V-49H46V0Z" fill="#000" fill-opacity=".065"/>
+<path d="M0 -49H4V-53H8V-73H14V-77H17V-94H29V-77H32V-73H38V-53H42V-49Z" fill="#000" fill-opacity=".085"/>
+<path d="M15 -94H31L23 -105Z" fill="#000" fill-opacity=".14" stroke-width="1.3"/>
+<path d="M23 -105V-113M20 -110H26" fill="none" stroke-width="1.4"/>
+<path d="M5.2 -73L7 -77L8.8 -73Z" fill="#000" fill-opacity=".21" stroke-width="0.9"/>
+<path d="M37.2 -73L39 -77L40.8 -73Z" fill="#000" fill-opacity=".21" stroke-width="0.9"/>
+<path d="M13.2 -94L15 -98L16.8 -94Z" fill="#000" fill-opacity=".21" stroke-width="0.9"/>
+<path d="M29.2 -94L31 -98L32.8 -94Z" fill="#000" fill-opacity=".21" stroke-width="0.9"/>
+<path d="M2 -49H44M6 -53H40M10 -73H36M14 -77H32M16 -94H30" fill="none" stroke-width="1.3"/>
+<path d="M11 -55V-64A5 5 0 0 1 21 -64V-55Z" fill="#000" fill-opacity=".27" stroke-width="1.15"/>
+<path d="M16 -66V-63M14 -58V-61Q16 -64 18 -61V-58L19.5 -57H12.5Z" fill="#000" fill-opacity=".78" stroke-width="0.8"/>
+<path d="M25 -55V-64A5 5 0 0 1 35 -64V-55Z" fill="#000" fill-opacity=".27" stroke-width="1.15"/>
+<path d="M30 -66V-63M28 -58V-61Q30 -64 32 -61V-58L33.5 -57H26.5Z" fill="#000" fill-opacity=".78" stroke-width="0.8"/>
+<path d="M19 -80V-88A4 4 0 0 1 27 -88V-80Z" fill="#000" fill-opacity=".27" stroke-width="1.15"/>
+<path d="M23 -90V-87M21 -83V-86Q23 -89 25 -86V-83L26.5 -82H19.5Z" fill="#000" fill-opacity=".78" stroke-width="0.8"/>
+<circle cx="18" cy="-32" r="6" fill="#000" fill-opacity=".24" stroke-width="1.4"/>
+<path d="M18 -38V-26M12 -32H24" fill="none" stroke-width="0.8"/>
+<path d="M31 0V-17H39V0Z" fill="#000" fill-opacity=".55" stroke-width="1.15"/>
+<path d="M30 0H40L41 2H29Z" fill="#000" fill-opacity=".07" stroke-width=".85"/>
+<path d="M29 2H41V3.5H29Z" fill="#000" fill-opacity=".13" stroke-width=".85"/>
+<path d="M3 -43H11M28 -43H42M4 -19H14M19 -21H26M5 -10H16M21 -6H27M4 -3H11" fill="none" stroke-width="0.9" opacity="0.5"/>
+</g>
+<g stroke-width="1.25">
+<path d="M229 143V123M229 132L224 127M229 129L234 124" fill="none" stroke-width="1.4"/>
+<path d="M224 131Q217 129 221 122Q219 117 224 115Q224 109 230 111Q235 109 238 116Q241 121 237 125Q239 131 233 132Z" fill="#000" fill-opacity=".14" stroke-width="1.2"/>
+<path d="M224 124L228 127M233 118L230 122" fill="none" stroke-width="0.8" opacity="0.5"/>
+</g>
+<!-- Unbroken terrain rhythm with subtle gaps; no raised plinth. -->
+<g stroke-width="1.05" opacity=".40">
+  <path d="M5 140Q9 138 12 137M51 136.05L54 138M97 136.49L100 135M216 147.46Q224 145 229 143L235 144"/>
+  <path d="M5 148Q29 147 46 149M51 149Q73 151 88 149M94 149Q119 146 137 147M142 148Q152 150 162 152M184 157Q206 159 222 154M226 153L235 151"/>
+  <path d="M16 142L29 142M57 143L66 143M82 140L90 141M106 141L118 139M150 138L159 140M205 151L216 150" stroke-width=".8"/>
+</g>
+<!-- Lavender rows with widening planting beds and repeated flowering stems. -->
+<path d="M47.5 158.0 L44.5 161.8 L41.7 165.5 L38.2 169.3 L34.6 173.1 L31.8 176.8 L27.9 180.6 L24.0 184.4 L21.3 188.2 L17.2 191.9 L13.1 195.7 L10.5 199.5 L6.2 203.2 L1.9 207.0 Q15.0 212.0 28.1 207.0 L29.7 203.2 L31.2 199.5 L34.5 195.7 L36.1 191.9 L37.7 188.2 L40.6 184.4 L42.2 180.6 L43.8 176.8 L46.3 173.1 L47.8 169.3 L49.4 165.5 L51.4 161.8 L52.5 158.0Z" fill="#000" fill-opacity=".095" stroke="none"/>
+<use href="#lavender" transform="translate(47.2 159.9) rotate(-13.0) scale(0.34)" opacity="0.67"/>
+<use href="#lavender" transform="translate(49.2 160.6) rotate(-11.5) scale(0.34)" opacity="0.67"/>
+<use href="#lavender" transform="translate(50.6 159.5) rotate(-3.6) scale(0.34)" opacity="0.67"/>
+<use href="#lavender" transform="translate(50.4 159.7) rotate(2.5) scale(0.34)" opacity="0.67"/>
+<use href="#lavender" transform="translate(43.6 164.1) rotate(-14.0) scale(0.40)" opacity="0.69"/>
+<use href="#lavender" transform="translate(46.2 162.9) rotate(-15.7) scale(0.40)" opacity="0.69"/>
+<use href="#lavender" transform="translate(47.0 164.0) rotate(3.8) scale(0.40)" opacity="0.69"/>
+<use href="#lavender" transform="translate(49.7 164.9) rotate(8.6) scale(0.40)" opacity="0.69"/>
+<use href="#lavender" transform="translate(40.9 167.5) rotate(-20.5) scale(0.46)" opacity="0.71"/>
+<use href="#lavender" transform="translate(42.3 168.1) rotate(-8.1) scale(0.46)" opacity="0.71"/>
+<use href="#lavender" transform="translate(45.1 167.8) rotate(-2.0) scale(0.46)" opacity="0.71"/>
+<use href="#lavender" transform="translate(46.6 168.8) rotate(8.5) scale(0.46)" opacity="0.71"/>
+<use href="#lavender" transform="translate(37.7 173.0) rotate(-20.9) scale(0.52)" opacity="0.73"/>
+<use href="#lavender" transform="translate(39.0 171.7) rotate(-3.9) scale(0.52)" opacity="0.73"/>
+<use href="#lavender" transform="translate(42.9 172.0) rotate(2.9) scale(0.52)" opacity="0.73"/>
+<use href="#lavender" transform="translate(44.5 173.1) rotate(1.6) scale(0.52)" opacity="0.73"/>
+<use href="#lavender" transform="translate(34.2 177.5) rotate(-19.0) scale(0.57)" opacity="0.75"/>
+<use href="#lavender" transform="translate(36.5 175.5) rotate(-12.7) scale(0.57)" opacity="0.75"/>
+<use href="#lavender" transform="translate(39.1 175.9) rotate(-7.0) scale(0.57)" opacity="0.75"/>
+<use href="#lavender" transform="translate(42.1 175.4) rotate(7.7) scale(0.57)" opacity="0.75"/>
+<use href="#lavender" transform="translate(30.0 179.9) rotate(-11.6) scale(0.63)" opacity="0.78"/>
+<use href="#lavender" transform="translate(33.1 180.6) rotate(-4.0) scale(0.63)" opacity="0.78"/>
+<use href="#lavender" transform="translate(37.3 181.7) rotate(0.6) scale(0.63)" opacity="0.78"/>
+<use href="#lavender" transform="translate(40.7 179.5) rotate(10.6) scale(0.63)" opacity="0.78"/>
+<use href="#lavender" transform="translate(26.2 184.3) rotate(-14.1) scale(0.69)" opacity="0.80"/>
+<use href="#lavender" transform="translate(30.6 184.3) rotate(-11.5) scale(0.69)" opacity="0.80"/>
+<use href="#lavender" transform="translate(33.6 185.7) rotate(0.7) scale(0.69)" opacity="0.80"/>
+<use href="#lavender" transform="translate(37.2 184.8) rotate(1.2) scale(0.69)" opacity="0.80"/>
+<use href="#lavender" transform="translate(22.4 188.9) rotate(-11.2) scale(0.75)" opacity="0.82"/>
+<use href="#lavender" transform="translate(27.5 189.0) rotate(-5.9) scale(0.75)" opacity="0.82"/>
+<use href="#lavender" transform="translate(30.6 189.3) rotate(6.0) scale(0.75)" opacity="0.82"/>
+<use href="#lavender" transform="translate(34.5 189.9) rotate(14.1) scale(0.75)" opacity="0.82"/>
+<use href="#lavender" transform="translate(18.8 193.8) rotate(-11.0) scale(0.81)" opacity="0.84"/>
+<use href="#lavender" transform="translate(22.9 193.0) rotate(-8.3) scale(0.81)" opacity="0.84"/>
+<use href="#lavender" transform="translate(28.6 192.5) rotate(2.6) scale(0.81)" opacity="0.84"/>
+<use href="#lavender" transform="translate(32.9 193.9) rotate(10.6) scale(0.81)" opacity="0.84"/>
+<use href="#lavender" transform="translate(15.9 197.4) rotate(-17.2) scale(0.86)" opacity="0.86"/>
+<use href="#lavender" transform="translate(20.0 197.0) rotate(-10.1) scale(0.86)" opacity="0.86"/>
+<use href="#lavender" transform="translate(25.1 196.9) rotate(-5.9) scale(0.86)" opacity="0.86"/>
+<use href="#lavender" transform="translate(29.8 198.3) rotate(4.6) scale(0.86)" opacity="0.86"/>
+<use href="#lavender" transform="translate(12.3 202.2) rotate(-18.5) scale(0.92)" opacity="0.88"/>
+<use href="#lavender" transform="translate(16.2 202.3) rotate(-3.2) scale(0.92)" opacity="0.88"/>
+<use href="#lavender" transform="translate(21.8 201.8) rotate(2.6) scale(0.92)" opacity="0.88"/>
+<use href="#lavender" transform="translate(27.6 200.5) rotate(3.7) scale(0.92)" opacity="0.88"/>
+<use href="#lavender" transform="translate(8.0 205.9) rotate(-15.4) scale(0.98)" opacity="0.90"/>
+<use href="#lavender" transform="translate(12.8 206.4) rotate(-5.7) scale(0.98)" opacity="0.90"/>
+<use href="#lavender" transform="translate(19.1 206.4) rotate(-3.7) scale(0.98)" opacity="0.90"/>
+<use href="#lavender" transform="translate(24.8 205.6) rotate(13.9) scale(0.98)" opacity="0.90"/>
+<path d="M80.4 161.0 L78.6 165.5 L76.8 170.1 L74.2 174.6 L72.2 179.2 L70.3 183.7 L67.4 188.2 L65.5 192.8 L63.7 197.3 L60.4 201.8 L58.6 206.4 L56.8 210.9 L53.3 215.5 L51.5 220.0 Q64.0 225.0 76.5 220.0 L77.9 215.5 L77.6 210.9 L78.9 206.4 L80.2 201.8 L80.1 197.3 L81.3 192.8 L82.4 188.2 L82.4 183.7 L83.4 179.2 L84.3 174.6 L84.4 170.1 L85.1 165.5 L85.6 161.0Z" fill="#000" fill-opacity=".095" stroke="none"/>
+<use href="#lavender" transform="translate(81.3 162.7) rotate(-11.5) scale(0.34)" opacity="0.67"/>
+<use href="#lavender" transform="translate(81.5 164.0) rotate(-1.7) scale(0.34)" opacity="0.67"/>
+<use href="#lavender" transform="translate(83.5 161.9) rotate(-1.3) scale(0.34)" opacity="0.67"/>
+<use href="#lavender" transform="translate(83.9 163.1) rotate(3.3) scale(0.34)" opacity="0.67"/>
+<use href="#lavender" transform="translate(77.8 167.1) rotate(-10.3) scale(0.40)" opacity="0.69"/>
+<use href="#lavender" transform="translate(80.5 169.0) rotate(-1.0) scale(0.40)" opacity="0.69"/>
+<use href="#lavender" transform="translate(82.2 168.9) rotate(0.6) scale(0.40)" opacity="0.69"/>
+<use href="#lavender" transform="translate(83.9 167.3) rotate(9.0) scale(0.40)" opacity="0.69"/>
+<use href="#lavender" transform="translate(75.8 173.0) rotate(-9.0) scale(0.46)" opacity="0.71"/>
+<use href="#lavender" transform="translate(79.5 173.7) rotate(-13.5) scale(0.46)" opacity="0.71"/>
+<use href="#lavender" transform="translate(81.6 173.2) rotate(3.9) scale(0.46)" opacity="0.71"/>
+<use href="#lavender" transform="translate(82.7 173.8) rotate(7.1) scale(0.46)" opacity="0.71"/>
+<use href="#lavender" transform="translate(73.6 178.0) rotate(-19.8) scale(0.52)" opacity="0.73"/>
+<use href="#lavender" transform="translate(76.3 177.4) rotate(-4.3) scale(0.52)" opacity="0.73"/>
+<use href="#lavender" transform="translate(79.8 177.4) rotate(4.1) scale(0.52)" opacity="0.73"/>
+<use href="#lavender" transform="translate(81.1 179.2) rotate(6.0) scale(0.52)" opacity="0.73"/>
+<use href="#lavender" transform="translate(72.2 182.8) rotate(-10.5) scale(0.57)" opacity="0.75"/>
+<use href="#lavender" transform="translate(74.9 182.3) rotate(-2.1) scale(0.57)" opacity="0.75"/>
+<use href="#lavender" transform="translate(78.2 182.6) rotate(4.5) scale(0.57)" opacity="0.75"/>
+<use href="#lavender" transform="translate(81.6 183.7) rotate(13.9) scale(0.57)" opacity="0.75"/>
+<use href="#lavender" transform="translate(69.7 187.5) rotate(-21.7) scale(0.63)" opacity="0.78"/>
+<use href="#lavender" transform="translate(73.9 187.5) rotate(-9.0) scale(0.63)" opacity="0.78"/>
+<use href="#lavender" transform="translate(77.2 187.2) rotate(7.5) scale(0.63)" opacity="0.78"/>
+<use href="#lavender" transform="translate(80.0 187.3) rotate(14.1) scale(0.63)" opacity="0.78"/>
+<use href="#lavender" transform="translate(68.0 192.1) rotate(-15.6) scale(0.69)" opacity="0.80"/>
+<use href="#lavender" transform="translate(71.7 192.6) rotate(-9.5) scale(0.69)" opacity="0.80"/>
+<use href="#lavender" transform="translate(75.8 192.3) rotate(-2.0) scale(0.69)" opacity="0.80"/>
+<use href="#lavender" transform="translate(78.1 193.1) rotate(9.0) scale(0.69)" opacity="0.80"/>
+<use href="#lavender" transform="translate(65.0 197.2) rotate(-20.7) scale(0.75)" opacity="0.82"/>
+<use href="#lavender" transform="translate(69.9 198.4) rotate(-2.9) scale(0.75)" opacity="0.82"/>
+<use href="#lavender" transform="translate(73.0 199.3) rotate(4.1) scale(0.75)" opacity="0.82"/>
+<use href="#lavender" transform="translate(77.9 199.0) rotate(3.8) scale(0.75)" opacity="0.82"/>
+<use href="#lavender" transform="translate(63.3 202.7) rotate(-22.0) scale(0.81)" opacity="0.84"/>
+<use href="#lavender" transform="translate(68.0 202.1) rotate(-3.9) scale(0.81)" opacity="0.84"/>
+<use href="#lavender" transform="translate(71.8 204.0) rotate(-4.7) scale(0.81)" opacity="0.84"/>
+<use href="#lavender" transform="translate(76.6 204.3) rotate(10.2) scale(0.81)" opacity="0.84"/>
+<use href="#lavender" transform="translate(61.0 208.2) rotate(-14.2) scale(0.86)" opacity="0.86"/>
+<use href="#lavender" transform="translate(65.4 207.6) rotate(-10.0) scale(0.86)" opacity="0.86"/>
+<use href="#lavender" transform="translate(71.3 207.8) rotate(4.3) scale(0.86)" opacity="0.86"/>
+<use href="#lavender" transform="translate(76.3 209.2) rotate(14.6) scale(0.86)" opacity="0.86"/>
+<use href="#lavender" transform="translate(59.2 213.6) rotate(-14.9) scale(0.92)" opacity="0.88"/>
+<use href="#lavender" transform="translate(63.0 212.2) rotate(-10.0) scale(0.92)" opacity="0.88"/>
+<use href="#lavender" transform="translate(69.1 213.2) rotate(-5.3) scale(0.92)" opacity="0.88"/>
+<use href="#lavender" transform="translate(74.5 212.9) rotate(8.3) scale(0.92)" opacity="0.88"/>
+<use href="#lavender" transform="translate(55.3 218.9) rotate(-11.2) scale(0.98)" opacity="0.90"/>
+<use href="#lavender" transform="translate(62.1 217.3) rotate(-13.9) scale(0.98)" opacity="0.90"/>
+<use href="#lavender" transform="translate(68.4 218.5) rotate(7.7) scale(0.98)" opacity="0.90"/>
+<use href="#lavender" transform="translate(73.0 218.9) rotate(4.4) scale(0.98)" opacity="0.90"/>
+<path d="M114.4 164.0 L114.0 168.8 L113.2 173.7 L112.3 178.5 L112.2 183.4 L111.4 188.2 L110.4 193.1 L110.5 197.9 L109.5 202.8 L108.4 207.6 L108.8 212.5 L107.7 217.3 L106.5 222.2 L107.1 227.0 Q119.0 232.0 130.9 227.0 L131.2 222.2 L129.6 217.3 L128.2 212.5 L128.3 207.6 L126.8 202.8 L125.5 197.9 L125.4 193.1 L124.0 188.2 L122.8 183.4 L122.5 178.5 L121.3 173.7 L120.2 168.8 L119.6 164.0Z" fill="#000" fill-opacity=".095" stroke="none"/>
+<use href="#lavender" transform="translate(114.3 166.6) rotate(-9.9) scale(0.34)" opacity="0.67"/>
+<use href="#lavender" transform="translate(116.1 166.3) rotate(-2.2) scale(0.34)" opacity="0.67"/>
+<use href="#lavender" transform="translate(117.3 165.0) rotate(4.1) scale(0.34)" opacity="0.67"/>
+<use href="#lavender" transform="translate(118.6 167.3) rotate(8.5) scale(0.34)" opacity="0.67"/>
+<use href="#lavender" transform="translate(114.7 170.9) rotate(-13.4) scale(0.40)" opacity="0.69"/>
+<use href="#lavender" transform="translate(115.8 170.9) rotate(-0.6) scale(0.40)" opacity="0.69"/>
+<use href="#lavender" transform="translate(118.5 171.9) rotate(11.6) scale(0.40)" opacity="0.69"/>
+<use href="#lavender" transform="translate(120.6 171.6) rotate(18.2) scale(0.40)" opacity="0.69"/>
+<use href="#lavender" transform="translate(114.5 177.6) rotate(-15.8) scale(0.46)" opacity="0.71"/>
+<use href="#lavender" transform="translate(117.0 177.4) rotate(-9.3) scale(0.46)" opacity="0.71"/>
+<use href="#lavender" transform="translate(117.5 176.6) rotate(6.8) scale(0.46)" opacity="0.71"/>
+<use href="#lavender" transform="translate(120.2 176.6) rotate(16.4) scale(0.46)" opacity="0.71"/>
+<use href="#lavender" transform="translate(113.3 181.2) rotate(-13.3) scale(0.52)" opacity="0.73"/>
+<use href="#lavender" transform="translate(115.9 182.6) rotate(-9.6) scale(0.52)" opacity="0.73"/>
+<use href="#lavender" transform="translate(119.4 183.4) rotate(8.1) scale(0.52)" opacity="0.73"/>
+<use href="#lavender" transform="translate(121.3 181.6) rotate(6.6) scale(0.52)" opacity="0.73"/>
+<use href="#lavender" transform="translate(113.6 188.7) rotate(-15.0) scale(0.57)" opacity="0.75"/>
+<use href="#lavender" transform="translate(116.8 188.7) rotate(0.5) scale(0.57)" opacity="0.75"/>
+<use href="#lavender" transform="translate(119.2 188.1) rotate(2.2) scale(0.57)" opacity="0.75"/>
+<use href="#lavender" transform="translate(122.0 186.9) rotate(17.0) scale(0.57)" opacity="0.75"/>
+<use href="#lavender" transform="translate(112.4 193.8) rotate(-9.1) scale(0.63)" opacity="0.78"/>
+<use href="#lavender" transform="translate(115.6 192.0) rotate(-1.5) scale(0.63)" opacity="0.78"/>
+<use href="#lavender" transform="translate(119.3 193.3) rotate(9.8) scale(0.63)" opacity="0.78"/>
+<use href="#lavender" transform="translate(122.4 192.1) rotate(14.0) scale(0.63)" opacity="0.78"/>
+<use href="#lavender" transform="translate(112.8 198.5) rotate(-19.0) scale(0.69)" opacity="0.80"/>
+<use href="#lavender" transform="translate(116.0 198.6) rotate(1.8) scale(0.69)" opacity="0.80"/>
+<use href="#lavender" transform="translate(119.5 197.9) rotate(2.7) scale(0.69)" opacity="0.80"/>
+<use href="#lavender" transform="translate(124.0 197.8) rotate(16.8) scale(0.69)" opacity="0.80"/>
+<use href="#lavender" transform="translate(112.1 204.0) rotate(-17.9) scale(0.75)" opacity="0.82"/>
+<use href="#lavender" transform="translate(116.8 203.6) rotate(-4.7) scale(0.75)" opacity="0.82"/>
+<use href="#lavender" transform="translate(120.1 204.7) rotate(10.7) scale(0.75)" opacity="0.82"/>
+<use href="#lavender" transform="translate(124.9 204.8) rotate(11.0) scale(0.75)" opacity="0.82"/>
+<use href="#lavender" transform="translate(112.5 209.6) rotate(-8.5) scale(0.81)" opacity="0.84"/>
+<use href="#lavender" transform="translate(116.8 208.3) rotate(-10.6) scale(0.81)" opacity="0.84"/>
+<use href="#lavender" transform="translate(120.1 210.1) rotate(4.7) scale(0.81)" opacity="0.84"/>
+<use href="#lavender" transform="translate(124.2 209.4) rotate(17.1) scale(0.81)" opacity="0.84"/>
+<use href="#lavender" transform="translate(110.7 214.4) rotate(-15.8) scale(0.86)" opacity="0.86"/>
+<use href="#lavender" transform="translate(116.1 213.9) rotate(-6.4) scale(0.86)" opacity="0.86"/>
+<use href="#lavender" transform="translate(121.3 215.0) rotate(11.6) scale(0.86)" opacity="0.86"/>
+<use href="#lavender" transform="translate(125.5 215.5) rotate(10.9) scale(0.86)" opacity="0.86"/>
+<use href="#lavender" transform="translate(110.7 219.6) rotate(-14.9) scale(0.92)" opacity="0.88"/>
+<use href="#lavender" transform="translate(116.0 220.5) rotate(1.7) scale(0.92)" opacity="0.88"/>
+<use href="#lavender" transform="translate(122.3 219.5) rotate(2.1) scale(0.92)" opacity="0.88"/>
+<use href="#lavender" transform="translate(126.1 220.0) rotate(10.6) scale(0.92)" opacity="0.88"/>
+<use href="#lavender" transform="translate(109.6 224.6) rotate(-8.2) scale(0.98)" opacity="0.90"/>
+<use href="#lavender" transform="translate(116.4 225.4) rotate(-6.7) scale(0.98)" opacity="0.90"/>
+<use href="#lavender" transform="translate(122.5 225.0) rotate(2.1) scale(0.98)" opacity="0.90"/>
+<use href="#lavender" transform="translate(127.1 224.9) rotate(11.7) scale(0.98)" opacity="0.90"/>
+<path d="M147.5 166.0 L148.5 170.2 L149.1 174.3 L150.3 178.5 L151.8 182.6 L152.4 186.8 L153.9 190.9 L155.7 195.1 L156.2 199.2 L157.9 203.4 L159.8 207.5 L160.1 211.7 L162.0 215.8 L164.2 220.0 Q176.0 225.0 187.8 220.0 L185.6 215.8 L183.1 211.7 L179.1 207.5 L176.8 203.4 L174.3 199.2 L170.6 195.1 L168.3 190.9 L165.7 186.8 L162.4 182.6 L160.0 178.5 L157.5 174.3 L154.6 170.2 L152.5 166.0Z" fill="#000" fill-opacity=".095" stroke="none"/>
+<use href="#lavender" transform="translate(148.4 167.8) rotate(-9.4) scale(0.34)" opacity="0.67"/>
+<use href="#lavender" transform="translate(149.7 167.2) rotate(-3.7) scale(0.34)" opacity="0.67"/>
+<use href="#lavender" transform="translate(151.2 169.1) rotate(1.4) scale(0.34)" opacity="0.67"/>
+<use href="#lavender" transform="translate(153.5 167.9) rotate(9.7) scale(0.34)" opacity="0.67"/>
+<use href="#lavender" transform="translate(149.8 171.9) rotate(-15.6) scale(0.40)" opacity="0.69"/>
+<use href="#lavender" transform="translate(152.2 173.0) rotate(6.3) scale(0.40)" opacity="0.69"/>
+<use href="#lavender" transform="translate(153.2 173.6) rotate(14.3) scale(0.40)" opacity="0.69"/>
+<use href="#lavender" transform="translate(155.3 172.6) rotate(12.8) scale(0.40)" opacity="0.69"/>
+<use href="#lavender" transform="translate(151.7 177.1) rotate(-5.8) scale(0.46)" opacity="0.71"/>
+<use href="#lavender" transform="translate(152.9 175.9) rotate(-5.0) scale(0.46)" opacity="0.71"/>
+<use href="#lavender" transform="translate(155.1 177.3) rotate(6.8) scale(0.46)" opacity="0.71"/>
+<use href="#lavender" transform="translate(157.9 178.1) rotate(13.5) scale(0.46)" opacity="0.71"/>
+<use href="#lavender" transform="translate(152.9 182.2) rotate(-14.8) scale(0.52)" opacity="0.73"/>
+<use href="#lavender" transform="translate(156.0 181.9) rotate(-1.2) scale(0.52)" opacity="0.73"/>
+<use href="#lavender" transform="translate(158.7 182.0) rotate(11.0) scale(0.52)" opacity="0.73"/>
+<use href="#lavender" transform="translate(161.2 181.5) rotate(11.0) scale(0.52)" opacity="0.73"/>
+<use href="#lavender" transform="translate(154.8 186.7) rotate(-13.8) scale(0.57)" opacity="0.75"/>
+<use href="#lavender" transform="translate(156.7 186.9) rotate(-7.1) scale(0.57)" opacity="0.75"/>
+<use href="#lavender" transform="translate(159.7 186.8) rotate(14.6) scale(0.57)" opacity="0.75"/>
+<use href="#lavender" transform="translate(163.7 186.6) rotate(21.1) scale(0.57)" opacity="0.75"/>
+<use href="#lavender" transform="translate(155.8 190.0) rotate(-4.1) scale(0.63)" opacity="0.78"/>
+<use href="#lavender" transform="translate(159.0 191.2) rotate(-0.6) scale(0.63)" opacity="0.78"/>
+<use href="#lavender" transform="translate(162.8 190.2) rotate(4.4) scale(0.63)" opacity="0.78"/>
+<use href="#lavender" transform="translate(165.9 191.8) rotate(9.8) scale(0.63)" opacity="0.78"/>
+<use href="#lavender" transform="translate(157.7 194.7) rotate(-12.2) scale(0.69)" opacity="0.80"/>
+<use href="#lavender" transform="translate(162.0 195.2) rotate(-4.8) scale(0.69)" opacity="0.80"/>
+<use href="#lavender" transform="translate(165.2 196.0) rotate(10.5) scale(0.69)" opacity="0.80"/>
+<use href="#lavender" transform="translate(169.1 195.8) rotate(22.4) scale(0.69)" opacity="0.80"/>
+<use href="#lavender" transform="translate(159.9 199.1) rotate(-7.2) scale(0.75)" opacity="0.82"/>
+<use href="#lavender" transform="translate(163.7 200.6) rotate(-2.4) scale(0.75)" opacity="0.82"/>
+<use href="#lavender" transform="translate(167.6 201.0) rotate(8.2) scale(0.75)" opacity="0.82"/>
+<use href="#lavender" transform="translate(172.5 200.7) rotate(12.5) scale(0.75)" opacity="0.82"/>
+<use href="#lavender" transform="translate(161.2 204.4) rotate(-2.7) scale(0.81)" opacity="0.84"/>
+<use href="#lavender" transform="translate(165.2 203.5) rotate(4.4) scale(0.81)" opacity="0.84"/>
+<use href="#lavender" transform="translate(170.1 204.4) rotate(10.0) scale(0.81)" opacity="0.84"/>
+<use href="#lavender" transform="translate(175.1 203.6) rotate(22.7) scale(0.81)" opacity="0.84"/>
+<use href="#lavender" transform="translate(162.9 210.0) rotate(-14.4) scale(0.86)" opacity="0.86"/>
+<use href="#lavender" transform="translate(168.4 208.4) rotate(2.6) scale(0.86)" opacity="0.86"/>
+<use href="#lavender" transform="translate(172.0 210.1) rotate(7.9) scale(0.86)" opacity="0.86"/>
+<use href="#lavender" transform="translate(177.4 208.2) rotate(15.0) scale(0.86)" opacity="0.86"/>
+<use href="#lavender" transform="translate(164.8 214.1) rotate(-2.7) scale(0.92)" opacity="0.88"/>
+<use href="#lavender" transform="translate(170.6 213.4) rotate(6.3) scale(0.92)" opacity="0.88"/>
+<use href="#lavender" transform="translate(175.6 214.0) rotate(13.6) scale(0.92)" opacity="0.88"/>
+<use href="#lavender" transform="translate(181.5 214.2) rotate(22.3) scale(0.92)" opacity="0.88"/>
+<use href="#lavender" transform="translate(166.8 218.3) rotate(-12.2) scale(0.98)" opacity="0.90"/>
+<use href="#lavender" transform="translate(172.5 219.4) rotate(2.2) scale(0.98)" opacity="0.90"/>
+<use href="#lavender" transform="translate(177.2 217.4) rotate(9.1) scale(0.98)" opacity="0.90"/>
+<use href="#lavender" transform="translate(184.2 219.0) rotate(19.2) scale(0.98)" opacity="0.90"/>
+<path d="M176.6 164.0 L178.5 167.3 L180.6 170.6 L183.6 173.9 L186.1 177.2 L188.4 180.5 L191.9 183.8 L194.5 187.2 L196.8 190.5 L200.7 193.8 L203.4 197.1 L205.7 200.4 L210.0 203.7 L212.6 207.0 Q225.0 212.0 237.4 207.0 L232.3 203.7 L228.8 200.4 L223.6 197.1 L218.7 193.8 L215.1 190.5 L210.1 187.2 L205.4 183.8 L201.8 180.5 L197.1 177.2 L192.8 173.9 L189.1 170.6 L185.0 167.3 L181.4 164.0Z" fill="#000" fill-opacity=".095" stroke="none"/>
+<use href="#lavender" transform="translate(178.9 165.3) rotate(-8.3) scale(0.34)" opacity="0.67"/>
+<use href="#lavender" transform="translate(179.9 165.5) rotate(8.4) scale(0.34)" opacity="0.67"/>
+<use href="#lavender" transform="translate(180.9 164.9) rotate(5.5) scale(0.34)" opacity="0.67"/>
+<use href="#lavender" transform="translate(181.8 165.8) rotate(23.1) scale(0.34)" opacity="0.67"/>
+<use href="#lavender" transform="translate(181.5 168.8) rotate(-4.5) scale(0.40)" opacity="0.69"/>
+<use href="#lavender" transform="translate(182.9 168.1) rotate(-4.1) scale(0.40)" opacity="0.69"/>
+<use href="#lavender" transform="translate(183.8 168.6) rotate(12.3) scale(0.40)" opacity="0.69"/>
+<use href="#lavender" transform="translate(186.8 170.0) rotate(18.2) scale(0.40)" opacity="0.69"/>
+<use href="#lavender" transform="translate(184.2 172.4) rotate(1.1) scale(0.46)" opacity="0.71"/>
+<use href="#lavender" transform="translate(185.1 173.6) rotate(8.9) scale(0.46)" opacity="0.71"/>
+<use href="#lavender" transform="translate(189.0 171.9) rotate(14.5) scale(0.46)" opacity="0.71"/>
+<use href="#lavender" transform="translate(190.8 173.0) rotate(20.4) scale(0.46)" opacity="0.71"/>
+<use href="#lavender" transform="translate(187.3 177.2) rotate(0.5) scale(0.52)" opacity="0.73"/>
+<use href="#lavender" transform="translate(188.8 176.9) rotate(2.0) scale(0.52)" opacity="0.73"/>
+<use href="#lavender" transform="translate(192.6 175.8) rotate(17.5) scale(0.52)" opacity="0.73"/>
+<use href="#lavender" transform="translate(194.3 175.9) rotate(16.1) scale(0.52)" opacity="0.73"/>
+<use href="#lavender" transform="translate(189.6 179.0) rotate(-8.9) scale(0.57)" opacity="0.75"/>
+<use href="#lavender" transform="translate(193.9 179.0) rotate(2.5) scale(0.57)" opacity="0.75"/>
+<use href="#lavender" transform="translate(196.1 179.4) rotate(8.4) scale(0.57)" opacity="0.75"/>
+<use href="#lavender" transform="translate(198.4 180.2) rotate(25.0) scale(0.57)" opacity="0.75"/>
+<use href="#lavender" transform="translate(194.0 183.3) rotate(-11.3) scale(0.63)" opacity="0.78"/>
+<use href="#lavender" transform="translate(197.4 183.5) rotate(-1.8) scale(0.63)" opacity="0.78"/>
+<use href="#lavender" transform="translate(200.5 183.6) rotate(14.8) scale(0.63)" opacity="0.78"/>
+<use href="#lavender" transform="translate(202.7 183.3) rotate(19.7) scale(0.63)" opacity="0.78"/>
+<use href="#lavender" transform="translate(196.6 186.7) rotate(-0.2) scale(0.69)" opacity="0.80"/>
+<use href="#lavender" transform="translate(201.5 186.4) rotate(8.1) scale(0.69)" opacity="0.80"/>
+<use href="#lavender" transform="translate(204.6 187.8) rotate(18.0) scale(0.69)" opacity="0.80"/>
+<use href="#lavender" transform="translate(207.7 187.4) rotate(13.2) scale(0.69)" opacity="0.80"/>
+<use href="#lavender" transform="translate(200.8 190.7) rotate(-9.3) scale(0.75)" opacity="0.82"/>
+<use href="#lavender" transform="translate(205.1 191.7) rotate(6.4) scale(0.75)" opacity="0.82"/>
+<use href="#lavender" transform="translate(209.0 191.6) rotate(5.3) scale(0.75)" opacity="0.82"/>
+<use href="#lavender" transform="translate(212.9 190.8) rotate(21.5) scale(0.75)" opacity="0.82"/>
+<use href="#lavender" transform="translate(203.7 195.9) rotate(-10.2) scale(0.81)" opacity="0.84"/>
+<use href="#lavender" transform="translate(208.0 193.9) rotate(-1.4) scale(0.81)" opacity="0.84"/>
+<use href="#lavender" transform="translate(213.9 193.6) rotate(11.4) scale(0.81)" opacity="0.84"/>
+<use href="#lavender" transform="translate(217.4 194.2) rotate(25.5) scale(0.81)" opacity="0.84"/>
+<use href="#lavender" transform="translate(207.9 197.2) rotate(-8.6) scale(0.86)" opacity="0.86"/>
+<use href="#lavender" transform="translate(213.2 198.7) rotate(7.6) scale(0.86)" opacity="0.86"/>
+<use href="#lavender" transform="translate(217.2 198.0) rotate(5.3) scale(0.86)" opacity="0.86"/>
+<use href="#lavender" transform="translate(222.9 198.6) rotate(25.9) scale(0.86)" opacity="0.86"/>
+<use href="#lavender" transform="translate(211.7 202.3) rotate(-1.0) scale(0.92)" opacity="0.88"/>
+<use href="#lavender" transform="translate(215.9 202.9) rotate(3.1) scale(0.92)" opacity="0.88"/>
+<use href="#lavender" transform="translate(222.0 201.3) rotate(13.1) scale(0.92)" opacity="0.88"/>
+<use href="#lavender" transform="translate(226.9 202.3) rotate(14.9) scale(0.92)" opacity="0.88"/>
+<use href="#lavender" transform="translate(215.6 205.0) rotate(-5.1) scale(0.98)" opacity="0.90"/>
+<use href="#lavender" transform="translate(220.4 206.4) rotate(-3.2) scale(0.98)" opacity="0.90"/>
+<use href="#lavender" transform="translate(225.9 206.2) rotate(14.5) scale(0.98)" opacity="0.90"/>
+<use href="#lavender" transform="translate(231.7 205.9) rotate(16.2) scale(0.98)" opacity="0.90"/>
+<path d="M40 202L47 193M90 211L93 199M148 214L145 203M201 199L195 191" fill="none" stroke-width="0.9" opacity="0.3"/>
+</svg>

@@ -32,6 +32,7 @@ export const travelAtlasDataset: AtlasDataset = {
       type: "municipality",
       parentId: "es-burgos-province",
       coordinates: [-3.486451, 41.82459],
+      illustration: "spain/caleruega.svg",
     },
     {
       id: "es-burgos-briviesca",
@@ -39,6 +40,7 @@ export const travelAtlasDataset: AtlasDataset = {
       type: "municipality",
       parentId: "es-burgos-province",
       coordinates: [-3.32315, 42.54993],
+      illustration: "spain/briviesca.svg",
     },
     {
       id: "es-burgos-poza-de-la-sal",
@@ -46,6 +48,7 @@ export const travelAtlasDataset: AtlasDataset = {
       type: "municipality",
       parentId: "es-burgos-province",
       coordinates: [-3.5014, 42.66542],
+      illustration: "spain/poza-de-la-sal.svg",
     },
     {
       id: "es-burgos-quintanabureba",
@@ -67,6 +70,7 @@ export const travelAtlasDataset: AtlasDataset = {
       type: "municipality",
       parentId: "es-burgos-province",
       coordinates: [-3.661674, 41.904822],
+      illustration: "spain/cilleruelo-de-arriba.svg",
     },
     {
       id: "es-burgos-banos-de-valdearados",
@@ -74,6 +78,7 @@ export const travelAtlasDataset: AtlasDataset = {
       type: "municipality",
       parentId: "es-burgos-province",
       coordinates: [-3.555613, 41.770718],
+      illustration: "spain/banos-de-valdearados.svg",
     },
     {
       id: "es-burgos-villanueva-de-gumiel",
