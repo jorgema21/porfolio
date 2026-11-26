@@ -275,7 +275,7 @@
 
   h3 {
     font-family: var(--font-serif);
-    font-size: var(--text-2xl);
+    font-size: var(--text-xl);
     line-height: var(--lh-titles);
     overflow-wrap: anywhere;
   }
