@@ -6,31 +6,15 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "A través de una colaboración intensa enfocada en desarrollo web, análisis y visualización de datos, ",
-          "nos propusimos investigar el papel de la industrialización como una alternativa frente a la crisis de vivienda. ",
-          "Le tengo un cariño especial a este proyecto porque fue el escenario perfecto para aprender nociones ",
-          "imprescindibles de Svelte 5, SvelteKit y el flujo de trabajo con Git."
-        ],
-        "en": [
-          "Through a close collaboration focused on web development, data analysis, and visualization, ",
-          "we investigated the role of industrialized construction as an alternative to the current housing crisis. ",
-          "This project holds a special place for me because it served as the perfect milestone to master ",
-          "the essentials of Svelte 5, SvelteKit, and production workflows using Git."
-        ]
+        "es": "A través de una colaboración intensa enfocada en desarrollo web, análisis y visualización de datos, nos propusimos investigar el papel de la industrialización como una alternativa frente a la crisis de vivienda. Le tengo un cariño especial a este proyecto porque fue el escenario perfecto para aprender nociones imprescindibles de Svelte 5, SvelteKit y el flujo de trabajo con Git.",
+        "en": "Through a close collaboration focused on web development, data analysis, and visualization, we investigated the role of industrialized construction as an alternative to the current housing crisis. This project holds a special place for me because it served as the perfect milestone to master the essentials of Svelte 5, SvelteKit, and production workflows using Git."
       }
     },
     {
       "type": "text",
       "value": {
-        "es": [
-          "Para lograr una lectura fluida y bien organizada, decidimos estructurar los diferentes ",
-          "apartados del reportaje utilizando infografías isométricas de un bloque de viviendas en construcción."
-        ],
-        "en": [
-          "To guarantee a fluid and well-structured reading experience, we decided to organize ",
-          "the different sections of the report using isometric infographics of a housing block under construction."
-        ]
+        "es": "Para lograr una lectura fluida y bien organizada, decidimos estructurar los diferentes apartados del reportaje utilizando infografías isométricas de un bloque de viviendas en construcción.",
+        "en": "To guarantee a fluid and well-structured reading experience, we decided to organize the different sections of the report using isometric infographics of a housing block under construction."
       }
     },
     {
@@ -81,14 +65,8 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "También aporté ideas de visualizaciones interactivas que terminaron en la pieza final para mostrar el peso de los ",
-          "trabajadores extranjeros. Para ello realizamos un gráfico de área y barras apiladas interactivas."
-        ],
-        "en": [
-          "I also contributed design concepts for the interactive visualizations included in the final piece to highlight the impact ",
-          "of foreign labor. We made an interactive area chart and stacked bars."
-        ]
+        "es": "También aporté ideas de visualizaciones interactivas que terminaron en la pieza final para mostrar el peso de los trabajadores extranjeros. Para ello realizamos un gráfico de área y barras apiladas interactivas.",
+        "en": "I also contributed design concepts for the interactive visualizations included in the final piece to highlight the impact of foreign labor. We made an interactive area chart and stacked bars."
       }
     },
     {

@@ -72,6 +72,8 @@
 
     <input
       class="input"
+      type="search"
+      aria-label={t.infographics.aria.search}
       placeholder={t.infographics.searchPlaceholder}
       bind:value={info.filters.search}
     />
@@ -92,9 +94,10 @@
 
     <button
       class="control sort-dir"
+      type="button"
       aria-label={info.filters.sortDir === "asc"
-        ? "Orden ascendente"
-        : "Orden descendente"}
+        ? t.infographics.aria.sortAscending
+        : t.infographics.aria.sortDescending}
       onclick={() =>
         (info.filters.sortDir =
           info.filters.sortDir === "asc" ? "desc" : "asc")}

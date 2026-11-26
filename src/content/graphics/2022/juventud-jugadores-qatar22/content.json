@@ -6,16 +6,8 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "Incluyo este proyecto en el porfolio por su alto valor emocional, ya que supuso ",
-          "mi primera publicación firmada como autor. ",
-          "Limpié los datos en Google Spreadsheets y después creé en Datawrapper los gráficos con el diseño del Mundial."
-        ],
-        "en": [
-          "I include this project in the portfolio for its high emotional value, as it marked ",
-          "my first bylined publication as an author. ",
-          "I cleaned the data in Google Spreadsheets and later created the charts in Datawrapper with the World Cup design."
-        ]
+        "es": "Incluyo este proyecto en el porfolio por su alto valor emocional, ya que supuso mi primera publicación firmada como autor. Limpié los datos en Google Spreadsheets y después creé en Datawrapper los gráficos con el diseño del Mundial.",
+        "en": "I include this project in the portfolio for its high emotional value, as it marked my first bylined publication as an author. I cleaned the data in Google Spreadsheets and later created the charts in Datawrapper with the World Cup design."
       }
     },
     {
@@ -48,12 +40,7 @@
           },
           "contextuales para tener un mayor contexto."
         ],
-        "en": [
-          "I designed a dotplot to compare the average age of the teams and an interactive table that included ",
-          "bars and player images, which I previously processed in Photoshop and Illustrator. ",
-          "Likewise, I incorporated stacked columns showing league origins and added ",
-          "contextual tooltips to have a better context."
-        ]
+        "en": "I designed a dotplot to compare the average age of the teams and an interactive table that included bars and player images, which I previously processed in Photoshop and Illustrator. Likewise, I incorporated stacked columns showing league origins and added contextual tooltips to have a better context."
       }
     },
     {

@@ -4,7 +4,6 @@ type InfographicsDict = {
   title: string;
   others: string;
   intro: RichText;
-  description: RichText;
   aim: RichText;
 };
 
@@ -14,31 +13,20 @@ export const style: Record<"es" | "en", InfographicsDict> = {
     others: "Otros",
 
     intro: [
+      { text: "En esta sección encontrarás mis artículos sobre " },
       {
-        text: "Bienvenido/a a la sección de ",
-      },
-      {
-        text: "estilo de vida. ",
+        text: "estilo de vida, relaciones personales y psicología.",
         bold: true,
       },
-    ],
-    description: [
-      {
-        text: "Aquí puedes acceder directamente a ",
-      },
-      {
-        text: "todos los trabajos que se han publicado.",
-        bold: true,
-      },
-    ],
+    ] satisfies RichText,
+
     aim: [
+      { text: "Me gusta escribir sobre " },
       {
-        text: "Mi propósito principal es escribir sobre ",
-      },
-      {
-        text: "cómo la psicología afecta a la vida cotidiana de las personas.",
+        text: "las pequeñas cosas del día a día que influyen en cómo pensamos, sentimos y actuamos",
         bold: true,
       },
+      { text: ", e intentar entender por qué nos afectan." },
     ] satisfies RichText,
   },
 
@@ -47,34 +35,20 @@ export const style: Record<"es" | "en", InfographicsDict> = {
     others: "Others",
 
     intro: [
+      { text: "Here you'll find my articles on " },
       {
-        text: "Welcome to the ",
-      },
-      {
-        text: "lifestyle ",
+        text: "lifestyle, personal relationships, and psychology.",
         bold: true,
       },
-      {
-        text: "section.",
-      },
-    ],
-    description: [
-      {
-        text: "Here you can access directly to ",
-      },
-      {
-        text: "all the works that have been published.",
-        bold: true,
-      },
-    ],
+    ] satisfies RichText,
+
     aim: [
+      { text: "I enjoy writing about " },
       {
-        text: "My main aim is to write about ",
-      },
-      {
-        text: "how psychology influence people's daily lives.",
+        text: "the everyday things that shape how we think, feel, and act",
         bold: true,
       },
+      { text: ", and trying to understand why they affect us." },
     ] satisfies RichText,
   },
 };

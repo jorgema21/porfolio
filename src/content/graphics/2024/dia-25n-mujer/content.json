@@ -6,18 +6,8 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "Para un reportaje de datos englobado dentro de la cobertura del 25N, realicé en día y medio ",
-          "numerosas visualizaciones que representaron distintos aspectos de la violencia contra la mujer. ",
-          "Desarrollé gráficos sobre violencia vicaria, feminicidios, asesinatos por violencia de género, datos y mapas del ",
-          "sistema VioGén, denuncias interpuestas, órdenes de protección y consultas al 016, entre otros."
-        ],
-        "en": [
-          "For a data feature included in the 25N coverage, I created numerous data visualizations ",
-          "representing different aspects of violence against women within a day and a half. ",
-          "I developed charts on vicarious violence, femicides, gender violence murders, data and maps on the ",
-          "VioGen system, filed complaints, protection orders, and 016 helpline inquiries, among others."
-        ]
+        "es": "Para un reportaje de datos englobado dentro de la cobertura del 25N, realicé en día y medio numerosas visualizaciones que representaron distintos aspectos de la violencia contra la mujer. Desarrollé gráficos sobre violencia vicaria, feminicidios, asesinatos por violencia de género, datos y mapas del sistema VioGén, denuncias interpuestas, órdenes de protección y consultas al 016, entre otros.",
+        "en": "For a data feature included in the 25N coverage, I created numerous data visualizations representing different aspects of violence against women within a day and a half. I developed charts on vicarious violence, femicides, gender violence murders, data and maps on the VioGen system, filed complaints, protection orders, and 016 helpline inquiries, among others."
       }
     },
     {
@@ -99,10 +89,7 @@
           },
           " con información detallada."
         ],
-        "en": [
-          "The process consisted of downloading the data from the Ministry of Equality, cleaning it in Google Sheets, ",
-          "and from there, transferring it to each chart type to apply its style and add tooltips for detailed information."
-        ]
+        "en": "The process consisted of downloading the data from the Ministry of Equality, cleaning it in Google Sheets, and from there, transferring it to each chart type to apply its style and add tooltips for detailed information."
       }
     },
     {

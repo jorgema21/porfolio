@@ -6,18 +6,8 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "Recibí una base de datos bruta con publicaciones de Isabel Díaz Ayuso en la red social X. ",
-          "Analicé cómo sus mensajes aludían al presidente Pedro Sánchez. ",
-          "Limpié los registros en Google Spreadsheets, procesé el volumen de datos con R ",
-          "y diseñé los interactivos finales con Datawrapper."
-        ],
-        "en": [
-          "I received a raw dataset containing posts by Isabel Díaz Ayuso on the social network X. ",
-          "I analyzed how her messages referred to the president Pedro Sánchez. ",
-          "I cleaned the records in Google Spreadsheets, processed the data volume with R, ",
-          "and designed the final interactive elements using Datawrapper."
-        ]
+        "es": "Recibí una base de datos bruta con publicaciones de Isabel Díaz Ayuso en la red social X. Analicé cómo sus mensajes aludían al presidente Pedro Sánchez. Limpié los registros en Google Spreadsheets, procesé el volumen de datos con R y diseñé los interactivos finales con Datawrapper.",
+        "en": "I received a raw dataset containing posts by Isabel Díaz Ayuso on the social network X. I analyzed how her messages referred to the president Pedro Sánchez. I cleaned the records in Google Spreadsheets, processed the data volume with R, and designed the final interactive elements using Datawrapper."
       }
     },
     {
@@ -37,11 +27,7 @@
           },
           " explicativos con los textos originales y métricas adicionales de impacto."
         ],
-        "en": [
-          "I developed an interactive scatterplot that distributed the posts according to quotes, replies, retweets, and favorites. ",
-          "The visualization differentiated the categories by color and incorporated explanatory tooltips ",
-          "with the original texts and additional impact metrics."
-        ]
+        "en": "I developed an interactive scatterplot that distributed the posts according to quotes, replies, retweets, and favorites. The visualization differentiated the categories by color and incorporated explanatory tooltips with the original texts and additional impact metrics."
       }
     },
     {
@@ -59,18 +45,8 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "Representé la frecuencia temporal mediante un gráfico de barras que reflejó las alusiones a La Moncloa. ",
-          "Esta métrica alcanzó un pico de 27 menciones en noviembre, promediando casi un ataque diario. ",
-          "Dividí el vocabulario recurrente mediante columnas apiladas por temáticas ",
-          "e incluí una nota metodológica al cierre para explicar la metodología."
-        ],
-        "en": [
-          "I represented the chronological frequency through a bar chart reflecting the mentions of La Moncloa. ",
-          "This metric reached a peak of 27 mentions in November, averaging nearly one attack per day. ",
-          "I divided the recurring vocabulary using columns stacked by theme ",
-          "and included a methodological note at the end."
-        ]
+        "es": "Representé la frecuencia temporal mediante un gráfico de barras que reflejó las alusiones a La Moncloa. Esta métrica alcanzó un pico de 27 menciones en noviembre, promediando casi un ataque diario. Dividí el vocabulario recurrente mediante columnas apiladas por temáticas e incluí una nota metodológica al cierre para explicar la metodología.",
+        "en": "I represented the chronological frequency through a bar chart reflecting the mentions of La Moncloa. This metric reached a peak of 27 mentions in November, averaging nearly one attack per day. I divided the recurring vocabulary using columns stacked by theme and included a methodological note at the end."
       }
     },
     {

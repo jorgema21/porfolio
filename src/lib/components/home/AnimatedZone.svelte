@@ -5,6 +5,7 @@
   import { cubicOut } from "svelte/easing";
   import { langSignal, t } from "#lib/i18n/index.svelte.js";
   import type { HomeProject, ProjectCategory } from "#lib/data/projects.js";
+  import { homeSlots } from "#lib/data/home-slots.js";
 
   const { items }: { items: HomeProject[] } = $props();
 
@@ -20,10 +21,10 @@
     }
 
     const interval = setInterval(() => {
-        visibleCount += 1;
-        if (visibleCount >= items.length) {
-          clearInterval(interval);
-        }
+      visibleCount += 1;
+      if (visibleCount >= items.length) {
+        clearInterval(interval);
+      }
     }, baseDelay);
 
     return () => clearInterval(interval);
@@ -35,7 +36,11 @@
       ? resolve(`graphics/${project.slug}`)
       : project.externalUrl;
 
-    const imageSrc = project.image?.startsWith("http") ? project.image : project.image ? asset(project.image.replace(/^\/+/, "") as AssetPath) : "";
+    const imageSrc = project.image?.startsWith("http")
+      ? project.image
+      : project.image
+        ? asset(project.image.replace(/^\/+/, "") as AssetPath)
+        : "";
 
     return {
       isExternal: project.category !== "infografia" && !!project.externalUrl,
@@ -48,25 +53,27 @@
 
 {#each items as project, i (project.id)}
   {@const meta = getProjectMeta(project)}
+  {@const slot = project.homeSlot ? homeSlots[project.homeSlot] : undefined}
   {@const isCritical = i < 2}
 
-  {#if isCritical || i < visibleCount}
+  {#if slot && (isCritical || i < visibleCount)}
     <a
-      class="card {project.variant}"
+      class="card {slot.variant}"
+      data-home-slot={project.homeSlot}
       href={meta.href ?? undefined}
       target={meta.isExternal ? "_blank" : undefined}
       rel={meta.isExternal ? "noopener noreferrer" : undefined}
       aria-disabled={!meta.canNavigate}
       tabindex={meta.canNavigate ? 0 : -1}
-      style:--col-start={project.colStart}
-      style:--col-span={project.colSpan}
-      style:--row-start={project.rowStart}
-      style:--row-span={project.rowSpan ?? 1}
+      style:--col-start={slot.colStart}
+      style:--col-span={slot.colSpan}
+      style:--row-start={slot.rowStart}
+      style:--row-span={slot.rowSpan}
       in:fly={!isCritical
         ? { y: 20, duration: 400, easing: cubicOut }
         : undefined}
     >
-      {#if project.image && project.variant !== "list"}
+      {#if project.image && slot.variant !== "list"}
         <div class="thumb">
           <img
             src={meta.imageSrc}
@@ -81,7 +88,9 @@
       {/if}
 
       <div class="content">
-        <span class="category {project.category}">{t.project.category[project.category as ProjectCategory]}</span>
+        <span class="category {project.category}"
+          >{t.project.category[project.category as ProjectCategory]}</span
+        >
         <h2 class="title">{project.title[langSignal.current]}</h2>
 
         {#if project.description}
@@ -93,6 +102,11 @@
     </a>
   {/if}
 {/each}
+
+<div class="block-divider divider-ab" aria-hidden="true"></div>
+<div class="block-divider divider-bc" aria-hidden="true"></div>
+<div class="block-divider divider-cd" aria-hidden="true"></div>
+<div class="block-divider divider-de" aria-hidden="true"></div>
 
 <style>
   .card {
@@ -111,7 +125,7 @@
     grid-row-start: var(--row-start);
     grid-row-end: span var(--row-span);
 
-    border-bottom: var(--border-1);
+    border-bottom: none;
 
     will-change: transform, opacity;
     transition:
@@ -133,20 +147,52 @@
       cursor: default;
     }
   }
-  .card:nth-last-child(3) {
-    border-bottom: none;
-    padding-bottom: 0;
+
+  @media (min-width: 769px) {
+    .card[data-home-slot="A2"],
+    .card[data-home-slot="A3"],
+    .card[data-home-slot="C1"],
+    .card[data-home-slot="E1"],
+    .card[data-home-slot="E2"] {
+      border-bottom: var(--border-1);
+    }
+  }
+
+  .block-divider {
+    grid-column: 1 / -1;
+    align-self: center;
+    width: 100%;
+    height: 1px;
+    background: var(--color-border);
+    opacity: 0.9;
+    pointer-events: none;
+  }
+
+  .divider-ab {
+    grid-row: 4;
+  }
+
+  .divider-bc {
+    grid-row: 6;
+  }
+
+  .divider-cd {
+    grid-row: 9;
+  }
+
+  .divider-de {
+    grid-row: 11;
   }
 
   .thumb {
     overflow: hidden;
     border-radius: var(--radius-lg);
-    aspect-ratio: 16/9;
+    aspect-ratio: 16 / 9;
 
     img {
       width: 100%;
       height: auto;
-      aspect-ratio: 16/9;
+      aspect-ratio: 16 / 9;
       object-fit: cover;
       display: block;
       transition: transform var(--transition);
@@ -177,6 +223,7 @@
     .content {
       order: 1;
     }
+
     .thumb {
       order: 2;
     }
@@ -206,9 +253,11 @@
   .card.hero .title {
     font-size: var(--text-2xl);
   }
+
   .card.feature .title {
     font-size: var(--text-xl);
   }
+
   .card.grid .title,
   .card.list .title {
     font-size: var(--text-lg);
@@ -229,11 +278,17 @@
     &.infografia {
       color: var(--color-infography);
     }
+
     &.estilo_de_vida {
       color: var(--color-style);
     }
+
     &.maternidad {
       color: var(--color-parenting);
+    }
+
+    &.viajes {
+      color: var(--color-travel);
     }
   }
 
@@ -250,10 +305,8 @@
       padding-bottom: var(--space-6);
     }
 
-    .card:nth-last-child(4),
-    .card:nth-last-child(5) {
-      border-bottom: var(--border-1);
-      padding-bottom: var(--space-6);
+    .block-divider {
+      display: none;
     }
 
     .card:has(.category.infografia) {
@@ -264,8 +317,12 @@
       order: 2;
     }
 
-    .card:has(.category.maternidad) {
+    .card:has(.category.viajes) {
       order: 3;
+    }
+
+    .card:has(.category.maternidad) {
+      order: 4;
     }
 
     .card.feature {

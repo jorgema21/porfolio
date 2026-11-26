@@ -6,14 +6,8 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "La primera ausencia de Rafa Nadal en París en casi dos décadas abrió un vacío ",
-          "histórico que obligó a dimensionar una anomalía estadística: su tiranía sobre la tierra batida."
-        ],
-        "en": [
-          "The first absence of Rafa Nadal in Paris in nearly two decades left a historic ",
-          "void that prompted an analysis of a statistical anomaly: his dominance on clay courts."
-        ]
+        "es": "La primera ausencia de Rafa Nadal en París en casi dos décadas abrió un vacío histórico que obligó a dimensionar una anomalía estadística: su tiranía sobre la tierra batida.",
+        "en": "The first absence of Rafa Nadal in Paris in nearly two decades left a historic void that prompted an analysis of a statistical anomaly: his dominance on clay courts."
       }
     },
     {
@@ -38,16 +32,8 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "Para contextualizar la magnitud de este dominio frente al resto de leyendas, ",
-          "comparé el volumen total de trofeos de los mayores ganadores de la historia ",
-          "and dividí sus títulos según la superficie del torneo."
-        ],
-        "en": [
-          "To contextualize the scale of this dominance against other legends, ",
-          "I compared the total trophy count of history's top winners ",
-          "and broke down their titles by tournament court surface."
-        ]
+        "es": "Para contextualizar la magnitud de este dominio frente al resto de leyendas, comparé el volumen total de trofeos de los mayores ganadores de la historia and dividí sus títulos según la superficie del torneo.",
+        "en": "To contextualize the scale of this dominance against other legends, I compared the total trophy count of history's top winners and broke down their titles by tournament court surface."
       }
     },
     {
@@ -71,14 +57,8 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "A partir de ahí, quise mostrar la consistencia temporal de estas hegemonías ",
-          "al analizar las rachas ganadoras consecutivas por jugador y año."
-        ],
-        "en": [
-          "From there, I wanted to showcase the chronological consistency of these hegemonies ",
-          "by analyzing consecutive winning streaks by player and year."
-        ]
+        "es": "A partir de ahí, quise mostrar la consistencia temporal de estas hegemonías al analizar las rachas ganadoras consecutivas por jugador y año.",
+        "en": "From there, I wanted to showcase the chronological consistency of these hegemonies by analyzing consecutive winning streaks by player and year."
       }
     },
     {
@@ -111,10 +91,7 @@
           },
           "."
         ],
-        "en": [
-          "A key aspect of this historic performance relied on a biomechanical ",
-          "advantage: the acceleration of his heavy topspin."
-        ]
+        "en": "A key aspect of this historic performance relied on a biomechanical advantage: the acceleration of his heavy topspin."
       }
     },
     {
@@ -132,14 +109,8 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "Por último, mostré la evolución táctica del juego al analizar el rendimiento ",
-          "al saque y al resto tanto de Nadal como de sus principales rivales y Alcaraz."
-        ],
-        "en": [
-          "Finally, I showed the tactical evolution of the game by analyzing the serve ",
-          "and return performance of Nadal, his main rivals, and Alcaraz."
-        ]
+        "es": "Por último, mostré la evolución táctica del juego al analizar el rendimiento al saque y al resto tanto de Nadal como de sus principales rivales y Alcaraz.",
+        "en": "Finally, I showed the tactical evolution of the game by analyzing the serve and return performance of Nadal, his main rivals, and Alcaraz."
       }
     },
     {

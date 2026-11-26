@@ -1,7 +1,10 @@
 <script lang="ts">
   import { asset, resolve } from "$app/paths";
   import type { AssetPath } from "$app/types";
-  import { preview, closePreview } from "#lib/state/infographicPreview.svelte.js";
+  import {
+    preview,
+    closePreview,
+  } from "#lib/state/infographicPreview.svelte.js";
   import { langSignal } from "#lib/i18n/index.svelte.js";
   import { formatDate } from "#lib/utils/formatDate.js";
   import { infographics as infographicsI18n } from "#lib/i18n/dictionaries/infographics.i18n.js";
@@ -9,15 +12,32 @@
   import type { Lang } from "../../../routes/graphics/infographics.svelte";
   import { t } from "#lib/i18n/index.svelte.js";
 
-  function handleKey(e: KeyboardEvent) {
-    if (e.key === "Escape") closePreview();
+  function activateModal(node: HTMLDialogElement) {
+    const previousFocus = document.activeElement;
+
+    node.showModal();
+
+    node.querySelector<HTMLButtonElement>(".preview-close")?.focus();
+
+    return {
+      destroy() {
+        if (node.open) {
+          node.close();
+        }
+
+        if (previousFocus instanceof HTMLElement && previousFocus.isConnected) {
+          previousFocus.focus();
+        }
+      },
+    };
   }
 
   type MediumKey = keyof typeof infographicsI18n.es.mediums;
 
-  const medium = (key?: string) => key
-    ? infographicsI18n[langSignal.current].mediums[key as MediumKey] ?? key
-    : null;
+  const medium = (key?: string) =>
+    key
+      ? (infographicsI18n[langSignal.current].mediums[key as MediumKey] ?? key)
+      : null;
 
   const getLocalized = (field: unknown): Record<Lang, string> => {
     return (field || { es: "", en: "" }) as Record<Lang, string>;
@@ -27,15 +47,24 @@
 {#if preview.project}
   <dialog
     class="preview-overlay"
-    open
-    autofocus
-    onkeydown={handleKey}
+    use:activateModal
+    oncancel={(e) => {
+      e.preventDefault();
+      closePreview();
+    }}
+    onkeydown={(e) => {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        closePreview();
+      }
+    }}
     aria-label={t.infographics.aria.projectPreview}
     transition:fade={{ duration: 150 }}
   >
     <button
       class="preview-backdrop"
       type="button"
+      tabindex="-1"
       aria-label={t.infographics.aria.closePreview}
       onclick={closePreview}
     ></button>
@@ -51,7 +80,9 @@
       </button>
 
       <img
-        src={asset(String(preview.project.image ?? "").replace(/^\/+/, "") as AssetPath)}
+        src={asset(
+          String(preview.project.image ?? "").replace(/^\/+/, "") as AssetPath,
+        )}
         alt={getLocalized(preview.project.title)[langSignal.current]}
         class="preview-image"
         loading="lazy"
@@ -126,8 +157,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    margin: 0;
     border: 0;
     padding: 0;
+    background: transparent;
+  }
+
+  .preview-overlay::backdrop {
     background: transparent;
   }
 

@@ -6,14 +6,8 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "El técnico del FC Barcelona, Xavi Hernández, anunció que dejaría el club al final de la temporada tras una mala racha de resultados. ",
-          "Sin embargo, desde aquel anuncio el rendimiento del equipo mejoró notablemente, lo que me llevó a desarrollar un reportaje de datos sobre el impacto del cambio de contexto."
-        ],
-        "en": [
-          "FC Barcelona manager Xavi Hernández announced that he would leave the club at the end of the season after a difficult run of results. ",
-          "However, the team's form improved significantly after the announcement, which led me to develop a data-driven story around the shift in performance."
-        ]
+        "es": "El técnico del FC Barcelona, Xavi Hernández, anunció que dejaría el club al final de la temporada tras una mala racha de resultados. Sin embargo, desde aquel anuncio el rendimiento del equipo mejoró notablemente, lo que me llevó a desarrollar un reportaje de datos sobre el impacto del cambio de contexto.",
+        "en": "FC Barcelona manager Xavi Hernández announced that he would leave the club at the end of the season after a difficult run of results. However, the team's form improved significantly after the announcement, which led me to develop a data-driven story around the shift in performance."
       }
     },
     {
@@ -135,14 +129,8 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "Por último, representé la evolución clasificatoria de Real Madrid, Girona y Barcelona a lo largo de la temporada. ",
-          "El Barça pasó gran parte del campeonato en cuarta posición, pero tras el anuncio de Xavi logró escalar hasta el segundo puesto."
-        ],
-        "en": [
-          "Finally, I visualized the league progression of Real Madrid, Girona and Barcelona throughout the season. ",
-          "Barcelona spent much of the campaign in fourth place, but climbed to second after Xavi's announcement."
-        ]
+        "es": "Por último, representé la evolución clasificatoria de Real Madrid, Girona y Barcelona a lo largo de la temporada. El Barça pasó gran parte del campeonato en cuarta posición, pero tras el anuncio de Xavi logró escalar hasta el segundo puesto.",
+        "en": "Finally, I visualized the league progression of Real Madrid, Girona and Barcelona throughout the season. Barcelona spent much of the campaign in fourth place, but climbed to second after Xavi's announcement."
       }
     },
     {

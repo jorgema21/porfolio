@@ -6,37 +6,15 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "Tras las elecciones de julio de 2023, propuse realizar un reportaje de datos sobre el abstencionismo ",
-          "y los factores detrás de este fenómeno. Trabajé con datos brutos de participación por secciones censales ",
-          "en España para analizar la correlación entre la abstención y el comportamiento del voto. ",
-          "Tras limpiar y procesar los datos en RStudio, compartí los datos con un compañero para el desarrollo ",
-          "de un mapa interactivo en Mapbox y generé varios gráficos en Datawrapper."
-        ],
-        "en": [
-          "Following the July 2023 elections, I pitched a data-driven feature on voter abstention and the ",
-          "underlying factors behind this phenomenon. I worked with raw turnout data at the census-section level ",
-          "in Spain to analyze the correlation between abstention and voting behavior. ",
-          "After cleaning and processing the data in RStudio, I shared the data with a colleague for an interactive Mapbox map ",
-          "and generated several visualizations in Datawrapper."
-        ]
+        "es": "Tras las elecciones de julio de 2023, propuse realizar un reportaje de datos sobre el abstencionismo y los factores detrás de este fenómeno. Trabajé con datos brutos de participación por secciones censales en España para analizar la correlación entre la abstención y el comportamiento del voto. Tras limpiar y procesar los datos en RStudio, compartí los datos con un compañero para el desarrollo de un mapa interactivo en Mapbox y generé varios gráficos en Datawrapper.",
+        "en": "Following the July 2023 elections, I pitched a data-driven feature on voter abstention and the underlying factors behind this phenomenon. I worked with raw turnout data at the census-section level in Spain to analyze the correlation between abstention and voting behavior. After cleaning and processing the data in RStudio, I shared the data with a colleague for an interactive Mapbox map and generated several visualizations in Datawrapper."
       }
     },
     {
       "type": "text",
       "value": {
-        "es": [
-          "El conjunto de datos incluía variables desglosadas por partidos políticos, series temporales, municipios y comunidades autónomas. ",
-          "Diseñé gráficos de distribución para cruzar niveles de renta con tendencias ideológicas, y analicé por sección censal ",
-          "según el tipo de convocatoria electoral. Así contrasté cómo cambia el voto en una misma zona ",
-          "cuando se trata de elecciones municipales frente a las generales."
-        ],
-        "en": [
-          "The dataset included variables broken down by political parties, time series, municipalities, and autonomous communities. ",
-          "I designed scatterplots to cross-reference income levels with ideological trends, ",
-          "alongside census-section analyses based on the type of election. ",
-          "I highlighted how voting behavior shifts within the exact same area between municipal and general elections."
-        ]
+        "es": "El conjunto de datos incluía variables desglosadas por partidos políticos, series temporales, municipios y comunidades autónomas. Diseñé gráficos de distribución para cruzar niveles de renta con tendencias ideológicas, y analicé por sección censal según el tipo de convocatoria electoral. Así contrasté cómo cambia el voto en una misma zona cuando se trata de elecciones municipales frente a las generales.",
+        "en": "The dataset included variables broken down by political parties, time series, municipalities, and autonomous communities. I designed scatterplots to cross-reference income levels with ideological trends, alongside census-section analyzes based on the type of election. I highlighted how voting behavior shifts within the exact same area between municipal and general elections."
       }
     },
     {
@@ -66,16 +44,8 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "Además, detallé cómo era la abstención por ideología y renta de la Comunidad de Madrid y Cataluña. ",
-          "También incorporé una tabla ordenable que recopiló las secciones con menor renta y mayor abstención ",
-          "y añadí enlaces directos mediante iconos para geolocalizar cada sección en Google Maps."
-        ],
-        "en": [
-          "Additionally, I detailed how was the abstention by ideology and income for the Community of Madrid and Catalonia. ",
-          "I also incorporated a sortable table that listed the sections with the lowest income and highest abstention ",
-          "and I added direct icon links to geolocate each section on Google Maps."
-        ]
+        "es": "Además, detallé cómo era la abstención por ideología y renta de la Comunidad de Madrid y Cataluña. También incorporé una tabla ordenable que recopiló las secciones con menor renta y mayor abstención y añadí enlaces directos mediante iconos para geolocalizar cada sección en Google Maps.",
+        "en": "Additionally, I detailed how was the abstention by ideology and income for the Community of Madrid and Catalonia. I also incorporated a sortable table that listed the sections with the lowest income and highest abstention and I added direct icon links to geolocate each section on Google Maps."
       }
     },
     {

@@ -1,0 +1,29 @@
+{
+  "apartado": "economy",
+  "usos": [
+    {
+      "es": "Datos",
+      "en": "Data"
+    },
+    {
+      "es": "Visualización",
+      "en": "Visualization"
+    }
+  ],
+  "colaboracion": {
+    "tipo": "solo",
+    "rol": [
+      "graficos",
+      "texto"
+    ]
+  },
+  "tools": [
+    "GoogleSheets",
+    "RStudio",
+    "Illustrator",
+    "InDesign"
+  ],
+  "date": "2026-11-01",
+  "mediumKey": "sty_forbes",
+  "url": "#"
+}

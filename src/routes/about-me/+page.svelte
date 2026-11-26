@@ -83,6 +83,7 @@
       <span class="legend-item infography">{t.about.infographics}</span>
       <span class="legend-item style">{t.about.lifestyle}</span>
       <span class="legend-item parenting">{t.about.parenting}</span>
+      <span class="legend-item travel">{t.about.travel}</span>
     </div>
 
     <AboutTimeline />
@@ -284,6 +285,9 @@
     }
     &.parenting {
       --timeline-color: var(--color-parenting);
+    }
+    &.travel {
+      --timeline-color: var(--color-travel);
     }
   }
 

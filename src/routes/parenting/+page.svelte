@@ -11,7 +11,6 @@
   <h1>{t.parenting.title}</h1>
 
   <RichText value={t.parenting.intro} />
-  <RichText value={t.parenting.description} />
   <RichText value={t.parenting.aim} />
 
   <GroupAccordion groups={groupedData.grouped} />

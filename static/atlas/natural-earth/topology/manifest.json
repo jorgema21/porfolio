@@ -1,0 +1,15 @@
+{
+  "source": "Natural Earth 5.1.2",
+  "license": "Public domain",
+  "sourceSHA256": "82502cedc15db5a4c994038d6ae29f9bfd2a43216ecee1b5df9fcdb051d8b575",
+  "countries": [
+    "CHE",
+    "CZE",
+    "DEU",
+    "ESP",
+    "EST",
+    "FIN",
+    "FRA",
+    "POL"
+  ]
+}

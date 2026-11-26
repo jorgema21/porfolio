@@ -6,16 +6,8 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "Analicé cómo la NBA estaba viviendo una temporada en la que el juego ofensivo marcaba cada encuentro. ",
-          "Para ello, procesé datos sobre la evolución de distintos aspectos como puntos, minutos, rebotes ofensivos o asistencias, ",
-          "para posteriormente diseñar una cuadrícula de líneas con Datawrapper."
-        ],
-        "en": [
-          "I analyzed how the NBA was experiencing a season where offensive play defined every game. ",
-          "To do this, I processed data on the evolution of various aspects such as points, minutes, ",
-          "offensive rebounds, or assists, to subsequently design a line chart grid using Datawrapper."
-        ]
+        "es": "Analicé cómo la NBA estaba viviendo una temporada en la que el juego ofensivo marcaba cada encuentro. Para ello, procesé datos sobre la evolución de distintos aspectos como puntos, minutos, rebotes ofensivos o asistencias, para posteriormente diseñar una cuadrícula de líneas con Datawrapper.",
+        "en": "I analyzed how the NBA was experiencing a season where offensive play defined every game. To do this, I processed data on the evolution of various aspects such as points, minutes, offensive rebounds, or assists, to subsequently design a line chart grid using Datawrapper."
       }
     },
     {
@@ -47,10 +39,7 @@
           },
           " personalizados y elementos en html."
         ],
-        "en": [
-          "I also used the advanced features of Datawrapper's scatterplot to show the trend of how ",
-          "more games were played and more points were scored, adding custom tooltips and html elements."
-        ]
+        "en": "I also used the advanced features of Datawrapper's scatterplot to show the trend of how more games were played and more points were scored, adding custom tooltips and html elements."
       }
     },
     {
@@ -68,16 +57,8 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "Más adelante me centré en el rendimiento individual de los jugadores y señalé que, durante esa temporada, ",
-          "cuatro anotadores se habían colado en el top de mayor cantidad de puntos en un solo partido, ",
-          "detallando sus respectivos equipos, resultado final, rival y fecha."
-        ],
-        "en": [
-          "Later on, I focused on individual player performances and pointed out that, during that season, ",
-          "four scorers had made it into the top tier for most points in a single game, ",
-          "detallando sus respectivos equipos, resultado final, rival y fecha."
-        ]
+        "es": "Más adelante me centré en el rendimiento individual de los jugadores y señalé que, durante esa temporada, cuatro anotadores se habían colado en el top de mayor cantidad de puntos en un solo partido, detallando sus respectivos equipos, resultado final, rival y fecha.",
+        "en": "Later on, I focused on individual player performances and pointed out that, during that season, four scorers had made it into the top tier for most points in a single game, detallando sus respectivos equipos, resultado final, rival y fecha."
       }
     },
     {
@@ -133,17 +114,8 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "Para terminar, consideré interesante visualizar la evolución de cada tipo de lanzamiento según su valor, ",
-          "y mostré tanto la eficacia como el volumen temporada tras temporada. Para ello, procesé los datos ",
-          "en RStudio y extraje estadísticas para representar mediante colores los periodos de mayor y menor acierto."
-        ],
-        "en": [
-          "To conclude, I found it compelling to visualize the evolution of each shot type based on its point value, ",
-          "and I showed both efficiency and volume season after season. To achieve this, ",
-          "I processed the data in RStudio and extracted metrics to reflect periods of high and low accuracy ",
-          "using color coding."
-        ]
+        "es": "Para terminar, consideré interesante visualizar la evolución de cada tipo de lanzamiento según su valor, y mostré tanto la eficacia como el volumen temporada tras temporada. Para ello, procesé los datos en RStudio y extraje estadísticas para representar mediante colores los periodos de mayor y menor acierto.",
+        "en": "To conclude, I found it compelling to visualize the evolution of each shot type based on its point value, and I showed both efficiency and volume season after season. To achieve this, I processed the data in RStudio and extracted metrics to reflect periods of high and low accuracy using color coding."
       }
     },
     {

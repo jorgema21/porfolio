@@ -283,6 +283,10 @@
       --timeline-color: var(--color-style);
     }
 
+    &[data-category="travel"] {
+      --timeline-color: var(--color-travel);
+    }
+
     &[data-category="parenting"] {
       --timeline-color: var(--color-parenting);
     }

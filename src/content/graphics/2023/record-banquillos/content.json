@@ -6,18 +6,8 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "Publiqué un reportaje gráfico sobre el récord de cambios de entrenadores ",
-          "en las cinco grandes ligas europeas de fútbol durante una sola temporada. ",
-          "Recopilé y procesé datos de diversas fuentes para ilustrar este fenómeno histórico. ",
-          "Para empezar, aporté contexto mediante columnas apiladas distribuidas por temporadas y ligas."
-        ],
-        "en": [
-          "I published a graphic report on the record number of manager changes ",
-          "in Europe's top five football leagues during a single season. ",
-          "I collected and processed data from various sources to illustrate this historical phenomenon. ",
-          "To begin with, I provided context using stacked columns broken down by seasons and leagues."
-        ]
+        "es": "Publiqué un reportaje gráfico sobre el récord de cambios de entrenadores en las cinco grandes ligas europeas de fútbol durante una sola temporada. Recopilé y procesé datos de diversas fuentes para ilustrar este fenómeno histórico. Para empezar, aporté contexto mediante columnas apiladas distribuidas por temporadas y ligas.",
+        "en": "I published a graphic report on the record number of manager changes in Europe's top five football leagues during a single season. I collected and processed data from various sources to illustrate this historical phenomenon. To begin with, I provided context using stacked columns broken down by seasons and leagues."
       }
     },
     {
@@ -35,14 +25,8 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "Reutilicé esta estructura visual para analizar la evolución temporal de la misma temporada, ",
-          "desglosando los ceses y contrataciones semana a semana en cada competición nacional."
-        ],
-        "en": [
-          "I reused this visual structure to analyze the chronological evolution of that same season, ",
-          "breaking down dismissals and appointments week by week in each national competition."
-        ]
+        "es": "Reutilicé esta estructura visual para analizar la evolución temporal de la misma temporada, desglosando los ceses y contrataciones semana a semana en cada competición nacional.",
+        "en": "I reused this visual structure to analyze the chronological evolution of that same season, breaking down dismissals and appointments week by week in each national competition."
       }
     },
     {
@@ -76,13 +60,7 @@
           },
           " con información detallada de cada profesional."
         ],
-        "en": [
-          "I evaluated the actual impact of these replacements on the teams' performances. ",
-          "I leveraged the potential of Datawrapper's scatterplot to generate a matrix by league, ",
-          "displaying the teams and the number of managers. ",
-          "I applied a manual color palette for points per match, sizing for matches managed, ",
-          "and tooltips with detailed information for each professional."
-        ]
+        "en": "I evaluated the actual impact of these replacements on the teams' performances. I leveraged the potential of Datawrapper's scatterplot to generate a matrix by league, displaying the teams and the number of managers. I applied a manual color palette for points per match, sizing for matches managed, and tooltips with detailed information for each professional."
       }
     },
     {
@@ -100,16 +78,8 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "Como la posición liguera es el factor clave, tracé un gráfico de flechas. ",
-          "Este diseño reflejó el puesto exacto en el que cada entrenador asumió el mando del club ",
-          "y la posición en la que se encontraba al dejarlo o al concluir el análisis."
-        ],
-        "en": [
-          "Since league position is the key factor, I traced an arrow plot. ",
-          "This design reflected the exact standing where each manager took charge of the club ",
-          "and the position they were in when they left or when the analysis concluded."
-        ]
+        "es": "Como la posición liguera es el factor clave, tracé un gráfico de flechas. Este diseño reflejó el puesto exacto en el que cada entrenador asumió el mando del club y la posición en la que se encontraba al dejarlo o al concluir el análisis.",
+        "en": "Since league position is the key factor, I traced an arrow plot. This design reflected the exact standing where each manager took charge of the club and the position they were in when they left or when the analysis concluded."
       }
     },
     {
@@ -127,18 +97,8 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "Por último, examined el nivel de los rivales afrontados según el potencial del club. ",
-          "Desarrollé un gráfico de líneas para mostrar la fluctuación del ELO en los equipos españoles ",
-          "afectados, complementado con una tabla buscador con la diferencia neta ",
-          "de esta métrica entre el inicio y el final de cada etapa en el banquillo."
-        ],
-        "en": [
-          "Finally, I examined the level of opponents faced relative to the club's potential. ",
-          "I developed a line chart to show ELO fluctuations for the affected Spanish teams, ",
-          "complemented by an interactive search table with the net difference ",
-          "of this metric between the start and end of each manager's tenure."
-        ]
+        "es": "Por último, examined el nivel de los rivales afrontados según el potencial del club. Desarrollé un gráfico de líneas para mostrar la fluctuación del ELO en los equipos españoles afectados, complementado con una tabla buscador con la diferencia neta de esta métrica entre el inicio y el final de cada etapa en el banquillo.",
+        "en": "Finally, I examined the level of opponents faced relative to the club's potential. I developed a line chart to show ELO fluctuations for the affected Spanish teams, complemented by an interactive search table with the net difference of this metric between the start and end of each manager's tenure."
       }
     },
     {

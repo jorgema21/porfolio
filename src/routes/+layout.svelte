@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { asset } from "$app/paths";
   import "#lib/styles/global.css";
   import ImageLightbox from "#lib/components/ImageLightbox.svelte";
   import Header from "#lib/components/Header.svelte";
@@ -9,6 +8,7 @@
 
   import { langSignal } from "#lib/i18n/lang.svelte.js";
   import { layout } from "#lib/i18n/dictionaries/layout.js";
+  import { onMount } from "svelte";
 
   const { children } = $props();
 
@@ -16,10 +16,9 @@
 
   const t = $derived(layout[langSignal.current]);
 
-  if (browser && !localStorage.getItem("lang")) {
-    const detected = navigator.language.startsWith("es") ? "es" : "en";
-    langSignal.set(detected);
-  }
+  onMount(() => {
+    langSignal.initialize();
+  });
 
   const handleScroll = () => {
     const documentHeight = document.documentElement.scrollHeight;
@@ -54,12 +53,21 @@
     };
   });
 
-  let currentPath = $derived(page.url.pathname.split("/").pop() || "home");
+  const routeLabels: Record<string, keyof typeof layout.es.nav> = {
+    "/": "home",
+    "/graphics": "graphics",
+    "/graphics/[slug]": "graphics",
+    "/lifestyle": "lifestyle",
+    "/travel": "travel",
+    "/parenting": "parenting",
+    "/about-me": "about-me",
+    "/contact": "contact",
+  };
+
+  let currentPath = $derived(routeLabels[page.route.id ?? "/"] ?? "home");
 
   let announcePath = $derived(
-    langSignal.current === "es"
-      ? `Navegando a la página de ${t.nav[currentPath as keyof typeof t.nav] || t.nav.home}`
-      : `Navigating to ${t.nav[currentPath as keyof typeof t.nav] || t.nav.home} page`,
+    t.navigationAnnouncement.replace("{page}", t.nav[currentPath]),
   );
 </script>
 
@@ -67,21 +75,21 @@
   <title>{t.seo.title}</title>
   <meta name="description" content={t.seo.description} />
 
-  {#if page.url.pathname.includes("/graphics/") && page.url.pathname
-      .split("/")
-      .pop() !== "graphics"}
-    <meta name="robots" content="noindex, follow" />
-  {:else}
+  {#if page.route.id === "/"}
     <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://jorgema21.github.io/porfolio/" />
+  {:else}
+    <meta name="robots" content="noindex, follow" />
   {/if}
 
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Portfolio" />
   <meta property="og:title" content={t.seo.title} />
   <meta property="og:description" content={t.seo.ogDescription} />
+
   <meta
     property="og:image"
-    content={asset("images/projects/este-porfolio-ip.webp")}
+    content="https://jorgema21.github.io/porfolio/images/projects/este-porfolio-ip.webp"
   />
 </svelte:head>
 
@@ -99,9 +107,7 @@
   class="scroll-top-btn"
   class:visible={showScrollTop}
   onclick={scrollToTop}
-  aria-label={langSignal.current === "es"
-    ? "Volver al inicio de la página"
-    : "Scroll to top"}
+  aria-label={t.scrollToTop}
 >
   <svg
     xmlns="http://w3.org"

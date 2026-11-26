@@ -9,7 +9,10 @@
 
   import { t } from "#lib/i18n/index.svelte.js";
 
-  const { project, index = 0 }: {
+  const {
+    project,
+    index = 0,
+  }: {
     project: Infographic;
     index?: number;
   } = $props();
@@ -35,15 +38,19 @@
 <div
   class="infographics-card"
   onclick={() => openPreview(project)}
-  onkeydown={(e) => e.key === "Enter" && openPreview(project)}
+  onkeydown={(e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      openPreview(project);
+    }
+  }}
   role="button"
   tabindex="0"
   aria-label={t.infographics.aria.viewDetails.replace(
-    "{title}", 
-    project.title[langSignal.current]
+    "{title}",
+    project.title[langSignal.current],
   )}
 >
-
   <div class="thumb">
     <img
       src={asset(String(project.image ?? "").replace(/^\/+/, "") as AssetPath)}

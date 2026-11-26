@@ -1,0 +1,33 @@
+{
+  "apartado": "miscellaneous",
+  "usos": [
+    {
+      "es": "Mapas",
+      "en": "Maps"
+    },
+    {
+      "es": "Datos",
+      "en": "Data"
+    },
+    {
+      "es": "Visualización",
+      "en": "Visualization"
+    }
+  ],
+  "colaboracion": {
+    "tipo": "solo",
+    "rol": [
+      "graficos",
+      "texto"
+    ]
+  },
+  "tools": [
+    "QGIS",
+    "RStudio",
+    "Illustrator",
+    "InDesign"
+  ],
+  "date": "2026-10-20",
+  "mediumKey": "voronoi",
+  "url": "https://www.voronoiapp.com/author/jorgema21"
+}

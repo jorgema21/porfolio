@@ -5,30 +5,37 @@ export const layout = {
       home: "Inicio",
       graphics: "Infografías",
       lifestyle: "Estilo de vida",
+      travel: "Viajes",
       parenting: "Maternidad",
       "about-me": "Sobre mí",
       contact: "Contacto",
     },
 
+    navigationControls: {
+      open: "Abrir navegación",
+      close: "Cerrar navegación",
+    },
+
+    navigationAnnouncement: "Navegando a la página de {page}",
+    scrollToTop: "Volver al inicio de la página",
+
     langSwitch: {
       labelToEn: "Cambiar idioma a inglés",
       labelToEs: "Cambiar idioma a español",
-      flagEs: "/images/flags/es.svg",
-      flagEn: "/images/flags/us.svg",
     },
 
     seo: {
-      title: "Porfolio | Dataviz y reportajes",
+      title: "Porfolio | Infografía, visualización de datos y reportajes",
       description:
-        "Porfolio profesional de infografías, visualización de datos y reportajes.",
+        "Una selección de trabajos de infografía, visualización de datos, periodismo visual y reportajes.",
       ogDescription:
-        "Narrativas visuales, análisis y visualización de datos y redacción de reportajes.",
+        "Infografías, visualización de datos, periodismo visual y reportajes.",
     },
 
     footer: {
       part0: "Porfolio",
-      part1: "Última actualización: 30 de julio",
-      part2: "Un porfolio diseñado y desarrollado por Jorge Marzo",
+      part1: "Última actualización:",
+      part2: "Un porfolio diseñado y desarrollado por xxxxx",
     },
 
     lightbox: {
@@ -44,30 +51,37 @@ export const layout = {
       home: "Home",
       graphics: "Graphics",
       lifestyle: "Lifestyle",
+      travel: "Travel",
       parenting: "Parenting",
       "about-me": "About Me",
       contact: "Contact",
     },
 
+    navigationControls: {
+      open: "Open navigation",
+      close: "Close navigation",
+    },
+
+    navigationAnnouncement: "Navigating to {page} page",
+    scrollToTop: "Scroll to top",
+
     langSwitch: {
       labelToEn: "Switch language to English",
-      labelToEs: "Cambiar idioma a español",
-      flagEs: "/images/flags/es.svg",
-      flagEn: "/images/flags/us.svg",
+      labelToEs: "Switch language to Spanish",
     },
 
     seo: {
-      title: "Portfolio | Graphics & Data Journalism",
+      title: "Portfolio | Infographics, Data Visualization & Reporting",
       description:
-        "Professional portfolio specializing in graphics, data visualization, and reporting.",
+        "A selection of work in infographics, data visualization, visual journalism, and feature reporting.",
       ogDescription:
-        "Visual narratives, data analysis, information design, and feature reporting.",
+        "Infographics, data visualization, visual journalism, and feature reporting.",
     },
 
     footer: {
       part0: "Portfolio",
-      part1: "Last updated: July 30",
-      part2: "A portfolio designed and developed by Jorge Marzo",
+      part1: "Last updated:",
+      part2: "A portfolio designed and developed by xxxxx",
     },
 
     lightbox: {

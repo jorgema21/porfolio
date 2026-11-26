@@ -4,7 +4,6 @@ type InfographicsDict = {
   title: string;
   others: string;
   intro: RichText;
-  description: RichText;
   aim: RichText;
 };
 
@@ -14,31 +13,21 @@ export const parenting: Record<"es" | "en", InfographicsDict> = {
     others: "Otros",
 
     intro: [
+      { text: "Aquí reúno mis textos sobre " },
       {
-        text: "Bienvenido/a a la sección de ",
-      },
-      {
-        text: "maternidad. ",
+        text: "maternidad, crianza y vida familiar",
         bold: true,
       },
-    ],
-    description: [
-      {
-        text: "Aquí puedes acceder directamente a ",
-      },
-      {
-        text: "todos los trabajos que se han publicado.",
-        bold: true,
-      },
-    ],
+      { text: "." },
+    ] satisfies RichText,
+
     aim: [
+      { text: "Estos reportajes exploran " },
       {
-        text: "Mi propósito es escribir sobre ",
-      },
-      {
-        text: "cómo la psicología afecta a la vida cotidiana de los padres y madres y a sus hijos.",
+        text: "los cambios, las dudas y los retos que viven adultos y niños en su relación cotidiana",
         bold: true,
       },
+      { text: "." },
     ] satisfies RichText,
   },
 
@@ -47,34 +36,21 @@ export const parenting: Record<"es" | "en", InfographicsDict> = {
     others: "Others",
 
     intro: [
+      { text: "Here I've brought together my writing on " },
       {
-        text: "Welcome to the ",
-      },
-      {
-        text: "parenting ",
+        text: "motherhood, parenting, and family life",
         bold: true,
       },
-      {
-        text: "section.",
-      },
-    ],
-    description: [
-      {
-        text: "Here you can access directly to ",
-      },
-      {
-        text: "all the works that have been published.",
-        bold: true,
-      },
-    ],
+      { text: "." },
+    ] satisfies RichText,
+
     aim: [
+      { text: "These stories explore " },
       {
-        text: "My aim is to write about ",
-      },
-      {
-        text: "how psychology influence parents and their kids daily lives.",
+        text: "the changes, questions, and challenges that adults and children experience as they navigate everyday life together",
         bold: true,
       },
+      { text: "." },
     ] satisfies RichText,
   },
 };

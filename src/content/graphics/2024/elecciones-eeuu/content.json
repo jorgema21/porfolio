@@ -22,12 +22,7 @@
           },
           "."
         ],
-        "en": [
-          "For the United States election coverage, I designed a series of on-demand graphics ",
-          "both in the days leading up to the vote and during election night. ",
-          "I developed a hexagonal map of the US structured by electoral college votes, ",
-          "incorporating an informative tooltip, a state search tool, and a spotlight on the swing states."
-        ]
+        "en": "For the United States election coverage, I designed a series of on-demand graphics both in the days leading up to the vote and during election night. I developed a hexagonal map of the US structured by electoral college votes, incorporating an informative tooltip, a state search tool, and a spotlight on the swing states."
       }
     },
     {
@@ -45,16 +40,8 @@
     {
       "type": "text",
       "value": {
-        "es": [
-          "Antes de la votación, tracé la evolución de la intención de voto. ",
-          "Elaboré varias piezas estáticas y propuse un modelo interactivo final ",
-          "que, aunque no llegó a publicarse en el medio, decidí recuperar para este porfolio."
-        ],
-        "en": [
-          "Prior to election day, I tracked the polling trends for the candidates. ",
-          "I created several static pieces and proposed a final interactive design ",
-          "which, although left unpublished by the media outlet, I included here for the portfolio."
-        ]
+        "es": "Antes de la votación, tracé la evolución de la intención de voto. Elaboré varias piezas estáticas y propuse un modelo interactivo final que, aunque no llegó a publicarse en el medio, decidí recuperar para este porfolio.",
+        "en": "Prior to election day, I tracked the polling trends for the candidates. I created several static pieces and proposed a final interactive design which, although left unpublished by the media outlet, I included here for the portfolio."
       }
     },
     {
